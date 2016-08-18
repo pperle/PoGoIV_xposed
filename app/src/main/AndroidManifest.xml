@@ -17,7 +17,7 @@
             android:value="Shows pokémon IVs and more before catching them" />
         <meta-data
             android:name="xposedminversion"
-            android:value="82" />
+            android:value="53" />
 
     </application>
 
