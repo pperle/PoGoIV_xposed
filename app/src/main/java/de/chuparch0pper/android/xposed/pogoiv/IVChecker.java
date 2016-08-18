@@ -1,8 +1,12 @@
 package de.chuparch0pper.android.xposed.pogoiv;
 
 import android.app.AndroidAppHelper;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v7.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.google.protobuf.ByteString;
@@ -135,16 +139,14 @@ public class IVChecker implements IXposedHookLoadPackage {
         PokemonDataOuterClass.PokemonData encounteredPokemon = encounterResponse.getWildPokemon().getPokemonData();
         CaptureProbabilityOuterClass.CaptureProbability captureProbability = encounterResponse.getCaptureProbability();
 
-        String toastMessage = "A wild " + encounteredPokemon.getPokemonId() + " #" + encounteredPokemon.getPokemonIdValue() + " appeared!"
-                + "[CP " + encounteredPokemon.getCp() + "] [Potential " + calcPotential(encounteredPokemon) + "%] "
-                + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
+        String pokemonName = encounteredPokemon.getPokemonId() + " #" + encounteredPokemon.getPokemonIdValue() + " (CP " + encounteredPokemon.getCp() + ")";
+        String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
+        String pokemonIVandProbability = pokemonIV + "\n\n" + "CaptureProbability"
+                + "\n" + "Pokéball :\t" + captureProbability.getCaptureProbability(0)
+                + "\n" + "Great Ball :\t" + captureProbability.getCaptureProbability(1)
+                + "\n" + "Ultra Ball :\t" + captureProbability.getCaptureProbability(2);
 
-        toastMessage += "\n\n"
-                + "Pokéball = " + captureProbability.getCaptureProbability(0) + "\n"
-                + "Great Ball = " + captureProbability.getCaptureProbability(1) + "\n"
-                + "Ultra Ball = " + captureProbability.getCaptureProbability(2);
-
-        showToast(toastMessage);
+        showNotification(pokemonName, pokemonIV, pokemonIVandProbability);
     }
 
     private double calcPotential(PokemonDataOuterClass.PokemonData encounteredPokemon) {
@@ -156,6 +158,27 @@ public class IVChecker implements IXposedHookLoadPackage {
             @Override
             public void run() {
                 Toast.makeText(AndroidAppHelper.currentApplication(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void showNotification(final String title, final String text, final String longText) {
+
+        final Context context = AndroidAppHelper.currentApplication();
+
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context);
+                mBuilder.setSmallIcon(android.R.color.background_light);
+                mBuilder.setContentTitle(title);
+                mBuilder.setContentText(text);
+                mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(longText));
+                mBuilder.setVibrate(new long[]{1000});
+                mBuilder.setPriority(Notification.PRIORITY_MAX);
+
+                NotificationManager mNotificationManager = (NotificationManager) AndroidAppHelper.currentApplication().getSystemService(Context.NOTIFICATION_SERVICE);
+                mNotificationManager.notify(699511, mBuilder.build());
             }
         });
     }
