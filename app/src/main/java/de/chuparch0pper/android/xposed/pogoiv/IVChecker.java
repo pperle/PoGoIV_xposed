@@ -144,7 +144,7 @@ public class IVChecker implements IXposedHookLoadPackage {
         PokemonDataOuterClass.PokemonData encounteredPokemon = encounterResponse.getWildPokemon().getPokemonData();
         CaptureProbabilityOuterClass.CaptureProbability captureProbability = encounterResponse.getCaptureProbability();
 
-        String pokemonName = encounteredPokemon.getPokemonId() + " #" + encounteredPokemon.getPokemonIdValue() + " (CP " + encounteredPokemon.getCp() + ")";
+        String pokemonName = encounteredPokemon.getPokemonId() + " (CP " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
                 + "\n\n" + "Moves: " + encounteredPokemon.getMove1() + ", " + encounteredPokemon.getMove2()
@@ -155,7 +155,6 @@ public class IVChecker implements IXposedHookLoadPackage {
 
         showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }
-
 
     private void Catch(ByteString payload) {
 
@@ -172,6 +171,18 @@ public class IVChecker implements IXposedHookLoadPackage {
 
     private double calcPotential(PokemonDataOuterClass.PokemonData encounteredPokemon) {
         return (double) Math.round(((encounteredPokemon.getIndividualAttack() + encounteredPokemon.getIndividualDefense() + encounteredPokemon.getIndividualStamina()) / 45.0 * 100.0) * 10) / 10;
+    }
+
+
+    private float calcLevel(float cpMultiplier) {
+        float level = 1;
+        for (double currentCpM : Data.CpM) {
+            if (Math.abs(cpMultiplier - currentCpM) < 0.01) {
+                return level;
+            }
+            level += 0.5;
+        }
+        return level;
     }
 
     private void showToast(final String message, final int length) {
