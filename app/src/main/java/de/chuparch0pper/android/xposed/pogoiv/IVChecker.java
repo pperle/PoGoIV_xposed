@@ -120,7 +120,9 @@ public class IVChecker implements IXposedHookLoadPackage {
             ByteString payload = responseEnvelop.getReturns(i);
             // XposedBridge.log("Response " + requestType.toString());
 
-            if (requestType == RequestTypeOuterClass.RequestType.ENCOUNTER) {
+            if (requestType == RequestTypeOuterClass.RequestType.ENCOUNTER
+                    || requestType == RequestTypeOuterClass.RequestType.DISK_ENCOUNTER
+                    || requestType == RequestTypeOuterClass.RequestType.INCENSE_ENCOUNTER) {
                 Encounter(payload);
             }
         }
