@@ -25,6 +25,7 @@ import POGOProtos.Data.PokemonDataOuterClass;
 import POGOProtos.Networking.Envelopes.RequestEnvelopeOuterClass;
 import POGOProtos.Networking.Envelopes.ResponseEnvelopeOuterClass;
 import POGOProtos.Networking.Requests.RequestTypeOuterClass;
+import POGOProtos.Networking.Responses.CatchPokemonResponseOuterClass;
 import POGOProtos.Networking.Responses.EncounterResponseOuterClass;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
@@ -124,6 +125,8 @@ public class IVChecker implements IXposedHookLoadPackage {
                     || requestType == RequestTypeOuterClass.RequestType.DISK_ENCOUNTER
                     || requestType == RequestTypeOuterClass.RequestType.INCENSE_ENCOUNTER) {
                 Encounter(payload);
+            } else if (requestType == RequestTypeOuterClass.RequestType.CATCH_POKEMON) {
+                Catch(payload);
             }
         }
     }
@@ -153,15 +156,29 @@ public class IVChecker implements IXposedHookLoadPackage {
         showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }
 
+
+    private void Catch(ByteString payload) {
+
+        CatchPokemonResponseOuterClass.CatchPokemonResponse catchPokemonResponse;
+        try {
+            catchPokemonResponse = CatchPokemonResponseOuterClass.CatchPokemonResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            XposedBridge.log("Parsing CatchPokemonResponse failed " + e);
+            return;
+        }
+
+        showToast(catchPokemonResponse.getStatus().toString(), Toast.LENGTH_SHORT);
+    }
+
     private double calcPotential(PokemonDataOuterClass.PokemonData encounteredPokemon) {
         return (double) Math.round(((encounteredPokemon.getIndividualAttack() + encounteredPokemon.getIndividualDefense() + encounteredPokemon.getIndividualStamina()) / 45.0 * 100.0) * 10) / 10;
     }
 
-    private void showToast(final String message) {
+    private void showToast(final String message, final int length) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(AndroidAppHelper.currentApplication(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(AndroidAppHelper.currentApplication(), message, length).show();
             }
         });
     }
