@@ -141,12 +141,14 @@ public class IVChecker implements IXposedHookLoadPackage {
 
         String pokemonName = encounteredPokemon.getPokemonId() + " #" + encounteredPokemon.getPokemonIdValue() + " (CP " + encounteredPokemon.getCp() + ")";
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
-        String pokemonIVandProbability = pokemonIV + "\n\n" + "CaptureProbability"
+        String pokemonIVandMoreInfo = pokemonIV
+                + "\n\n" + "Moves: " + encounteredPokemon.getMove1() + ", " + encounteredPokemon.getMove2()
+                + "\n\n" + "CaptureProbability"
                 + "\n" + "Pokéball :\t" + captureProbability.getCaptureProbability(0)
                 + "\n" + "Great Ball :\t" + captureProbability.getCaptureProbability(1)
                 + "\n" + "Ultra Ball :\t" + captureProbability.getCaptureProbability(2);
 
-        showNotification(pokemonName, pokemonIV, pokemonIVandProbability);
+        showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }
 
     private double calcPotential(PokemonDataOuterClass.PokemonData encounteredPokemon) {
