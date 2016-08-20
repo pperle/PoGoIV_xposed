@@ -28,6 +28,12 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
+/**
+ * entry point for XposedBridge
+ * <p/>
+ * PoGoIV_xposed would not have been possible without the work of [elfinlazz](https://github.com/elfinlazz).
+ * This modul is based on his work on [Pokemon GO IV checker](http://repo.xposed.info/module/de.elfinlazz.android.xposed.pokemongo).
+ */
 public class IVChecker implements IXposedHookLoadPackage {
     private static final Map<Long, List<RequestTypeOuterClass.RequestType>> requestMap = new HashMap<>();
 
@@ -92,6 +98,11 @@ public class IVChecker implements IXposedHookLoadPackage {
 
     }
 
+    /**
+     * checks buffer for {@link RequestTypeOuterClass.RequestType RequestType} and calls the associated method
+     *
+     * @param buffer return value of readDataSteam
+     */
     private void HandleResponse(byte[] buffer) {
         ResponseEnvelopeOuterClass.ResponseEnvelope responseEnvelop;
         try {
