@@ -1,12 +1,5 @@
 package de.chuparch0pper.android.xposed.pogoiv;
 
-import android.app.AndroidAppHelper;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.support.v7.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.google.protobuf.ByteString;
@@ -26,10 +19,11 @@ import POGOProtos.Networking.Envelopes.RequestEnvelopeOuterClass;
 import POGOProtos.Networking.Envelopes.ResponseEnvelopeOuterClass;
 import POGOProtos.Networking.Requests.RequestTypeOuterClass;
 import POGOProtos.Networking.Responses.CatchPokemonResponseOuterClass;
+import POGOProtos.Networking.Responses.DiskEncounterResponseOuterClass;
 import POGOProtos.Networking.Responses.EncounterResponseOuterClass;
+import POGOProtos.Networking.Responses.IncenseEncounterResponseOuterClass;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
@@ -52,7 +46,7 @@ public class IVChecker implements IXposedHookLoadPackage {
                 int bodySize = (int) param.args[7];
 
                 if (requestBody == null || bodySize <= 0) {
-                    XposedBridge.log("Error while getting data, requestBody =" + bodySize + " or bodySize = " + bodySize + " is not valid");
+                    Helper.Log("Error while getting data, requestBody =" + bodySize + " or bodySize = " + bodySize + " is not valid");
                     return;
                 }
 
@@ -65,7 +59,7 @@ public class IVChecker implements IXposedHookLoadPackage {
 
                 List<RequestTypeOuterClass.RequestType> requestList = new ArrayList<RequestTypeOuterClass.RequestType>();
                 for (int i = 0; i < requestEnvelop.getRequestsCount(); i++) {
-                    // XposedBridge.log("Request " + requestEnvelop.getRequests(i).getRequestType().toString());
+                    Helper.Log("doSyncRequest - " + requestEnvelop.getRequests(i).getRequestType().toString());
                     requestList.add(requestEnvelop.getRequests(i).getRequestType());
                 }
 
@@ -85,7 +79,7 @@ public class IVChecker implements IXposedHookLoadPackage {
                 ThreadLocal<ByteBuffer> localBody = (ThreadLocal<ByteBuffer>) bufferField.get(null);
 
                 if (localBody == null) {
-                    XposedBridge.log("Couldn't read readBuffer-stream from PoGo.");
+                    Helper.Log("Couldn't read readBuffer-stream from PoGo.");
                     return;
                 }
 
@@ -103,28 +97,30 @@ public class IVChecker implements IXposedHookLoadPackage {
         try {
             responseEnvelop = ResponseEnvelopeOuterClass.ResponseEnvelope.parseFrom(buffer);
         } catch (InvalidProtocolBufferException e) {
-            XposedBridge.log("Parsing response failed " + e);
+            Helper.Log("Parsing response failed " + e);
             return;
         }
 
         long requestId = responseEnvelop.getRequestId();
         if (requestId == 0 || !requestMap.containsKey(requestId)) {
-            XposedBridge.log("requestId is 0 or not in requestMap | requestId = " + requestId);
+            Helper.Log("requestId is 0 or not in requestMap | requestId = " + requestId);
             return;
         }
 
-        // XposedBridge.log("Response " + requestId);
+        Helper.Log("Response " + requestId);
         List<RequestTypeOuterClass.RequestType> requestList = requestMap.get(requestId);
 
         for (int i = 0; i < requestList.size(); i++) {
             RequestTypeOuterClass.RequestType requestType = requestList.get(i);
             ByteString payload = responseEnvelop.getReturns(i);
-            // XposedBridge.log("Response " + requestType.toString());
+            Helper.Log("HandleResponse " + requestType.toString());
 
-            if (requestType == RequestTypeOuterClass.RequestType.ENCOUNTER
-                    || requestType == RequestTypeOuterClass.RequestType.DISK_ENCOUNTER
-                    || requestType == RequestTypeOuterClass.RequestType.INCENSE_ENCOUNTER) {
-                Encounter(payload);
+            if (requestType == RequestTypeOuterClass.RequestType.ENCOUNTER) {
+                Encounter(payload); // wild encounter
+            } else if (requestType == RequestTypeOuterClass.RequestType.DISK_ENCOUNTER) {
+                DiskEncounter(payload); // lured encounter
+            } else if (requestType == RequestTypeOuterClass.RequestType.INCENSE_ENCOUNTER) {
+                IncenseEncounter(payload); // incense encounter
             } else if (requestType == RequestTypeOuterClass.RequestType.CATCH_POKEMON) {
                 Catch(payload);
             }
@@ -132,18 +128,69 @@ public class IVChecker implements IXposedHookLoadPackage {
     }
 
     private void Encounter(ByteString payload) {
-
         EncounterResponseOuterClass.EncounterResponse encounterResponse;
         try {
             encounterResponse = EncounterResponseOuterClass.EncounterResponse.parseFrom(payload);
         } catch (InvalidProtocolBufferException e) {
-            XposedBridge.log("Parsing EncounterResponse failed " + e);
+            Helper.Log("Parsing EncounterResponse failed " + e);
             return;
         }
 
         PokemonDataOuterClass.PokemonData encounteredPokemon = encounterResponse.getWildPokemon().getPokemonData();
         CaptureProbabilityOuterClass.CaptureProbability captureProbability = encounterResponse.getCaptureProbability();
 
+        Helper.Log("encounterResponse = ", encounterResponse.getAllFields().entrySet());
+        createEncounterNotification(encounteredPokemon, captureProbability);
+
+    }
+
+    private void IncenseEncounter(ByteString payload) {
+        IncenseEncounterResponseOuterClass.IncenseEncounterResponse incenseEncounterResponse;
+        try {
+            incenseEncounterResponse = IncenseEncounterResponseOuterClass.IncenseEncounterResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing IncenseEncounterResponse failed " + e);
+            return;
+        }
+
+        PokemonDataOuterClass.PokemonData encounteredPokemon = incenseEncounterResponse.getPokemonData();
+        CaptureProbabilityOuterClass.CaptureProbability captureProbability = incenseEncounterResponse.getCaptureProbability();
+
+        Helper.Log("IncenseEncounter = ", incenseEncounterResponse.getAllFields().entrySet());
+        createEncounterNotification(encounteredPokemon, captureProbability);
+    }
+
+    private void DiskEncounter(ByteString payload) {
+        DiskEncounterResponseOuterClass.DiskEncounterResponse diskEncounterResponse;
+        try {
+            diskEncounterResponse = DiskEncounterResponseOuterClass.DiskEncounterResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing DiskEncounterResponse failed " + e);
+            return;
+        }
+
+        PokemonDataOuterClass.PokemonData encounteredPokemon = diskEncounterResponse.getPokemonData();
+        CaptureProbabilityOuterClass.CaptureProbability captureProbability = diskEncounterResponse.getCaptureProbability();
+
+        Helper.Log("DiskEncounterResponse = ", diskEncounterResponse.getAllFields().entrySet());
+        createEncounterNotification(encounteredPokemon, captureProbability);
+    }
+
+    private void Catch(ByteString payload) {
+
+        CatchPokemonResponseOuterClass.CatchPokemonResponse catchPokemonResponse;
+        try {
+            catchPokemonResponse = CatchPokemonResponseOuterClass.CatchPokemonResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing CatchPokemonResponse failed " + e);
+            return;
+        }
+
+        Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
+        Helper.showToast(catchPokemonResponse.getStatus().toString(), Toast.LENGTH_SHORT);
+    }
+
+    private void createEncounterNotification(PokemonDataOuterClass.PokemonData encounteredPokemon, CaptureProbabilityOuterClass.CaptureProbability captureProbability) {
         String pokemonName = encounteredPokemon.getPokemonId() + " (CP " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
@@ -153,26 +200,12 @@ public class IVChecker implements IXposedHookLoadPackage {
                 + "\n" + "Great Ball :\t" + captureProbability.getCaptureProbability(1)
                 + "\n" + "Ultra Ball :\t" + captureProbability.getCaptureProbability(2);
 
-        showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
-    }
-
-    private void Catch(ByteString payload) {
-
-        CatchPokemonResponseOuterClass.CatchPokemonResponse catchPokemonResponse;
-        try {
-            catchPokemonResponse = CatchPokemonResponseOuterClass.CatchPokemonResponse.parseFrom(payload);
-        } catch (InvalidProtocolBufferException e) {
-            XposedBridge.log("Parsing CatchPokemonResponse failed " + e);
-            return;
-        }
-
-        showToast(catchPokemonResponse.getStatus().toString(), Toast.LENGTH_SHORT);
+        Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }
 
     private double calcPotential(PokemonDataOuterClass.PokemonData encounteredPokemon) {
         return (double) Math.round(((encounteredPokemon.getIndividualAttack() + encounteredPokemon.getIndividualDefense() + encounteredPokemon.getIndividualStamina()) / 45.0 * 100.0) * 10) / 10;
     }
-
 
     private float calcLevel(float cpMultiplier) {
         float level = 1;
@@ -185,33 +218,4 @@ public class IVChecker implements IXposedHookLoadPackage {
         return level;
     }
 
-    private void showToast(final String message, final int length) {
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(AndroidAppHelper.currentApplication(), message, length).show();
-            }
-        });
-    }
-
-    private void showNotification(final String title, final String text, final String longText) {
-
-        final Context context = AndroidAppHelper.currentApplication();
-
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context);
-                mBuilder.setSmallIcon(android.R.color.background_light);
-                mBuilder.setContentTitle(title);
-                mBuilder.setContentText(text);
-                mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(longText));
-                mBuilder.setVibrate(new long[]{1000});
-                mBuilder.setPriority(Notification.PRIORITY_MAX);
-
-                NotificationManager mNotificationManager = (NotificationManager) AndroidAppHelper.currentApplication().getSystemService(Context.NOTIFICATION_SERVICE);
-                mNotificationManager.notify(699511, mBuilder.build());
-            }
-        });
-    }
 }
