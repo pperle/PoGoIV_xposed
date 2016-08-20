@@ -28,7 +28,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:multidex:1.0.1'
 
-    compile 'com.pokegoapi:PokeGOAPI-library:0.4.0'
+    compile 'com.google.protobuf:protobuf-java:3.0.0'
 
     provided 'de.robv.android.xposed:api:53'
+    provided 'de.robv.android.xposed:api:53:sources'
 }

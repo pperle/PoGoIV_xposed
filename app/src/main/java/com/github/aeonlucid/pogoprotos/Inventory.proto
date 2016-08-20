@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.inventory;
+
+option java_package = "com.github.aeonlucid.pogoprotos";
+option java_outer_classname = "Inventory";
+
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
+import "com/github/aeonlucid/pogoprotos/Data.proto";
+import "com/github/aeonlucid/pogoprotos/data/Player.proto";
+
+message Candy {
+	com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId family_id = 1;
+	int32 candy = 2;
+}
+
+enum EggIncubatorType {
+	INCUBATOR_UNSET = 0;
+	INCUBATOR_DISTANCE = 1;
+}
+
+message InventoryDelta {
+	int64 original_timestamp_ms = 1;
+	int64 new_timestamp_ms = 2;
+	repeated com.github.aeonlucid.pogoprotos.inventory.InventoryItem inventory_items = 3;
+}
+
+message AppliedItems {
+	repeated com.github.aeonlucid.pogoprotos.inventory.AppliedItem item = 4;
+}
+
+message InventoryUpgrades {
+	repeated InventoryUpgrade inventory_upgrades = 1;
+}
+
+message EggIncubator {
+	string id = 1;
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 2;
+	com.github.aeonlucid.pogoprotos.inventory.EggIncubatorType incubator_type = 3;
+	int32 uses_remaining = 4;
+	uint64 pokemon_id = 5; // TODO: Check if is PokemonType
+	double start_km_walked = 6;
+	double target_km_walked = 7;
+}
+
+enum InventoryUpgradeType {
+	UPGRADE_UNSET = 0;
+	INCREASE_ITEM_STORAGE = 1;
+	INCREASE_POKEMON_STORAGE = 2;
+}
+
+message InventoryItem {
+	int64 modified_timestamp_ms = 1;
+	DeletedItem deleted_item = 2;
+	com.github.aeonlucid.pogoprotos.inventory.InventoryItemData inventory_item_data = 3;
+	message DeletedItem {
+		fixed64 pokemon_id = 1;
+	}
+}
+
+message InventoryItemData {
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemData item = 2;
+	com.github.aeonlucid.pogoprotos.data.PokedexEntry pokedex_entry = 3;
+	com.github.aeonlucid.pogoprotos.data.player.PlayerStats player_stats = 4;
+	com.github.aeonlucid.pogoprotos.data.player.PlayerCurrency player_currency = 5;
+	com.github.aeonlucid.pogoprotos.data.player.PlayerCamera player_camera = 6;
+	com.github.aeonlucid.pogoprotos.inventory.InventoryUpgrades inventory_upgrades = 7;
+	com.github.aeonlucid.pogoprotos.inventory.AppliedItems applied_items = 8;
+	com.github.aeonlucid.pogoprotos.inventory.EggIncubators egg_incubators = 9;
+	com.github.aeonlucid.pogoprotos.inventory.Candy candy = 10;
+}
+
+message InventoryUpgrade {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	com.github.aeonlucid.pogoprotos.inventory.InventoryUpgradeType upgrade_type = 2;
+	int32 additional_storage = 3;
+}
+
+message EggIncubators {
+	repeated com.github.aeonlucid.pogoprotos.inventory.EggIncubator egg_incubator = 1;
+}
+
+message AppliedItem {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemType item_type = 2;
+	int64 expire_ms = 3;
+	int64 applied_ms = 4;
+}
+

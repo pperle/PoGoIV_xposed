@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.settings.master.pokemon;
+
+option java_package = "com.github.aeonlucid.pogoprotos.settings.master";
+option java_outer_classname = "Pokemon";
+
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+
+message CameraAttributes {
+	float disk_radius_m = 1;
+	float cylinder_radius_m = 2;
+	float cylinder_height_m = 3;
+	float cylinder_ground_m = 4;
+	float shoulder_mode_scale = 5;
+}
+
+message EncounterAttributes {
+	float base_capture_rate = 1;
+	float base_flee_rate = 2;
+	float collision_radius_m = 3;
+	float collision_height_m = 4;
+	float collision_head_radius_m = 5;
+	com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;
+	float movement_timer_s = 7;
+	float jump_time_s = 8;
+	float attack_timer_s = 9;
+}
+
+message StatsAttributes {
+	int32 base_stamina = 1;
+	int32 base_attack = 2;
+	int32 base_defense = 3;
+	int32 dodge_energy_delta = 8;
+}
+

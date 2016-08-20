@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.settings.master.item;
+
+option java_package = "com.github.aeonlucid.pogoprotos.settings.master";
+option java_outer_classname = "Item";
+
+import "com/github/aeonlucid/pogoprotos/Inventory.proto";
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+
+message FortModifierAttributes {
+	int32 modifier_lifetime_seconds = 1;
+	int32 troy_disk_num_pokemon_spawned = 2;
+}
+
+message EggIncubatorAttributes {
+  com.github.aeonlucid.pogoprotos.inventory.EggIncubatorType incubator_type = 1;
+  int32 uses = 2;
+  float distance_multiplier = 3;
+}
+
+message IncenseAttributes {
+	int32 incense_lifetime_seconds = 1;
+	repeated com.github.aeonlucid.pogoprotos.enums.PokemonType pokemon_type = 2;
+	float pokemon_incense_type_probability = 3;
+	int32 standing_time_between_encounters_seconds = 4;
+	int32 moving_time_between_encounter_seconds = 5;
+	int32 distance_required_for_shorter_interval_meters = 6;
+	int32 pokemon_attracted_length_sec = 7;
+}
+
+message ReviveAttributes {
+	float sta_percent = 1;
+}
+
+message FoodAttributes {
+	repeated com.github.aeonlucid.pogoprotos.enums.ItemEffect item_effect = 1;
+	repeated float item_effect_percent = 2;
+	float growth_percent = 3;
+}
+
+message ExperienceBoostAttributes {
+	float xp_multiplier = 1;
+	int32 boost_duration_ms = 2;
+}
+
+message BattleAttributes {
+	float sta_percent = 1;
+}
+
+message PotionAttributes {
+	float sta_percent = 1;
+	int32 sta_amount = 2;
+}
+
+message InventoryUpgradeAttributes {
+	int32 additional_storage = 1;
+	com.github.aeonlucid.pogoprotos.inventory.InventoryUpgradeType upgrade_type = 2;
+}
+
+message PokeballAttributes {
+	com.github.aeonlucid.pogoprotos.enums.ItemEffect item_effect = 1;
+	float capture_multi = 2;
+	float capture_multi_effect = 3;
+	float item_effect_mod = 4;
+}
+

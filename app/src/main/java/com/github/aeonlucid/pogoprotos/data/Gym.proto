@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.data.gym;
+
+option java_package = "com.github.aeonlucid.pogoprotos.data";
+option java_outer_classname = "Gym";
+
+import "com/github/aeonlucid/pogoprotos/Data.proto";
+import "com/github/aeonlucid/pogoprotos/data/Player.proto";
+import "com/github/aeonlucid/pogoprotos/map/Fort.proto";
+
+message GymMembership {
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;
+	com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;
+}
+
+message GymState {
+	com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;
+	repeated com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;
+}
+

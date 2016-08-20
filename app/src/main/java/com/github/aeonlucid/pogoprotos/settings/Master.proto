@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.settings.master;
+
+option java_package = "com.github.aeonlucid.pogoprotos.settings";
+option java_outer_classname = "Master";
+
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
+import "com/github/aeonlucid/pogoprotos/settings/master/Pokemon.proto";
+import "com/github/aeonlucid/pogoprotos/settings/master/Item.proto";
+
+message GymLevelSettings {
+	repeated int32 required_experience = 1;
+	repeated int32 leader_slots = 2;
+	repeated int32 trainer_slots = 3;
+	repeated int32 search_roll_bonus = 4;
+}
+
+message IapItemDisplay {
+	string sku = 1;
+	com.github.aeonlucid.pogoprotos.enums.HoloIapItemCategory category = 2;
+	int32 sort_order = 3;
+	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_ids = 4;
+	repeated int32 counts = 5;
+}
+
+message GymBattleSettings {
+	float energy_per_sec = 1;
+	float dodge_energy_cost = 2;
+	float retarget_seconds = 3;
+	float enemy_attack_interval = 4;
+	float attack_server_interval = 5;
+	float round_duration_seconds = 6;
+	float bonus_time_per_ally_seconds = 7;
+	int32 maximum_attackers_per_battle = 8;
+	float same_type_attack_bonus_multiplier = 9;
+	int32 maximum_energy = 10;
+	float energy_delta_per_health_lost = 11;
+	int32 dodge_duration_ms = 12;
+	int32 minimum_player_level = 13;
+	int32 swap_duration_ms = 14;
+	float dodge_damage_reduction_percent = 15;
+}
+
+message PokemonUpgradeSettings {
+	int32 upgrades_per_level = 1;
+	int32 allowed_levels_above_player = 2;
+	repeated int32 candy_cost = 3;
+	repeated int32 stardust_cost = 4;
+}
+
+message EquippedBadgeSettings {
+	int64 equip_badge_cooldown_ms = 1;
+	repeated float catch_probability_bonus = 2;
+	repeated float flee_probability_bonus = 3;
+}
+
+message EncounterSettings {
+	float spin_bonus_threshold = 1;
+	float excellent_throw_threshold = 2;
+	float great_throw_threshold = 3;
+	float nice_throw_threshold = 4;
+	int32 milestone_threshold = 5;
+}
+
+message PokemonSettings {
+	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;
+	float model_scale = 3;
+	com.github.aeonlucid.pogoprotos.enums.PokemonType type = 4;
+	com.github.aeonlucid.pogoprotos.enums.PokemonType type_2 = 5;
+	com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes camera = 6;
+	com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes encounter = 7;
+	com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes stats = 8;
+	repeated com.github.aeonlucid.pogoprotos.enums.PokemonMove quick_moves = 9;
+	repeated com.github.aeonlucid.pogoprotos.enums.PokemonMove cinematic_moves = 10;
+	repeated float animation_time = 11;
+	repeated com.github.aeonlucid.pogoprotos.enums.PokemonId evolution_ids = 12;
+	int32 evolution_pips = 13;
+	com.github.aeonlucid.pogoprotos.enums.PokemonRarity rarity = 14;
+	float pokedex_height_m = 15;
+	float pokedex_weight_kg = 16;
+	com.github.aeonlucid.pogoprotos.enums.PokemonId parent_pokemon_id = 17;
+	float height_std_dev = 18;
+	float weight_std_dev = 19;
+	float km_distance_to_hatch = 20;
+	com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId family_id = 21;
+	int32 candy_to_evolve = 22;
+}
+
+message IapSettings {
+	int32 daily_bonus_coins = 1;
+	repeated int32 daily_defender_bonus_per_pokemon = 2;
+	int32 daily_defender_bonus_max_defenders = 3;
+	repeated string daily_defender_bonus_currency = 4;
+	int64 min_time_between_claims_ms = 5;
+	bool daily_bonus_enabled = 6;
+	bool daily_defender_bonus_enabled = 7;
+}
+
+message BadgeSettings {
+	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
+	int32 badge_rank = 2;
+	repeated int32 targets = 3;
+}
+
+message CameraSettings {
+	string next_camera = 1;
+	repeated com.github.aeonlucid.pogoprotos.enums.CameraInterpolation interpolation = 2;
+	repeated com.github.aeonlucid.pogoprotos.enums.CameraTarget target_type = 3;
+	repeated float ease_in_speed = 4;
+	repeated float east_out_speed = 5;
+	repeated float duration_seconds = 6;
+	repeated float wait_seconds = 7;
+	repeated float transition_seconds = 8;
+	repeated float angle_degree = 9;
+	repeated float angle_offset_degree = 10;
+	repeated float pitch_degree = 11;
+	repeated float pitch_offset_degree = 12;
+	repeated float roll_degree = 13;
+	repeated float distance_meters = 14;
+	repeated float height_percent = 15;
+	repeated float vert_ctr_ratio = 16;
+}
+
+message PlayerLevelSettings {
+	repeated int32 rank_num = 1;
+	repeated int32 required_experience = 2;
+	repeated float cp_multiplier = 3;
+	int32 max_egg_player_level = 4;
+	int32 max_encounter_player_level = 5;
+}
+
+message ItemSettings {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemType item_type = 2;
+	com.github.aeonlucid.pogoprotos.enums.ItemCategory category = 3;
+	float drop_freq = 4;
+	int32 drop_trainer_level = 5;
+	// One of the below attributes will be set in the response, the others will be null.
+	com.github.aeonlucid.pogoprotos.settings.master.item.PokeballAttributes pokeball = 6;
+	com.github.aeonlucid.pogoprotos.settings.master.item.PotionAttributes potion = 7;
+	com.github.aeonlucid.pogoprotos.settings.master.item.ReviveAttributes revive = 8;
+	com.github.aeonlucid.pogoprotos.settings.master.item.BattleAttributes battle = 9;
+	com.github.aeonlucid.pogoprotos.settings.master.item.FoodAttributes food = 10;
+	com.github.aeonlucid.pogoprotos.settings.master.item.InventoryUpgradeAttributes inventory_upgrade = 11;
+	com.github.aeonlucid.pogoprotos.settings.master.item.ExperienceBoostAttributes xp_boost = 12;
+	com.github.aeonlucid.pogoprotos.settings.master.item.IncenseAttributes incense = 13;
+	com.github.aeonlucid.pogoprotos.settings.master.item.EggIncubatorAttributes egg_incubator = 14;
+	com.github.aeonlucid.pogoprotos.settings.master.item.FortModifierAttributes fort_modifier = 15;
+}
+
+message MoveSettings {
+	com.github.aeonlucid.pogoprotos.enums.PokemonMove movement_id = 1;
+	int32 animation_id = 2;
+	com.github.aeonlucid.pogoprotos.enums.PokemonType pokemon_type = 3;
+	float power = 4;
+	float accuracy_chance = 5;
+	float critical_chance = 6;
+	float heal_scalar = 7;
+	float stamina_loss_scalar = 8;
+	int32 trainer_level_min = 9;
+	int32 trainer_level_max = 10;
+	string vfx_name = 11;
+	int32 duration_ms = 12;
+	int32 damage_window_start_ms = 13;
+	int32 damage_window_end_ms = 14;
+	int32 energy_delta = 15;
+}
+
+message MoveSequenceSettings {
+	repeated string sequence = 1;
+}
+
+message TypeEffectiveSettings {
+	repeated float attack_scalar = 1;
+	com.github.aeonlucid.pogoprotos.enums.PokemonType attack_type = 2;
+}
+

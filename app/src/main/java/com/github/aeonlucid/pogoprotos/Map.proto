@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.map;
+
+option java_package = "com.github.aeonlucid.pogoprotos";
+option java_outer_classname = "Map";
+
+import "com/github/aeonlucid/pogoprotos/map/Fort.proto";
+import "com/github/aeonlucid/pogoprotos/map/Pokemon.proto";
+
+message MapCell {
+	// S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
+	uint64 s2_cell_id = 1;
+	int64 current_timestamp_ms = 2;
+	repeated com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;
+	repeated com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;
+	repeated string deleted_objects = 6;
+	bool is_truncated_list = 7;
+	repeated com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;
+	repeated com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;
+	// Pokemon within 2 steps or less.
+	repeated com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;
+	// Pokemon within 1 step or none.
+	repeated com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;
+	// Pokemon farther away than 2 steps, but still in the area.
+	repeated com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;
+}
+
+message SpawnPoint {
+	double latitude = 2;
+	double longitude = 3;
+}
+
+enum MapObjectsStatus {
+	UNSET_STATUS = 0;
+	SUCCESS = 1;
+	LOCATION_UNSET = 2;
+}
+

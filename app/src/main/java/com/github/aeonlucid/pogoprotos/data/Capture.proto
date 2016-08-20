@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.data.capture;
+
+option java_package = "com.github.aeonlucid.pogoprotos.data";
+option java_outer_classname = "Capture";
+
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
+
+message CaptureAward {
+	repeated com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1  [packed=true];
+	repeated int32 xp = 2  [packed=true];
+	repeated int32 candy = 3  [packed=true];
+	repeated int32 stardust = 4  [packed=true];
+}
+
+message CaptureProbability {
+	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed=true];
+	repeated float capture_probability = 2 [packed=true];
+	double reticle_difficulty_scale = 12;
+}
+
