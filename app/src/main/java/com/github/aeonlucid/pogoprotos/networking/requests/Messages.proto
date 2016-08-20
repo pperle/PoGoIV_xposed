@@ -1,0 +1,288 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.networking.requests.messages;
+
+option java_package = "com.github.aeonlucid.pogoprotos.networking.requests";
+option java_outer_classname = "Messages";
+
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
+import "com/github/aeonlucid/pogoprotos/data/Player.proto";
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/data/Battle.proto";
+
+message UpgradePokemonMessage {
+	fixed64 pokemon_id = 1;
+}
+
+message DownloadSettingsMessage {
+	string hash = 1;
+}
+
+message CatchPokemonMessage {
+	fixed64 encounter_id = 1;
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball = 2;
+	double normalized_reticle_size = 3;
+	string spawn_point_id = 4;
+	bool hit_pokemon = 5;
+	double spin_modifier = 6;
+	double normalized_hit_position = 7;
+}
+
+message UseItemPotionMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	fixed64 pokemon_id = 2;
+}
+
+message GetMapObjectsMessage {
+	repeated uint64 cell_id = 1 [packed=true];
+	repeated int64 since_timestamp_ms = 2 [packed=true];
+	double latitude = 3;
+	double longitude = 4;
+}
+
+message CollectDailyBonusMessage {
+	// No message needed.
+}
+
+message FortRecallPokemonMessage {
+	string fort_id = 1;
+	fixed64 pokemon_id = 2;
+	double player_latitude = 3;
+	double player_longitude = 4;
+}
+
+message SetContactSettingsMessage {
+	com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 1;
+}
+
+message EquipBadgeMessage {
+	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
+}
+
+message UseItemEggIncubatorMessage {
+	string item_id = 1;
+	uint64 pokemon_id = 2;
+}
+
+message UseItemReviveMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	fixed64 pokemon_id = 2;
+}
+
+message LevelUpRewardsMessage {
+	int32 level = 1;
+}
+
+message GetIncensePokemonMessage {
+	double player_latitude = 1;
+	double player_longitude = 2;
+}
+
+message FortSearchMessage {
+	string fort_id = 1;
+	double player_latitude = 2;
+	double player_longitude = 3;
+	double fort_latitude = 4;
+	double fort_longitude = 5;
+}
+
+message GetPlayerMessage {
+}
+
+message ReleasePokemonMessage {
+	fixed64 pokemon_id = 1;
+}
+
+message DownloadItemTemplatesMessage {
+	// No message needed.
+}
+
+message GetGymDetailsMessage {
+	string gym_id = 1;
+	double player_latitude = 2;
+	double player_longitude = 3;
+	double gym_latitude = 4;
+	double gym_longitude = 5;
+	string client_version = 6;
+}
+
+message GetHatchedEggsMessage {
+	// No message needed.
+}
+
+message StartGymBattleMessage {
+	string gym_id = 1;
+	repeated fixed64 attacking_pokemon_ids = 2;
+	fixed64 defending_pokemon_id = 3; // needs to be fixed64, tested by Grover
+	double player_latitude = 4;
+	double player_longitude = 5;
+}
+
+message GetSuggestedCodenamesMessage {
+	// No message needed.
+}
+
+message CollectDailyDefenderBonusMessage {
+	// No message needed.
+}
+
+message GetAssetDigestMessage {
+	com.github.aeonlucid.pogoprotos.enums.Platform platform = 1;
+	string device_manufacturer = 2;
+	string device_model = 3;
+	string locale = 4;
+	uint32 app_version = 5;
+}
+
+message ClaimCodenameMessage {
+	string codename = 1;
+}
+
+message SetAvatarMessage {
+	com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar player_avatar = 2;
+}
+
+message GetPlayerProfileMessage {
+	string player_name = 1;
+}
+
+message NicknamePokemonMessage {
+	fixed64 pokemon_id = 1;
+	string nickname = 2;
+}
+
+message PlayerUpdateMessage {
+	double latitude = 1;
+	double longitude = 2;
+}
+
+message EvolvePokemonMessage {
+	fixed64 pokemon_id = 1;
+}
+
+message FortDetailsMessage {
+	string fort_id = 1;
+	double latitude = 2;
+	double longitude = 3;
+}
+
+message UseIncenseMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId incense_type = 1;
+}
+
+message GetDownloadUrlsMessage {
+	repeated string asset_id = 1;
+}
+
+message SetPlayerTeamMessage {
+	com.github.aeonlucid.pogoprotos.enums.TeamColor team = 1;
+}
+
+message DownloadRemoteConfigVersionMessage {
+	com.github.aeonlucid.pogoprotos.enums.Platform platform = 1;
+	string device_manufacturer = 2;
+	string device_model = 3;
+	string locale = 4;
+	uint32 app_version = 5;
+}
+
+message EncounterMessage {
+	fixed64 encounter_id = 1;
+	string spawn_point_id = 2;
+	double player_latitude = 3;
+	double player_longitude = 4;
+}
+
+message EchoMessage {
+	// No message needed.
+}
+
+message CheckCodenameAvailableMessage {
+	string codename = 1;
+}
+
+message GetInventoryMessage {
+	int64 last_timestamp_ms = 1;
+	int32 item_been_seen = 2; // TODO: Find out what this is.
+}
+
+message FortDeployPokemonMessage {
+	string fort_id = 1;
+	fixed64 pokemon_id = 2;
+	double player_latitude = 3;
+	double player_longitude = 4;
+}
+
+message AddFortModifierMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId modifier_type = 1;
+	string fort_id = 2;
+	double player_latitude = 3;
+	double player_longitude = 4;
+}
+
+message UseItemXpBoostMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+}
+
+message MarkTutorialCompleteMessage {
+	repeated com.github.aeonlucid.pogoprotos.enums.TutorialState tutorials_completed = 1;
+	bool send_marketing_emails = 2;
+	bool send_push_notifications = 3;
+}
+
+message SfidaActionLogMessage {
+	// No message needed.
+}
+
+message IncenseEncounterMessage {
+	uint64 encounter_id = 1;
+	string encounter_location = 2;
+}
+
+message EncounterTutorialCompleteMessage {
+	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;
+}
+
+message UseItemCaptureMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	fixed64 encounter_id = 2;
+	string spawn_point_id = 3;
+}
+
+message CheckAwardedBadgesMessage {
+	// No message needed.
+}
+
+message AttackGymMessage {
+	string gym_id = 1;
+	string battle_id = 2;
+	repeated com.github.aeonlucid.pogoprotos.data.battle.BattleAction attack_actions = 3;
+	com.github.aeonlucid.pogoprotos.data.battle.BattleAction last_retrieved_actions = 4;
+	double player_latitude = 5;
+	double player_longitude = 6;
+}
+
+message UseItemGymMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	string gym_id = 2;
+	double player_latitude = 3;
+	double player_longitude = 4;
+}
+
+message SetFavoritePokemonMessage {
+	int64 pokemon_id = 1; // Do not change https://github.com/AeonLucid/com.github.aeonlucid.pogoprotos.pull/126
+	bool is_favorite = 2;
+}
+
+message DiskEncounterMessage {
+	uint64 encounter_id = 1;
+	string fort_id = 2;
+	double player_latitude = 3;
+	double player_longitude = 4;
+}
+
+message RecycleInventoryItemMessage {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	int32 count = 2;
+}
+

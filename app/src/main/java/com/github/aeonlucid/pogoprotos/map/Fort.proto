@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.map.fort;
+
+option java_package = "com.github.aeonlucid.pogoprotos.map";
+option java_outer_classname = "Fort";
+
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
+
+enum FortType {
+	GYM = 0;
+	CHECKPOINT = 1;
+}
+
+message FortLureInfo {
+	string fort_id = 1;
+	fixed64 encounter_id = 2;
+	com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;
+	int64 lure_expires_timestamp_ms = 4;
+}
+
+message FortData {
+	string id = 1;
+	int64 last_modified_timestamp_ms = 2;
+	double latitude = 3;
+	double longitude = 4;
+	bool enabled = 8;
+	com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;
+	//// Fields related to gyms only
+	// Team that owns the gym
+	com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;
+	// Highest CP Pokemon at the gym
+	com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;
+	int32 guard_pokemon_cp = 7;
+	// Prestigate / experience of the gym
+	int64 gym_points = 10;
+	// Whether someone is battling at the gym currently
+	bool is_in_battle = 11;
+	//// Fields related to pokestops only
+	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;
+	com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;
+	// Timestamp when the pokestop can be activated again to get items / xp
+	int64 cooldown_complete_timestamp_ms = 14;
+	com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;
+	com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;
+}
+
+message FortSummary {
+	string fort_summary_id = 1;
+	int64 last_modified_timestamp_ms = 2;
+	double latitude = 3;
+	double longitude = 4;
+}
+
+enum FortRenderingType {
+	DEFAULT = 0;
+	INTERNAL_TEST = 1;
+}
+
+enum FortSponsor {
+	UNSET_SPONSOR = 0;
+	MCDONALDS = 1;
+	POKEMON_STORE = 2;
+}
+
+message FortModifier {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	int64 expiration_timestamp_ms = 2;
+	string deployer_player_codename = 3;
+}
+

@@ -2,6 +2,10 @@ package de.chuparch0pper.android.xposed.pogoiv;
 
 import android.widget.Toast;
 
+import com.github.aeonlucid.pogoprotos.data.Capture;
+import com.github.aeonlucid.pogoprotos.networking.Envelopes;
+import com.github.aeonlucid.pogoprotos.networking.Requests;
+import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -13,15 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import POGOProtos.Data.Capture.CaptureProbabilityOuterClass;
-import POGOProtos.Data.PokemonDataOuterClass;
-import POGOProtos.Networking.Envelopes.RequestEnvelopeOuterClass;
-import POGOProtos.Networking.Envelopes.ResponseEnvelopeOuterClass;
-import POGOProtos.Networking.Requests.RequestTypeOuterClass;
-import POGOProtos.Networking.Responses.CatchPokemonResponseOuterClass;
-import POGOProtos.Networking.Responses.DiskEncounterResponseOuterClass;
-import POGOProtos.Networking.Responses.EncounterResponseOuterClass;
-import POGOProtos.Networking.Responses.IncenseEncounterResponseOuterClass;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
@@ -35,7 +30,7 @@ import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
  * This modul is based on his work on [Pokemon GO IV checker](http://repo.xposed.info/module/de.elfinlazz.android.xposed.pokemongo).
  */
 public class IVChecker implements IXposedHookLoadPackage {
-    private static final Map<Long, List<RequestTypeOuterClass.RequestType>> requestMap = new HashMap<>();
+    private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) throws Throwable {
@@ -60,10 +55,10 @@ public class IVChecker implements IXposedHookLoadPackage {
                 byte[] bytes = new byte[bodySize];
                 dRequestBody.get(bytes, bodyOffset, bodySize);
 
-                RequestEnvelopeOuterClass.RequestEnvelope requestEnvelop = RequestEnvelopeOuterClass.RequestEnvelope.parseFrom(bytes);
+                Envelopes.RequestEnvelope requestEnvelop = Envelopes.RequestEnvelope.parseFrom(bytes);
                 long requestId = requestEnvelop.getRequestId();
 
-                List<RequestTypeOuterClass.RequestType> requestList = new ArrayList<RequestTypeOuterClass.RequestType>();
+                List<Requests.RequestType> requestList = new ArrayList<Requests.RequestType>();
                 for (int i = 0; i < requestEnvelop.getRequestsCount(); i++) {
                     Helper.Log("doSyncRequest - " + requestEnvelop.getRequests(i).getRequestType().toString());
                     requestList.add(requestEnvelop.getRequests(i).getRequestType());
@@ -99,14 +94,14 @@ public class IVChecker implements IXposedHookLoadPackage {
     }
 
     /**
-     * checks buffer for {@link RequestTypeOuterClass.RequestType RequestType} and calls the associated method
+     * checks buffer for {@link Envelopes.ResponseEnvelope RequestType} and calls the associated method
      *
      * @param buffer return value of readDataSteam
      */
     private void HandleResponse(byte[] buffer) {
-        ResponseEnvelopeOuterClass.ResponseEnvelope responseEnvelop;
+        Envelopes.ResponseEnvelope responseEnvelop;
         try {
-            responseEnvelop = ResponseEnvelopeOuterClass.ResponseEnvelope.parseFrom(buffer);
+            responseEnvelop = Envelopes.ResponseEnvelope.parseFrom(buffer);
         } catch (InvalidProtocolBufferException e) {
             Helper.Log("Parsing response failed " + e);
             return;
@@ -119,36 +114,36 @@ public class IVChecker implements IXposedHookLoadPackage {
         }
 
         Helper.Log("Response " + requestId);
-        List<RequestTypeOuterClass.RequestType> requestList = requestMap.get(requestId);
+        List<Requests.RequestType> requestList = requestMap.get(requestId);
 
         for (int i = 0; i < requestList.size(); i++) {
-            RequestTypeOuterClass.RequestType requestType = requestList.get(i);
+            Requests.RequestType requestType = requestList.get(i);
             ByteString payload = responseEnvelop.getReturns(i);
             Helper.Log("HandleResponse " + requestType.toString());
 
-            if (requestType == RequestTypeOuterClass.RequestType.ENCOUNTER) {
+            if (requestType == Requests.RequestType.ENCOUNTER) {
                 Encounter(payload); // wild encounter
-            } else if (requestType == RequestTypeOuterClass.RequestType.DISK_ENCOUNTER) {
+            } else if (requestType == Requests.RequestType.DISK_ENCOUNTER) {
                 DiskEncounter(payload); // lured encounter
-            } else if (requestType == RequestTypeOuterClass.RequestType.INCENSE_ENCOUNTER) {
+            } else if (requestType == Requests.RequestType.INCENSE_ENCOUNTER) {
                 IncenseEncounter(payload); // incense encounter
-            } else if (requestType == RequestTypeOuterClass.RequestType.CATCH_POKEMON) {
+            } else if (requestType == Requests.RequestType.CATCH_POKEMON) {
                 Catch(payload);
             }
         }
     }
 
     private void Encounter(ByteString payload) {
-        EncounterResponseOuterClass.EncounterResponse encounterResponse;
+        Responses.EncounterResponse encounterResponse;
         try {
-            encounterResponse = EncounterResponseOuterClass.EncounterResponse.parseFrom(payload);
+            encounterResponse = Responses.EncounterResponse.parseFrom(payload);
         } catch (InvalidProtocolBufferException e) {
             Helper.Log("Parsing EncounterResponse failed " + e);
             return;
         }
 
-        PokemonDataOuterClass.PokemonData encounteredPokemon = encounterResponse.getWildPokemon().getPokemonData();
-        CaptureProbabilityOuterClass.CaptureProbability captureProbability = encounterResponse.getCaptureProbability();
+        com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon = encounterResponse.getWildPokemon().getPokemonData();
+        Capture.CaptureProbability captureProbability = encounterResponse.getCaptureProbability();
 
         Helper.Log("encounterResponse = ", encounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
@@ -156,32 +151,32 @@ public class IVChecker implements IXposedHookLoadPackage {
     }
 
     private void IncenseEncounter(ByteString payload) {
-        IncenseEncounterResponseOuterClass.IncenseEncounterResponse incenseEncounterResponse;
+        Responses.IncenseEncounterResponse incenseEncounterResponse;
         try {
-            incenseEncounterResponse = IncenseEncounterResponseOuterClass.IncenseEncounterResponse.parseFrom(payload);
+            incenseEncounterResponse = Responses.IncenseEncounterResponse.parseFrom(payload);
         } catch (InvalidProtocolBufferException e) {
             Helper.Log("Parsing IncenseEncounterResponse failed " + e);
             return;
         }
 
-        PokemonDataOuterClass.PokemonData encounteredPokemon = incenseEncounterResponse.getPokemonData();
-        CaptureProbabilityOuterClass.CaptureProbability captureProbability = incenseEncounterResponse.getCaptureProbability();
+        com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon = incenseEncounterResponse.getPokemonData();
+        Capture.CaptureProbability captureProbability = incenseEncounterResponse.getCaptureProbability();
 
         Helper.Log("IncenseEncounter = ", incenseEncounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
     }
 
     private void DiskEncounter(ByteString payload) {
-        DiskEncounterResponseOuterClass.DiskEncounterResponse diskEncounterResponse;
+        Responses.DiskEncounterResponse diskEncounterResponse;
         try {
-            diskEncounterResponse = DiskEncounterResponseOuterClass.DiskEncounterResponse.parseFrom(payload);
+            diskEncounterResponse = Responses.DiskEncounterResponse.parseFrom(payload);
         } catch (InvalidProtocolBufferException e) {
             Helper.Log("Parsing DiskEncounterResponse failed " + e);
             return;
         }
 
-        PokemonDataOuterClass.PokemonData encounteredPokemon = diskEncounterResponse.getPokemonData();
-        CaptureProbabilityOuterClass.CaptureProbability captureProbability = diskEncounterResponse.getCaptureProbability();
+        com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon = diskEncounterResponse.getPokemonData();
+        Capture.CaptureProbability captureProbability = diskEncounterResponse.getCaptureProbability();
 
         Helper.Log("DiskEncounterResponse = ", diskEncounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
@@ -189,9 +184,9 @@ public class IVChecker implements IXposedHookLoadPackage {
 
     private void Catch(ByteString payload) {
 
-        CatchPokemonResponseOuterClass.CatchPokemonResponse catchPokemonResponse;
+        Responses.CatchPokemonResponse catchPokemonResponse;
         try {
-            catchPokemonResponse = CatchPokemonResponseOuterClass.CatchPokemonResponse.parseFrom(payload);
+            catchPokemonResponse = Responses.CatchPokemonResponse.parseFrom(payload);
         } catch (InvalidProtocolBufferException e) {
             Helper.Log("Parsing CatchPokemonResponse failed " + e);
             return;
@@ -201,7 +196,7 @@ public class IVChecker implements IXposedHookLoadPackage {
         Helper.showToast(catchPokemonResponse.getStatus().toString(), Toast.LENGTH_SHORT);
     }
 
-    private void createEncounterNotification(PokemonDataOuterClass.PokemonData encounteredPokemon, CaptureProbabilityOuterClass.CaptureProbability captureProbability) {
+    private void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
         String pokemonName = encounteredPokemon.getPokemonId() + " (CP " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
@@ -214,7 +209,7 @@ public class IVChecker implements IXposedHookLoadPackage {
         Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }
 
-    private double calcPotential(PokemonDataOuterClass.PokemonData encounteredPokemon) {
+    private double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {
         return (double) Math.round(((encounteredPokemon.getIndividualAttack() + encounteredPokemon.getIndividualDefense() + encounteredPokemon.getIndividualStamina()) / 45.0 * 100.0) * 10) / 10;
     }
 

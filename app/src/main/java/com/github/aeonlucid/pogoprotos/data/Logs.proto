@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.data.logs;
+
+option java_package = "com.github.aeonlucid.pogoprotos.data";
+option java_outer_classname = "Logs";
+
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
+
+message CatchPokemonLogEntry {
+	com.github.aeonlucid.pogoprotos.data.logs.CatchPokemonLogEntry.Result result = 1;
+	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 2;
+	int32 combat_points = 3;
+	fixed64 pokemon_data_id = 4;
+	enum Result {
+		UNSET = 0;
+		POKEMON_CAPTURED = 1;
+		POKEMON_FLED = 2;
+		POKEMON_HATCHED = 3;
+	}
+}
+
+message ActionLogEntry {
+	int64 timestamp_ms = 1;
+	bool sfida = 2;
+	oneof Action {
+		com.github.aeonlucid.pogoprotos.data.logs.CatchPokemonLogEntry catch_pokemon = 3;
+		com.github.aeonlucid.pogoprotos.data.logs.FortSearchLogEntry fort_search = 4;
+	}
+}
+
+message FortSearchLogEntry {
+	com.github.aeonlucid.pogoprotos.data.logs.FortSearchLogEntry.Result result = 1;
+	string fort_id = 2;
+	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemData items = 3;
+	int32 eggs = 4;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+}
+
