@@ -8,8 +8,8 @@ android {
         applicationId "de.chuparch0pper.android.xposed.pogoiv"
         minSdkVersion 19
         targetSdkVersion 24
-        versionCode 6
-        versionName "1.2.3"
+        versionCode 7
+        versionName "1.3"
 
         // Enabling multidex support.
         multiDexEnabled true
