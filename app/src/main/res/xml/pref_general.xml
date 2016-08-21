@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="enable_module"
+        android:summary="@string/enable_module_summary"
+        android:title="@string/enable_module_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="show_iv_notification"
+        android:summary="@string/show_iv_notification_summary"
+        android:title="@string/show_iv_notification_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="show_caught_toast"
+        android:summary="@string/show_caught_toast_summary"
+        android:title="@string/show_caught_toast_title" />
+
+</PreferenceScreen>

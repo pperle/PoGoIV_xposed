@@ -18,7 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
+import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
@@ -29,13 +31,31 @@ import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
  * PoGoIV_xposed would not have been possible without the work of [elfinlazz](https://github.com/elfinlazz).
  * This modul is based on his work on [Pokemon GO IV checker](http://repo.xposed.info/module/de.elfinlazz.android.xposed.pokemongo).
  */
-public class IVChecker implements IXposedHookLoadPackage {
+public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit {
+    private static final String PACKAGE_NAME = IVChecker.class.getPackage().getName();
+    private static XSharedPreferences preferences;
+
+    private boolean enableModule;
+    private boolean showCaughtToast;
+    private boolean showIvNotification;
+
+
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
+
+
+    @Override
+    public void initZygote(StartupParam startupParam) throws Throwable {
+        loadSharedPreferences();
+    }
+
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) throws Throwable {
         if (!loadPackageParam.packageName.equals("com.nianticlabs.pokemongo"))
             return;
+
+        loadSharedPreferences();
+        checkIfModuleIsEnabled();
 
         final Class NiaNetClass = loadPackageParam.classLoader.loadClass("com.nianticlabs.nia.network.NiaNet");
 
@@ -121,17 +141,54 @@ public class IVChecker implements IXposedHookLoadPackage {
             ByteString payload = responseEnvelop.getReturns(i);
             Helper.Log("HandleResponse " + requestType.toString());
 
-            if (requestType == Requests.RequestType.ENCOUNTER) {
-                Encounter(payload); // wild encounter
-            } else if (requestType == Requests.RequestType.DISK_ENCOUNTER) {
-                DiskEncounter(payload); // lured encounter
-            } else if (requestType == Requests.RequestType.INCENSE_ENCOUNTER) {
-                IncenseEncounter(payload); // incense encounter
-            } else if (requestType == Requests.RequestType.CATCH_POKEMON) {
-                Catch(payload);
+
+            Helper.Log("showIvNotification= " + showIvNotification);
+            if (showIvNotification) {
+                switch (requestType) {
+                    case ENCOUNTER:
+                        Encounter(payload); // wild encounter
+                        break;
+                    case DISK_ENCOUNTER:
+                        DiskEncounter(payload); // lured encounter
+                        break;
+                    case INCENSE_ENCOUNTER:
+                        IncenseEncounter(payload); // incense encounter
+                        break;
+                }
+            }
+
+            Helper.Log("showCaughtToast= " + showCaughtToast);
+            if (showCaughtToast) {
+                if (requestType == Requests.RequestType.CATCH_POKEMON) {
+                    Catch(payload);
+                }
             }
         }
     }
+
+    private void checkIfModuleIsEnabled() {
+        if (!enableModule) {
+            return;
+        }
+    }
+
+    private void loadSharedPreferences() {
+        // might not work for everyone
+        // https://github.com/rovo89/XposedBridge/issues/102
+        preferences = new XSharedPreferences(PACKAGE_NAME);
+        preferences.reload();
+        boolean worldReadable = preferences.makeWorldReadable();
+        Helper.Log("worldReadable = " + worldReadable);
+
+        enableModule = preferences.getBoolean("enable_module", true);
+        showIvNotification = preferences.getBoolean("show_iv_notification", true);
+        showCaughtToast = preferences.getBoolean("show_caught_toast", true);
+
+        Helper.Log("preferences - enableModule = " + enableModule);
+        Helper.Log("preferences - showIvNotification = " + showIvNotification);
+        Helper.Log("preferences - showCaughtToast = " + showCaughtToast);
+    }
+
 
     private void Encounter(ByteString payload) {
         Responses.EncounterResponse encounterResponse;
