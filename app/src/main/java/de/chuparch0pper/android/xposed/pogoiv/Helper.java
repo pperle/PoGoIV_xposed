@@ -18,10 +18,12 @@ import java.util.Set;
 import de.robv.android.xposed.XposedBridge;
 
 public class Helper {
-
     public static final String PACKAGE_NAME = IVChecker.class.getPackage().getName();
+
     private static Context context = null;
     private static Context pokeContext = null;
+
+    private static String[] pokemonNames = null;
 
     public static void Log(String message) {
         if (BuildConfig.DEBUG) {
@@ -89,5 +91,16 @@ public class Helper {
             pokeContext = AndroidAppHelper.currentApplication();
         }
         return pokeContext;
+    }
+
+    public static void loadPokemonNames() {
+        pokemonNames = getContext().getResources().getStringArray(R.array.Pokemon);
+    }
+
+    public static String[] getPokemonNames() {
+        if (pokemonNames == null) {
+            loadPokemonNames();
+        }
+        return pokemonNames;
     }
 }

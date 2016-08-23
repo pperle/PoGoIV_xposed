@@ -38,10 +38,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private boolean showCaughtToast;
     private boolean showIvNotification;
 
-    private String[] pokemonNames;
-
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
-
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
@@ -55,8 +52,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         loadSharedPreferences();
         checkIfModuleIsEnabled();
-
-        loadPokemonNames();
 
         final Class NiaNetClass = loadPackageParam.classLoader.loadClass("com.nianticlabs.nia.network.NiaNet");
 
@@ -142,7 +137,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             ByteString payload = responseEnvelop.getReturns(i);
             Helper.Log("HandleResponse " + requestType.toString());
 
-            Helper.Log(Helper.getContext().getString(R.string.enable_module_summary)); // TODO remove
             Helper.Log("showIvNotification= " + showIvNotification);
             if (showIvNotification) {
                 switch (requestType) {
@@ -188,10 +182,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
         Helper.Log("preferences - showCaughtToast = " + showCaughtToast);
-    }
-
-    private void loadPokemonNames() {
-        pokemonNames = Helper.getContext().getResources().getStringArray(R.array.Pokemon);
     }
 
     private void Encounter(ByteString payload) {
@@ -271,7 +261,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     }
 
     private String getPokemonName(int pokemonNumber) {
-        return pokemonNames[pokemonNumber - 1];
+        return Helper.getPokemonNames()[pokemonNumber - 1];
     }
 
     private double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {
