@@ -1,12 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PoGoIV</string>
-
-    <string name="enable_module_summary">You need to restart (FORCE CLOSE) Pokémon Go for changes to take effect.</string>
-    <string name="enable_module_title">Enable Module</string>
-    <string name="show_iv_notification_summary">Notification containing Pokémon\'s IVs, level and capture probability.</string>
-    <string name="show_iv_notification_title">Show notification when encountering Pokémon</string>
-    <string name="show_caught_toast_summary">Toast that shows you if the Pokémon was caught (CATCH_ERROR, CATCH_SUCCESS, CATCH_ESCAPE, CATCH_FLEE, CATCH_MISSED)</string>
-    <string name="show_caught_toast_title">Show toast when Pokémon was caught</string>
 
     <string-array name="Pokemon">
         <item>Bulbasaur</item>
@@ -143,21 +136,21 @@
         <item>Ditto</item>
         <item>Eevee</item>
         <item>Vaporeon</item>
-        <item name="pokemon135">Jolteon</item>
+        <item>Jolteon</item>
         <item>Flareon</item>
         <item>Porygon</item>
-        <item name="pokemon138">Omanyte</item>
+        <item>Omanyte</item>
         <item>Omastar</item>
         <item>Kabuto</item>
-        <item name="pokemon141">Kabutops</item>
+        <item>Kabutops</item>
         <item>Aerodactyl</item>
         <item>Snorlax</item>
         <item>Articuno</item>
-        <item name="pokemon145">Zapdos</item>
+        <item>Zapdos</item>
         <item>Moltres</item>
         <item>Dratini</item>
         <item>Dragonair</item>
-        <item name="pokemon149">Dragonite</item>
+        <item>Dragonite</item>
         <item>Mewtwo</item>
         <item>Mew</item>
     </string-array>
