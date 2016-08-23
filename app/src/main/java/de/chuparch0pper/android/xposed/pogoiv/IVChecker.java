@@ -273,7 +273,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private float calcLevel(float cpMultiplier) {
         float level = 1;
         for (double currentCpM : Data.CpM) {
-            if (Math.abs(cpMultiplier - currentCpM) < 0.01) {
+            if (Math.abs(cpMultiplier - currentCpM) < 0.0001) {
                 return level;
             }
             level += 0.5;
