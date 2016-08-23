@@ -32,13 +32,13 @@ import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
  * This modul is based on his work on [Pokemon GO IV checker](http://repo.xposed.info/module/de.elfinlazz.android.xposed.pokemongo).
  */
 public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit {
-    private static final String PACKAGE_NAME = IVChecker.class.getPackage().getName();
     private static XSharedPreferences preferences;
 
     private boolean enableModule;
     private boolean showCaughtToast;
     private boolean showIvNotification;
 
+    private String[] pokemonNames;
 
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
 
@@ -48,7 +48,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         loadSharedPreferences();
     }
 
-
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) throws Throwable {
         if (!loadPackageParam.packageName.equals("com.nianticlabs.pokemongo"))
@@ -56,6 +55,8 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         loadSharedPreferences();
         checkIfModuleIsEnabled();
+
+        loadPokemonNames();
 
         final Class NiaNetClass = loadPackageParam.classLoader.loadClass("com.nianticlabs.nia.network.NiaNet");
 
@@ -141,7 +142,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             ByteString payload = responseEnvelop.getReturns(i);
             Helper.Log("HandleResponse " + requestType.toString());
 
-
+            Helper.Log(Helper.getContext().getString(R.string.enable_module_summary)); // TODO remove
             Helper.Log("showIvNotification= " + showIvNotification);
             if (showIvNotification) {
                 switch (requestType) {
@@ -175,7 +176,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private void loadSharedPreferences() {
         // might not work for everyone
         // https://github.com/rovo89/XposedBridge/issues/102
-        preferences = new XSharedPreferences(PACKAGE_NAME);
+        preferences = new XSharedPreferences(Helper.PACKAGE_NAME);
         preferences.reload();
         boolean worldReadable = preferences.makeWorldReadable();
         Helper.Log("worldReadable = " + worldReadable);
@@ -189,6 +190,9 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         Helper.Log("preferences - showCaughtToast = " + showCaughtToast);
     }
 
+    private void loadPokemonNames() {
+        pokemonNames = Helper.getContext().getResources().getStringArray(R.array.Pokemon);
+    }
 
     private void Encounter(ByteString payload) {
         Responses.EncounterResponse encounterResponse;
@@ -254,7 +258,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     }
 
     private void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
-        String pokemonName = encounteredPokemon.getPokemonId() + " (CP " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
+        String pokemonName = getPokemonName(encounteredPokemon.getPokemonIdValue()) + " (CP " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
                 + "\n\n" + "Moves: " + encounteredPokemon.getMove1() + ", " + encounteredPokemon.getMove2()
@@ -264,6 +268,10 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 + "\n" + "Ultra Ball :\t" + captureProbability.getCaptureProbability(2);
 
         Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
+    }
+
+    private String getPokemonName(int pokemonNumber) {
+        return pokemonNames[pokemonNumber - 1];
     }
 
     private double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {
