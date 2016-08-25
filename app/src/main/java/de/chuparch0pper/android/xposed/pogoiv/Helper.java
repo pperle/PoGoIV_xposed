@@ -54,7 +54,7 @@ public class Helper {
             @Override
             public void run() {
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getPokeContext());
-                mBuilder.setSmallIcon(android.R.color.background_light);
+                mBuilder.setSmallIcon(android.R.drawable.ic_dialog_info);
                 mBuilder.setContentTitle(title);
                 mBuilder.setContentText(text);
                 mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(longText));
