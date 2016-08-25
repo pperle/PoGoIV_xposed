@@ -252,10 +252,16 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
                 + "\n\n" + "Moves: " + Helper.getPokeMoveName(encounteredPokemon.getMove1()) + ", " + Helper.getPokeMoveName(encounteredPokemon.getMove2())
-                + "\n\n" + "CaptureProbability"
+                + "\n\n" + "Capture Probability:"
+                + "\n" + "Poké Ball:\t" +  getCatchRate(captureProbability, 0, 1) + "%\t (" + captureProbability.getCaptureProbability(0) + ")"
+                + "\n" + "Great Ball:\t" + getCatchRate(captureProbability, 1, 1) + "%\t (" + captureProbability.getCaptureProbability(1) + ")"
+                + "\n" + "Ultra Ball:\t" + getCatchRate(captureProbability, 2, 1) + "%\t (" + captureProbability.getCaptureProbability(2) + ")";
+
+                /* We still don't know how Razz Berries affect catch rate exactly, and how the x1.5 modifier is used in the formula
                 + "\n" + "Pokéball :\t" + getCatchRate(captureProbability, 0, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 0, 1.5) + "%)"
                 + "\n" + "Great Ball :\t" + getCatchRate(captureProbability, 1, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 1, 1.5) + "%)"
                 + "\n" + "Ultra Ball :\t" + getCatchRate(captureProbability, 2, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 2, 1.5) + "%)";
+                */
 
         Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }

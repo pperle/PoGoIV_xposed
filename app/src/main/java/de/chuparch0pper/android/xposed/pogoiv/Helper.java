@@ -122,7 +122,7 @@ public class Helper {
         for (String stringPart : splitPokeMoveNames) {
             pokeMoveName += stringPart.charAt(0) + stringPart.substring(1).toLowerCase() + " ";
         }
-        return pokeMoveName;
+        return pokeMoveName.trim();
     }
 
 
