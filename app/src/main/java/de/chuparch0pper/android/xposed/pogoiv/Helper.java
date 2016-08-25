@@ -10,6 +10,8 @@ import android.os.Looper;
 import android.support.v7.app.NotificationCompat;
 import android.widget.Toast;
 
+import com.github.aeonlucid.pogoprotos.Enums;
+import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.Descriptors;
 
 import java.util.Map;
@@ -102,5 +104,29 @@ public class Helper {
             loadPokemonNames();
         }
         return pokemonNames;
+    }
+
+    public static String getPokeMoveName(Enums.PokemonMove pokeMove) {
+        // switch (pokeMove) {} // TODO later.. there are more than 300 moves
+        return prettyPrintEnum(pokeMove.toString());
+    }
+
+
+    public static String getCatchName(Responses.CatchPokemonResponse.CatchStatus status) {
+        return prettyPrintEnum(status.toString());
+    }
+
+    private static String prettyPrintEnum(String enums) {
+        String pokeMoveName = "";
+        String[] splitPokeMoveNames = enums.split("_");
+        for (String stringPart : splitPokeMoveNames) {
+            pokeMoveName += stringPart.charAt(0) + stringPart.substring(1).toLowerCase() + " ";
+        }
+        return pokeMoveName;
+    }
+
+
+    public static String getCpName() {
+        return getContext().getResources().getString(R.string.cp);
     }
 }

@@ -27,7 +27,7 @@ import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
 /**
  * entry point for XposedBridge
- * <p/>
+ * <p>
  * PoGoIV_xposed would not have been possible without the work of [elfinlazz](https://github.com/elfinlazz).
  * This modul is based on his work on [Pokemon GO IV checker](http://repo.xposed.info/module/de.elfinlazz.android.xposed.pokemongo).
  */
@@ -244,14 +244,14 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         }
 
         Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
-        Helper.showToast(catchPokemonResponse.getStatus().toString(), Toast.LENGTH_SHORT);
+        Helper.showToast(Helper.getCatchName(catchPokemonResponse.getStatus()), Toast.LENGTH_SHORT);
     }
 
     private void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
-        String pokemonName = getPokemonName(encounteredPokemon.getPokemonIdValue()) + " (CP " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
+        String pokemonName = getPokemonName(encounteredPokemon.getPokemonIdValue()) + " (" + Helper.getCpName() + " " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
-                + "\n\n" + "Moves: " + encounteredPokemon.getMove1() + ", " + encounteredPokemon.getMove2()
+                + "\n\n" + "Moves: " + Helper.getPokeMoveName(encounteredPokemon.getMove1()) + ", " + Helper.getPokeMoveName(encounteredPokemon.getMove2())
                 + "\n\n" + "CaptureProbability"
                 + "\n" + "Pokéball :\t" + captureProbability.getCaptureProbability(0)
                 + "\n" + "Great Ball :\t" + captureProbability.getCaptureProbability(1)
