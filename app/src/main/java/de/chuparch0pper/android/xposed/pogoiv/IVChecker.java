@@ -27,7 +27,7 @@ import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
 /**
  * entry point for XposedBridge
- * <p>
+ * <p/>
  * PoGoIV_xposed would not have been possible without the work of [elfinlazz](https://github.com/elfinlazz).
  * This modul is based on his work on [Pokemon GO IV checker](http://repo.xposed.info/module/de.elfinlazz.android.xposed.pokemongo).
  */
@@ -253,11 +253,16 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         String pokemonIVandMoreInfo = pokemonIV
                 + "\n\n" + "Moves: " + Helper.getPokeMoveName(encounteredPokemon.getMove1()) + ", " + Helper.getPokeMoveName(encounteredPokemon.getMove2())
                 + "\n\n" + "CaptureProbability"
-                + "\n" + "Pokéball :\t" + captureProbability.getCaptureProbability(0)
-                + "\n" + "Great Ball :\t" + captureProbability.getCaptureProbability(1)
-                + "\n" + "Ultra Ball :\t" + captureProbability.getCaptureProbability(2);
+                + "\n" + "Pokéball :\t" + getCatchRate(captureProbability, 0, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 0, 1.5) + "%)"
+                + "\n" + "Great Ball :\t" + getCatchRate(captureProbability, 1, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 1, 1.5) + "%)"
+                + "\n" + "Ultra Ball :\t" + getCatchRate(captureProbability, 2, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 2, 1.5) + "%)";
 
         Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
+    }
+
+    private double getCatchRate(Capture.CaptureProbability captureProbability, int index, double multiplier) {
+        double captureRate = captureProbability.getCaptureProbability(index) * 100 * multiplier;
+        return Math.round(captureRate * 100.0) / 100.0;
     }
 
     private String getPokemonName(int pokemonNumber) {
