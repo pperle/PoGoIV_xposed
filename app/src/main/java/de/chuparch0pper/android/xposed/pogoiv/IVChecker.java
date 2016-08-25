@@ -261,8 +261,11 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     }
 
     private double getCatchRate(Capture.CaptureProbability captureProbability, int index, double multiplier) {
-        double captureRate = captureProbability.getCaptureProbability(index) * 100 * multiplier;
-        return Math.round(captureRate * 100.0) / 100.0;
+        double captureRate = captureProbability.getCaptureProbability(index) * 100d * multiplier;
+        if (captureRate > 100.0d) {
+            captureRate = 100.0d;
+        }
+        return Math.round(captureRate * 100.0d) / 100.0d;
     }
 
     private String getPokemonName(int pokemonNumber) {
