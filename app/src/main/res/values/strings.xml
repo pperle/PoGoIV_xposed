@@ -7,6 +7,8 @@
     <string name="show_iv_notification_title">Show notification when encountering Pokémon</string>
     <string name="show_caught_toast_summary">Toast that shows you if the Pokémon was caught (CATCH_ERROR, CATCH_SUCCESS, CATCH_ESCAPE, CATCH_FLEE, CATCH_MISSED)</string>
     <string name="show_caught_toast_title">Show toast when Pokémon was caught</string>
+    <string name="move_unset">move unset</string>
+    <string name="cp">CP</string>
 
     <string-array name="Pokemon">
         <item>Bulbasaur</item>
@@ -143,21 +145,21 @@
         <item>Ditto</item>
         <item>Eevee</item>
         <item>Vaporeon</item>
-        <item name="pokemon135">Jolteon</item>
+        <item>Jolteon</item>
         <item>Flareon</item>
         <item>Porygon</item>
-        <item name="pokemon138">Omanyte</item>
+        <item>Omanyte</item>
         <item>Omastar</item>
         <item>Kabuto</item>
-        <item name="pokemon141">Kabutops</item>
+        <item>Kabutops</item>
         <item>Aerodactyl</item>
         <item>Snorlax</item>
         <item>Articuno</item>
-        <item name="pokemon145">Zapdos</item>
+        <item>Zapdos</item>
         <item>Moltres</item>
         <item>Dratini</item>
         <item>Dragonair</item>
-        <item name="pokemon149">Dragonite</item>
+        <item>Dragonite</item>
         <item>Mewtwo</item>
         <item>Mew</item>
     </string-array>
