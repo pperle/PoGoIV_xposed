@@ -2,7 +2,11 @@ package de.chuparch0pper.android.xposed.pogoiv;
 
 import android.widget.Toast;
 
+import com.github.aeonlucid.pogoprotos.Enums;
 import com.github.aeonlucid.pogoprotos.data.Capture;
+import com.github.aeonlucid.pogoprotos.data.Gym;
+import com.github.aeonlucid.pogoprotos.data.Player;
+import com.github.aeonlucid.pogoprotos.map.Fort;
 import com.github.aeonlucid.pogoprotos.networking.Envelopes;
 import com.github.aeonlucid.pogoprotos.networking.Requests;
 import com.github.aeonlucid.pogoprotos.networking.Responses;
@@ -37,6 +41,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private boolean enableModule;
     private boolean showCaughtToast;
     private boolean showIvNotification;
+    private boolean showGymDetails;
 
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
 
@@ -158,6 +163,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     Catch(payload);
                 }
             }
+
+            Helper.Log("showGymDetails= " + showGymDetails);
+            if (showGymDetails) {
+                if (requestType == Requests.RequestType.GET_GYM_DETAILS) {
+                    GetGymDetails(payload);
+                }
+            }
         }
     }
 
@@ -178,10 +190,12 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         enableModule = preferences.getBoolean("enable_module", true);
         showIvNotification = preferences.getBoolean("show_iv_notification", true);
         showCaughtToast = preferences.getBoolean("show_caught_toast", true);
+        showGymDetails = preferences.getBoolean("show_gym_details", true);
 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
         Helper.Log("preferences - showCaughtToast = " + showCaughtToast);
+        Helper.Log("preferences - showGymDetails = " + showGymDetails);
     }
 
     private void Encounter(ByteString payload) {
@@ -245,6 +259,108 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
         Helper.showToast(Helper.getCatchName(catchPokemonResponse.getStatus()), Toast.LENGTH_SHORT);
+    }
+
+    private void GetGymDetails(ByteString payload) {
+
+        Responses.GetGymDetailsResponse getGymDetailsResponse;
+        try {
+            getGymDetailsResponse = Responses.GetGymDetailsResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing GetGymDetailsResponse failed " + e);
+            return;
+        }
+
+        Helper.Log("getGymDetailsResponse = ", getGymDetailsResponse.getAllFields().entrySet());
+
+        if (!getGymDetailsResponse.hasGymState())
+            return;
+
+        if (getGymDetailsResponse.getResult() != Responses.GetGymDetailsResponse.Result.SUCCESS) {
+            Helper.showToast("Error getting gym details: " + getGymDetailsResponse.getResult().toString(), Toast.LENGTH_LONG);
+            return;
+        }
+
+        final Gym.GymState gymState = getGymDetailsResponse.getGymState();
+
+        Enums.TeamColor ownedByTeam = Enums.TeamColor.UNRECOGNIZED;
+        long prestige = -1;
+        if (gymState.hasFortData()) {
+            Fort.FortData fortData = gymState.getFortData();
+            ownedByTeam = fortData.getOwnedByTeam();
+            prestige = fortData.getGymPoints();
+        }
+
+        final String title = "GYM: " + getGymDetailsResponse.getName();
+
+        final StringBuilder summary = new StringBuilder(64);
+        summary.append("Prestige: ").append(prestige).append(" | ");
+
+        switch (ownedByTeam) {
+            case NEUTRAL:
+                summary.append("Neutral Gym");
+                break;
+
+            case BLUE:
+                summary.append("Team Mystic");
+                break;
+
+            case RED:
+                summary.append("Team Valor");
+                break;
+
+            case YELLOW:
+                summary.append("Team Instinct");
+                break;
+
+            default:
+                summary.append("(Unknown color)");
+                break;
+        }
+
+        final int membershipsCount = gymState.getMembershipsCount();
+        summary.append(" | ").append(membershipsCount).append(" Defenders");
+
+        StringBuilder longText;
+
+        if (membershipsCount > 0) {
+            longText = new StringBuilder(1024);
+            longText.append("Defending Pokémon:");
+
+            for (Gym.GymMembership membership : gymState.getMembershipsList()) {
+                final Player.PlayerPublicProfile trainer = membership.getTrainerPublicProfile();
+                final com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = membership.getPokemonData();
+
+                longText.append('\n');
+                longText.append(getPokemonName(pokemonData.getPokemonIdValue()));
+
+                if (pokemonData.getFavorite() == 1)
+                    longText.append(" ★");
+
+                String nickname = pokemonData.getNickname();
+                if (!nickname.isEmpty())
+                    longText.append(" [").append(nickname).append("]");
+
+                longText.append(" | CP ").append(pokemonData.getCp());
+                longText.append(" | L. ").append(calcLevel(pokemonData.getCpMultiplier() + pokemonData.getAdditionalCpMultiplier()));
+                longText.append(" | HP ").append(pokemonData.getStaminaMax());
+                longText.append("\nGym Att.: ").append(pokemonData.getBattlesAttacked());
+                longText.append(", Def.: ").append(pokemonData.getBattlesDefended());
+                longText.append(" | Trainer: ").append(trainer.getName());
+                longText.append(", L. ").append(trainer.getLevel());
+                longText.append("\nIVs: ").append(calcPotential(pokemonData));
+                longText.append("% | ").append(pokemonData.getIndividualAttack());
+                longText.append("/").append(pokemonData.getIndividualDefense());
+                longText.append("/").append(pokemonData.getIndividualStamina());
+                longText.append("\nMoves: ").append(Helper.getPokeMoveName(pokemonData.getMove1()));
+                longText.append(", ").append(Helper.getPokeMoveName(pokemonData.getMove2()));
+            }
+        }
+        else {
+            longText = new StringBuilder("No defending Pokémon.");
+        }
+
+        Helper.showNotification(title, summary.toString(), longText.toString());
     }
 
     private void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
