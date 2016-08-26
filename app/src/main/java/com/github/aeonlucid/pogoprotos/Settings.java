@@ -14,69 +14,52 @@ public final class Settings {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface MapSettingsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.MapSettings)
+  public interface InventorySettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional double pokemon_visible_range = 1;</code>
+     * <code>optional int32 max_pokemon = 1;</code>
      */
-    double getPokemonVisibleRange();
+    int getMaxPokemon();
 
     /**
-     * <code>optional double poke_nav_range_meters = 2;</code>
+     * <code>optional int32 max_bag_items = 2;</code>
      */
-    double getPokeNavRangeMeters();
+    int getMaxBagItems();
 
     /**
-     * <code>optional double encounter_range_meters = 3;</code>
+     * <code>optional int32 base_pokemon = 3;</code>
      */
-    double getEncounterRangeMeters();
+    int getBasePokemon();
 
     /**
-     * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
+     * <code>optional int32 base_bag_items = 4;</code>
      */
-    float getGetMapObjectsMinRefreshSeconds();
+    int getBaseBagItems();
 
     /**
-     * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
+     * <code>optional int32 base_eggs = 5;</code>
      */
-    float getGetMapObjectsMaxRefreshSeconds();
-
-    /**
-     * <code>optional float get_map_objects_min_distance_meters = 6;</code>
-     */
-    float getGetMapObjectsMinDistanceMeters();
-
-    /**
-     * <code>optional string google_maps_api_key = 7;</code>
-     */
-    java.lang.String getGoogleMapsApiKey();
-    /**
-     * <code>optional string google_maps_api_key = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getGoogleMapsApiKeyBytes();
+    int getBaseEggs();
   }
   /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.MapSettings}
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.InventorySettings}
    */
-  public  static final class MapSettings extends
+  public  static final class InventorySettings extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.MapSettings)
-      MapSettingsOrBuilder {
-    // Use MapSettings.newBuilder() to construct.
-    private MapSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
+      InventorySettingsOrBuilder {
+    // Use InventorySettings.newBuilder() to construct.
+    private InventorySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MapSettings() {
-      pokemonVisibleRange_ = 0D;
-      pokeNavRangeMeters_ = 0D;
-      encounterRangeMeters_ = 0D;
-      getMapObjectsMinRefreshSeconds_ = 0F;
-      getMapObjectsMaxRefreshSeconds_ = 0F;
-      getMapObjectsMinDistanceMeters_ = 0F;
-      googleMapsApiKey_ = "";
+    private InventorySettings() {
+      maxPokemon_ = 0;
+      maxBagItems_ = 0;
+      basePokemon_ = 0;
+      baseBagItems_ = 0;
+      baseEggs_ = 0;
     }
 
     @java.lang.Override
@@ -84,7 +67,7 @@ public final class Settings {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private MapSettings(
+    private InventorySettings(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -104,922 +87,29 @@ public final class Settings {
               }
               break;
             }
-            case 9: {
+            case 8: {
 
-              pokemonVisibleRange_ = input.readDouble();
-              break;
-            }
-            case 17: {
-
-              pokeNavRangeMeters_ = input.readDouble();
-              break;
-            }
-            case 25: {
-
-              encounterRangeMeters_ = input.readDouble();
-              break;
-            }
-            case 37: {
-
-              getMapObjectsMinRefreshSeconds_ = input.readFloat();
-              break;
-            }
-            case 45: {
-
-              getMapObjectsMaxRefreshSeconds_ = input.readFloat();
-              break;
-            }
-            case 53: {
-
-              getMapObjectsMinDistanceMeters_ = input.readFloat();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              googleMapsApiKey_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Settings.MapSettings.class, com.github.aeonlucid.pogoprotos.Settings.MapSettings.Builder.class);
-    }
-
-    public static final int POKEMON_VISIBLE_RANGE_FIELD_NUMBER = 1;
-    private double pokemonVisibleRange_;
-    /**
-     * <code>optional double pokemon_visible_range = 1;</code>
-     */
-    public double getPokemonVisibleRange() {
-      return pokemonVisibleRange_;
-    }
-
-    public static final int POKE_NAV_RANGE_METERS_FIELD_NUMBER = 2;
-    private double pokeNavRangeMeters_;
-    /**
-     * <code>optional double poke_nav_range_meters = 2;</code>
-     */
-    public double getPokeNavRangeMeters() {
-      return pokeNavRangeMeters_;
-    }
-
-    public static final int ENCOUNTER_RANGE_METERS_FIELD_NUMBER = 3;
-    private double encounterRangeMeters_;
-    /**
-     * <code>optional double encounter_range_meters = 3;</code>
-     */
-    public double getEncounterRangeMeters() {
-      return encounterRangeMeters_;
-    }
-
-    public static final int GET_MAP_OBJECTS_MIN_REFRESH_SECONDS_FIELD_NUMBER = 4;
-    private float getMapObjectsMinRefreshSeconds_;
-    /**
-     * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
-     */
-    public float getGetMapObjectsMinRefreshSeconds() {
-      return getMapObjectsMinRefreshSeconds_;
-    }
-
-    public static final int GET_MAP_OBJECTS_MAX_REFRESH_SECONDS_FIELD_NUMBER = 5;
-    private float getMapObjectsMaxRefreshSeconds_;
-    /**
-     * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
-     */
-    public float getGetMapObjectsMaxRefreshSeconds() {
-      return getMapObjectsMaxRefreshSeconds_;
-    }
-
-    public static final int GET_MAP_OBJECTS_MIN_DISTANCE_METERS_FIELD_NUMBER = 6;
-    private float getMapObjectsMinDistanceMeters_;
-    /**
-     * <code>optional float get_map_objects_min_distance_meters = 6;</code>
-     */
-    public float getGetMapObjectsMinDistanceMeters() {
-      return getMapObjectsMinDistanceMeters_;
-    }
-
-    public static final int GOOGLE_MAPS_API_KEY_FIELD_NUMBER = 7;
-    private volatile java.lang.Object googleMapsApiKey_;
-    /**
-     * <code>optional string google_maps_api_key = 7;</code>
-     */
-    public java.lang.String getGoogleMapsApiKey() {
-      java.lang.Object ref = googleMapsApiKey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        googleMapsApiKey_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string google_maps_api_key = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getGoogleMapsApiKeyBytes() {
-      java.lang.Object ref = googleMapsApiKey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        googleMapsApiKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (pokemonVisibleRange_ != 0D) {
-        output.writeDouble(1, pokemonVisibleRange_);
-      }
-      if (pokeNavRangeMeters_ != 0D) {
-        output.writeDouble(2, pokeNavRangeMeters_);
-      }
-      if (encounterRangeMeters_ != 0D) {
-        output.writeDouble(3, encounterRangeMeters_);
-      }
-      if (getMapObjectsMinRefreshSeconds_ != 0F) {
-        output.writeFloat(4, getMapObjectsMinRefreshSeconds_);
-      }
-      if (getMapObjectsMaxRefreshSeconds_ != 0F) {
-        output.writeFloat(5, getMapObjectsMaxRefreshSeconds_);
-      }
-      if (getMapObjectsMinDistanceMeters_ != 0F) {
-        output.writeFloat(6, getMapObjectsMinDistanceMeters_);
-      }
-      if (!getGoogleMapsApiKeyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, googleMapsApiKey_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (pokemonVisibleRange_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, pokemonVisibleRange_);
-      }
-      if (pokeNavRangeMeters_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, pokeNavRangeMeters_);
-      }
-      if (encounterRangeMeters_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, encounterRangeMeters_);
-      }
-      if (getMapObjectsMinRefreshSeconds_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, getMapObjectsMinRefreshSeconds_);
-      }
-      if (getMapObjectsMaxRefreshSeconds_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, getMapObjectsMaxRefreshSeconds_);
-      }
-      if (getMapObjectsMinDistanceMeters_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, getMapObjectsMinDistanceMeters_);
-      }
-      if (!getGoogleMapsApiKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, googleMapsApiKey_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.MapSettings)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.Settings.MapSettings other = (com.github.aeonlucid.pogoprotos.Settings.MapSettings) obj;
-
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getPokemonVisibleRange())
-          == java.lang.Double.doubleToLongBits(
-              other.getPokemonVisibleRange()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getPokeNavRangeMeters())
-          == java.lang.Double.doubleToLongBits(
-              other.getPokeNavRangeMeters()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getEncounterRangeMeters())
-          == java.lang.Double.doubleToLongBits(
-              other.getEncounterRangeMeters()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getGetMapObjectsMinRefreshSeconds())
-          == java.lang.Float.floatToIntBits(
-              other.getGetMapObjectsMinRefreshSeconds()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getGetMapObjectsMaxRefreshSeconds())
-          == java.lang.Float.floatToIntBits(
-              other.getGetMapObjectsMaxRefreshSeconds()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getGetMapObjectsMinDistanceMeters())
-          == java.lang.Float.floatToIntBits(
-              other.getGetMapObjectsMinDistanceMeters()));
-      result = result && getGoogleMapsApiKey()
-          .equals(other.getGoogleMapsApiKey());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + POKEMON_VISIBLE_RANGE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPokemonVisibleRange()));
-      hash = (37 * hash) + POKE_NAV_RANGE_METERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPokeNavRangeMeters()));
-      hash = (37 * hash) + ENCOUNTER_RANGE_METERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getEncounterRangeMeters()));
-      hash = (37 * hash) + GET_MAP_OBJECTS_MIN_REFRESH_SECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getGetMapObjectsMinRefreshSeconds());
-      hash = (37 * hash) + GET_MAP_OBJECTS_MAX_REFRESH_SECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getGetMapObjectsMaxRefreshSeconds());
-      hash = (37 * hash) + GET_MAP_OBJECTS_MIN_DISTANCE_METERS_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getGetMapObjectsMinDistanceMeters());
-      hash = (37 * hash) + GOOGLE_MAPS_API_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getGoogleMapsApiKey().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.MapSettings prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.MapSettings}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.MapSettings)
-        com.github.aeonlucid.pogoprotos.Settings.MapSettingsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Settings.MapSettings.class, com.github.aeonlucid.pogoprotos.Settings.MapSettings.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.Settings.MapSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        pokemonVisibleRange_ = 0D;
-
-        pokeNavRangeMeters_ = 0D;
-
-        encounterRangeMeters_ = 0D;
-
-        getMapObjectsMinRefreshSeconds_ = 0F;
-
-        getMapObjectsMaxRefreshSeconds_ = 0F;
-
-        getMapObjectsMinDistanceMeters_ = 0F;
-
-        googleMapsApiKey_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Settings.MapSettings getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.MapSettings.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.Settings.MapSettings build() {
-        com.github.aeonlucid.pogoprotos.Settings.MapSettings result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Settings.MapSettings buildPartial() {
-        com.github.aeonlucid.pogoprotos.Settings.MapSettings result = new com.github.aeonlucid.pogoprotos.Settings.MapSettings(this);
-        result.pokemonVisibleRange_ = pokemonVisibleRange_;
-        result.pokeNavRangeMeters_ = pokeNavRangeMeters_;
-        result.encounterRangeMeters_ = encounterRangeMeters_;
-        result.getMapObjectsMinRefreshSeconds_ = getMapObjectsMinRefreshSeconds_;
-        result.getMapObjectsMaxRefreshSeconds_ = getMapObjectsMaxRefreshSeconds_;
-        result.getMapObjectsMinDistanceMeters_ = getMapObjectsMinDistanceMeters_;
-        result.googleMapsApiKey_ = googleMapsApiKey_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.MapSettings) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.MapSettings)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.MapSettings other) {
-        if (other == com.github.aeonlucid.pogoprotos.Settings.MapSettings.getDefaultInstance()) return this;
-        if (other.getPokemonVisibleRange() != 0D) {
-          setPokemonVisibleRange(other.getPokemonVisibleRange());
-        }
-        if (other.getPokeNavRangeMeters() != 0D) {
-          setPokeNavRangeMeters(other.getPokeNavRangeMeters());
-        }
-        if (other.getEncounterRangeMeters() != 0D) {
-          setEncounterRangeMeters(other.getEncounterRangeMeters());
-        }
-        if (other.getGetMapObjectsMinRefreshSeconds() != 0F) {
-          setGetMapObjectsMinRefreshSeconds(other.getGetMapObjectsMinRefreshSeconds());
-        }
-        if (other.getGetMapObjectsMaxRefreshSeconds() != 0F) {
-          setGetMapObjectsMaxRefreshSeconds(other.getGetMapObjectsMaxRefreshSeconds());
-        }
-        if (other.getGetMapObjectsMinDistanceMeters() != 0F) {
-          setGetMapObjectsMinDistanceMeters(other.getGetMapObjectsMinDistanceMeters());
-        }
-        if (!other.getGoogleMapsApiKey().isEmpty()) {
-          googleMapsApiKey_ = other.googleMapsApiKey_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Settings.MapSettings parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.MapSettings) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private double pokemonVisibleRange_ ;
-      /**
-       * <code>optional double pokemon_visible_range = 1;</code>
-       */
-      public double getPokemonVisibleRange() {
-        return pokemonVisibleRange_;
-      }
-      /**
-       * <code>optional double pokemon_visible_range = 1;</code>
-       */
-      public Builder setPokemonVisibleRange(double value) {
-        
-        pokemonVisibleRange_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double pokemon_visible_range = 1;</code>
-       */
-      public Builder clearPokemonVisibleRange() {
-        
-        pokemonVisibleRange_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pokeNavRangeMeters_ ;
-      /**
-       * <code>optional double poke_nav_range_meters = 2;</code>
-       */
-      public double getPokeNavRangeMeters() {
-        return pokeNavRangeMeters_;
-      }
-      /**
-       * <code>optional double poke_nav_range_meters = 2;</code>
-       */
-      public Builder setPokeNavRangeMeters(double value) {
-        
-        pokeNavRangeMeters_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double poke_nav_range_meters = 2;</code>
-       */
-      public Builder clearPokeNavRangeMeters() {
-        
-        pokeNavRangeMeters_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double encounterRangeMeters_ ;
-      /**
-       * <code>optional double encounter_range_meters = 3;</code>
-       */
-      public double getEncounterRangeMeters() {
-        return encounterRangeMeters_;
-      }
-      /**
-       * <code>optional double encounter_range_meters = 3;</code>
-       */
-      public Builder setEncounterRangeMeters(double value) {
-        
-        encounterRangeMeters_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double encounter_range_meters = 3;</code>
-       */
-      public Builder clearEncounterRangeMeters() {
-        
-        encounterRangeMeters_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private float getMapObjectsMinRefreshSeconds_ ;
-      /**
-       * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
-       */
-      public float getGetMapObjectsMinRefreshSeconds() {
-        return getMapObjectsMinRefreshSeconds_;
-      }
-      /**
-       * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
-       */
-      public Builder setGetMapObjectsMinRefreshSeconds(float value) {
-        
-        getMapObjectsMinRefreshSeconds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
-       */
-      public Builder clearGetMapObjectsMinRefreshSeconds() {
-        
-        getMapObjectsMinRefreshSeconds_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float getMapObjectsMaxRefreshSeconds_ ;
-      /**
-       * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
-       */
-      public float getGetMapObjectsMaxRefreshSeconds() {
-        return getMapObjectsMaxRefreshSeconds_;
-      }
-      /**
-       * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
-       */
-      public Builder setGetMapObjectsMaxRefreshSeconds(float value) {
-        
-        getMapObjectsMaxRefreshSeconds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
-       */
-      public Builder clearGetMapObjectsMaxRefreshSeconds() {
-        
-        getMapObjectsMaxRefreshSeconds_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float getMapObjectsMinDistanceMeters_ ;
-      /**
-       * <code>optional float get_map_objects_min_distance_meters = 6;</code>
-       */
-      public float getGetMapObjectsMinDistanceMeters() {
-        return getMapObjectsMinDistanceMeters_;
-      }
-      /**
-       * <code>optional float get_map_objects_min_distance_meters = 6;</code>
-       */
-      public Builder setGetMapObjectsMinDistanceMeters(float value) {
-        
-        getMapObjectsMinDistanceMeters_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float get_map_objects_min_distance_meters = 6;</code>
-       */
-      public Builder clearGetMapObjectsMinDistanceMeters() {
-        
-        getMapObjectsMinDistanceMeters_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object googleMapsApiKey_ = "";
-      /**
-       * <code>optional string google_maps_api_key = 7;</code>
-       */
-      public java.lang.String getGoogleMapsApiKey() {
-        java.lang.Object ref = googleMapsApiKey_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          googleMapsApiKey_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string google_maps_api_key = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getGoogleMapsApiKeyBytes() {
-        java.lang.Object ref = googleMapsApiKey_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          googleMapsApiKey_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string google_maps_api_key = 7;</code>
-       */
-      public Builder setGoogleMapsApiKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        googleMapsApiKey_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string google_maps_api_key = 7;</code>
-       */
-      public Builder clearGoogleMapsApiKey() {
-        
-        googleMapsApiKey_ = getDefaultInstance().getGoogleMapsApiKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string google_maps_api_key = 7;</code>
-       */
-      public Builder setGoogleMapsApiKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        googleMapsApiKey_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.MapSettings)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.MapSettings)
-    private static final com.github.aeonlucid.pogoprotos.Settings.MapSettings DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.MapSettings();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MapSettings>
-        PARSER = new com.google.protobuf.AbstractParser<MapSettings>() {
-      public MapSettings parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MapSettings(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MapSettings> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MapSettings> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.Settings.MapSettings getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FortSettingsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.FortSettings)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional double interaction_range_meters = 1;</code>
-     */
-    double getInteractionRangeMeters();
-
-    /**
-     * <code>optional int32 max_total_deployed_pokemon = 2;</code>
-     */
-    int getMaxTotalDeployedPokemon();
-
-    /**
-     * <code>optional int32 max_player_deployed_pokemon = 3;</code>
-     */
-    int getMaxPlayerDeployedPokemon();
-
-    /**
-     * <code>optional double deploy_stamina_multiplier = 4;</code>
-     */
-    double getDeployStaminaMultiplier();
-
-    /**
-     * <code>optional double deploy_attack_multiplier = 5;</code>
-     */
-    double getDeployAttackMultiplier();
-
-    /**
-     * <code>optional double far_interaction_range_meters = 6;</code>
-     */
-    double getFarInteractionRangeMeters();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.FortSettings}
-   */
-  public  static final class FortSettings extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.FortSettings)
-      FortSettingsOrBuilder {
-    // Use FortSettings.newBuilder() to construct.
-    private FortSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FortSettings() {
-      interactionRangeMeters_ = 0D;
-      maxTotalDeployedPokemon_ = 0;
-      maxPlayerDeployedPokemon_ = 0;
-      deployStaminaMultiplier_ = 0D;
-      deployAttackMultiplier_ = 0D;
-      farInteractionRangeMeters_ = 0D;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private FortSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 9: {
-
-              interactionRangeMeters_ = input.readDouble();
+              maxPokemon_ = input.readInt32();
               break;
             }
             case 16: {
 
-              maxTotalDeployedPokemon_ = input.readInt32();
+              maxBagItems_ = input.readInt32();
               break;
             }
             case 24: {
 
-              maxPlayerDeployedPokemon_ = input.readInt32();
+              basePokemon_ = input.readInt32();
               break;
             }
-            case 33: {
+            case 32: {
 
-              deployStaminaMultiplier_ = input.readDouble();
+              baseBagItems_ = input.readInt32();
               break;
             }
-            case 41: {
+            case 40: {
 
-              deployAttackMultiplier_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              farInteractionRangeMeters_ = input.readDouble();
+              baseEggs_ = input.readInt32();
               break;
             }
           }
@@ -1035,68 +125,59 @@ public final class Settings {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Settings.FortSettings.class, com.github.aeonlucid.pogoprotos.Settings.FortSettings.Builder.class);
+              com.github.aeonlucid.pogoprotos.Settings.InventorySettings.class, com.github.aeonlucid.pogoprotos.Settings.InventorySettings.Builder.class);
     }
 
-    public static final int INTERACTION_RANGE_METERS_FIELD_NUMBER = 1;
-    private double interactionRangeMeters_;
+    public static final int MAX_POKEMON_FIELD_NUMBER = 1;
+    private int maxPokemon_;
     /**
-     * <code>optional double interaction_range_meters = 1;</code>
+     * <code>optional int32 max_pokemon = 1;</code>
      */
-    public double getInteractionRangeMeters() {
-      return interactionRangeMeters_;
+    public int getMaxPokemon() {
+      return maxPokemon_;
     }
 
-    public static final int MAX_TOTAL_DEPLOYED_POKEMON_FIELD_NUMBER = 2;
-    private int maxTotalDeployedPokemon_;
+    public static final int MAX_BAG_ITEMS_FIELD_NUMBER = 2;
+    private int maxBagItems_;
     /**
-     * <code>optional int32 max_total_deployed_pokemon = 2;</code>
+     * <code>optional int32 max_bag_items = 2;</code>
      */
-    public int getMaxTotalDeployedPokemon() {
-      return maxTotalDeployedPokemon_;
+    public int getMaxBagItems() {
+      return maxBagItems_;
     }
 
-    public static final int MAX_PLAYER_DEPLOYED_POKEMON_FIELD_NUMBER = 3;
-    private int maxPlayerDeployedPokemon_;
+    public static final int BASE_POKEMON_FIELD_NUMBER = 3;
+    private int basePokemon_;
     /**
-     * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+     * <code>optional int32 base_pokemon = 3;</code>
      */
-    public int getMaxPlayerDeployedPokemon() {
-      return maxPlayerDeployedPokemon_;
+    public int getBasePokemon() {
+      return basePokemon_;
     }
 
-    public static final int DEPLOY_STAMINA_MULTIPLIER_FIELD_NUMBER = 4;
-    private double deployStaminaMultiplier_;
+    public static final int BASE_BAG_ITEMS_FIELD_NUMBER = 4;
+    private int baseBagItems_;
     /**
-     * <code>optional double deploy_stamina_multiplier = 4;</code>
+     * <code>optional int32 base_bag_items = 4;</code>
      */
-    public double getDeployStaminaMultiplier() {
-      return deployStaminaMultiplier_;
+    public int getBaseBagItems() {
+      return baseBagItems_;
     }
 
-    public static final int DEPLOY_ATTACK_MULTIPLIER_FIELD_NUMBER = 5;
-    private double deployAttackMultiplier_;
+    public static final int BASE_EGGS_FIELD_NUMBER = 5;
+    private int baseEggs_;
     /**
-     * <code>optional double deploy_attack_multiplier = 5;</code>
+     * <code>optional int32 base_eggs = 5;</code>
      */
-    public double getDeployAttackMultiplier() {
-      return deployAttackMultiplier_;
-    }
-
-    public static final int FAR_INTERACTION_RANGE_METERS_FIELD_NUMBER = 6;
-    private double farInteractionRangeMeters_;
-    /**
-     * <code>optional double far_interaction_range_meters = 6;</code>
-     */
-    public double getFarInteractionRangeMeters() {
-      return farInteractionRangeMeters_;
+    public int getBaseEggs() {
+      return baseEggs_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1111,23 +192,20 @@ public final class Settings {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (interactionRangeMeters_ != 0D) {
-        output.writeDouble(1, interactionRangeMeters_);
+      if (maxPokemon_ != 0) {
+        output.writeInt32(1, maxPokemon_);
       }
-      if (maxTotalDeployedPokemon_ != 0) {
-        output.writeInt32(2, maxTotalDeployedPokemon_);
+      if (maxBagItems_ != 0) {
+        output.writeInt32(2, maxBagItems_);
       }
-      if (maxPlayerDeployedPokemon_ != 0) {
-        output.writeInt32(3, maxPlayerDeployedPokemon_);
+      if (basePokemon_ != 0) {
+        output.writeInt32(3, basePokemon_);
       }
-      if (deployStaminaMultiplier_ != 0D) {
-        output.writeDouble(4, deployStaminaMultiplier_);
+      if (baseBagItems_ != 0) {
+        output.writeInt32(4, baseBagItems_);
       }
-      if (deployAttackMultiplier_ != 0D) {
-        output.writeDouble(5, deployAttackMultiplier_);
-      }
-      if (farInteractionRangeMeters_ != 0D) {
-        output.writeDouble(6, farInteractionRangeMeters_);
+      if (baseEggs_ != 0) {
+        output.writeInt32(5, baseEggs_);
       }
     }
 
@@ -1136,29 +214,25 @@ public final class Settings {
       if (size != -1) return size;
 
       size = 0;
-      if (interactionRangeMeters_ != 0D) {
+      if (maxPokemon_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, interactionRangeMeters_);
+          .computeInt32Size(1, maxPokemon_);
       }
-      if (maxTotalDeployedPokemon_ != 0) {
+      if (maxBagItems_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, maxTotalDeployedPokemon_);
+          .computeInt32Size(2, maxBagItems_);
       }
-      if (maxPlayerDeployedPokemon_ != 0) {
+      if (basePokemon_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, maxPlayerDeployedPokemon_);
+          .computeInt32Size(3, basePokemon_);
       }
-      if (deployStaminaMultiplier_ != 0D) {
+      if (baseBagItems_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, deployStaminaMultiplier_);
+          .computeInt32Size(4, baseBagItems_);
       }
-      if (deployAttackMultiplier_ != 0D) {
+      if (baseEggs_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, deployAttackMultiplier_);
-      }
-      if (farInteractionRangeMeters_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, farInteractionRangeMeters_);
+          .computeInt32Size(5, baseEggs_);
       }
       memoizedSize = size;
       return size;
@@ -1170,32 +244,22 @@ public final class Settings {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.FortSettings)) {
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.InventorySettings)) {
         return super.equals(obj);
       }
-      com.github.aeonlucid.pogoprotos.Settings.FortSettings other = (com.github.aeonlucid.pogoprotos.Settings.FortSettings) obj;
+      com.github.aeonlucid.pogoprotos.Settings.InventorySettings other = (com.github.aeonlucid.pogoprotos.Settings.InventorySettings) obj;
 
       boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getInteractionRangeMeters())
-          == java.lang.Double.doubleToLongBits(
-              other.getInteractionRangeMeters()));
-      result = result && (getMaxTotalDeployedPokemon()
-          == other.getMaxTotalDeployedPokemon());
-      result = result && (getMaxPlayerDeployedPokemon()
-          == other.getMaxPlayerDeployedPokemon());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDeployStaminaMultiplier())
-          == java.lang.Double.doubleToLongBits(
-              other.getDeployStaminaMultiplier()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDeployAttackMultiplier())
-          == java.lang.Double.doubleToLongBits(
-              other.getDeployAttackMultiplier()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getFarInteractionRangeMeters())
-          == java.lang.Double.doubleToLongBits(
-              other.getFarInteractionRangeMeters()));
+      result = result && (getMaxPokemon()
+          == other.getMaxPokemon());
+      result = result && (getMaxBagItems()
+          == other.getMaxBagItems());
+      result = result && (getBasePokemon()
+          == other.getBasePokemon());
+      result = result && (getBaseBagItems()
+          == other.getBaseBagItems());
+      result = result && (getBaseEggs()
+          == other.getBaseEggs());
       return result;
     }
 
@@ -1206,79 +270,73 @@ public final class Settings {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + INTERACTION_RANGE_METERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getInteractionRangeMeters()));
-      hash = (37 * hash) + MAX_TOTAL_DEPLOYED_POKEMON_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxTotalDeployedPokemon();
-      hash = (37 * hash) + MAX_PLAYER_DEPLOYED_POKEMON_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxPlayerDeployedPokemon();
-      hash = (37 * hash) + DEPLOY_STAMINA_MULTIPLIER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getDeployStaminaMultiplier()));
-      hash = (37 * hash) + DEPLOY_ATTACK_MULTIPLIER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getDeployAttackMultiplier()));
-      hash = (37 * hash) + FAR_INTERACTION_RANGE_METERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getFarInteractionRangeMeters()));
+      hash = (37 * hash) + MAX_POKEMON_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxPokemon();
+      hash = (37 * hash) + MAX_BAG_ITEMS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxBagItems();
+      hash = (37 * hash) + BASE_POKEMON_FIELD_NUMBER;
+      hash = (53 * hash) + getBasePokemon();
+      hash = (37 * hash) + BASE_BAG_ITEMS_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseBagItems();
+      hash = (37 * hash) + BASE_EGGS_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseEggs();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(byte[] data)
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseDelimitedFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1290,7 +348,7 @@ public final class Settings {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.FortSettings prototype) {
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.InventorySettings prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1305,25 +363,25 @@ public final class Settings {
       return builder;
     }
     /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.FortSettings}
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.InventorySettings}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.FortSettings)
-        com.github.aeonlucid.pogoprotos.Settings.FortSettingsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
+        com.github.aeonlucid.pogoprotos.Settings.InventorySettingsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Settings.FortSettings.class, com.github.aeonlucid.pogoprotos.Settings.FortSettings.Builder.class);
+                com.github.aeonlucid.pogoprotos.Settings.InventorySettings.class, com.github.aeonlucid.pogoprotos.Settings.InventorySettings.Builder.class);
       }
 
-      // Construct using com.github.aeonlucid.pogoprotos.Settings.FortSettings.newBuilder()
+      // Construct using com.github.aeonlucid.pogoprotos.Settings.InventorySettings.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1340,46 +398,43 @@ public final class Settings {
       }
       public Builder clear() {
         super.clear();
-        interactionRangeMeters_ = 0D;
+        maxPokemon_ = 0;
 
-        maxTotalDeployedPokemon_ = 0;
+        maxBagItems_ = 0;
 
-        maxPlayerDeployedPokemon_ = 0;
+        basePokemon_ = 0;
 
-        deployStaminaMultiplier_ = 0D;
+        baseBagItems_ = 0;
 
-        deployAttackMultiplier_ = 0D;
-
-        farInteractionRangeMeters_ = 0D;
+        baseEggs_ = 0;
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.FortSettings getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.FortSettings.getDefaultInstance();
+      public com.github.aeonlucid.pogoprotos.Settings.InventorySettings getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Settings.InventorySettings.getDefaultInstance();
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.FortSettings build() {
-        com.github.aeonlucid.pogoprotos.Settings.FortSettings result = buildPartial();
+      public com.github.aeonlucid.pogoprotos.Settings.InventorySettings build() {
+        com.github.aeonlucid.pogoprotos.Settings.InventorySettings result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.FortSettings buildPartial() {
-        com.github.aeonlucid.pogoprotos.Settings.FortSettings result = new com.github.aeonlucid.pogoprotos.Settings.FortSettings(this);
-        result.interactionRangeMeters_ = interactionRangeMeters_;
-        result.maxTotalDeployedPokemon_ = maxTotalDeployedPokemon_;
-        result.maxPlayerDeployedPokemon_ = maxPlayerDeployedPokemon_;
-        result.deployStaminaMultiplier_ = deployStaminaMultiplier_;
-        result.deployAttackMultiplier_ = deployAttackMultiplier_;
-        result.farInteractionRangeMeters_ = farInteractionRangeMeters_;
+      public com.github.aeonlucid.pogoprotos.Settings.InventorySettings buildPartial() {
+        com.github.aeonlucid.pogoprotos.Settings.InventorySettings result = new com.github.aeonlucid.pogoprotos.Settings.InventorySettings(this);
+        result.maxPokemon_ = maxPokemon_;
+        result.maxBagItems_ = maxBagItems_;
+        result.basePokemon_ = basePokemon_;
+        result.baseBagItems_ = baseBagItems_;
+        result.baseEggs_ = baseEggs_;
         onBuilt();
         return result;
       }
@@ -1411,33 +466,30 @@ public final class Settings {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.FortSettings) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.FortSettings)other);
+        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.InventorySettings) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.InventorySettings)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.FortSettings other) {
-        if (other == com.github.aeonlucid.pogoprotos.Settings.FortSettings.getDefaultInstance()) return this;
-        if (other.getInteractionRangeMeters() != 0D) {
-          setInteractionRangeMeters(other.getInteractionRangeMeters());
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.InventorySettings other) {
+        if (other == com.github.aeonlucid.pogoprotos.Settings.InventorySettings.getDefaultInstance()) return this;
+        if (other.getMaxPokemon() != 0) {
+          setMaxPokemon(other.getMaxPokemon());
         }
-        if (other.getMaxTotalDeployedPokemon() != 0) {
-          setMaxTotalDeployedPokemon(other.getMaxTotalDeployedPokemon());
+        if (other.getMaxBagItems() != 0) {
+          setMaxBagItems(other.getMaxBagItems());
         }
-        if (other.getMaxPlayerDeployedPokemon() != 0) {
-          setMaxPlayerDeployedPokemon(other.getMaxPlayerDeployedPokemon());
+        if (other.getBasePokemon() != 0) {
+          setBasePokemon(other.getBasePokemon());
         }
-        if (other.getDeployStaminaMultiplier() != 0D) {
-          setDeployStaminaMultiplier(other.getDeployStaminaMultiplier());
+        if (other.getBaseBagItems() != 0) {
+          setBaseBagItems(other.getBaseBagItems());
         }
-        if (other.getDeployAttackMultiplier() != 0D) {
-          setDeployAttackMultiplier(other.getDeployAttackMultiplier());
-        }
-        if (other.getFarInteractionRangeMeters() != 0D) {
-          setFarInteractionRangeMeters(other.getFarInteractionRangeMeters());
+        if (other.getBaseEggs() != 0) {
+          setBaseEggs(other.getBaseEggs());
         }
         onChanged();
         return this;
@@ -1451,11 +503,11 @@ public final class Settings {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Settings.FortSettings parsedMessage = null;
+        com.github.aeonlucid.pogoprotos.Settings.InventorySettings parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.FortSettings) e.getUnfinishedMessage();
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.InventorySettings) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1465,158 +517,132 @@ public final class Settings {
         return this;
       }
 
-      private double interactionRangeMeters_ ;
+      private int maxPokemon_ ;
       /**
-       * <code>optional double interaction_range_meters = 1;</code>
+       * <code>optional int32 max_pokemon = 1;</code>
        */
-      public double getInteractionRangeMeters() {
-        return interactionRangeMeters_;
+      public int getMaxPokemon() {
+        return maxPokemon_;
       }
       /**
-       * <code>optional double interaction_range_meters = 1;</code>
+       * <code>optional int32 max_pokemon = 1;</code>
        */
-      public Builder setInteractionRangeMeters(double value) {
+      public Builder setMaxPokemon(int value) {
         
-        interactionRangeMeters_ = value;
+        maxPokemon_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double interaction_range_meters = 1;</code>
+       * <code>optional int32 max_pokemon = 1;</code>
        */
-      public Builder clearInteractionRangeMeters() {
+      public Builder clearMaxPokemon() {
         
-        interactionRangeMeters_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private int maxTotalDeployedPokemon_ ;
-      /**
-       * <code>optional int32 max_total_deployed_pokemon = 2;</code>
-       */
-      public int getMaxTotalDeployedPokemon() {
-        return maxTotalDeployedPokemon_;
-      }
-      /**
-       * <code>optional int32 max_total_deployed_pokemon = 2;</code>
-       */
-      public Builder setMaxTotalDeployedPokemon(int value) {
-        
-        maxTotalDeployedPokemon_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 max_total_deployed_pokemon = 2;</code>
-       */
-      public Builder clearMaxTotalDeployedPokemon() {
-        
-        maxTotalDeployedPokemon_ = 0;
+        maxPokemon_ = 0;
         onChanged();
         return this;
       }
 
-      private int maxPlayerDeployedPokemon_ ;
+      private int maxBagItems_ ;
       /**
-       * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+       * <code>optional int32 max_bag_items = 2;</code>
        */
-      public int getMaxPlayerDeployedPokemon() {
-        return maxPlayerDeployedPokemon_;
+      public int getMaxBagItems() {
+        return maxBagItems_;
       }
       /**
-       * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+       * <code>optional int32 max_bag_items = 2;</code>
        */
-      public Builder setMaxPlayerDeployedPokemon(int value) {
+      public Builder setMaxBagItems(int value) {
         
-        maxPlayerDeployedPokemon_ = value;
+        maxBagItems_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+       * <code>optional int32 max_bag_items = 2;</code>
        */
-      public Builder clearMaxPlayerDeployedPokemon() {
+      public Builder clearMaxBagItems() {
         
-        maxPlayerDeployedPokemon_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double deployStaminaMultiplier_ ;
-      /**
-       * <code>optional double deploy_stamina_multiplier = 4;</code>
-       */
-      public double getDeployStaminaMultiplier() {
-        return deployStaminaMultiplier_;
-      }
-      /**
-       * <code>optional double deploy_stamina_multiplier = 4;</code>
-       */
-      public Builder setDeployStaminaMultiplier(double value) {
-        
-        deployStaminaMultiplier_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double deploy_stamina_multiplier = 4;</code>
-       */
-      public Builder clearDeployStaminaMultiplier() {
-        
-        deployStaminaMultiplier_ = 0D;
+        maxBagItems_ = 0;
         onChanged();
         return this;
       }
 
-      private double deployAttackMultiplier_ ;
+      private int basePokemon_ ;
       /**
-       * <code>optional double deploy_attack_multiplier = 5;</code>
+       * <code>optional int32 base_pokemon = 3;</code>
        */
-      public double getDeployAttackMultiplier() {
-        return deployAttackMultiplier_;
+      public int getBasePokemon() {
+        return basePokemon_;
       }
       /**
-       * <code>optional double deploy_attack_multiplier = 5;</code>
+       * <code>optional int32 base_pokemon = 3;</code>
        */
-      public Builder setDeployAttackMultiplier(double value) {
+      public Builder setBasePokemon(int value) {
         
-        deployAttackMultiplier_ = value;
+        basePokemon_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double deploy_attack_multiplier = 5;</code>
+       * <code>optional int32 base_pokemon = 3;</code>
        */
-      public Builder clearDeployAttackMultiplier() {
+      public Builder clearBasePokemon() {
         
-        deployAttackMultiplier_ = 0D;
+        basePokemon_ = 0;
         onChanged();
         return this;
       }
 
-      private double farInteractionRangeMeters_ ;
+      private int baseBagItems_ ;
       /**
-       * <code>optional double far_interaction_range_meters = 6;</code>
+       * <code>optional int32 base_bag_items = 4;</code>
        */
-      public double getFarInteractionRangeMeters() {
-        return farInteractionRangeMeters_;
+      public int getBaseBagItems() {
+        return baseBagItems_;
       }
       /**
-       * <code>optional double far_interaction_range_meters = 6;</code>
+       * <code>optional int32 base_bag_items = 4;</code>
        */
-      public Builder setFarInteractionRangeMeters(double value) {
+      public Builder setBaseBagItems(int value) {
         
-        farInteractionRangeMeters_ = value;
+        baseBagItems_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double far_interaction_range_meters = 6;</code>
+       * <code>optional int32 base_bag_items = 4;</code>
        */
-      public Builder clearFarInteractionRangeMeters() {
+      public Builder clearBaseBagItems() {
         
-        farInteractionRangeMeters_ = 0D;
+        baseBagItems_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int baseEggs_ ;
+      /**
+       * <code>optional int32 base_eggs = 5;</code>
+       */
+      public int getBaseEggs() {
+        return baseEggs_;
+      }
+      /**
+       * <code>optional int32 base_eggs = 5;</code>
+       */
+      public Builder setBaseEggs(int value) {
+        
+        baseEggs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 base_eggs = 5;</code>
+       */
+      public Builder clearBaseEggs() {
+        
+        baseEggs_ = 0;
         onChanged();
         return this;
       }
@@ -1631,39 +657,39 @@ public final class Settings {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.FortSettings)
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
     }
 
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.FortSettings)
-    private static final com.github.aeonlucid.pogoprotos.Settings.FortSettings DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
+    private static final com.github.aeonlucid.pogoprotos.Settings.InventorySettings DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.FortSettings();
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.InventorySettings();
     }
 
-    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings getDefaultInstance() {
+    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FortSettings>
-        PARSER = new com.google.protobuf.AbstractParser<FortSettings>() {
-      public FortSettings parsePartialFrom(
+    private static final com.google.protobuf.Parser<InventorySettings>
+        PARSER = new com.google.protobuf.AbstractParser<InventorySettings>() {
+      public InventorySettings parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FortSettings(input, extensionRegistry);
+          return new InventorySettings(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FortSettings> parser() {
+    public static com.google.protobuf.Parser<InventorySettings> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FortSettings> getParserForType() {
+    public com.google.protobuf.Parser<InventorySettings> getParserForType() {
       return PARSER;
     }
 
-    public com.github.aeonlucid.pogoprotos.Settings.FortSettings getDefaultInstanceForType() {
+    public com.github.aeonlucid.pogoprotos.Settings.InventorySettings getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3142,34 +2168,58 @@ public final class Settings {
 
   }
 
-  public interface LevelSettingsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
+  public interface FortSettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.FortSettings)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional double trainer_cp_modifier = 2;</code>
+     * <code>optional double interaction_range_meters = 1;</code>
      */
-    double getTrainerCpModifier();
+    double getInteractionRangeMeters();
 
     /**
-     * <code>optional double trainer_difficulty_modifier = 3;</code>
+     * <code>optional int32 max_total_deployed_pokemon = 2;</code>
      */
-    double getTrainerDifficultyModifier();
+    int getMaxTotalDeployedPokemon();
+
+    /**
+     * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+     */
+    int getMaxPlayerDeployedPokemon();
+
+    /**
+     * <code>optional double deploy_stamina_multiplier = 4;</code>
+     */
+    double getDeployStaminaMultiplier();
+
+    /**
+     * <code>optional double deploy_attack_multiplier = 5;</code>
+     */
+    double getDeployAttackMultiplier();
+
+    /**
+     * <code>optional double far_interaction_range_meters = 6;</code>
+     */
+    double getFarInteractionRangeMeters();
   }
   /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.LevelSettings}
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.FortSettings}
    */
-  public  static final class LevelSettings extends
+  public  static final class FortSettings extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
-      LevelSettingsOrBuilder {
-    // Use LevelSettings.newBuilder() to construct.
-    private LevelSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.FortSettings)
+      FortSettingsOrBuilder {
+    // Use FortSettings.newBuilder() to construct.
+    private FortSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private LevelSettings() {
-      trainerCpModifier_ = 0D;
-      trainerDifficultyModifier_ = 0D;
+    private FortSettings() {
+      interactionRangeMeters_ = 0D;
+      maxTotalDeployedPokemon_ = 0;
+      maxPlayerDeployedPokemon_ = 0;
+      deployStaminaMultiplier_ = 0D;
+      deployAttackMultiplier_ = 0D;
+      farInteractionRangeMeters_ = 0D;
     }
 
     @java.lang.Override
@@ -3177,7 +2227,7 @@ public final class Settings {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private LevelSettings(
+    private FortSettings(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3197,14 +2247,34 @@ public final class Settings {
               }
               break;
             }
-            case 17: {
+            case 9: {
 
-              trainerCpModifier_ = input.readDouble();
+              interactionRangeMeters_ = input.readDouble();
               break;
             }
-            case 25: {
+            case 16: {
 
-              trainerDifficultyModifier_ = input.readDouble();
+              maxTotalDeployedPokemon_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              maxPlayerDeployedPokemon_ = input.readInt32();
+              break;
+            }
+            case 33: {
+
+              deployStaminaMultiplier_ = input.readDouble();
+              break;
+            }
+            case 41: {
+
+              deployAttackMultiplier_ = input.readDouble();
+              break;
+            }
+            case 49: {
+
+              farInteractionRangeMeters_ = input.readDouble();
               break;
             }
           }
@@ -3220,32 +2290,68 @@ public final class Settings {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Settings.LevelSettings.class, com.github.aeonlucid.pogoprotos.Settings.LevelSettings.Builder.class);
+              com.github.aeonlucid.pogoprotos.Settings.FortSettings.class, com.github.aeonlucid.pogoprotos.Settings.FortSettings.Builder.class);
     }
 
-    public static final int TRAINER_CP_MODIFIER_FIELD_NUMBER = 2;
-    private double trainerCpModifier_;
+    public static final int INTERACTION_RANGE_METERS_FIELD_NUMBER = 1;
+    private double interactionRangeMeters_;
     /**
-     * <code>optional double trainer_cp_modifier = 2;</code>
+     * <code>optional double interaction_range_meters = 1;</code>
      */
-    public double getTrainerCpModifier() {
-      return trainerCpModifier_;
+    public double getInteractionRangeMeters() {
+      return interactionRangeMeters_;
     }
 
-    public static final int TRAINER_DIFFICULTY_MODIFIER_FIELD_NUMBER = 3;
-    private double trainerDifficultyModifier_;
+    public static final int MAX_TOTAL_DEPLOYED_POKEMON_FIELD_NUMBER = 2;
+    private int maxTotalDeployedPokemon_;
     /**
-     * <code>optional double trainer_difficulty_modifier = 3;</code>
+     * <code>optional int32 max_total_deployed_pokemon = 2;</code>
      */
-    public double getTrainerDifficultyModifier() {
-      return trainerDifficultyModifier_;
+    public int getMaxTotalDeployedPokemon() {
+      return maxTotalDeployedPokemon_;
+    }
+
+    public static final int MAX_PLAYER_DEPLOYED_POKEMON_FIELD_NUMBER = 3;
+    private int maxPlayerDeployedPokemon_;
+    /**
+     * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+     */
+    public int getMaxPlayerDeployedPokemon() {
+      return maxPlayerDeployedPokemon_;
+    }
+
+    public static final int DEPLOY_STAMINA_MULTIPLIER_FIELD_NUMBER = 4;
+    private double deployStaminaMultiplier_;
+    /**
+     * <code>optional double deploy_stamina_multiplier = 4;</code>
+     */
+    public double getDeployStaminaMultiplier() {
+      return deployStaminaMultiplier_;
+    }
+
+    public static final int DEPLOY_ATTACK_MULTIPLIER_FIELD_NUMBER = 5;
+    private double deployAttackMultiplier_;
+    /**
+     * <code>optional double deploy_attack_multiplier = 5;</code>
+     */
+    public double getDeployAttackMultiplier() {
+      return deployAttackMultiplier_;
+    }
+
+    public static final int FAR_INTERACTION_RANGE_METERS_FIELD_NUMBER = 6;
+    private double farInteractionRangeMeters_;
+    /**
+     * <code>optional double far_interaction_range_meters = 6;</code>
+     */
+    public double getFarInteractionRangeMeters() {
+      return farInteractionRangeMeters_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3260,11 +2366,23 @@ public final class Settings {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (trainerCpModifier_ != 0D) {
-        output.writeDouble(2, trainerCpModifier_);
+      if (interactionRangeMeters_ != 0D) {
+        output.writeDouble(1, interactionRangeMeters_);
       }
-      if (trainerDifficultyModifier_ != 0D) {
-        output.writeDouble(3, trainerDifficultyModifier_);
+      if (maxTotalDeployedPokemon_ != 0) {
+        output.writeInt32(2, maxTotalDeployedPokemon_);
+      }
+      if (maxPlayerDeployedPokemon_ != 0) {
+        output.writeInt32(3, maxPlayerDeployedPokemon_);
+      }
+      if (deployStaminaMultiplier_ != 0D) {
+        output.writeDouble(4, deployStaminaMultiplier_);
+      }
+      if (deployAttackMultiplier_ != 0D) {
+        output.writeDouble(5, deployAttackMultiplier_);
+      }
+      if (farInteractionRangeMeters_ != 0D) {
+        output.writeDouble(6, farInteractionRangeMeters_);
       }
     }
 
@@ -3273,13 +2391,29 @@ public final class Settings {
       if (size != -1) return size;
 
       size = 0;
-      if (trainerCpModifier_ != 0D) {
+      if (interactionRangeMeters_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, trainerCpModifier_);
+          .computeDoubleSize(1, interactionRangeMeters_);
       }
-      if (trainerDifficultyModifier_ != 0D) {
+      if (maxTotalDeployedPokemon_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, trainerDifficultyModifier_);
+          .computeInt32Size(2, maxTotalDeployedPokemon_);
+      }
+      if (maxPlayerDeployedPokemon_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, maxPlayerDeployedPokemon_);
+      }
+      if (deployStaminaMultiplier_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, deployStaminaMultiplier_);
+      }
+      if (deployAttackMultiplier_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, deployAttackMultiplier_);
+      }
+      if (farInteractionRangeMeters_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, farInteractionRangeMeters_);
       }
       memoizedSize = size;
       return size;
@@ -3291,20 +2425,32 @@ public final class Settings {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.LevelSettings)) {
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.FortSettings)) {
         return super.equals(obj);
       }
-      com.github.aeonlucid.pogoprotos.Settings.LevelSettings other = (com.github.aeonlucid.pogoprotos.Settings.LevelSettings) obj;
+      com.github.aeonlucid.pogoprotos.Settings.FortSettings other = (com.github.aeonlucid.pogoprotos.Settings.FortSettings) obj;
 
       boolean result = true;
       result = result && (
-          java.lang.Double.doubleToLongBits(getTrainerCpModifier())
+          java.lang.Double.doubleToLongBits(getInteractionRangeMeters())
           == java.lang.Double.doubleToLongBits(
-              other.getTrainerCpModifier()));
+              other.getInteractionRangeMeters()));
+      result = result && (getMaxTotalDeployedPokemon()
+          == other.getMaxTotalDeployedPokemon());
+      result = result && (getMaxPlayerDeployedPokemon()
+          == other.getMaxPlayerDeployedPokemon());
       result = result && (
-          java.lang.Double.doubleToLongBits(getTrainerDifficultyModifier())
+          java.lang.Double.doubleToLongBits(getDeployStaminaMultiplier())
           == java.lang.Double.doubleToLongBits(
-              other.getTrainerDifficultyModifier()));
+              other.getDeployStaminaMultiplier()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getDeployAttackMultiplier())
+          == java.lang.Double.doubleToLongBits(
+              other.getDeployAttackMultiplier()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getFarInteractionRangeMeters())
+          == java.lang.Double.doubleToLongBits(
+              other.getFarInteractionRangeMeters()));
       return result;
     }
 
@@ -3315,69 +2461,79 @@ public final class Settings {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + TRAINER_CP_MODIFIER_FIELD_NUMBER;
+      hash = (37 * hash) + INTERACTION_RANGE_METERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTrainerCpModifier()));
-      hash = (37 * hash) + TRAINER_DIFFICULTY_MODIFIER_FIELD_NUMBER;
+          java.lang.Double.doubleToLongBits(getInteractionRangeMeters()));
+      hash = (37 * hash) + MAX_TOTAL_DEPLOYED_POKEMON_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxTotalDeployedPokemon();
+      hash = (37 * hash) + MAX_PLAYER_DEPLOYED_POKEMON_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxPlayerDeployedPokemon();
+      hash = (37 * hash) + DEPLOY_STAMINA_MULTIPLIER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTrainerDifficultyModifier()));
+          java.lang.Double.doubleToLongBits(getDeployStaminaMultiplier()));
+      hash = (37 * hash) + DEPLOY_ATTACK_MULTIPLIER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getDeployAttackMultiplier()));
+      hash = (37 * hash) + FAR_INTERACTION_RANGE_METERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getFarInteractionRangeMeters()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(byte[] data)
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseDelimitedFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3389,7 +2545,7 @@ public final class Settings {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.LevelSettings prototype) {
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.FortSettings prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3404,25 +2560,25 @@ public final class Settings {
       return builder;
     }
     /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.LevelSettings}
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.FortSettings}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
-        com.github.aeonlucid.pogoprotos.Settings.LevelSettingsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.FortSettings)
+        com.github.aeonlucid.pogoprotos.Settings.FortSettingsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Settings.LevelSettings.class, com.github.aeonlucid.pogoprotos.Settings.LevelSettings.Builder.class);
+                com.github.aeonlucid.pogoprotos.Settings.FortSettings.class, com.github.aeonlucid.pogoprotos.Settings.FortSettings.Builder.class);
       }
 
-      // Construct using com.github.aeonlucid.pogoprotos.Settings.LevelSettings.newBuilder()
+      // Construct using com.github.aeonlucid.pogoprotos.Settings.FortSettings.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3439,34 +2595,46 @@ public final class Settings {
       }
       public Builder clear() {
         super.clear();
-        trainerCpModifier_ = 0D;
+        interactionRangeMeters_ = 0D;
 
-        trainerDifficultyModifier_ = 0D;
+        maxTotalDeployedPokemon_ = 0;
+
+        maxPlayerDeployedPokemon_ = 0;
+
+        deployStaminaMultiplier_ = 0D;
+
+        deployAttackMultiplier_ = 0D;
+
+        farInteractionRangeMeters_ = 0D;
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.LevelSettings getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.LevelSettings.getDefaultInstance();
+      public com.github.aeonlucid.pogoprotos.Settings.FortSettings getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Settings.FortSettings.getDefaultInstance();
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.LevelSettings build() {
-        com.github.aeonlucid.pogoprotos.Settings.LevelSettings result = buildPartial();
+      public com.github.aeonlucid.pogoprotos.Settings.FortSettings build() {
+        com.github.aeonlucid.pogoprotos.Settings.FortSettings result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.LevelSettings buildPartial() {
-        com.github.aeonlucid.pogoprotos.Settings.LevelSettings result = new com.github.aeonlucid.pogoprotos.Settings.LevelSettings(this);
-        result.trainerCpModifier_ = trainerCpModifier_;
-        result.trainerDifficultyModifier_ = trainerDifficultyModifier_;
+      public com.github.aeonlucid.pogoprotos.Settings.FortSettings buildPartial() {
+        com.github.aeonlucid.pogoprotos.Settings.FortSettings result = new com.github.aeonlucid.pogoprotos.Settings.FortSettings(this);
+        result.interactionRangeMeters_ = interactionRangeMeters_;
+        result.maxTotalDeployedPokemon_ = maxTotalDeployedPokemon_;
+        result.maxPlayerDeployedPokemon_ = maxPlayerDeployedPokemon_;
+        result.deployStaminaMultiplier_ = deployStaminaMultiplier_;
+        result.deployAttackMultiplier_ = deployAttackMultiplier_;
+        result.farInteractionRangeMeters_ = farInteractionRangeMeters_;
         onBuilt();
         return result;
       }
@@ -3498,21 +2666,33 @@ public final class Settings {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.LevelSettings) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.LevelSettings)other);
+        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.FortSettings) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.FortSettings)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.LevelSettings other) {
-        if (other == com.github.aeonlucid.pogoprotos.Settings.LevelSettings.getDefaultInstance()) return this;
-        if (other.getTrainerCpModifier() != 0D) {
-          setTrainerCpModifier(other.getTrainerCpModifier());
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.FortSettings other) {
+        if (other == com.github.aeonlucid.pogoprotos.Settings.FortSettings.getDefaultInstance()) return this;
+        if (other.getInteractionRangeMeters() != 0D) {
+          setInteractionRangeMeters(other.getInteractionRangeMeters());
         }
-        if (other.getTrainerDifficultyModifier() != 0D) {
-          setTrainerDifficultyModifier(other.getTrainerDifficultyModifier());
+        if (other.getMaxTotalDeployedPokemon() != 0) {
+          setMaxTotalDeployedPokemon(other.getMaxTotalDeployedPokemon());
+        }
+        if (other.getMaxPlayerDeployedPokemon() != 0) {
+          setMaxPlayerDeployedPokemon(other.getMaxPlayerDeployedPokemon());
+        }
+        if (other.getDeployStaminaMultiplier() != 0D) {
+          setDeployStaminaMultiplier(other.getDeployStaminaMultiplier());
+        }
+        if (other.getDeployAttackMultiplier() != 0D) {
+          setDeployAttackMultiplier(other.getDeployAttackMultiplier());
+        }
+        if (other.getFarInteractionRangeMeters() != 0D) {
+          setFarInteractionRangeMeters(other.getFarInteractionRangeMeters());
         }
         onChanged();
         return this;
@@ -3526,11 +2706,11 @@ public final class Settings {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Settings.LevelSettings parsedMessage = null;
+        com.github.aeonlucid.pogoprotos.Settings.FortSettings parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.LevelSettings) e.getUnfinishedMessage();
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.FortSettings) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3540,54 +2720,158 @@ public final class Settings {
         return this;
       }
 
-      private double trainerCpModifier_ ;
+      private double interactionRangeMeters_ ;
       /**
-       * <code>optional double trainer_cp_modifier = 2;</code>
+       * <code>optional double interaction_range_meters = 1;</code>
        */
-      public double getTrainerCpModifier() {
-        return trainerCpModifier_;
+      public double getInteractionRangeMeters() {
+        return interactionRangeMeters_;
       }
       /**
-       * <code>optional double trainer_cp_modifier = 2;</code>
+       * <code>optional double interaction_range_meters = 1;</code>
        */
-      public Builder setTrainerCpModifier(double value) {
+      public Builder setInteractionRangeMeters(double value) {
         
-        trainerCpModifier_ = value;
+        interactionRangeMeters_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double trainer_cp_modifier = 2;</code>
+       * <code>optional double interaction_range_meters = 1;</code>
        */
-      public Builder clearTrainerCpModifier() {
+      public Builder clearInteractionRangeMeters() {
         
-        trainerCpModifier_ = 0D;
+        interactionRangeMeters_ = 0D;
         onChanged();
         return this;
       }
 
-      private double trainerDifficultyModifier_ ;
+      private int maxTotalDeployedPokemon_ ;
       /**
-       * <code>optional double trainer_difficulty_modifier = 3;</code>
+       * <code>optional int32 max_total_deployed_pokemon = 2;</code>
        */
-      public double getTrainerDifficultyModifier() {
-        return trainerDifficultyModifier_;
+      public int getMaxTotalDeployedPokemon() {
+        return maxTotalDeployedPokemon_;
       }
       /**
-       * <code>optional double trainer_difficulty_modifier = 3;</code>
+       * <code>optional int32 max_total_deployed_pokemon = 2;</code>
        */
-      public Builder setTrainerDifficultyModifier(double value) {
+      public Builder setMaxTotalDeployedPokemon(int value) {
         
-        trainerDifficultyModifier_ = value;
+        maxTotalDeployedPokemon_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double trainer_difficulty_modifier = 3;</code>
+       * <code>optional int32 max_total_deployed_pokemon = 2;</code>
        */
-      public Builder clearTrainerDifficultyModifier() {
+      public Builder clearMaxTotalDeployedPokemon() {
         
-        trainerDifficultyModifier_ = 0D;
+        maxTotalDeployedPokemon_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxPlayerDeployedPokemon_ ;
+      /**
+       * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+       */
+      public int getMaxPlayerDeployedPokemon() {
+        return maxPlayerDeployedPokemon_;
+      }
+      /**
+       * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+       */
+      public Builder setMaxPlayerDeployedPokemon(int value) {
+        
+        maxPlayerDeployedPokemon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 max_player_deployed_pokemon = 3;</code>
+       */
+      public Builder clearMaxPlayerDeployedPokemon() {
+        
+        maxPlayerDeployedPokemon_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double deployStaminaMultiplier_ ;
+      /**
+       * <code>optional double deploy_stamina_multiplier = 4;</code>
+       */
+      public double getDeployStaminaMultiplier() {
+        return deployStaminaMultiplier_;
+      }
+      /**
+       * <code>optional double deploy_stamina_multiplier = 4;</code>
+       */
+      public Builder setDeployStaminaMultiplier(double value) {
+        
+        deployStaminaMultiplier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double deploy_stamina_multiplier = 4;</code>
+       */
+      public Builder clearDeployStaminaMultiplier() {
+        
+        deployStaminaMultiplier_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double deployAttackMultiplier_ ;
+      /**
+       * <code>optional double deploy_attack_multiplier = 5;</code>
+       */
+      public double getDeployAttackMultiplier() {
+        return deployAttackMultiplier_;
+      }
+      /**
+       * <code>optional double deploy_attack_multiplier = 5;</code>
+       */
+      public Builder setDeployAttackMultiplier(double value) {
+        
+        deployAttackMultiplier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double deploy_attack_multiplier = 5;</code>
+       */
+      public Builder clearDeployAttackMultiplier() {
+        
+        deployAttackMultiplier_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double farInteractionRangeMeters_ ;
+      /**
+       * <code>optional double far_interaction_range_meters = 6;</code>
+       */
+      public double getFarInteractionRangeMeters() {
+        return farInteractionRangeMeters_;
+      }
+      /**
+       * <code>optional double far_interaction_range_meters = 6;</code>
+       */
+      public Builder setFarInteractionRangeMeters(double value) {
+        
+        farInteractionRangeMeters_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double far_interaction_range_meters = 6;</code>
+       */
+      public Builder clearFarInteractionRangeMeters() {
+        
+        farInteractionRangeMeters_ = 0D;
         onChanged();
         return this;
       }
@@ -3602,39 +2886,39 @@ public final class Settings {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.FortSettings)
     }
 
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
-    private static final com.github.aeonlucid.pogoprotos.Settings.LevelSettings DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.FortSettings)
+    private static final com.github.aeonlucid.pogoprotos.Settings.FortSettings DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.LevelSettings();
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.FortSettings();
     }
 
-    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings getDefaultInstance() {
+    public static com.github.aeonlucid.pogoprotos.Settings.FortSettings getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<LevelSettings>
-        PARSER = new com.google.protobuf.AbstractParser<LevelSettings>() {
-      public LevelSettings parsePartialFrom(
+    private static final com.google.protobuf.Parser<FortSettings>
+        PARSER = new com.google.protobuf.AbstractParser<FortSettings>() {
+      public FortSettings parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LevelSettings(input, extensionRegistry);
+          return new FortSettings(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<LevelSettings> parser() {
+    public static com.google.protobuf.Parser<FortSettings> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<LevelSettings> getParserForType() {
+    public com.google.protobuf.Parser<FortSettings> getParserForType() {
       return PARSER;
     }
 
-    public com.github.aeonlucid.pogoprotos.Settings.LevelSettings getDefaultInstanceForType() {
+    public com.github.aeonlucid.pogoprotos.Settings.FortSettings getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4267,6 +3551,905 @@ public final class Settings {
 
   }
 
+  public interface MapSettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.MapSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional double pokemon_visible_range = 1;</code>
+     */
+    double getPokemonVisibleRange();
+
+    /**
+     * <code>optional double poke_nav_range_meters = 2;</code>
+     */
+    double getPokeNavRangeMeters();
+
+    /**
+     * <code>optional double encounter_range_meters = 3;</code>
+     */
+    double getEncounterRangeMeters();
+
+    /**
+     * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
+     */
+    float getGetMapObjectsMinRefreshSeconds();
+
+    /**
+     * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
+     */
+    float getGetMapObjectsMaxRefreshSeconds();
+
+    /**
+     * <code>optional float get_map_objects_min_distance_meters = 6;</code>
+     */
+    float getGetMapObjectsMinDistanceMeters();
+
+    /**
+     * <code>optional string google_maps_api_key = 7;</code>
+     */
+    java.lang.String getGoogleMapsApiKey();
+    /**
+     * <code>optional string google_maps_api_key = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getGoogleMapsApiKeyBytes();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.MapSettings}
+   */
+  public  static final class MapSettings extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.MapSettings)
+      MapSettingsOrBuilder {
+    // Use MapSettings.newBuilder() to construct.
+    private MapSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MapSettings() {
+      pokemonVisibleRange_ = 0D;
+      pokeNavRangeMeters_ = 0D;
+      encounterRangeMeters_ = 0D;
+      getMapObjectsMinRefreshSeconds_ = 0F;
+      getMapObjectsMaxRefreshSeconds_ = 0F;
+      getMapObjectsMinDistanceMeters_ = 0F;
+      googleMapsApiKey_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private MapSettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 9: {
+
+              pokemonVisibleRange_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              pokeNavRangeMeters_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              encounterRangeMeters_ = input.readDouble();
+              break;
+            }
+            case 37: {
+
+              getMapObjectsMinRefreshSeconds_ = input.readFloat();
+              break;
+            }
+            case 45: {
+
+              getMapObjectsMaxRefreshSeconds_ = input.readFloat();
+              break;
+            }
+            case 53: {
+
+              getMapObjectsMinDistanceMeters_ = input.readFloat();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              googleMapsApiKey_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.Settings.MapSettings.class, com.github.aeonlucid.pogoprotos.Settings.MapSettings.Builder.class);
+    }
+
+    public static final int POKEMON_VISIBLE_RANGE_FIELD_NUMBER = 1;
+    private double pokemonVisibleRange_;
+    /**
+     * <code>optional double pokemon_visible_range = 1;</code>
+     */
+    public double getPokemonVisibleRange() {
+      return pokemonVisibleRange_;
+    }
+
+    public static final int POKE_NAV_RANGE_METERS_FIELD_NUMBER = 2;
+    private double pokeNavRangeMeters_;
+    /**
+     * <code>optional double poke_nav_range_meters = 2;</code>
+     */
+    public double getPokeNavRangeMeters() {
+      return pokeNavRangeMeters_;
+    }
+
+    public static final int ENCOUNTER_RANGE_METERS_FIELD_NUMBER = 3;
+    private double encounterRangeMeters_;
+    /**
+     * <code>optional double encounter_range_meters = 3;</code>
+     */
+    public double getEncounterRangeMeters() {
+      return encounterRangeMeters_;
+    }
+
+    public static final int GET_MAP_OBJECTS_MIN_REFRESH_SECONDS_FIELD_NUMBER = 4;
+    private float getMapObjectsMinRefreshSeconds_;
+    /**
+     * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
+     */
+    public float getGetMapObjectsMinRefreshSeconds() {
+      return getMapObjectsMinRefreshSeconds_;
+    }
+
+    public static final int GET_MAP_OBJECTS_MAX_REFRESH_SECONDS_FIELD_NUMBER = 5;
+    private float getMapObjectsMaxRefreshSeconds_;
+    /**
+     * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
+     */
+    public float getGetMapObjectsMaxRefreshSeconds() {
+      return getMapObjectsMaxRefreshSeconds_;
+    }
+
+    public static final int GET_MAP_OBJECTS_MIN_DISTANCE_METERS_FIELD_NUMBER = 6;
+    private float getMapObjectsMinDistanceMeters_;
+    /**
+     * <code>optional float get_map_objects_min_distance_meters = 6;</code>
+     */
+    public float getGetMapObjectsMinDistanceMeters() {
+      return getMapObjectsMinDistanceMeters_;
+    }
+
+    public static final int GOOGLE_MAPS_API_KEY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object googleMapsApiKey_;
+    /**
+     * <code>optional string google_maps_api_key = 7;</code>
+     */
+    public java.lang.String getGoogleMapsApiKey() {
+      java.lang.Object ref = googleMapsApiKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        googleMapsApiKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string google_maps_api_key = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGoogleMapsApiKeyBytes() {
+      java.lang.Object ref = googleMapsApiKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        googleMapsApiKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (pokemonVisibleRange_ != 0D) {
+        output.writeDouble(1, pokemonVisibleRange_);
+      }
+      if (pokeNavRangeMeters_ != 0D) {
+        output.writeDouble(2, pokeNavRangeMeters_);
+      }
+      if (encounterRangeMeters_ != 0D) {
+        output.writeDouble(3, encounterRangeMeters_);
+      }
+      if (getMapObjectsMinRefreshSeconds_ != 0F) {
+        output.writeFloat(4, getMapObjectsMinRefreshSeconds_);
+      }
+      if (getMapObjectsMaxRefreshSeconds_ != 0F) {
+        output.writeFloat(5, getMapObjectsMaxRefreshSeconds_);
+      }
+      if (getMapObjectsMinDistanceMeters_ != 0F) {
+        output.writeFloat(6, getMapObjectsMinDistanceMeters_);
+      }
+      if (!getGoogleMapsApiKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, googleMapsApiKey_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (pokemonVisibleRange_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, pokemonVisibleRange_);
+      }
+      if (pokeNavRangeMeters_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, pokeNavRangeMeters_);
+      }
+      if (encounterRangeMeters_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, encounterRangeMeters_);
+      }
+      if (getMapObjectsMinRefreshSeconds_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, getMapObjectsMinRefreshSeconds_);
+      }
+      if (getMapObjectsMaxRefreshSeconds_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, getMapObjectsMaxRefreshSeconds_);
+      }
+      if (getMapObjectsMinDistanceMeters_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(6, getMapObjectsMinDistanceMeters_);
+      }
+      if (!getGoogleMapsApiKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, googleMapsApiKey_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.MapSettings)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.Settings.MapSettings other = (com.github.aeonlucid.pogoprotos.Settings.MapSettings) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPokemonVisibleRange())
+          == java.lang.Double.doubleToLongBits(
+              other.getPokemonVisibleRange()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPokeNavRangeMeters())
+          == java.lang.Double.doubleToLongBits(
+              other.getPokeNavRangeMeters()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getEncounterRangeMeters())
+          == java.lang.Double.doubleToLongBits(
+              other.getEncounterRangeMeters()));
+      result = result && (
+          java.lang.Float.floatToIntBits(getGetMapObjectsMinRefreshSeconds())
+          == java.lang.Float.floatToIntBits(
+              other.getGetMapObjectsMinRefreshSeconds()));
+      result = result && (
+          java.lang.Float.floatToIntBits(getGetMapObjectsMaxRefreshSeconds())
+          == java.lang.Float.floatToIntBits(
+              other.getGetMapObjectsMaxRefreshSeconds()));
+      result = result && (
+          java.lang.Float.floatToIntBits(getGetMapObjectsMinDistanceMeters())
+          == java.lang.Float.floatToIntBits(
+              other.getGetMapObjectsMinDistanceMeters()));
+      result = result && getGoogleMapsApiKey()
+          .equals(other.getGoogleMapsApiKey());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + POKEMON_VISIBLE_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPokemonVisibleRange()));
+      hash = (37 * hash) + POKE_NAV_RANGE_METERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPokeNavRangeMeters()));
+      hash = (37 * hash) + ENCOUNTER_RANGE_METERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getEncounterRangeMeters()));
+      hash = (37 * hash) + GET_MAP_OBJECTS_MIN_REFRESH_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getGetMapObjectsMinRefreshSeconds());
+      hash = (37 * hash) + GET_MAP_OBJECTS_MAX_REFRESH_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getGetMapObjectsMaxRefreshSeconds());
+      hash = (37 * hash) + GET_MAP_OBJECTS_MIN_DISTANCE_METERS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getGetMapObjectsMinDistanceMeters());
+      hash = (37 * hash) + GOOGLE_MAPS_API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleMapsApiKey().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.MapSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.MapSettings}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.MapSettings)
+        com.github.aeonlucid.pogoprotos.Settings.MapSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.Settings.MapSettings.class, com.github.aeonlucid.pogoprotos.Settings.MapSettings.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.Settings.MapSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        pokemonVisibleRange_ = 0D;
+
+        pokeNavRangeMeters_ = 0D;
+
+        encounterRangeMeters_ = 0D;
+
+        getMapObjectsMinRefreshSeconds_ = 0F;
+
+        getMapObjectsMaxRefreshSeconds_ = 0F;
+
+        getMapObjectsMinDistanceMeters_ = 0F;
+
+        googleMapsApiKey_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Settings.MapSettings getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Settings.MapSettings.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.Settings.MapSettings build() {
+        com.github.aeonlucid.pogoprotos.Settings.MapSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Settings.MapSettings buildPartial() {
+        com.github.aeonlucid.pogoprotos.Settings.MapSettings result = new com.github.aeonlucid.pogoprotos.Settings.MapSettings(this);
+        result.pokemonVisibleRange_ = pokemonVisibleRange_;
+        result.pokeNavRangeMeters_ = pokeNavRangeMeters_;
+        result.encounterRangeMeters_ = encounterRangeMeters_;
+        result.getMapObjectsMinRefreshSeconds_ = getMapObjectsMinRefreshSeconds_;
+        result.getMapObjectsMaxRefreshSeconds_ = getMapObjectsMaxRefreshSeconds_;
+        result.getMapObjectsMinDistanceMeters_ = getMapObjectsMinDistanceMeters_;
+        result.googleMapsApiKey_ = googleMapsApiKey_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.MapSettings) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.MapSettings)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.MapSettings other) {
+        if (other == com.github.aeonlucid.pogoprotos.Settings.MapSettings.getDefaultInstance()) return this;
+        if (other.getPokemonVisibleRange() != 0D) {
+          setPokemonVisibleRange(other.getPokemonVisibleRange());
+        }
+        if (other.getPokeNavRangeMeters() != 0D) {
+          setPokeNavRangeMeters(other.getPokeNavRangeMeters());
+        }
+        if (other.getEncounterRangeMeters() != 0D) {
+          setEncounterRangeMeters(other.getEncounterRangeMeters());
+        }
+        if (other.getGetMapObjectsMinRefreshSeconds() != 0F) {
+          setGetMapObjectsMinRefreshSeconds(other.getGetMapObjectsMinRefreshSeconds());
+        }
+        if (other.getGetMapObjectsMaxRefreshSeconds() != 0F) {
+          setGetMapObjectsMaxRefreshSeconds(other.getGetMapObjectsMaxRefreshSeconds());
+        }
+        if (other.getGetMapObjectsMinDistanceMeters() != 0F) {
+          setGetMapObjectsMinDistanceMeters(other.getGetMapObjectsMinDistanceMeters());
+        }
+        if (!other.getGoogleMapsApiKey().isEmpty()) {
+          googleMapsApiKey_ = other.googleMapsApiKey_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.Settings.MapSettings parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.MapSettings) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double pokemonVisibleRange_ ;
+      /**
+       * <code>optional double pokemon_visible_range = 1;</code>
+       */
+      public double getPokemonVisibleRange() {
+        return pokemonVisibleRange_;
+      }
+      /**
+       * <code>optional double pokemon_visible_range = 1;</code>
+       */
+      public Builder setPokemonVisibleRange(double value) {
+        
+        pokemonVisibleRange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double pokemon_visible_range = 1;</code>
+       */
+      public Builder clearPokemonVisibleRange() {
+        
+        pokemonVisibleRange_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double pokeNavRangeMeters_ ;
+      /**
+       * <code>optional double poke_nav_range_meters = 2;</code>
+       */
+      public double getPokeNavRangeMeters() {
+        return pokeNavRangeMeters_;
+      }
+      /**
+       * <code>optional double poke_nav_range_meters = 2;</code>
+       */
+      public Builder setPokeNavRangeMeters(double value) {
+        
+        pokeNavRangeMeters_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double poke_nav_range_meters = 2;</code>
+       */
+      public Builder clearPokeNavRangeMeters() {
+        
+        pokeNavRangeMeters_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double encounterRangeMeters_ ;
+      /**
+       * <code>optional double encounter_range_meters = 3;</code>
+       */
+      public double getEncounterRangeMeters() {
+        return encounterRangeMeters_;
+      }
+      /**
+       * <code>optional double encounter_range_meters = 3;</code>
+       */
+      public Builder setEncounterRangeMeters(double value) {
+        
+        encounterRangeMeters_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double encounter_range_meters = 3;</code>
+       */
+      public Builder clearEncounterRangeMeters() {
+        
+        encounterRangeMeters_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private float getMapObjectsMinRefreshSeconds_ ;
+      /**
+       * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
+       */
+      public float getGetMapObjectsMinRefreshSeconds() {
+        return getMapObjectsMinRefreshSeconds_;
+      }
+      /**
+       * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
+       */
+      public Builder setGetMapObjectsMinRefreshSeconds(float value) {
+        
+        getMapObjectsMinRefreshSeconds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float get_map_objects_min_refresh_seconds = 4;</code>
+       */
+      public Builder clearGetMapObjectsMinRefreshSeconds() {
+        
+        getMapObjectsMinRefreshSeconds_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float getMapObjectsMaxRefreshSeconds_ ;
+      /**
+       * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
+       */
+      public float getGetMapObjectsMaxRefreshSeconds() {
+        return getMapObjectsMaxRefreshSeconds_;
+      }
+      /**
+       * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
+       */
+      public Builder setGetMapObjectsMaxRefreshSeconds(float value) {
+        
+        getMapObjectsMaxRefreshSeconds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float get_map_objects_max_refresh_seconds = 5;</code>
+       */
+      public Builder clearGetMapObjectsMaxRefreshSeconds() {
+        
+        getMapObjectsMaxRefreshSeconds_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float getMapObjectsMinDistanceMeters_ ;
+      /**
+       * <code>optional float get_map_objects_min_distance_meters = 6;</code>
+       */
+      public float getGetMapObjectsMinDistanceMeters() {
+        return getMapObjectsMinDistanceMeters_;
+      }
+      /**
+       * <code>optional float get_map_objects_min_distance_meters = 6;</code>
+       */
+      public Builder setGetMapObjectsMinDistanceMeters(float value) {
+        
+        getMapObjectsMinDistanceMeters_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float get_map_objects_min_distance_meters = 6;</code>
+       */
+      public Builder clearGetMapObjectsMinDistanceMeters() {
+        
+        getMapObjectsMinDistanceMeters_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object googleMapsApiKey_ = "";
+      /**
+       * <code>optional string google_maps_api_key = 7;</code>
+       */
+      public java.lang.String getGoogleMapsApiKey() {
+        java.lang.Object ref = googleMapsApiKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          googleMapsApiKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string google_maps_api_key = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGoogleMapsApiKeyBytes() {
+        java.lang.Object ref = googleMapsApiKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          googleMapsApiKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string google_maps_api_key = 7;</code>
+       */
+      public Builder setGoogleMapsApiKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        googleMapsApiKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string google_maps_api_key = 7;</code>
+       */
+      public Builder clearGoogleMapsApiKey() {
+        
+        googleMapsApiKey_ = getDefaultInstance().getGoogleMapsApiKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string google_maps_api_key = 7;</code>
+       */
+      public Builder setGoogleMapsApiKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        googleMapsApiKey_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.MapSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.MapSettings)
+    private static final com.github.aeonlucid.pogoprotos.Settings.MapSettings DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.MapSettings();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Settings.MapSettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MapSettings>
+        PARSER = new com.google.protobuf.AbstractParser<MapSettings>() {
+      public MapSettings parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MapSettings(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MapSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MapSettings> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.Settings.MapSettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DownloadSettingsActionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.DownloadSettingsAction)
       com.google.protobuf.MessageOrBuilder {
@@ -4770,52 +4953,34 @@ public final class Settings {
 
   }
 
-  public interface InventorySettingsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
+  public interface LevelSettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 max_pokemon = 1;</code>
+     * <code>optional double trainer_cp_modifier = 2;</code>
      */
-    int getMaxPokemon();
+    double getTrainerCpModifier();
 
     /**
-     * <code>optional int32 max_bag_items = 2;</code>
+     * <code>optional double trainer_difficulty_modifier = 3;</code>
      */
-    int getMaxBagItems();
-
-    /**
-     * <code>optional int32 base_pokemon = 3;</code>
-     */
-    int getBasePokemon();
-
-    /**
-     * <code>optional int32 base_bag_items = 4;</code>
-     */
-    int getBaseBagItems();
-
-    /**
-     * <code>optional int32 base_eggs = 5;</code>
-     */
-    int getBaseEggs();
+    double getTrainerDifficultyModifier();
   }
   /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.InventorySettings}
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.LevelSettings}
    */
-  public  static final class InventorySettings extends
+  public  static final class LevelSettings extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
-      InventorySettingsOrBuilder {
-    // Use InventorySettings.newBuilder() to construct.
-    private InventorySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
+      LevelSettingsOrBuilder {
+    // Use LevelSettings.newBuilder() to construct.
+    private LevelSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private InventorySettings() {
-      maxPokemon_ = 0;
-      maxBagItems_ = 0;
-      basePokemon_ = 0;
-      baseBagItems_ = 0;
-      baseEggs_ = 0;
+    private LevelSettings() {
+      trainerCpModifier_ = 0D;
+      trainerDifficultyModifier_ = 0D;
     }
 
     @java.lang.Override
@@ -4823,7 +4988,7 @@ public final class Settings {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private InventorySettings(
+    private LevelSettings(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4843,29 +5008,14 @@ public final class Settings {
               }
               break;
             }
-            case 8: {
+            case 17: {
 
-              maxPokemon_ = input.readInt32();
+              trainerCpModifier_ = input.readDouble();
               break;
             }
-            case 16: {
+            case 25: {
 
-              maxBagItems_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              basePokemon_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              baseBagItems_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              baseEggs_ = input.readInt32();
+              trainerDifficultyModifier_ = input.readDouble();
               break;
             }
           }
@@ -4881,59 +5031,32 @@ public final class Settings {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable
+      return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Settings.InventorySettings.class, com.github.aeonlucid.pogoprotos.Settings.InventorySettings.Builder.class);
+              com.github.aeonlucid.pogoprotos.Settings.LevelSettings.class, com.github.aeonlucid.pogoprotos.Settings.LevelSettings.Builder.class);
     }
 
-    public static final int MAX_POKEMON_FIELD_NUMBER = 1;
-    private int maxPokemon_;
+    public static final int TRAINER_CP_MODIFIER_FIELD_NUMBER = 2;
+    private double trainerCpModifier_;
     /**
-     * <code>optional int32 max_pokemon = 1;</code>
+     * <code>optional double trainer_cp_modifier = 2;</code>
      */
-    public int getMaxPokemon() {
-      return maxPokemon_;
+    public double getTrainerCpModifier() {
+      return trainerCpModifier_;
     }
 
-    public static final int MAX_BAG_ITEMS_FIELD_NUMBER = 2;
-    private int maxBagItems_;
+    public static final int TRAINER_DIFFICULTY_MODIFIER_FIELD_NUMBER = 3;
+    private double trainerDifficultyModifier_;
     /**
-     * <code>optional int32 max_bag_items = 2;</code>
+     * <code>optional double trainer_difficulty_modifier = 3;</code>
      */
-    public int getMaxBagItems() {
-      return maxBagItems_;
-    }
-
-    public static final int BASE_POKEMON_FIELD_NUMBER = 3;
-    private int basePokemon_;
-    /**
-     * <code>optional int32 base_pokemon = 3;</code>
-     */
-    public int getBasePokemon() {
-      return basePokemon_;
-    }
-
-    public static final int BASE_BAG_ITEMS_FIELD_NUMBER = 4;
-    private int baseBagItems_;
-    /**
-     * <code>optional int32 base_bag_items = 4;</code>
-     */
-    public int getBaseBagItems() {
-      return baseBagItems_;
-    }
-
-    public static final int BASE_EGGS_FIELD_NUMBER = 5;
-    private int baseEggs_;
-    /**
-     * <code>optional int32 base_eggs = 5;</code>
-     */
-    public int getBaseEggs() {
-      return baseEggs_;
+    public double getTrainerDifficultyModifier() {
+      return trainerDifficultyModifier_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4948,20 +5071,11 @@ public final class Settings {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxPokemon_ != 0) {
-        output.writeInt32(1, maxPokemon_);
+      if (trainerCpModifier_ != 0D) {
+        output.writeDouble(2, trainerCpModifier_);
       }
-      if (maxBagItems_ != 0) {
-        output.writeInt32(2, maxBagItems_);
-      }
-      if (basePokemon_ != 0) {
-        output.writeInt32(3, basePokemon_);
-      }
-      if (baseBagItems_ != 0) {
-        output.writeInt32(4, baseBagItems_);
-      }
-      if (baseEggs_ != 0) {
-        output.writeInt32(5, baseEggs_);
+      if (trainerDifficultyModifier_ != 0D) {
+        output.writeDouble(3, trainerDifficultyModifier_);
       }
     }
 
@@ -4970,25 +5084,13 @@ public final class Settings {
       if (size != -1) return size;
 
       size = 0;
-      if (maxPokemon_ != 0) {
+      if (trainerCpModifier_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, maxPokemon_);
+          .computeDoubleSize(2, trainerCpModifier_);
       }
-      if (maxBagItems_ != 0) {
+      if (trainerDifficultyModifier_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, maxBagItems_);
-      }
-      if (basePokemon_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, basePokemon_);
-      }
-      if (baseBagItems_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, baseBagItems_);
-      }
-      if (baseEggs_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, baseEggs_);
+          .computeDoubleSize(3, trainerDifficultyModifier_);
       }
       memoizedSize = size;
       return size;
@@ -5000,22 +5102,20 @@ public final class Settings {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.InventorySettings)) {
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Settings.LevelSettings)) {
         return super.equals(obj);
       }
-      com.github.aeonlucid.pogoprotos.Settings.InventorySettings other = (com.github.aeonlucid.pogoprotos.Settings.InventorySettings) obj;
+      com.github.aeonlucid.pogoprotos.Settings.LevelSettings other = (com.github.aeonlucid.pogoprotos.Settings.LevelSettings) obj;
 
       boolean result = true;
-      result = result && (getMaxPokemon()
-          == other.getMaxPokemon());
-      result = result && (getMaxBagItems()
-          == other.getMaxBagItems());
-      result = result && (getBasePokemon()
-          == other.getBasePokemon());
-      result = result && (getBaseBagItems()
-          == other.getBaseBagItems());
-      result = result && (getBaseEggs()
-          == other.getBaseEggs());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTrainerCpModifier())
+          == java.lang.Double.doubleToLongBits(
+              other.getTrainerCpModifier()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTrainerDifficultyModifier())
+          == java.lang.Double.doubleToLongBits(
+              other.getTrainerDifficultyModifier()));
       return result;
     }
 
@@ -5026,73 +5126,69 @@ public final class Settings {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + MAX_POKEMON_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxPokemon();
-      hash = (37 * hash) + MAX_BAG_ITEMS_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxBagItems();
-      hash = (37 * hash) + BASE_POKEMON_FIELD_NUMBER;
-      hash = (53 * hash) + getBasePokemon();
-      hash = (37 * hash) + BASE_BAG_ITEMS_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseBagItems();
-      hash = (37 * hash) + BASE_EGGS_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseEggs();
+      hash = (37 * hash) + TRAINER_CP_MODIFIER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTrainerCpModifier()));
+      hash = (37 * hash) + TRAINER_DIFFICULTY_MODIFIER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTrainerDifficultyModifier()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(byte[] data)
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseDelimitedFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5104,7 +5200,7 @@ public final class Settings {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.InventorySettings prototype) {
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Settings.LevelSettings prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -5119,25 +5215,25 @@ public final class Settings {
       return builder;
     }
     /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.InventorySettings}
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.LevelSettings}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
-        com.github.aeonlucid.pogoprotos.Settings.InventorySettingsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
+        com.github.aeonlucid.pogoprotos.Settings.LevelSettingsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Settings.InventorySettings.class, com.github.aeonlucid.pogoprotos.Settings.InventorySettings.Builder.class);
+                com.github.aeonlucid.pogoprotos.Settings.LevelSettings.class, com.github.aeonlucid.pogoprotos.Settings.LevelSettings.Builder.class);
       }
 
-      // Construct using com.github.aeonlucid.pogoprotos.Settings.InventorySettings.newBuilder()
+      // Construct using com.github.aeonlucid.pogoprotos.Settings.LevelSettings.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5154,43 +5250,34 @@ public final class Settings {
       }
       public Builder clear() {
         super.clear();
-        maxPokemon_ = 0;
+        trainerCpModifier_ = 0D;
 
-        maxBagItems_ = 0;
-
-        basePokemon_ = 0;
-
-        baseBagItems_ = 0;
-
-        baseEggs_ = 0;
+        trainerDifficultyModifier_ = 0D;
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
+        return com.github.aeonlucid.pogoprotos.Settings.internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.InventorySettings getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Settings.InventorySettings.getDefaultInstance();
+      public com.github.aeonlucid.pogoprotos.Settings.LevelSettings getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Settings.LevelSettings.getDefaultInstance();
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.InventorySettings build() {
-        com.github.aeonlucid.pogoprotos.Settings.InventorySettings result = buildPartial();
+      public com.github.aeonlucid.pogoprotos.Settings.LevelSettings build() {
+        com.github.aeonlucid.pogoprotos.Settings.LevelSettings result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.aeonlucid.pogoprotos.Settings.InventorySettings buildPartial() {
-        com.github.aeonlucid.pogoprotos.Settings.InventorySettings result = new com.github.aeonlucid.pogoprotos.Settings.InventorySettings(this);
-        result.maxPokemon_ = maxPokemon_;
-        result.maxBagItems_ = maxBagItems_;
-        result.basePokemon_ = basePokemon_;
-        result.baseBagItems_ = baseBagItems_;
-        result.baseEggs_ = baseEggs_;
+      public com.github.aeonlucid.pogoprotos.Settings.LevelSettings buildPartial() {
+        com.github.aeonlucid.pogoprotos.Settings.LevelSettings result = new com.github.aeonlucid.pogoprotos.Settings.LevelSettings(this);
+        result.trainerCpModifier_ = trainerCpModifier_;
+        result.trainerDifficultyModifier_ = trainerDifficultyModifier_;
         onBuilt();
         return result;
       }
@@ -5222,30 +5309,21 @@ public final class Settings {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.InventorySettings) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.InventorySettings)other);
+        if (other instanceof com.github.aeonlucid.pogoprotos.Settings.LevelSettings) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Settings.LevelSettings)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.InventorySettings other) {
-        if (other == com.github.aeonlucid.pogoprotos.Settings.InventorySettings.getDefaultInstance()) return this;
-        if (other.getMaxPokemon() != 0) {
-          setMaxPokemon(other.getMaxPokemon());
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Settings.LevelSettings other) {
+        if (other == com.github.aeonlucid.pogoprotos.Settings.LevelSettings.getDefaultInstance()) return this;
+        if (other.getTrainerCpModifier() != 0D) {
+          setTrainerCpModifier(other.getTrainerCpModifier());
         }
-        if (other.getMaxBagItems() != 0) {
-          setMaxBagItems(other.getMaxBagItems());
-        }
-        if (other.getBasePokemon() != 0) {
-          setBasePokemon(other.getBasePokemon());
-        }
-        if (other.getBaseBagItems() != 0) {
-          setBaseBagItems(other.getBaseBagItems());
-        }
-        if (other.getBaseEggs() != 0) {
-          setBaseEggs(other.getBaseEggs());
+        if (other.getTrainerDifficultyModifier() != 0D) {
+          setTrainerDifficultyModifier(other.getTrainerDifficultyModifier());
         }
         onChanged();
         return this;
@@ -5259,11 +5337,11 @@ public final class Settings {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Settings.InventorySettings parsedMessage = null;
+        com.github.aeonlucid.pogoprotos.Settings.LevelSettings parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.InventorySettings) e.getUnfinishedMessage();
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Settings.LevelSettings) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5273,132 +5351,54 @@ public final class Settings {
         return this;
       }
 
-      private int maxPokemon_ ;
+      private double trainerCpModifier_ ;
       /**
-       * <code>optional int32 max_pokemon = 1;</code>
+       * <code>optional double trainer_cp_modifier = 2;</code>
        */
-      public int getMaxPokemon() {
-        return maxPokemon_;
+      public double getTrainerCpModifier() {
+        return trainerCpModifier_;
       }
       /**
-       * <code>optional int32 max_pokemon = 1;</code>
+       * <code>optional double trainer_cp_modifier = 2;</code>
        */
-      public Builder setMaxPokemon(int value) {
+      public Builder setTrainerCpModifier(double value) {
         
-        maxPokemon_ = value;
+        trainerCpModifier_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 max_pokemon = 1;</code>
+       * <code>optional double trainer_cp_modifier = 2;</code>
        */
-      public Builder clearMaxPokemon() {
+      public Builder clearTrainerCpModifier() {
         
-        maxPokemon_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int maxBagItems_ ;
-      /**
-       * <code>optional int32 max_bag_items = 2;</code>
-       */
-      public int getMaxBagItems() {
-        return maxBagItems_;
-      }
-      /**
-       * <code>optional int32 max_bag_items = 2;</code>
-       */
-      public Builder setMaxBagItems(int value) {
-        
-        maxBagItems_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 max_bag_items = 2;</code>
-       */
-      public Builder clearMaxBagItems() {
-        
-        maxBagItems_ = 0;
+        trainerCpModifier_ = 0D;
         onChanged();
         return this;
       }
 
-      private int basePokemon_ ;
+      private double trainerDifficultyModifier_ ;
       /**
-       * <code>optional int32 base_pokemon = 3;</code>
+       * <code>optional double trainer_difficulty_modifier = 3;</code>
        */
-      public int getBasePokemon() {
-        return basePokemon_;
+      public double getTrainerDifficultyModifier() {
+        return trainerDifficultyModifier_;
       }
       /**
-       * <code>optional int32 base_pokemon = 3;</code>
+       * <code>optional double trainer_difficulty_modifier = 3;</code>
        */
-      public Builder setBasePokemon(int value) {
+      public Builder setTrainerDifficultyModifier(double value) {
         
-        basePokemon_ = value;
+        trainerDifficultyModifier_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 base_pokemon = 3;</code>
+       * <code>optional double trainer_difficulty_modifier = 3;</code>
        */
-      public Builder clearBasePokemon() {
+      public Builder clearTrainerDifficultyModifier() {
         
-        basePokemon_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int baseBagItems_ ;
-      /**
-       * <code>optional int32 base_bag_items = 4;</code>
-       */
-      public int getBaseBagItems() {
-        return baseBagItems_;
-      }
-      /**
-       * <code>optional int32 base_bag_items = 4;</code>
-       */
-      public Builder setBaseBagItems(int value) {
-        
-        baseBagItems_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 base_bag_items = 4;</code>
-       */
-      public Builder clearBaseBagItems() {
-        
-        baseBagItems_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int baseEggs_ ;
-      /**
-       * <code>optional int32 base_eggs = 5;</code>
-       */
-      public int getBaseEggs() {
-        return baseEggs_;
-      }
-      /**
-       * <code>optional int32 base_eggs = 5;</code>
-       */
-      public Builder setBaseEggs(int value) {
-        
-        baseEggs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 base_eggs = 5;</code>
-       */
-      public Builder clearBaseEggs() {
-        
-        baseEggs_ = 0;
+        trainerDifficultyModifier_ = 0D;
         onChanged();
         return this;
       }
@@ -5413,79 +5413,79 @@ public final class Settings {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
     }
 
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.InventorySettings)
-    private static final com.github.aeonlucid.pogoprotos.Settings.InventorySettings DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.LevelSettings)
+    private static final com.github.aeonlucid.pogoprotos.Settings.LevelSettings DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.InventorySettings();
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Settings.LevelSettings();
     }
 
-    public static com.github.aeonlucid.pogoprotos.Settings.InventorySettings getDefaultInstance() {
+    public static com.github.aeonlucid.pogoprotos.Settings.LevelSettings getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<InventorySettings>
-        PARSER = new com.google.protobuf.AbstractParser<InventorySettings>() {
-      public InventorySettings parsePartialFrom(
+    private static final com.google.protobuf.Parser<LevelSettings>
+        PARSER = new com.google.protobuf.AbstractParser<LevelSettings>() {
+      public LevelSettings parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InventorySettings(input, extensionRegistry);
+          return new LevelSettings(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<InventorySettings> parser() {
+    public static com.google.protobuf.Parser<LevelSettings> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<InventorySettings> getParserForType() {
+    public com.google.protobuf.Parser<LevelSettings> getParserForType() {
       return PARSER;
     }
 
-    public com.github.aeonlucid.pogoprotos.Settings.InventorySettings getDefaultInstanceForType() {
+    public com.github.aeonlucid.pogoprotos.Settings.LevelSettings getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
+    internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable;
+      internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_settings_GlobalSettings_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_settings_GlobalSettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
+    internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable;
+      internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_settings_GpsSettings_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_settings_GpsSettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_settings_DownloadSettingsAction_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_settings_DownloadSettingsAction_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor;
+    internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable;
+      internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5497,42 +5497,42 @@ public final class Settings {
     java.lang.String[] descriptorData = {
       "\n.com/github/aeonlucid/pogoprotos/Settin" +
       "gs.proto\022(com.github.aeonlucid.pogoproto" +
-      "s.settings\"\217\002\n\013MapSettings\022\035\n\025pokemon_vi" +
-      "sible_range\030\001 \001(\001\022\035\n\025poke_nav_range_mete" +
-      "rs\030\002 \001(\001\022\036\n\026encounter_range_meters\030\003 \001(\001" +
-      "\022+\n#get_map_objects_min_refresh_seconds\030" +
-      "\004 \001(\002\022+\n#get_map_objects_max_refresh_sec" +
-      "onds\030\005 \001(\002\022+\n#get_map_objects_min_distan" +
-      "ce_meters\030\006 \001(\002\022\033\n\023google_maps_api_key\030\007" +
-      " \001(\t\"\344\001\n\014FortSettings\022 \n\030interaction_ran",
-      "ge_meters\030\001 \001(\001\022\"\n\032max_total_deployed_po" +
-      "kemon\030\002 \001(\005\022#\n\033max_player_deployed_pokem" +
-      "on\030\003 \001(\005\022!\n\031deploy_stamina_multiplier\030\004 " +
-      "\001(\001\022 \n\030deploy_attack_multiplier\030\005 \001(\001\022$\n" +
-      "\034far_interaction_range_meters\030\006 \001(\001\"\303\003\n\016" +
-      "GlobalSettings\022M\n\rfort_settings\030\002 \001(\01326." +
-      "com.github.aeonlucid.pogoprotos.settings" +
-      ".FortSettings\022K\n\014map_settings\030\003 \001(\01325.co" +
-      "m.github.aeonlucid.pogoprotos.settings.M" +
-      "apSettings\022O\n\016level_settings\030\004 \001(\01327.com",
-      ".github.aeonlucid.pogoprotos.settings.Le" +
-      "velSettings\022W\n\022inventory_settings\030\005 \001(\0132" +
-      ";.com.github.aeonlucid.pogoprotos.settin" +
-      "gs.InventorySettings\022\036\n\026minimum_client_v" +
-      "ersion\030\006 \001(\t\022K\n\014gps_settings\030\007 \001(\01325.com" +
-      ".github.aeonlucid.pogoprotos.settings.Gp" +
-      "sSettings\"Q\n\rLevelSettings\022\033\n\023trainer_cp" +
-      "_modifier\030\002 \001(\001\022#\n\033trainer_difficulty_mo" +
-      "difier\030\003 \001(\001\"\273\001\n\013GpsSettings\022/\n\'driving_" +
-      "warning_speed_meters_per_second\030\001 \001(\002\022(\n",
-      " driving_warning_cooldown_minutes\030\002 \001(\002\022" +
-      "-\n%driving_speed_sample_interval_seconds" +
-      "\030\003 \001(\002\022\"\n\032driving_speed_sample_count\030\004 \001" +
-      "(\005\"&\n\026DownloadSettingsAction\022\014\n\004hash\030\001 \001" +
-      "(\t\"\200\001\n\021InventorySettings\022\023\n\013max_pokemon\030" +
-      "\001 \001(\005\022\025\n\rmax_bag_items\030\002 \001(\005\022\024\n\014base_pok" +
-      "emon\030\003 \001(\005\022\026\n\016base_bag_items\030\004 \001(\005\022\021\n\tba" +
-      "se_eggs\030\005 \001(\005B+\n\037com.github.aeonlucid.po" +
+      "s.settings\"\200\001\n\021InventorySettings\022\023\n\013max_" +
+      "pokemon\030\001 \001(\005\022\025\n\rmax_bag_items\030\002 \001(\005\022\024\n\014" +
+      "base_pokemon\030\003 \001(\005\022\026\n\016base_bag_items\030\004 \001" +
+      "(\005\022\021\n\tbase_eggs\030\005 \001(\005\"\303\003\n\016GlobalSettings" +
+      "\022M\n\rfort_settings\030\002 \001(\01326.com.github.aeo" +
+      "nlucid.pogoprotos.settings.FortSettings\022" +
+      "K\n\014map_settings\030\003 \001(\01325.com.github.aeonl" +
+      "ucid.pogoprotos.settings.MapSettings\022O\n\016",
+      "level_settings\030\004 \001(\01327.com.github.aeonlu" +
+      "cid.pogoprotos.settings.LevelSettings\022W\n" +
+      "\022inventory_settings\030\005 \001(\0132;.com.github.a" +
+      "eonlucid.pogoprotos.settings.InventorySe" +
+      "ttings\022\036\n\026minimum_client_version\030\006 \001(\t\022K" +
+      "\n\014gps_settings\030\007 \001(\01325.com.github.aeonlu" +
+      "cid.pogoprotos.settings.GpsSettings\"\344\001\n\014" +
+      "FortSettings\022 \n\030interaction_range_meters" +
+      "\030\001 \001(\001\022\"\n\032max_total_deployed_pokemon\030\002 \001" +
+      "(\005\022#\n\033max_player_deployed_pokemon\030\003 \001(\005\022",
+      "!\n\031deploy_stamina_multiplier\030\004 \001(\001\022 \n\030de" +
+      "ploy_attack_multiplier\030\005 \001(\001\022$\n\034far_inte" +
+      "raction_range_meters\030\006 \001(\001\"\273\001\n\013GpsSettin" +
+      "gs\022/\n\'driving_warning_speed_meters_per_s" +
+      "econd\030\001 \001(\002\022(\n driving_warning_cooldown_" +
+      "minutes\030\002 \001(\002\022-\n%driving_speed_sample_in" +
+      "terval_seconds\030\003 \001(\002\022\"\n\032driving_speed_sa" +
+      "mple_count\030\004 \001(\005\"\217\002\n\013MapSettings\022\035\n\025poke" +
+      "mon_visible_range\030\001 \001(\001\022\035\n\025poke_nav_rang" +
+      "e_meters\030\002 \001(\001\022\036\n\026encounter_range_meters",
+      "\030\003 \001(\001\022+\n#get_map_objects_min_refresh_se" +
+      "conds\030\004 \001(\002\022+\n#get_map_objects_max_refre" +
+      "sh_seconds\030\005 \001(\002\022+\n#get_map_objects_min_" +
+      "distance_meters\030\006 \001(\002\022\033\n\023google_maps_api" +
+      "_key\030\007 \001(\t\"&\n\026DownloadSettingsAction\022\014\n\004" +
+      "hash\030\001 \001(\t\"Q\n\rLevelSettings\022\033\n\023trainer_c" +
+      "p_modifier\030\002 \001(\001\022#\n\033trainer_difficulty_m" +
+      "odifier\030\003 \001(\001B+\n\037com.github.aeonlucid.po" +
       "goprotosB\010Settingsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -5547,48 +5547,48 @@ public final class Settings {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor =
+    internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable = new
+    internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor,
-        new java.lang.String[] { "PokemonVisibleRange", "PokeNavRangeMeters", "EncounterRangeMeters", "GetMapObjectsMinRefreshSeconds", "GetMapObjectsMaxRefreshSeconds", "GetMapObjectsMinDistanceMeters", "GoogleMapsApiKey", });
-    internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor,
-        new java.lang.String[] { "InteractionRangeMeters", "MaxTotalDeployedPokemon", "MaxPlayerDeployedPokemon", "DeployStaminaMultiplier", "DeployAttackMultiplier", "FarInteractionRangeMeters", });
+        internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor,
+        new java.lang.String[] { "MaxPokemon", "MaxBagItems", "BasePokemon", "BaseBagItems", "BaseEggs", });
     internal_static_com_github_aeonlucid_pogoprotos_settings_GlobalSettings_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_github_aeonlucid_pogoprotos_settings_GlobalSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_settings_GlobalSettings_descriptor,
         new java.lang.String[] { "FortSettings", "MapSettings", "LevelSettings", "InventorySettings", "MinimumClientVersion", "GpsSettings", });
-    internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable = new
+    internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor,
-        new java.lang.String[] { "TrainerCpModifier", "TrainerDifficultyModifier", });
+        internal_static_com_github_aeonlucid_pogoprotos_settings_FortSettings_descriptor,
+        new java.lang.String[] { "InteractionRangeMeters", "MaxTotalDeployedPokemon", "MaxPlayerDeployedPokemon", "DeployStaminaMultiplier", "DeployAttackMultiplier", "FarInteractionRangeMeters", });
     internal_static_com_github_aeonlucid_pogoprotos_settings_GpsSettings_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_github_aeonlucid_pogoprotos_settings_GpsSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_settings_GpsSettings_descriptor,
         new java.lang.String[] { "DrivingWarningSpeedMetersPerSecond", "DrivingWarningCooldownMinutes", "DrivingSpeedSampleIntervalSeconds", "DrivingSpeedSampleCount", });
+    internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_settings_MapSettings_descriptor,
+        new java.lang.String[] { "PokemonVisibleRange", "PokeNavRangeMeters", "EncounterRangeMeters", "GetMapObjectsMinRefreshSeconds", "GetMapObjectsMaxRefreshSeconds", "GetMapObjectsMinDistanceMeters", "GoogleMapsApiKey", });
     internal_static_com_github_aeonlucid_pogoprotos_settings_DownloadSettingsAction_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_github_aeonlucid_pogoprotos_settings_DownloadSettingsAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_settings_DownloadSettingsAction_descriptor,
         new java.lang.String[] { "Hash", });
-    internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor =
+    internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_fieldAccessorTable = new
+    internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_InventorySettings_descriptor,
-        new java.lang.String[] { "MaxPokemon", "MaxBagItems", "BasePokemon", "BaseBagItems", "BaseEggs", });
+        internal_static_com_github_aeonlucid_pogoprotos_settings_LevelSettings_descriptor,
+        new java.lang.String[] { "TrainerCpModifier", "TrainerDifficultyModifier", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

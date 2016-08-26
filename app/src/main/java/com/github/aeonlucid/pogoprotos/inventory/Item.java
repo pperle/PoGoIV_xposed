@@ -15,203 +15,6 @@ public final class Item {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemType}
-   */
-  public enum ItemType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>ITEM_TYPE_NONE = 0;</code>
-     */
-    ITEM_TYPE_NONE(0),
-    /**
-     * <code>ITEM_TYPE_POKEBALL = 1;</code>
-     */
-    ITEM_TYPE_POKEBALL(1),
-    /**
-     * <code>ITEM_TYPE_POTION = 2;</code>
-     */
-    ITEM_TYPE_POTION(2),
-    /**
-     * <code>ITEM_TYPE_REVIVE = 3;</code>
-     */
-    ITEM_TYPE_REVIVE(3),
-    /**
-     * <code>ITEM_TYPE_MAP = 4;</code>
-     */
-    ITEM_TYPE_MAP(4),
-    /**
-     * <code>ITEM_TYPE_BATTLE = 5;</code>
-     */
-    ITEM_TYPE_BATTLE(5),
-    /**
-     * <code>ITEM_TYPE_FOOD = 6;</code>
-     */
-    ITEM_TYPE_FOOD(6),
-    /**
-     * <code>ITEM_TYPE_CAMERA = 7;</code>
-     */
-    ITEM_TYPE_CAMERA(7),
-    /**
-     * <code>ITEM_TYPE_DISK = 8;</code>
-     */
-    ITEM_TYPE_DISK(8),
-    /**
-     * <code>ITEM_TYPE_INCUBATOR = 9;</code>
-     */
-    ITEM_TYPE_INCUBATOR(9),
-    /**
-     * <code>ITEM_TYPE_INCENSE = 10;</code>
-     */
-    ITEM_TYPE_INCENSE(10),
-    /**
-     * <code>ITEM_TYPE_XP_BOOST = 11;</code>
-     */
-    ITEM_TYPE_XP_BOOST(11),
-    /**
-     * <code>ITEM_TYPE_INVENTORY_UPGRADE = 12;</code>
-     */
-    ITEM_TYPE_INVENTORY_UPGRADE(12),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>ITEM_TYPE_NONE = 0;</code>
-     */
-    public static final int ITEM_TYPE_NONE_VALUE = 0;
-    /**
-     * <code>ITEM_TYPE_POKEBALL = 1;</code>
-     */
-    public static final int ITEM_TYPE_POKEBALL_VALUE = 1;
-    /**
-     * <code>ITEM_TYPE_POTION = 2;</code>
-     */
-    public static final int ITEM_TYPE_POTION_VALUE = 2;
-    /**
-     * <code>ITEM_TYPE_REVIVE = 3;</code>
-     */
-    public static final int ITEM_TYPE_REVIVE_VALUE = 3;
-    /**
-     * <code>ITEM_TYPE_MAP = 4;</code>
-     */
-    public static final int ITEM_TYPE_MAP_VALUE = 4;
-    /**
-     * <code>ITEM_TYPE_BATTLE = 5;</code>
-     */
-    public static final int ITEM_TYPE_BATTLE_VALUE = 5;
-    /**
-     * <code>ITEM_TYPE_FOOD = 6;</code>
-     */
-    public static final int ITEM_TYPE_FOOD_VALUE = 6;
-    /**
-     * <code>ITEM_TYPE_CAMERA = 7;</code>
-     */
-    public static final int ITEM_TYPE_CAMERA_VALUE = 7;
-    /**
-     * <code>ITEM_TYPE_DISK = 8;</code>
-     */
-    public static final int ITEM_TYPE_DISK_VALUE = 8;
-    /**
-     * <code>ITEM_TYPE_INCUBATOR = 9;</code>
-     */
-    public static final int ITEM_TYPE_INCUBATOR_VALUE = 9;
-    /**
-     * <code>ITEM_TYPE_INCENSE = 10;</code>
-     */
-    public static final int ITEM_TYPE_INCENSE_VALUE = 10;
-    /**
-     * <code>ITEM_TYPE_XP_BOOST = 11;</code>
-     */
-    public static final int ITEM_TYPE_XP_BOOST_VALUE = 11;
-    /**
-     * <code>ITEM_TYPE_INVENTORY_UPGRADE = 12;</code>
-     */
-    public static final int ITEM_TYPE_INVENTORY_UPGRADE_VALUE = 12;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ItemType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ItemType forNumber(int value) {
-      switch (value) {
-        case 0: return ITEM_TYPE_NONE;
-        case 1: return ITEM_TYPE_POKEBALL;
-        case 2: return ITEM_TYPE_POTION;
-        case 3: return ITEM_TYPE_REVIVE;
-        case 4: return ITEM_TYPE_MAP;
-        case 5: return ITEM_TYPE_BATTLE;
-        case 6: return ITEM_TYPE_FOOD;
-        case 7: return ITEM_TYPE_CAMERA;
-        case 8: return ITEM_TYPE_DISK;
-        case 9: return ITEM_TYPE_INCUBATOR;
-        case 10: return ITEM_TYPE_INCENSE;
-        case 11: return ITEM_TYPE_XP_BOOST;
-        case 12: return ITEM_TYPE_INVENTORY_UPGRADE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ItemType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ItemType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ItemType>() {
-            public ItemType findValueByNumber(int number) {
-              return ItemType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ItemType[] VALUES = values();
-
-    public static ItemType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ItemType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemType)
-  }
-
-  /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemId}
    */
   public enum ItemId
@@ -535,7 +338,7 @@ public final class Item {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor().getEnumTypes().get(1);
+      return com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ItemId[] VALUES = values();
@@ -559,6 +362,724 @@ public final class Item {
     }
 
     // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemId)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemType}
+   */
+  public enum ItemType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ITEM_TYPE_NONE = 0;</code>
+     */
+    ITEM_TYPE_NONE(0),
+    /**
+     * <code>ITEM_TYPE_POKEBALL = 1;</code>
+     */
+    ITEM_TYPE_POKEBALL(1),
+    /**
+     * <code>ITEM_TYPE_POTION = 2;</code>
+     */
+    ITEM_TYPE_POTION(2),
+    /**
+     * <code>ITEM_TYPE_REVIVE = 3;</code>
+     */
+    ITEM_TYPE_REVIVE(3),
+    /**
+     * <code>ITEM_TYPE_MAP = 4;</code>
+     */
+    ITEM_TYPE_MAP(4),
+    /**
+     * <code>ITEM_TYPE_BATTLE = 5;</code>
+     */
+    ITEM_TYPE_BATTLE(5),
+    /**
+     * <code>ITEM_TYPE_FOOD = 6;</code>
+     */
+    ITEM_TYPE_FOOD(6),
+    /**
+     * <code>ITEM_TYPE_CAMERA = 7;</code>
+     */
+    ITEM_TYPE_CAMERA(7),
+    /**
+     * <code>ITEM_TYPE_DISK = 8;</code>
+     */
+    ITEM_TYPE_DISK(8),
+    /**
+     * <code>ITEM_TYPE_INCUBATOR = 9;</code>
+     */
+    ITEM_TYPE_INCUBATOR(9),
+    /**
+     * <code>ITEM_TYPE_INCENSE = 10;</code>
+     */
+    ITEM_TYPE_INCENSE(10),
+    /**
+     * <code>ITEM_TYPE_XP_BOOST = 11;</code>
+     */
+    ITEM_TYPE_XP_BOOST(11),
+    /**
+     * <code>ITEM_TYPE_INVENTORY_UPGRADE = 12;</code>
+     */
+    ITEM_TYPE_INVENTORY_UPGRADE(12),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>ITEM_TYPE_NONE = 0;</code>
+     */
+    public static final int ITEM_TYPE_NONE_VALUE = 0;
+    /**
+     * <code>ITEM_TYPE_POKEBALL = 1;</code>
+     */
+    public static final int ITEM_TYPE_POKEBALL_VALUE = 1;
+    /**
+     * <code>ITEM_TYPE_POTION = 2;</code>
+     */
+    public static final int ITEM_TYPE_POTION_VALUE = 2;
+    /**
+     * <code>ITEM_TYPE_REVIVE = 3;</code>
+     */
+    public static final int ITEM_TYPE_REVIVE_VALUE = 3;
+    /**
+     * <code>ITEM_TYPE_MAP = 4;</code>
+     */
+    public static final int ITEM_TYPE_MAP_VALUE = 4;
+    /**
+     * <code>ITEM_TYPE_BATTLE = 5;</code>
+     */
+    public static final int ITEM_TYPE_BATTLE_VALUE = 5;
+    /**
+     * <code>ITEM_TYPE_FOOD = 6;</code>
+     */
+    public static final int ITEM_TYPE_FOOD_VALUE = 6;
+    /**
+     * <code>ITEM_TYPE_CAMERA = 7;</code>
+     */
+    public static final int ITEM_TYPE_CAMERA_VALUE = 7;
+    /**
+     * <code>ITEM_TYPE_DISK = 8;</code>
+     */
+    public static final int ITEM_TYPE_DISK_VALUE = 8;
+    /**
+     * <code>ITEM_TYPE_INCUBATOR = 9;</code>
+     */
+    public static final int ITEM_TYPE_INCUBATOR_VALUE = 9;
+    /**
+     * <code>ITEM_TYPE_INCENSE = 10;</code>
+     */
+    public static final int ITEM_TYPE_INCENSE_VALUE = 10;
+    /**
+     * <code>ITEM_TYPE_XP_BOOST = 11;</code>
+     */
+    public static final int ITEM_TYPE_XP_BOOST_VALUE = 11;
+    /**
+     * <code>ITEM_TYPE_INVENTORY_UPGRADE = 12;</code>
+     */
+    public static final int ITEM_TYPE_INVENTORY_UPGRADE_VALUE = 12;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ItemType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ItemType forNumber(int value) {
+      switch (value) {
+        case 0: return ITEM_TYPE_NONE;
+        case 1: return ITEM_TYPE_POKEBALL;
+        case 2: return ITEM_TYPE_POTION;
+        case 3: return ITEM_TYPE_REVIVE;
+        case 4: return ITEM_TYPE_MAP;
+        case 5: return ITEM_TYPE_BATTLE;
+        case 6: return ITEM_TYPE_FOOD;
+        case 7: return ITEM_TYPE_CAMERA;
+        case 8: return ITEM_TYPE_DISK;
+        case 9: return ITEM_TYPE_INCUBATOR;
+        case 10: return ITEM_TYPE_INCENSE;
+        case 11: return ITEM_TYPE_XP_BOOST;
+        case 12: return ITEM_TYPE_INVENTORY_UPGRADE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ItemType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ItemType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ItemType>() {
+            public ItemType findValueByNumber(int number) {
+              return ItemType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ItemType[] VALUES = values();
+
+    public static ItemType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ItemType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemType)
+  }
+
+  public interface ItemAwardOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    int getItemIdValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId();
+
+    /**
+     * <code>optional int32 item_count = 2;</code>
+     */
+    int getItemCount();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemAward}
+   */
+  public  static final class ItemAward extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
+      ItemAwardOrBuilder {
+    // Use ItemAward.newBuilder() to construct.
+    private ItemAward(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ItemAward() {
+      itemId_ = 0;
+      itemCount_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ItemAward(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              itemId_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              itemCount_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.class, com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.Builder.class);
+    }
+
+    public static final int ITEM_ID_FIELD_NUMBER = 1;
+    private int itemId_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    public int getItemIdValue() {
+      return itemId_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
+      com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(itemId_);
+      return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
+    }
+
+    public static final int ITEM_COUNT_FIELD_NUMBER = 2;
+    private int itemCount_;
+    /**
+     * <code>optional int32 item_count = 2;</code>
+     */
+    public int getItemCount() {
+      return itemCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
+        output.writeEnum(1, itemId_);
+      }
+      if (itemCount_ != 0) {
+        output.writeInt32(2, itemCount_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, itemId_);
+      }
+      if (itemCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, itemCount_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward other = (com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward) obj;
+
+      boolean result = true;
+      result = result && itemId_ == other.itemId_;
+      result = result && (getItemCount()
+          == other.getItemCount());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + itemId_;
+      hash = (37 * hash) + ITEM_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getItemCount();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemAward}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
+        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAwardOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.class, com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        itemId_ = 0;
+
+        itemCount_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward build() {
+        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward buildPartial() {
+        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward result = new com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward(this);
+        result.itemId_ = itemId_;
+        result.itemCount_ = itemCount_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward other) {
+        if (other == com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.getDefaultInstance()) return this;
+        if (other.itemId_ != 0) {
+          setItemIdValue(other.getItemIdValue());
+        }
+        if (other.getItemCount() != 0) {
+          setItemCount(other.getItemCount());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int itemId_ = 0;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public int getItemIdValue() {
+        return itemId_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public Builder setItemIdValue(int value) {
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
+        com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(itemId_);
+        return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public Builder setItemId(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        itemId_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public Builder clearItemId() {
+        
+        itemId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int itemCount_ ;
+      /**
+       * <code>optional int32 item_count = 2;</code>
+       */
+      public int getItemCount() {
+        return itemCount_;
+      }
+      /**
+       * <code>optional int32 item_count = 2;</code>
+       */
+      public Builder setItemCount(int value) {
+        
+        itemCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 item_count = 2;</code>
+       */
+      public Builder clearItemCount() {
+        
+        itemCount_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
+    private static final com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ItemAward>
+        PARSER = new com.google.protobuf.AbstractParser<ItemAward>() {
+      public ItemAward parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ItemAward(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ItemAward> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ItemAward> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ItemDataOrBuilder extends
@@ -1146,537 +1667,16 @@ public final class Item {
 
   }
 
-  public interface ItemAwardOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    int getItemIdValue();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId();
-
-    /**
-     * <code>optional int32 item_count = 2;</code>
-     */
-    int getItemCount();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemAward}
-   */
-  public  static final class ItemAward extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
-      ItemAwardOrBuilder {
-    // Use ItemAward.newBuilder() to construct.
-    private ItemAward(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ItemAward() {
-      itemId_ = 0;
-      itemCount_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ItemAward(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              itemId_ = rawValue;
-              break;
-            }
-            case 16: {
-
-              itemCount_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.class, com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.Builder.class);
-    }
-
-    public static final int ITEM_ID_FIELD_NUMBER = 1;
-    private int itemId_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    public int getItemIdValue() {
-      return itemId_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
-      com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(itemId_);
-      return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
-    }
-
-    public static final int ITEM_COUNT_FIELD_NUMBER = 2;
-    private int itemCount_;
-    /**
-     * <code>optional int32 item_count = 2;</code>
-     */
-    public int getItemCount() {
-      return itemCount_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
-        output.writeEnum(1, itemId_);
-      }
-      if (itemCount_ != 0) {
-        output.writeInt32(2, itemCount_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, itemId_);
-      }
-      if (itemCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, itemCount_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward other = (com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward) obj;
-
-      boolean result = true;
-      result = result && itemId_ == other.itemId_;
-      result = result && (getItemCount()
-          == other.getItemCount());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + itemId_;
-      hash = (37 * hash) + ITEM_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getItemCount();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.inventory.item.ItemAward}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAwardOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.class, com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        itemId_ = 0;
-
-        itemCount_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.inventory.Item.internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward build() {
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward buildPartial() {
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward result = new com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward(this);
-        result.itemId_ = itemId_;
-        result.itemCount_ = itemCount_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward other) {
-        if (other == com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward.getDefaultInstance()) return this;
-        if (other.itemId_ != 0) {
-          setItemIdValue(other.getItemIdValue());
-        }
-        if (other.getItemCount() != 0) {
-          setItemCount(other.getItemCount());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int itemId_ = 0;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public int getItemIdValue() {
-        return itemId_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public Builder setItemIdValue(int value) {
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(itemId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public Builder setItemId(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        itemId_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int itemCount_ ;
-      /**
-       * <code>optional int32 item_count = 2;</code>
-       */
-      public int getItemCount() {
-        return itemCount_;
-      }
-      /**
-       * <code>optional int32 item_count = 2;</code>
-       */
-      public Builder setItemCount(int value) {
-        
-        itemCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 item_count = 2;</code>
-       */
-      public Builder clearItemCount() {
-        
-        itemCount_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.inventory.item.ItemAward)
-    private static final com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ItemAward>
-        PARSER = new com.google.protobuf.AbstractParser<ItemAward>() {
-      public ItemAward parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ItemAward(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ItemAward> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ItemAward> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemAward getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1688,38 +1688,38 @@ public final class Item {
     java.lang.String[] descriptorData = {
       "\n4com/github/aeonlucid/pogoprotos/invent" +
       "ory/Item.proto\022.com.github.aeonlucid.pog" +
-      "oprotos.inventory.item\"r\n\010ItemData\022G\n\007it" +
-      "em_id\030\001 \001(\01626.com.github.aeonlucid.pogop" +
-      "rotos.inventory.item.ItemId\022\r\n\005count\030\002 \001" +
-      "(\005\022\016\n\006unseen\030\003 \001(\010\"h\n\tItemAward\022G\n\007item_" +
-      "id\030\001 \001(\01626.com.github.aeonlucid.pogoprot" +
-      "os.inventory.item.ItemId\022\022\n\nitem_count\030\002" +
-      " \001(\005*\262\002\n\010ItemType\022\022\n\016ITEM_TYPE_NONE\020\000\022\026\n" +
-      "\022ITEM_TYPE_POKEBALL\020\001\022\024\n\020ITEM_TYPE_POTIO",
-      "N\020\002\022\024\n\020ITEM_TYPE_REVIVE\020\003\022\021\n\rITEM_TYPE_M" +
-      "AP\020\004\022\024\n\020ITEM_TYPE_BATTLE\020\005\022\022\n\016ITEM_TYPE_" +
-      "FOOD\020\006\022\024\n\020ITEM_TYPE_CAMERA\020\007\022\022\n\016ITEM_TYP" +
-      "E_DISK\020\010\022\027\n\023ITEM_TYPE_INCUBATOR\020\t\022\025\n\021ITE" +
-      "M_TYPE_INCENSE\020\n\022\026\n\022ITEM_TYPE_XP_BOOST\020\013" +
-      "\022\037\n\033ITEM_TYPE_INVENTORY_UPGRADE\020\014*\307\005\n\006It" +
-      "emId\022\020\n\014ITEM_UNKNOWN\020\000\022\022\n\016ITEM_POKE_BALL" +
-      "\020\001\022\023\n\017ITEM_GREAT_BALL\020\002\022\023\n\017ITEM_ULTRA_BA" +
-      "LL\020\003\022\024\n\020ITEM_MASTER_BALL\020\004\022\017\n\013ITEM_POTIO" +
-      "N\020e\022\025\n\021ITEM_SUPER_POTION\020f\022\025\n\021ITEM_HYPER",
-      "_POTION\020g\022\023\n\017ITEM_MAX_POTION\020h\022\020\n\013ITEM_R" +
-      "EVIVE\020\311\001\022\024\n\017ITEM_MAX_REVIVE\020\312\001\022\023\n\016ITEM_L" +
-      "UCKY_EGG\020\255\002\022\032\n\025ITEM_INCENSE_ORDINARY\020\221\003\022" +
-      "\027\n\022ITEM_INCENSE_SPICY\020\222\003\022\026\n\021ITEM_INCENSE" +
-      "_COOL\020\223\003\022\030\n\023ITEM_INCENSE_FLORAL\020\224\003\022\023\n\016IT" +
-      "EM_TROY_DISK\020\365\003\022\022\n\rITEM_X_ATTACK\020\332\004\022\023\n\016I" +
-      "TEM_X_DEFENSE\020\333\004\022\023\n\016ITEM_X_MIRACLE\020\334\004\022\024\n" +
-      "\017ITEM_RAZZ_BERRY\020\275\005\022\024\n\017ITEM_BLUK_BERRY\020\276" +
-      "\005\022\025\n\020ITEM_NANAB_BERRY\020\277\005\022\025\n\020ITEM_WEPAR_B" +
-      "ERRY\020\300\005\022\025\n\020ITEM_PINAP_BERRY\020\301\005\022\030\n\023ITEM_S",
-      "PECIAL_CAMERA\020\241\006\022#\n\036ITEM_INCUBATOR_BASIC" +
-      "_UNLIMITED\020\205\007\022\031\n\024ITEM_INCUBATOR_BASIC\020\206\007" +
-      "\022!\n\034ITEM_POKEMON_STORAGE_UPGRADE\020\351\007\022\036\n\031I" +
-      "TEM_ITEM_STORAGE_UPGRADE\020\352\007B1\n)com.githu" +
+      "oprotos.inventory.item\"h\n\tItemAward\022G\n\007i" +
+      "tem_id\030\001 \001(\01626.com.github.aeonlucid.pogo" +
+      "protos.inventory.item.ItemId\022\022\n\nitem_cou" +
+      "nt\030\002 \001(\005\"r\n\010ItemData\022G\n\007item_id\030\001 \001(\01626." +
+      "com.github.aeonlucid.pogoprotos.inventor" +
+      "y.item.ItemId\022\r\n\005count\030\002 \001(\005\022\016\n\006unseen\030\003" +
+      " \001(\010*\307\005\n\006ItemId\022\020\n\014ITEM_UNKNOWN\020\000\022\022\n\016ITE" +
+      "M_POKE_BALL\020\001\022\023\n\017ITEM_GREAT_BALL\020\002\022\023\n\017IT",
+      "EM_ULTRA_BALL\020\003\022\024\n\020ITEM_MASTER_BALL\020\004\022\017\n" +
+      "\013ITEM_POTION\020e\022\025\n\021ITEM_SUPER_POTION\020f\022\025\n" +
+      "\021ITEM_HYPER_POTION\020g\022\023\n\017ITEM_MAX_POTION\020" +
+      "h\022\020\n\013ITEM_REVIVE\020\311\001\022\024\n\017ITEM_MAX_REVIVE\020\312" +
+      "\001\022\023\n\016ITEM_LUCKY_EGG\020\255\002\022\032\n\025ITEM_INCENSE_O" +
+      "RDINARY\020\221\003\022\027\n\022ITEM_INCENSE_SPICY\020\222\003\022\026\n\021I" +
+      "TEM_INCENSE_COOL\020\223\003\022\030\n\023ITEM_INCENSE_FLOR" +
+      "AL\020\224\003\022\023\n\016ITEM_TROY_DISK\020\365\003\022\022\n\rITEM_X_ATT" +
+      "ACK\020\332\004\022\023\n\016ITEM_X_DEFENSE\020\333\004\022\023\n\016ITEM_X_MI" +
+      "RACLE\020\334\004\022\024\n\017ITEM_RAZZ_BERRY\020\275\005\022\024\n\017ITEM_B",
+      "LUK_BERRY\020\276\005\022\025\n\020ITEM_NANAB_BERRY\020\277\005\022\025\n\020I" +
+      "TEM_WEPAR_BERRY\020\300\005\022\025\n\020ITEM_PINAP_BERRY\020\301" +
+      "\005\022\030\n\023ITEM_SPECIAL_CAMERA\020\241\006\022#\n\036ITEM_INCU" +
+      "BATOR_BASIC_UNLIMITED\020\205\007\022\031\n\024ITEM_INCUBAT" +
+      "OR_BASIC\020\206\007\022!\n\034ITEM_POKEMON_STORAGE_UPGR" +
+      "ADE\020\351\007\022\036\n\031ITEM_ITEM_STORAGE_UPGRADE\020\352\007*\262" +
+      "\002\n\010ItemType\022\022\n\016ITEM_TYPE_NONE\020\000\022\026\n\022ITEM_" +
+      "TYPE_POKEBALL\020\001\022\024\n\020ITEM_TYPE_POTION\020\002\022\024\n" +
+      "\020ITEM_TYPE_REVIVE\020\003\022\021\n\rITEM_TYPE_MAP\020\004\022\024" +
+      "\n\020ITEM_TYPE_BATTLE\020\005\022\022\n\016ITEM_TYPE_FOOD\020\006",
+      "\022\024\n\020ITEM_TYPE_CAMERA\020\007\022\022\n\016ITEM_TYPE_DISK" +
+      "\020\010\022\027\n\023ITEM_TYPE_INCUBATOR\020\t\022\025\n\021ITEM_TYPE" +
+      "_INCENSE\020\n\022\026\n\022ITEM_TYPE_XP_BOOST\020\013\022\037\n\033IT" +
+      "EM_TYPE_INVENTORY_UPGRADE\020\014B1\n)com.githu" +
       "b.aeonlucid.pogoprotos.inventoryB\004Itemb\006" +
       "proto3"
     };
@@ -1735,18 +1735,18 @@ public final class Item {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_descriptor,
-        new java.lang.String[] { "ItemId", "Count", "Unseen", });
     internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemAward_descriptor,
         new java.lang.String[] { "ItemId", "ItemCount", });
+    internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_inventory_item_ItemData_descriptor,
+        new java.lang.String[] { "ItemId", "Count", "Unseen", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

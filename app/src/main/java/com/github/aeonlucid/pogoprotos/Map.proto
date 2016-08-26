@@ -8,6 +8,12 @@ option java_outer_classname = "Map";
 import "com/github/aeonlucid/pogoprotos/map/Fort.proto";
 import "com/github/aeonlucid/pogoprotos/map/Pokemon.proto";
 
+enum MapObjectsStatus {
+	UNSET_STATUS = 0;
+	SUCCESS = 1;
+	LOCATION_UNSET = 2;
+}
+
 message MapCell {
 	// S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
 	uint64 s2_cell_id = 1;
@@ -29,11 +35,5 @@ message MapCell {
 message SpawnPoint {
 	double latitude = 2;
 	double longitude = 3;
-}
-
-enum MapObjectsStatus {
-	UNSET_STATUS = 0;
-	SUCCESS = 1;
-	LOCATION_UNSET = 2;
 }
 

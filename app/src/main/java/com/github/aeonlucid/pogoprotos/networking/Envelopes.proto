@@ -9,6 +9,46 @@ import "com/github/aeonlucid/pogoprotos/data/Player.proto";
 import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
 import "com/github/aeonlucid/pogoprotos/networking/Requests.proto";
 
+message ResponseEnvelope {
+	int32 status_code = 1;
+	uint64 request_id = 2;
+	string api_url = 3;
+	repeated com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;
+	com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;
+	repeated bytes returns = 100;
+	string error = 101;
+}
+
+message Unknown6Response {
+	int32 response_type = 1; // Still don't know what 6 is, but 5 lists items available via IAPs.
+	Unknown2 unknown2 = 2; // Response data
+	message Unknown2 {
+		uint64 unknown1 = 1; // Maybe status? It's always 1 (success), so it's probably that.
+		repeated StoreItem items = 2; // Items to show in the shop
+		repeated com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3; // currencies that player has at the moment
+		string unknown4 = 4; // Some base64 encoded stuff...
+		message StoreItem {
+			string item_id = 1; // Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
+			bool is_iap = 2; // If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
+			com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3; // This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
+			com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4; // When bought, this IAP will yield this much currency
+			com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5; // The item and count of such item that this IAP will yield
+			repeated Tag tags = 6; // Stuff like SORT:12, CATEGORY:ITEMS
+			int32 unknown7 = 7; // Possibly something to toggle visibility in the store/purchasibility?
+			message Tag {
+				string key = 1;
+				string value = 2;
+			}
+		}
+	}
+}
+
+message AuthTicket {
+	bytes start = 1;
+	uint64 expire_timestamp_ms = 2;
+	bytes end = 3;
+}
+
 message Signature {
     message LocationFix {
         string provider = 1; // "network", "gps", "fused", possibly others
@@ -18,8 +58,8 @@ message Signature {
         // ??? shows up in struct, dunno where these go
         // float device_speed;
         // float device_course;
-        float horizontal_accuracy = 20; // iOS only? (range seems to be -1 to +1)
-        float altitude = 21;
+        float unknown20 = 20; // iOS only? (range seems to be -1 to +1)
+        float horizontal_accuracy = 21; // in meters, both on Android and iOS
         float vertical_accuracy = 22; // iOS only? (range seems to be ~10-12)
         uint64 provider_status = 26; // Usually 3 (possibly GPS status: 1 = no fix, 2 = acquiring/inaccurate, 3 = fix acquired)
                            // On iOS there are some LocationFixes with unk26=1 and everything else empty
@@ -30,9 +70,9 @@ message Signature {
     message AndroidGpsInfo {
         uint64 time_to_fix = 1;
         repeated int32 satellites_prn = 2;
-        repeated float snr = 3;
-        repeated float azimuth = 4;
-        repeated float elevation = 5;
+        repeated float azimuth = 3;
+        repeated float elevation = 4;
+        repeated float snr = 5;
         repeated bool has_almanac = 6;
         repeated bool has_ephemeris = 7;
         repeated bool used_in_fix = 8;
@@ -98,46 +138,6 @@ message Signature {
     int64 unknown25 = 25; // for 0.33 its static -8537042734809897855 or 0x898654dd2753a481, generated via xxHash64("\"b8fa9757195897aae92c53dbcf8a60fb3d86d745\"".ToByteArray(), 0x88533787)
 }
 
-message Unknown6Response {
-	int32 response_type = 1; // Still don't know what 6 is, but 5 lists items available via IAPs.
-	Unknown2 unknown2 = 2; // Response data
-	message Unknown2 {
-		uint64 unknown1 = 1; // Maybe status? It's always 1 (success), so it's probably that.
-		repeated StoreItem items = 2; // Items to show in the shop
-		repeated com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3; // currencies that player has at the moment
-		string unknown4 = 4; // Some base64 encoded stuff...
-		message StoreItem {
-			string item_id = 1; // Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-			bool is_iap = 2; // If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
-			com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3; // This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-			com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4; // When bought, this IAP will yield this much currency
-			com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5; // The item and count of such item that this IAP will yield
-			repeated Tag tags = 6; // Stuff like SORT:12, CATEGORY:ITEMS
-			int32 unknown7 = 7; // Possibly something to toggle visibility in the store/purchasibility?
-			message Tag {
-				string key = 1;
-				string value = 2;
-			}
-		}
-	}
-}
-
-message ResponseEnvelope {
-	int32 status_code = 1;
-	uint64 request_id = 2;
-	string api_url = 3;
-	repeated com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;
-	com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;
-	repeated bytes returns = 100;
-	string error = 101;
-}
-
-message AuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
-}
-
 message Unknown6 {
 	int32 request_type = 1; // 5 for IAPs, 6 is unknown still
 	Unknown2 unknown2 = 2;
@@ -153,13 +153,13 @@ message RequestEnvelope {
 	repeated com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;
 	// Unknown6 is required to get a response.
 	// For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-	com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;
+	repeated com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;
 	double latitude = 7;
 	double longitude = 8;
-	double altitude = 9;
+	double accuracy = 9;
 	AuthInfo auth_info = 10;
 	com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;
-	int64 unknown12 = 12;
+	int64 ms_since_last_locationfix = 12;
 	message AuthInfo {
 		string provider = 1;
 		JWT token = 2;

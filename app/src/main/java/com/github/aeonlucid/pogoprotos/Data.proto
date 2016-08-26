@@ -6,47 +6,8 @@ option java_package = "com.github.aeonlucid.pogoprotos";
 option java_outer_classname = "Data";
 
 import "com/github/aeonlucid/pogoprotos/Enums.proto";
-import "com/github/aeonlucid/pogoprotos/data/Player.proto";
 import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
-
-message PlayerData {
-	int64 creation_timestamp_ms  = 1;
-	string username = 2;
-	com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;
-	repeated com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed=true];
-	com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;
-	int32 max_pokemon_storage = 9;
-	int32 max_item_storage = 10;
-	com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;
-	com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;
-	com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;
-	repeated com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;
-	int32 remaining_codename_claims = 15;
-}
-
-message AssetDigestEntry {
-	string asset_id = 1;
-	string bundle_name = 2;
-	int64 version = 3;
-	fixed32 checksum = 4;
-	int32 size = 5;
-	bytes key = 6;
-}
-
-message PlayerBadge {
-	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
-	int32 rank = 2;
-	int32 start_value = 3;
-	int32 end_value = 4;
-	double current_value = 5;
-}
-
-message DownloadUrlEntry {
-	string asset_id = 1;
-	string url = 2;
-	int32 size = 3;
-	fixed32 checksum = 4;
-}
+import "com/github/aeonlucid/pogoprotos/data/Player.proto";
 
 message PokemonData {
 	fixed64 id = 1;
@@ -79,6 +40,53 @@ message PokemonData {
 	int32 favorite = 29;
 	string nickname = 30;
 	int32 from_fort = 31;
+	int32 buddy_candy_awarded = 32;
+}
+
+message PlayerBadge {
+	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
+	int32 rank = 2;
+	int32 start_value = 3;
+	int32 end_value = 4;
+	double current_value = 5;
+}
+
+message AssetDigestEntry {
+	string asset_id = 1;
+	string bundle_name = 2;
+	int64 version = 3;
+	fixed32 checksum = 4;
+	int32 size = 5;
+	bytes key = 6;
+}
+
+message DownloadUrlEntry {
+	string asset_id = 1;
+	string url = 2;
+	int32 size = 3;
+	fixed32 checksum = 4;
+}
+
+message BuddyPokemon {
+	fixed64 id = 1;
+	double start_km_walked = 2;
+	double last_km_awarded = 3;
+}
+
+message PlayerData {
+	int64 creation_timestamp_ms  = 1;
+	string username = 2;
+	com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;
+	repeated com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed=true];
+	com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;
+	int32 max_pokemon_storage = 9;
+	int32 max_item_storage = 10;
+	com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;
+	com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;
+	com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;
+	repeated com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;
+	int32 remaining_codename_claims = 15;
+	com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;
 }
 
 message PokedexEntry {
