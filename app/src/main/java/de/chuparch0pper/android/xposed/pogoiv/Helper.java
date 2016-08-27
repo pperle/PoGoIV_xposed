@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.github.aeonlucid.pogoprotos.Enums;
 import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.Descriptors;
+import com.google.protobuf.ProtocolMessageEnum;
 
 import java.util.Map;
 import java.util.Set;
@@ -114,6 +115,10 @@ public class Helper {
 
     public static String getCatchName(Responses.CatchPokemonResponse.CatchStatus status) {
         return prettyPrintEnum(status.toString());
+    }
+
+    public static String getGenericEnumName(ProtocolMessageEnum enumEntry) {
+        return prettyPrintEnum(enumEntry.toString());
     }
 
     private static String prettyPrintEnum(String enums) {
