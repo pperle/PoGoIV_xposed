@@ -258,7 +258,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         }
 
         Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
-        Helper.showToast(Helper.getCatchName(catchPokemonResponse.getStatus()), Toast.LENGTH_SHORT);
+        
+        String catchMessage = Helper.getCatchName(catchPokemonResponse.getStatus());
+        double missPercent = catchPokemonResponse.getMissPercent();
+        if (missPercent != 0D)
+            catchMessage += " (" + (Math.round(missPercent * 10000) / 100D) + "%)";
+
+        Helper.showToast(catchMessage, Toast.LENGTH_SHORT);
     }
 
     private void GetGymDetails(ByteString payload) {
