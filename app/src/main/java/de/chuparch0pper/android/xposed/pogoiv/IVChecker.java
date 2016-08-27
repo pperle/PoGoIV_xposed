@@ -283,7 +283,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
 
         if (getGymDetailsResponse.getResult() != Responses.GetGymDetailsResponse.Result.SUCCESS) {
-            Helper.showToast("Error getting gym details: " + getGymDetailsResponse.getResult().toString(), Toast.LENGTH_LONG);
+            Helper.showToast("Error getting gym details: " + Helper.getGenericEnumName(getGymDetailsResponse.getResult()), Toast.LENGTH_LONG);
             return;
         }
 
