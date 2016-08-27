@@ -11,6 +11,7 @@ import android.support.v7.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.github.aeonlucid.pogoprotos.Enums;
+import com.github.aeonlucid.pogoprotos.inventory.Item;
 import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.ProtocolMessageEnum;
@@ -115,6 +116,21 @@ public class Helper {
 
     public static String getCatchName(Responses.CatchPokemonResponse.CatchStatus status) {
         return prettyPrintEnum(status.toString());
+    }
+
+    public static String getItemName(Item.ItemId item) {
+        return prettyPrintEnum(item.toString().replaceAll("^ITEM_", ""));
+    }
+
+    public static String getItemName(Item.ItemId item, int count) {
+        String name = getItemName(item);
+        if (count != 1)
+            name += " (x" + count + ")";
+        return name;
+    }
+
+    public static String getItemName(Item.ItemAward itemAward) {
+        return getItemName(itemAward.getItemId(), itemAward.getItemCount());
     }
 
     public static String getGenericEnumName(ProtocolMessageEnum enumEntry) {

@@ -1,11 +1,13 @@
 package de.chuparch0pper.android.xposed.pogoiv;
 
+import android.text.format.DateFormat;
 import android.widget.Toast;
 
 import com.github.aeonlucid.pogoprotos.Enums;
 import com.github.aeonlucid.pogoprotos.data.Capture;
 import com.github.aeonlucid.pogoprotos.data.Gym;
 import com.github.aeonlucid.pogoprotos.data.Player;
+import com.github.aeonlucid.pogoprotos.inventory.Item;
 import com.github.aeonlucid.pogoprotos.map.Fort;
 import com.github.aeonlucid.pogoprotos.networking.Envelopes;
 import com.github.aeonlucid.pogoprotos.networking.Requests;
@@ -17,6 +19,8 @@ import java.lang.reflect.Field;
 import java.net.HttpURLConnection;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +46,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private boolean showCaughtToast;
     private boolean showIvNotification;
     private boolean showGymDetails;
+    private boolean showPokestopSpinResults;
 
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
 
@@ -170,6 +175,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     GetGymDetails(payload);
                 }
             }
+
+            Helper.Log("showPokestopSpinResults= " + showPokestopSpinResults);
+            if (showPokestopSpinResults) {
+                if (requestType == Requests.RequestType.FORT_SEARCH) {
+                    FortSearch(payload);
+                }
+            }
         }
     }
 
@@ -191,11 +203,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         showIvNotification = preferences.getBoolean("show_iv_notification", true);
         showCaughtToast = preferences.getBoolean("show_caught_toast", true);
         showGymDetails = preferences.getBoolean("show_gym_details", true);
+        showPokestopSpinResults = preferences.getBoolean("show_pokestop_spin_results", true);
 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
         Helper.Log("preferences - showCaughtToast = " + showCaughtToast);
         Helper.Log("preferences - showGymDetails = " + showGymDetails);
+        Helper.Log("preferences - showPokestopSpinResults = " + showPokestopSpinResults);
     }
 
     private void Encounter(ByteString payload) {
@@ -364,6 +378,64 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         }
         else {
             longText = new StringBuilder("No defending Pokémon.");
+        }
+
+        Helper.showNotification(title, summary.toString(), longText.toString());
+    }
+
+    private void FortSearch(ByteString payload) {
+
+        Responses.FortSearchResponse fortSearchResponse;
+        try {
+            fortSearchResponse = Responses.FortSearchResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing FortSearchResponse failed " + e);
+            return;
+        }
+
+        Helper.Log("fortSearchResponse = ", fortSearchResponse.getAllFields().entrySet());
+
+        if (fortSearchResponse.getResult() != Responses.FortSearchResponse.Result.SUCCESS) {
+            Helper.showToast("Error spinning Pokéstop: " + Helper.getGenericEnumName(fortSearchResponse.getResult()), Toast.LENGTH_LONG);
+            return;
+        }
+
+        final String title = "Pokéstop: Got " + fortSearchResponse.getItemsAwardedCount() + " items"
+                           + " and " + fortSearchResponse.getExperienceAwarded() + " XP";
+
+        final StringBuilder summary = new StringBuilder(64);
+        Date cooldownComplete = new Date(fortSearchResponse.getCooldownCompleteTimestampMs());
+        //summary.append("Cooldown end: ").append(java.text.DateFormat.getTimeInstance(java.text.DateFormat.DEFAULT, Locale.getDefault()).format(cooldownComplete));
+        summary.append("Wait until ").append(DateFormat.getTimeFormat(Helper.getPokeContext()).format(cooldownComplete));
+        summary.append(" | Chain hack seq. n.: ").append(fortSearchResponse.getChainHackSequenceNumber());
+
+        int gemsAwarded = fortSearchResponse.getGemsAwarded();
+        if (gemsAwarded != 0)
+            summary.append(" | Gems: ").append(gemsAwarded);
+
+        final StringBuilder longText = new StringBuilder(512);
+        longText.append(summary).append("\nItems:");
+
+        //Map<Item.ItemId, Integer> itemMap = new LinkedHashMap<Item.ItemId, Integer>(10);
+        Map<Item.ItemId, Integer> itemMap = new EnumMap<Item.ItemId, Integer>(Item.ItemId.class);
+        for (Item.ItemAward item : fortSearchResponse.getItemsAwardedList()) {
+            Item.ItemId itemId = item.getItemId();
+            int itemCount = item.getItemCount();
+
+            if (itemMap.containsKey(itemId))
+                itemMap.put(itemId, itemMap.get(itemId) + itemCount);
+            else
+                itemMap.put(itemId, itemCount);
+        }
+
+        for (Map.Entry<Item.ItemId, Integer> entry : itemMap.entrySet()) {
+            longText.append("\n   •  ");
+            longText.append(Helper.getItemName(entry.getKey(), entry.getValue()));
+        }
+
+        if (fortSearchResponse.hasPokemonDataEgg()) {
+            com.github.aeonlucid.pogoprotos.Data.PokemonData eggData = fortSearchResponse.getPokemonDataEgg();
+            longText.append("\n\uD83D\uDC23 Egg (").append(eggData.getEggKmWalkedTarget()).append(" km)");
         }
 
         Helper.showNotification(title, summary.toString(), longText.toString());

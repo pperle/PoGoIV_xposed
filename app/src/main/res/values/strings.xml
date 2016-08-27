@@ -9,6 +9,8 @@
     <string name="show_caught_toast_title">Show toast when Pokémon was caught</string>
     <string name="show_gym_details_summary">Notification showing hidden gym details</string>
     <string name="show_gym_details_title">Show gym details</string>
+    <string name="show_pokestop_spin_results_summary">Notification showing hidden data after Pokéstop spins</string>
+    <string name="show_pokestop_spin_results_title">Show Pokéstop spin results</string>
     <string name="move_unset">move unset</string>
     <string name="cp">CP</string>
 
