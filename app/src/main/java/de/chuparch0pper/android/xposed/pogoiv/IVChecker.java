@@ -281,7 +281,11 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     }
 
     private String getPokemonName(int pokemonNumber) {
-        return Helper.getPokemonNames()[pokemonNumber - 1];
+        String[] pokemonNames = Helper.getPokemonNames();
+        if (pokemonNumber > 0 && pokemonNumber <= pokemonNames.length)
+            return Helper.getPokemonNames()[pokemonNumber - 1];
+        else
+            return "(unknown Pokémon)";
     }
 
     private double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {
