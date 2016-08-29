@@ -8,6 +8,10 @@
     <string name="show_iv_notification_title">Afficher une notification lors de la rencontre d\'un Pokémon</string>
     <string name="show_caught_toast_summary">Un toast qui affiche si le Pokémon est capturé (CATCH_ERROR, CATCH_SUCCESS, CATCH_ESCAPE, CATCH_FLEE, CATCH_MISSED)</string>
     <string name="show_caught_toast_title">Afficher un toast qui donne l\'état de la capture</string>
+    <string name="show_gym_details_summary">Notification contenant les détails cachés des arènes</string>
+    <string name="show_gym_details_title">Afficher les détails des arènes</string>
+    <string name="show_pokestop_spin_results_title">Afficher le résultat des tournages de Pokéstops</string>
+    <string name="show_pokestop_spin_results_summary">Notification montrant les données cachés après avoir trourné les Pokéstops</string>
     <string name="show_startup_notification_summary">Notification affichée après la connexion qui contient la liste des Pokémon avec le plus de bonbons dans votre inventaire (utile pour planifier des évolutions en masse)</string>
     <string name="show_startup_notification_title">Afficher la notification pour le nombre de Pokémon de base et leurs bonbons</string>
     <string name="move_unset">attaque non définie</string>
