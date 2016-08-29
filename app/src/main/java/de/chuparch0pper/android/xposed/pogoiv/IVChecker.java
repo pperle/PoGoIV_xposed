@@ -234,7 +234,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     }
 
     private void Catch(ByteString payload) {
-
         Responses.CatchPokemonResponse catchPokemonResponse;
         try {
             catchPokemonResponse = Responses.CatchPokemonResponse.parseFrom(payload);
@@ -253,8 +252,8 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         Helper.showToast(catchMessage, Toast.LENGTH_SHORT);
     }
 
-    private void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
-        String pokemonName = getPokemonName(encounteredPokemon.getPokemonIdValue()) + " (" + Helper.getCpName() + " " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
+    private static void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
+        String pokemonName = Helper.getPokemonName(encounteredPokemon.getPokemonIdValue()) + " (" + Helper.getCpName() + " " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon);
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
                 + "\n\n" + "Moves: " + Helper.getPokeMoveName(encounteredPokemon.getMove1()) + ", " + Helper.getPokeMoveName(encounteredPokemon.getMove2())
@@ -272,7 +271,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
     }
 
-    private double getCatchRate(Capture.CaptureProbability captureProbability, int index, double multiplier) {
+    private static double getCatchRate(Capture.CaptureProbability captureProbability, int index, double multiplier) {
         double captureRate = captureProbability.getCaptureProbability(index) * 100d * multiplier;
         if (captureRate > 100.0d) {
             captureRate = 100.0d;
@@ -280,19 +279,11 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         return Math.round(captureRate * 100.0d) / 100.0d;
     }
 
-    private String getPokemonName(int pokemonNumber) {
-        String[] pokemonNames = Helper.getPokemonNames();
-        if (pokemonNumber > 0 && pokemonNumber <= pokemonNames.length)
-            return Helper.getPokemonNames()[pokemonNumber - 1];
-        else
-            return "(unknown Pokémon)";
-    }
-
-    private double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {
+    private static double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {
         return (double) Math.round(((encounteredPokemon.getIndividualAttack() + encounteredPokemon.getIndividualDefense() + encounteredPokemon.getIndividualStamina()) / 45.0 * 100.0) * 10) / 10;
     }
 
-    private float calcLevel(float cpMultiplier) {
+    private static float calcLevel(float cpMultiplier) {
         float level = 1;
         for (double currentCpM : Data.CpM) {
             if (Math.abs(cpMultiplier - currentCpM) < 0.0001) {
@@ -303,4 +294,9 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         return level;
     }
 
+    private static float calcLevel(com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData) {
+        if (pokemonData.getIsEgg())
+            return 0;
+        return calcLevel(pokemonData.getCpMultiplier() + pokemonData.getAdditionalCpMultiplier());
+    }
 }
