@@ -30,4 +30,10 @@
         android:summary="@string/show_pokestop_spin_results_summary"
         android:title="@string/show_pokestop_spin_results_title" />
 
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="show_startup_notification"
+        android:summary="@string/show_startup_notification_summary"
+        android:title="@string/show_startup_notification_title" />
+
 </PreferenceScreen>

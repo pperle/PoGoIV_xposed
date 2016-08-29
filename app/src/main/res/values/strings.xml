@@ -11,6 +11,8 @@
     <string name="show_gym_details_title">Show gym details</string>
     <string name="show_pokestop_spin_results_summary">Notification showing hidden data after Pokéstop spins</string>
     <string name="show_pokestop_spin_results_title">Show Pokéstop spin results</string>
+    <string name="show_startup_notification_summary">Notification shown after login that contains the list of Pokémon with the most candies in your inventory (useful to plan for mass-evolving)</string>
+    <string name="show_startup_notification_title">Show base Pokémon number and candy notification</string>
     <string name="move_unset">move unset</string>
     <string name="cp">CP</string>
 
