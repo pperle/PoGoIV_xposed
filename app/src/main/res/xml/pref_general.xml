@@ -18,4 +18,10 @@
         android:summary="@string/show_caught_toast_summary"
         android:title="@string/show_caught_toast_title" />
 
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="show_startup_notification"
+        android:summary="@string/show_startup_notification_summary"
+        android:title="@string/show_startup_notification_title" />
+
 </PreferenceScreen>

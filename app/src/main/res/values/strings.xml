@@ -7,6 +7,8 @@
     <string name="show_iv_notification_title">Show notification when encountering Pokémon</string>
     <string name="show_caught_toast_summary">Toast that shows you if the Pokémon was caught (CATCH_ERROR, CATCH_SUCCESS, CATCH_ESCAPE, CATCH_FLEE, CATCH_MISSED)</string>
     <string name="show_caught_toast_title">Show toast when Pokémon was caught</string>
+    <string name="show_startup_notification_summary">Notification shown after login that contains the list of Pokémon with the most candies in your inventory (useful to plan for mass-evolving)</string>
+    <string name="show_startup_notification_title">Show base Pokémon number and candy notification</string>
     <string name="move_unset">move unset</string>
     <string name="cp">CP</string>
 

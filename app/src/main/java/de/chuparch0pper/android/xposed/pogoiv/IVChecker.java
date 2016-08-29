@@ -2,6 +2,8 @@ package de.chuparch0pper.android.xposed.pogoiv;
 
 import android.widget.Toast;
 
+import com.github.aeonlucid.pogoprotos.Enums;
+import com.github.aeonlucid.pogoprotos.Inventory;
 import com.github.aeonlucid.pogoprotos.data.Capture;
 import com.github.aeonlucid.pogoprotos.networking.Envelopes;
 import com.github.aeonlucid.pogoprotos.networking.Requests;
@@ -13,7 +15,11 @@ import java.lang.reflect.Field;
 import java.net.HttpURLConnection;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +30,102 @@ import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
+
+class CountCandyPair implements Comparable<CountCandyPair> {
+    private int count;
+    private Inventory.Candy candy;
+
+    public CountCandyPair(int count, Inventory.Candy candy) {
+        setCount(count);
+        setCandy(candy);
+    }
+
+    public CountCandyPair(int count, Enums.PokemonFamilyId familyId) {
+        this(count, Inventory.Candy.newBuilder().setFamilyId(familyId).setCandy(0).build());
+    }
+
+    public CountCandyPair(Inventory.Candy candy) {
+        this(0, candy);
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public Inventory.Candy getCandy() {
+        return candy;
+    }
+
+    public void setCandy(Inventory.Candy candy) {
+        this.candy = candy == null ? Inventory.Candy.getDefaultInstance() : candy;
+    }
+
+    public int incrementCount() {
+        return ++count;
+    }
+
+    @Override
+    public String toString() {
+        return Helper.getPokemonName(candy.getFamilyIdValue()) + ": " + count +
+               " - Candies: " + candy.getCandy();
+    }
+
+    @Override
+    public int compareTo(CountCandyPair o) {
+        return Comparators.CANDY.compare(this, o);
+    }
+
+    public static class Comparators {
+        public static Comparator<CountCandyPair> COUNT = new Comparator<CountCandyPair>() {
+            @Override
+            public int compare(CountCandyPair ccp1, CountCandyPair ccp2) {
+                return ccp1.count - ccp2.count;
+            }
+        };
+
+        public static Comparator<CountCandyPair> CANDY = new Comparator<CountCandyPair>() {
+            @Override
+            public int compare(CountCandyPair ccp1, CountCandyPair ccp2) {
+                return ccp1.candy.getCandy() - ccp2.candy.getCandy();
+            }
+        };
+
+        public static Comparator<CountCandyPair> FAMILY_ID = new Comparator<CountCandyPair>() {
+            @Override
+            public int compare(CountCandyPair ccp1, CountCandyPair ccp2) {
+                return ccp1.candy.getFamilyIdValue() - ccp2.candy.getFamilyIdValue();
+            }
+        };
+    }
+}
+
+class EggHatchRewards {
+    private int experienceAwarded;
+    private int candyAwarded;
+    private int stardustAwarded;
+
+    public EggHatchRewards(int experienceAwarded, int candyAwarded, int stardustAwarded) {
+        this.experienceAwarded = experienceAwarded;
+        this.candyAwarded = candyAwarded;
+        this.stardustAwarded = stardustAwarded;
+    }
+
+    public int getExperienceAwarded() {
+        return experienceAwarded;
+    }
+
+    public int getCandyAwarded() {
+        return candyAwarded;
+    }
+
+    public int getStardustAwarded() {
+        return stardustAwarded;
+    }
+}
 
 /**
  * entry point for XposedBridge
@@ -37,8 +139,10 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private boolean enableModule;
     private boolean showCaughtToast;
     private boolean showIvNotification;
+    private boolean showStartupNotification;
 
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
+    private final Map<Long, EggHatchRewards> hatchedEggs = new HashMap<>();
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
@@ -158,6 +262,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     Catch(payload);
                 }
             }
+            if (requestType == Requests.RequestType.GET_HATCHED_EGGS) {
+                GetHatchedEggs(payload);
+            }
+
+            if (requestType == Requests.RequestType.GET_INVENTORY) {
+                GetInventory(payload);
+            }
         }
     }
 
@@ -178,10 +289,12 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         enableModule = preferences.getBoolean("enable_module", true);
         showIvNotification = preferences.getBoolean("show_iv_notification", true);
         showCaughtToast = preferences.getBoolean("show_caught_toast", true);
+        showStartupNotification = preferences.getBoolean("show_startup_notification", true);
 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
         Helper.Log("preferences - showCaughtToast = " + showCaughtToast);
+        Helper.Log("preferences - showStartupNotification = " + showStartupNotification);
     }
 
     private void Encounter(ByteString payload) {
@@ -198,7 +311,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         Helper.Log("encounterResponse = ", encounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
-
     }
 
     private void IncenseEncounter(ByteString payload) {
@@ -243,13 +355,174 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         }
 
         Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
-        
+
         String catchMessage = Helper.getCatchName(catchPokemonResponse.getStatus());
         double missPercent = catchPokemonResponse.getMissPercent();
         if (missPercent != 0D)
             catchMessage += " (" + (Math.round(missPercent * 10000) / 100D) + "%)";
 
         Helper.showToast(catchMessage, Toast.LENGTH_SHORT);
+    }
+
+    private void GetHatchedEggs(ByteString payload) {
+        Responses.GetHatchedEggsResponse getHatchedEggsResponse;
+        try {
+            getHatchedEggsResponse = Responses.GetHatchedEggsResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing getHatchedEggsResponse failed " + e);
+            return;
+        }
+
+        Helper.Log("getHatchedEggsResponse = ", getHatchedEggsResponse.getAllFields().entrySet());
+
+        if (!getHatchedEggsResponse.getSuccess())
+            return;
+
+        for (int i = 0, l = getHatchedEggsResponse.getPokemonIdCount(); i < l; i++) {
+            EggHatchRewards eggHatchRewards = new EggHatchRewards(getHatchedEggsResponse.getExperienceAwarded(i),
+                                                                  getHatchedEggsResponse.getCandyAwarded(i),
+                                                                  getHatchedEggsResponse.getStardustAwarded(i));
+            hatchedEggs.put(getHatchedEggsResponse.getPokemonId(i), eggHatchRewards);
+        }
+    }
+
+    private void GetInventory(ByteString payload) {
+        Responses.GetInventoryResponse getInventoryResponse;
+        try {
+            getInventoryResponse = Responses.GetInventoryResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing getInventoryResponse failed " + e);
+            return;
+        }
+
+        Helper.Log("getInventoryResponse = ", getInventoryResponse.getAllFields().entrySet());
+
+        if (!getInventoryResponse.getSuccess() || !getInventoryResponse.hasInventoryDelta())
+            return;
+
+        Inventory.InventoryDelta delta = getInventoryResponse.getInventoryDelta();
+
+        if (delta.getOriginalTimestampMs() == 0L) {
+            // First GetInventory request, server sends the full inventory
+            if (!showStartupNotification)
+                return;
+
+            final String title = "Pokémon summary";
+            final String summary;
+            final StringBuilder longText = new StringBuilder(512);
+
+            Map<Enums.PokemonFamilyId, CountCandyPair> pokemonMap = new EnumMap<>(Enums.PokemonFamilyId.class);
+
+            for (Inventory.InventoryItem item : delta.getInventoryItemsList()) {
+                if (!item.hasInventoryItemData())
+                    continue;
+                Inventory.InventoryItemData itemData = item.getInventoryItemData();
+
+                if (itemData.hasPokemonData()) {
+                    com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = itemData.getPokemonData();
+                    if (pokemonData.getIsEgg())
+                        continue;
+                    Enums.PokemonFamilyId familyId = Enums.PokemonFamilyId.forNumber(pokemonData.getPokemonIdValue());
+                    if (familyId != null) {
+                        if (pokemonMap.containsKey(familyId)) {
+                            pokemonMap.get(familyId).incrementCount();
+                        }
+                        else {
+                            pokemonMap.put(familyId, new CountCandyPair(1, familyId));
+                        }
+                    }
+                }
+
+                if (itemData.hasCandy()) {
+                    Inventory.Candy candy = itemData.getCandy();
+                    Enums.PokemonFamilyId familyId = candy.getFamilyId();
+                    if (pokemonMap.containsKey(familyId)) {
+                        pokemonMap.get(familyId).setCandy(candy);
+                    }
+                    else {
+                        pokemonMap.put(familyId, new CountCandyPair(candy));
+                    }
+                }
+            }
+
+            List<CountCandyPair> pokemonList = new LinkedList<>(pokemonMap.values());
+            Collections.sort(pokemonList, Collections.reverseOrder());
+
+            int pokemonCountTotal = 0;
+            int candyCountTotal = 0;
+            for (CountCandyPair ccp : pokemonList) {
+                if (longText.length() > 0)
+                    longText.append('\n');
+                longText.append(ccp.toString());
+                pokemonCountTotal += ccp.getCount();
+                candyCountTotal += ccp.getCandy().getCandy();
+            }
+
+            summary = pokemonCountTotal + " Pokémon, " + candyCountTotal + " Candies";
+
+            Helper.showNotification(title, summary, longText.toString());
+        }
+        else {
+            // Server only sends what changed since the last request
+            if (!showIvNotification)
+                return;
+
+            final String title;
+            final String summary;
+            final StringBuilder longText = new StringBuilder(512);
+            int eggsHatched = 0;
+            int experienceAwardedTotal = 0;
+            int stardustAwardedTotal = 0;
+
+            for (Inventory.InventoryItem item : delta.getInventoryItemsList()) {
+                if (!item.hasInventoryItemData())
+                    continue;
+                Inventory.InventoryItemData itemData = item.getInventoryItemData();
+
+                if (!itemData.hasPokemonData())
+                    continue;
+                com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = itemData.getPokemonData();
+
+                long pokemonId = pokemonData.getId();
+
+                if (hatchedEggs.containsKey(pokemonId)) {
+                    EggHatchRewards eggHatchRewards = hatchedEggs.get(pokemonId);
+                    hatchedEggs.remove(pokemonId);
+
+                    int experienceAwarded = eggHatchRewards.getExperienceAwarded();
+                    int candyAwarded = eggHatchRewards.getCandyAwarded();
+                    int stardustAwarded = eggHatchRewards.getStardustAwarded();
+
+                    eggsHatched++;
+                    experienceAwardedTotal += experienceAwarded;
+                    stardustAwardedTotal += stardustAwarded;
+
+                    if (longText.length() > 0)
+                        longText.append('\n');
+                    longText.append(Helper.getPokemonName(pokemonData.getPokemonIdValue())).append(" \uD83D\uDC23 ");
+                    longText.append(experienceAwarded).append(" XP | ");
+                    longText.append(candyAwarded).append(" Cd. | ");
+                    longText.append(stardustAwarded).append(" SD.\n");
+                    longText.append("L. ").append(calcLevel(pokemonData));
+                    longText.append(" | IVs: ").append(calcPotential(pokemonData));
+                    longText.append("% | ").append(pokemonData.getIndividualAttack());
+                    longText.append("/").append(pokemonData.getIndividualDefense());
+                    longText.append("/").append(pokemonData.getIndividualStamina());
+                }
+            }
+
+            if (eggsHatched > 0) {
+                if (eggsHatched > 1)
+                    title = "Egg hatched";
+                else
+                    title = "Eggs hatched: " + eggsHatched;
+
+                summary = eggsHatched + " egg" + (eggsHatched > 1 ? "s" : "") + " hatched, got " +
+                          experienceAwardedTotal + " XP, " + stardustAwardedTotal + " Stardust";
+
+                Helper.showNotification(title, summary, longText.toString());
+            }
+        }
     }
 
     private static void createEncounterNotification(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon, Capture.CaptureProbability captureProbability) {
