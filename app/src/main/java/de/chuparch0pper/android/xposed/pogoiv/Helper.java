@@ -108,6 +108,14 @@ public class Helper {
         return pokemonNames;
     }
 
+    public static String getPokemonName(int pokemonNumber) {
+        String[] pokemonNames = Helper.getPokemonNames();
+        if (pokemonNumber > 0 && pokemonNumber <= pokemonNames.length)
+            return Helper.getPokemonNames()[pokemonNumber - 1];
+        else
+            return "(unknown Pokémon: " + pokemonNumber + ")";
+    }
+
     public static String getPokeMoveName(Enums.PokemonMove pokeMove) {
         // switch (pokeMove) {} // TODO later.. there are more than 300 moves
         return prettyPrintEnum(pokeMove.toString());
