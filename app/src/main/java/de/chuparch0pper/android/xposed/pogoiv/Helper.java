@@ -117,7 +117,7 @@ public class Helper {
 
     public static String getPokeMoveName(Enums.PokemonMove pokeMove) {
         // switch (pokeMove) {} // TODO later.. there are more than 300 moves
-        return prettyPrintEnum(pokeMove.toString());
+        return prettyPrintEnum(pokeMove.toString().replaceAll("_FAST$", ""));
     }
 
 
