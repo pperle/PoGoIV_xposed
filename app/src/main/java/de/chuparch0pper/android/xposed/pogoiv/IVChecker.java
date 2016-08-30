@@ -151,6 +151,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
     private final Map<Long, EggHatchRewards> hatchedEggs = new HashMap<>();
+    private final Map<Item.ItemId, Integer> inventoryItems = new EnumMap<>(Item.ItemId.class);
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
@@ -284,6 +285,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     FortSearch(payload);
                 }
             }
+
             if (requestType == Requests.RequestType.GET_HATCHED_EGGS) {
                 GetHatchedEggs(payload);
             }
@@ -591,19 +593,19 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             if (!showStartupNotification)
                 return;
 
-            final String title = "Pokémon summary";
+            final String title = "Base Pokémon summary";
             final String summary;
             final StringBuilder longText = new StringBuilder(512);
 
             Map<Enums.PokemonFamilyId, CountCandyPair> pokemonMap = new EnumMap<>(Enums.PokemonFamilyId.class);
 
-            for (Inventory.InventoryItem item : delta.getInventoryItemsList()) {
-                if (!item.hasInventoryItemData())
+            for (Inventory.InventoryItem inventoryItem : delta.getInventoryItemsList()) {
+                if (!inventoryItem.hasInventoryItemData())
                     continue;
-                Inventory.InventoryItemData itemData = item.getInventoryItemData();
+                Inventory.InventoryItemData inventoryItemData = inventoryItem.getInventoryItemData();
 
-                if (itemData.hasPokemonData()) {
-                    com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = itemData.getPokemonData();
+                if (inventoryItemData.hasPokemonData()) {
+                    com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = inventoryItemData.getPokemonData();
                     if (pokemonData.getIsEgg())
                         continue;
                     Enums.PokemonFamilyId familyId = Enums.PokemonFamilyId.forNumber(pokemonData.getPokemonIdValue());
@@ -617,8 +619,8 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     }
                 }
 
-                if (itemData.hasCandy()) {
-                    Inventory.Candy candy = itemData.getCandy();
+                if (inventoryItemData.hasCandy()) {
+                    Inventory.Candy candy = inventoryItemData.getCandy();
                     Enums.PokemonFamilyId familyId = candy.getFamilyId();
                     if (pokemonMap.containsKey(familyId)) {
                         pokemonMap.get(familyId).setCandy(candy);
@@ -626,6 +628,11 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     else {
                         pokemonMap.put(familyId, new CountCandyPair(candy));
                     }
+                }
+
+                if (inventoryItemData.hasItem()) {
+                    Item.ItemData itemData = inventoryItemData.getItem();
+                    inventoryItems.put(itemData.getItemId(), itemData.getCount());
                 }
             }
 
@@ -642,7 +649,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 candyCountTotal += ccp.getCandy().getCandy();
             }
 
-            summary = pokemonCountTotal + " Pokémon, " + candyCountTotal + " Candies";
+            summary = pokemonCountTotal + " base Pokémon, " + candyCountTotal + " Candies";
 
             Helper.showNotification(title, summary, longText.toString());
         }
@@ -658,48 +665,53 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             int experienceAwardedTotal = 0;
             int stardustAwardedTotal = 0;
 
-            for (Inventory.InventoryItem item : delta.getInventoryItemsList()) {
-                if (!item.hasInventoryItemData())
+            for (Inventory.InventoryItem inventoryItem : delta.getInventoryItemsList()) {
+                if (!inventoryItem.hasInventoryItemData())
                     continue;
-                Inventory.InventoryItemData itemData = item.getInventoryItemData();
+                Inventory.InventoryItemData inventoryItemData = inventoryItem.getInventoryItemData();
 
-                if (!itemData.hasPokemonData())
-                    continue;
-                com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = itemData.getPokemonData();
+                if (inventoryItemData.hasPokemonData()) {
+                    com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = inventoryItemData.getPokemonData();
 
-                long pokemonId = pokemonData.getId();
+                    long pokemonId = pokemonData.getId();
 
-                if (hatchedEggs.containsKey(pokemonId)) {
-                    EggHatchRewards eggHatchRewards = hatchedEggs.get(pokemonId);
-                    hatchedEggs.remove(pokemonId);
+                    if (hatchedEggs.containsKey(pokemonId)) {
+                        EggHatchRewards eggHatchRewards = hatchedEggs.get(pokemonId);
+                        hatchedEggs.remove(pokemonId);
 
-                    int experienceAwarded = eggHatchRewards.getExperienceAwarded();
-                    int candyAwarded = eggHatchRewards.getCandyAwarded();
-                    int stardustAwarded = eggHatchRewards.getStardustAwarded();
+                        int experienceAwarded = eggHatchRewards.getExperienceAwarded();
+                        int candyAwarded = eggHatchRewards.getCandyAwarded();
+                        int stardustAwarded = eggHatchRewards.getStardustAwarded();
 
-                    eggsHatched++;
-                    experienceAwardedTotal += experienceAwarded;
-                    stardustAwardedTotal += stardustAwarded;
+                        eggsHatched++;
+                        experienceAwardedTotal += experienceAwarded;
+                        stardustAwardedTotal += stardustAwarded;
 
-                    if (longText.length() > 0)
-                        longText.append('\n');
-                    longText.append(Helper.getPokemonName(pokemonData.getPokemonIdValue())).append(" \uD83D\uDC23 ");
-                    longText.append(experienceAwarded).append(" XP | ");
-                    longText.append(candyAwarded).append(" Cd. | ");
-                    longText.append(stardustAwarded).append(" SD.\n");
-                    longText.append("L. ").append(calcLevel(pokemonData));
-                    longText.append(" | IVs: ").append(calcPotential(pokemonData));
-                    longText.append("% | ").append(pokemonData.getIndividualAttack());
-                    longText.append("/").append(pokemonData.getIndividualDefense());
-                    longText.append("/").append(pokemonData.getIndividualStamina());
+                        if (longText.length() > 0)
+                            longText.append('\n');
+                        longText.append(Helper.getPokemonName(pokemonData.getPokemonIdValue())).append(" \uD83D\uDC23 ");
+                        longText.append(experienceAwarded).append(" XP | ");
+                        longText.append(candyAwarded).append(" Cd. | ");
+                        longText.append(stardustAwarded).append(" SD.\n");
+                        longText.append("L. ").append(calcLevel(pokemonData));
+                        longText.append(" | IVs: ").append(calcPotential(pokemonData));
+                        longText.append("% | ").append(pokemonData.getIndividualAttack());
+                        longText.append("/").append(pokemonData.getIndividualDefense());
+                        longText.append("/").append(pokemonData.getIndividualStamina());
+                    }
+                }
+
+                if (inventoryItemData.hasItem()) {
+                    Item.ItemData itemData = inventoryItemData.getItem();
+                    inventoryItems.put(itemData.getItemId(), itemData.getCount());
                 }
             }
 
             if (eggsHatched > 0) {
                 if (eggsHatched > 1)
-                    title = "Egg hatched";
-                else
                     title = "Eggs hatched: " + eggsHatched;
+                else
+                    title = "Egg hatched";
 
                 summary = eggsHatched + " egg" + (eggsHatched > 1 ? "s" : "") + " hatched, got " +
                           experienceAwardedTotal + " XP, " + stardustAwardedTotal + " Stardust";
@@ -755,5 +767,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         if (pokemonData.getIsEgg())
             return 0;
         return calcLevel(pokemonData.getCpMultiplier() + pokemonData.getAdditionalCpMultiplier());
+    }
+
+    private int getItemCount() {
+        int itemCount = 1; // Player Camera uses 1 item slot
+        for (Map.Entry<Item.ItemId, Integer> entry : inventoryItems.entrySet()) {
+            itemCount += entry.getValue();
+        }
+        return itemCount;
     }
 }
