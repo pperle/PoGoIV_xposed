@@ -471,12 +471,12 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 if (!nickname.isEmpty())
                     longText.append(" [").append(nickname).append("]");
 
-                longText.append(" | CP ").append(pokemonData.getCp());
+                longText.append(" | ").append(Helper.getCpName()).append(" ").append(pokemonData.getCp());
                 longText.append(" | L. ").append(calcLevel(pokemonData.getCpMultiplier() + pokemonData.getAdditionalCpMultiplier()));
                 longText.append(" | HP ").append(pokemonData.getStaminaMax());
-                longText.append("\nGym Att.: ").append(pokemonData.getBattlesAttacked());
-                longText.append(", Def.: ").append(pokemonData.getBattlesDefended());
-                longText.append(" | Trainer: ").append(trainer.getName());
+                longText.append("\nA. ").append(pokemonData.getBattlesAttacked());
+                longText.append(", D. ").append(pokemonData.getBattlesDefended());
+                longText.append(" | Tr.: ").append(trainer.getName());
                 longText.append(", L. ").append(trainer.getLevel());
                 longText.append("\nIVs: ").append(calcPotential(pokemonData));
                 longText.append("% | ").append(pokemonData.getIndividualAttack());
@@ -525,7 +525,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         final StringBuilder longText = new StringBuilder(512);
         longText.append(summary).append("\nItems:");
 
-        //Map<Item.ItemId, Integer> itemMap = new LinkedHashMap<>(10);
         Map<Item.ItemId, Integer> itemMap = new EnumMap<>(Item.ItemId.class);
         for (Item.ItemAward item : fortSearchResponse.getItemsAwardedList()) {
             Item.ItemId itemId = item.getItemId();
@@ -538,13 +537,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         }
 
         for (Map.Entry<Item.ItemId, Integer> entry : itemMap.entrySet()) {
-            longText.append("\n   •  ");
+            longText.append("\n  • \t");
             longText.append(Helper.getItemName(entry.getKey(), entry.getValue()));
         }
 
         if (fortSearchResponse.hasPokemonDataEgg()) {
             com.github.aeonlucid.pogoprotos.Data.PokemonData eggData = fortSearchResponse.getPokemonDataEgg();
-            longText.append("\n\uD83D\uDC23 Egg (").append(eggData.getEggKmWalkedTarget()).append(" km)");
+            longText.append("\n\uD83D\uDC23\tEgg (").append(eggData.getEggKmWalkedTarget()).append(" km)");
         }
 
         Helper.showNotification(title, summary.toString(), longText.toString());
