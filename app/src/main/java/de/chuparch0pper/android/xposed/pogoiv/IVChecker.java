@@ -408,7 +408,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
 
         if (getGymDetailsResponse.getResult() != Responses.GetGymDetailsResponse.Result.SUCCESS) {
-            Helper.showToast("Error getting gym details: " + Helper.getGenericEnumName(getGymDetailsResponse.getResult()), Toast.LENGTH_LONG);
+            Helper.showToast(Html.fromHtml("Error getting gym details: <b>" + Helper.getGenericEnumName(getGymDetailsResponse.getResult()) + "</b>"), Toast.LENGTH_LONG);
             return;
         }
 
@@ -509,13 +509,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         int experienceAwarded = fortSearchResponse.getExperienceAwarded();
 
         if (fortSearchResponse.getResult() != Responses.FortSearchResponse.Result.SUCCESS) {
-            Helper.showToast("Error spinning Pokéstop: " + Helper.getGenericEnumName(fortSearchResponse.getResult()), Toast.LENGTH_LONG);
+            Helper.showToast(Html.fromHtml("Error spinning Pokéstop: <b>" + Helper.getGenericEnumName(fortSearchResponse.getResult()) + "</b>"), Toast.LENGTH_LONG);
             if (itemsAwardedCount == 0 && experienceAwarded == 0)
                 return;
         }
 
         if (itemsAwardedCount > 0)
-            Helper.showToast("You now have " + (getItemCount() + itemsAwardedCount) + " items", Toast.LENGTH_LONG);
+            Helper.showToast(Html.fromHtml("You now have <b>" + (getItemCount() + itemsAwardedCount) + " items</b>"), Toast.LENGTH_LONG);
 
         final String title = "Pokéstop: Got " + itemsAwardedCount + " items and " + experienceAwarded + " XP";
 
