@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.networking.platform.requests;
+
+option java_package = "com.github.aeonlucid.pogoprotos.networking.platform";
+option java_outer_classname = "Requests";
+
+message BuyItemPokeCoinsRequest {
+	string item_id = 1;
+}
+
+message SendEncryptedSignatureRequest {
+	bytes encrypted_signature = 1;
+}
+
+message BuyItemAndroidRequest {
+	string buy_item_intent = 1; // see https://developer.android.com/google/play/billing/billing_reference.html table 4
+}
+
