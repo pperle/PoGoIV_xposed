@@ -1,5 +1,6 @@
 package de.chuparch0pper.android.xposed.pogoiv;
 
+import android.text.Html;
 import android.text.format.DateFormat;
 import android.widget.Toast;
 
@@ -504,13 +505,19 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         Helper.Log("fortSearchResponse = ", fortSearchResponse.getAllFields().entrySet());
 
+        int itemsAwardedCount = fortSearchResponse.getItemsAwardedCount();
+        int experienceAwarded = fortSearchResponse.getExperienceAwarded();
+
         if (fortSearchResponse.getResult() != Responses.FortSearchResponse.Result.SUCCESS) {
             Helper.showToast("Error spinning Pokéstop: " + Helper.getGenericEnumName(fortSearchResponse.getResult()), Toast.LENGTH_LONG);
-            return;
+            if (itemsAwardedCount == 0 && experienceAwarded == 0)
+                return;
         }
 
-        final String title = "Pokéstop: Got " + fortSearchResponse.getItemsAwardedCount() + " items" +
-                             " and " + fortSearchResponse.getExperienceAwarded() + " XP";
+        if (itemsAwardedCount > 0)
+            Helper.showToast("You now have " + (getItemCount() + itemsAwardedCount) + " items", Toast.LENGTH_LONG);
+
+        final String title = "Pokéstop: Got " + itemsAwardedCount + " items and " + experienceAwarded + " XP";
 
         final StringBuilder summary = new StringBuilder(64);
         Date cooldownComplete = new Date(fortSearchResponse.getCooldownCompleteTimestampMs());
