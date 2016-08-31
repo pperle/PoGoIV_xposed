@@ -42,7 +42,7 @@ public class Helper {
 
     }
 
-    public static void showToast(final String message, final int length) {
+    public static void showToast(final CharSequence message, final int length) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
