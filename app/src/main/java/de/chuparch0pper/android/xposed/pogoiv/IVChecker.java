@@ -596,13 +596,6 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         if (delta.getOriginalTimestampMs() == 0L) {
             // First GetInventory request, server sends the full inventory
-            if (!showStartupNotification)
-                return;
-
-            final String title = "Base Pokémon summary";
-            final String summary;
-            final StringBuilder longText = new StringBuilder(512);
-
             Map<Enums.PokemonFamilyId, CountCandyPair> pokemonMap = new EnumMap<>(Enums.PokemonFamilyId.class);
 
             for (Inventory.InventoryItem inventoryItem : delta.getInventoryItemsList()) {
@@ -610,29 +603,31 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                     continue;
                 Inventory.InventoryItemData inventoryItemData = inventoryItem.getInventoryItemData();
 
-                if (inventoryItemData.hasPokemonData()) {
-                    com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = inventoryItemData.getPokemonData();
-                    if (pokemonData.getIsEgg())
-                        continue;
-                    Enums.PokemonFamilyId familyId = Enums.PokemonFamilyId.forNumber(pokemonData.getPokemonIdValue());
-                    if (familyId != null) {
+                if (showStartupNotification) {
+                    if (inventoryItemData.hasPokemonData()) {
+                        com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = inventoryItemData.getPokemonData();
+                        if (pokemonData.getIsEgg())
+                            continue;
+                        Enums.PokemonFamilyId familyId = Enums.PokemonFamilyId.forNumber(pokemonData.getPokemonIdValue());
+                        if (familyId != null && familyId != Enums.PokemonFamilyId.FAMILY_HYPNO) {
+                            if (pokemonMap.containsKey(familyId)) {
+                                pokemonMap.get(familyId).incrementCount();
+                            }
+                            else {
+                                pokemonMap.put(familyId, new CountCandyPair(1, familyId));
+                            }
+                        }
+                    }
+
+                    if (inventoryItemData.hasCandy()) {
+                        Inventory.Candy candy = inventoryItemData.getCandy();
+                        Enums.PokemonFamilyId familyId = candy.getFamilyId();
                         if (pokemonMap.containsKey(familyId)) {
-                            pokemonMap.get(familyId).incrementCount();
+                            pokemonMap.get(familyId).setCandy(candy);
                         }
                         else {
-                            pokemonMap.put(familyId, new CountCandyPair(1, familyId));
+                            pokemonMap.put(familyId, new CountCandyPair(candy));
                         }
-                    }
-                }
-
-                if (inventoryItemData.hasCandy()) {
-                    Inventory.Candy candy = inventoryItemData.getCandy();
-                    Enums.PokemonFamilyId familyId = candy.getFamilyId();
-                    if (pokemonMap.containsKey(familyId)) {
-                        pokemonMap.get(familyId).setCandy(candy);
-                    }
-                    else {
-                        pokemonMap.put(familyId, new CountCandyPair(candy));
                     }
                 }
 
@@ -642,41 +637,45 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 }
             }
 
-            List<CountCandyPair> pokemonList = new LinkedList<>(pokemonMap.values());
-            Collections.sort(pokemonList, Collections.reverseOrder());
+            if (showStartupNotification) {
+                final String title = "Base Pokémon summary";
+                final String summary;
+                final StringBuilder longText = new StringBuilder(512);
 
-            int pokemonCountTotal = 0;
-            int candyCountTotal = 0;
-            for (CountCandyPair ccp : pokemonList) {
-                if (longText.length() > 0)
-                    longText.append('\n');
-                longText.append(ccp.toString());
-                pokemonCountTotal += ccp.getCount();
-                candyCountTotal += ccp.getCandy().getCandy();
+                List<CountCandyPair> pokemonList = new LinkedList<>(pokemonMap.values());
+                Collections.sort(pokemonList, Collections.reverseOrder());
+
+                int pokemonCountTotal = 0;
+                int candyCountTotal = 0;
+                for (CountCandyPair ccp : pokemonList) {
+                    if (longText.length() > 0)
+                        longText.append('\n');
+                    longText.append(ccp.toString());
+                    pokemonCountTotal += ccp.getCount();
+                    candyCountTotal += ccp.getCandy().getCandy();
+                }
+
+                summary = pokemonCountTotal + " base Pokémon, " + candyCountTotal + " Candies";
+
+                Helper.showNotification(title, summary, longText.toString());
             }
-
-            summary = pokemonCountTotal + " base Pokémon, " + candyCountTotal + " Candies";
-
-            Helper.showNotification(title, summary, longText.toString());
         }
         else {
             // Server only sends what changed since the last request
-            if (!showIvNotification)
-                return;
-
             final String title;
             final String summary;
             final StringBuilder longText = new StringBuilder(512);
             int eggsHatched = 0;
             int experienceAwardedTotal = 0;
             int stardustAwardedTotal = 0;
+            String lastHatchedPokemonName = "";
 
             for (Inventory.InventoryItem inventoryItem : delta.getInventoryItemsList()) {
                 if (!inventoryItem.hasInventoryItemData())
                     continue;
                 Inventory.InventoryItemData inventoryItemData = inventoryItem.getInventoryItemData();
 
-                if (inventoryItemData.hasPokemonData()) {
+                if (showIvNotification && inventoryItemData.hasPokemonData()) {
                     com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = inventoryItemData.getPokemonData();
 
                     long pokemonId = pokemonData.getId();
@@ -692,10 +691,11 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                         eggsHatched++;
                         experienceAwardedTotal += experienceAwarded;
                         stardustAwardedTotal += stardustAwarded;
+                        lastHatchedPokemonName = Helper.getPokemonName(pokemonData.getPokemonIdValue());
 
                         if (longText.length() > 0)
                             longText.append('\n');
-                        longText.append(Helper.getPokemonName(pokemonData.getPokemonIdValue())).append(" \uD83D\uDC23 ");
+                        longText.append(lastHatchedPokemonName).append(" \uD83D\uDC23 ");
                         longText.append(experienceAwarded).append(" XP | ");
                         longText.append(candyAwarded).append(" Cd. | ");
                         longText.append(stardustAwarded).append(" SD.\n");
@@ -717,7 +717,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 if (eggsHatched > 1)
                     title = "Eggs hatched: " + eggsHatched;
                 else
-                    title = "Egg hatched";
+                    title = "Egg hatched: " + lastHatchedPokemonName;
 
                 summary = eggsHatched + " egg" + (eggsHatched > 1 ? "s" : "") + " hatched, got " +
                           experienceAwardedTotal + " XP, " + stardustAwardedTotal + " Stardust";
