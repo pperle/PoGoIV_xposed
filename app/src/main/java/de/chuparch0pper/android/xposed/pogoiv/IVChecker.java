@@ -456,13 +456,13 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
 
         if (membershipsCount > 0) {
             longText = new StringBuilder(1024);
-            longText.append("Defending Pokémon:");
 
             for (Gym.GymMembership membership : gymState.getMembershipsList()) {
                 final Player.PlayerPublicProfile trainer = membership.getTrainerPublicProfile();
                 final com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData = membership.getPokemonData();
 
-                longText.append('\n');
+                if (longText.length() > 0)
+                    longText.append('\n');
                 longText.append(Helper.getPokemonName(pokemonData.getPokemonIdValue()));
 
                 if (pokemonData.getFavorite() == 1)
