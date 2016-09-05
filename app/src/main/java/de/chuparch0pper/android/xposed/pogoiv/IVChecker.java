@@ -251,7 +251,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         String pokemonName = getPokemonName(encounteredPokemon.getPokemonIdValue()) + " (" + Helper.getCpName() + " " + encounteredPokemon.getCp() + ") LVL " + calcLevel(encounteredPokemon.getCpMultiplier());
         String pokemonIV = calcPotential(encounteredPokemon) + "% " + "[A/D/S " + encounteredPokemon.getIndividualAttack() + "/" + encounteredPokemon.getIndividualDefense() + "/" + encounteredPokemon.getIndividualStamina() + "]";
         String pokemonIVandMoreInfo = pokemonIV
-                + "\n\n" + "Moves: " + Helper.getPokeMoveName(encounteredPokemon.getMove1()) + ", " + Helper.getPokeMoveName(encounteredPokemon.getMove2())
+                + "\n\n" + "Moves: " + Helper.getPokeMoveName(encounteredPokemon.getMove1().getNumber()) + ", " + Helper.getPokeMoveName(encounteredPokemon.getMove2().getNumber())
                 + "\n\n" + "CaptureProbability"
                 + "\n" + "Pokéball :\t" + getCatchRate(captureProbability, 0, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 0, 1.5) + "%)"
                 + "\n" + "Great Ball :\t" + getCatchRate(captureProbability, 1, 1) + "%\t (with Razzberry:" + getCatchRate(captureProbability, 1, 1.5) + "%)"
@@ -269,7 +269,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     }
 
     private String getPokemonName(int pokemonNumber) {
-        return Helper.getPokemonNames()[pokemonNumber - 1];
+        return Helper.getPokemonName(pokemonNumber - 1);
     }
 
     private double calcPotential(com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon) {

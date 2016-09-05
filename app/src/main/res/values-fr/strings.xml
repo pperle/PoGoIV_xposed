@@ -155,4 +155,628 @@
         <item>Mew</item>
     </string-array>
 
+    <string-array name="MoveSet">
+        <item>&#201;cras\'Face</item>
+        <item>Poing-Karat&#233;</item>
+        <item>Torgnoles</item>
+        <item>Poing Com&#232;te</item>
+        <item>Ultimapoing</item>
+        <item>Jackpot</item>
+        <item>Poing de Feu</item>
+        <item>Poing-Glace</item>
+        <item>Poing-&#201;clair</item>
+        <item>Griffe</item>
+        <item>Force Poigne</item>
+        <item>Guillotine</item>
+        <item>Coupe-Vent</item>
+        <item>Danse-Lames</item>
+        <item>Coupe</item>
+        <item>Tornade</item>
+        <item>Cru-Aile</item>
+        <item>Cyclone</item>
+        <item>Vol</item>
+        <item>&#201;treinte</item>
+        <item>Souplesse</item>
+        <item>Fouet Lianes</item>
+        <item>&#201;crasement</item>
+        <item>Double Pied</item>
+        <item>Ultimawashi</item>
+        <item>Pied Saut&#233;</item>
+        <item>Mawashi Geri</item>
+        <item>Jet de Sable</item>
+        <item>Coup d&#8217;Boule</item>
+        <item>Koud\'Korne</item>
+        <item>Furie</item>
+        <item>Empal\'Korne</item>
+        <item>Charge</item>
+        <item>Plaquage</item>
+        <item>Ligotage</item>
+        <item>B&#233;lier</item>
+        <item>Mania</item>
+        <item>Damocl&#232;s</item>
+        <item>Mimi-Queue</item>
+        <item>Dard-Venin</item>
+        <item>Double-Dard</item>
+        <item>Dard-Nu&#233;e</item>
+        <item>Groz\'Yeux</item>
+        <item>Morsure</item>
+        <item>Rugissement</item>
+        <item>Hurlement</item>
+        <item>Berceuse</item>
+        <item>Ultrason</item>
+        <item>Sonicboom</item>
+        <item>Entrave</item>
+        <item>Acide</item>
+        <item>Flamm&#232;che</item>
+        <item>Lance-Flammes</item>
+        <item>Brume</item>
+        <item>Pistolet &#224; O</item>
+        <item>Hydrocanon</item>
+        <item>Surf</item>
+        <item>Laser Glace</item>
+        <item>Blizzard</item>
+        <item>Rafale Psy</item>
+        <item>Bulles d&#8217;O</item>
+        <item>Onde Bor&#233;ale</item>
+        <item>Ultralaser</item>
+        <item>Picpic</item>
+        <item>Bec Vrille</item>
+        <item>Sacrifice</item>
+        <item>Balayage</item>
+        <item>Riposte</item>
+        <item>Frappe Atlas</item>
+        <item>Force</item>
+        <item>Vol-Vie</item>
+        <item>M&#233;ga-Sangsue</item>
+        <item>Vampigraine</item>
+        <item>Croissance</item>
+        <item>Tranch\'Herbe</item>
+        <item>Lance-Soleil</item>
+        <item>Poudre Toxik</item>
+        <item>Para-Spore</item>
+        <item>Poudre Dodo</item>
+        <item>Danse-Fleur</item>
+        <item>S&#233;cr&#233;tion</item>
+        <item>Draco-Rage</item>
+        <item>Danse Flamme</item>
+        <item>&#201;clair</item>
+        <item>Tonnerre</item>
+        <item>Cage-&#201;clair</item>
+        <item>Fatal-Foudre</item>
+        <item>Jet-Pierres</item>
+        <item>S&#233;isme</item>
+        <item>Ab&#238;me</item>
+        <item>Tunnel</item>
+        <item>Toxik</item>
+        <item>Choc Mental</item>
+        <item>Psyko</item>
+        <item>Hypnose</item>
+        <item>Yoga</item>
+        <item>H&#226;te</item>
+        <item>Vive-Attaque</item>
+        <item>Fr&#233;n&#233;sie</item>
+        <item>T&#233;l&#233;port</item>
+        <item>Ombre Nocturne</item>
+        <item>Copie</item>
+        <item>Grincement</item>
+        <item>Reflet</item>
+        <item>Soin</item>
+        <item>Armure</item>
+        <item>Lilliput</item>
+        <item>Brouillard</item>
+        <item>Onde Folie</item>
+        <item>Repli</item>
+        <item>Boul\'Armure</item>
+        <item>Bouclier</item>
+        <item>Mur Lumi&#232;re</item>
+        <item>Bu&#233;e Noire</item>
+        <item>Protection</item>
+        <item>Puissance</item>
+        <item>Patience</item>
+        <item>M&#233;tronome</item>
+        <item>Mimique</item>
+        <item>Destruction</item>
+        <item>Bomb\'&#338;uf</item>
+        <item>L&#233;chouille</item>
+        <item>Pur&#233;dpois</item>
+        <item>D&#233;tritus</item>
+        <item>Massd\'Os</item>
+        <item>D&#233;flagration</item>
+        <item>Cascade</item>
+        <item>Claquoir</item>
+        <item>M&#233;t&#233;ores</item>
+        <item>Coud\'Kr&#226;ne</item>
+        <item>Picanon</item>
+        <item>Constriction</item>
+        <item>Amn&#233;sie</item>
+        <item>T&#233;l&#233;kin&#233;sie</item>
+        <item>E-Coque</item>
+        <item>Pied Voltige</item>
+        <item>Regard M&#233;dusant</item>
+        <item>D&#233;vor&#234;ve</item>
+        <item>Gaz Toxik</item>
+        <item>Pilonnage</item>
+        <item>Vampirisme</item>
+        <item>Grobisou</item>
+        <item>Piqu&#233;</item>
+        <item>Morphing</item>
+        <item>&#201;cume</item>
+        <item>Uppercut</item>
+        <item>Spore</item>
+        <item>Flash</item>
+        <item>Vague Psy</item>
+        <item>Trempette</item>
+        <item>Acidarmure</item>
+        <item>Pince-Masse</item>
+        <item>Explosion</item>
+        <item>Combo-Griffe</item>
+        <item>Osmerang</item>
+        <item>Repos</item>
+        <item>&#201;boulement</item>
+        <item>Croc de Mort</item>
+        <item>Aff&#251;tage</item>
+        <item>Conversion</item>
+        <item>Triplattaque</item>
+        <item>Croc Fatal</item>
+        <item>Tranche</item>
+        <item>Clonage</item>
+        <item>Lutte</item>
+        <item>Gribouille</item>
+        <item>Triple Pied</item>
+        <item>Larcin</item>
+        <item>Toile</item>
+        <item>Lire-Esprit</item>
+        <item>Cauchemar</item>
+        <item>Roue de Feu</item>
+        <item>Ronflement</item>
+        <item>Mal&#233;diction</item>
+        <item>Fl&#233;au</item>
+        <item>Conversion2</item>
+        <item>A&#233;roblast</item>
+        <item>Spore Coton</item>
+        <item>Contre</item>
+        <item>D&#233;pit</item>
+        <item>Poudreuse</item>
+        <item>Abri</item>
+        <item>Mach Punch</item>
+        <item>Grimace</item>
+        <item>Feinte</item>
+        <item>Doux Baiser</item>
+        <item>Cognobidon</item>
+        <item>Bomb-Beurk</item>
+        <item>Coud\'Boue</item>
+        <item>Octazooka</item>
+        <item>Picots</item>
+        <item>&#201;lecanon</item>
+        <item>Clairvoyance</item>
+        <item>Pr&#233;l&#232;vem. Destin</item>
+        <item>Requiem</item>
+        <item>Vent Glace</item>
+        <item>D&#233;tection</item>
+        <item>Charge-Os</item>
+        <item>Verrouillage</item>
+        <item>Col&#232;re</item>
+        <item>Temp&#234;te de Sable</item>
+        <item>Giga-Sangsue</item>
+        <item>T&#233;nacit&#233;</item>
+        <item>Charme</item>
+        <item>Roulade</item>
+        <item>Faux-Chage</item>
+        <item>Vantardise</item>
+        <item>Lait &#224; Boire</item>
+        <item>&#201;tincelle</item>
+        <item>Taillade</item>
+        <item>Aile d&#8217;Acier</item>
+        <item>Regard Noir</item>
+        <item>Attraction</item>
+        <item>Blabla Dodo</item>
+        <item>Glas de Soin</item>
+        <item>Retour</item>
+        <item>Cadeau</item>
+        <item>Frustration</item>
+        <item>Rune Protect</item>
+        <item>Balance</item>
+        <item>Feu Sacr&#233;</item>
+        <item>Ampleur</item>
+        <item>Dynamopoing</item>
+        <item>M&#233;gacorne</item>
+        <item>Dracosouffle</item>
+        <item>Relais</item>
+        <item>Encore</item>
+        <item>Poursuite</item>
+        <item>Tour Rapide</item>
+        <item>Doux Parfum</item>
+        <item>Queue de Fer</item>
+        <item>Griffe Acier</item>
+        <item>Corps Perdu</item>
+        <item>Aurore</item>
+        <item>Synth&#232;se</item>
+        <item>Rayon Lune</item>
+        <item>Puissance Cach&#233;e</item>
+        <item>Coup-Croix</item>
+        <item>Ouragan</item>
+        <item>Danse Pluie</item>
+        <item>Z&#233;nith</item>
+        <item>M&#226;chouille</item>
+        <item>Voile Miroir</item>
+        <item>Boost</item>
+        <item>Vitesse Extr&#234;me</item>
+        <item>Pouvoir Antique</item>
+        <item>Ball\'Ombre</item>
+        <item>Prescience</item>
+        <item>&#201;clate-Roc</item>
+        <item>Siphon</item>
+        <item>Baston</item>
+        <item>Bluff</item>
+        <item>Brouhaha</item>
+        <item>Stockage</item>
+        <item>Rel&#226;che</item>
+        <item>Avale</item>
+        <item>Canicule</item>
+        <item>Gr&#234;le</item>
+        <item>Tourmente</item>
+        <item>Flatterie</item>
+        <item>Feu Follet</item>
+        <item>Souvenir</item>
+        <item>Fa&#231;ade</item>
+        <item>Mitra-Poing</item>
+        <item>Stimulant</item>
+        <item>Par Ici</item>
+        <item>Force-Nature</item>
+        <item>Chargeur</item>
+        <item>Provoc</item>
+        <item>Coup d\'Main</item>
+        <item>Tourmagik</item>
+        <item>Imitation</item>
+        <item>V&#339;u</item>
+        <item>Assistance</item>
+        <item>Racines</item>
+        <item>Surpuissance</item>
+        <item>Reflet Magik</item>
+        <item>Recyclage</item>
+        <item>Vendetta</item>
+        <item>Casse-Brique</item>
+        <item>B&#226;illement</item>
+        <item>Sabotage</item>
+        <item>Effort</item>
+        <item>&#201;ruption</item>
+        <item>&#201;change</item>
+        <item>Possessif</item>
+        <item>R&#233;g&#233;n&#233;ration</item>
+        <item>Rancune</item>
+        <item>Saisie</item>
+        <item>Force Cach&#233;e</item>
+        <item>Plong&#233;e</item>
+        <item>Cogne</item>
+        <item>Camouflage</item>
+        <item>Lumiqueue</item>
+        <item>Lumi-&#201;clat</item>
+        <item>Ball\'Brume</item>
+        <item>Danse-Plume</item>
+        <item>Danse-Folle</item>
+        <item>Pied Br&#251;leur</item>
+        <item>Lance-Boue</item>
+        <item>Ball\'Glace</item>
+        <item>Poing Dard</item>
+        <item>Paresse</item>
+        <item>M&#233;gaphone</item>
+        <item>Crochet Venin</item>
+        <item>&#201;clate Griffe</item>
+        <item>Rafale Feu</item>
+        <item>Hydroblast</item>
+        <item>Poing M&#233;t&#233;or</item>
+        <item>&#201;tonnement</item>
+        <item>Ball\'M&#233;t&#233;o</item>
+        <item>Aromath&#233;rapi</item>
+        <item>Croco Larme</item>
+        <item>Tranch\'Air</item>
+        <item>Surchauffe</item>
+        <item>Flair</item>
+        <item>Tomberoche</item>
+        <item>Vent Argent&#233;</item>
+        <item>Strido-Son</item>
+        <item>Siffl\'Herbe</item>
+        <item>Chatouille</item>
+        <item>Force Cosmik</item>
+        <item>Gicl&#233;do</item>
+        <item>Rayon Signal</item>
+        <item>Poing Ombre</item>
+        <item>Extrasenseur</item>
+        <item>Stratopercut</item>
+        <item>Tourbi-Sable</item>
+        <item>Glaciation</item>
+        <item>Ocroupi</item>
+        <item>Balle Graine</item>
+        <item>A&#233;ropique</item>
+        <item>Stalagtite</item>
+        <item>Mur de Fer</item>
+        <item>Barrage</item>
+        <item>Grondement</item>
+        <item>Dracogriffe</item>
+        <item>V&#233;g&#233;-Attak</item>
+        <item>Gonflette</item>
+        <item>Rebond</item>
+        <item>Tir de Boue</item>
+        <item>Queue-Poison</item>
+        <item>Implore</item>
+        <item>&#201;lectacle</item>
+        <item>Feuillemagik</item>
+        <item>Tourniquet</item>
+        <item>Pl&#233;nitude</item>
+        <item>Lame-Feuille</item>
+        <item>Danse Draco</item>
+        <item>Boule Roc</item>
+        <item>Onde de Choc</item>
+        <item>Vibraqua</item>
+        <item>Carnareket</item>
+        <item>Psycho Boost</item>
+        <item>Atterrissage</item>
+        <item>Gravit&#233;</item>
+        <item>&#338;il Miracle</item>
+        <item>R&#233;veil Forc&#233;</item>
+        <item>Marto-Poing</item>
+        <item>Gyroballe</item>
+        <item>V&#339;u Soin</item>
+        <item>Saumure</item>
+        <item>Don Naturel</item>
+        <item>Ruse</item>
+        <item>Picore</item>
+        <item>Vent Arri&#232;re</item>
+        <item>Acupression</item>
+        <item>Fulmifer</item>
+        <item>Demi-Tour</item>
+        <item>Close Combat</item>
+        <item>Repr&#233;sailles</item>
+        <item>Assurance</item>
+        <item>Embargo</item>
+        <item>D&#233;gommage</item>
+        <item>&#201;change Psy</item>
+        <item>Atout</item>
+        <item>Anti-Soin</item>
+        <item>Essorage</item>
+        <item>Astuce Force</item>
+        <item>Suc Digestif</item>
+        <item>Air Veinard</item>
+        <item>Moi d\'Abord</item>
+        <item>Photocopie</item>
+        <item>Permuforce</item>
+        <item>Permugarde</item>
+        <item>Punition</item>
+        <item>Dernier Recours</item>
+        <item>Soucigraine</item>
+        <item>Coup Bas</item>
+        <item>Pics Toxik</item>
+        <item>Permuc&#339;ur</item>
+        <item>Anneau Hydro</item>
+        <item>Vol Magn&#233;tik</item>
+        <item>Boutefeu</item>
+        <item>Forte-Paume</item>
+        <item>Aurasph&#232;re</item>
+        <item>Poliroche</item>
+        <item>Direct Toxik</item>
+        <item>Vibrobscur</item>
+        <item>Tranche-Nuit</item>
+        <item>Hydroqueue</item>
+        <item>Canon Graine</item>
+        <item>Lame d\'Air</item>
+        <item>Plaie-Croix</item>
+        <item>Bourdon</item>
+        <item>Dracochoc</item>
+        <item>Dracocharge</item>
+        <item>Rayon Gemme</item>
+        <item>Vampipoing</item>
+        <item>Onde Vide</item>
+        <item>Exploforce</item>
+        <item>&#201;co-Sph&#232;re</item>
+        <item>Rapace</item>
+        <item>Telluriforce</item>
+        <item>Passe-Passe</item>
+        <item>Giga Impact</item>
+        <item>Machination</item>
+        <item>Pisto-Poing</item>
+        <item>Avalanche</item>
+        <item>&#201;clats Glace</item>
+        <item>Griffe Ombre</item>
+        <item>Crocs &#201;clair</item>
+        <item>Crocs Givre</item>
+        <item>Crocs Feu</item>
+        <item>Ombre Port&#233;e</item>
+        <item>Boue-Bombe</item>
+        <item>Coupe Psycho</item>
+        <item>Psykoud\'Boul</item>
+        <item>Miroi-Tir</item>
+        <item>Luminocanon</item>
+        <item>Escalade</item>
+        <item>Anti-Brume</item>
+        <item>Distorsion</item>
+        <item>Draco M&#233;t&#233;or</item>
+        <item>Coup d\'Jus</item>
+        <item>&#201;bullilave</item>
+        <item>Temp&#234;te Verte</item>
+        <item>M&#233;gafouet</item>
+        <item>Roc-Boulet</item>
+        <item>Poison-Croix</item>
+        <item>D&#233;tricanon</item>
+        <item>T&#234;te de Fer</item>
+        <item>Bombaimant</item>
+        <item>Lame de Roc</item>
+        <item>S&#233;duction</item>
+        <item>Pi&#232;ge de Roc</item>
+        <item>N&#339;ud Herbe</item>
+        <item>Babil</item>
+        <item>Jugement</item>
+        <item>Piq&#251;re</item>
+        <item>Rayon Charg&#233;</item>
+        <item>Martobois</item>
+        <item>Aqua-Jet</item>
+        <item>Appel Attak</item>
+        <item>Appel D&#233;fense</item>
+        <item>Appel Soins</item>
+        <item>Fracass\'T&#234;te</item>
+        <item>Coup Double</item>
+        <item>Hurle-Temps</item>
+        <item>Spatio-Rift</item>
+        <item>Danse-Lune</item>
+        <item>Presse</item>
+        <item>Vortex Magma</item>
+        <item>Trou Noir</item>
+        <item>Fulmigraine</item>
+        <item>Vent Mauvais</item>
+        <item>Revenant</item>
+        <item>Aiguisage</item>
+        <item>Garde Large</item>
+        <item>Partage Garde</item>
+        <item>Partage Force</item>
+        <item>Zone &#201;trange</item>
+        <item>Choc Psy</item>
+        <item>Choc Venin</item>
+        <item>All&#232;gement</item>
+        <item>Poudre Fureur</item>
+        <item>L&#233;vikin&#233;sie</item>
+        <item>Zone Magique</item>
+        <item>Anti-Air</item>
+        <item>Yama Arashi</item>
+        <item>Rebondifeu</item>
+        <item>Cradovague</item>
+        <item>Papillodanse</item>
+        <item>Tacle Lourd</item>
+        <item>Synchropeine</item>
+        <item>Boule &#201;lek</item>
+        <item>D&#233;trempage</item>
+        <item>Nitrocharge</item>
+        <item>Enroulement</item>
+        <item>Balayette</item>
+        <item>Bombe Acide</item>
+        <item>Tricherie</item>
+        <item>Rayon Simple</item>
+        <item>Ten-danse</item>
+        <item>Apr&#232;s Vous</item>
+        <item>Chant Canon</item>
+        <item>&#201;cho</item>
+        <item>Attrition</item>
+        <item>Bain de Smog</item>
+        <item>Force Ajout&#233;e</item>
+        <item>Pr&#233;vention</item>
+        <item>Interversion</item>
+        <item>&#201;bullition</item>
+        <item>Exuviation</item>
+        <item>Vibra Soin</item>
+        <item>Ch&#226;timent</item>
+        <item>Chute Libre</item>
+        <item>Changement Vitesse</item>
+        <item>Projection</item>
+        <item>Calcination</item>
+        <item>&#192; la Queue</item>
+        <item>Acrobatie</item>
+        <item>Copie Type</item>
+        <item>Vengeance</item>
+        <item>Tout ou Rien</item>
+        <item>Passe-Cadeau</item>
+        <item>Feu d\'Enfer</item>
+        <item>Aire d\'Eau</item>
+        <item>Aire de Feu</item>
+        <item>Aire de Plante</item>
+        <item>Change &#201;clair</item>
+        <item>Survinsecte</item>
+        <item>Pi&#233;tisol</item>
+        <item>Souffle Glac&#233;</item>
+        <item>Draco-Queue</item>
+        <item>Rengorgement</item>
+        <item>Toile &#201;lek</item>
+        <item>&#201;clair Fou</item>
+        <item>Tunnelier</item>
+        <item>Double Baffe</item>
+        <item>Cr&#232;vec&#339;ur</item>
+        <item>Encornebois</item>
+        <item>Lame Sainte</item>
+        <item>Coquilame</item>
+        <item>Tacle Feu</item>
+        <item>Phytomixeur</item>
+        <item>Bulldoboule</item>
+        <item>Cotogarde</item>
+        <item>Explonuit</item>
+        <item>Frappe Psy</item>
+        <item>Plumo-Queue</item>
+        <item>Vent Violent</item>
+        <item>Peign&#233;e</item>
+        <item>Lanc&#233;crou</item>
+        <item>Incendie</item>
+        <item>TechnoBuster</item>
+        <item>Chant Antique</item>
+        <item>Lame Ouinte</item>
+        <item>&#200;re Glaciaire</item>
+        <item>Charge Foudre</item>
+        <item>Flamme Bleue</item>
+        <item>Danse du Feu</item>
+        <item>&#201;clair Gel&#233;</item>
+        <item>Feu Glac&#233;</item>
+        <item>Aboiement</item>
+        <item>Chute Glace</item>
+        <item>Coup Victoire</item>
+        <item>Flamme Croix</item>
+        <item>&#201;clair Croix</item>
+        <item>Flying Press</item>
+        <item>Tatamigaeshi</item>
+        <item>&#201;ructation</item>
+        <item>Fertilisation</item>
+        <item>Toile Gluante</item>
+        <item>Dard Mortel</item>
+        <item>Hantise</item>
+        <item>Halloween</item>
+        <item>R&#226;le M&#226;le</item>
+        <item>D&#233;lugePlasma</item>
+        <item>Parabocharge</item>
+        <item>Mal&#233;fice Sylvain</item>
+        <item>Temp&#234;te Florale</item>
+        <item>Lyophilisation</item>
+        <item>Voix Enj&#244;leuse</item>
+        <item>Dernier Mot</item>
+        <item>Renversement</item>
+        <item>Vampibaiser</item>
+        <item>Vigilance</item>
+        <item>Garde Florale</item>
+        <item>Champ Herbu</item>
+        <item>Champ Brumeux</item>
+        <item>&#201;lectrisation</item>
+        <item>C&#226;linerie</item>
+        <item>Vent F&#233;&#233;rique</item>
+        <item>Pouvoir Lunaire</item>
+        <item>Bang Sonique</item>
+        <item>Verrou Enchant&#233;</item>
+        <item>Bouclier Royal</item>
+        <item>Camaraderie</item>
+        <item>Confidence</item>
+        <item>Orage Adamantin</item>
+        <item>Jet de Vapeur</item>
+        <item>TrouDimensionnel</item>
+        <item>Sheauriken</item>
+        <item>Feu Ensorcel&#233;</item>
+        <item>Pico-D&#233;fense</item>
+        <item>Brume Capiteuse</item>
+        <item>Ondes &#201;tranges</item>
+        <item>Pi&#232;ge de Venin</item>
+        <item>Nu&#233;e de Poudre</item>
+        <item>G&#233;o-Contr&#244;le</item>
+        <item>Magn&#233;-Contr&#244;le</item>
+        <item>&#201;trennes</item>
+        <item>Champ &#201;lectrifi&#233;</item>
+        <item>&#201;clat Magique</item>
+        <item>C&#233;l&#233;bration</item>
+        <item>Mains Jointes</item>
+        <item>Regard Touchant</item>
+        <item>Frotte-Frimousse</item>
+        <item>Retenue</item>
+        <item>Harc&#232;lement</item>
+        <item>Poing Boost</item>
+        <item>Mort-Ailes</item>
+        <item>Myria-Fl&#232;ches</item>
+        <item>Myria-Vagues</item>
+        <item>Force Chtonienne</item>
+        <item>Lumi&#232;re du N&#233;ant</item>
+        <item>Onde Originelle</item>
+        <item>Lame Pang&#233;enne</item>
+        <item>Draco Ascension</item>
+        <item>Furie Dimension</item>
+    </string-array>
+
 </resources>

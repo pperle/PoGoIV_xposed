@@ -164,4 +164,628 @@
         <item>Mew</item>
     </string-array>
 
+    <string-array name="MoveSet">
+        <item>Pound</item>
+        <item>Karate Chop</item>
+        <item>Double Slap</item>
+        <item>Comet Punch</item>
+        <item>Mega Punch</item>
+        <item>Pay Day</item>
+        <item>Fire Punch</item>
+        <item>Ice Punch</item>
+        <item>Thunder Punch</item>
+        <item>Scratch</item>
+        <item>Vice Grip</item>
+        <item>Guillotine</item>
+        <item>Razor Wind</item>
+        <item>Swords Dance</item>
+        <item>Cut</item>
+        <item>Gust</item>
+        <item>Wing Attack</item>
+        <item>Whirlwind</item>
+        <item>Fly</item>
+        <item>Bind</item>
+        <item>Slam</item>
+        <item>Vine Whip</item>
+        <item>Stomp</item>
+        <item>Double Kick</item>
+        <item>Mega Kick</item>
+        <item>Jump Kick</item>
+        <item>Rolling Kick</item>
+        <item>Sand Attack</item>
+        <item>Headbutt</item>
+        <item>Horn Attack</item>
+        <item>Fury Attack</item>
+        <item>Horn Drill</item>
+        <item>Tackle</item>
+        <item>Body Slam</item>
+        <item>Wrap</item>
+        <item>Take Down</item>
+        <item>Thrash</item>
+        <item>Double-Edge</item>
+        <item>Tail Whip</item>
+        <item>Poison Sting</item>
+        <item>Twineedle</item>
+        <item>Pin Missile</item>
+        <item>Leer</item>
+        <item>Bite</item>
+        <item>Growl</item>
+        <item>Roar</item>
+        <item>Sing</item>
+        <item>Supersonic</item>
+        <item>Sonic Boom</item>
+        <item>Disable</item>
+        <item>Acid</item>
+        <item>Ember</item>
+        <item>Flamethrower</item>
+        <item>Mist</item>
+        <item>Water Gun</item>
+        <item>Hydro Pump</item>
+        <item>Surf</item>
+        <item>Ice Beam</item>
+        <item>Blizzard</item>
+        <item>Psybeam</item>
+        <item>Bubble Beam</item>
+        <item>Aurora Beam</item>
+        <item>Hyper Beam</item>
+        <item>Peck</item>
+        <item>Drill Peck</item>
+        <item>Submission</item>
+        <item>Low Kick</item>
+        <item>Counter</item>
+        <item>Seismic Toss</item>
+        <item>Strength</item>
+        <item>Absorb</item>
+        <item>Mega Drain</item>
+        <item>Leech Seed</item>
+        <item>Growth</item>
+        <item>Razor Leaf</item>
+        <item>Solar Beam</item>
+        <item>Poison Powder</item>
+        <item>Stun Spore</item>
+        <item>Sleep Powder</item>
+        <item>Petal Dance</item>
+        <item>String Shot</item>
+        <item>Dragon Rage</item>
+        <item>Fire Spin</item>
+        <item>Thunder Shock</item>
+        <item>Thunderbolt</item>
+        <item>Thunder Wave</item>
+        <item>Thunder</item>
+        <item>Rock Throw</item>
+        <item>Earthquake</item>
+        <item>Fissure</item>
+        <item>Dig</item>
+        <item>Toxic</item>
+        <item>Confusion</item>
+        <item>Psychic</item>
+        <item>Hypnosis</item>
+        <item>Meditate</item>
+        <item>Agility</item>
+        <item>Quick Attack</item>
+        <item>Rage</item>
+        <item>Teleport</item>
+        <item>Night Shade</item>
+        <item>Mimic</item>
+        <item>Screech</item>
+        <item>Double Team</item>
+        <item>Recover</item>
+        <item>Harden</item>
+        <item>Minimize</item>
+        <item>Smokescreen</item>
+        <item>Confuse Ray</item>
+        <item>Withdraw</item>
+        <item>Defense Curl</item>
+        <item>Barrier</item>
+        <item>Light Screen</item>
+        <item>Haze</item>
+        <item>Reflect</item>
+        <item>Focus Energy</item>
+        <item>Bide</item>
+        <item>Metronome</item>
+        <item>Mirror Move</item>
+        <item>Self-Destruct</item>
+        <item>Egg Bomb</item>
+        <item>Lick</item>
+        <item>Smog</item>
+        <item>Sludge</item>
+        <item>Bone Club</item>
+        <item>Fire Blast</item>
+        <item>Waterfall</item>
+        <item>Clamp</item>
+        <item>Swift</item>
+        <item>Skull Bash</item>
+        <item>Spike Cannon</item>
+        <item>Constrict</item>
+        <item>Amnesia</item>
+        <item>Kinesis</item>
+        <item>Soft-Boiled</item>
+        <item>High Jump Kick</item>
+        <item>Glare</item>
+        <item>Dream Eater</item>
+        <item>Poison Gas</item>
+        <item>Barrage</item>
+        <item>Leech Life</item>
+        <item>Lovely Kiss</item>
+        <item>Sky Attack</item>
+        <item>Transform</item>
+        <item>Bubble</item>
+        <item>Dizzy Punch</item>
+        <item>Spore</item>
+        <item>Flash</item>
+        <item>Psywave</item>
+        <item>Splash</item>
+        <item>Acid Armor</item>
+        <item>Crabhammer</item>
+        <item>Explosion</item>
+        <item>Fury Swipes</item>
+        <item>Bonemerang</item>
+        <item>Rest</item>
+        <item>Rock Slide</item>
+        <item>Hyper Fang</item>
+        <item>Sharpen</item>
+        <item>Conversion</item>
+        <item>Tri Attack</item>
+        <item>Super Fang</item>
+        <item>Slash</item>
+        <item>Substitute</item>
+        <item>Struggle</item>
+        <item>Sketch</item>
+        <item>Triple Kick</item>
+        <item>Thief</item>
+        <item>Spider Web</item>
+        <item>Mind Reader</item>
+        <item>Nightmare</item>
+        <item>Flame Wheel</item>
+        <item>Snore</item>
+        <item>Curse</item>
+        <item>Flail</item>
+        <item>Conversion 2</item>
+        <item>Aeroblast</item>
+        <item>Cotton Spore</item>
+        <item>Reversal</item>
+        <item>Spite</item>
+        <item>Powder Snow</item>
+        <item>Protect</item>
+        <item>Mach Punch</item>
+        <item>Scary Face</item>
+        <item>Feint Attack</item>
+        <item>Sweet Kiss</item>
+        <item>Belly Drum</item>
+        <item>Sludge Bomb</item>
+        <item>Mud-Slap</item>
+        <item>Octazooka</item>
+        <item>Spikes</item>
+        <item>Zap Cannon</item>
+        <item>Foresight</item>
+        <item>Destiny Bond</item>
+        <item>Perish Song</item>
+        <item>Icy Wind</item>
+        <item>Detect</item>
+        <item>Bone Rush</item>
+        <item>Lock-On</item>
+        <item>Outrage</item>
+        <item>Sandstorm</item>
+        <item>Giga Drain</item>
+        <item>Endure</item>
+        <item>Charm</item>
+        <item>Rollout</item>
+        <item>False Swipe</item>
+        <item>Swagger</item>
+        <item>Milk Drink</item>
+        <item>Spark</item>
+        <item>Fury Cutter</item>
+        <item>Steel Wing</item>
+        <item>Mean Look</item>
+        <item>Attract</item>
+        <item>Sleep Talk</item>
+        <item>Heal Bell</item>
+        <item>Return</item>
+        <item>Present</item>
+        <item>Frustration</item>
+        <item>Safeguard</item>
+        <item>Pain Split</item>
+        <item>Sacred Fire</item>
+        <item>Magnitude</item>
+        <item>Dynamic Punch</item>
+        <item>Megahorn</item>
+        <item>Dragon Breath</item>
+        <item>Baton Pass</item>
+        <item>Encore</item>
+        <item>Pursuit</item>
+        <item>Rapid Spin</item>
+        <item>Sweet Scent</item>
+        <item>Iron Tail</item>
+        <item>Metal Claw</item>
+        <item>Vital Throw</item>
+        <item>Morning Sun</item>
+        <item>Synthesis</item>
+        <item>Moonlight</item>
+        <item>Hidden Power</item>
+        <item>Cross Chop</item>
+        <item>Twister</item>
+        <item>Rain Dance</item>
+        <item>Sunny Day</item>
+        <item>Crunch</item>
+        <item>Mirror Coat</item>
+        <item>Psych Up</item>
+        <item>Extreme Speed</item>
+        <item>Ancient Power</item>
+        <item>Shadow Ball</item>
+        <item>Future Sight</item>
+        <item>Rock Smash</item>
+        <item>Whirlpool</item>
+        <item>Beat Up</item>
+        <item>Fake Out</item>
+        <item>Uproar</item>
+        <item>Stockpile</item>
+        <item>Spit Up</item>
+        <item>Swallow</item>
+        <item>Heat Wave</item>
+        <item>Hail</item>
+        <item>Torment</item>
+        <item>Flatter</item>
+        <item>Will-O-Wisp</item>
+        <item>Memento</item>
+        <item>Facade</item>
+        <item>Focus Punch</item>
+        <item>Smelling Salts</item>
+        <item>Follow Me</item>
+        <item>Nature Power</item>
+        <item>Charge</item>
+        <item>Taunt</item>
+        <item>Helping Hand</item>
+        <item>Trick</item>
+        <item>Role Play</item>
+        <item>Wish</item>
+        <item>Assist</item>
+        <item>Ingrain</item>
+        <item>Superpower</item>
+        <item>Magic Coat</item>
+        <item>Recycle</item>
+        <item>Revenge</item>
+        <item>Brick Break</item>
+        <item>Yawn</item>
+        <item>Knock Off</item>
+        <item>Endeavor</item>
+        <item>Eruption</item>
+        <item>Skill Swap</item>
+        <item>Imprison</item>
+        <item>Refresh</item>
+        <item>Grudge</item>
+        <item>Snatch</item>
+        <item>Secret Power</item>
+        <item>Dive</item>
+        <item>Arm Thrust</item>
+        <item>Camouflage</item>
+        <item>Tail Glow</item>
+        <item>Luster Purge</item>
+        <item>Mist Ball</item>
+        <item>Feather Dance</item>
+        <item>Teeter Dance</item>
+        <item>Blaze Kick</item>
+        <item>Mud Sport</item>
+        <item>Ice Ball</item>
+        <item>Needle Arm</item>
+        <item>Slack Off</item>
+        <item>Hyper Voice</item>
+        <item>Poison Fang</item>
+        <item>Crush Claw</item>
+        <item>Blast Burn</item>
+        <item>Hydro Cannon</item>
+        <item>Meteor Mash</item>
+        <item>Astonish</item>
+        <item>Weather Ball</item>
+        <item>Aromatherapy</item>
+        <item>Fake Tears</item>
+        <item>Air Cutter</item>
+        <item>Overheat</item>
+        <item>Odor Sleuth</item>
+        <item>Rock Tomb</item>
+        <item>Silver Wind</item>
+        <item>Metal Sound</item>
+        <item>Grass Whistle</item>
+        <item>Tickle</item>
+        <item>Cosmic Power</item>
+        <item>Water Spout</item>
+        <item>Signal Beam</item>
+        <item>Shadow Punch</item>
+        <item>Extrasensory</item>
+        <item>Sky Uppercut</item>
+        <item>Sand Tomb</item>
+        <item>Sheer Cold</item>
+        <item>Muddy Water</item>
+        <item>Bullet Seed</item>
+        <item>Aerial Ace</item>
+        <item>Icicle Spear</item>
+        <item>Iron Defense</item>
+        <item>Block</item>
+        <item>Howl</item>
+        <item>Dragon Claw</item>
+        <item>Frenzy Plant</item>
+        <item>Bulk Up</item>
+        <item>Bounce</item>
+        <item>Mud Shot</item>
+        <item>Poison Tail</item>
+        <item>Covet</item>
+        <item>Volt Tackle</item>
+        <item>Magical Leaf</item>
+        <item>Water Sport</item>
+        <item>Calm Mind</item>
+        <item>Leaf Blade</item>
+        <item>Dragon Dance</item>
+        <item>Rock Blast</item>
+        <item>Shock Wave</item>
+        <item>Water Pulse</item>
+        <item>Doom Desire</item>
+        <item>Psycho Boost</item>
+        <item>Roost</item>
+        <item>Gravity</item>
+        <item>Miracle Eye</item>
+        <item>Wake-Up Slap</item>
+        <item>Hammer Arm</item>
+        <item>Gyro Ball</item>
+        <item>Healing Wish</item>
+        <item>Brine</item>
+        <item>Natural Gift</item>
+        <item>Feint</item>
+        <item>Pluck</item>
+        <item>Tailwind</item>
+        <item>Acupressure</item>
+        <item>Metal Burst</item>
+        <item>U-turn</item>
+        <item>Close Combat</item>
+        <item>Payback</item>
+        <item>Assurance</item>
+        <item>Embargo</item>
+        <item>Fling</item>
+        <item>Psycho Shift</item>
+        <item>Trump Card</item>
+        <item>Heal Block</item>
+        <item>Wring Out</item>
+        <item>Power Trick</item>
+        <item>Gastro Acid</item>
+        <item>Lucky Chant</item>
+        <item>Me First</item>
+        <item>Copycat</item>
+        <item>Power Swap</item>
+        <item>Guard Swap</item>
+        <item>Punishment</item>
+        <item>Last Resort</item>
+        <item>Worry Seed</item>
+        <item>Sucker Punch</item>
+        <item>Toxic Spikes</item>
+        <item>Heart Swap</item>
+        <item>Aqua Ring</item>
+        <item>Magnet Rise</item>
+        <item>Flare Blitz</item>
+        <item>Force Palm</item>
+        <item>Aura Sphere</item>
+        <item>Rock Polish</item>
+        <item>Poison Jab</item>
+        <item>Dark Pulse</item>
+        <item>Night Slash</item>
+        <item>Aqua Tail</item>
+        <item>Seed Bomb</item>
+        <item>Air Slash</item>
+        <item>X-Scissor</item>
+        <item>Bug Buzz</item>
+        <item>Dragon Pulse</item>
+        <item>Dragon Rush</item>
+        <item>Power Gem</item>
+        <item>Drain Punch</item>
+        <item>Vacuum Wave</item>
+        <item>Focus Blast</item>
+        <item>Energy Ball</item>
+        <item>Brave Bird</item>
+        <item>Earth Power</item>
+        <item>Switcheroo</item>
+        <item>Giga Impact</item>
+        <item>Nasty Plot</item>
+        <item>Bullet Punch</item>
+        <item>Avalanche</item>
+        <item>Ice Shard</item>
+        <item>Shadow Claw</item>
+        <item>Thunder Fang</item>
+        <item>Ice Fang</item>
+        <item>Fire Fang</item>
+        <item>Shadow Sneak</item>
+        <item>Mud Bomb</item>
+        <item>Psycho Cut</item>
+        <item>Zen Headbutt</item>
+        <item>Mirror Shot</item>
+        <item>Flash Cannon</item>
+        <item>Rock Climb</item>
+        <item>Defog</item>
+        <item>Trick Room</item>
+        <item>Draco Meteor</item>
+        <item>Discharge</item>
+        <item>Lava Plume</item>
+        <item>Leaf Storm</item>
+        <item>Power Whip</item>
+        <item>Rock Wrecker</item>
+        <item>Cross Poison</item>
+        <item>Gunk Shot</item>
+        <item>Iron Head</item>
+        <item>Magnet Bomb</item>
+        <item>Stone Edge</item>
+        <item>Captivate</item>
+        <item>Stealth Rock</item>
+        <item>Grass Knot</item>
+        <item>Chatter</item>
+        <item>Judgment</item>
+        <item>Bug Bite</item>
+        <item>Charge Beam</item>
+        <item>Wood Hammer</item>
+        <item>Aqua Jet</item>
+        <item>Attack Order</item>
+        <item>Defend Order</item>
+        <item>Heal Order</item>
+        <item>Head Smash</item>
+        <item>Double Hit</item>
+        <item>Roar of Time</item>
+        <item>Spacial Rend</item>
+        <item>Lunar Dance</item>
+        <item>Crush Grip</item>
+        <item>Magma Storm</item>
+        <item>Dark Void</item>
+        <item>Seed Flare</item>
+        <item>Ominous Wind</item>
+        <item>Shadow Force</item>
+        <item>Hone Claws</item>
+        <item>Wide Guard</item>
+        <item>Guard Split</item>
+        <item>Power Split</item>
+        <item>Wonder Room</item>
+        <item>Psyshock</item>
+        <item>Venoshock</item>
+        <item>Autotomize</item>
+        <item>Rage Powder</item>
+        <item>Telekinesis</item>
+        <item>Magic Room</item>
+        <item>Smack Down</item>
+        <item>Storm Throw</item>
+        <item>Flame Burst</item>
+        <item>Sludge Wave</item>
+        <item>Quiver Dance</item>
+        <item>Heavy Slam</item>
+        <item>Synchronoise</item>
+        <item>Electro Ball</item>
+        <item>Soak</item>
+        <item>Flame Charge</item>
+        <item>Coil</item>
+        <item>Low Sweep</item>
+        <item>Acid Spray</item>
+        <item>Foul Play</item>
+        <item>Simple Beam</item>
+        <item>Entrainment</item>
+        <item>After You</item>
+        <item>Round</item>
+        <item>Echoed Voice</item>
+        <item>Chip Away</item>
+        <item>Clear Smog</item>
+        <item>Stored Power</item>
+        <item>Quick Guard</item>
+        <item>Ally Switch</item>
+        <item>Scald</item>
+        <item>Shell Smash</item>
+        <item>Heal Pulse</item>
+        <item>Hex</item>
+        <item>Sky Drop</item>
+        <item>Shift Gear</item>
+        <item>Circle Throw</item>
+        <item>Incinerate</item>
+        <item>Quash</item>
+        <item>Acrobatics</item>
+        <item>Reflect Type</item>
+        <item>Retaliate</item>
+        <item>Final Gambit</item>
+        <item>Bestow</item>
+        <item>Inferno</item>
+        <item>Water Pledge</item>
+        <item>Fire Pledge</item>
+        <item>Grass Pledge</item>
+        <item>Volt Switch</item>
+        <item>Struggle Bug</item>
+        <item>Bulldoze</item>
+        <item>Frost Breath</item>
+        <item>Dragon Tail</item>
+        <item>Work Up</item>
+        <item>Electroweb</item>
+        <item>Wild Charge</item>
+        <item>Drill Run</item>
+        <item>Dual Chop</item>
+        <item>Heart Stamp</item>
+        <item>Horn Leech</item>
+        <item>Sacred Sword</item>
+        <item>Razor Shell</item>
+        <item>Heat Crash</item>
+        <item>Leaf Tornado</item>
+        <item>Steamroller</item>
+        <item>Cotton Guard</item>
+        <item>Night Daze</item>
+        <item>Psystrike</item>
+        <item>Tail Slap</item>
+        <item>Hurricane</item>
+        <item>Head Charge</item>
+        <item>Gear Grind</item>
+        <item>Searing Shot</item>
+        <item>Techno Blast</item>
+        <item>Relic Song</item>
+        <item>Secret Sword</item>
+        <item>Glaciate</item>
+        <item>Bolt Strike</item>
+        <item>Blue Flare</item>
+        <item>Fiery Dance</item>
+        <item>Freeze Shock</item>
+        <item>Ice Burn</item>
+        <item>Snarl</item>
+        <item>Icicle Crash</item>
+        <item>V-create</item>
+        <item>Fusion Flare</item>
+        <item>Fusion Bolt</item>
+        <item>Flying Press</item>
+        <item>Mat Block</item>
+        <item>Belch</item>
+        <item>Rototiller</item>
+        <item>Sticky Web</item>
+        <item>Fell Stinger</item>
+        <item>Phantom Force</item>
+        <item>Trick-or-Treat</item>
+        <item>Noble Roar</item>
+        <item>Ion Deluge</item>
+        <item>Parabolic Charge</item>
+        <item>Forest\'s Curse</item>
+        <item>Petal Blizzard</item>
+        <item>Freeze-Dry</item>
+        <item>Disarming Voice</item>
+        <item>Parting Shot</item>
+        <item>Topsy-Turvy</item>
+        <item>Draining Kiss</item>
+        <item>Crafty Shield</item>
+        <item>Flower Shield</item>
+        <item>Grassy Terrain</item>
+        <item>Misty Terrain</item>
+        <item>Electrify</item>
+        <item>Play Rough</item>
+        <item>Fairy Wind</item>
+        <item>Moonblast</item>
+        <item>Boomburst</item>
+        <item>Fairy Lock</item>
+        <item>King\s Shield</item>
+        <item>Play Nice</item>
+        <item>Confide</item>
+        <item>Diamond Storm</item>
+        <item>Steam Eruption</item>
+        <item>Hyperspace Hole</item>
+        <item>Water Shuriken</item>
+        <item>Mystical Fire</item>
+        <item>Spiky Shield</item>
+        <item>Aromatic Mist</item>
+        <item>Eerie Impulse</item>
+        <item>Venom Drench</item>
+        <item>Powder</item>
+        <item>Geomancy</item>
+        <item>Magnetic Flux</item>
+        <item>Happy Hour</item>
+        <item>Electric Terrain</item>
+        <item>Dazzling Gleam</item>
+        <item>Celebrate</item>
+        <item>Hold Hands</item>
+        <item>Baby-Doll Eyes</item>
+        <item>Nuzzle</item>
+        <item>Hold Back</item>
+        <item>Infestation</item>
+        <item>Power-Up Punch</item>
+        <item>Oblivion Wing</item>
+        <item>Thousand Arrows</item>
+        <item>Thousand Waves</item>
+        <item>Land\'s Wrath</item>
+        <item>Light of Ruin</item>
+        <item>Origin Pulse</item>
+        <item>Precipice Blades</item>
+        <item>Dragon Ascent</item>
+        <item>Hyperspace Fury </item>
+    </string-array>
+
 </resources>

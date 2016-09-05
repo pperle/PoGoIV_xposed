@@ -26,6 +26,7 @@ public class Helper {
     private static Context pokeContext = null;
 
     private static String[] pokemonNames = null;
+    private static String[] moveSet = null;
 
     public static void Log(String message) {
         if (BuildConfig.DEBUG) {
@@ -95,22 +96,35 @@ public class Helper {
         return pokeContext;
     }
 
-    public static void loadPokemonNames() {
+    private static void loadPokemonNames() {
         pokemonNames = getContext().getResources().getStringArray(R.array.Pokemon);
     }
 
-    public static String[] getPokemonNames() {
+    public static String getPokemonName(int pokeNumber) {
         if (pokemonNames == null) {
             loadPokemonNames();
         }
-        return pokemonNames;
+        return pokemonNames[pokeNumber];
     }
 
-    public static String getPokeMoveName(Enums.PokemonMove pokeMove) {
-        // switch (pokeMove) {} // TODO later.. there are more than 300 moves
-        return prettyPrintEnum(pokeMove.toString());
+    private static void loadMoveSet() {
+        moveSet = getContext().getResources().getStringArray(R.array.MoveSet);
     }
 
+    /**
+     * Java method to easy translate all Pokemon Go movements.
+     * Made by Xelwon
+     * Thanks to http://bulbapedia.bulbagarden.net/wiki/List_of_moves_in_other_languages
+     *
+     * @param pokeMoveNumber number of move
+     * @return name of move in system language
+     */
+    public static String getPokeMoveName(int pokeMoveNumber) {
+        if (moveSet == null) {
+            loadMoveSet();
+        }
+        return moveSet[pokeMoveNumber];
+    }
 
     public static String getCatchName(Responses.CatchPokemonResponse.CatchStatus status) {
         return prettyPrintEnum(status.toString());
@@ -124,7 +138,6 @@ public class Helper {
         }
         return pokeMoveName;
     }
-
 
     public static String getCpName() {
         return getContext().getResources().getString(R.string.cp);
