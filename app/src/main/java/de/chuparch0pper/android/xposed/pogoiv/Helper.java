@@ -11,8 +11,10 @@ import android.support.v7.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.github.aeonlucid.pogoprotos.Enums;
+import com.github.aeonlucid.pogoprotos.inventory.Item;
 import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.Descriptors;
+import com.google.protobuf.ProtocolMessageEnum;
 
 import java.util.Map;
 import java.util.Set;
@@ -40,7 +42,7 @@ public class Helper {
 
     }
 
-    public static void showToast(final String message, final int length) {
+    public static void showToast(final CharSequence message, final int length) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
@@ -54,7 +56,7 @@ public class Helper {
             @Override
             public void run() {
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getPokeContext());
-                mBuilder.setSmallIcon(android.R.color.background_light);
+                mBuilder.setSmallIcon(android.R.drawable.ic_dialog_info);
                 mBuilder.setContentTitle(title);
                 mBuilder.setContentText(text);
                 mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(longText));
@@ -106,14 +108,41 @@ public class Helper {
         return pokemonNames;
     }
 
+    public static String getPokemonName(int pokemonNumber) {
+        String[] pokemonNames = Helper.getPokemonNames();
+        if (pokemonNumber > 0 && pokemonNumber <= pokemonNames.length)
+            return Helper.getPokemonNames()[pokemonNumber - 1];
+        else
+            return "(unknown Pokémon: " + pokemonNumber + ")";
+    }
+
     public static String getPokeMoveName(Enums.PokemonMove pokeMove) {
         // switch (pokeMove) {} // TODO later.. there are more than 300 moves
-        return prettyPrintEnum(pokeMove.toString());
+        return prettyPrintEnum(pokeMove.toString().replaceAll("_FAST$", ""));
     }
 
 
     public static String getCatchName(Responses.CatchPokemonResponse.CatchStatus status) {
         return prettyPrintEnum(status.toString());
+    }
+
+    public static String getItemName(Item.ItemId item) {
+        return prettyPrintEnum(item.toString().replaceAll("^ITEM_", ""));
+    }
+
+    public static String getItemName(Item.ItemId item, int count) {
+        String name = getItemName(item);
+        if (count != 1)
+            name += " (x" + count + ")";
+        return name;
+    }
+
+    public static String getItemName(Item.ItemAward itemAward) {
+        return getItemName(itemAward.getItemId(), itemAward.getItemCount());
+    }
+
+    public static String getGenericEnumName(ProtocolMessageEnum enumEntry) {
+        return prettyPrintEnum(enumEntry.toString());
     }
 
     private static String prettyPrintEnum(String enums) {
@@ -122,7 +151,7 @@ public class Helper {
         for (String stringPart : splitPokeMoveNames) {
             pokeMoveName += stringPart.charAt(0) + stringPart.substring(1).toLowerCase() + " ";
         }
-        return pokeMoveName;
+        return pokeMoveName.trim();
     }
 
 
