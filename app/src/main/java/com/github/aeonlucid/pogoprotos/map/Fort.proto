@@ -8,16 +8,22 @@ option java_outer_classname = "Fort";
 import "com/github/aeonlucid/pogoprotos/Enums.proto";
 import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
 
-enum FortType {
-	GYM = 0;
-	CHECKPOINT = 1;
+enum FortSponsor {
+	UNSET_SPONSOR = 0;
+	MCDONALDS = 1;
+	POKEMON_STORE = 2;
 }
 
-message FortLureInfo {
-	string fort_id = 1;
-	fixed64 encounter_id = 2;
-	com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;
-	int64 lure_expires_timestamp_ms = 4;
+enum FortRenderingType {
+	DEFAULT = 0;
+	INTERNAL_TEST = 1;
+}
+
+message FortSummary {
+	string fort_summary_id = 1;
+	int64 last_modified_timestamp_ms = 2;
+	double latitude = 3;
+	double longitude = 4;
 }
 
 message FortData {
@@ -46,27 +52,21 @@ message FortData {
 	com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;
 }
 
-message FortSummary {
-	string fort_summary_id = 1;
-	int64 last_modified_timestamp_ms = 2;
-	double latitude = 3;
-	double longitude = 4;
-}
-
-enum FortRenderingType {
-	DEFAULT = 0;
-	INTERNAL_TEST = 1;
-}
-
-enum FortSponsor {
-	UNSET_SPONSOR = 0;
-	MCDONALDS = 1;
-	POKEMON_STORE = 2;
+message FortLureInfo {
+	string fort_id = 1;
+	fixed64 encounter_id = 2;
+	com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;
+	int64 lure_expires_timestamp_ms = 4;
 }
 
 message FortModifier {
 	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
 	int64 expiration_timestamp_ms = 2;
 	string deployer_player_codename = 3;
+}
+
+enum FortType {
+	GYM = 0;
+	CHECKPOINT = 1;
 }
 

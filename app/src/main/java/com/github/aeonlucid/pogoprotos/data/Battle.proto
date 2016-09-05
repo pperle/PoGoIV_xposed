@@ -5,15 +5,9 @@ package com.github.aeonlucid.pogoprotos.data.battle;
 option java_package = "com.github.aeonlucid.pogoprotos.data";
 option java_outer_classname = "Battle";
 
-import "com/github/aeonlucid/pogoprotos/data/Gym.proto";
 import "com/github/aeonlucid/pogoprotos/data/Player.proto";
+import "com/github/aeonlucid/pogoprotos/data/Gym.proto";
 import "com/github/aeonlucid/pogoprotos/Data.proto";
-
-enum BattleType {
-	BATTLE_TYPE_UNSET = 0;
-	BATTLE_TYPE_NORMAL = 1;
-	BATTLE_TYPE_TRAINING = 2;
-}
 
 enum BattleState {
 	STATE_UNSET = 0;
@@ -21,6 +15,21 @@ enum BattleState {
 	VICTORY = 2;
 	DEFEATED = 3;
 	TIMED_OUT = 4;
+}
+
+message BattleParticipant {
+	com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo active_pokemon = 1;
+	com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;
+	repeated com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo reverse_pokemon = 3;
+	repeated com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo defeated_pokemon = 4;
+}
+
+message BattleResults {
+	com.github.aeonlucid.pogoprotos.data.gym.GymState gym_state = 1;
+	repeated com.github.aeonlucid.pogoprotos.data.battle.BattleParticipant attackers = 2;
+	repeated int32 player_experience_awarded = 3;
+	int64 next_defender_pokemon_id = 4;
+	int32 gym_points_delta = 5;
 }
 
 enum BattleActionType {
@@ -37,6 +46,12 @@ enum BattleActionType {
 	ACTION_TIMED_OUT = 10;
 }
 
+enum BattleType {
+	BATTLE_TYPE_UNSET = 0;
+	BATTLE_TYPE_NORMAL = 1;
+	BATTLE_TYPE_TRAINING = 2;
+}
+
 message BattleLog {
 	com.github.aeonlucid.pogoprotos.data.battle.BattleState state = 1;
 	com.github.aeonlucid.pogoprotos.data.battle.BattleType battle_type = 2;
@@ -44,27 +59,6 @@ message BattleLog {
 	repeated com.github.aeonlucid.pogoprotos.data.battle.BattleAction battle_actions = 4;
 	int64 battle_start_timestamp_ms = 5;
 	int64 battle_end_timestamp_ms = 6;
-}
-
-message BattleResults {
-	com.github.aeonlucid.pogoprotos.data.gym.GymState gym_state = 1;
-	repeated com.github.aeonlucid.pogoprotos.data.battle.BattleParticipant attackers = 2;
-	repeated int32 player_experience_awarded = 3;
-	int64 next_defender_pokemon_id = 4;
-	int32 gym_points_delta = 5;
-}
-
-message BattleParticipant {
-	com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo active_pokemon = 1;
-	com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;
-	repeated com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo reverse_pokemon = 3;
-	repeated com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo defeated_pokemon = 4;
-}
-
-message BattlePokemonInfo {
-	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;
-	int32 current_health = 2;
-	int32 current_energy = 3;
 }
 
 message BattleAction {
@@ -81,5 +75,11 @@ message BattleAction {
 	int64 damage_windows_end_timestamp_mss = 12;
 	com.github.aeonlucid.pogoprotos.data.battle.BattleParticipant player_left = 13;
 	fixed64 target_pokemon_id = 14;
+}
+
+message BattlePokemonInfo {
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;
+	int32 current_health = 2;
+	int32 current_energy = 3;
 }
 

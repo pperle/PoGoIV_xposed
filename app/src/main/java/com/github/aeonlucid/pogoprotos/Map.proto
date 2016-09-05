@@ -26,14 +26,14 @@ message MapCell {
 	repeated com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;
 }
 
-message SpawnPoint {
-	double latitude = 2;
-	double longitude = 3;
-}
-
 enum MapObjectsStatus {
 	UNSET_STATUS = 0;
 	SUCCESS = 1;
 	LOCATION_UNSET = 2;
+}
+
+message SpawnPoint {
+	double latitude = 2;
+	double longitude = 3;
 }
 

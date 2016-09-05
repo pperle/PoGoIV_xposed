@@ -14,6 +14,2271 @@ public final class Envelopes {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ResponseEnvelopeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    int getStatusCodeValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode();
+
+    /**
+     * <code>optional uint64 request_id = 2;</code>
+     */
+    long getRequestId();
+
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    java.lang.String getApiUrl();
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getApiUrlBytes();
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> 
+        getPlatformReturnsList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index);
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    int getPlatformReturnsCount();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
+        getPlatformReturnsOrBuilderList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
+        int index);
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    boolean hasAuthTicket();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder();
+
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getReturnsList();
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    int getReturnsCount();
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    com.google.protobuf.ByteString getReturns(int index);
+
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    java.lang.String getError();
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
+   */
+  public  static final class ResponseEnvelope extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+      ResponseEnvelopeOrBuilder {
+    // Use ResponseEnvelope.newBuilder() to construct.
+    private ResponseEnvelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResponseEnvelope() {
+      statusCode_ = 0;
+      requestId_ = 0L;
+      apiUrl_ = "";
+      platformReturns_ = java.util.Collections.emptyList();
+      returns_ = java.util.Collections.emptyList();
+      error_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ResponseEnvelope(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              statusCode_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              requestId_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiUrl_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                platformReturns_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              platformReturns_.add(
+                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder subBuilder = null;
+              if (authTicket_ != null) {
+                subBuilder = authTicket_.toBuilder();
+              }
+              authTicket_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(authTicket_);
+                authTicket_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 802: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                returns_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              returns_.add(input.readBytes());
+              break;
+            }
+            case 810: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          platformReturns_ = java.util.Collections.unmodifiableList(platformReturns_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          returns_ = java.util.Collections.unmodifiableList(returns_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode}
+     */
+    public enum StatusCode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>UNKNOWN = 0;</code>
+       */
+      UNKNOWN(0),
+      /**
+       * <pre>
+       * valid response with no api url
+       * </pre>
+       *
+       * <code>OK = 1;</code>
+       */
+      OK(1),
+      /**
+       * <pre>
+       * the response envelope has api_url set and this response is valid
+       * </pre>
+       *
+       * <code>OK_RPC_URL_IN_RESPONSE = 2;</code>
+       */
+      OK_RPC_URL_IN_RESPONSE(2),
+      /**
+       * <pre>
+       * bad request
+       * </pre>
+       *
+       * <code>BAD_REQUEST = 3;</code>
+       */
+      BAD_REQUEST(3),
+      /**
+       * <pre>
+       * using unimplemented request or corrupt request
+       * </pre>
+       *
+       * <code>INVALID_REQUEST = 51;</code>
+       */
+      INVALID_REQUEST(51),
+      /**
+       * <pre>
+       * invalid platform request or corrupt platform request
+       * </pre>
+       *
+       * <code>INVALID_PLATFORM_REQUEST = 52;</code>
+       */
+      INVALID_PLATFORM_REQUEST(52),
+      /**
+       * <pre>
+       * a new rpc endpoint is available and you should redirect to there
+       * </pre>
+       *
+       * <code>REDIRECT = 53;</code>
+       */
+      REDIRECT(53),
+      /**
+       * <pre>
+       * occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
+       * </pre>
+       *
+       * <code>SESSION_INVALIDATED = 100;</code>
+       */
+      SESSION_INVALIDATED(100),
+      /**
+       * <pre>
+       * occurs when the login token is invalid
+       * </pre>
+       *
+       * <code>INVALID_AUTH_TOKEN = 102;</code>
+       */
+      INVALID_AUTH_TOKEN(102),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>UNKNOWN = 0;</code>
+       */
+      public static final int UNKNOWN_VALUE = 0;
+      /**
+       * <pre>
+       * valid response with no api url
+       * </pre>
+       *
+       * <code>OK = 1;</code>
+       */
+      public static final int OK_VALUE = 1;
+      /**
+       * <pre>
+       * the response envelope has api_url set and this response is valid
+       * </pre>
+       *
+       * <code>OK_RPC_URL_IN_RESPONSE = 2;</code>
+       */
+      public static final int OK_RPC_URL_IN_RESPONSE_VALUE = 2;
+      /**
+       * <pre>
+       * bad request
+       * </pre>
+       *
+       * <code>BAD_REQUEST = 3;</code>
+       */
+      public static final int BAD_REQUEST_VALUE = 3;
+      /**
+       * <pre>
+       * using unimplemented request or corrupt request
+       * </pre>
+       *
+       * <code>INVALID_REQUEST = 51;</code>
+       */
+      public static final int INVALID_REQUEST_VALUE = 51;
+      /**
+       * <pre>
+       * invalid platform request or corrupt platform request
+       * </pre>
+       *
+       * <code>INVALID_PLATFORM_REQUEST = 52;</code>
+       */
+      public static final int INVALID_PLATFORM_REQUEST_VALUE = 52;
+      /**
+       * <pre>
+       * a new rpc endpoint is available and you should redirect to there
+       * </pre>
+       *
+       * <code>REDIRECT = 53;</code>
+       */
+      public static final int REDIRECT_VALUE = 53;
+      /**
+       * <pre>
+       * occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
+       * </pre>
+       *
+       * <code>SESSION_INVALIDATED = 100;</code>
+       */
+      public static final int SESSION_INVALIDATED_VALUE = 100;
+      /**
+       * <pre>
+       * occurs when the login token is invalid
+       * </pre>
+       *
+       * <code>INVALID_AUTH_TOKEN = 102;</code>
+       */
+      public static final int INVALID_AUTH_TOKEN_VALUE = 102;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StatusCode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static StatusCode forNumber(int value) {
+        switch (value) {
+          case 0: return UNKNOWN;
+          case 1: return OK;
+          case 2: return OK_RPC_URL_IN_RESPONSE;
+          case 3: return BAD_REQUEST;
+          case 51: return INVALID_REQUEST;
+          case 52: return INVALID_PLATFORM_REQUEST;
+          case 53: return REDIRECT;
+          case 100: return SESSION_INVALIDATED;
+          case 102: return INVALID_AUTH_TOKEN;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<StatusCode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          StatusCode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<StatusCode>() {
+              public StatusCode findValueByNumber(int number) {
+                return StatusCode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final StatusCode[] VALUES = values();
+
+      public static StatusCode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private StatusCode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode)
+    }
+
+    public interface PlatformResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      int getTypeValue();
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType();
+
+      /**
+       * <code>optional bytes response = 2;</code>
+       */
+      com.google.protobuf.ByteString getResponse();
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse}
+     */
+    public  static final class PlatformResponse extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+        PlatformResponseOrBuilder {
+      // Use PlatformResponse.newBuilder() to construct.
+      private PlatformResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private PlatformResponse() {
+        type_ = 0;
+        response_ = com.google.protobuf.ByteString.EMPTY;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private PlatformResponse(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+
+                type_ = rawValue;
+                break;
+              }
+              case 18: {
+
+                response_ = input.readBytes();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder.class);
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
+        com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
+        return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+      }
+
+      public static final int RESPONSE_FIELD_NUMBER = 2;
+      private com.google.protobuf.ByteString response_;
+      /**
+       * <code>optional bytes response = 2;</code>
+       */
+      public com.google.protobuf.ByteString getResponse() {
+        return response_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
+          output.writeEnum(1, type_);
+        }
+        if (!response_.isEmpty()) {
+          output.writeBytes(2, response_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, type_);
+        }
+        if (!response_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(2, response_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse)) {
+          return super.equals(obj);
+        }
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) obj;
+
+        boolean result = true;
+        result = result && type_ == other.type_;
+        result = result && getResponse()
+            .equals(other.getResponse());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder.class);
+        }
+
+        // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          type_ = 0;
+
+          response_ = com.google.protobuf.ByteString.EMPTY;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
+        }
+
+        public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstanceForType() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance();
+        }
+
+        public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse build() {
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse buildPartial() {
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse(this);
+          result.type_ = type_;
+          result.response_ = response_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) {
+            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse other) {
+          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance()) return this;
+          if (other.type_ != 0) {
+            setTypeValue(other.getTypeValue());
+          }
+          if (other.getResponse() != com.google.protobuf.ByteString.EMPTY) {
+            setResponse(other.getResponse());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int type_ = 0;
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public int getTypeValue() {
+          return type_;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder setTypeValue(int value) {
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
+          com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
+          return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          type_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder clearType() {
+          
+          type_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.ByteString response_ = com.google.protobuf.ByteString.EMPTY;
+        /**
+         * <code>optional bytes response = 2;</code>
+         */
+        public com.google.protobuf.ByteString getResponse() {
+          return response_;
+        }
+        /**
+         * <code>optional bytes response = 2;</code>
+         */
+        public Builder setResponse(com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          response_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional bytes response = 2;</code>
+         */
+        public Builder clearResponse() {
+          
+          response_ = getDefaultInstance().getResponse();
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+      }
+
+      // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+      private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse();
+      }
+
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PlatformResponse>
+          PARSER = new com.google.protobuf.AbstractParser<PlatformResponse>() {
+        public PlatformResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PlatformResponse(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<PlatformResponse> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PlatformResponse> getParserForType() {
+        return PARSER;
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int STATUS_CODE_FIELD_NUMBER = 1;
+    private int statusCode_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    public int getStatusCodeValue() {
+      return statusCode_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode() {
+      com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode result = com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.valueOf(statusCode_);
+      return result == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNRECOGNIZED : result;
+    }
+
+    public static final int REQUEST_ID_FIELD_NUMBER = 2;
+    private long requestId_;
+    /**
+     * <code>optional uint64 request_id = 2;</code>
+     */
+    public long getRequestId() {
+      return requestId_;
+    }
+
+    public static final int API_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object apiUrl_;
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    public java.lang.String getApiUrl() {
+      java.lang.Object ref = apiUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getApiUrlBytes() {
+      java.lang.Object ref = apiUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLATFORM_RETURNS_FIELD_NUMBER = 6;
+    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> platformReturns_;
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> getPlatformReturnsList() {
+      return platformReturns_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
+        getPlatformReturnsOrBuilderList() {
+      return platformReturns_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public int getPlatformReturnsCount() {
+      return platformReturns_.size();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index) {
+      return platformReturns_.get(index);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
+        int index) {
+      return platformReturns_.get(index);
+    }
+
+    public static final int AUTH_TICKET_FIELD_NUMBER = 7;
+    private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    public boolean hasAuthTicket() {
+      return authTicket_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
+      return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
+      return getAuthTicket();
+    }
+
+    public static final int RETURNS_FIELD_NUMBER = 100;
+    private java.util.List<com.google.protobuf.ByteString> returns_;
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getReturnsList() {
+      return returns_;
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    public int getReturnsCount() {
+      return returns_.size();
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    public com.google.protobuf.ByteString getReturns(int index) {
+      return returns_.get(index);
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 101;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (statusCode_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNKNOWN.getNumber()) {
+        output.writeEnum(1, statusCode_);
+      }
+      if (requestId_ != 0L) {
+        output.writeUInt64(2, requestId_);
+      }
+      if (!getApiUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, apiUrl_);
+      }
+      for (int i = 0; i < platformReturns_.size(); i++) {
+        output.writeMessage(6, platformReturns_.get(i));
+      }
+      if (authTicket_ != null) {
+        output.writeMessage(7, getAuthTicket());
+      }
+      for (int i = 0; i < returns_.size(); i++) {
+        output.writeBytes(100, returns_.get(i));
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 101, error_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (statusCode_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, statusCode_);
+      }
+      if (requestId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, requestId_);
+      }
+      if (!getApiUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, apiUrl_);
+      }
+      for (int i = 0; i < platformReturns_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, platformReturns_.get(i));
+      }
+      if (authTicket_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getAuthTicket());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < returns_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(returns_.get(i));
+        }
+        size += dataSize;
+        size += 2 * getReturnsList().size();
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, error_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) obj;
+
+      boolean result = true;
+      result = result && statusCode_ == other.statusCode_;
+      result = result && (getRequestId()
+          == other.getRequestId());
+      result = result && getApiUrl()
+          .equals(other.getApiUrl());
+      result = result && getPlatformReturnsList()
+          .equals(other.getPlatformReturnsList());
+      result = result && (hasAuthTicket() == other.hasAuthTicket());
+      if (hasAuthTicket()) {
+        result = result && getAuthTicket()
+            .equals(other.getAuthTicket());
+      }
+      result = result && getReturnsList()
+          .equals(other.getReturnsList());
+      result = result && getError()
+          .equals(other.getError());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + statusCode_;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRequestId());
+      hash = (37 * hash) + API_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getApiUrl().hashCode();
+      if (getPlatformReturnsCount() > 0) {
+        hash = (37 * hash) + PLATFORM_RETURNS_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatformReturnsList().hashCode();
+      }
+      if (hasAuthTicket()) {
+        hash = (37 * hash) + AUTH_TICKET_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthTicket().hashCode();
+      }
+      if (getReturnsCount() > 0) {
+        hash = (37 * hash) + RETURNS_FIELD_NUMBER;
+        hash = (53 * hash) + getReturnsList().hashCode();
+      }
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelopeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPlatformReturnsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        statusCode_ = 0;
+
+        requestId_ = 0L;
+
+        apiUrl_ = "";
+
+        if (platformReturnsBuilder_ == null) {
+          platformReturns_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          platformReturnsBuilder_.clear();
+        }
+        if (authTicketBuilder_ == null) {
+          authTicket_ = null;
+        } else {
+          authTicket_ = null;
+          authTicketBuilder_ = null;
+        }
+        returns_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        error_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope build() {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope buildPartial() {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.statusCode_ = statusCode_;
+        result.requestId_ = requestId_;
+        result.apiUrl_ = apiUrl_;
+        if (platformReturnsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            platformReturns_ = java.util.Collections.unmodifiableList(platformReturns_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.platformReturns_ = platformReturns_;
+        } else {
+          result.platformReturns_ = platformReturnsBuilder_.build();
+        }
+        if (authTicketBuilder_ == null) {
+          result.authTicket_ = authTicket_;
+        } else {
+          result.authTicket_ = authTicketBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          returns_ = java.util.Collections.unmodifiableList(returns_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.returns_ = returns_;
+        result.error_ = error_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other) {
+        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDefaultInstance()) return this;
+        if (other.statusCode_ != 0) {
+          setStatusCodeValue(other.getStatusCodeValue());
+        }
+        if (other.getRequestId() != 0L) {
+          setRequestId(other.getRequestId());
+        }
+        if (!other.getApiUrl().isEmpty()) {
+          apiUrl_ = other.apiUrl_;
+          onChanged();
+        }
+        if (platformReturnsBuilder_ == null) {
+          if (!other.platformReturns_.isEmpty()) {
+            if (platformReturns_.isEmpty()) {
+              platformReturns_ = other.platformReturns_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensurePlatformReturnsIsMutable();
+              platformReturns_.addAll(other.platformReturns_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.platformReturns_.isEmpty()) {
+            if (platformReturnsBuilder_.isEmpty()) {
+              platformReturnsBuilder_.dispose();
+              platformReturnsBuilder_ = null;
+              platformReturns_ = other.platformReturns_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              platformReturnsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPlatformReturnsFieldBuilder() : null;
+            } else {
+              platformReturnsBuilder_.addAllMessages(other.platformReturns_);
+            }
+          }
+        }
+        if (other.hasAuthTicket()) {
+          mergeAuthTicket(other.getAuthTicket());
+        }
+        if (!other.returns_.isEmpty()) {
+          if (returns_.isEmpty()) {
+            returns_ = other.returns_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureReturnsIsMutable();
+            returns_.addAll(other.returns_);
+          }
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int statusCode_ = 0;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public int getStatusCodeValue() {
+        return statusCode_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public Builder setStatusCodeValue(int value) {
+        statusCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode() {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode result = com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.valueOf(statusCode_);
+        return result == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public Builder setStatusCode(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        statusCode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public Builder clearStatusCode() {
+        
+        statusCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long requestId_ ;
+      /**
+       * <code>optional uint64 request_id = 2;</code>
+       */
+      public long getRequestId() {
+        return requestId_;
+      }
+      /**
+       * <code>optional uint64 request_id = 2;</code>
+       */
+      public Builder setRequestId(long value) {
+        
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 request_id = 2;</code>
+       */
+      public Builder clearRequestId() {
+        
+        requestId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiUrl_ = "";
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public java.lang.String getApiUrl() {
+        java.lang.Object ref = apiUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getApiUrlBytes() {
+        java.lang.Object ref = apiUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public Builder setApiUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public Builder clearApiUrl() {
+        
+        apiUrl_ = getDefaultInstance().getApiUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public Builder setApiUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> platformReturns_ =
+        java.util.Collections.emptyList();
+      private void ensurePlatformReturnsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          platformReturns_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse>(platformReturns_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> platformReturnsBuilder_;
+
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> getPlatformReturnsList() {
+        if (platformReturnsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(platformReturns_);
+        } else {
+          return platformReturnsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public int getPlatformReturnsCount() {
+        if (platformReturnsBuilder_ == null) {
+          return platformReturns_.size();
+        } else {
+          return platformReturnsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index) {
+        if (platformReturnsBuilder_ == null) {
+          return platformReturns_.get(index);
+        } else {
+          return platformReturnsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder setPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+        if (platformReturnsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.set(index, value);
+          onChanged();
+        } else {
+          platformReturnsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder setPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+        if (platformReturnsBuilder_ == null) {
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          platformReturnsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+        if (platformReturnsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.add(value);
+          onChanged();
+        } else {
+          platformReturnsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+        if (platformReturnsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.add(index, value);
+          onChanged();
+        } else {
+          platformReturnsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+        if (platformReturnsBuilder_ == null) {
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.add(builderForValue.build());
+          onChanged();
+        } else {
+          platformReturnsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+        if (platformReturnsBuilder_ == null) {
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          platformReturnsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addAllPlatformReturns(
+          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> values) {
+        if (platformReturnsBuilder_ == null) {
+          ensurePlatformReturnsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, platformReturns_);
+          onChanged();
+        } else {
+          platformReturnsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder clearPlatformReturns() {
+        if (platformReturnsBuilder_ == null) {
+          platformReturns_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          platformReturnsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder removePlatformReturns(int index) {
+        if (platformReturnsBuilder_ == null) {
+          ensurePlatformReturnsIsMutable();
+          platformReturns_.remove(index);
+          onChanged();
+        } else {
+          platformReturnsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder getPlatformReturnsBuilder(
+          int index) {
+        return getPlatformReturnsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
+          int index) {
+        if (platformReturnsBuilder_ == null) {
+          return platformReturns_.get(index);  } else {
+          return platformReturnsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
+           getPlatformReturnsOrBuilderList() {
+        if (platformReturnsBuilder_ != null) {
+          return platformReturnsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(platformReturns_);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder addPlatformReturnsBuilder() {
+        return getPlatformReturnsFieldBuilder().addBuilder(
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder addPlatformReturnsBuilder(
+          int index) {
+        return getPlatformReturnsFieldBuilder().addBuilder(
+            index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder> 
+           getPlatformReturnsBuilderList() {
+        return getPlatformReturnsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
+          getPlatformReturnsFieldBuilder() {
+        if (platformReturnsBuilder_ == null) {
+          platformReturnsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder>(
+                  platformReturns_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          platformReturns_ = null;
+        }
+        return platformReturnsBuilder_;
+      }
+
+      private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> authTicketBuilder_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public boolean hasAuthTicket() {
+        return authTicketBuilder_ != null || authTicket_ != null;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
+        if (authTicketBuilder_ == null) {
+          return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
+        } else {
+          return authTicketBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+        if (authTicketBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authTicket_ = value;
+          onChanged();
+        } else {
+          authTicketBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder setAuthTicket(
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
+        if (authTicketBuilder_ == null) {
+          authTicket_ = builderForValue.build();
+          onChanged();
+        } else {
+          authTicketBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+        if (authTicketBuilder_ == null) {
+          if (authTicket_ != null) {
+            authTicket_ =
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder(authTicket_).mergeFrom(value).buildPartial();
+          } else {
+            authTicket_ = value;
+          }
+          onChanged();
+        } else {
+          authTicketBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder clearAuthTicket() {
+        if (authTicketBuilder_ == null) {
+          authTicket_ = null;
+          onChanged();
+        } else {
+          authTicket_ = null;
+          authTicketBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder getAuthTicketBuilder() {
+        
+        onChanged();
+        return getAuthTicketFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
+        if (authTicketBuilder_ != null) {
+          return authTicketBuilder_.getMessageOrBuilder();
+        } else {
+          return authTicket_ == null ?
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> 
+          getAuthTicketFieldBuilder() {
+        if (authTicketBuilder_ == null) {
+          authTicketBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder>(
+                  getAuthTicket(),
+                  getParentForChildren(),
+                  isClean());
+          authTicket_ = null;
+        }
+        return authTicketBuilder_;
+      }
+
+      private java.util.List<com.google.protobuf.ByteString> returns_ = java.util.Collections.emptyList();
+      private void ensureReturnsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          returns_ = new java.util.ArrayList<com.google.protobuf.ByteString>(returns_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getReturnsList() {
+        return java.util.Collections.unmodifiableList(returns_);
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public int getReturnsCount() {
+        return returns_.size();
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public com.google.protobuf.ByteString getReturns(int index) {
+        return returns_.get(index);
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder setReturns(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReturnsIsMutable();
+        returns_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder addReturns(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReturnsIsMutable();
+        returns_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder addAllReturns(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureReturnsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, returns_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder clearReturns() {
+        returns_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResponseEnvelope>
+        PARSER = new com.google.protobuf.AbstractParser<ResponseEnvelope>() {
+      public ResponseEnvelope parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ResponseEnvelope(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResponseEnvelope> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponseEnvelope> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SignatureOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature)
       com.google.protobuf.MessageOrBuilder {
@@ -108,18 +2373,18 @@ public final class Envelopes {
      * Location1 hashed signed based on the auth_token or auth_info - xxHash32
      * </pre>
      *
-     * <code>optional uint64 location_hash1 = 10;</code>
+     * <code>optional uint32 location_hash1 = 10;</code>
      */
-    long getLocationHash1();
+    int getLocationHash1();
 
     /**
      * <pre>
      * Location2 hashed (unsigned) - xxHash32
      * </pre>
      *
-     * <code>optional uint64 location_hash2 = 20;</code>
+     * <code>optional uint32 location_hash2 = 20;</code>
      */
-    long getLocationHash2();
+    int getLocationHash2();
 
     /**
      * <pre>
@@ -187,8 +2452,8 @@ public final class Envelopes {
     private Signature() {
       timestampSinceStart_ = 0L;
       locationFix_ = java.util.Collections.emptyList();
-      locationHash1_ = 0L;
-      locationHash2_ = 0L;
+      locationHash1_ = 0;
+      locationHash2_ = 0;
       sessionHash_ = com.google.protobuf.ByteString.EMPTY;
       timestamp_ = 0L;
       requestHash_ = java.util.Collections.emptyList();
@@ -288,12 +2553,12 @@ public final class Envelopes {
             }
             case 80: {
 
-              locationHash1_ = input.readUInt64();
+              locationHash1_ = input.readUInt32();
               break;
             }
             case 160: {
 
-              locationHash2_ = input.readUInt64();
+              locationHash2_ = input.readUInt32();
               break;
             }
             case 178: {
@@ -393,6 +2658,15 @@ public final class Envelopes {
       long getTimestampSnapshot();
 
       /**
+       * <pre>
+       * Confirmed on android/ios
+       * </pre>
+       *
+       * <code>optional float altitude = 4;</code>
+       */
+      float getAltitude();
+
+      /**
        * <code>optional float latitude = 13;</code>
        */
       float getLatitude();
@@ -404,23 +2678,34 @@ public final class Envelopes {
 
       /**
        * <pre>
-       * ??? shows up in struct, dunno where these go
-       * float device_speed;
-       * float device_course;
+       * iOS only (-1 for no reading available, speed in m/s)
        * </pre>
        *
-       * <code>optional float horizontal_accuracy = 20;</code>
+       * <code>optional float speed = 18;</code>
+       */
+      float getSpeed();
+
+      /**
+       * <pre>
+       * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+       * </pre>
+       *
+       * <code>optional float course = 20;</code>
+       */
+      float getCourse();
+
+      /**
+       * <pre>
+       * in meters, both on Android and iOS
+       * </pre>
+       *
+       * <code>optional float horizontal_accuracy = 21;</code>
        */
       float getHorizontalAccuracy();
 
       /**
-       * <code>optional float altitude = 21;</code>
-       */
-      float getAltitude();
-
-      /**
        * <pre>
-       * iOS only? (range seems to be ~10-12)
+       * iOS only
        * </pre>
        *
        * <code>optional float vertical_accuracy = 22;</code>
@@ -468,10 +2753,12 @@ public final class Envelopes {
       private LocationFix() {
         provider_ = "";
         timestampSnapshot_ = 0L;
+        altitude_ = 0F;
         latitude_ = 0F;
         longitude_ = 0F;
+        speed_ = 0F;
+        course_ = 0F;
         horizontalAccuracy_ = 0F;
-        altitude_ = 0F;
         verticalAccuracy_ = 0F;
         providerStatus_ = 0L;
         floor_ = 0;
@@ -514,6 +2801,11 @@ public final class Envelopes {
                 timestampSnapshot_ = input.readUInt64();
                 break;
               }
+              case 37: {
+
+                altitude_ = input.readFloat();
+                break;
+              }
               case 109: {
 
                 latitude_ = input.readFloat();
@@ -524,14 +2816,19 @@ public final class Envelopes {
                 longitude_ = input.readFloat();
                 break;
               }
+              case 149: {
+
+                speed_ = input.readFloat();
+                break;
+              }
               case 165: {
 
-                horizontalAccuracy_ = input.readFloat();
+                course_ = input.readFloat();
                 break;
               }
               case 173: {
 
-                altitude_ = input.readFloat();
+                horizontalAccuracy_ = input.readFloat();
                 break;
               }
               case 181: {
@@ -632,6 +2929,19 @@ public final class Envelopes {
         return timestampSnapshot_;
       }
 
+      public static final int ALTITUDE_FIELD_NUMBER = 4;
+      private float altitude_;
+      /**
+       * <pre>
+       * Confirmed on android/ios
+       * </pre>
+       *
+       * <code>optional float altitude = 4;</code>
+       */
+      public float getAltitude() {
+        return altitude_;
+      }
+
       public static final int LATITUDE_FIELD_NUMBER = 13;
       private float latitude_;
       /**
@@ -650,35 +2960,50 @@ public final class Envelopes {
         return longitude_;
       }
 
-      public static final int HORIZONTAL_ACCURACY_FIELD_NUMBER = 20;
+      public static final int SPEED_FIELD_NUMBER = 18;
+      private float speed_;
+      /**
+       * <pre>
+       * iOS only (-1 for no reading available, speed in m/s)
+       * </pre>
+       *
+       * <code>optional float speed = 18;</code>
+       */
+      public float getSpeed() {
+        return speed_;
+      }
+
+      public static final int COURSE_FIELD_NUMBER = 20;
+      private float course_;
+      /**
+       * <pre>
+       * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+       * </pre>
+       *
+       * <code>optional float course = 20;</code>
+       */
+      public float getCourse() {
+        return course_;
+      }
+
+      public static final int HORIZONTAL_ACCURACY_FIELD_NUMBER = 21;
       private float horizontalAccuracy_;
       /**
        * <pre>
-       * ??? shows up in struct, dunno where these go
-       * float device_speed;
-       * float device_course;
+       * in meters, both on Android and iOS
        * </pre>
        *
-       * <code>optional float horizontal_accuracy = 20;</code>
+       * <code>optional float horizontal_accuracy = 21;</code>
        */
       public float getHorizontalAccuracy() {
         return horizontalAccuracy_;
-      }
-
-      public static final int ALTITUDE_FIELD_NUMBER = 21;
-      private float altitude_;
-      /**
-       * <code>optional float altitude = 21;</code>
-       */
-      public float getAltitude() {
-        return altitude_;
       }
 
       public static final int VERTICAL_ACCURACY_FIELD_NUMBER = 22;
       private float verticalAccuracy_;
       /**
        * <pre>
-       * iOS only? (range seems to be ~10-12)
+       * iOS only
        * </pre>
        *
        * <code>optional float vertical_accuracy = 22;</code>
@@ -744,17 +3069,23 @@ public final class Envelopes {
         if (timestampSnapshot_ != 0L) {
           output.writeUInt64(2, timestampSnapshot_);
         }
+        if (altitude_ != 0F) {
+          output.writeFloat(4, altitude_);
+        }
         if (latitude_ != 0F) {
           output.writeFloat(13, latitude_);
         }
         if (longitude_ != 0F) {
           output.writeFloat(14, longitude_);
         }
-        if (horizontalAccuracy_ != 0F) {
-          output.writeFloat(20, horizontalAccuracy_);
+        if (speed_ != 0F) {
+          output.writeFloat(18, speed_);
         }
-        if (altitude_ != 0F) {
-          output.writeFloat(21, altitude_);
+        if (course_ != 0F) {
+          output.writeFloat(20, course_);
+        }
+        if (horizontalAccuracy_ != 0F) {
+          output.writeFloat(21, horizontalAccuracy_);
         }
         if (verticalAccuracy_ != 0F) {
           output.writeFloat(22, verticalAccuracy_);
@@ -782,6 +3113,10 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(2, timestampSnapshot_);
         }
+        if (altitude_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(4, altitude_);
+        }
         if (latitude_ != 0F) {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(13, latitude_);
@@ -790,13 +3125,17 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(14, longitude_);
         }
+        if (speed_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(18, speed_);
+        }
+        if (course_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(20, course_);
+        }
         if (horizontalAccuracy_ != 0F) {
           size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(20, horizontalAccuracy_);
-        }
-        if (altitude_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(21, altitude_);
+            .computeFloatSize(21, horizontalAccuracy_);
         }
         if (verticalAccuracy_ != 0F) {
           size += com.google.protobuf.CodedOutputStream
@@ -835,6 +3174,10 @@ public final class Envelopes {
         result = result && (getTimestampSnapshot()
             == other.getTimestampSnapshot());
         result = result && (
+            java.lang.Float.floatToIntBits(getAltitude())
+            == java.lang.Float.floatToIntBits(
+                other.getAltitude()));
+        result = result && (
             java.lang.Float.floatToIntBits(getLatitude())
             == java.lang.Float.floatToIntBits(
                 other.getLatitude()));
@@ -843,13 +3186,17 @@ public final class Envelopes {
             == java.lang.Float.floatToIntBits(
                 other.getLongitude()));
         result = result && (
+            java.lang.Float.floatToIntBits(getSpeed())
+            == java.lang.Float.floatToIntBits(
+                other.getSpeed()));
+        result = result && (
+            java.lang.Float.floatToIntBits(getCourse())
+            == java.lang.Float.floatToIntBits(
+                other.getCourse()));
+        result = result && (
             java.lang.Float.floatToIntBits(getHorizontalAccuracy())
             == java.lang.Float.floatToIntBits(
                 other.getHorizontalAccuracy()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getAltitude())
-            == java.lang.Float.floatToIntBits(
-                other.getAltitude()));
         result = result && (
             java.lang.Float.floatToIntBits(getVerticalAccuracy())
             == java.lang.Float.floatToIntBits(
@@ -875,18 +3222,24 @@ public final class Envelopes {
         hash = (37 * hash) + TIMESTAMP_SNAPSHOT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getTimestampSnapshot());
+        hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getAltitude());
         hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getLatitude());
         hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getLongitude());
+        hash = (37 * hash) + SPEED_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getSpeed());
+        hash = (37 * hash) + COURSE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getCourse());
         hash = (37 * hash) + HORIZONTAL_ACCURACY_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getHorizontalAccuracy());
-        hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getAltitude());
         hash = (37 * hash) + VERTICAL_ACCURACY_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getVerticalAccuracy());
@@ -1020,13 +3373,17 @@ public final class Envelopes {
 
           timestampSnapshot_ = 0L;
 
+          altitude_ = 0F;
+
           latitude_ = 0F;
 
           longitude_ = 0F;
 
-          horizontalAccuracy_ = 0F;
+          speed_ = 0F;
 
-          altitude_ = 0F;
+          course_ = 0F;
+
+          horizontalAccuracy_ = 0F;
 
           verticalAccuracy_ = 0F;
 
@@ -1060,10 +3417,12 @@ public final class Envelopes {
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix(this);
           result.provider_ = provider_;
           result.timestampSnapshot_ = timestampSnapshot_;
+          result.altitude_ = altitude_;
           result.latitude_ = latitude_;
           result.longitude_ = longitude_;
+          result.speed_ = speed_;
+          result.course_ = course_;
           result.horizontalAccuracy_ = horizontalAccuracy_;
-          result.altitude_ = altitude_;
           result.verticalAccuracy_ = verticalAccuracy_;
           result.providerStatus_ = providerStatus_;
           result.floor_ = floor_;
@@ -1116,17 +3475,23 @@ public final class Envelopes {
           if (other.getTimestampSnapshot() != 0L) {
             setTimestampSnapshot(other.getTimestampSnapshot());
           }
+          if (other.getAltitude() != 0F) {
+            setAltitude(other.getAltitude());
+          }
           if (other.getLatitude() != 0F) {
             setLatitude(other.getLatitude());
           }
           if (other.getLongitude() != 0F) {
             setLongitude(other.getLongitude());
           }
+          if (other.getSpeed() != 0F) {
+            setSpeed(other.getSpeed());
+          }
+          if (other.getCourse() != 0F) {
+            setCourse(other.getCourse());
+          }
           if (other.getHorizontalAccuracy() != 0F) {
             setHorizontalAccuracy(other.getHorizontalAccuracy());
-          }
-          if (other.getAltitude() != 0F) {
-            setAltitude(other.getAltitude());
           }
           if (other.getVerticalAccuracy() != 0F) {
             setVerticalAccuracy(other.getVerticalAccuracy());
@@ -1293,6 +3658,44 @@ public final class Envelopes {
           return this;
         }
 
+        private float altitude_ ;
+        /**
+         * <pre>
+         * Confirmed on android/ios
+         * </pre>
+         *
+         * <code>optional float altitude = 4;</code>
+         */
+        public float getAltitude() {
+          return altitude_;
+        }
+        /**
+         * <pre>
+         * Confirmed on android/ios
+         * </pre>
+         *
+         * <code>optional float altitude = 4;</code>
+         */
+        public Builder setAltitude(float value) {
+          
+          altitude_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Confirmed on android/ios
+         * </pre>
+         *
+         * <code>optional float altitude = 4;</code>
+         */
+        public Builder clearAltitude() {
+          
+          altitude_ = 0F;
+          onChanged();
+          return this;
+        }
+
         private float latitude_ ;
         /**
          * <code>optional float latitude = 13;</code>
@@ -1345,27 +3748,99 @@ public final class Envelopes {
           return this;
         }
 
+        private float speed_ ;
+        /**
+         * <pre>
+         * iOS only (-1 for no reading available, speed in m/s)
+         * </pre>
+         *
+         * <code>optional float speed = 18;</code>
+         */
+        public float getSpeed() {
+          return speed_;
+        }
+        /**
+         * <pre>
+         * iOS only (-1 for no reading available, speed in m/s)
+         * </pre>
+         *
+         * <code>optional float speed = 18;</code>
+         */
+        public Builder setSpeed(float value) {
+          
+          speed_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * iOS only (-1 for no reading available, speed in m/s)
+         * </pre>
+         *
+         * <code>optional float speed = 18;</code>
+         */
+        public Builder clearSpeed() {
+          
+          speed_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float course_ ;
+        /**
+         * <pre>
+         * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+         * </pre>
+         *
+         * <code>optional float course = 20;</code>
+         */
+        public float getCourse() {
+          return course_;
+        }
+        /**
+         * <pre>
+         * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+         * </pre>
+         *
+         * <code>optional float course = 20;</code>
+         */
+        public Builder setCourse(float value) {
+          
+          course_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+         * </pre>
+         *
+         * <code>optional float course = 20;</code>
+         */
+        public Builder clearCourse() {
+          
+          course_ = 0F;
+          onChanged();
+          return this;
+        }
+
         private float horizontalAccuracy_ ;
         /**
          * <pre>
-         * ??? shows up in struct, dunno where these go
-         * float device_speed;
-         * float device_course;
+         * in meters, both on Android and iOS
          * </pre>
          *
-         * <code>optional float horizontal_accuracy = 20;</code>
+         * <code>optional float horizontal_accuracy = 21;</code>
          */
         public float getHorizontalAccuracy() {
           return horizontalAccuracy_;
         }
         /**
          * <pre>
-         * ??? shows up in struct, dunno where these go
-         * float device_speed;
-         * float device_course;
+         * in meters, both on Android and iOS
          * </pre>
          *
-         * <code>optional float horizontal_accuracy = 20;</code>
+         * <code>optional float horizontal_accuracy = 21;</code>
          */
         public Builder setHorizontalAccuracy(float value) {
           
@@ -1375,12 +3850,10 @@ public final class Envelopes {
         }
         /**
          * <pre>
-         * ??? shows up in struct, dunno where these go
-         * float device_speed;
-         * float device_course;
+         * in meters, both on Android and iOS
          * </pre>
          *
-         * <code>optional float horizontal_accuracy = 20;</code>
+         * <code>optional float horizontal_accuracy = 21;</code>
          */
         public Builder clearHorizontalAccuracy() {
           
@@ -1389,36 +3862,10 @@ public final class Envelopes {
           return this;
         }
 
-        private float altitude_ ;
-        /**
-         * <code>optional float altitude = 21;</code>
-         */
-        public float getAltitude() {
-          return altitude_;
-        }
-        /**
-         * <code>optional float altitude = 21;</code>
-         */
-        public Builder setAltitude(float value) {
-          
-          altitude_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional float altitude = 21;</code>
-         */
-        public Builder clearAltitude() {
-          
-          altitude_ = 0F;
-          onChanged();
-          return this;
-        }
-
         private float verticalAccuracy_ ;
         /**
          * <pre>
-         * iOS only? (range seems to be ~10-12)
+         * iOS only
          * </pre>
          *
          * <code>optional float vertical_accuracy = 22;</code>
@@ -1428,7 +3875,7 @@ public final class Envelopes {
         }
         /**
          * <pre>
-         * iOS only? (range seems to be ~10-12)
+         * iOS only
          * </pre>
          *
          * <code>optional float vertical_accuracy = 22;</code>
@@ -1441,7 +3888,7 @@ public final class Envelopes {
         }
         /**
          * <pre>
-         * iOS only? (range seems to be ~10-12)
+         * iOS only
          * </pre>
          *
          * <code>optional float vertical_accuracy = 22;</code>
@@ -1638,43 +4085,43 @@ public final class Envelopes {
       int getSatellitesPrn(int index);
 
       /**
-       * <code>repeated float snr = 3;</code>
-       */
-      java.util.List<java.lang.Float> getSnrList();
-      /**
-       * <code>repeated float snr = 3;</code>
-       */
-      int getSnrCount();
-      /**
-       * <code>repeated float snr = 3;</code>
-       */
-      float getSnr(int index);
-
-      /**
-       * <code>repeated float azimuth = 4;</code>
+       * <code>repeated float azimuth = 3;</code>
        */
       java.util.List<java.lang.Float> getAzimuthList();
       /**
-       * <code>repeated float azimuth = 4;</code>
+       * <code>repeated float azimuth = 3;</code>
        */
       int getAzimuthCount();
       /**
-       * <code>repeated float azimuth = 4;</code>
+       * <code>repeated float azimuth = 3;</code>
        */
       float getAzimuth(int index);
 
       /**
-       * <code>repeated float elevation = 5;</code>
+       * <code>repeated float elevation = 4;</code>
        */
       java.util.List<java.lang.Float> getElevationList();
       /**
-       * <code>repeated float elevation = 5;</code>
+       * <code>repeated float elevation = 4;</code>
        */
       int getElevationCount();
       /**
-       * <code>repeated float elevation = 5;</code>
+       * <code>repeated float elevation = 4;</code>
        */
       float getElevation(int index);
+
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      java.util.List<java.lang.Float> getSnrList();
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      int getSnrCount();
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      float getSnr(int index);
 
       /**
        * <code>repeated bool has_almanac = 6;</code>
@@ -1733,9 +4180,9 @@ public final class Envelopes {
       private AndroidGpsInfo() {
         timeToFix_ = 0L;
         satellitesPrn_ = java.util.Collections.emptyList();
-        snr_ = java.util.Collections.emptyList();
         azimuth_ = java.util.Collections.emptyList();
         elevation_ = java.util.Collections.emptyList();
+        snr_ = java.util.Collections.emptyList();
         hasAlmanac_ = java.util.Collections.emptyList();
         hasEphemeris_ = java.util.Collections.emptyList();
         usedInFix_ = java.util.Collections.emptyList();
@@ -1794,39 +4241,18 @@ public final class Envelopes {
               }
               case 29: {
                 if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                  snr_ = new java.util.ArrayList<java.lang.Float>();
+                  azimuth_ = new java.util.ArrayList<java.lang.Float>();
                   mutable_bitField0_ |= 0x00000004;
                 }
-                snr_.add(input.readFloat());
+                azimuth_.add(input.readFloat());
                 break;
               }
               case 26: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
                 if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                  snr_ = new java.util.ArrayList<java.lang.Float>();
+                  azimuth_ = new java.util.ArrayList<java.lang.Float>();
                   mutable_bitField0_ |= 0x00000004;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  snr_.add(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 37: {
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                  azimuth_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                azimuth_.add(input.readFloat());
-                break;
-              }
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                  azimuth_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000008;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   azimuth_.add(input.readFloat());
@@ -1834,23 +4260,44 @@ public final class Envelopes {
                 input.popLimit(limit);
                 break;
               }
-              case 45: {
-                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              case 37: {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                   elevation_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000008;
                 }
                 elevation_.add(input.readFloat());
+                break;
+              }
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+                  elevation_ = new java.util.ArrayList<java.lang.Float>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  elevation_.add(input.readFloat());
+                }
+                input.popLimit(limit);
+                break;
+              }
+              case 45: {
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                  snr_ = new java.util.ArrayList<java.lang.Float>();
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                snr_.add(input.readFloat());
                 break;
               }
               case 42: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
                 if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                  elevation_ = new java.util.ArrayList<java.lang.Float>();
+                  snr_ = new java.util.ArrayList<java.lang.Float>();
                   mutable_bitField0_ |= 0x00000010;
                 }
                 while (input.getBytesUntilLimit() > 0) {
-                  elevation_.add(input.readFloat());
+                  snr_.add(input.readFloat());
                 }
                 input.popLimit(limit);
                 break;
@@ -1930,13 +4377,13 @@ public final class Envelopes {
             satellitesPrn_ = java.util.Collections.unmodifiableList(satellitesPrn_);
           }
           if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-            snr_ = java.util.Collections.unmodifiableList(snr_);
-          }
-          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
             azimuth_ = java.util.Collections.unmodifiableList(azimuth_);
           }
-          if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
             elevation_ = java.util.Collections.unmodifiableList(elevation_);
+          }
+          if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            snr_ = java.util.Collections.unmodifiableList(snr_);
           }
           if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
             hasAlmanac_ = java.util.Collections.unmodifiableList(hasAlmanac_);
@@ -1995,74 +4442,74 @@ public final class Envelopes {
       }
       private int satellitesPrnMemoizedSerializedSize = -1;
 
-      public static final int SNR_FIELD_NUMBER = 3;
-      private java.util.List<java.lang.Float> snr_;
-      /**
-       * <code>repeated float snr = 3;</code>
-       */
-      public java.util.List<java.lang.Float>
-          getSnrList() {
-        return snr_;
-      }
-      /**
-       * <code>repeated float snr = 3;</code>
-       */
-      public int getSnrCount() {
-        return snr_.size();
-      }
-      /**
-       * <code>repeated float snr = 3;</code>
-       */
-      public float getSnr(int index) {
-        return snr_.get(index);
-      }
-      private int snrMemoizedSerializedSize = -1;
-
-      public static final int AZIMUTH_FIELD_NUMBER = 4;
+      public static final int AZIMUTH_FIELD_NUMBER = 3;
       private java.util.List<java.lang.Float> azimuth_;
       /**
-       * <code>repeated float azimuth = 4;</code>
+       * <code>repeated float azimuth = 3;</code>
        */
       public java.util.List<java.lang.Float>
           getAzimuthList() {
         return azimuth_;
       }
       /**
-       * <code>repeated float azimuth = 4;</code>
+       * <code>repeated float azimuth = 3;</code>
        */
       public int getAzimuthCount() {
         return azimuth_.size();
       }
       /**
-       * <code>repeated float azimuth = 4;</code>
+       * <code>repeated float azimuth = 3;</code>
        */
       public float getAzimuth(int index) {
         return azimuth_.get(index);
       }
       private int azimuthMemoizedSerializedSize = -1;
 
-      public static final int ELEVATION_FIELD_NUMBER = 5;
+      public static final int ELEVATION_FIELD_NUMBER = 4;
       private java.util.List<java.lang.Float> elevation_;
       /**
-       * <code>repeated float elevation = 5;</code>
+       * <code>repeated float elevation = 4;</code>
        */
       public java.util.List<java.lang.Float>
           getElevationList() {
         return elevation_;
       }
       /**
-       * <code>repeated float elevation = 5;</code>
+       * <code>repeated float elevation = 4;</code>
        */
       public int getElevationCount() {
         return elevation_.size();
       }
       /**
-       * <code>repeated float elevation = 5;</code>
+       * <code>repeated float elevation = 4;</code>
        */
       public float getElevation(int index) {
         return elevation_.get(index);
       }
       private int elevationMemoizedSerializedSize = -1;
+
+      public static final int SNR_FIELD_NUMBER = 5;
+      private java.util.List<java.lang.Float> snr_;
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      public java.util.List<java.lang.Float>
+          getSnrList() {
+        return snr_;
+      }
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      public int getSnrCount() {
+        return snr_.size();
+      }
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      public float getSnr(int index) {
+        return snr_.get(index);
+      }
+      private int snrMemoizedSerializedSize = -1;
 
       public static final int HAS_ALMANAC_FIELD_NUMBER = 6;
       private java.util.List<java.lang.Boolean> hasAlmanac_;
@@ -2156,26 +4603,26 @@ public final class Envelopes {
         for (int i = 0; i < satellitesPrn_.size(); i++) {
           output.writeInt32NoTag(satellitesPrn_.get(i));
         }
-        if (getSnrList().size() > 0) {
-          output.writeUInt32NoTag(26);
-          output.writeUInt32NoTag(snrMemoizedSerializedSize);
-        }
-        for (int i = 0; i < snr_.size(); i++) {
-          output.writeFloatNoTag(snr_.get(i));
-        }
         if (getAzimuthList().size() > 0) {
-          output.writeUInt32NoTag(34);
+          output.writeUInt32NoTag(26);
           output.writeUInt32NoTag(azimuthMemoizedSerializedSize);
         }
         for (int i = 0; i < azimuth_.size(); i++) {
           output.writeFloatNoTag(azimuth_.get(i));
         }
         if (getElevationList().size() > 0) {
-          output.writeUInt32NoTag(42);
+          output.writeUInt32NoTag(34);
           output.writeUInt32NoTag(elevationMemoizedSerializedSize);
         }
         for (int i = 0; i < elevation_.size(); i++) {
           output.writeFloatNoTag(elevation_.get(i));
+        }
+        if (getSnrList().size() > 0) {
+          output.writeUInt32NoTag(42);
+          output.writeUInt32NoTag(snrMemoizedSerializedSize);
+        }
+        for (int i = 0; i < snr_.size(); i++) {
+          output.writeFloatNoTag(snr_.get(i));
         }
         if (getHasAlmanacList().size() > 0) {
           output.writeUInt32NoTag(50);
@@ -2225,17 +4672,6 @@ public final class Envelopes {
         }
         {
           int dataSize = 0;
-          dataSize = 4 * getSnrList().size();
-          size += dataSize;
-          if (!getSnrList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          snrMemoizedSerializedSize = dataSize;
-        }
-        {
-          int dataSize = 0;
           dataSize = 4 * getAzimuthList().size();
           size += dataSize;
           if (!getAzimuthList().isEmpty()) {
@@ -2255,6 +4691,17 @@ public final class Envelopes {
                 .computeInt32SizeNoTag(dataSize);
           }
           elevationMemoizedSerializedSize = dataSize;
+        }
+        {
+          int dataSize = 0;
+          dataSize = 4 * getSnrList().size();
+          size += dataSize;
+          if (!getSnrList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream
+                .computeInt32SizeNoTag(dataSize);
+          }
+          snrMemoizedSerializedSize = dataSize;
         }
         {
           int dataSize = 0;
@@ -2309,12 +4756,12 @@ public final class Envelopes {
             == other.getTimeToFix());
         result = result && getSatellitesPrnList()
             .equals(other.getSatellitesPrnList());
-        result = result && getSnrList()
-            .equals(other.getSnrList());
         result = result && getAzimuthList()
             .equals(other.getAzimuthList());
         result = result && getElevationList()
             .equals(other.getElevationList());
+        result = result && getSnrList()
+            .equals(other.getSnrList());
         result = result && getHasAlmanacList()
             .equals(other.getHasAlmanacList());
         result = result && getHasEphemerisList()
@@ -2338,10 +4785,6 @@ public final class Envelopes {
           hash = (37 * hash) + SATELLITES_PRN_FIELD_NUMBER;
           hash = (53 * hash) + getSatellitesPrnList().hashCode();
         }
-        if (getSnrCount() > 0) {
-          hash = (37 * hash) + SNR_FIELD_NUMBER;
-          hash = (53 * hash) + getSnrList().hashCode();
-        }
         if (getAzimuthCount() > 0) {
           hash = (37 * hash) + AZIMUTH_FIELD_NUMBER;
           hash = (53 * hash) + getAzimuthList().hashCode();
@@ -2349,6 +4792,10 @@ public final class Envelopes {
         if (getElevationCount() > 0) {
           hash = (37 * hash) + ELEVATION_FIELD_NUMBER;
           hash = (53 * hash) + getElevationList().hashCode();
+        }
+        if (getSnrCount() > 0) {
+          hash = (37 * hash) + SNR_FIELD_NUMBER;
+          hash = (53 * hash) + getSnrList().hashCode();
         }
         if (getHasAlmanacCount() > 0) {
           hash = (37 * hash) + HAS_ALMANAC_FIELD_NUMBER;
@@ -2488,11 +4935,11 @@ public final class Envelopes {
 
           satellitesPrn_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
-          snr_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
           azimuth_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           elevation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          snr_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           hasAlmanac_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000020);
@@ -2531,20 +4978,20 @@ public final class Envelopes {
           }
           result.satellitesPrn_ = satellitesPrn_;
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            snr_ = java.util.Collections.unmodifiableList(snr_);
+            azimuth_ = java.util.Collections.unmodifiableList(azimuth_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.snr_ = snr_;
+          result.azimuth_ = azimuth_;
           if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            azimuth_ = java.util.Collections.unmodifiableList(azimuth_);
+            elevation_ = java.util.Collections.unmodifiableList(elevation_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
-          result.azimuth_ = azimuth_;
+          result.elevation_ = elevation_;
           if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            elevation_ = java.util.Collections.unmodifiableList(elevation_);
+            snr_ = java.util.Collections.unmodifiableList(snr_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
-          result.elevation_ = elevation_;
+          result.snr_ = snr_;
           if (((bitField0_ & 0x00000020) == 0x00000020)) {
             hasAlmanac_ = java.util.Collections.unmodifiableList(hasAlmanac_);
             bitField0_ = (bitField0_ & ~0x00000020);
@@ -2615,20 +5062,10 @@ public final class Envelopes {
             }
             onChanged();
           }
-          if (!other.snr_.isEmpty()) {
-            if (snr_.isEmpty()) {
-              snr_ = other.snr_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureSnrIsMutable();
-              snr_.addAll(other.snr_);
-            }
-            onChanged();
-          }
           if (!other.azimuth_.isEmpty()) {
             if (azimuth_.isEmpty()) {
               azimuth_ = other.azimuth_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureAzimuthIsMutable();
               azimuth_.addAll(other.azimuth_);
@@ -2638,10 +5075,20 @@ public final class Envelopes {
           if (!other.elevation_.isEmpty()) {
             if (elevation_.isEmpty()) {
               elevation_ = other.elevation_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureElevationIsMutable();
               elevation_.addAll(other.elevation_);
+            }
+            onChanged();
+          }
+          if (!other.snr_.isEmpty()) {
+            if (snr_.isEmpty()) {
+              snr_ = other.snr_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureSnrIsMutable();
+              snr_.addAll(other.snr_);
             }
             onChanged();
           }
@@ -2794,100 +5241,34 @@ public final class Envelopes {
           return this;
         }
 
-        private java.util.List<java.lang.Float> snr_ = java.util.Collections.emptyList();
-        private void ensureSnrIsMutable() {
+        private java.util.List<java.lang.Float> azimuth_ = java.util.Collections.emptyList();
+        private void ensureAzimuthIsMutable() {
           if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-            snr_ = new java.util.ArrayList<java.lang.Float>(snr_);
+            azimuth_ = new java.util.ArrayList<java.lang.Float>(azimuth_);
             bitField0_ |= 0x00000004;
            }
         }
         /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public java.util.List<java.lang.Float>
-            getSnrList() {
-          return java.util.Collections.unmodifiableList(snr_);
-        }
-        /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public int getSnrCount() {
-          return snr_.size();
-        }
-        /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public float getSnr(int index) {
-          return snr_.get(index);
-        }
-        /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public Builder setSnr(
-            int index, float value) {
-          ensureSnrIsMutable();
-          snr_.set(index, value);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public Builder addSnr(float value) {
-          ensureSnrIsMutable();
-          snr_.add(value);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public Builder addAllSnr(
-            java.lang.Iterable<? extends java.lang.Float> values) {
-          ensureSnrIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, snr_);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated float snr = 3;</code>
-         */
-        public Builder clearSnr() {
-          snr_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-          return this;
-        }
-
-        private java.util.List<java.lang.Float> azimuth_ = java.util.Collections.emptyList();
-        private void ensureAzimuthIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-            azimuth_ = new java.util.ArrayList<java.lang.Float>(azimuth_);
-            bitField0_ |= 0x00000008;
-           }
-        }
-        /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public java.util.List<java.lang.Float>
             getAzimuthList() {
           return java.util.Collections.unmodifiableList(azimuth_);
         }
         /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public int getAzimuthCount() {
           return azimuth_.size();
         }
         /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public float getAzimuth(int index) {
           return azimuth_.get(index);
         }
         /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public Builder setAzimuth(
             int index, float value) {
@@ -2897,7 +5278,7 @@ public final class Envelopes {
           return this;
         }
         /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public Builder addAzimuth(float value) {
           ensureAzimuthIsMutable();
@@ -2906,7 +5287,7 @@ public final class Envelopes {
           return this;
         }
         /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public Builder addAllAzimuth(
             java.lang.Iterable<? extends java.lang.Float> values) {
@@ -2917,43 +5298,43 @@ public final class Envelopes {
           return this;
         }
         /**
-         * <code>repeated float azimuth = 4;</code>
+         * <code>repeated float azimuth = 3;</code>
          */
         public Builder clearAzimuth() {
           azimuth_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
 
         private java.util.List<java.lang.Float> elevation_ = java.util.Collections.emptyList();
         private void ensureElevationIsMutable() {
-          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
             elevation_ = new java.util.ArrayList<java.lang.Float>(elevation_);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000008;
            }
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public java.util.List<java.lang.Float>
             getElevationList() {
           return java.util.Collections.unmodifiableList(elevation_);
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public int getElevationCount() {
           return elevation_.size();
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public float getElevation(int index) {
           return elevation_.get(index);
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public Builder setElevation(
             int index, float value) {
@@ -2963,7 +5344,7 @@ public final class Envelopes {
           return this;
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public Builder addElevation(float value) {
           ensureElevationIsMutable();
@@ -2972,7 +5353,7 @@ public final class Envelopes {
           return this;
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public Builder addAllElevation(
             java.lang.Iterable<? extends java.lang.Float> values) {
@@ -2983,10 +5364,76 @@ public final class Envelopes {
           return this;
         }
         /**
-         * <code>repeated float elevation = 5;</code>
+         * <code>repeated float elevation = 4;</code>
          */
         public Builder clearElevation() {
           elevation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<java.lang.Float> snr_ = java.util.Collections.emptyList();
+        private void ensureSnrIsMutable() {
+          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+            snr_ = new java.util.ArrayList<java.lang.Float>(snr_);
+            bitField0_ |= 0x00000010;
+           }
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public java.util.List<java.lang.Float>
+            getSnrList() {
+          return java.util.Collections.unmodifiableList(snr_);
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public int getSnrCount() {
+          return snr_.size();
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public float getSnr(int index) {
+          return snr_.get(index);
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public Builder setSnr(
+            int index, float value) {
+          ensureSnrIsMutable();
+          snr_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public Builder addSnr(float value) {
+          ensureSnrIsMutable();
+          snr_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public Builder addAllSnr(
+            java.lang.Iterable<? extends java.lang.Float> values) {
+          ensureSnrIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, snr_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated float snr = 5;</code>
+         */
+        public Builder clearSnr() {
+          snr_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
@@ -3252,49 +5699,49 @@ public final class Envelopes {
       long getTimestampSnapshot();
 
       /**
-       * <code>optional double magnetometer_x = 3;</code>
+       * <code>optional double linear_acceleration_x = 3;</code>
        */
-      double getMagnetometerX();
+      double getLinearAccelerationX();
 
       /**
-       * <code>optional double magnetometer_y = 4;</code>
+       * <code>optional double linear_acceleration_y = 4;</code>
        */
-      double getMagnetometerY();
+      double getLinearAccelerationY();
 
       /**
-       * <code>optional double magnetometer_z = 5;</code>
+       * <code>optional double linear_acceleration_z = 5;</code>
        */
-      double getMagnetometerZ();
+      double getLinearAccelerationZ();
 
       /**
-       * <code>optional double angle_normalized_x = 6;</code>
+       * <code>optional double magnetic_field_x = 6;</code>
        */
-      double getAngleNormalizedX();
+      double getMagneticFieldX();
 
       /**
-       * <code>optional double angle_normalized_y = 7;</code>
+       * <code>optional double magnetic_field_y = 7;</code>
        */
-      double getAngleNormalizedY();
+      double getMagneticFieldY();
 
       /**
-       * <code>optional double angle_normalized_z = 8;</code>
+       * <code>optional double magnetic_field_z = 8;</code>
        */
-      double getAngleNormalizedZ();
+      double getMagneticFieldZ();
 
       /**
-       * <code>optional double accel_raw_x = 10;</code>
+       * <code>optional double rotation_vector_x = 10;</code>
        */
-      double getAccelRawX();
+      double getRotationVectorX();
 
       /**
-       * <code>optional double accel_raw_y = 11;</code>
+       * <code>optional double rotation_vector_y = 11;</code>
        */
-      double getAccelRawY();
+      double getRotationVectorY();
 
       /**
-       * <code>optional double accel_raw_z = 12;</code>
+       * <code>optional double rotation_vector_z = 12;</code>
        */
-      double getAccelRawZ();
+      double getRotationVectorZ();
 
       /**
        * <code>optional double gyroscope_raw_x = 13;</code>
@@ -3312,19 +5759,19 @@ public final class Envelopes {
       double getGyroscopeRawZ();
 
       /**
-       * <code>optional double accel_normalized_x = 16;</code>
+       * <code>optional double gravity_x = 16;</code>
        */
-      double getAccelNormalizedX();
+      double getGravityX();
 
       /**
-       * <code>optional double accel_normalized_y = 17;</code>
+       * <code>optional double gravity_y = 17;</code>
        */
-      double getAccelNormalizedY();
+      double getGravityY();
 
       /**
-       * <code>optional double accel_normalized_z = 18;</code>
+       * <code>optional double gravity_z = 18;</code>
        */
-      double getAccelNormalizedZ();
+      double getGravityZ();
 
       /**
        * <pre>
@@ -3348,21 +5795,21 @@ public final class Envelopes {
       }
       private SensorInfo() {
         timestampSnapshot_ = 0L;
-        magnetometerX_ = 0D;
-        magnetometerY_ = 0D;
-        magnetometerZ_ = 0D;
-        angleNormalizedX_ = 0D;
-        angleNormalizedY_ = 0D;
-        angleNormalizedZ_ = 0D;
-        accelRawX_ = 0D;
-        accelRawY_ = 0D;
-        accelRawZ_ = 0D;
+        linearAccelerationX_ = 0D;
+        linearAccelerationY_ = 0D;
+        linearAccelerationZ_ = 0D;
+        magneticFieldX_ = 0D;
+        magneticFieldY_ = 0D;
+        magneticFieldZ_ = 0D;
+        rotationVectorX_ = 0D;
+        rotationVectorY_ = 0D;
+        rotationVectorZ_ = 0D;
         gyroscopeRawX_ = 0D;
         gyroscopeRawY_ = 0D;
         gyroscopeRawZ_ = 0D;
-        accelNormalizedX_ = 0D;
-        accelNormalizedY_ = 0D;
-        accelNormalizedZ_ = 0D;
+        gravityX_ = 0D;
+        gravityY_ = 0D;
+        gravityZ_ = 0D;
         accelerometerAxes_ = 0L;
       }
 
@@ -3398,47 +5845,47 @@ public final class Envelopes {
               }
               case 25: {
 
-                magnetometerX_ = input.readDouble();
+                linearAccelerationX_ = input.readDouble();
                 break;
               }
               case 33: {
 
-                magnetometerY_ = input.readDouble();
+                linearAccelerationY_ = input.readDouble();
                 break;
               }
               case 41: {
 
-                magnetometerZ_ = input.readDouble();
+                linearAccelerationZ_ = input.readDouble();
                 break;
               }
               case 49: {
 
-                angleNormalizedX_ = input.readDouble();
+                magneticFieldX_ = input.readDouble();
                 break;
               }
               case 57: {
 
-                angleNormalizedY_ = input.readDouble();
+                magneticFieldY_ = input.readDouble();
                 break;
               }
               case 65: {
 
-                angleNormalizedZ_ = input.readDouble();
+                magneticFieldZ_ = input.readDouble();
                 break;
               }
               case 81: {
 
-                accelRawX_ = input.readDouble();
+                rotationVectorX_ = input.readDouble();
                 break;
               }
               case 89: {
 
-                accelRawY_ = input.readDouble();
+                rotationVectorY_ = input.readDouble();
                 break;
               }
               case 97: {
 
-                accelRawZ_ = input.readDouble();
+                rotationVectorZ_ = input.readDouble();
                 break;
               }
               case 105: {
@@ -3458,17 +5905,17 @@ public final class Envelopes {
               }
               case 129: {
 
-                accelNormalizedX_ = input.readDouble();
+                gravityX_ = input.readDouble();
                 break;
               }
               case 137: {
 
-                accelNormalizedY_ = input.readDouble();
+                gravityY_ = input.readDouble();
                 break;
               }
               case 145: {
 
-                accelNormalizedZ_ = input.readDouble();
+                gravityZ_ = input.readDouble();
                 break;
               }
               case 152: {
@@ -3512,85 +5959,85 @@ public final class Envelopes {
         return timestampSnapshot_;
       }
 
-      public static final int MAGNETOMETER_X_FIELD_NUMBER = 3;
-      private double magnetometerX_;
+      public static final int LINEAR_ACCELERATION_X_FIELD_NUMBER = 3;
+      private double linearAccelerationX_;
       /**
-       * <code>optional double magnetometer_x = 3;</code>
+       * <code>optional double linear_acceleration_x = 3;</code>
        */
-      public double getMagnetometerX() {
-        return magnetometerX_;
+      public double getLinearAccelerationX() {
+        return linearAccelerationX_;
       }
 
-      public static final int MAGNETOMETER_Y_FIELD_NUMBER = 4;
-      private double magnetometerY_;
+      public static final int LINEAR_ACCELERATION_Y_FIELD_NUMBER = 4;
+      private double linearAccelerationY_;
       /**
-       * <code>optional double magnetometer_y = 4;</code>
+       * <code>optional double linear_acceleration_y = 4;</code>
        */
-      public double getMagnetometerY() {
-        return magnetometerY_;
+      public double getLinearAccelerationY() {
+        return linearAccelerationY_;
       }
 
-      public static final int MAGNETOMETER_Z_FIELD_NUMBER = 5;
-      private double magnetometerZ_;
+      public static final int LINEAR_ACCELERATION_Z_FIELD_NUMBER = 5;
+      private double linearAccelerationZ_;
       /**
-       * <code>optional double magnetometer_z = 5;</code>
+       * <code>optional double linear_acceleration_z = 5;</code>
        */
-      public double getMagnetometerZ() {
-        return magnetometerZ_;
+      public double getLinearAccelerationZ() {
+        return linearAccelerationZ_;
       }
 
-      public static final int ANGLE_NORMALIZED_X_FIELD_NUMBER = 6;
-      private double angleNormalizedX_;
+      public static final int MAGNETIC_FIELD_X_FIELD_NUMBER = 6;
+      private double magneticFieldX_;
       /**
-       * <code>optional double angle_normalized_x = 6;</code>
+       * <code>optional double magnetic_field_x = 6;</code>
        */
-      public double getAngleNormalizedX() {
-        return angleNormalizedX_;
+      public double getMagneticFieldX() {
+        return magneticFieldX_;
       }
 
-      public static final int ANGLE_NORMALIZED_Y_FIELD_NUMBER = 7;
-      private double angleNormalizedY_;
+      public static final int MAGNETIC_FIELD_Y_FIELD_NUMBER = 7;
+      private double magneticFieldY_;
       /**
-       * <code>optional double angle_normalized_y = 7;</code>
+       * <code>optional double magnetic_field_y = 7;</code>
        */
-      public double getAngleNormalizedY() {
-        return angleNormalizedY_;
+      public double getMagneticFieldY() {
+        return magneticFieldY_;
       }
 
-      public static final int ANGLE_NORMALIZED_Z_FIELD_NUMBER = 8;
-      private double angleNormalizedZ_;
+      public static final int MAGNETIC_FIELD_Z_FIELD_NUMBER = 8;
+      private double magneticFieldZ_;
       /**
-       * <code>optional double angle_normalized_z = 8;</code>
+       * <code>optional double magnetic_field_z = 8;</code>
        */
-      public double getAngleNormalizedZ() {
-        return angleNormalizedZ_;
+      public double getMagneticFieldZ() {
+        return magneticFieldZ_;
       }
 
-      public static final int ACCEL_RAW_X_FIELD_NUMBER = 10;
-      private double accelRawX_;
+      public static final int ROTATION_VECTOR_X_FIELD_NUMBER = 10;
+      private double rotationVectorX_;
       /**
-       * <code>optional double accel_raw_x = 10;</code>
+       * <code>optional double rotation_vector_x = 10;</code>
        */
-      public double getAccelRawX() {
-        return accelRawX_;
+      public double getRotationVectorX() {
+        return rotationVectorX_;
       }
 
-      public static final int ACCEL_RAW_Y_FIELD_NUMBER = 11;
-      private double accelRawY_;
+      public static final int ROTATION_VECTOR_Y_FIELD_NUMBER = 11;
+      private double rotationVectorY_;
       /**
-       * <code>optional double accel_raw_y = 11;</code>
+       * <code>optional double rotation_vector_y = 11;</code>
        */
-      public double getAccelRawY() {
-        return accelRawY_;
+      public double getRotationVectorY() {
+        return rotationVectorY_;
       }
 
-      public static final int ACCEL_RAW_Z_FIELD_NUMBER = 12;
-      private double accelRawZ_;
+      public static final int ROTATION_VECTOR_Z_FIELD_NUMBER = 12;
+      private double rotationVectorZ_;
       /**
-       * <code>optional double accel_raw_z = 12;</code>
+       * <code>optional double rotation_vector_z = 12;</code>
        */
-      public double getAccelRawZ() {
-        return accelRawZ_;
+      public double getRotationVectorZ() {
+        return rotationVectorZ_;
       }
 
       public static final int GYROSCOPE_RAW_X_FIELD_NUMBER = 13;
@@ -3620,31 +6067,31 @@ public final class Envelopes {
         return gyroscopeRawZ_;
       }
 
-      public static final int ACCEL_NORMALIZED_X_FIELD_NUMBER = 16;
-      private double accelNormalizedX_;
+      public static final int GRAVITY_X_FIELD_NUMBER = 16;
+      private double gravityX_;
       /**
-       * <code>optional double accel_normalized_x = 16;</code>
+       * <code>optional double gravity_x = 16;</code>
        */
-      public double getAccelNormalizedX() {
-        return accelNormalizedX_;
+      public double getGravityX() {
+        return gravityX_;
       }
 
-      public static final int ACCEL_NORMALIZED_Y_FIELD_NUMBER = 17;
-      private double accelNormalizedY_;
+      public static final int GRAVITY_Y_FIELD_NUMBER = 17;
+      private double gravityY_;
       /**
-       * <code>optional double accel_normalized_y = 17;</code>
+       * <code>optional double gravity_y = 17;</code>
        */
-      public double getAccelNormalizedY() {
-        return accelNormalizedY_;
+      public double getGravityY() {
+        return gravityY_;
       }
 
-      public static final int ACCEL_NORMALIZED_Z_FIELD_NUMBER = 18;
-      private double accelNormalizedZ_;
+      public static final int GRAVITY_Z_FIELD_NUMBER = 18;
+      private double gravityZ_;
       /**
-       * <code>optional double accel_normalized_z = 18;</code>
+       * <code>optional double gravity_z = 18;</code>
        */
-      public double getAccelNormalizedZ() {
-        return accelNormalizedZ_;
+      public double getGravityZ() {
+        return gravityZ_;
       }
 
       public static final int ACCELEROMETER_AXES_FIELD_NUMBER = 19;
@@ -3675,32 +6122,32 @@ public final class Envelopes {
         if (timestampSnapshot_ != 0L) {
           output.writeUInt64(1, timestampSnapshot_);
         }
-        if (magnetometerX_ != 0D) {
-          output.writeDouble(3, magnetometerX_);
+        if (linearAccelerationX_ != 0D) {
+          output.writeDouble(3, linearAccelerationX_);
         }
-        if (magnetometerY_ != 0D) {
-          output.writeDouble(4, magnetometerY_);
+        if (linearAccelerationY_ != 0D) {
+          output.writeDouble(4, linearAccelerationY_);
         }
-        if (magnetometerZ_ != 0D) {
-          output.writeDouble(5, magnetometerZ_);
+        if (linearAccelerationZ_ != 0D) {
+          output.writeDouble(5, linearAccelerationZ_);
         }
-        if (angleNormalizedX_ != 0D) {
-          output.writeDouble(6, angleNormalizedX_);
+        if (magneticFieldX_ != 0D) {
+          output.writeDouble(6, magneticFieldX_);
         }
-        if (angleNormalizedY_ != 0D) {
-          output.writeDouble(7, angleNormalizedY_);
+        if (magneticFieldY_ != 0D) {
+          output.writeDouble(7, magneticFieldY_);
         }
-        if (angleNormalizedZ_ != 0D) {
-          output.writeDouble(8, angleNormalizedZ_);
+        if (magneticFieldZ_ != 0D) {
+          output.writeDouble(8, magneticFieldZ_);
         }
-        if (accelRawX_ != 0D) {
-          output.writeDouble(10, accelRawX_);
+        if (rotationVectorX_ != 0D) {
+          output.writeDouble(10, rotationVectorX_);
         }
-        if (accelRawY_ != 0D) {
-          output.writeDouble(11, accelRawY_);
+        if (rotationVectorY_ != 0D) {
+          output.writeDouble(11, rotationVectorY_);
         }
-        if (accelRawZ_ != 0D) {
-          output.writeDouble(12, accelRawZ_);
+        if (rotationVectorZ_ != 0D) {
+          output.writeDouble(12, rotationVectorZ_);
         }
         if (gyroscopeRawX_ != 0D) {
           output.writeDouble(13, gyroscopeRawX_);
@@ -3711,14 +6158,14 @@ public final class Envelopes {
         if (gyroscopeRawZ_ != 0D) {
           output.writeDouble(15, gyroscopeRawZ_);
         }
-        if (accelNormalizedX_ != 0D) {
-          output.writeDouble(16, accelNormalizedX_);
+        if (gravityX_ != 0D) {
+          output.writeDouble(16, gravityX_);
         }
-        if (accelNormalizedY_ != 0D) {
-          output.writeDouble(17, accelNormalizedY_);
+        if (gravityY_ != 0D) {
+          output.writeDouble(17, gravityY_);
         }
-        if (accelNormalizedZ_ != 0D) {
-          output.writeDouble(18, accelNormalizedZ_);
+        if (gravityZ_ != 0D) {
+          output.writeDouble(18, gravityZ_);
         }
         if (accelerometerAxes_ != 0L) {
           output.writeUInt64(19, accelerometerAxes_);
@@ -3734,41 +6181,41 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(1, timestampSnapshot_);
         }
-        if (magnetometerX_ != 0D) {
+        if (linearAccelerationX_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(3, magnetometerX_);
+            .computeDoubleSize(3, linearAccelerationX_);
         }
-        if (magnetometerY_ != 0D) {
+        if (linearAccelerationY_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(4, magnetometerY_);
+            .computeDoubleSize(4, linearAccelerationY_);
         }
-        if (magnetometerZ_ != 0D) {
+        if (linearAccelerationZ_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(5, magnetometerZ_);
+            .computeDoubleSize(5, linearAccelerationZ_);
         }
-        if (angleNormalizedX_ != 0D) {
+        if (magneticFieldX_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(6, angleNormalizedX_);
+            .computeDoubleSize(6, magneticFieldX_);
         }
-        if (angleNormalizedY_ != 0D) {
+        if (magneticFieldY_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(7, angleNormalizedY_);
+            .computeDoubleSize(7, magneticFieldY_);
         }
-        if (angleNormalizedZ_ != 0D) {
+        if (magneticFieldZ_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(8, angleNormalizedZ_);
+            .computeDoubleSize(8, magneticFieldZ_);
         }
-        if (accelRawX_ != 0D) {
+        if (rotationVectorX_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(10, accelRawX_);
+            .computeDoubleSize(10, rotationVectorX_);
         }
-        if (accelRawY_ != 0D) {
+        if (rotationVectorY_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(11, accelRawY_);
+            .computeDoubleSize(11, rotationVectorY_);
         }
-        if (accelRawZ_ != 0D) {
+        if (rotationVectorZ_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(12, accelRawZ_);
+            .computeDoubleSize(12, rotationVectorZ_);
         }
         if (gyroscopeRawX_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
@@ -3782,17 +6229,17 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeDoubleSize(15, gyroscopeRawZ_);
         }
-        if (accelNormalizedX_ != 0D) {
+        if (gravityX_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(16, accelNormalizedX_);
+            .computeDoubleSize(16, gravityX_);
         }
-        if (accelNormalizedY_ != 0D) {
+        if (gravityY_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(17, accelNormalizedY_);
+            .computeDoubleSize(17, gravityY_);
         }
-        if (accelNormalizedZ_ != 0D) {
+        if (gravityZ_ != 0D) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(18, accelNormalizedZ_);
+            .computeDoubleSize(18, gravityZ_);
         }
         if (accelerometerAxes_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
@@ -3817,41 +6264,41 @@ public final class Envelopes {
         result = result && (getTimestampSnapshot()
             == other.getTimestampSnapshot());
         result = result && (
-            java.lang.Double.doubleToLongBits(getMagnetometerX())
+            java.lang.Double.doubleToLongBits(getLinearAccelerationX())
             == java.lang.Double.doubleToLongBits(
-                other.getMagnetometerX()));
+                other.getLinearAccelerationX()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getMagnetometerY())
+            java.lang.Double.doubleToLongBits(getLinearAccelerationY())
             == java.lang.Double.doubleToLongBits(
-                other.getMagnetometerY()));
+                other.getLinearAccelerationY()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getMagnetometerZ())
+            java.lang.Double.doubleToLongBits(getLinearAccelerationZ())
             == java.lang.Double.doubleToLongBits(
-                other.getMagnetometerZ()));
+                other.getLinearAccelerationZ()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAngleNormalizedX())
+            java.lang.Double.doubleToLongBits(getMagneticFieldX())
             == java.lang.Double.doubleToLongBits(
-                other.getAngleNormalizedX()));
+                other.getMagneticFieldX()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAngleNormalizedY())
+            java.lang.Double.doubleToLongBits(getMagneticFieldY())
             == java.lang.Double.doubleToLongBits(
-                other.getAngleNormalizedY()));
+                other.getMagneticFieldY()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAngleNormalizedZ())
+            java.lang.Double.doubleToLongBits(getMagneticFieldZ())
             == java.lang.Double.doubleToLongBits(
-                other.getAngleNormalizedZ()));
+                other.getMagneticFieldZ()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAccelRawX())
+            java.lang.Double.doubleToLongBits(getRotationVectorX())
             == java.lang.Double.doubleToLongBits(
-                other.getAccelRawX()));
+                other.getRotationVectorX()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAccelRawY())
+            java.lang.Double.doubleToLongBits(getRotationVectorY())
             == java.lang.Double.doubleToLongBits(
-                other.getAccelRawY()));
+                other.getRotationVectorY()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAccelRawZ())
+            java.lang.Double.doubleToLongBits(getRotationVectorZ())
             == java.lang.Double.doubleToLongBits(
-                other.getAccelRawZ()));
+                other.getRotationVectorZ()));
         result = result && (
             java.lang.Double.doubleToLongBits(getGyroscopeRawX())
             == java.lang.Double.doubleToLongBits(
@@ -3865,17 +6312,17 @@ public final class Envelopes {
             == java.lang.Double.doubleToLongBits(
                 other.getGyroscopeRawZ()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAccelNormalizedX())
+            java.lang.Double.doubleToLongBits(getGravityX())
             == java.lang.Double.doubleToLongBits(
-                other.getAccelNormalizedX()));
+                other.getGravityX()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAccelNormalizedY())
+            java.lang.Double.doubleToLongBits(getGravityY())
             == java.lang.Double.doubleToLongBits(
-                other.getAccelNormalizedY()));
+                other.getGravityY()));
         result = result && (
-            java.lang.Double.doubleToLongBits(getAccelNormalizedZ())
+            java.lang.Double.doubleToLongBits(getGravityZ())
             == java.lang.Double.doubleToLongBits(
-                other.getAccelNormalizedZ()));
+                other.getGravityZ()));
         result = result && (getAccelerometerAxes()
             == other.getAccelerometerAxes());
         return result;
@@ -3891,33 +6338,33 @@ public final class Envelopes {
         hash = (37 * hash) + TIMESTAMP_SNAPSHOT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getTimestampSnapshot());
-        hash = (37 * hash) + MAGNETOMETER_X_FIELD_NUMBER;
+        hash = (37 * hash) + LINEAR_ACCELERATION_X_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getMagnetometerX()));
-        hash = (37 * hash) + MAGNETOMETER_Y_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getLinearAccelerationX()));
+        hash = (37 * hash) + LINEAR_ACCELERATION_Y_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getMagnetometerY()));
-        hash = (37 * hash) + MAGNETOMETER_Z_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getLinearAccelerationY()));
+        hash = (37 * hash) + LINEAR_ACCELERATION_Z_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getMagnetometerZ()));
-        hash = (37 * hash) + ANGLE_NORMALIZED_X_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getLinearAccelerationZ()));
+        hash = (37 * hash) + MAGNETIC_FIELD_X_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAngleNormalizedX()));
-        hash = (37 * hash) + ANGLE_NORMALIZED_Y_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getMagneticFieldX()));
+        hash = (37 * hash) + MAGNETIC_FIELD_Y_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAngleNormalizedY()));
-        hash = (37 * hash) + ANGLE_NORMALIZED_Z_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getMagneticFieldY()));
+        hash = (37 * hash) + MAGNETIC_FIELD_Z_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAngleNormalizedZ()));
-        hash = (37 * hash) + ACCEL_RAW_X_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getMagneticFieldZ()));
+        hash = (37 * hash) + ROTATION_VECTOR_X_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAccelRawX()));
-        hash = (37 * hash) + ACCEL_RAW_Y_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getRotationVectorX()));
+        hash = (37 * hash) + ROTATION_VECTOR_Y_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAccelRawY()));
-        hash = (37 * hash) + ACCEL_RAW_Z_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getRotationVectorY()));
+        hash = (37 * hash) + ROTATION_VECTOR_Z_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAccelRawZ()));
+            java.lang.Double.doubleToLongBits(getRotationVectorZ()));
         hash = (37 * hash) + GYROSCOPE_RAW_X_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getGyroscopeRawX()));
@@ -3927,15 +6374,15 @@ public final class Envelopes {
         hash = (37 * hash) + GYROSCOPE_RAW_Z_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getGyroscopeRawZ()));
-        hash = (37 * hash) + ACCEL_NORMALIZED_X_FIELD_NUMBER;
+        hash = (37 * hash) + GRAVITY_X_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAccelNormalizedX()));
-        hash = (37 * hash) + ACCEL_NORMALIZED_Y_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getGravityX()));
+        hash = (37 * hash) + GRAVITY_Y_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAccelNormalizedY()));
-        hash = (37 * hash) + ACCEL_NORMALIZED_Z_FIELD_NUMBER;
+            java.lang.Double.doubleToLongBits(getGravityY()));
+        hash = (37 * hash) + GRAVITY_Z_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAccelNormalizedZ()));
+            java.lang.Double.doubleToLongBits(getGravityZ()));
         hash = (37 * hash) + ACCELEROMETER_AXES_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getAccelerometerAxes());
@@ -4059,23 +6506,23 @@ public final class Envelopes {
           super.clear();
           timestampSnapshot_ = 0L;
 
-          magnetometerX_ = 0D;
+          linearAccelerationX_ = 0D;
 
-          magnetometerY_ = 0D;
+          linearAccelerationY_ = 0D;
 
-          magnetometerZ_ = 0D;
+          linearAccelerationZ_ = 0D;
 
-          angleNormalizedX_ = 0D;
+          magneticFieldX_ = 0D;
 
-          angleNormalizedY_ = 0D;
+          magneticFieldY_ = 0D;
 
-          angleNormalizedZ_ = 0D;
+          magneticFieldZ_ = 0D;
 
-          accelRawX_ = 0D;
+          rotationVectorX_ = 0D;
 
-          accelRawY_ = 0D;
+          rotationVectorY_ = 0D;
 
-          accelRawZ_ = 0D;
+          rotationVectorZ_ = 0D;
 
           gyroscopeRawX_ = 0D;
 
@@ -4083,11 +6530,11 @@ public final class Envelopes {
 
           gyroscopeRawZ_ = 0D;
 
-          accelNormalizedX_ = 0D;
+          gravityX_ = 0D;
 
-          accelNormalizedY_ = 0D;
+          gravityY_ = 0D;
 
-          accelNormalizedZ_ = 0D;
+          gravityZ_ = 0D;
 
           accelerometerAxes_ = 0L;
 
@@ -4114,21 +6561,21 @@ public final class Envelopes {
         public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo buildPartial() {
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo(this);
           result.timestampSnapshot_ = timestampSnapshot_;
-          result.magnetometerX_ = magnetometerX_;
-          result.magnetometerY_ = magnetometerY_;
-          result.magnetometerZ_ = magnetometerZ_;
-          result.angleNormalizedX_ = angleNormalizedX_;
-          result.angleNormalizedY_ = angleNormalizedY_;
-          result.angleNormalizedZ_ = angleNormalizedZ_;
-          result.accelRawX_ = accelRawX_;
-          result.accelRawY_ = accelRawY_;
-          result.accelRawZ_ = accelRawZ_;
+          result.linearAccelerationX_ = linearAccelerationX_;
+          result.linearAccelerationY_ = linearAccelerationY_;
+          result.linearAccelerationZ_ = linearAccelerationZ_;
+          result.magneticFieldX_ = magneticFieldX_;
+          result.magneticFieldY_ = magneticFieldY_;
+          result.magneticFieldZ_ = magneticFieldZ_;
+          result.rotationVectorX_ = rotationVectorX_;
+          result.rotationVectorY_ = rotationVectorY_;
+          result.rotationVectorZ_ = rotationVectorZ_;
           result.gyroscopeRawX_ = gyroscopeRawX_;
           result.gyroscopeRawY_ = gyroscopeRawY_;
           result.gyroscopeRawZ_ = gyroscopeRawZ_;
-          result.accelNormalizedX_ = accelNormalizedX_;
-          result.accelNormalizedY_ = accelNormalizedY_;
-          result.accelNormalizedZ_ = accelNormalizedZ_;
+          result.gravityX_ = gravityX_;
+          result.gravityY_ = gravityY_;
+          result.gravityZ_ = gravityZ_;
           result.accelerometerAxes_ = accelerometerAxes_;
           onBuilt();
           return result;
@@ -4174,32 +6621,32 @@ public final class Envelopes {
           if (other.getTimestampSnapshot() != 0L) {
             setTimestampSnapshot(other.getTimestampSnapshot());
           }
-          if (other.getMagnetometerX() != 0D) {
-            setMagnetometerX(other.getMagnetometerX());
+          if (other.getLinearAccelerationX() != 0D) {
+            setLinearAccelerationX(other.getLinearAccelerationX());
           }
-          if (other.getMagnetometerY() != 0D) {
-            setMagnetometerY(other.getMagnetometerY());
+          if (other.getLinearAccelerationY() != 0D) {
+            setLinearAccelerationY(other.getLinearAccelerationY());
           }
-          if (other.getMagnetometerZ() != 0D) {
-            setMagnetometerZ(other.getMagnetometerZ());
+          if (other.getLinearAccelerationZ() != 0D) {
+            setLinearAccelerationZ(other.getLinearAccelerationZ());
           }
-          if (other.getAngleNormalizedX() != 0D) {
-            setAngleNormalizedX(other.getAngleNormalizedX());
+          if (other.getMagneticFieldX() != 0D) {
+            setMagneticFieldX(other.getMagneticFieldX());
           }
-          if (other.getAngleNormalizedY() != 0D) {
-            setAngleNormalizedY(other.getAngleNormalizedY());
+          if (other.getMagneticFieldY() != 0D) {
+            setMagneticFieldY(other.getMagneticFieldY());
           }
-          if (other.getAngleNormalizedZ() != 0D) {
-            setAngleNormalizedZ(other.getAngleNormalizedZ());
+          if (other.getMagneticFieldZ() != 0D) {
+            setMagneticFieldZ(other.getMagneticFieldZ());
           }
-          if (other.getAccelRawX() != 0D) {
-            setAccelRawX(other.getAccelRawX());
+          if (other.getRotationVectorX() != 0D) {
+            setRotationVectorX(other.getRotationVectorX());
           }
-          if (other.getAccelRawY() != 0D) {
-            setAccelRawY(other.getAccelRawY());
+          if (other.getRotationVectorY() != 0D) {
+            setRotationVectorY(other.getRotationVectorY());
           }
-          if (other.getAccelRawZ() != 0D) {
-            setAccelRawZ(other.getAccelRawZ());
+          if (other.getRotationVectorZ() != 0D) {
+            setRotationVectorZ(other.getRotationVectorZ());
           }
           if (other.getGyroscopeRawX() != 0D) {
             setGyroscopeRawX(other.getGyroscopeRawX());
@@ -4210,14 +6657,14 @@ public final class Envelopes {
           if (other.getGyroscopeRawZ() != 0D) {
             setGyroscopeRawZ(other.getGyroscopeRawZ());
           }
-          if (other.getAccelNormalizedX() != 0D) {
-            setAccelNormalizedX(other.getAccelNormalizedX());
+          if (other.getGravityX() != 0D) {
+            setGravityX(other.getGravityX());
           }
-          if (other.getAccelNormalizedY() != 0D) {
-            setAccelNormalizedY(other.getAccelNormalizedY());
+          if (other.getGravityY() != 0D) {
+            setGravityY(other.getGravityY());
           }
-          if (other.getAccelNormalizedZ() != 0D) {
-            setAccelNormalizedZ(other.getAccelNormalizedZ());
+          if (other.getGravityZ() != 0D) {
+            setGravityZ(other.getGravityZ());
           }
           if (other.getAccelerometerAxes() != 0L) {
             setAccelerometerAxes(other.getAccelerometerAxes());
@@ -4286,236 +6733,236 @@ public final class Envelopes {
           return this;
         }
 
-        private double magnetometerX_ ;
+        private double linearAccelerationX_ ;
         /**
-         * <code>optional double magnetometer_x = 3;</code>
+         * <code>optional double linear_acceleration_x = 3;</code>
          */
-        public double getMagnetometerX() {
-          return magnetometerX_;
+        public double getLinearAccelerationX() {
+          return linearAccelerationX_;
         }
         /**
-         * <code>optional double magnetometer_x = 3;</code>
+         * <code>optional double linear_acceleration_x = 3;</code>
          */
-        public Builder setMagnetometerX(double value) {
+        public Builder setLinearAccelerationX(double value) {
           
-          magnetometerX_ = value;
+          linearAccelerationX_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double magnetometer_x = 3;</code>
+         * <code>optional double linear_acceleration_x = 3;</code>
          */
-        public Builder clearMagnetometerX() {
+        public Builder clearLinearAccelerationX() {
           
-          magnetometerX_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double magnetometerY_ ;
-        /**
-         * <code>optional double magnetometer_y = 4;</code>
-         */
-        public double getMagnetometerY() {
-          return magnetometerY_;
-        }
-        /**
-         * <code>optional double magnetometer_y = 4;</code>
-         */
-        public Builder setMagnetometerY(double value) {
-          
-          magnetometerY_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double magnetometer_y = 4;</code>
-         */
-        public Builder clearMagnetometerY() {
-          
-          magnetometerY_ = 0D;
+          linearAccelerationX_ = 0D;
           onChanged();
           return this;
         }
 
-        private double magnetometerZ_ ;
+        private double linearAccelerationY_ ;
         /**
-         * <code>optional double magnetometer_z = 5;</code>
+         * <code>optional double linear_acceleration_y = 4;</code>
          */
-        public double getMagnetometerZ() {
-          return magnetometerZ_;
+        public double getLinearAccelerationY() {
+          return linearAccelerationY_;
         }
         /**
-         * <code>optional double magnetometer_z = 5;</code>
+         * <code>optional double linear_acceleration_y = 4;</code>
          */
-        public Builder setMagnetometerZ(double value) {
+        public Builder setLinearAccelerationY(double value) {
           
-          magnetometerZ_ = value;
+          linearAccelerationY_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double magnetometer_z = 5;</code>
+         * <code>optional double linear_acceleration_y = 4;</code>
          */
-        public Builder clearMagnetometerZ() {
+        public Builder clearLinearAccelerationY() {
           
-          magnetometerZ_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double angleNormalizedX_ ;
-        /**
-         * <code>optional double angle_normalized_x = 6;</code>
-         */
-        public double getAngleNormalizedX() {
-          return angleNormalizedX_;
-        }
-        /**
-         * <code>optional double angle_normalized_x = 6;</code>
-         */
-        public Builder setAngleNormalizedX(double value) {
-          
-          angleNormalizedX_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double angle_normalized_x = 6;</code>
-         */
-        public Builder clearAngleNormalizedX() {
-          
-          angleNormalizedX_ = 0D;
+          linearAccelerationY_ = 0D;
           onChanged();
           return this;
         }
 
-        private double angleNormalizedY_ ;
+        private double linearAccelerationZ_ ;
         /**
-         * <code>optional double angle_normalized_y = 7;</code>
+         * <code>optional double linear_acceleration_z = 5;</code>
          */
-        public double getAngleNormalizedY() {
-          return angleNormalizedY_;
+        public double getLinearAccelerationZ() {
+          return linearAccelerationZ_;
         }
         /**
-         * <code>optional double angle_normalized_y = 7;</code>
+         * <code>optional double linear_acceleration_z = 5;</code>
          */
-        public Builder setAngleNormalizedY(double value) {
+        public Builder setLinearAccelerationZ(double value) {
           
-          angleNormalizedY_ = value;
+          linearAccelerationZ_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double angle_normalized_y = 7;</code>
+         * <code>optional double linear_acceleration_z = 5;</code>
          */
-        public Builder clearAngleNormalizedY() {
+        public Builder clearLinearAccelerationZ() {
           
-          angleNormalizedY_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double angleNormalizedZ_ ;
-        /**
-         * <code>optional double angle_normalized_z = 8;</code>
-         */
-        public double getAngleNormalizedZ() {
-          return angleNormalizedZ_;
-        }
-        /**
-         * <code>optional double angle_normalized_z = 8;</code>
-         */
-        public Builder setAngleNormalizedZ(double value) {
-          
-          angleNormalizedZ_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double angle_normalized_z = 8;</code>
-         */
-        public Builder clearAngleNormalizedZ() {
-          
-          angleNormalizedZ_ = 0D;
+          linearAccelerationZ_ = 0D;
           onChanged();
           return this;
         }
 
-        private double accelRawX_ ;
+        private double magneticFieldX_ ;
         /**
-         * <code>optional double accel_raw_x = 10;</code>
+         * <code>optional double magnetic_field_x = 6;</code>
          */
-        public double getAccelRawX() {
-          return accelRawX_;
+        public double getMagneticFieldX() {
+          return magneticFieldX_;
         }
         /**
-         * <code>optional double accel_raw_x = 10;</code>
+         * <code>optional double magnetic_field_x = 6;</code>
          */
-        public Builder setAccelRawX(double value) {
+        public Builder setMagneticFieldX(double value) {
           
-          accelRawX_ = value;
+          magneticFieldX_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double accel_raw_x = 10;</code>
+         * <code>optional double magnetic_field_x = 6;</code>
          */
-        public Builder clearAccelRawX() {
+        public Builder clearMagneticFieldX() {
           
-          accelRawX_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double accelRawY_ ;
-        /**
-         * <code>optional double accel_raw_y = 11;</code>
-         */
-        public double getAccelRawY() {
-          return accelRawY_;
-        }
-        /**
-         * <code>optional double accel_raw_y = 11;</code>
-         */
-        public Builder setAccelRawY(double value) {
-          
-          accelRawY_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double accel_raw_y = 11;</code>
-         */
-        public Builder clearAccelRawY() {
-          
-          accelRawY_ = 0D;
+          magneticFieldX_ = 0D;
           onChanged();
           return this;
         }
 
-        private double accelRawZ_ ;
+        private double magneticFieldY_ ;
         /**
-         * <code>optional double accel_raw_z = 12;</code>
+         * <code>optional double magnetic_field_y = 7;</code>
          */
-        public double getAccelRawZ() {
-          return accelRawZ_;
+        public double getMagneticFieldY() {
+          return magneticFieldY_;
         }
         /**
-         * <code>optional double accel_raw_z = 12;</code>
+         * <code>optional double magnetic_field_y = 7;</code>
          */
-        public Builder setAccelRawZ(double value) {
+        public Builder setMagneticFieldY(double value) {
           
-          accelRawZ_ = value;
+          magneticFieldY_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double accel_raw_z = 12;</code>
+         * <code>optional double magnetic_field_y = 7;</code>
          */
-        public Builder clearAccelRawZ() {
+        public Builder clearMagneticFieldY() {
           
-          accelRawZ_ = 0D;
+          magneticFieldY_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double magneticFieldZ_ ;
+        /**
+         * <code>optional double magnetic_field_z = 8;</code>
+         */
+        public double getMagneticFieldZ() {
+          return magneticFieldZ_;
+        }
+        /**
+         * <code>optional double magnetic_field_z = 8;</code>
+         */
+        public Builder setMagneticFieldZ(double value) {
+          
+          magneticFieldZ_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double magnetic_field_z = 8;</code>
+         */
+        public Builder clearMagneticFieldZ() {
+          
+          magneticFieldZ_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double rotationVectorX_ ;
+        /**
+         * <code>optional double rotation_vector_x = 10;</code>
+         */
+        public double getRotationVectorX() {
+          return rotationVectorX_;
+        }
+        /**
+         * <code>optional double rotation_vector_x = 10;</code>
+         */
+        public Builder setRotationVectorX(double value) {
+          
+          rotationVectorX_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double rotation_vector_x = 10;</code>
+         */
+        public Builder clearRotationVectorX() {
+          
+          rotationVectorX_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double rotationVectorY_ ;
+        /**
+         * <code>optional double rotation_vector_y = 11;</code>
+         */
+        public double getRotationVectorY() {
+          return rotationVectorY_;
+        }
+        /**
+         * <code>optional double rotation_vector_y = 11;</code>
+         */
+        public Builder setRotationVectorY(double value) {
+          
+          rotationVectorY_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double rotation_vector_y = 11;</code>
+         */
+        public Builder clearRotationVectorY() {
+          
+          rotationVectorY_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double rotationVectorZ_ ;
+        /**
+         * <code>optional double rotation_vector_z = 12;</code>
+         */
+        public double getRotationVectorZ() {
+          return rotationVectorZ_;
+        }
+        /**
+         * <code>optional double rotation_vector_z = 12;</code>
+         */
+        public Builder setRotationVectorZ(double value) {
+          
+          rotationVectorZ_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double rotation_vector_z = 12;</code>
+         */
+        public Builder clearRotationVectorZ() {
+          
+          rotationVectorZ_ = 0D;
           onChanged();
           return this;
         }
@@ -4598,80 +7045,80 @@ public final class Envelopes {
           return this;
         }
 
-        private double accelNormalizedX_ ;
+        private double gravityX_ ;
         /**
-         * <code>optional double accel_normalized_x = 16;</code>
+         * <code>optional double gravity_x = 16;</code>
          */
-        public double getAccelNormalizedX() {
-          return accelNormalizedX_;
+        public double getGravityX() {
+          return gravityX_;
         }
         /**
-         * <code>optional double accel_normalized_x = 16;</code>
+         * <code>optional double gravity_x = 16;</code>
          */
-        public Builder setAccelNormalizedX(double value) {
+        public Builder setGravityX(double value) {
           
-          accelNormalizedX_ = value;
+          gravityX_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double accel_normalized_x = 16;</code>
+         * <code>optional double gravity_x = 16;</code>
          */
-        public Builder clearAccelNormalizedX() {
+        public Builder clearGravityX() {
           
-          accelNormalizedX_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double accelNormalizedY_ ;
-        /**
-         * <code>optional double accel_normalized_y = 17;</code>
-         */
-        public double getAccelNormalizedY() {
-          return accelNormalizedY_;
-        }
-        /**
-         * <code>optional double accel_normalized_y = 17;</code>
-         */
-        public Builder setAccelNormalizedY(double value) {
-          
-          accelNormalizedY_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double accel_normalized_y = 17;</code>
-         */
-        public Builder clearAccelNormalizedY() {
-          
-          accelNormalizedY_ = 0D;
+          gravityX_ = 0D;
           onChanged();
           return this;
         }
 
-        private double accelNormalizedZ_ ;
+        private double gravityY_ ;
         /**
-         * <code>optional double accel_normalized_z = 18;</code>
+         * <code>optional double gravity_y = 17;</code>
          */
-        public double getAccelNormalizedZ() {
-          return accelNormalizedZ_;
+        public double getGravityY() {
+          return gravityY_;
         }
         /**
-         * <code>optional double accel_normalized_z = 18;</code>
+         * <code>optional double gravity_y = 17;</code>
          */
-        public Builder setAccelNormalizedZ(double value) {
+        public Builder setGravityY(double value) {
           
-          accelNormalizedZ_ = value;
+          gravityY_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional double accel_normalized_z = 18;</code>
+         * <code>optional double gravity_y = 17;</code>
          */
-        public Builder clearAccelNormalizedZ() {
+        public Builder clearGravityY() {
           
-          accelNormalizedZ_ = 0D;
+          gravityY_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double gravityZ_ ;
+        /**
+         * <code>optional double gravity_z = 18;</code>
+         */
+        public double getGravityZ() {
+          return gravityZ_;
+        }
+        /**
+         * <code>optional double gravity_z = 18;</code>
+         */
+        public Builder setGravityZ(double value) {
+          
+          gravityZ_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double gravity_z = 18;</code>
+         */
+        public Builder clearGravityZ() {
+          
+          gravityZ_ = 0D;
           onChanged();
           return this;
         }
@@ -8411,28 +10858,28 @@ public final class Envelopes {
     }
 
     public static final int LOCATION_HASH1_FIELD_NUMBER = 10;
-    private long locationHash1_;
+    private int locationHash1_;
     /**
      * <pre>
      * Location1 hashed signed based on the auth_token or auth_info - xxHash32
      * </pre>
      *
-     * <code>optional uint64 location_hash1 = 10;</code>
+     * <code>optional uint32 location_hash1 = 10;</code>
      */
-    public long getLocationHash1() {
+    public int getLocationHash1() {
       return locationHash1_;
     }
 
     public static final int LOCATION_HASH2_FIELD_NUMBER = 20;
-    private long locationHash2_;
+    private int locationHash2_;
     /**
      * <pre>
      * Location2 hashed (unsigned) - xxHash32
      * </pre>
      *
-     * <code>optional uint64 location_hash2 = 20;</code>
+     * <code>optional uint32 location_hash2 = 20;</code>
      */
-    public long getLocationHash2() {
+    public int getLocationHash2() {
       return locationHash2_;
     }
 
@@ -8541,11 +10988,11 @@ public final class Envelopes {
       if (activityStatus_ != null) {
         output.writeMessage(9, getActivityStatus());
       }
-      if (locationHash1_ != 0L) {
-        output.writeUInt64(10, locationHash1_);
+      if (locationHash1_ != 0) {
+        output.writeUInt32(10, locationHash1_);
       }
-      if (locationHash2_ != 0L) {
-        output.writeUInt64(20, locationHash2_);
+      if (locationHash2_ != 0) {
+        output.writeUInt32(20, locationHash2_);
       }
       if (!sessionHash_.isEmpty()) {
         output.writeBytes(22, sessionHash_);
@@ -8594,13 +11041,13 @@ public final class Envelopes {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getActivityStatus());
       }
-      if (locationHash1_ != 0L) {
+      if (locationHash1_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, locationHash1_);
+          .computeUInt32Size(10, locationHash1_);
       }
-      if (locationHash2_ != 0L) {
+      if (locationHash2_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(20, locationHash2_);
+          .computeUInt32Size(20, locationHash2_);
       }
       if (!sessionHash_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -8714,11 +11161,9 @@ public final class Envelopes {
         hash = (53 * hash) + getActivityStatus().hashCode();
       }
       hash = (37 * hash) + LOCATION_HASH1_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLocationHash1());
+      hash = (53 * hash) + getLocationHash1();
       hash = (37 * hash) + LOCATION_HASH2_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLocationHash2());
+      hash = (53 * hash) + getLocationHash2();
       hash = (37 * hash) + SESSION_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getSessionHash().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
@@ -8882,9 +11327,9 @@ public final class Envelopes {
           activityStatus_ = null;
           activityStatusBuilder_ = null;
         }
-        locationHash1_ = 0L;
+        locationHash1_ = 0;
 
-        locationHash2_ = 0L;
+        locationHash2_ = 0;
 
         sessionHash_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -9041,10 +11486,10 @@ public final class Envelopes {
         if (other.hasActivityStatus()) {
           mergeActivityStatus(other.getActivityStatus());
         }
-        if (other.getLocationHash1() != 0L) {
+        if (other.getLocationHash1() != 0) {
           setLocationHash1(other.getLocationHash1());
         }
-        if (other.getLocationHash2() != 0L) {
+        if (other.getLocationHash2() != 0) {
           setLocationHash2(other.getLocationHash2());
         }
         if (other.getSessionHash() != com.google.protobuf.ByteString.EMPTY) {
@@ -9839,15 +12284,15 @@ public final class Envelopes {
         return activityStatusBuilder_;
       }
 
-      private long locationHash1_ ;
+      private int locationHash1_ ;
       /**
        * <pre>
        * Location1 hashed signed based on the auth_token or auth_info - xxHash32
        * </pre>
        *
-       * <code>optional uint64 location_hash1 = 10;</code>
+       * <code>optional uint32 location_hash1 = 10;</code>
        */
-      public long getLocationHash1() {
+      public int getLocationHash1() {
         return locationHash1_;
       }
       /**
@@ -9855,9 +12300,9 @@ public final class Envelopes {
        * Location1 hashed signed based on the auth_token or auth_info - xxHash32
        * </pre>
        *
-       * <code>optional uint64 location_hash1 = 10;</code>
+       * <code>optional uint32 location_hash1 = 10;</code>
        */
-      public Builder setLocationHash1(long value) {
+      public Builder setLocationHash1(int value) {
         
         locationHash1_ = value;
         onChanged();
@@ -9868,24 +12313,24 @@ public final class Envelopes {
        * Location1 hashed signed based on the auth_token or auth_info - xxHash32
        * </pre>
        *
-       * <code>optional uint64 location_hash1 = 10;</code>
+       * <code>optional uint32 location_hash1 = 10;</code>
        */
       public Builder clearLocationHash1() {
         
-        locationHash1_ = 0L;
+        locationHash1_ = 0;
         onChanged();
         return this;
       }
 
-      private long locationHash2_ ;
+      private int locationHash2_ ;
       /**
        * <pre>
        * Location2 hashed (unsigned) - xxHash32
        * </pre>
        *
-       * <code>optional uint64 location_hash2 = 20;</code>
+       * <code>optional uint32 location_hash2 = 20;</code>
        */
-      public long getLocationHash2() {
+      public int getLocationHash2() {
         return locationHash2_;
       }
       /**
@@ -9893,9 +12338,9 @@ public final class Envelopes {
        * Location2 hashed (unsigned) - xxHash32
        * </pre>
        *
-       * <code>optional uint64 location_hash2 = 20;</code>
+       * <code>optional uint32 location_hash2 = 20;</code>
        */
-      public Builder setLocationHash2(long value) {
+      public Builder setLocationHash2(int value) {
         
         locationHash2_ = value;
         onChanged();
@@ -9906,11 +12351,11 @@ public final class Envelopes {
        * Location2 hashed (unsigned) - xxHash32
        * </pre>
        *
-       * <code>optional uint64 location_hash2 = 20;</code>
+       * <code>optional uint32 location_hash2 = 20;</code>
        */
       public Builder clearLocationHash2() {
         
-        locationHash2_ = 0L;
+        locationHash2_ = 0;
         onChanged();
         return this;
       }
@@ -10174,8031 +12619,6 @@ public final class Envelopes {
 
   }
 
-  public interface Unknown6ResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Still don't know what 6 is, but 5 lists items available via IAPs.
-     * </pre>
-     *
-     * <code>optional int32 response_type = 1;</code>
-     */
-    int getResponseType();
-
-    /**
-     * <pre>
-     * Response data
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-     */
-    boolean hasUnknown2();
-    /**
-     * <pre>
-     * Response data
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 getUnknown2();
-    /**
-     * <pre>
-     * Response data
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder getUnknown2OrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response}
-   */
-  public  static final class Unknown6Response extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response)
-      Unknown6ResponseOrBuilder {
-    // Use Unknown6Response.newBuilder() to construct.
-    private Unknown6Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Unknown6Response() {
-      responseType_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private Unknown6Response(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              responseType_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder subBuilder = null;
-              if (unknown2_ != null) {
-                subBuilder = unknown2_.toBuilder();
-              }
-              unknown2_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unknown2_);
-                unknown2_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder.class);
-    }
-
-    public interface Unknown2OrBuilder extends
-        // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <pre>
-       * Maybe status? It's always 1 (success), so it's probably that.
-       * </pre>
-       *
-       * <code>optional uint64 unknown1 = 1;</code>
-       */
-      long getUnknown1();
-
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem> 
-          getItemsList();
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem getItems(int index);
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      int getItemsCount();
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder> 
-          getItemsOrBuilderList();
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder getItemsOrBuilder(
-          int index);
-
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> 
-          getPlayerCurrenciesList();
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      com.github.aeonlucid.pogoprotos.data.Player.Currency getPlayerCurrencies(int index);
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      int getPlayerCurrenciesCount();
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-          getPlayerCurrenciesOrBuilderList();
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getPlayerCurrenciesOrBuilder(
-          int index);
-
-      /**
-       * <pre>
-       * Some base64 encoded stuff...
-       * </pre>
-       *
-       * <code>optional string unknown4 = 4;</code>
-       */
-      java.lang.String getUnknown4();
-      /**
-       * <pre>
-       * Some base64 encoded stuff...
-       * </pre>
-       *
-       * <code>optional string unknown4 = 4;</code>
-       */
-      com.google.protobuf.ByteString
-          getUnknown4Bytes();
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2}
-     */
-    public  static final class Unknown2 extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2)
-        Unknown2OrBuilder {
-      // Use Unknown2.newBuilder() to construct.
-      private Unknown2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private Unknown2() {
-        unknown1_ = 0L;
-        items_ = java.util.Collections.emptyList();
-        playerCurrencies_ = java.util.Collections.emptyList();
-        unknown4_ = "";
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private Unknown2(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-
-                unknown1_ = input.readUInt64();
-                break;
-              }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  items_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                items_.add(
-                    input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.parser(), extensionRegistry));
-                break;
-              }
-              case 26: {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                  playerCurrencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                playerCurrencies_.add(
-                    input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry));
-                break;
-              }
-              case 34: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                unknown4_ = s;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-            items_ = java.util.Collections.unmodifiableList(items_);
-          }
-          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-            playerCurrencies_ = java.util.Collections.unmodifiableList(playerCurrencies_);
-          }
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder.class);
-      }
-
-      public interface StoreItemOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem)
-          com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <pre>
-         * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-         * </pre>
-         *
-         * <code>optional string item_id = 1;</code>
-         */
-        java.lang.String getItemId();
-        /**
-         * <pre>
-         * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-         * </pre>
-         *
-         * <code>optional string item_id = 1;</code>
-         */
-        com.google.protobuf.ByteString
-            getItemIdBytes();
-
-        /**
-         * <pre>
-         * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
-         * </pre>
-         *
-         * <code>optional bool is_iap = 2;</code>
-         */
-        boolean getIsIap();
-
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        boolean hasCurrencyToBuy();
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencyToBuy();
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrencyToBuyOrBuilder();
-
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        boolean hasYieldsCurrency();
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        com.github.aeonlucid.pogoprotos.data.Player.Currency getYieldsCurrency();
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getYieldsCurrencyOrBuilder();
-
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        boolean hasYieldsItem();
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemData getYieldsItem();
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder getYieldsItemOrBuilder();
-
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag> 
-            getTagsList();
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag getTags(int index);
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        int getTagsCount();
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder> 
-            getTagsOrBuilderList();
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder getTagsOrBuilder(
-            int index);
-
-        /**
-         * <pre>
-         * Possibly something to toggle visibility in the store/purchasibility?
-         * </pre>
-         *
-         * <code>optional int32 unknown7 = 7;</code>
-         */
-        int getUnknown7();
-      }
-      /**
-       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem}
-       */
-      public  static final class StoreItem extends
-          com.google.protobuf.GeneratedMessageV3 implements
-          // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem)
-          StoreItemOrBuilder {
-        // Use StoreItem.newBuilder() to construct.
-        private StoreItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
-        private StoreItem() {
-          itemId_ = "";
-          isIap_ = false;
-          tags_ = java.util.Collections.emptyList();
-          unknown7_ = 0;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-          return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-        private StoreItem(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          int mutable_bitField0_ = 0;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  itemId_ = s;
-                  break;
-                }
-                case 16: {
-
-                  isIap_ = input.readBool();
-                  break;
-                }
-                case 26: {
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder subBuilder = null;
-                  if (currencyToBuy_ != null) {
-                    subBuilder = currencyToBuy_.toBuilder();
-                  }
-                  currencyToBuy_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(currencyToBuy_);
-                    currencyToBuy_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 34: {
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder subBuilder = null;
-                  if (yieldsCurrency_ != null) {
-                    subBuilder = yieldsCurrency_.toBuilder();
-                  }
-                  yieldsCurrency_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(yieldsCurrency_);
-                    yieldsCurrency_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 42: {
-                  com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder subBuilder = null;
-                  if (yieldsItem_ != null) {
-                    subBuilder = yieldsItem_.toBuilder();
-                  }
-                  yieldsItem_ = input.readMessage(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(yieldsItem_);
-                    yieldsItem_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 50: {
-                  if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                    tags_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag>();
-                    mutable_bitField0_ |= 0x00000020;
-                  }
-                  tags_.add(
-                      input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.parser(), extensionRegistry));
-                  break;
-                }
-                case 56: {
-
-                  unknown7_ = input.readInt32();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
-          } finally {
-            if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              tags_ = java.util.Collections.unmodifiableList(tags_);
-            }
-            makeExtensionsImmutable();
-          }
-        }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder.class);
-        }
-
-        public interface TagOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag)
-            com.google.protobuf.MessageOrBuilder {
-
-          /**
-           * <code>optional string key = 1;</code>
-           */
-          java.lang.String getKey();
-          /**
-           * <code>optional string key = 1;</code>
-           */
-          com.google.protobuf.ByteString
-              getKeyBytes();
-
-          /**
-           * <code>optional string value = 2;</code>
-           */
-          java.lang.String getValue();
-          /**
-           * <code>optional string value = 2;</code>
-           */
-          com.google.protobuf.ByteString
-              getValueBytes();
-        }
-        /**
-         * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag}
-         */
-        public  static final class Tag extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag)
-            TagOrBuilder {
-          // Use Tag.newBuilder() to construct.
-          private Tag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
-          }
-          private Tag() {
-            key_ = "";
-            value_ = "";
-          }
-
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
-            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-          }
-          private Tag(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            int mutable_bitField0_ = 0;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 10: {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    key_ = s;
-                    break;
-                  }
-                  case 18: {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    value_ = s;
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(
-                  e).setUnfinishedMessage(this);
-            } finally {
-              makeExtensionsImmutable();
-            }
-          }
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_descriptor;
-          }
-
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder.class);
-          }
-
-          public static final int KEY_FIELD_NUMBER = 1;
-          private volatile java.lang.Object key_;
-          /**
-           * <code>optional string key = 1;</code>
-           */
-          public java.lang.String getKey() {
-            java.lang.Object ref = key_;
-            if (ref instanceof java.lang.String) {
-              return (java.lang.String) ref;
-            } else {
-              com.google.protobuf.ByteString bs = 
-                  (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              key_ = s;
-              return s;
-            }
-          }
-          /**
-           * <code>optional string key = 1;</code>
-           */
-          public com.google.protobuf.ByteString
-              getKeyBytes() {
-            java.lang.Object ref = key_;
-            if (ref instanceof java.lang.String) {
-              com.google.protobuf.ByteString b = 
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-              key_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
-          }
-
-          public static final int VALUE_FIELD_NUMBER = 2;
-          private volatile java.lang.Object value_;
-          /**
-           * <code>optional string value = 2;</code>
-           */
-          public java.lang.String getValue() {
-            java.lang.Object ref = value_;
-            if (ref instanceof java.lang.String) {
-              return (java.lang.String) ref;
-            } else {
-              com.google.protobuf.ByteString bs = 
-                  (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              value_ = s;
-              return s;
-            }
-          }
-          /**
-           * <code>optional string value = 2;</code>
-           */
-          public com.google.protobuf.ByteString
-              getValueBytes() {
-            java.lang.Object ref = value_;
-            if (ref instanceof java.lang.String) {
-              com.google.protobuf.ByteString b = 
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-              value_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
-          }
-
-          private byte memoizedIsInitialized = -1;
-          public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-          }
-
-          public void writeTo(com.google.protobuf.CodedOutputStream output)
-                              throws java.io.IOException {
-            if (!getKeyBytes().isEmpty()) {
-              com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
-            }
-            if (!getValueBytes().isEmpty()) {
-              com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
-            }
-          }
-
-          public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getKeyBytes().isEmpty()) {
-              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
-            }
-            if (!getValueBytes().isEmpty()) {
-              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
-            }
-            memoizedSize = size;
-            return size;
-          }
-
-          private static final long serialVersionUID = 0L;
-          @java.lang.Override
-          public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-             return true;
-            }
-            if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag)) {
-              return super.equals(obj);
-            }
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag) obj;
-
-            boolean result = true;
-            result = result && getKey()
-                .equals(other.getKey());
-            result = result && getValue()
-                .equals(other.getValue());
-            return result;
-          }
-
-          @java.lang.Override
-          public int hashCode() {
-            if (memoizedHashCode != 0) {
-              return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptorForType().hashCode();
-            hash = (37 * hash) + KEY_FIELD_NUMBER;
-            hash = (53 * hash) + getKey().hashCode();
-            hash = (37 * hash) + VALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getValue().hashCode();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-          }
-
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(
-              com.google.protobuf.ByteString data)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(
-              com.google.protobuf.ByteString data,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(byte[] data)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(
-              byte[] data,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(java.io.InputStream input)
-              throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(
-              java.io.InputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input, extensionRegistry);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseDelimitedFrom(java.io.InputStream input)
-              throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                .parseDelimitedWithIOException(PARSER, input);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseDelimitedFrom(
-              java.io.InputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(
-              com.google.protobuf.CodedInputStream input)
-              throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input);
-          }
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parseFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input, extensionRegistry);
-          }
-
-          public Builder newBuilderForType() { return newBuilder(); }
-          public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-          }
-          public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-          }
-          public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                ? new Builder() : new Builder().mergeFrom(this);
-          }
-
-          @java.lang.Override
-          protected Builder newBuilderForType(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-          }
-          /**
-           * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag}
-           */
-          public static final class Builder extends
-              com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-              // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag)
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-                getDescriptor() {
-              return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-              return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_fieldAccessorTable
-                  .ensureFieldAccessorsInitialized(
-                      com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder.class);
-            }
-
-            // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.newBuilder()
-            private Builder() {
-              maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-              super(parent);
-              maybeForceBuilderInitialization();
-            }
-            private void maybeForceBuilderInitialization() {
-              if (com.google.protobuf.GeneratedMessageV3
-                      .alwaysUseFieldBuilders) {
-              }
-            }
-            public Builder clear() {
-              super.clear();
-              key_ = "";
-
-              value_ = "";
-
-              return this;
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-                getDescriptorForType() {
-              return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_descriptor;
-            }
-
-            public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag getDefaultInstanceForType() {
-              return com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.getDefaultInstance();
-            }
-
-            public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag build() {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag result = buildPartial();
-              if (!result.isInitialized()) {
-                throw newUninitializedMessageException(result);
-              }
-              return result;
-            }
-
-            public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag buildPartial() {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag(this);
-              result.key_ = key_;
-              result.value_ = value_;
-              onBuilt();
-              return result;
-            }
-
-            public Builder clone() {
-              return (Builder) super.clone();
-            }
-            public Builder setField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                Object value) {
-              return (Builder) super.setField(field, value);
-            }
-            public Builder clearField(
-                com.google.protobuf.Descriptors.FieldDescriptor field) {
-              return (Builder) super.clearField(field);
-            }
-            public Builder clearOneof(
-                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-              return (Builder) super.clearOneof(oneof);
-            }
-            public Builder setRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                int index, Object value) {
-              return (Builder) super.setRepeatedField(field, index, value);
-            }
-            public Builder addRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                Object value) {
-              return (Builder) super.addRepeatedField(field, value);
-            }
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-              if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag) {
-                return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag)other);
-              } else {
-                super.mergeFrom(other);
-                return this;
-              }
-            }
-
-            public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag other) {
-              if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.getDefaultInstance()) return this;
-              if (!other.getKey().isEmpty()) {
-                key_ = other.key_;
-                onChanged();
-              }
-              if (!other.getValue().isEmpty()) {
-                value_ = other.value_;
-                onChanged();
-              }
-              onChanged();
-              return this;
-            }
-
-            public final boolean isInitialized() {
-              return true;
-            }
-
-            public Builder mergeFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag parsedMessage = null;
-              try {
-                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag) e.getUnfinishedMessage();
-                throw e.unwrapIOException();
-              } finally {
-                if (parsedMessage != null) {
-                  mergeFrom(parsedMessage);
-                }
-              }
-              return this;
-            }
-
-            private java.lang.Object key_ = "";
-            /**
-             * <code>optional string key = 1;</code>
-             */
-            public java.lang.String getKey() {
-              java.lang.Object ref = key_;
-              if (!(ref instanceof java.lang.String)) {
-                com.google.protobuf.ByteString bs =
-                    (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                key_ = s;
-                return s;
-              } else {
-                return (java.lang.String) ref;
-              }
-            }
-            /**
-             * <code>optional string key = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-                getKeyBytes() {
-              java.lang.Object ref = key_;
-              if (ref instanceof String) {
-                com.google.protobuf.ByteString b = 
-                    com.google.protobuf.ByteString.copyFromUtf8(
-                        (java.lang.String) ref);
-                key_ = b;
-                return b;
-              } else {
-                return (com.google.protobuf.ByteString) ref;
-              }
-            }
-            /**
-             * <code>optional string key = 1;</code>
-             */
-            public Builder setKey(
-                java.lang.String value) {
-              if (value == null) {
-    throw new NullPointerException();
-  }
-  
-              key_ = value;
-              onChanged();
-              return this;
-            }
-            /**
-             * <code>optional string key = 1;</code>
-             */
-            public Builder clearKey() {
-              
-              key_ = getDefaultInstance().getKey();
-              onChanged();
-              return this;
-            }
-            /**
-             * <code>optional string key = 1;</code>
-             */
-            public Builder setKeyBytes(
-                com.google.protobuf.ByteString value) {
-              if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-              
-              key_ = value;
-              onChanged();
-              return this;
-            }
-
-            private java.lang.Object value_ = "";
-            /**
-             * <code>optional string value = 2;</code>
-             */
-            public java.lang.String getValue() {
-              java.lang.Object ref = value_;
-              if (!(ref instanceof java.lang.String)) {
-                com.google.protobuf.ByteString bs =
-                    (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                value_ = s;
-                return s;
-              } else {
-                return (java.lang.String) ref;
-              }
-            }
-            /**
-             * <code>optional string value = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-                getValueBytes() {
-              java.lang.Object ref = value_;
-              if (ref instanceof String) {
-                com.google.protobuf.ByteString b = 
-                    com.google.protobuf.ByteString.copyFromUtf8(
-                        (java.lang.String) ref);
-                value_ = b;
-                return b;
-              } else {
-                return (com.google.protobuf.ByteString) ref;
-              }
-            }
-            /**
-             * <code>optional string value = 2;</code>
-             */
-            public Builder setValue(
-                java.lang.String value) {
-              if (value == null) {
-    throw new NullPointerException();
-  }
-  
-              value_ = value;
-              onChanged();
-              return this;
-            }
-            /**
-             * <code>optional string value = 2;</code>
-             */
-            public Builder clearValue() {
-              
-              value_ = getDefaultInstance().getValue();
-              onChanged();
-              return this;
-            }
-            /**
-             * <code>optional string value = 2;</code>
-             */
-            public Builder setValueBytes(
-                com.google.protobuf.ByteString value) {
-              if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-              
-              value_ = value;
-              onChanged();
-              return this;
-            }
-            public final Builder setUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-              return this;
-            }
-
-            public final Builder mergeUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-              return this;
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag)
-          }
-
-          // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag)
-          private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag DEFAULT_INSTANCE;
-          static {
-            DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag();
-          }
-
-          public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-          }
-
-          private static final com.google.protobuf.Parser<Tag>
-              PARSER = new com.google.protobuf.AbstractParser<Tag>() {
-            public Tag parsePartialFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Tag(input, extensionRegistry);
-            }
-          };
-
-          public static com.google.protobuf.Parser<Tag> parser() {
-            return PARSER;
-          }
-
-          @java.lang.Override
-          public com.google.protobuf.Parser<Tag> getParserForType() {
-            return PARSER;
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-          }
-
-        }
-
-        private int bitField0_;
-        public static final int ITEM_ID_FIELD_NUMBER = 1;
-        private volatile java.lang.Object itemId_;
-        /**
-         * <pre>
-         * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-         * </pre>
-         *
-         * <code>optional string item_id = 1;</code>
-         */
-        public java.lang.String getItemId() {
-          java.lang.Object ref = itemId_;
-          if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-          } else {
-            com.google.protobuf.ByteString bs = 
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            itemId_ = s;
-            return s;
-          }
-        }
-        /**
-         * <pre>
-         * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-         * </pre>
-         *
-         * <code>optional string item_id = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getItemIdBytes() {
-          java.lang.Object ref = itemId_;
-          if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            itemId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-
-        public static final int IS_IAP_FIELD_NUMBER = 2;
-        private boolean isIap_;
-        /**
-         * <pre>
-         * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
-         * </pre>
-         *
-         * <code>optional bool is_iap = 2;</code>
-         */
-        public boolean getIsIap() {
-          return isIap_;
-        }
-
-        public static final int CURRENCY_TO_BUY_FIELD_NUMBER = 3;
-        private com.github.aeonlucid.pogoprotos.data.Player.Currency currencyToBuy_;
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        public boolean hasCurrencyToBuy() {
-          return currencyToBuy_ != null;
-        }
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencyToBuy() {
-          return currencyToBuy_ == null ? com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : currencyToBuy_;
-        }
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrencyToBuyOrBuilder() {
-          return getCurrencyToBuy();
-        }
-
-        public static final int YIELDS_CURRENCY_FIELD_NUMBER = 4;
-        private com.github.aeonlucid.pogoprotos.data.Player.Currency yieldsCurrency_;
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        public boolean hasYieldsCurrency() {
-          return yieldsCurrency_ != null;
-        }
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency getYieldsCurrency() {
-          return yieldsCurrency_ == null ? com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : yieldsCurrency_;
-        }
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getYieldsCurrencyOrBuilder() {
-          return getYieldsCurrency();
-        }
-
-        public static final int YIELDS_ITEM_FIELD_NUMBER = 5;
-        private com.github.aeonlucid.pogoprotos.inventory.Item.ItemData yieldsItem_;
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        public boolean hasYieldsItem() {
-          return yieldsItem_ != null;
-        }
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.inventory.Item.ItemData getYieldsItem() {
-          return yieldsItem_ == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.getDefaultInstance() : yieldsItem_;
-        }
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder getYieldsItemOrBuilder() {
-          return getYieldsItem();
-        }
-
-        public static final int TAGS_FIELD_NUMBER = 6;
-        private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag> tags_;
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag> getTagsList() {
-          return tags_;
-        }
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder> 
-            getTagsOrBuilderList() {
-          return tags_;
-        }
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        public int getTagsCount() {
-          return tags_.size();
-        }
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag getTags(int index) {
-          return tags_.get(index);
-        }
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder getTagsOrBuilder(
-            int index) {
-          return tags_.get(index);
-        }
-
-        public static final int UNKNOWN7_FIELD_NUMBER = 7;
-        private int unknown7_;
-        /**
-         * <pre>
-         * Possibly something to toggle visibility in the store/purchasibility?
-         * </pre>
-         *
-         * <code>optional int32 unknown7 = 7;</code>
-         */
-        public int getUnknown7() {
-          return unknown7_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
-
-          memoizedIsInitialized = 1;
-          return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          if (!getItemIdBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, itemId_);
-          }
-          if (isIap_ != false) {
-            output.writeBool(2, isIap_);
-          }
-          if (currencyToBuy_ != null) {
-            output.writeMessage(3, getCurrencyToBuy());
-          }
-          if (yieldsCurrency_ != null) {
-            output.writeMessage(4, getYieldsCurrency());
-          }
-          if (yieldsItem_ != null) {
-            output.writeMessage(5, getYieldsItem());
-          }
-          for (int i = 0; i < tags_.size(); i++) {
-            output.writeMessage(6, tags_.get(i));
-          }
-          if (unknown7_ != 0) {
-            output.writeInt32(7, unknown7_);
-          }
-        }
-
-        public int getSerializedSize() {
-          int size = memoizedSize;
-          if (size != -1) return size;
-
-          size = 0;
-          if (!getItemIdBytes().isEmpty()) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, itemId_);
-          }
-          if (isIap_ != false) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBoolSize(2, isIap_);
-          }
-          if (currencyToBuy_ != null) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(3, getCurrencyToBuy());
-          }
-          if (yieldsCurrency_ != null) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(4, getYieldsCurrency());
-          }
-          if (yieldsItem_ != null) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(5, getYieldsItem());
-          }
-          for (int i = 0; i < tags_.size(); i++) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(6, tags_.get(i));
-          }
-          if (unknown7_ != 0) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(7, unknown7_);
-          }
-          memoizedSize = size;
-          return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-          if (obj == this) {
-           return true;
-          }
-          if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem)) {
-            return super.equals(obj);
-          }
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem) obj;
-
-          boolean result = true;
-          result = result && getItemId()
-              .equals(other.getItemId());
-          result = result && (getIsIap()
-              == other.getIsIap());
-          result = result && (hasCurrencyToBuy() == other.hasCurrencyToBuy());
-          if (hasCurrencyToBuy()) {
-            result = result && getCurrencyToBuy()
-                .equals(other.getCurrencyToBuy());
-          }
-          result = result && (hasYieldsCurrency() == other.hasYieldsCurrency());
-          if (hasYieldsCurrency()) {
-            result = result && getYieldsCurrency()
-                .equals(other.getYieldsCurrency());
-          }
-          result = result && (hasYieldsItem() == other.hasYieldsItem());
-          if (hasYieldsItem()) {
-            result = result && getYieldsItem()
-                .equals(other.getYieldsItem());
-          }
-          result = result && getTagsList()
-              .equals(other.getTagsList());
-          result = result && (getUnknown7()
-              == other.getUnknown7());
-          return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-          if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptorForType().hashCode();
-          hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-          hash = (53 * hash) + getItemId().hashCode();
-          hash = (37 * hash) + IS_IAP_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-              getIsIap());
-          if (hasCurrencyToBuy()) {
-            hash = (37 * hash) + CURRENCY_TO_BUY_FIELD_NUMBER;
-            hash = (53 * hash) + getCurrencyToBuy().hashCode();
-          }
-          if (hasYieldsCurrency()) {
-            hash = (37 * hash) + YIELDS_CURRENCY_FIELD_NUMBER;
-            hash = (53 * hash) + getYieldsCurrency().hashCode();
-          }
-          if (hasYieldsItem()) {
-            hash = (37 * hash) + YIELDS_ITEM_FIELD_NUMBER;
-            hash = (53 * hash) + getYieldsItem().hashCode();
-          }
-          if (getTagsCount() > 0) {
-            hash = (37 * hash) + TAGS_FIELD_NUMBER;
-            hash = (53 * hash) + getTagsList().hashCode();
-          }
-          hash = (37 * hash) + UNKNOWN7_FIELD_NUMBER;
-          hash = (53 * hash) + getUnknown7();
-          hash = (29 * hash) + unknownFields.hashCode();
-          memoizedHashCode = hash;
-          return hash;
-        }
-
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
-        }
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder() {
-          return DEFAULT_INSTANCE.toBuilder();
-        }
-        public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem prototype) {
-          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        /**
-         * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem}
-         */
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem)
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor;
-          }
-
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder.class);
-          }
-
-          // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-
-          private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-              getTagsFieldBuilder();
-            }
-          }
-          public Builder clear() {
-            super.clear();
-            itemId_ = "";
-
-            isIap_ = false;
-
-            if (currencyToBuyBuilder_ == null) {
-              currencyToBuy_ = null;
-            } else {
-              currencyToBuy_ = null;
-              currencyToBuyBuilder_ = null;
-            }
-            if (yieldsCurrencyBuilder_ == null) {
-              yieldsCurrency_ = null;
-            } else {
-              yieldsCurrency_ = null;
-              yieldsCurrencyBuilder_ = null;
-            }
-            if (yieldsItemBuilder_ == null) {
-              yieldsItem_ = null;
-            } else {
-              yieldsItem_ = null;
-              yieldsItemBuilder_ = null;
-            }
-            if (tagsBuilder_ == null) {
-              tags_ = java.util.Collections.emptyList();
-              bitField0_ = (bitField0_ & ~0x00000020);
-            } else {
-              tagsBuilder_.clear();
-            }
-            unknown7_ = 0;
-
-            return this;
-          }
-
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor;
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem getDefaultInstanceForType() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.getDefaultInstance();
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem build() {
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem buildPartial() {
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem(this);
-            int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
-            result.itemId_ = itemId_;
-            result.isIap_ = isIap_;
-            if (currencyToBuyBuilder_ == null) {
-              result.currencyToBuy_ = currencyToBuy_;
-            } else {
-              result.currencyToBuy_ = currencyToBuyBuilder_.build();
-            }
-            if (yieldsCurrencyBuilder_ == null) {
-              result.yieldsCurrency_ = yieldsCurrency_;
-            } else {
-              result.yieldsCurrency_ = yieldsCurrencyBuilder_.build();
-            }
-            if (yieldsItemBuilder_ == null) {
-              result.yieldsItem_ = yieldsItem_;
-            } else {
-              result.yieldsItem_ = yieldsItemBuilder_.build();
-            }
-            if (tagsBuilder_ == null) {
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                tags_ = java.util.Collections.unmodifiableList(tags_);
-                bitField0_ = (bitField0_ & ~0x00000020);
-              }
-              result.tags_ = tags_;
-            } else {
-              result.tags_ = tagsBuilder_.build();
-            }
-            result.unknown7_ = unknown7_;
-            result.bitField0_ = to_bitField0_;
-            onBuilt();
-            return result;
-          }
-
-          public Builder clone() {
-            return (Builder) super.clone();
-          }
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              Object value) {
-            return (Builder) super.setField(field, value);
-          }
-          public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
-          }
-          public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
-          }
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
-          }
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              Object value) {
-            return (Builder) super.addRepeatedField(field, value);
-          }
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem) {
-              return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem other) {
-            if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.getDefaultInstance()) return this;
-            if (!other.getItemId().isEmpty()) {
-              itemId_ = other.itemId_;
-              onChanged();
-            }
-            if (other.getIsIap() != false) {
-              setIsIap(other.getIsIap());
-            }
-            if (other.hasCurrencyToBuy()) {
-              mergeCurrencyToBuy(other.getCurrencyToBuy());
-            }
-            if (other.hasYieldsCurrency()) {
-              mergeYieldsCurrency(other.getYieldsCurrency());
-            }
-            if (other.hasYieldsItem()) {
-              mergeYieldsItem(other.getYieldsItem());
-            }
-            if (tagsBuilder_ == null) {
-              if (!other.tags_.isEmpty()) {
-                if (tags_.isEmpty()) {
-                  tags_ = other.tags_;
-                  bitField0_ = (bitField0_ & ~0x00000020);
-                } else {
-                  ensureTagsIsMutable();
-                  tags_.addAll(other.tags_);
-                }
-                onChanged();
-              }
-            } else {
-              if (!other.tags_.isEmpty()) {
-                if (tagsBuilder_.isEmpty()) {
-                  tagsBuilder_.dispose();
-                  tagsBuilder_ = null;
-                  tags_ = other.tags_;
-                  bitField0_ = (bitField0_ & ~0x00000020);
-                  tagsBuilder_ = 
-                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                       getTagsFieldBuilder() : null;
-                } else {
-                  tagsBuilder_.addAllMessages(other.tags_);
-                }
-              }
-            }
-            if (other.getUnknown7() != 0) {
-              setUnknown7(other.getUnknown7());
-            }
-            onChanged();
-            return this;
-          }
-
-          public final boolean isInitialized() {
-            return true;
-          }
-
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem parsedMessage = null;
-            try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem) e.getUnfinishedMessage();
-              throw e.unwrapIOException();
-            } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
-            return this;
-          }
-          private int bitField0_;
-
-          private java.lang.Object itemId_ = "";
-          /**
-           * <pre>
-           * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-           * </pre>
-           *
-           * <code>optional string item_id = 1;</code>
-           */
-          public java.lang.String getItemId() {
-            java.lang.Object ref = itemId_;
-            if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              itemId_ = s;
-              return s;
-            } else {
-              return (java.lang.String) ref;
-            }
-          }
-          /**
-           * <pre>
-           * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-           * </pre>
-           *
-           * <code>optional string item_id = 1;</code>
-           */
-          public com.google.protobuf.ByteString
-              getItemIdBytes() {
-            java.lang.Object ref = itemId_;
-            if (ref instanceof String) {
-              com.google.protobuf.ByteString b = 
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-              itemId_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
-          }
-          /**
-           * <pre>
-           * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-           * </pre>
-           *
-           * <code>optional string item_id = 1;</code>
-           */
-          public Builder setItemId(
-              java.lang.String value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  
-            itemId_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <pre>
-           * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-           * </pre>
-           *
-           * <code>optional string item_id = 1;</code>
-           */
-          public Builder clearItemId() {
-            
-            itemId_ = getDefaultInstance().getItemId();
-            onChanged();
-            return this;
-          }
-          /**
-           * <pre>
-           * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
-           * </pre>
-           *
-           * <code>optional string item_id = 1;</code>
-           */
-          public Builder setItemIdBytes(
-              com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-            
-            itemId_ = value;
-            onChanged();
-            return this;
-          }
-
-          private boolean isIap_ ;
-          /**
-           * <pre>
-           * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
-           * </pre>
-           *
-           * <code>optional bool is_iap = 2;</code>
-           */
-          public boolean getIsIap() {
-            return isIap_;
-          }
-          /**
-           * <pre>
-           * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
-           * </pre>
-           *
-           * <code>optional bool is_iap = 2;</code>
-           */
-          public Builder setIsIap(boolean value) {
-            
-            isIap_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <pre>
-           * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
-           * </pre>
-           *
-           * <code>optional bool is_iap = 2;</code>
-           */
-          public Builder clearIsIap() {
-            
-            isIap_ = false;
-            onChanged();
-            return this;
-          }
-
-          private com.github.aeonlucid.pogoprotos.data.Player.Currency currencyToBuy_ = null;
-          private com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> currencyToBuyBuilder_;
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public boolean hasCurrencyToBuy() {
-            return currencyToBuyBuilder_ != null || currencyToBuy_ != null;
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencyToBuy() {
-            if (currencyToBuyBuilder_ == null) {
-              return currencyToBuy_ == null ? com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : currencyToBuy_;
-            } else {
-              return currencyToBuyBuilder_.getMessage();
-            }
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public Builder setCurrencyToBuy(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-            if (currencyToBuyBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              currencyToBuy_ = value;
-              onChanged();
-            } else {
-              currencyToBuyBuilder_.setMessage(value);
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public Builder setCurrencyToBuy(
-              com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-            if (currencyToBuyBuilder_ == null) {
-              currencyToBuy_ = builderForValue.build();
-              onChanged();
-            } else {
-              currencyToBuyBuilder_.setMessage(builderForValue.build());
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public Builder mergeCurrencyToBuy(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-            if (currencyToBuyBuilder_ == null) {
-              if (currencyToBuy_ != null) {
-                currencyToBuy_ =
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency.newBuilder(currencyToBuy_).mergeFrom(value).buildPartial();
-              } else {
-                currencyToBuy_ = value;
-              }
-              onChanged();
-            } else {
-              currencyToBuyBuilder_.mergeFrom(value);
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public Builder clearCurrencyToBuy() {
-            if (currencyToBuyBuilder_ == null) {
-              currencyToBuy_ = null;
-              onChanged();
-            } else {
-              currencyToBuy_ = null;
-              currencyToBuyBuilder_ = null;
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getCurrencyToBuyBuilder() {
-            
-            onChanged();
-            return getCurrencyToBuyFieldBuilder().getBuilder();
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrencyToBuyOrBuilder() {
-            if (currencyToBuyBuilder_ != null) {
-              return currencyToBuyBuilder_.getMessageOrBuilder();
-            } else {
-              return currencyToBuy_ == null ?
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : currencyToBuy_;
-            }
-          }
-          /**
-           * <pre>
-           * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-           */
-          private com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-              getCurrencyToBuyFieldBuilder() {
-            if (currencyToBuyBuilder_ == null) {
-              currencyToBuyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                      getCurrencyToBuy(),
-                      getParentForChildren(),
-                      isClean());
-              currencyToBuy_ = null;
-            }
-            return currencyToBuyBuilder_;
-          }
-
-          private com.github.aeonlucid.pogoprotos.data.Player.Currency yieldsCurrency_ = null;
-          private com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> yieldsCurrencyBuilder_;
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public boolean hasYieldsCurrency() {
-            return yieldsCurrencyBuilder_ != null || yieldsCurrency_ != null;
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.data.Player.Currency getYieldsCurrency() {
-            if (yieldsCurrencyBuilder_ == null) {
-              return yieldsCurrency_ == null ? com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : yieldsCurrency_;
-            } else {
-              return yieldsCurrencyBuilder_.getMessage();
-            }
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public Builder setYieldsCurrency(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-            if (yieldsCurrencyBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              yieldsCurrency_ = value;
-              onChanged();
-            } else {
-              yieldsCurrencyBuilder_.setMessage(value);
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public Builder setYieldsCurrency(
-              com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-            if (yieldsCurrencyBuilder_ == null) {
-              yieldsCurrency_ = builderForValue.build();
-              onChanged();
-            } else {
-              yieldsCurrencyBuilder_.setMessage(builderForValue.build());
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public Builder mergeYieldsCurrency(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-            if (yieldsCurrencyBuilder_ == null) {
-              if (yieldsCurrency_ != null) {
-                yieldsCurrency_ =
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency.newBuilder(yieldsCurrency_).mergeFrom(value).buildPartial();
-              } else {
-                yieldsCurrency_ = value;
-              }
-              onChanged();
-            } else {
-              yieldsCurrencyBuilder_.mergeFrom(value);
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public Builder clearYieldsCurrency() {
-            if (yieldsCurrencyBuilder_ == null) {
-              yieldsCurrency_ = null;
-              onChanged();
-            } else {
-              yieldsCurrency_ = null;
-              yieldsCurrencyBuilder_ = null;
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getYieldsCurrencyBuilder() {
-            
-            onChanged();
-            return getYieldsCurrencyFieldBuilder().getBuilder();
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getYieldsCurrencyOrBuilder() {
-            if (yieldsCurrencyBuilder_ != null) {
-              return yieldsCurrencyBuilder_.getMessageOrBuilder();
-            } else {
-              return yieldsCurrency_ == null ?
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : yieldsCurrency_;
-            }
-          }
-          /**
-           * <pre>
-           * When bought, this IAP will yield this much currency
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-           */
-          private com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-              getYieldsCurrencyFieldBuilder() {
-            if (yieldsCurrencyBuilder_ == null) {
-              yieldsCurrencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                      getYieldsCurrency(),
-                      getParentForChildren(),
-                      isClean());
-              yieldsCurrency_ = null;
-            }
-            return yieldsCurrencyBuilder_;
-          }
-
-          private com.github.aeonlucid.pogoprotos.inventory.Item.ItemData yieldsItem_ = null;
-          private com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.inventory.Item.ItemData, com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder, com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder> yieldsItemBuilder_;
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public boolean hasYieldsItem() {
-            return yieldsItemBuilder_ != null || yieldsItem_ != null;
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.inventory.Item.ItemData getYieldsItem() {
-            if (yieldsItemBuilder_ == null) {
-              return yieldsItem_ == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.getDefaultInstance() : yieldsItem_;
-            } else {
-              return yieldsItemBuilder_.getMessage();
-            }
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public Builder setYieldsItem(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData value) {
-            if (yieldsItemBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              yieldsItem_ = value;
-              onChanged();
-            } else {
-              yieldsItemBuilder_.setMessage(value);
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public Builder setYieldsItem(
-              com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder builderForValue) {
-            if (yieldsItemBuilder_ == null) {
-              yieldsItem_ = builderForValue.build();
-              onChanged();
-            } else {
-              yieldsItemBuilder_.setMessage(builderForValue.build());
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public Builder mergeYieldsItem(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData value) {
-            if (yieldsItemBuilder_ == null) {
-              if (yieldsItem_ != null) {
-                yieldsItem_ =
-                  com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.newBuilder(yieldsItem_).mergeFrom(value).buildPartial();
-              } else {
-                yieldsItem_ = value;
-              }
-              onChanged();
-            } else {
-              yieldsItemBuilder_.mergeFrom(value);
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public Builder clearYieldsItem() {
-            if (yieldsItemBuilder_ == null) {
-              yieldsItem_ = null;
-              onChanged();
-            } else {
-              yieldsItem_ = null;
-              yieldsItemBuilder_ = null;
-            }
-
-            return this;
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder getYieldsItemBuilder() {
-            
-            onChanged();
-            return getYieldsItemFieldBuilder().getBuilder();
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder getYieldsItemOrBuilder() {
-            if (yieldsItemBuilder_ != null) {
-              return yieldsItemBuilder_.getMessageOrBuilder();
-            } else {
-              return yieldsItem_ == null ?
-                  com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.getDefaultInstance() : yieldsItem_;
-            }
-          }
-          /**
-           * <pre>
-           * The item and count of such item that this IAP will yield
-           * </pre>
-           *
-           * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-           */
-          private com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.inventory.Item.ItemData, com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder, com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder> 
-              getYieldsItemFieldBuilder() {
-            if (yieldsItemBuilder_ == null) {
-              yieldsItemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.github.aeonlucid.pogoprotos.inventory.Item.ItemData, com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder, com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder>(
-                      getYieldsItem(),
-                      getParentForChildren(),
-                      isClean());
-              yieldsItem_ = null;
-            }
-            return yieldsItemBuilder_;
-          }
-
-          private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag> tags_ =
-            java.util.Collections.emptyList();
-          private void ensureTagsIsMutable() {
-            if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-              tags_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag>(tags_);
-              bitField0_ |= 0x00000020;
-             }
-          }
-
-          private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder> tagsBuilder_;
-
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag> getTagsList() {
-            if (tagsBuilder_ == null) {
-              return java.util.Collections.unmodifiableList(tags_);
-            } else {
-              return tagsBuilder_.getMessageList();
-            }
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public int getTagsCount() {
-            if (tagsBuilder_ == null) {
-              return tags_.size();
-            } else {
-              return tagsBuilder_.getCount();
-            }
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag getTags(int index) {
-            if (tagsBuilder_ == null) {
-              return tags_.get(index);
-            } else {
-              return tagsBuilder_.getMessage(index);
-            }
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder setTags(
-              int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag value) {
-            if (tagsBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              ensureTagsIsMutable();
-              tags_.set(index, value);
-              onChanged();
-            } else {
-              tagsBuilder_.setMessage(index, value);
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder setTags(
-              int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder builderForValue) {
-            if (tagsBuilder_ == null) {
-              ensureTagsIsMutable();
-              tags_.set(index, builderForValue.build());
-              onChanged();
-            } else {
-              tagsBuilder_.setMessage(index, builderForValue.build());
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder addTags(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag value) {
-            if (tagsBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              ensureTagsIsMutable();
-              tags_.add(value);
-              onChanged();
-            } else {
-              tagsBuilder_.addMessage(value);
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder addTags(
-              int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag value) {
-            if (tagsBuilder_ == null) {
-              if (value == null) {
-                throw new NullPointerException();
-              }
-              ensureTagsIsMutable();
-              tags_.add(index, value);
-              onChanged();
-            } else {
-              tagsBuilder_.addMessage(index, value);
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder addTags(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder builderForValue) {
-            if (tagsBuilder_ == null) {
-              ensureTagsIsMutable();
-              tags_.add(builderForValue.build());
-              onChanged();
-            } else {
-              tagsBuilder_.addMessage(builderForValue.build());
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder addTags(
-              int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder builderForValue) {
-            if (tagsBuilder_ == null) {
-              ensureTagsIsMutable();
-              tags_.add(index, builderForValue.build());
-              onChanged();
-            } else {
-              tagsBuilder_.addMessage(index, builderForValue.build());
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder addAllTags(
-              java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag> values) {
-            if (tagsBuilder_ == null) {
-              ensureTagsIsMutable();
-              com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                  values, tags_);
-              onChanged();
-            } else {
-              tagsBuilder_.addAllMessages(values);
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder clearTags() {
-            if (tagsBuilder_ == null) {
-              tags_ = java.util.Collections.emptyList();
-              bitField0_ = (bitField0_ & ~0x00000020);
-              onChanged();
-            } else {
-              tagsBuilder_.clear();
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public Builder removeTags(int index) {
-            if (tagsBuilder_ == null) {
-              ensureTagsIsMutable();
-              tags_.remove(index);
-              onChanged();
-            } else {
-              tagsBuilder_.remove(index);
-            }
-            return this;
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder getTagsBuilder(
-              int index) {
-            return getTagsFieldBuilder().getBuilder(index);
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder getTagsOrBuilder(
-              int index) {
-            if (tagsBuilder_ == null) {
-              return tags_.get(index);  } else {
-              return tagsBuilder_.getMessageOrBuilder(index);
-            }
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder> 
-               getTagsOrBuilderList() {
-            if (tagsBuilder_ != null) {
-              return tagsBuilder_.getMessageOrBuilderList();
-            } else {
-              return java.util.Collections.unmodifiableList(tags_);
-            }
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder addTagsBuilder() {
-            return getTagsFieldBuilder().addBuilder(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.getDefaultInstance());
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder addTagsBuilder(
-              int index) {
-            return getTagsFieldBuilder().addBuilder(
-                index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.getDefaultInstance());
-          }
-          /**
-           * <pre>
-           * Stuff like SORT:12, CATEGORY:ITEMS
-           * </pre>
-           *
-           * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem.Tag tags = 6;</code>
-           */
-          public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder> 
-               getTagsBuilderList() {
-            return getTagsFieldBuilder().getBuilderList();
-          }
-          private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder> 
-              getTagsFieldBuilder() {
-            if (tagsBuilder_ == null) {
-              tagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Tag.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.TagOrBuilder>(
-                      tags_,
-                      ((bitField0_ & 0x00000020) == 0x00000020),
-                      getParentForChildren(),
-                      isClean());
-              tags_ = null;
-            }
-            return tagsBuilder_;
-          }
-
-          private int unknown7_ ;
-          /**
-           * <pre>
-           * Possibly something to toggle visibility in the store/purchasibility?
-           * </pre>
-           *
-           * <code>optional int32 unknown7 = 7;</code>
-           */
-          public int getUnknown7() {
-            return unknown7_;
-          }
-          /**
-           * <pre>
-           * Possibly something to toggle visibility in the store/purchasibility?
-           * </pre>
-           *
-           * <code>optional int32 unknown7 = 7;</code>
-           */
-          public Builder setUnknown7(int value) {
-            
-            unknown7_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <pre>
-           * Possibly something to toggle visibility in the store/purchasibility?
-           * </pre>
-           *
-           * <code>optional int32 unknown7 = 7;</code>
-           */
-          public Builder clearUnknown7() {
-            
-            unknown7_ = 0;
-            onChanged();
-            return this;
-          }
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return this;
-          }
-
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return this;
-          }
-
-
-          // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem)
-        }
-
-        // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem)
-        private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem DEFAULT_INSTANCE;
-        static {
-          DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem();
-        }
-
-        public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem getDefaultInstance() {
-          return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<StoreItem>
-            PARSER = new com.google.protobuf.AbstractParser<StoreItem>() {
-          public StoreItem parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-              return new StoreItem(input, extensionRegistry);
-          }
-        };
-
-        public static com.google.protobuf.Parser<StoreItem> parser() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<StoreItem> getParserForType() {
-          return PARSER;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-
-      }
-
-      private int bitField0_;
-      public static final int UNKNOWN1_FIELD_NUMBER = 1;
-      private long unknown1_;
-      /**
-       * <pre>
-       * Maybe status? It's always 1 (success), so it's probably that.
-       * </pre>
-       *
-       * <code>optional uint64 unknown1 = 1;</code>
-       */
-      public long getUnknown1() {
-        return unknown1_;
-      }
-
-      public static final int ITEMS_FIELD_NUMBER = 2;
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem> items_;
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem> getItemsList() {
-        return items_;
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder> 
-          getItemsOrBuilderList() {
-        return items_;
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      public int getItemsCount() {
-        return items_.size();
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem getItems(int index) {
-        return items_.get(index);
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder getItemsOrBuilder(
-          int index) {
-        return items_.get(index);
-      }
-
-      public static final int PLAYER_CURRENCIES_FIELD_NUMBER = 3;
-      private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> playerCurrencies_;
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getPlayerCurrenciesList() {
-        return playerCurrencies_;
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-          getPlayerCurrenciesOrBuilderList() {
-        return playerCurrencies_;
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public int getPlayerCurrenciesCount() {
-        return playerCurrencies_.size();
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency getPlayerCurrencies(int index) {
-        return playerCurrencies_.get(index);
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getPlayerCurrenciesOrBuilder(
-          int index) {
-        return playerCurrencies_.get(index);
-      }
-
-      public static final int UNKNOWN4_FIELD_NUMBER = 4;
-      private volatile java.lang.Object unknown4_;
-      /**
-       * <pre>
-       * Some base64 encoded stuff...
-       * </pre>
-       *
-       * <code>optional string unknown4 = 4;</code>
-       */
-      public java.lang.String getUnknown4() {
-        java.lang.Object ref = unknown4_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          unknown4_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * Some base64 encoded stuff...
-       * </pre>
-       *
-       * <code>optional string unknown4 = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUnknown4Bytes() {
-        java.lang.Object ref = unknown4_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unknown4_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (unknown1_ != 0L) {
-          output.writeUInt64(1, unknown1_);
-        }
-        for (int i = 0; i < items_.size(); i++) {
-          output.writeMessage(2, items_.get(i));
-        }
-        for (int i = 0; i < playerCurrencies_.size(); i++) {
-          output.writeMessage(3, playerCurrencies_.get(i));
-        }
-        if (!getUnknown4Bytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, unknown4_);
-        }
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (unknown1_ != 0L) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt64Size(1, unknown1_);
-        }
-        for (int i = 0; i < items_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, items_.get(i));
-        }
-        for (int i = 0; i < playerCurrencies_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, playerCurrencies_.get(i));
-        }
-        if (!getUnknown4Bytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, unknown4_);
-        }
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2) obj;
-
-        boolean result = true;
-        result = result && (getUnknown1()
-            == other.getUnknown1());
-        result = result && getItemsList()
-            .equals(other.getItemsList());
-        result = result && getPlayerCurrenciesList()
-            .equals(other.getPlayerCurrenciesList());
-        result = result && getUnknown4()
-            .equals(other.getUnknown4());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + UNKNOWN1_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getUnknown1());
-        if (getItemsCount() > 0) {
-          hash = (37 * hash) + ITEMS_FIELD_NUMBER;
-          hash = (53 * hash) + getItemsList().hashCode();
-        }
-        if (getPlayerCurrenciesCount() > 0) {
-          hash = (37 * hash) + PLAYER_CURRENCIES_FIELD_NUMBER;
-          hash = (53 * hash) + getPlayerCurrenciesList().hashCode();
-        }
-        hash = (37 * hash) + UNKNOWN4_FIELD_NUMBER;
-        hash = (53 * hash) + getUnknown4().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2)
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder.class);
-        }
-
-        // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getItemsFieldBuilder();
-            getPlayerCurrenciesFieldBuilder();
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          unknown1_ = 0L;
-
-          if (itemsBuilder_ == null) {
-            items_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            itemsBuilder_.clear();
-          }
-          if (playerCurrenciesBuilder_ == null) {
-            playerCurrencies_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            playerCurrenciesBuilder_.clear();
-          }
-          unknown4_ = "";
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          result.unknown1_ = unknown1_;
-          if (itemsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-              items_ = java.util.Collections.unmodifiableList(items_);
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.items_ = items_;
-          } else {
-            result.items_ = itemsBuilder_.build();
-          }
-          if (playerCurrenciesBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-              playerCurrencies_ = java.util.Collections.unmodifiableList(playerCurrencies_);
-              bitField0_ = (bitField0_ & ~0x00000004);
-            }
-            result.playerCurrencies_ = playerCurrencies_;
-          } else {
-            result.playerCurrencies_ = playerCurrenciesBuilder_.build();
-          }
-          result.unknown4_ = unknown4_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.getDefaultInstance()) return this;
-          if (other.getUnknown1() != 0L) {
-            setUnknown1(other.getUnknown1());
-          }
-          if (itemsBuilder_ == null) {
-            if (!other.items_.isEmpty()) {
-              if (items_.isEmpty()) {
-                items_ = other.items_;
-                bitField0_ = (bitField0_ & ~0x00000002);
-              } else {
-                ensureItemsIsMutable();
-                items_.addAll(other.items_);
-              }
-              onChanged();
-            }
-          } else {
-            if (!other.items_.isEmpty()) {
-              if (itemsBuilder_.isEmpty()) {
-                itemsBuilder_.dispose();
-                itemsBuilder_ = null;
-                items_ = other.items_;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                itemsBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getItemsFieldBuilder() : null;
-              } else {
-                itemsBuilder_.addAllMessages(other.items_);
-              }
-            }
-          }
-          if (playerCurrenciesBuilder_ == null) {
-            if (!other.playerCurrencies_.isEmpty()) {
-              if (playerCurrencies_.isEmpty()) {
-                playerCurrencies_ = other.playerCurrencies_;
-                bitField0_ = (bitField0_ & ~0x00000004);
-              } else {
-                ensurePlayerCurrenciesIsMutable();
-                playerCurrencies_.addAll(other.playerCurrencies_);
-              }
-              onChanged();
-            }
-          } else {
-            if (!other.playerCurrencies_.isEmpty()) {
-              if (playerCurrenciesBuilder_.isEmpty()) {
-                playerCurrenciesBuilder_.dispose();
-                playerCurrenciesBuilder_ = null;
-                playerCurrencies_ = other.playerCurrencies_;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                playerCurrenciesBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getPlayerCurrenciesFieldBuilder() : null;
-              } else {
-                playerCurrenciesBuilder_.addAllMessages(other.playerCurrencies_);
-              }
-            }
-          }
-          if (!other.getUnknown4().isEmpty()) {
-            unknown4_ = other.unknown4_;
-            onChanged();
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private long unknown1_ ;
-        /**
-         * <pre>
-         * Maybe status? It's always 1 (success), so it's probably that.
-         * </pre>
-         *
-         * <code>optional uint64 unknown1 = 1;</code>
-         */
-        public long getUnknown1() {
-          return unknown1_;
-        }
-        /**
-         * <pre>
-         * Maybe status? It's always 1 (success), so it's probably that.
-         * </pre>
-         *
-         * <code>optional uint64 unknown1 = 1;</code>
-         */
-        public Builder setUnknown1(long value) {
-          
-          unknown1_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * Maybe status? It's always 1 (success), so it's probably that.
-         * </pre>
-         *
-         * <code>optional uint64 unknown1 = 1;</code>
-         */
-        public Builder clearUnknown1() {
-          
-          unknown1_ = 0L;
-          onChanged();
-          return this;
-        }
-
-        private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem> items_ =
-          java.util.Collections.emptyList();
-        private void ensureItemsIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            items_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem>(items_);
-            bitField0_ |= 0x00000002;
-           }
-        }
-
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder> itemsBuilder_;
-
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem> getItemsList() {
-          if (itemsBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(items_);
-          } else {
-            return itemsBuilder_.getMessageList();
-          }
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public int getItemsCount() {
-          if (itemsBuilder_ == null) {
-            return items_.size();
-          } else {
-            return itemsBuilder_.getCount();
-          }
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem getItems(int index) {
-          if (itemsBuilder_ == null) {
-            return items_.get(index);
-          } else {
-            return itemsBuilder_.getMessage(index);
-          }
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder setItems(
-            int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem value) {
-          if (itemsBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureItemsIsMutable();
-            items_.set(index, value);
-            onChanged();
-          } else {
-            itemsBuilder_.setMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder setItems(
-            int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder builderForValue) {
-          if (itemsBuilder_ == null) {
-            ensureItemsIsMutable();
-            items_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            itemsBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder addItems(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem value) {
-          if (itemsBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureItemsIsMutable();
-            items_.add(value);
-            onChanged();
-          } else {
-            itemsBuilder_.addMessage(value);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder addItems(
-            int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem value) {
-          if (itemsBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureItemsIsMutable();
-            items_.add(index, value);
-            onChanged();
-          } else {
-            itemsBuilder_.addMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder addItems(
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder builderForValue) {
-          if (itemsBuilder_ == null) {
-            ensureItemsIsMutable();
-            items_.add(builderForValue.build());
-            onChanged();
-          } else {
-            itemsBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder addItems(
-            int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder builderForValue) {
-          if (itemsBuilder_ == null) {
-            ensureItemsIsMutable();
-            items_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            itemsBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder addAllItems(
-            java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem> values) {
-          if (itemsBuilder_ == null) {
-            ensureItemsIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, items_);
-            onChanged();
-          } else {
-            itemsBuilder_.addAllMessages(values);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder clearItems() {
-          if (itemsBuilder_ == null) {
-            items_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
-            onChanged();
-          } else {
-            itemsBuilder_.clear();
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public Builder removeItems(int index) {
-          if (itemsBuilder_ == null) {
-            ensureItemsIsMutable();
-            items_.remove(index);
-            onChanged();
-          } else {
-            itemsBuilder_.remove(index);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder getItemsBuilder(
-            int index) {
-          return getItemsFieldBuilder().getBuilder(index);
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder getItemsOrBuilder(
-            int index) {
-          if (itemsBuilder_ == null) {
-            return items_.get(index);  } else {
-            return itemsBuilder_.getMessageOrBuilder(index);
-          }
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder> 
-             getItemsOrBuilderList() {
-          if (itemsBuilder_ != null) {
-            return itemsBuilder_.getMessageOrBuilderList();
-          } else {
-            return java.util.Collections.unmodifiableList(items_);
-          }
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder addItemsBuilder() {
-          return getItemsFieldBuilder().addBuilder(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.getDefaultInstance());
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder addItemsBuilder(
-            int index) {
-          return getItemsFieldBuilder().addBuilder(
-              index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.getDefaultInstance());
-        }
-        /**
-         * <pre>
-         * Items to show in the shop
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2.StoreItem items = 2;</code>
-         */
-        public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder> 
-             getItemsBuilderList() {
-          return getItemsFieldBuilder().getBuilderList();
-        }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder> 
-            getItemsFieldBuilder() {
-          if (itemsBuilder_ == null) {
-            itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItem.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.StoreItemOrBuilder>(
-                    items_,
-                    ((bitField0_ & 0x00000002) == 0x00000002),
-                    getParentForChildren(),
-                    isClean());
-            items_ = null;
-          }
-          return itemsBuilder_;
-        }
-
-        private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> playerCurrencies_ =
-          java.util.Collections.emptyList();
-        private void ensurePlayerCurrenciesIsMutable() {
-          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-            playerCurrencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>(playerCurrencies_);
-            bitField0_ |= 0x00000004;
-           }
-        }
-
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> playerCurrenciesBuilder_;
-
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getPlayerCurrenciesList() {
-          if (playerCurrenciesBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(playerCurrencies_);
-          } else {
-            return playerCurrenciesBuilder_.getMessageList();
-          }
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public int getPlayerCurrenciesCount() {
-          if (playerCurrenciesBuilder_ == null) {
-            return playerCurrencies_.size();
-          } else {
-            return playerCurrenciesBuilder_.getCount();
-          }
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency getPlayerCurrencies(int index) {
-          if (playerCurrenciesBuilder_ == null) {
-            return playerCurrencies_.get(index);
-          } else {
-            return playerCurrenciesBuilder_.getMessage(index);
-          }
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder setPlayerCurrencies(
-            int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (playerCurrenciesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.set(index, value);
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.setMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder setPlayerCurrencies(
-            int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-          if (playerCurrenciesBuilder_ == null) {
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder addPlayerCurrencies(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (playerCurrenciesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.add(value);
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.addMessage(value);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder addPlayerCurrencies(
-            int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (playerCurrenciesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.add(index, value);
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.addMessage(index, value);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder addPlayerCurrencies(
-            com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-          if (playerCurrenciesBuilder_ == null) {
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.add(builderForValue.build());
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder addPlayerCurrencies(
-            int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-          if (playerCurrenciesBuilder_ == null) {
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder addAllPlayerCurrencies(
-            java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Player.Currency> values) {
-          if (playerCurrenciesBuilder_ == null) {
-            ensurePlayerCurrenciesIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, playerCurrencies_);
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.addAllMessages(values);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder clearPlayerCurrencies() {
-          if (playerCurrenciesBuilder_ == null) {
-            playerCurrencies_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.clear();
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public Builder removePlayerCurrencies(int index) {
-          if (playerCurrenciesBuilder_ == null) {
-            ensurePlayerCurrenciesIsMutable();
-            playerCurrencies_.remove(index);
-            onChanged();
-          } else {
-            playerCurrenciesBuilder_.remove(index);
-          }
-          return this;
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getPlayerCurrenciesBuilder(
-            int index) {
-          return getPlayerCurrenciesFieldBuilder().getBuilder(index);
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getPlayerCurrenciesOrBuilder(
-            int index) {
-          if (playerCurrenciesBuilder_ == null) {
-            return playerCurrencies_.get(index);  } else {
-            return playerCurrenciesBuilder_.getMessageOrBuilder(index);
-          }
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-             getPlayerCurrenciesOrBuilderList() {
-          if (playerCurrenciesBuilder_ != null) {
-            return playerCurrenciesBuilder_.getMessageOrBuilderList();
-          } else {
-            return java.util.Collections.unmodifiableList(playerCurrencies_);
-          }
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addPlayerCurrenciesBuilder() {
-          return getPlayerCurrenciesFieldBuilder().addBuilder(
-              com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addPlayerCurrenciesBuilder(
-            int index) {
-          return getPlayerCurrenciesFieldBuilder().addBuilder(
-              index, com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
-        }
-        /**
-         * <pre>
-         * currencies that player has at the moment
-         * </pre>
-         *
-         * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-         */
-        public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder> 
-             getPlayerCurrenciesBuilderList() {
-          return getPlayerCurrenciesFieldBuilder().getBuilderList();
-        }
-        private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-            getPlayerCurrenciesFieldBuilder() {
-          if (playerCurrenciesBuilder_ == null) {
-            playerCurrenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                    playerCurrencies_,
-                    ((bitField0_ & 0x00000004) == 0x00000004),
-                    getParentForChildren(),
-                    isClean());
-            playerCurrencies_ = null;
-          }
-          return playerCurrenciesBuilder_;
-        }
-
-        private java.lang.Object unknown4_ = "";
-        /**
-         * <pre>
-         * Some base64 encoded stuff...
-         * </pre>
-         *
-         * <code>optional string unknown4 = 4;</code>
-         */
-        public java.lang.String getUnknown4() {
-          java.lang.Object ref = unknown4_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            unknown4_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * Some base64 encoded stuff...
-         * </pre>
-         *
-         * <code>optional string unknown4 = 4;</code>
-         */
-        public com.google.protobuf.ByteString
-            getUnknown4Bytes() {
-          java.lang.Object ref = unknown4_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            unknown4_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * Some base64 encoded stuff...
-         * </pre>
-         *
-         * <code>optional string unknown4 = 4;</code>
-         */
-        public Builder setUnknown4(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          unknown4_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * Some base64 encoded stuff...
-         * </pre>
-         *
-         * <code>optional string unknown4 = 4;</code>
-         */
-        public Builder clearUnknown4() {
-          
-          unknown4_ = getDefaultInstance().getUnknown4();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * Some base64 encoded stuff...
-         * </pre>
-         *
-         * <code>optional string unknown4 = 4;</code>
-         */
-        public Builder setUnknown4Bytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          unknown4_ = value;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2)
-      }
-
-      // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2)
-      private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2();
-      }
-
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<Unknown2>
-          PARSER = new com.google.protobuf.AbstractParser<Unknown2>() {
-        public Unknown2 parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Unknown2(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Unknown2> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Unknown2> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int RESPONSE_TYPE_FIELD_NUMBER = 1;
-    private int responseType_;
-    /**
-     * <pre>
-     * Still don't know what 6 is, but 5 lists items available via IAPs.
-     * </pre>
-     *
-     * <code>optional int32 response_type = 1;</code>
-     */
-    public int getResponseType() {
-      return responseType_;
-    }
-
-    public static final int UNKNOWN2_FIELD_NUMBER = 2;
-    private com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 unknown2_;
-    /**
-     * <pre>
-     * Response data
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-     */
-    public boolean hasUnknown2() {
-      return unknown2_ != null;
-    }
-    /**
-     * <pre>
-     * Response data
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 getUnknown2() {
-      return unknown2_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.getDefaultInstance() : unknown2_;
-    }
-    /**
-     * <pre>
-     * Response data
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder getUnknown2OrBuilder() {
-      return getUnknown2();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (responseType_ != 0) {
-        output.writeInt32(1, responseType_);
-      }
-      if (unknown2_ != null) {
-        output.writeMessage(2, getUnknown2());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (responseType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, responseType_);
-      }
-      if (unknown2_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getUnknown2());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response) obj;
-
-      boolean result = true;
-      result = result && (getResponseType()
-          == other.getResponseType());
-      result = result && (hasUnknown2() == other.hasUnknown2());
-      if (hasUnknown2()) {
-        result = result && getUnknown2()
-            .equals(other.getUnknown2());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + RESPONSE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseType();
-      if (hasUnknown2()) {
-        hash = (37 * hash) + UNKNOWN2_FIELD_NUMBER;
-        hash = (53 * hash) + getUnknown2().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response)
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        responseType_ = 0;
-
-        if (unknown2Builder_ == null) {
-          unknown2_ = null;
-        } else {
-          unknown2_ = null;
-          unknown2Builder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response(this);
-        result.responseType_ = responseType_;
-        if (unknown2Builder_ == null) {
-          result.unknown2_ = unknown2_;
-        } else {
-          result.unknown2_ = unknown2Builder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.getDefaultInstance()) return this;
-        if (other.getResponseType() != 0) {
-          setResponseType(other.getResponseType());
-        }
-        if (other.hasUnknown2()) {
-          mergeUnknown2(other.getUnknown2());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int responseType_ ;
-      /**
-       * <pre>
-       * Still don't know what 6 is, but 5 lists items available via IAPs.
-       * </pre>
-       *
-       * <code>optional int32 response_type = 1;</code>
-       */
-      public int getResponseType() {
-        return responseType_;
-      }
-      /**
-       * <pre>
-       * Still don't know what 6 is, but 5 lists items available via IAPs.
-       * </pre>
-       *
-       * <code>optional int32 response_type = 1;</code>
-       */
-      public Builder setResponseType(int value) {
-        
-        responseType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Still don't know what 6 is, but 5 lists items available via IAPs.
-       * </pre>
-       *
-       * <code>optional int32 response_type = 1;</code>
-       */
-      public Builder clearResponseType() {
-        
-        responseType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 unknown2_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder> unknown2Builder_;
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public boolean hasUnknown2() {
-        return unknown2Builder_ != null || unknown2_ != null;
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 getUnknown2() {
-        if (unknown2Builder_ == null) {
-          return unknown2_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.getDefaultInstance() : unknown2_;
-        } else {
-          return unknown2Builder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder setUnknown2(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 value) {
-        if (unknown2Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          unknown2_ = value;
-          onChanged();
-        } else {
-          unknown2Builder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder setUnknown2(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder builderForValue) {
-        if (unknown2Builder_ == null) {
-          unknown2_ = builderForValue.build();
-          onChanged();
-        } else {
-          unknown2Builder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder mergeUnknown2(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2 value) {
-        if (unknown2Builder_ == null) {
-          if (unknown2_ != null) {
-            unknown2_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.newBuilder(unknown2_).mergeFrom(value).buildPartial();
-          } else {
-            unknown2_ = value;
-          }
-          onChanged();
-        } else {
-          unknown2Builder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder clearUnknown2() {
-        if (unknown2Builder_ == null) {
-          unknown2_ = null;
-          onChanged();
-        } else {
-          unknown2_ = null;
-          unknown2Builder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder getUnknown2Builder() {
-        
-        onChanged();
-        return getUnknown2FieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder getUnknown2OrBuilder() {
-        if (unknown2Builder_ != null) {
-          return unknown2Builder_.getMessageOrBuilder();
-        } else {
-          return unknown2_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.getDefaultInstance() : unknown2_;
-        }
-      }
-      /**
-       * <pre>
-       * Response data
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response.Unknown2 unknown2 = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder> 
-          getUnknown2FieldBuilder() {
-        if (unknown2Builder_ == null) {
-          unknown2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Unknown2OrBuilder>(
-                  getUnknown2(),
-                  getParentForChildren(),
-                  isClean());
-          unknown2_ = null;
-        }
-        return unknown2Builder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response)
-    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Unknown6Response>
-        PARSER = new com.google.protobuf.AbstractParser<Unknown6Response>() {
-      public Unknown6Response parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Unknown6Response(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Unknown6Response> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Unknown6Response> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ResponseEnvelopeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional int32 status_code = 1;</code>
-     */
-    int getStatusCode();
-
-    /**
-     * <code>optional uint64 request_id = 2;</code>
-     */
-    long getRequestId();
-
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    java.lang.String getApiUrl();
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getApiUrlBytes();
-
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response> 
-        getUnknown6List();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response getUnknown6(int index);
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    int getUnknown6Count();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder> 
-        getUnknown6OrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder getUnknown6OrBuilder(
-        int index);
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    boolean hasAuthTicket();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder();
-
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    java.util.List<com.google.protobuf.ByteString> getReturnsList();
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    int getReturnsCount();
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    com.google.protobuf.ByteString getReturns(int index);
-
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    java.lang.String getError();
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
-   */
-  public  static final class ResponseEnvelope extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-      ResponseEnvelopeOrBuilder {
-    // Use ResponseEnvelope.newBuilder() to construct.
-    private ResponseEnvelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ResponseEnvelope() {
-      statusCode_ = 0;
-      requestId_ = 0L;
-      apiUrl_ = "";
-      unknown6_ = java.util.Collections.emptyList();
-      returns_ = java.util.Collections.emptyList();
-      error_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ResponseEnvelope(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              statusCode_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              requestId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              apiUrl_ = s;
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                unknown6_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              unknown6_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder subBuilder = null;
-              if (authTicket_ != null) {
-                subBuilder = authTicket_.toBuilder();
-              }
-              authTicket_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authTicket_);
-                authTicket_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 802: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                returns_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              returns_.add(input.readBytes());
-              break;
-            }
-            case 810: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          unknown6_ = java.util.Collections.unmodifiableList(unknown6_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          returns_ = java.util.Collections.unmodifiableList(returns_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int STATUS_CODE_FIELD_NUMBER = 1;
-    private int statusCode_;
-    /**
-     * <code>optional int32 status_code = 1;</code>
-     */
-    public int getStatusCode() {
-      return statusCode_;
-    }
-
-    public static final int REQUEST_ID_FIELD_NUMBER = 2;
-    private long requestId_;
-    /**
-     * <code>optional uint64 request_id = 2;</code>
-     */
-    public long getRequestId() {
-      return requestId_;
-    }
-
-    public static final int API_URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object apiUrl_;
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    public java.lang.String getApiUrl() {
-      java.lang.Object ref = apiUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apiUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getApiUrlBytes() {
-      java.lang.Object ref = apiUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apiUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UNKNOWN6_FIELD_NUMBER = 6;
-    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response> unknown6_;
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response> getUnknown6List() {
-      return unknown6_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder> 
-        getUnknown6OrBuilderList() {
-      return unknown6_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    public int getUnknown6Count() {
-      return unknown6_.size();
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response getUnknown6(int index) {
-      return unknown6_.get(index);
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder getUnknown6OrBuilder(
-        int index) {
-      return unknown6_.get(index);
-    }
-
-    public static final int AUTH_TICKET_FIELD_NUMBER = 7;
-    private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    public boolean hasAuthTicket() {
-      return authTicket_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
-      return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
-      return getAuthTicket();
-    }
-
-    public static final int RETURNS_FIELD_NUMBER = 100;
-    private java.util.List<com.google.protobuf.ByteString> returns_;
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    public java.util.List<com.google.protobuf.ByteString>
-        getReturnsList() {
-      return returns_;
-    }
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    public int getReturnsCount() {
-      return returns_.size();
-    }
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    public com.google.protobuf.ByteString getReturns(int index) {
-      return returns_.get(index);
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 101;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (statusCode_ != 0) {
-        output.writeInt32(1, statusCode_);
-      }
-      if (requestId_ != 0L) {
-        output.writeUInt64(2, requestId_);
-      }
-      if (!getApiUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, apiUrl_);
-      }
-      for (int i = 0; i < unknown6_.size(); i++) {
-        output.writeMessage(6, unknown6_.get(i));
-      }
-      if (authTicket_ != null) {
-        output.writeMessage(7, getAuthTicket());
-      }
-      for (int i = 0; i < returns_.size(); i++) {
-        output.writeBytes(100, returns_.get(i));
-      }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 101, error_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (statusCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, statusCode_);
-      }
-      if (requestId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, requestId_);
-      }
-      if (!getApiUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, apiUrl_);
-      }
-      for (int i = 0; i < unknown6_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, unknown6_.get(i));
-      }
-      if (authTicket_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAuthTicket());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < returns_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(returns_.get(i));
-        }
-        size += dataSize;
-        size += 2 * getReturnsList().size();
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, error_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) obj;
-
-      boolean result = true;
-      result = result && (getStatusCode()
-          == other.getStatusCode());
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && getApiUrl()
-          .equals(other.getApiUrl());
-      result = result && getUnknown6List()
-          .equals(other.getUnknown6List());
-      result = result && (hasAuthTicket() == other.hasAuthTicket());
-      if (hasAuthTicket()) {
-        result = result && getAuthTicket()
-            .equals(other.getAuthTicket());
-      }
-      result = result && getReturnsList()
-          .equals(other.getReturnsList());
-      result = result && getError()
-          .equals(other.getError());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getStatusCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRequestId());
-      hash = (37 * hash) + API_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getApiUrl().hashCode();
-      if (getUnknown6Count() > 0) {
-        hash = (37 * hash) + UNKNOWN6_FIELD_NUMBER;
-        hash = (53 * hash) + getUnknown6List().hashCode();
-      }
-      if (hasAuthTicket()) {
-        hash = (37 * hash) + AUTH_TICKET_FIELD_NUMBER;
-        hash = (53 * hash) + getAuthTicket().hashCode();
-      }
-      if (getReturnsCount() > 0) {
-        hash = (37 * hash) + RETURNS_FIELD_NUMBER;
-        hash = (53 * hash) + getReturnsList().hashCode();
-      }
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelopeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUnknown6FieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        statusCode_ = 0;
-
-        requestId_ = 0L;
-
-        apiUrl_ = "";
-
-        if (unknown6Builder_ == null) {
-          unknown6_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          unknown6Builder_.clear();
-        }
-        if (authTicketBuilder_ == null) {
-          authTicket_ = null;
-        } else {
-          authTicket_ = null;
-          authTicketBuilder_ = null;
-        }
-        returns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        error_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.statusCode_ = statusCode_;
-        result.requestId_ = requestId_;
-        result.apiUrl_ = apiUrl_;
-        if (unknown6Builder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            unknown6_ = java.util.Collections.unmodifiableList(unknown6_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.unknown6_ = unknown6_;
-        } else {
-          result.unknown6_ = unknown6Builder_.build();
-        }
-        if (authTicketBuilder_ == null) {
-          result.authTicket_ = authTicket_;
-        } else {
-          result.authTicket_ = authTicketBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          returns_ = java.util.Collections.unmodifiableList(returns_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.returns_ = returns_;
-        result.error_ = error_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDefaultInstance()) return this;
-        if (other.getStatusCode() != 0) {
-          setStatusCode(other.getStatusCode());
-        }
-        if (other.getRequestId() != 0L) {
-          setRequestId(other.getRequestId());
-        }
-        if (!other.getApiUrl().isEmpty()) {
-          apiUrl_ = other.apiUrl_;
-          onChanged();
-        }
-        if (unknown6Builder_ == null) {
-          if (!other.unknown6_.isEmpty()) {
-            if (unknown6_.isEmpty()) {
-              unknown6_ = other.unknown6_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureUnknown6IsMutable();
-              unknown6_.addAll(other.unknown6_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.unknown6_.isEmpty()) {
-            if (unknown6Builder_.isEmpty()) {
-              unknown6Builder_.dispose();
-              unknown6Builder_ = null;
-              unknown6_ = other.unknown6_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              unknown6Builder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnknown6FieldBuilder() : null;
-            } else {
-              unknown6Builder_.addAllMessages(other.unknown6_);
-            }
-          }
-        }
-        if (other.hasAuthTicket()) {
-          mergeAuthTicket(other.getAuthTicket());
-        }
-        if (!other.returns_.isEmpty()) {
-          if (returns_.isEmpty()) {
-            returns_ = other.returns_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureReturnsIsMutable();
-            returns_.addAll(other.returns_);
-          }
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int statusCode_ ;
-      /**
-       * <code>optional int32 status_code = 1;</code>
-       */
-      public int getStatusCode() {
-        return statusCode_;
-      }
-      /**
-       * <code>optional int32 status_code = 1;</code>
-       */
-      public Builder setStatusCode(int value) {
-        
-        statusCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 status_code = 1;</code>
-       */
-      public Builder clearStatusCode() {
-        
-        statusCode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long requestId_ ;
-      /**
-       * <code>optional uint64 request_id = 2;</code>
-       */
-      public long getRequestId() {
-        return requestId_;
-      }
-      /**
-       * <code>optional uint64 request_id = 2;</code>
-       */
-      public Builder setRequestId(long value) {
-        
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 request_id = 2;</code>
-       */
-      public Builder clearRequestId() {
-        
-        requestId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object apiUrl_ = "";
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public java.lang.String getApiUrl() {
-        java.lang.Object ref = apiUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apiUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getApiUrlBytes() {
-        java.lang.Object ref = apiUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apiUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public Builder setApiUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        apiUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public Builder clearApiUrl() {
-        
-        apiUrl_ = getDefaultInstance().getApiUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public Builder setApiUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        apiUrl_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response> unknown6_ =
-        java.util.Collections.emptyList();
-      private void ensureUnknown6IsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          unknown6_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response>(unknown6_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder> unknown6Builder_;
-
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response> getUnknown6List() {
-        if (unknown6Builder_ == null) {
-          return java.util.Collections.unmodifiableList(unknown6_);
-        } else {
-          return unknown6Builder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public int getUnknown6Count() {
-        if (unknown6Builder_ == null) {
-          return unknown6_.size();
-        } else {
-          return unknown6Builder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response getUnknown6(int index) {
-        if (unknown6Builder_ == null) {
-          return unknown6_.get(index);
-        } else {
-          return unknown6Builder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder setUnknown6(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response value) {
-        if (unknown6Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnknown6IsMutable();
-          unknown6_.set(index, value);
-          onChanged();
-        } else {
-          unknown6Builder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder setUnknown6(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder builderForValue) {
-        if (unknown6Builder_ == null) {
-          ensureUnknown6IsMutable();
-          unknown6_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          unknown6Builder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder addUnknown6(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response value) {
-        if (unknown6Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnknown6IsMutable();
-          unknown6_.add(value);
-          onChanged();
-        } else {
-          unknown6Builder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder addUnknown6(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response value) {
-        if (unknown6Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUnknown6IsMutable();
-          unknown6_.add(index, value);
-          onChanged();
-        } else {
-          unknown6Builder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder addUnknown6(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder builderForValue) {
-        if (unknown6Builder_ == null) {
-          ensureUnknown6IsMutable();
-          unknown6_.add(builderForValue.build());
-          onChanged();
-        } else {
-          unknown6Builder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder addUnknown6(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder builderForValue) {
-        if (unknown6Builder_ == null) {
-          ensureUnknown6IsMutable();
-          unknown6_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          unknown6Builder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder addAllUnknown6(
-          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response> values) {
-        if (unknown6Builder_ == null) {
-          ensureUnknown6IsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unknown6_);
-          onChanged();
-        } else {
-          unknown6Builder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder clearUnknown6() {
-        if (unknown6Builder_ == null) {
-          unknown6_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          unknown6Builder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public Builder removeUnknown6(int index) {
-        if (unknown6Builder_ == null) {
-          ensureUnknown6IsMutable();
-          unknown6_.remove(index);
-          onChanged();
-        } else {
-          unknown6Builder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder getUnknown6Builder(
-          int index) {
-        return getUnknown6FieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder getUnknown6OrBuilder(
-          int index) {
-        if (unknown6Builder_ == null) {
-          return unknown6_.get(index);  } else {
-          return unknown6Builder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder> 
-           getUnknown6OrBuilderList() {
-        if (unknown6Builder_ != null) {
-          return unknown6Builder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(unknown6_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder addUnknown6Builder() {
-        return getUnknown6FieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder addUnknown6Builder(
-          int index) {
-        return getUnknown6FieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6Response unknown6 = 6;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder> 
-           getUnknown6BuilderList() {
-        return getUnknown6FieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder> 
-          getUnknown6FieldBuilder() {
-        if (unknown6Builder_ == null) {
-          unknown6Builder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6Response.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6ResponseOrBuilder>(
-                  unknown6_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
-          unknown6_ = null;
-        }
-        return unknown6Builder_;
-      }
-
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> authTicketBuilder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public boolean hasAuthTicket() {
-        return authTicketBuilder_ != null || authTicket_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
-        if (authTicketBuilder_ == null) {
-          return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-        } else {
-          return authTicketBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
-        if (authTicketBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          authTicket_ = value;
-          onChanged();
-        } else {
-          authTicketBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder setAuthTicket(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
-        if (authTicketBuilder_ == null) {
-          authTicket_ = builderForValue.build();
-          onChanged();
-        } else {
-          authTicketBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
-        if (authTicketBuilder_ == null) {
-          if (authTicket_ != null) {
-            authTicket_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder(authTicket_).mergeFrom(value).buildPartial();
-          } else {
-            authTicket_ = value;
-          }
-          onChanged();
-        } else {
-          authTicketBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder clearAuthTicket() {
-        if (authTicketBuilder_ == null) {
-          authTicket_ = null;
-          onChanged();
-        } else {
-          authTicket_ = null;
-          authTicketBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder getAuthTicketBuilder() {
-        
-        onChanged();
-        return getAuthTicketFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
-        if (authTicketBuilder_ != null) {
-          return authTicketBuilder_.getMessageOrBuilder();
-        } else {
-          return authTicket_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> 
-          getAuthTicketFieldBuilder() {
-        if (authTicketBuilder_ == null) {
-          authTicketBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder>(
-                  getAuthTicket(),
-                  getParentForChildren(),
-                  isClean());
-          authTicket_ = null;
-        }
-        return authTicketBuilder_;
-      }
-
-      private java.util.List<com.google.protobuf.ByteString> returns_ = java.util.Collections.emptyList();
-      private void ensureReturnsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          returns_ = new java.util.ArrayList<com.google.protobuf.ByteString>(returns_);
-          bitField0_ |= 0x00000020;
-         }
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public java.util.List<com.google.protobuf.ByteString>
-          getReturnsList() {
-        return java.util.Collections.unmodifiableList(returns_);
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public int getReturnsCount() {
-        return returns_.size();
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public com.google.protobuf.ByteString getReturns(int index) {
-        return returns_.get(index);
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder setReturns(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureReturnsIsMutable();
-        returns_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder addReturns(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureReturnsIsMutable();
-        returns_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder addAllReturns(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureReturnsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, returns_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder clearReturns() {
-        returns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ResponseEnvelope>
-        PARSER = new com.google.protobuf.AbstractParser<ResponseEnvelope>() {
-      public ResponseEnvelope parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseEnvelope(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ResponseEnvelope> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ResponseEnvelope> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AuthTicketOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional bytes start = 1;</code>
-     */
-    com.google.protobuf.ByteString getStart();
-
-    /**
-     * <code>optional uint64 expire_timestamp_ms = 2;</code>
-     */
-    long getExpireTimestampMs();
-
-    /**
-     * <code>optional bytes end = 3;</code>
-     */
-    com.google.protobuf.ByteString getEnd();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
-   */
-  public  static final class AuthTicket extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-      AuthTicketOrBuilder {
-    // Use AuthTicket.newBuilder() to construct.
-    private AuthTicket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AuthTicket() {
-      start_ = com.google.protobuf.ByteString.EMPTY;
-      expireTimestampMs_ = 0L;
-      end_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private AuthTicket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-
-              start_ = input.readBytes();
-              break;
-            }
-            case 16: {
-
-              expireTimestampMs_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-
-              end_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder.class);
-    }
-
-    public static final int START_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString start_;
-    /**
-     * <code>optional bytes start = 1;</code>
-     */
-    public com.google.protobuf.ByteString getStart() {
-      return start_;
-    }
-
-    public static final int EXPIRE_TIMESTAMP_MS_FIELD_NUMBER = 2;
-    private long expireTimestampMs_;
-    /**
-     * <code>optional uint64 expire_timestamp_ms = 2;</code>
-     */
-    public long getExpireTimestampMs() {
-      return expireTimestampMs_;
-    }
-
-    public static final int END_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString end_;
-    /**
-     * <code>optional bytes end = 3;</code>
-     */
-    public com.google.protobuf.ByteString getEnd() {
-      return end_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!start_.isEmpty()) {
-        output.writeBytes(1, start_);
-      }
-      if (expireTimestampMs_ != 0L) {
-        output.writeUInt64(2, expireTimestampMs_);
-      }
-      if (!end_.isEmpty()) {
-        output.writeBytes(3, end_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!start_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, start_);
-      }
-      if (expireTimestampMs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, expireTimestampMs_);
-      }
-      if (!end_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, end_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) obj;
-
-      boolean result = true;
-      result = result && getStart()
-          .equals(other.getStart());
-      result = result && (getExpireTimestampMs()
-          == other.getExpireTimestampMs());
-      result = result && getEnd()
-          .equals(other.getEnd());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + START_FIELD_NUMBER;
-      hash = (53 * hash) + getStart().hashCode();
-      hash = (37 * hash) + EXPIRE_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpireTimestampMs());
-      hash = (37 * hash) + END_FIELD_NUMBER;
-      hash = (53 * hash) + getEnd().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        start_ = com.google.protobuf.ByteString.EMPTY;
-
-        expireTimestampMs_ = 0L;
-
-        end_ = com.google.protobuf.ByteString.EMPTY;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket(this);
-        result.start_ = start_;
-        result.expireTimestampMs_ = expireTimestampMs_;
-        result.end_ = end_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance()) return this;
-        if (other.getStart() != com.google.protobuf.ByteString.EMPTY) {
-          setStart(other.getStart());
-        }
-        if (other.getExpireTimestampMs() != 0L) {
-          setExpireTimestampMs(other.getExpireTimestampMs());
-        }
-        if (other.getEnd() != com.google.protobuf.ByteString.EMPTY) {
-          setEnd(other.getEnd());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.ByteString start_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes start = 1;</code>
-       */
-      public com.google.protobuf.ByteString getStart() {
-        return start_;
-      }
-      /**
-       * <code>optional bytes start = 1;</code>
-       */
-      public Builder setStart(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        start_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes start = 1;</code>
-       */
-      public Builder clearStart() {
-        
-        start_ = getDefaultInstance().getStart();
-        onChanged();
-        return this;
-      }
-
-      private long expireTimestampMs_ ;
-      /**
-       * <code>optional uint64 expire_timestamp_ms = 2;</code>
-       */
-      public long getExpireTimestampMs() {
-        return expireTimestampMs_;
-      }
-      /**
-       * <code>optional uint64 expire_timestamp_ms = 2;</code>
-       */
-      public Builder setExpireTimestampMs(long value) {
-        
-        expireTimestampMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 expire_timestamp_ms = 2;</code>
-       */
-      public Builder clearExpireTimestampMs() {
-        
-        expireTimestampMs_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString end_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes end = 3;</code>
-       */
-      public com.google.protobuf.ByteString getEnd() {
-        return end_;
-      }
-      /**
-       * <code>optional bytes end = 3;</code>
-       */
-      public Builder setEnd(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        end_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes end = 3;</code>
-       */
-      public Builder clearEnd() {
-        
-        end_ = getDefaultInstance().getEnd();
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AuthTicket>
-        PARSER = new com.google.protobuf.AbstractParser<AuthTicket>() {
-      public AuthTicket parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AuthTicket(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AuthTicket> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AuthTicket> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface Unknown6OrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 5 for IAPs, 6 is unknown still
-     * </pre>
-     *
-     * <code>optional int32 request_type = 1;</code>
-     */
-    int getRequestType();
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-     */
-    boolean hasUnknown2();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 getUnknown2();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder getUnknown2OrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6}
-   */
-  public  static final class Unknown6 extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6)
-      Unknown6OrBuilder {
-    // Use Unknown6.newBuilder() to construct.
-    private Unknown6(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Unknown6() {
-      requestType_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private Unknown6(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              requestType_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder subBuilder = null;
-              if (unknown2_ != null) {
-                subBuilder = unknown2_.toBuilder();
-              }
-              unknown2_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unknown2_);
-                unknown2_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder.class);
-    }
-
-    public interface Unknown2OrBuilder extends
-        // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <pre>
-       * This are the bytes of com.github.aeonlucid.pogoprotos.Networking/Envelopes/Signature.proto encrypted.
-       * </pre>
-       *
-       * <code>optional bytes encrypted_signature = 1;</code>
-       */
-      com.google.protobuf.ByteString getEncryptedSignature();
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2}
-     */
-    public  static final class Unknown2 extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2)
-        Unknown2OrBuilder {
-      // Use Unknown2.newBuilder() to construct.
-      private Unknown2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private Unknown2() {
-        encryptedSignature_ = com.google.protobuf.ByteString.EMPTY;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private Unknown2(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-
-                encryptedSignature_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder.class);
-      }
-
-      public static final int ENCRYPTED_SIGNATURE_FIELD_NUMBER = 1;
-      private com.google.protobuf.ByteString encryptedSignature_;
-      /**
-       * <pre>
-       * This are the bytes of com.github.aeonlucid.pogoprotos.Networking/Envelopes/Signature.proto encrypted.
-       * </pre>
-       *
-       * <code>optional bytes encrypted_signature = 1;</code>
-       */
-      public com.google.protobuf.ByteString getEncryptedSignature() {
-        return encryptedSignature_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!encryptedSignature_.isEmpty()) {
-          output.writeBytes(1, encryptedSignature_);
-        }
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!encryptedSignature_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(1, encryptedSignature_);
-        }
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2) obj;
-
-        boolean result = true;
-        result = result && getEncryptedSignature()
-            .equals(other.getEncryptedSignature());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + ENCRYPTED_SIGNATURE_FIELD_NUMBER;
-        hash = (53 * hash) + getEncryptedSignature().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2)
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder.class);
-        }
-
-        // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          encryptedSignature_ = com.google.protobuf.ByteString.EMPTY;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2(this);
-          result.encryptedSignature_ = encryptedSignature_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.getDefaultInstance()) return this;
-          if (other.getEncryptedSignature() != com.google.protobuf.ByteString.EMPTY) {
-            setEncryptedSignature(other.getEncryptedSignature());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private com.google.protobuf.ByteString encryptedSignature_ = com.google.protobuf.ByteString.EMPTY;
-        /**
-         * <pre>
-         * This are the bytes of com.github.aeonlucid.pogoprotos.Networking/Envelopes/Signature.proto encrypted.
-         * </pre>
-         *
-         * <code>optional bytes encrypted_signature = 1;</code>
-         */
-        public com.google.protobuf.ByteString getEncryptedSignature() {
-          return encryptedSignature_;
-        }
-        /**
-         * <pre>
-         * This are the bytes of com.github.aeonlucid.pogoprotos.Networking/Envelopes/Signature.proto encrypted.
-         * </pre>
-         *
-         * <code>optional bytes encrypted_signature = 1;</code>
-         */
-        public Builder setEncryptedSignature(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          encryptedSignature_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * This are the bytes of com.github.aeonlucid.pogoprotos.Networking/Envelopes/Signature.proto encrypted.
-         * </pre>
-         *
-         * <code>optional bytes encrypted_signature = 1;</code>
-         */
-        public Builder clearEncryptedSignature() {
-          
-          encryptedSignature_ = getDefaultInstance().getEncryptedSignature();
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2)
-      }
-
-      // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2)
-      private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2();
-      }
-
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<Unknown2>
-          PARSER = new com.google.protobuf.AbstractParser<Unknown2>() {
-        public Unknown2 parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Unknown2(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Unknown2> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Unknown2> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int REQUEST_TYPE_FIELD_NUMBER = 1;
-    private int requestType_;
-    /**
-     * <pre>
-     * 5 for IAPs, 6 is unknown still
-     * </pre>
-     *
-     * <code>optional int32 request_type = 1;</code>
-     */
-    public int getRequestType() {
-      return requestType_;
-    }
-
-    public static final int UNKNOWN2_FIELD_NUMBER = 2;
-    private com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 unknown2_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-     */
-    public boolean hasUnknown2() {
-      return unknown2_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 getUnknown2() {
-      return unknown2_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.getDefaultInstance() : unknown2_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder getUnknown2OrBuilder() {
-      return getUnknown2();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (requestType_ != 0) {
-        output.writeInt32(1, requestType_);
-      }
-      if (unknown2_ != null) {
-        output.writeMessage(2, getUnknown2());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (requestType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, requestType_);
-      }
-      if (unknown2_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getUnknown2());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6) obj;
-
-      boolean result = true;
-      result = result && (getRequestType()
-          == other.getRequestType());
-      result = result && (hasUnknown2() == other.hasUnknown2());
-      if (hasUnknown2()) {
-        result = result && getUnknown2()
-            .equals(other.getUnknown2());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + REQUEST_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestType();
-      if (hasUnknown2()) {
-        hash = (37 * hash) + UNKNOWN2_FIELD_NUMBER;
-        hash = (53 * hash) + getUnknown2().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6)
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        requestType_ = 0;
-
-        if (unknown2Builder_ == null) {
-          unknown2_ = null;
-        } else {
-          unknown2_ = null;
-          unknown2Builder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6(this);
-        result.requestType_ = requestType_;
-        if (unknown2Builder_ == null) {
-          result.unknown2_ = unknown2_;
-        } else {
-          result.unknown2_ = unknown2Builder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.getDefaultInstance()) return this;
-        if (other.getRequestType() != 0) {
-          setRequestType(other.getRequestType());
-        }
-        if (other.hasUnknown2()) {
-          mergeUnknown2(other.getUnknown2());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int requestType_ ;
-      /**
-       * <pre>
-       * 5 for IAPs, 6 is unknown still
-       * </pre>
-       *
-       * <code>optional int32 request_type = 1;</code>
-       */
-      public int getRequestType() {
-        return requestType_;
-      }
-      /**
-       * <pre>
-       * 5 for IAPs, 6 is unknown still
-       * </pre>
-       *
-       * <code>optional int32 request_type = 1;</code>
-       */
-      public Builder setRequestType(int value) {
-        
-        requestType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 5 for IAPs, 6 is unknown still
-       * </pre>
-       *
-       * <code>optional int32 request_type = 1;</code>
-       */
-      public Builder clearRequestType() {
-        
-        requestType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 unknown2_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder> unknown2Builder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public boolean hasUnknown2() {
-        return unknown2Builder_ != null || unknown2_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 getUnknown2() {
-        if (unknown2Builder_ == null) {
-          return unknown2_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.getDefaultInstance() : unknown2_;
-        } else {
-          return unknown2Builder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder setUnknown2(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 value) {
-        if (unknown2Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          unknown2_ = value;
-          onChanged();
-        } else {
-          unknown2Builder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder setUnknown2(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder builderForValue) {
-        if (unknown2Builder_ == null) {
-          unknown2_ = builderForValue.build();
-          onChanged();
-        } else {
-          unknown2Builder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder mergeUnknown2(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2 value) {
-        if (unknown2Builder_ == null) {
-          if (unknown2_ != null) {
-            unknown2_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.newBuilder(unknown2_).mergeFrom(value).buildPartial();
-          } else {
-            unknown2_ = value;
-          }
-          onChanged();
-        } else {
-          unknown2Builder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public Builder clearUnknown2() {
-        if (unknown2Builder_ == null) {
-          unknown2_ = null;
-          onChanged();
-        } else {
-          unknown2_ = null;
-          unknown2Builder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder getUnknown2Builder() {
-        
-        onChanged();
-        return getUnknown2FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder getUnknown2OrBuilder() {
-        if (unknown2Builder_ != null) {
-          return unknown2Builder_.getMessageOrBuilder();
-        } else {
-          return unknown2_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.getDefaultInstance() : unknown2_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6.Unknown2 unknown2 = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder> 
-          getUnknown2FieldBuilder() {
-        if (unknown2Builder_ == null) {
-          unknown2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Unknown2OrBuilder>(
-                  getUnknown2(),
-                  getParentForChildren(),
-                  isClean());
-          unknown2_ = null;
-        }
-        return unknown2Builder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6)
-    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Unknown6>
-        PARSER = new com.google.protobuf.AbstractParser<Unknown6>() {
-      public Unknown6 parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Unknown6(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Unknown6> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Unknown6> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface RequestEnvelopeOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope)
       com.google.protobuf.MessageOrBuilder {
@@ -18238,32 +12658,28 @@ public final class Envelopes {
         int index);
 
     /**
-     * <pre>
-     * Unknown6 is required to get a response.
-     * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
-    boolean hasUnknown6();
+    java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> 
+        getPlatformRequestsList();
     /**
-     * <pre>
-     * Unknown6 is required to get a response.
-     * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 getUnknown6();
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getPlatformRequests(int index);
     /**
-     * <pre>
-     * Unknown6 is required to get a response.
-     * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder getUnknown6OrBuilder();
+    int getPlatformRequestsCount();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
+        getPlatformRequestsOrBuilderList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder getPlatformRequestsOrBuilder(
+        int index);
 
     /**
      * <code>optional double latitude = 7;</code>
@@ -18276,9 +12692,9 @@ public final class Envelopes {
     double getLongitude();
 
     /**
-     * <code>optional double altitude = 9;</code>
+     * <code>optional double accuracy = 9;</code>
      */
-    double getAltitude();
+    double getAccuracy();
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
@@ -18307,9 +12723,9 @@ public final class Envelopes {
     com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder();
 
     /**
-     * <code>optional int64 unknown12 = 12;</code>
+     * <code>optional int64 ms_since_last_locationfix = 12;</code>
      */
-    long getUnknown12();
+    long getMsSinceLastLocationfix();
   }
   /**
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope}
@@ -18326,10 +12742,11 @@ public final class Envelopes {
       statusCode_ = 0;
       requestId_ = 0L;
       requests_ = java.util.Collections.emptyList();
+      platformRequests_ = java.util.Collections.emptyList();
       latitude_ = 0D;
       longitude_ = 0D;
-      altitude_ = 0D;
-      unknown12_ = 0L;
+      accuracy_ = 0D;
+      msSinceLastLocationfix_ = 0L;
     }
 
     @java.lang.Override
@@ -18377,16 +12794,12 @@ public final class Envelopes {
               break;
             }
             case 50: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder subBuilder = null;
-              if (unknown6_ != null) {
-                subBuilder = unknown6_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                platformRequests_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest>();
+                mutable_bitField0_ |= 0x00000008;
               }
-              unknown6_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unknown6_);
-                unknown6_ = subBuilder.buildPartial();
-              }
-
+              platformRequests_.add(
+                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.parser(), extensionRegistry));
               break;
             }
             case 57: {
@@ -18401,7 +12814,7 @@ public final class Envelopes {
             }
             case 73: {
 
-              altitude_ = input.readDouble();
+              accuracy_ = input.readDouble();
               break;
             }
             case 82: {
@@ -18432,7 +12845,7 @@ public final class Envelopes {
             }
             case 96: {
 
-              unknown12_ = input.readInt64();
+              msSinceLastLocationfix_ = input.readInt64();
               break;
             }
           }
@@ -18445,6 +12858,9 @@ public final class Envelopes {
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          platformRequests_ = java.util.Collections.unmodifiableList(platformRequests_);
         }
         makeExtensionsImmutable();
       }
@@ -19724,6 +14140,530 @@ public final class Envelopes {
 
     }
 
+    public interface PlatformRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      int getTypeValue();
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType();
+
+      /**
+       * <code>optional bytes request_message = 2;</code>
+       */
+      com.google.protobuf.ByteString getRequestMessage();
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest}
+     */
+    public  static final class PlatformRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
+        PlatformRequestOrBuilder {
+      // Use PlatformRequest.newBuilder() to construct.
+      private PlatformRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private PlatformRequest() {
+        type_ = 0;
+        requestMessage_ = com.google.protobuf.ByteString.EMPTY;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private PlatformRequest(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+
+                type_ = rawValue;
+                break;
+              }
+              case 18: {
+
+                requestMessage_ = input.readBytes();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder.class);
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
+        com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
+        return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+      }
+
+      public static final int REQUEST_MESSAGE_FIELD_NUMBER = 2;
+      private com.google.protobuf.ByteString requestMessage_;
+      /**
+       * <code>optional bytes request_message = 2;</code>
+       */
+      public com.google.protobuf.ByteString getRequestMessage() {
+        return requestMessage_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
+          output.writeEnum(1, type_);
+        }
+        if (!requestMessage_.isEmpty()) {
+          output.writeBytes(2, requestMessage_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, type_);
+        }
+        if (!requestMessage_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(2, requestMessage_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest)) {
+          return super.equals(obj);
+        }
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) obj;
+
+        boolean result = true;
+        result = result && type_ == other.type_;
+        result = result && getRequestMessage()
+            .equals(other.getRequestMessage());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+        hash = (37 * hash) + REQUEST_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getRequestMessage().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder.class);
+        }
+
+        // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          type_ = 0;
+
+          requestMessage_ = com.google.protobuf.ByteString.EMPTY;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
+        }
+
+        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getDefaultInstanceForType() {
+          return com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance();
+        }
+
+        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest build() {
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest buildPartial() {
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest(this);
+          result.type_ = type_;
+          result.requestMessage_ = requestMessage_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) {
+            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest other) {
+          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance()) return this;
+          if (other.type_ != 0) {
+            setTypeValue(other.getTypeValue());
+          }
+          if (other.getRequestMessage() != com.google.protobuf.ByteString.EMPTY) {
+            setRequestMessage(other.getRequestMessage());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int type_ = 0;
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public int getTypeValue() {
+          return type_;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder setTypeValue(int value) {
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
+          com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
+          return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          type_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder clearType() {
+          
+          type_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.ByteString requestMessage_ = com.google.protobuf.ByteString.EMPTY;
+        /**
+         * <code>optional bytes request_message = 2;</code>
+         */
+        public com.google.protobuf.ByteString getRequestMessage() {
+          return requestMessage_;
+        }
+        /**
+         * <code>optional bytes request_message = 2;</code>
+         */
+        public Builder setRequestMessage(com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          requestMessage_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional bytes request_message = 2;</code>
+         */
+        public Builder clearRequestMessage() {
+          
+          requestMessage_ = getDefaultInstance().getRequestMessage();
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
+      }
+
+      // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
+      private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest();
+      }
+
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PlatformRequest>
+          PARSER = new com.google.protobuf.AbstractParser<PlatformRequest>() {
+        public PlatformRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PlatformRequest(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<PlatformRequest> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PlatformRequest> getParserForType() {
+        return PARSER;
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int bitField0_;
     public static final int STATUS_CODE_FIELD_NUMBER = 1;
     private int statusCode_;
@@ -19778,40 +14718,39 @@ public final class Envelopes {
       return requests_.get(index);
     }
 
-    public static final int UNKNOWN6_FIELD_NUMBER = 6;
-    private com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 unknown6_;
+    public static final int PLATFORM_REQUESTS_FIELD_NUMBER = 6;
+    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> platformRequests_;
     /**
-     * <pre>
-     * Unknown6 is required to get a response.
-     * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
-    public boolean hasUnknown6() {
-      return unknown6_ != null;
+    public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> getPlatformRequestsList() {
+      return platformRequests_;
     }
     /**
-     * <pre>
-     * Unknown6 is required to get a response.
-     * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 getUnknown6() {
-      return unknown6_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.getDefaultInstance() : unknown6_;
+    public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
+        getPlatformRequestsOrBuilderList() {
+      return platformRequests_;
     }
     /**
-     * <pre>
-     * Unknown6 is required to get a response.
-     * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder getUnknown6OrBuilder() {
-      return getUnknown6();
+    public int getPlatformRequestsCount() {
+      return platformRequests_.size();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getPlatformRequests(int index) {
+      return platformRequests_.get(index);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder getPlatformRequestsOrBuilder(
+        int index) {
+      return platformRequests_.get(index);
     }
 
     public static final int LATITUDE_FIELD_NUMBER = 7;
@@ -19832,13 +14771,13 @@ public final class Envelopes {
       return longitude_;
     }
 
-    public static final int ALTITUDE_FIELD_NUMBER = 9;
-    private double altitude_;
+    public static final int ACCURACY_FIELD_NUMBER = 9;
+    private double accuracy_;
     /**
-     * <code>optional double altitude = 9;</code>
+     * <code>optional double accuracy = 9;</code>
      */
-    public double getAltitude() {
-      return altitude_;
+    public double getAccuracy() {
+      return accuracy_;
     }
 
     public static final int AUTH_INFO_FIELD_NUMBER = 10;
@@ -19883,13 +14822,13 @@ public final class Envelopes {
       return getAuthTicket();
     }
 
-    public static final int UNKNOWN12_FIELD_NUMBER = 12;
-    private long unknown12_;
+    public static final int MS_SINCE_LAST_LOCATIONFIX_FIELD_NUMBER = 12;
+    private long msSinceLastLocationfix_;
     /**
-     * <code>optional int64 unknown12 = 12;</code>
+     * <code>optional int64 ms_since_last_locationfix = 12;</code>
      */
-    public long getUnknown12() {
-      return unknown12_;
+    public long getMsSinceLastLocationfix() {
+      return msSinceLastLocationfix_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -19913,8 +14852,8 @@ public final class Envelopes {
       for (int i = 0; i < requests_.size(); i++) {
         output.writeMessage(4, requests_.get(i));
       }
-      if (unknown6_ != null) {
-        output.writeMessage(6, getUnknown6());
+      for (int i = 0; i < platformRequests_.size(); i++) {
+        output.writeMessage(6, platformRequests_.get(i));
       }
       if (latitude_ != 0D) {
         output.writeDouble(7, latitude_);
@@ -19922,8 +14861,8 @@ public final class Envelopes {
       if (longitude_ != 0D) {
         output.writeDouble(8, longitude_);
       }
-      if (altitude_ != 0D) {
-        output.writeDouble(9, altitude_);
+      if (accuracy_ != 0D) {
+        output.writeDouble(9, accuracy_);
       }
       if (authInfo_ != null) {
         output.writeMessage(10, getAuthInfo());
@@ -19931,8 +14870,8 @@ public final class Envelopes {
       if (authTicket_ != null) {
         output.writeMessage(11, getAuthTicket());
       }
-      if (unknown12_ != 0L) {
-        output.writeInt64(12, unknown12_);
+      if (msSinceLastLocationfix_ != 0L) {
+        output.writeInt64(12, msSinceLastLocationfix_);
       }
     }
 
@@ -19953,9 +14892,9 @@ public final class Envelopes {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, requests_.get(i));
       }
-      if (unknown6_ != null) {
+      for (int i = 0; i < platformRequests_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getUnknown6());
+          .computeMessageSize(6, platformRequests_.get(i));
       }
       if (latitude_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -19965,9 +14904,9 @@ public final class Envelopes {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(8, longitude_);
       }
-      if (altitude_ != 0D) {
+      if (accuracy_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, altitude_);
+          .computeDoubleSize(9, accuracy_);
       }
       if (authInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -19977,9 +14916,9 @@ public final class Envelopes {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getAuthTicket());
       }
-      if (unknown12_ != 0L) {
+      if (msSinceLastLocationfix_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, unknown12_);
+          .computeInt64Size(12, msSinceLastLocationfix_);
       }
       memoizedSize = size;
       return size;
@@ -20003,11 +14942,8 @@ public final class Envelopes {
           == other.getRequestId());
       result = result && getRequestsList()
           .equals(other.getRequestsList());
-      result = result && (hasUnknown6() == other.hasUnknown6());
-      if (hasUnknown6()) {
-        result = result && getUnknown6()
-            .equals(other.getUnknown6());
-      }
+      result = result && getPlatformRequestsList()
+          .equals(other.getPlatformRequestsList());
       result = result && (
           java.lang.Double.doubleToLongBits(getLatitude())
           == java.lang.Double.doubleToLongBits(
@@ -20017,9 +14953,9 @@ public final class Envelopes {
           == java.lang.Double.doubleToLongBits(
               other.getLongitude()));
       result = result && (
-          java.lang.Double.doubleToLongBits(getAltitude())
+          java.lang.Double.doubleToLongBits(getAccuracy())
           == java.lang.Double.doubleToLongBits(
-              other.getAltitude()));
+              other.getAccuracy()));
       result = result && (hasAuthInfo() == other.hasAuthInfo());
       if (hasAuthInfo()) {
         result = result && getAuthInfo()
@@ -20030,8 +14966,8 @@ public final class Envelopes {
         result = result && getAuthTicket()
             .equals(other.getAuthTicket());
       }
-      result = result && (getUnknown12()
-          == other.getUnknown12());
+      result = result && (getMsSinceLastLocationfix()
+          == other.getMsSinceLastLocationfix());
       return result;
     }
 
@@ -20051,9 +14987,9 @@ public final class Envelopes {
         hash = (37 * hash) + REQUESTS_FIELD_NUMBER;
         hash = (53 * hash) + getRequestsList().hashCode();
       }
-      if (hasUnknown6()) {
-        hash = (37 * hash) + UNKNOWN6_FIELD_NUMBER;
-        hash = (53 * hash) + getUnknown6().hashCode();
+      if (getPlatformRequestsCount() > 0) {
+        hash = (37 * hash) + PLATFORM_REQUESTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatformRequestsList().hashCode();
       }
       hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -20061,9 +14997,9 @@ public final class Envelopes {
       hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
+      hash = (37 * hash) + ACCURACY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getAltitude()));
+          java.lang.Double.doubleToLongBits(getAccuracy()));
       if (hasAuthInfo()) {
         hash = (37 * hash) + AUTH_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAuthInfo().hashCode();
@@ -20072,9 +15008,9 @@ public final class Envelopes {
         hash = (37 * hash) + AUTH_TICKET_FIELD_NUMBER;
         hash = (53 * hash) + getAuthTicket().hashCode();
       }
-      hash = (37 * hash) + UNKNOWN12_FIELD_NUMBER;
+      hash = (37 * hash) + MS_SINCE_LAST_LOCATIONFIX_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUnknown12());
+          getMsSinceLastLocationfix());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -20190,6 +15126,7 @@ public final class Envelopes {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getRequestsFieldBuilder();
+          getPlatformRequestsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -20204,17 +15141,17 @@ public final class Envelopes {
         } else {
           requestsBuilder_.clear();
         }
-        if (unknown6Builder_ == null) {
-          unknown6_ = null;
+        if (platformRequestsBuilder_ == null) {
+          platformRequests_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          unknown6_ = null;
-          unknown6Builder_ = null;
+          platformRequestsBuilder_.clear();
         }
         latitude_ = 0D;
 
         longitude_ = 0D;
 
-        altitude_ = 0D;
+        accuracy_ = 0D;
 
         if (authInfoBuilder_ == null) {
           authInfo_ = null;
@@ -20228,7 +15165,7 @@ public final class Envelopes {
           authTicket_ = null;
           authTicketBuilder_ = null;
         }
-        unknown12_ = 0L;
+        msSinceLastLocationfix_ = 0L;
 
         return this;
       }
@@ -20265,14 +15202,18 @@ public final class Envelopes {
         } else {
           result.requests_ = requestsBuilder_.build();
         }
-        if (unknown6Builder_ == null) {
-          result.unknown6_ = unknown6_;
+        if (platformRequestsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            platformRequests_ = java.util.Collections.unmodifiableList(platformRequests_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.platformRequests_ = platformRequests_;
         } else {
-          result.unknown6_ = unknown6Builder_.build();
+          result.platformRequests_ = platformRequestsBuilder_.build();
         }
         result.latitude_ = latitude_;
         result.longitude_ = longitude_;
-        result.altitude_ = altitude_;
+        result.accuracy_ = accuracy_;
         if (authInfoBuilder_ == null) {
           result.authInfo_ = authInfo_;
         } else {
@@ -20283,7 +15224,7 @@ public final class Envelopes {
         } else {
           result.authTicket_ = authTicketBuilder_.build();
         }
-        result.unknown12_ = unknown12_;
+        result.msSinceLastLocationfix_ = msSinceLastLocationfix_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -20358,8 +15299,31 @@ public final class Envelopes {
             }
           }
         }
-        if (other.hasUnknown6()) {
-          mergeUnknown6(other.getUnknown6());
+        if (platformRequestsBuilder_ == null) {
+          if (!other.platformRequests_.isEmpty()) {
+            if (platformRequests_.isEmpty()) {
+              platformRequests_ = other.platformRequests_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensurePlatformRequestsIsMutable();
+              platformRequests_.addAll(other.platformRequests_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.platformRequests_.isEmpty()) {
+            if (platformRequestsBuilder_.isEmpty()) {
+              platformRequestsBuilder_.dispose();
+              platformRequestsBuilder_ = null;
+              platformRequests_ = other.platformRequests_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              platformRequestsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPlatformRequestsFieldBuilder() : null;
+            } else {
+              platformRequestsBuilder_.addAllMessages(other.platformRequests_);
+            }
+          }
         }
         if (other.getLatitude() != 0D) {
           setLatitude(other.getLatitude());
@@ -20367,8 +15331,8 @@ public final class Envelopes {
         if (other.getLongitude() != 0D) {
           setLongitude(other.getLongitude());
         }
-        if (other.getAltitude() != 0D) {
-          setAltitude(other.getAltitude());
+        if (other.getAccuracy() != 0D) {
+          setAccuracy(other.getAccuracy());
         }
         if (other.hasAuthInfo()) {
           mergeAuthInfo(other.getAuthInfo());
@@ -20376,8 +15340,8 @@ public final class Envelopes {
         if (other.hasAuthTicket()) {
           mergeAuthTicket(other.getAuthTicket());
         }
-        if (other.getUnknown12() != 0L) {
-          setUnknown12(other.getUnknown12());
+        if (other.getMsSinceLastLocationfix() != 0L) {
+          setMsSinceLastLocationfix(other.getMsSinceLastLocationfix());
         }
         onChanged();
         return this;
@@ -20698,166 +15662,244 @@ public final class Envelopes {
         return requestsBuilder_;
       }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 unknown6_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder> unknown6Builder_;
-      /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
-       */
-      public boolean hasUnknown6() {
-        return unknown6Builder_ != null || unknown6_ != null;
+      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> platformRequests_ =
+        java.util.Collections.emptyList();
+      private void ensurePlatformRequestsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          platformRequests_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest>(platformRequests_);
+          bitField0_ |= 0x00000008;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> platformRequestsBuilder_;
+
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 getUnknown6() {
-        if (unknown6Builder_ == null) {
-          return unknown6_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.getDefaultInstance() : unknown6_;
+      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> getPlatformRequestsList() {
+        if (platformRequestsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(platformRequests_);
         } else {
-          return unknown6Builder_.getMessage();
+          return platformRequestsBuilder_.getMessageList();
         }
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public Builder setUnknown6(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 value) {
-        if (unknown6Builder_ == null) {
+      public int getPlatformRequestsCount() {
+        if (platformRequestsBuilder_ == null) {
+          return platformRequests_.size();
+        } else {
+          return platformRequestsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getPlatformRequests(int index) {
+        if (platformRequestsBuilder_ == null) {
+          return platformRequests_.get(index);
+        } else {
+          return platformRequestsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public Builder setPlatformRequests(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
+        if (platformRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          unknown6_ = value;
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.set(index, value);
           onChanged();
         } else {
-          unknown6Builder_.setMessage(value);
+          platformRequestsBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public Builder setUnknown6(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder builderForValue) {
-        if (unknown6Builder_ == null) {
-          unknown6_ = builderForValue.build();
+      public Builder setPlatformRequests(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
+        if (platformRequestsBuilder_ == null) {
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.set(index, builderForValue.build());
           onChanged();
         } else {
-          unknown6Builder_.setMessage(builderForValue.build());
+          platformRequestsBuilder_.setMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public Builder mergeUnknown6(com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6 value) {
-        if (unknown6Builder_ == null) {
-          if (unknown6_ != null) {
-            unknown6_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.newBuilder(unknown6_).mergeFrom(value).buildPartial();
-          } else {
-            unknown6_ = value;
+      public Builder addPlatformRequests(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
+        if (platformRequestsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.add(value);
           onChanged();
         } else {
-          unknown6Builder_.mergeFrom(value);
+          platformRequestsBuilder_.addMessage(value);
         }
-
         return this;
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public Builder clearUnknown6() {
-        if (unknown6Builder_ == null) {
-          unknown6_ = null;
+      public Builder addPlatformRequests(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
+        if (platformRequestsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.add(index, value);
           onChanged();
         } else {
-          unknown6_ = null;
-          unknown6Builder_ = null;
+          platformRequestsBuilder_.addMessage(index, value);
         }
-
         return this;
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder getUnknown6Builder() {
-        
-        onChanged();
-        return getUnknown6FieldBuilder().getBuilder();
+      public Builder addPlatformRequests(
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
+        if (platformRequestsBuilder_ == null) {
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.add(builderForValue.build());
+          onChanged();
+        } else {
+          platformRequestsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder getUnknown6OrBuilder() {
-        if (unknown6Builder_ != null) {
-          return unknown6Builder_.getMessageOrBuilder();
+      public Builder addPlatformRequests(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
+        if (platformRequestsBuilder_ == null) {
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.add(index, builderForValue.build());
+          onChanged();
         } else {
-          return unknown6_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.getDefaultInstance() : unknown6_;
+          platformRequestsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public Builder addAllPlatformRequests(
+          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> values) {
+        if (platformRequestsBuilder_ == null) {
+          ensurePlatformRequestsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, platformRequests_);
+          onChanged();
+        } else {
+          platformRequestsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public Builder clearPlatformRequests() {
+        if (platformRequestsBuilder_ == null) {
+          platformRequests_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          platformRequestsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public Builder removePlatformRequests(int index) {
+        if (platformRequestsBuilder_ == null) {
+          ensurePlatformRequestsIsMutable();
+          platformRequests_.remove(index);
+          onChanged();
+        } else {
+          platformRequestsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder getPlatformRequestsBuilder(
+          int index) {
+        return getPlatformRequestsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder getPlatformRequestsOrBuilder(
+          int index) {
+        if (platformRequestsBuilder_ == null) {
+          return platformRequests_.get(index);  } else {
+          return platformRequestsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <pre>
-       * Unknown6 is required to get a response.
-       * For an example check https://github.com/keyphact/pgoapi/blob/75eba6b5b630841ee4f7c2ea983f15874fb0862d/pgoapi/rpc_api.py#L192-L212
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Unknown6 unknown6 = 6;</code>
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder> 
-          getUnknown6FieldBuilder() {
-        if (unknown6Builder_ == null) {
-          unknown6Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Unknown6OrBuilder>(
-                  getUnknown6(),
+      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
+           getPlatformRequestsOrBuilderList() {
+        if (platformRequestsBuilder_ != null) {
+          return platformRequestsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(platformRequests_);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder addPlatformRequestsBuilder() {
+        return getPlatformRequestsFieldBuilder().addBuilder(
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder addPlatformRequestsBuilder(
+          int index) {
+        return getPlatformRequestsFieldBuilder().addBuilder(
+            index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder> 
+           getPlatformRequestsBuilderList() {
+        return getPlatformRequestsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
+          getPlatformRequestsFieldBuilder() {
+        if (platformRequestsBuilder_ == null) {
+          platformRequestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder>(
+                  platformRequests_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
-          unknown6_ = null;
+          platformRequests_ = null;
         }
-        return unknown6Builder_;
+        return platformRequestsBuilder_;
       }
 
       private double latitude_ ;
@@ -20912,28 +15954,28 @@ public final class Envelopes {
         return this;
       }
 
-      private double altitude_ ;
+      private double accuracy_ ;
       /**
-       * <code>optional double altitude = 9;</code>
+       * <code>optional double accuracy = 9;</code>
        */
-      public double getAltitude() {
-        return altitude_;
+      public double getAccuracy() {
+        return accuracy_;
       }
       /**
-       * <code>optional double altitude = 9;</code>
+       * <code>optional double accuracy = 9;</code>
        */
-      public Builder setAltitude(double value) {
+      public Builder setAccuracy(double value) {
         
-        altitude_ = value;
+        accuracy_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double altitude = 9;</code>
+       * <code>optional double accuracy = 9;</code>
        */
-      public Builder clearAltitude() {
+      public Builder clearAccuracy() {
         
-        altitude_ = 0D;
+        accuracy_ = 0D;
         onChanged();
         return this;
       }
@@ -21172,28 +16214,28 @@ public final class Envelopes {
         return authTicketBuilder_;
       }
 
-      private long unknown12_ ;
+      private long msSinceLastLocationfix_ ;
       /**
-       * <code>optional int64 unknown12 = 12;</code>
+       * <code>optional int64 ms_since_last_locationfix = 12;</code>
        */
-      public long getUnknown12() {
-        return unknown12_;
+      public long getMsSinceLastLocationfix() {
+        return msSinceLastLocationfix_;
       }
       /**
-       * <code>optional int64 unknown12 = 12;</code>
+       * <code>optional int64 ms_since_last_locationfix = 12;</code>
        */
-      public Builder setUnknown12(long value) {
+      public Builder setMsSinceLastLocationfix(long value) {
         
-        unknown12_ = value;
+        msSinceLastLocationfix_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 unknown12 = 12;</code>
+       * <code>optional int64 ms_since_last_locationfix = 12;</code>
        */
-      public Builder clearUnknown12() {
+      public Builder clearMsSinceLastLocationfix() {
         
-        unknown12_ = 0L;
+        msSinceLastLocationfix_ = 0L;
         onChanged();
         return this;
       }
@@ -21246,6 +16288,578 @@ public final class Envelopes {
 
   }
 
+  public interface AuthTicketOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional bytes start = 1;</code>
+     */
+    com.google.protobuf.ByteString getStart();
+
+    /**
+     * <code>optional uint64 expire_timestamp_ms = 2;</code>
+     */
+    long getExpireTimestampMs();
+
+    /**
+     * <code>optional bytes end = 3;</code>
+     */
+    com.google.protobuf.ByteString getEnd();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
+   */
+  public  static final class AuthTicket extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+      AuthTicketOrBuilder {
+    // Use AuthTicket.newBuilder() to construct.
+    private AuthTicket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AuthTicket() {
+      start_ = com.google.protobuf.ByteString.EMPTY;
+      expireTimestampMs_ = 0L;
+      end_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AuthTicket(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+
+              start_ = input.readBytes();
+              break;
+            }
+            case 16: {
+
+              expireTimestampMs_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+
+              end_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder.class);
+    }
+
+    public static final int START_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString start_;
+    /**
+     * <code>optional bytes start = 1;</code>
+     */
+    public com.google.protobuf.ByteString getStart() {
+      return start_;
+    }
+
+    public static final int EXPIRE_TIMESTAMP_MS_FIELD_NUMBER = 2;
+    private long expireTimestampMs_;
+    /**
+     * <code>optional uint64 expire_timestamp_ms = 2;</code>
+     */
+    public long getExpireTimestampMs() {
+      return expireTimestampMs_;
+    }
+
+    public static final int END_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString end_;
+    /**
+     * <code>optional bytes end = 3;</code>
+     */
+    public com.google.protobuf.ByteString getEnd() {
+      return end_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!start_.isEmpty()) {
+        output.writeBytes(1, start_);
+      }
+      if (expireTimestampMs_ != 0L) {
+        output.writeUInt64(2, expireTimestampMs_);
+      }
+      if (!end_.isEmpty()) {
+        output.writeBytes(3, end_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!start_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, start_);
+      }
+      if (expireTimestampMs_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, expireTimestampMs_);
+      }
+      if (!end_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, end_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) obj;
+
+      boolean result = true;
+      result = result && getStart()
+          .equals(other.getStart());
+      result = result && (getExpireTimestampMs()
+          == other.getExpireTimestampMs());
+      result = result && getEnd()
+          .equals(other.getEnd());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + START_FIELD_NUMBER;
+      hash = (53 * hash) + getStart().hashCode();
+      hash = (37 * hash) + EXPIRE_TIMESTAMP_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExpireTimestampMs());
+      hash = (37 * hash) + END_FIELD_NUMBER;
+      hash = (53 * hash) + getEnd().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        start_ = com.google.protobuf.ByteString.EMPTY;
+
+        expireTimestampMs_ = 0L;
+
+        end_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket build() {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket buildPartial() {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket(this);
+        result.start_ = start_;
+        result.expireTimestampMs_ = expireTimestampMs_;
+        result.end_ = end_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other) {
+        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance()) return this;
+        if (other.getStart() != com.google.protobuf.ByteString.EMPTY) {
+          setStart(other.getStart());
+        }
+        if (other.getExpireTimestampMs() != 0L) {
+          setExpireTimestampMs(other.getExpireTimestampMs());
+        }
+        if (other.getEnd() != com.google.protobuf.ByteString.EMPTY) {
+          setEnd(other.getEnd());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString start_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes start = 1;</code>
+       */
+      public com.google.protobuf.ByteString getStart() {
+        return start_;
+      }
+      /**
+       * <code>optional bytes start = 1;</code>
+       */
+      public Builder setStart(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        start_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes start = 1;</code>
+       */
+      public Builder clearStart() {
+        
+        start_ = getDefaultInstance().getStart();
+        onChanged();
+        return this;
+      }
+
+      private long expireTimestampMs_ ;
+      /**
+       * <code>optional uint64 expire_timestamp_ms = 2;</code>
+       */
+      public long getExpireTimestampMs() {
+        return expireTimestampMs_;
+      }
+      /**
+       * <code>optional uint64 expire_timestamp_ms = 2;</code>
+       */
+      public Builder setExpireTimestampMs(long value) {
+        
+        expireTimestampMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 expire_timestamp_ms = 2;</code>
+       */
+      public Builder clearExpireTimestampMs() {
+        
+        expireTimestampMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString end_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes end = 3;</code>
+       */
+      public com.google.protobuf.ByteString getEnd() {
+        return end_;
+      }
+      /**
+       * <code>optional bytes end = 3;</code>
+       */
+      public Builder setEnd(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        end_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes end = 3;</code>
+       */
+      public Builder clearEnd() {
+        
+        end_ = getDefaultInstance().getEnd();
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AuthTicket>
+        PARSER = new com.google.protobuf.AbstractParser<AuthTicket>() {
+      public AuthTicket parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AuthTicket(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AuthTicket> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuthTicket> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor;
   private static final 
@@ -21277,46 +16891,6 @@ public final class Envelopes {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21331,6 +16905,16 @@ public final class Envelopes {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -21342,115 +16926,105 @@ public final class Envelopes {
     java.lang.String[] descriptorData = {
       "\n:com/github/aeonlucid/pogoprotos/networ" +
       "king/Envelopes.proto\0224com.github.aeonluc" +
-      "id.pogoprotos.networking.envelopes\0321com/" +
-      "github/aeonlucid/pogoprotos/data/Player." +
-      "proto\0324com/github/aeonlucid/pogoprotos/i" +
-      "nventory/Item.proto\0329com/github/aeonluci" +
-      "d/pogoprotos/networking/Requests.proto\"\226" +
-      "\020\n\tSignature\022\035\n\025timestamp_since_start\030\002 " +
-      "\001(\004\022a\n\014location_fix\030\004 \003(\0132K.com.github.a" +
-      "eonlucid.pogoprotos.networking.envelopes",
-      ".Signature.LocationFix\022`\n\010gps_info\030\005 \001(\013" +
-      "2N.com.github.aeonlucid.pogoprotos.netwo" +
-      "rking.envelopes.Signature.AndroidGpsInfo" +
-      "\022_\n\013sensor_info\030\007 \001(\0132J.com.github.aeonl" +
-      "ucid.pogoprotos.networking.envelopes.Sig" +
-      "nature.SensorInfo\022_\n\013device_info\030\010 \001(\0132J" +
-      ".com.github.aeonlucid.pogoprotos.network" +
-      "ing.envelopes.Signature.DeviceInfo\022g\n\017ac" +
-      "tivity_status\030\t \001(\0132N.com.github.aeonluc" +
-      "id.pogoprotos.networking.envelopes.Signa",
-      "ture.ActivityStatus\022\026\n\016location_hash1\030\n " +
-      "\001(\004\022\026\n\016location_hash2\030\024 \001(\004\022\024\n\014session_h" +
-      "ash\030\026 \001(\014\022\021\n\ttimestamp\030\027 \001(\004\022\024\n\014request_" +
-      "hash\030\030 \003(\004\022\021\n\tunknown25\030\031 \001(\003\032\351\001\n\013Locati" +
-      "onFix\022\020\n\010provider\030\001 \001(\t\022\032\n\022timestamp_sna" +
-      "pshot\030\002 \001(\004\022\020\n\010latitude\030\r \001(\002\022\021\n\tlongitu" +
-      "de\030\016 \001(\002\022\033\n\023horizontal_accuracy\030\024 \001(\002\022\020\n" +
-      "\010altitude\030\025 \001(\002\022\031\n\021vertical_accuracy\030\026 \001" +
-      "(\002\022\027\n\017provider_status\030\032 \001(\004\022\r\n\005floor\030\033 \001" +
-      "(\r\022\025\n\rlocation_type\030\034 \001(\004\032\257\001\n\016AndroidGps",
-      "Info\022\023\n\013time_to_fix\030\001 \001(\004\022\026\n\016satellites_" +
-      "prn\030\002 \003(\005\022\013\n\003snr\030\003 \003(\002\022\017\n\007azimuth\030\004 \003(\002\022" +
-      "\021\n\televation\030\005 \003(\002\022\023\n\013has_almanac\030\006 \003(\010\022" +
-      "\025\n\rhas_ephemeris\030\007 \003(\010\022\023\n\013used_in_fix\030\010 " +
-      "\003(\010\032\276\003\n\nSensorInfo\022\032\n\022timestamp_snapshot" +
-      "\030\001 \001(\004\022\026\n\016magnetometer_x\030\003 \001(\001\022\026\n\016magnet" +
-      "ometer_y\030\004 \001(\001\022\026\n\016magnetometer_z\030\005 \001(\001\022\032" +
-      "\n\022angle_normalized_x\030\006 \001(\001\022\032\n\022angle_norm" +
-      "alized_y\030\007 \001(\001\022\032\n\022angle_normalized_z\030\010 \001" +
-      "(\001\022\023\n\013accel_raw_x\030\n \001(\001\022\023\n\013accel_raw_y\030\013",
-      " \001(\001\022\023\n\013accel_raw_z\030\014 \001(\001\022\027\n\017gyroscope_r" +
-      "aw_x\030\r \001(\001\022\027\n\017gyroscope_raw_y\030\016 \001(\001\022\027\n\017g" +
-      "yroscope_raw_z\030\017 \001(\001\022\032\n\022accel_normalized" +
-      "_x\030\020 \001(\001\022\032\n\022accel_normalized_y\030\021 \001(\001\022\032\n\022" +
-      "accel_normalized_z\030\022 \001(\001\022\032\n\022acceleromete" +
-      "r_axes\030\023 \001(\004\032\332\002\n\nDeviceInfo\022\021\n\tdevice_id" +
-      "\030\001 \001(\t\022\032\n\022android_board_name\030\002 \001(\t\022\032\n\022an" +
-      "droid_bootloader\030\003 \001(\t\022\024\n\014device_brand\030\004" +
-      " \001(\t\022\024\n\014device_model\030\005 \001(\t\022\037\n\027device_mod" +
-      "el_identifier\030\006 \001(\t\022\031\n\021device_model_boot",
-      "\030\007 \001(\t\022\035\n\025hardware_manufacturer\030\010 \001(\t\022\026\n" +
-      "\016hardware_model\030\t \001(\t\022\026\n\016firmware_brand\030" +
-      "\n \001(\t\022\025\n\rfirmware_tags\030\014 \001(\t\022\025\n\rfirmware" +
-      "_type\030\r \001(\t\022\034\n\024firmware_fingerprint\030\016 \001(" +
-      "\t\032\273\001\n\016ActivityStatus\022\025\n\rstart_time_ms\030\001 " +
-      "\001(\004\022\026\n\016unknown_status\030\002 \001(\010\022\017\n\007walking\030\003" +
-      " \001(\010\022\017\n\007running\030\004 \001(\010\022\022\n\nstationary\030\005 \001(" +
-      "\010\022\022\n\nautomotive\030\006 \001(\010\022\017\n\007tilting\030\007 \001(\010\022\017" +
-      "\n\007cycling\030\010 \001(\010\022\016\n\006status\030\t \001(\014\"\271\006\n\020Unkn" +
-      "own6Response\022\025\n\rresponse_type\030\001 \001(\005\022a\n\010u",
-      "nknown2\030\002 \001(\0132O.com.github.aeonlucid.pog" +
-      "oprotos.networking.envelopes.Unknown6Res" +
-      "ponse.Unknown2\032\252\005\n\010Unknown2\022\020\n\010unknown1\030" +
-      "\001 \001(\004\022h\n\005items\030\002 \003(\0132Y.com.github.aeonlu" +
-      "cid.pogoprotos.networking.envelopes.Unkn" +
-      "own6Response.Unknown2.StoreItem\022P\n\021playe" +
-      "r_currencies\030\003 \003(\01325.com.github.aeonluci" +
-      "d.pogoprotos.data.player.Currency\022\020\n\010unk" +
-      "nown4\030\004 \001(\t\032\275\003\n\tStoreItem\022\017\n\007item_id\030\001 \001" +
-      "(\t\022\016\n\006is_iap\030\002 \001(\010\022N\n\017currency_to_buy\030\003 ",
-      "\001(\01325.com.github.aeonlucid.pogoprotos.da" +
-      "ta.player.Currency\022N\n\017yields_currency\030\004 " +
-      "\001(\01325.com.github.aeonlucid.pogoprotos.da" +
-      "ta.player.Currency\022M\n\013yields_item\030\005 \001(\0132" +
-      "8.com.github.aeonlucid.pogoprotos.invent" +
-      "ory.item.ItemData\022k\n\004tags\030\006 \003(\0132].com.gi" +
-      "thub.aeonlucid.pogoprotos.networking.env" +
-      "elopes.Unknown6Response.Unknown2.StoreIt" +
-      "em.Tag\022\020\n\010unknown7\030\007 \001(\005\032!\n\003Tag\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t\"\235\002\n\020ResponseEnvelope",
-      "\022\023\n\013status_code\030\001 \001(\005\022\022\n\nrequest_id\030\002 \001(" +
-      "\004\022\017\n\007api_url\030\003 \001(\t\022X\n\010unknown6\030\006 \003(\0132F.c" +
-      "om.github.aeonlucid.pogoprotos.networkin" +
-      "g.envelopes.Unknown6Response\022U\n\013auth_tic" +
-      "ket\030\007 \001(\0132@.com.github.aeonlucid.pogopro" +
-      "tos.networking.envelopes.AuthTicket\022\017\n\007r" +
-      "eturns\030d \003(\014\022\r\n\005error\030e \001(\t\"E\n\nAuthTicke" +
-      "t\022\r\n\005start\030\001 \001(\014\022\033\n\023expire_timestamp_ms\030" +
-      "\002 \001(\004\022\013\n\003end\030\003 \001(\014\"\244\001\n\010Unknown6\022\024\n\014reque" +
-      "st_type\030\001 \001(\005\022Y\n\010unknown2\030\002 \001(\0132G.com.gi",
-      "thub.aeonlucid.pogoprotos.networking.env" +
-      "elopes.Unknown6.Unknown2\032\'\n\010Unknown2\022\033\n\023" +
-      "encrypted_signature\030\001 \001(\014\"\215\005\n\017RequestEnv" +
-      "elope\022\023\n\013status_code\030\001 \001(\005\022\022\n\nrequest_id" +
-      "\030\003 \001(\004\022N\n\010requests\030\004 \003(\0132<.com.github.ae" +
-      "onlucid.pogoprotos.networking.requests.R" +
-      "equest\022P\n\010unknown6\030\006 \001(\0132>.com.github.ae" +
-      "onlucid.pogoprotos.networking.envelopes." +
-      "Unknown6\022\020\n\010latitude\030\007 \001(\001\022\021\n\tlongitude\030" +
-      "\010 \001(\001\022\020\n\010altitude\030\t \001(\001\022a\n\tauth_info\030\n \001",
-      "(\0132N.com.github.aeonlucid.pogoprotos.net" +
-      "working.envelopes.RequestEnvelope.AuthIn" +
-      "fo\022U\n\013auth_ticket\030\013 \001(\0132@.com.github.aeo" +
-      "nlucid.pogoprotos.networking.envelopes.A" +
-      "uthTicket\022\021\n\tunknown12\030\014 \001(\003\032\252\001\n\010AuthInf" +
-      "o\022\020\n\010provider\030\001 \001(\t\022a\n\005token\030\002 \001(\0132R.com" +
+      "id.pogoprotos.networking.envelopes\0329com/" +
+      "github/aeonlucid/pogoprotos/networking/P" +
+      "latform.proto\0329com/github/aeonlucid/pogo" +
+      "protos/networking/Requests.proto\"\312\005\n\020Res" +
+      "ponseEnvelope\022f\n\013status_code\030\001 \001(\0162Q.com" +
       ".github.aeonlucid.pogoprotos.networking." +
-      "envelopes.RequestEnvelope.AuthInfo.JWT\032)" +
-      "\n\003JWT\022\020\n\010contents\030\001 \001(\t\022\020\n\010unknown2\030\002 \001(" +
-      "\005B7\n*com.github.aeonlucid.pogoprotos.net",
-      "workingB\tEnvelopesb\006proto3"
+      "envelopes.ResponseEnvelope.StatusCode\022\022\n" +
+      "\nrequest_id\030\002 \001(\004\022\017\n\007api_url\030\003 \001(\t\022q\n\020pl",
+      "atform_returns\030\006 \003(\0132W.com.github.aeonlu" +
+      "cid.pogoprotos.networking.envelopes.Resp" +
+      "onseEnvelope.PlatformResponse\022U\n\013auth_ti" +
+      "cket\030\007 \001(\0132@.com.github.aeonlucid.pogopr" +
+      "otos.networking.envelopes.AuthTicket\022\017\n\007" +
+      "returns\030d \003(\014\022\r\n\005error\030e \001(\t\032|\n\020Platform" +
+      "Response\022V\n\004type\030\001 \001(\0162H.com.github.aeon" +
+      "lucid.pogoprotos.networking.platform.Pla" +
+      "tformRequestType\022\020\n\010response\030\002 \001(\014\"\300\001\n\nS" +
+      "tatusCode\022\013\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\032\n\026OK_RPC",
+      "_URL_IN_RESPONSE\020\002\022\017\n\013BAD_REQUEST\020\003\022\023\n\017I" +
+      "NVALID_REQUEST\0203\022\034\n\030INVALID_PLATFORM_REQ" +
+      "UEST\0204\022\014\n\010REDIRECT\0205\022\027\n\023SESSION_INVALIDA" +
+      "TED\020d\022\026\n\022INVALID_AUTH_TOKEN\020f\"\273\020\n\tSignat" +
+      "ure\022\035\n\025timestamp_since_start\030\002 \001(\004\022a\n\014lo" +
+      "cation_fix\030\004 \003(\0132K.com.github.aeonlucid." +
+      "pogoprotos.networking.envelopes.Signatur" +
+      "e.LocationFix\022`\n\010gps_info\030\005 \001(\0132N.com.gi" +
+      "thub.aeonlucid.pogoprotos.networking.env" +
+      "elopes.Signature.AndroidGpsInfo\022_\n\013senso",
+      "r_info\030\007 \001(\0132J.com.github.aeonlucid.pogo" +
+      "protos.networking.envelopes.Signature.Se" +
+      "nsorInfo\022_\n\013device_info\030\010 \001(\0132J.com.gith" +
+      "ub.aeonlucid.pogoprotos.networking.envel" +
+      "opes.Signature.DeviceInfo\022g\n\017activity_st" +
+      "atus\030\t \001(\0132N.com.github.aeonlucid.pogopr" +
+      "otos.networking.envelopes.Signature.Acti" +
+      "vityStatus\022\026\n\016location_hash1\030\n \001(\r\022\026\n\016lo" +
+      "cation_hash2\030\024 \001(\r\022\024\n\014session_hash\030\026 \001(\014" +
+      "\022\021\n\ttimestamp\030\027 \001(\004\022\024\n\014request_hash\030\030 \003(",
+      "\004\022\021\n\tunknown25\030\031 \001(\003\032\210\002\n\013LocationFix\022\020\n\010" +
+      "provider\030\001 \001(\t\022\032\n\022timestamp_snapshot\030\002 \001" +
+      "(\004\022\020\n\010altitude\030\004 \001(\002\022\020\n\010latitude\030\r \001(\002\022\021" +
+      "\n\tlongitude\030\016 \001(\002\022\r\n\005speed\030\022 \001(\002\022\016\n\006cour" +
+      "se\030\024 \001(\002\022\033\n\023horizontal_accuracy\030\025 \001(\002\022\031\n" +
+      "\021vertical_accuracy\030\026 \001(\002\022\027\n\017provider_sta" +
+      "tus\030\032 \001(\004\022\r\n\005floor\030\033 \001(\r\022\025\n\rlocation_typ" +
+      "e\030\034 \001(\004\032\257\001\n\016AndroidGpsInfo\022\023\n\013time_to_fi" +
+      "x\030\001 \001(\004\022\026\n\016satellites_prn\030\002 \003(\005\022\017\n\007azimu" +
+      "th\030\003 \003(\002\022\021\n\televation\030\004 \003(\002\022\013\n\003snr\030\005 \003(\002",
+      "\022\023\n\013has_almanac\030\006 \003(\010\022\025\n\rhas_ephemeris\030\007" +
+      " \003(\010\022\023\n\013used_in_fix\030\010 \003(\010\032\304\003\n\nSensorInfo" +
+      "\022\032\n\022timestamp_snapshot\030\001 \001(\004\022\035\n\025linear_a" +
+      "cceleration_x\030\003 \001(\001\022\035\n\025linear_accelerati" +
+      "on_y\030\004 \001(\001\022\035\n\025linear_acceleration_z\030\005 \001(" +
+      "\001\022\030\n\020magnetic_field_x\030\006 \001(\001\022\030\n\020magnetic_" +
+      "field_y\030\007 \001(\001\022\030\n\020magnetic_field_z\030\010 \001(\001\022" +
+      "\031\n\021rotation_vector_x\030\n \001(\001\022\031\n\021rotation_v" +
+      "ector_y\030\013 \001(\001\022\031\n\021rotation_vector_z\030\014 \001(\001" +
+      "\022\027\n\017gyroscope_raw_x\030\r \001(\001\022\027\n\017gyroscope_r",
+      "aw_y\030\016 \001(\001\022\027\n\017gyroscope_raw_z\030\017 \001(\001\022\021\n\tg" +
+      "ravity_x\030\020 \001(\001\022\021\n\tgravity_y\030\021 \001(\001\022\021\n\tgra" +
+      "vity_z\030\022 \001(\001\022\032\n\022accelerometer_axes\030\023 \001(\004" +
+      "\032\332\002\n\nDeviceInfo\022\021\n\tdevice_id\030\001 \001(\t\022\032\n\022an" +
+      "droid_board_name\030\002 \001(\t\022\032\n\022android_bootlo" +
+      "ader\030\003 \001(\t\022\024\n\014device_brand\030\004 \001(\t\022\024\n\014devi" +
+      "ce_model\030\005 \001(\t\022\037\n\027device_model_identifie" +
+      "r\030\006 \001(\t\022\031\n\021device_model_boot\030\007 \001(\t\022\035\n\025ha" +
+      "rdware_manufacturer\030\010 \001(\t\022\026\n\016hardware_mo" +
+      "del\030\t \001(\t\022\026\n\016firmware_brand\030\n \001(\t\022\025\n\rfir",
+      "mware_tags\030\014 \001(\t\022\025\n\rfirmware_type\030\r \001(\t\022" +
+      "\034\n\024firmware_fingerprint\030\016 \001(\t\032\273\001\n\016Activi" +
+      "tyStatus\022\025\n\rstart_time_ms\030\001 \001(\004\022\026\n\016unkno" +
+      "wn_status\030\002 \001(\010\022\017\n\007walking\030\003 \001(\010\022\017\n\007runn" +
+      "ing\030\004 \001(\010\022\022\n\nstationary\030\005 \001(\010\022\022\n\nautomot" +
+      "ive\030\006 \001(\010\022\017\n\007tilting\030\007 \001(\010\022\017\n\007cycling\030\010 " +
+      "\001(\010\022\016\n\006status\030\t \001(\014\"\302\006\n\017RequestEnvelope\022" +
+      "\023\n\013status_code\030\001 \001(\005\022\022\n\nrequest_id\030\003 \001(\004" +
+      "\022N\n\010requests\030\004 \003(\0132<.com.github.aeonluci" +
+      "d.pogoprotos.networking.requests.Request",
+      "\022p\n\021platform_requests\030\006 \003(\0132U.com.github" +
+      ".aeonlucid.pogoprotos.networking.envelop" +
+      "es.RequestEnvelope.PlatformRequest\022\020\n\010la" +
+      "titude\030\007 \001(\001\022\021\n\tlongitude\030\010 \001(\001\022\020\n\010accur" +
+      "acy\030\t \001(\001\022a\n\tauth_info\030\n \001(\0132N.com.githu" +
+      "b.aeonlucid.pogoprotos.networking.envelo" +
+      "pes.RequestEnvelope.AuthInfo\022U\n\013auth_tic" +
+      "ket\030\013 \001(\0132@.com.github.aeonlucid.pogopro" +
+      "tos.networking.envelopes.AuthTicket\022!\n\031m" +
+      "s_since_last_locationfix\030\014 \001(\003\032\252\001\n\010AuthI",
+      "nfo\022\020\n\010provider\030\001 \001(\t\022a\n\005token\030\002 \001(\0132R.c" +
+      "om.github.aeonlucid.pogoprotos.networkin" +
+      "g.envelopes.RequestEnvelope.AuthInfo.JWT" +
+      "\032)\n\003JWT\022\020\n\010contents\030\001 \001(\t\022\020\n\010unknown2\030\002 " +
+      "\001(\005\032\202\001\n\017PlatformRequest\022V\n\004type\030\001 \001(\0162H." +
+      "com.github.aeonlucid.pogoprotos.networki" +
+      "ng.platform.PlatformRequestType\022\027\n\017reque" +
+      "st_message\030\002 \001(\014\"E\n\nAuthTicket\022\r\n\005start\030" +
+      "\001 \001(\014\022\033\n\023expire_timestamp_ms\030\002 \001(\004\022\013\n\003en" +
+      "d\030\003 \001(\014B7\n*com.github.aeonlucid.pogoprot",
+      "os.networkingB\tEnvelopesb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21463,12 +17037,23 @@ public final class Envelopes {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.data.Player.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor(),
+          com.github.aeonlucid.pogoprotos.networking.Platform.getDescriptor(),
           com.github.aeonlucid.pogoprotos.networking.Requests.getDescriptor(),
         }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor =
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor,
+        new java.lang.String[] { "StatusCode", "RequestId", "ApiUrl", "PlatformReturns", "AuthTicket", "Returns", "Error", });
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor =
+      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor.getNestedTypes().get(0);
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor,
+        new java.lang.String[] { "Type", "Response", });
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor,
@@ -21478,19 +17063,19 @@ public final class Envelopes {
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor,
-        new java.lang.String[] { "Provider", "TimestampSnapshot", "Latitude", "Longitude", "HorizontalAccuracy", "Altitude", "VerticalAccuracy", "ProviderStatus", "Floor", "LocationType", });
+        new java.lang.String[] { "Provider", "TimestampSnapshot", "Altitude", "Latitude", "Longitude", "Speed", "Course", "HorizontalAccuracy", "VerticalAccuracy", "ProviderStatus", "Floor", "LocationType", });
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor =
       internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(1);
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor,
-        new java.lang.String[] { "TimeToFix", "SatellitesPrn", "Snr", "Azimuth", "Elevation", "HasAlmanac", "HasEphemeris", "UsedInFix", });
+        new java.lang.String[] { "TimeToFix", "SatellitesPrn", "Azimuth", "Elevation", "Snr", "HasAlmanac", "HasEphemeris", "UsedInFix", });
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor =
       internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(2);
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor,
-        new java.lang.String[] { "TimestampSnapshot", "MagnetometerX", "MagnetometerY", "MagnetometerZ", "AngleNormalizedX", "AngleNormalizedY", "AngleNormalizedZ", "AccelRawX", "AccelRawY", "AccelRawZ", "GyroscopeRawX", "GyroscopeRawY", "GyroscopeRawZ", "AccelNormalizedX", "AccelNormalizedY", "AccelNormalizedZ", "AccelerometerAxes", });
+        new java.lang.String[] { "TimestampSnapshot", "LinearAccelerationX", "LinearAccelerationY", "LinearAccelerationZ", "MagneticFieldX", "MagneticFieldY", "MagneticFieldZ", "RotationVectorX", "RotationVectorY", "RotationVectorZ", "GyroscopeRawX", "GyroscopeRawY", "GyroscopeRawZ", "GravityX", "GravityY", "GravityZ", "AccelerometerAxes", });
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor =
       internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(3);
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_fieldAccessorTable = new
@@ -21503,60 +17088,12 @@ public final class Envelopes {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor,
         new java.lang.String[] { "StartTimeMs", "UnknownStatus", "Walking", "Running", "Stationary", "Automotive", "Tilting", "Cycling", "Status", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor,
-        new java.lang.String[] { "ResponseType", "Unknown2", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor,
-        new java.lang.String[] { "Unknown1", "Items", "PlayerCurrencies", "Unknown4", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor,
-        new java.lang.String[] { "ItemId", "IsIap", "CurrencyToBuy", "YieldsCurrency", "YieldsItem", "Tags", "Unknown7", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6Response_Unknown2_StoreItem_Tag_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor,
-        new java.lang.String[] { "StatusCode", "RequestId", "ApiUrl", "Unknown6", "AuthTicket", "Returns", "Error", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor,
-        new java.lang.String[] { "Start", "ExpireTimestampMs", "End", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor,
-        new java.lang.String[] { "RequestType", "Unknown2", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Unknown6_Unknown2_descriptor,
-        new java.lang.String[] { "EncryptedSignature", });
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor,
-        new java.lang.String[] { "StatusCode", "RequestId", "Requests", "Unknown6", "Latitude", "Longitude", "Altitude", "AuthInfo", "AuthTicket", "Unknown12", });
+        new java.lang.String[] { "StatusCode", "RequestId", "Requests", "PlatformRequests", "Latitude", "Longitude", "Accuracy", "AuthInfo", "AuthTicket", "MsSinceLastLocationfix", });
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor =
       internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor.getNestedTypes().get(0);
     internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_fieldAccessorTable = new
@@ -21569,8 +17106,19 @@ public final class Envelopes {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor,
         new java.lang.String[] { "Contents", "Unknown2", });
-    com.github.aeonlucid.pogoprotos.data.Player.getDescriptor();
-    com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor();
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor =
+      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor.getNestedTypes().get(1);
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor,
+        new java.lang.String[] { "Type", "RequestMessage", });
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor,
+        new java.lang.String[] { "Start", "ExpireTimestampMs", "End", });
+    com.github.aeonlucid.pogoprotos.networking.Platform.getDescriptor();
     com.github.aeonlucid.pogoprotos.networking.Requests.getDescriptor();
   }
 

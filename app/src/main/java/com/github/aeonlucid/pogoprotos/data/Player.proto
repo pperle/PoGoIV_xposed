@@ -12,9 +12,13 @@ message DailyBonus {
 	int64 next_defender_bonus_collect_timestamp_ms = 2;
 }
 
-message ContactSettings {
-	bool send_marketing_emails = 1;
-	bool send_push_notifications = 2;
+message PlayerCurrency {
+	int32 gems = 1;
+}
+
+message Currency {
+    string name = 1;
+    int32 amount = 2;
 }
 
 message PlayerPublicProfile {
@@ -23,8 +27,31 @@ message PlayerPublicProfile {
 	com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 3;
 }
 
-message PlayerCurrency {
-	int32 gems = 1;
+message PlayerCamera {
+	bool is_default_camera = 1;
+}
+
+message ContactSettings {
+	bool send_marketing_emails = 1;
+	bool send_push_notifications = 2;
+}
+
+message EquippedBadge {
+	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
+	int32 level = 2;
+	int64 next_equip_change_allowed_timestamp_ms = 3;
+}
+
+message PlayerAvatar {
+	int32 skin = 2;
+	int32 hair = 3;
+	int32 shirt = 4;
+	int32 pants = 5;
+	int32 hat = 6;
+	int32 shoes = 7;
+	com.github.aeonlucid.pogoprotos.enums.Gender gender = 8;
+	int32 eyes = 9;
+	int32 backpack = 10;
 }
 
 message PlayerStats {
@@ -49,34 +76,7 @@ message PlayerStats {
 	int32 prestige_raised_total = 19;
 	int32 prestige_dropped_total = 20;
 	int32 pokemon_deployed = 21;
-	bytes pokemon_caught_by_type = 22; // TODO: repeated PokemonType ??
+	repeated int32 pokemon_caught_by_type = 22;
 	int32 small_rattata_caught = 23;
-}
-
-message PlayerCamera {
-	bool is_default_camera = 1;
-}
-
-message Currency {
-    string name = 1;
-    int32 amount = 2;
-}
-
-message EquippedBadge {
-	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
-	int32 level = 2;
-	int64 next_equip_change_allowed_timestamp_ms = 3;
-}
-
-message PlayerAvatar {
-	int32 skin = 2;
-	int32 hair = 3;
-	int32 shirt = 4;
-	int32 pants = 5;
-	int32 hat = 6;
-	int32 shoes = 7;
-	com.github.aeonlucid.pogoprotos.enums.Gender gender = 8;
-	int32 eyes = 9;
-	int32 backpack = 10;
 }
 

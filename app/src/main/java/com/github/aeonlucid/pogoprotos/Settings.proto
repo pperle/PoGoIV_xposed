@@ -5,14 +5,9 @@ package com.github.aeonlucid.pogoprotos.settings;
 option java_package = "com.github.aeonlucid.pogoprotos";
 option java_outer_classname = "Settings";
 
-message MapSettings {
-	double pokemon_visible_range = 1;
-	double poke_nav_range_meters = 2;
-	double encounter_range_meters = 3;
-	float get_map_objects_min_refresh_seconds = 4;
-	float get_map_objects_max_refresh_seconds = 5;
-	float get_map_objects_min_distance_meters = 6;
-	string google_maps_api_key = 7;
+message LevelSettings {
+	double trainer_cp_modifier = 2;
+	double trainer_difficulty_modifier = 3;
 }
 
 message FortSettings {
@@ -24,6 +19,14 @@ message FortSettings {
 	double far_interaction_range_meters = 6;
 }
 
+message InventorySettings {
+	int32 max_pokemon = 1;
+	int32 max_bag_items = 2;
+	int32 base_pokemon = 3;
+	int32 base_bag_items = 4;
+	int32 base_eggs = 5;
+}
+
 message GlobalSettings {
 	com.github.aeonlucid.pogoprotos.settings.FortSettings fort_settings = 2;
 	com.github.aeonlucid.pogoprotos.settings.MapSettings map_settings = 3;
@@ -33,9 +36,14 @@ message GlobalSettings {
 	com.github.aeonlucid.pogoprotos.settings.GpsSettings gps_settings = 7;
 }
 
-message LevelSettings {
-	double trainer_cp_modifier = 2;
-	double trainer_difficulty_modifier = 3;
+message MapSettings {
+	double pokemon_visible_range = 1;
+	double poke_nav_range_meters = 2;
+	double encounter_range_meters = 3;
+	float get_map_objects_min_refresh_seconds = 4;
+	float get_map_objects_max_refresh_seconds = 5;
+	float get_map_objects_min_distance_meters = 6;
+	string google_maps_api_key = 7;
 }
 
 message GpsSettings {
@@ -47,13 +55,5 @@ message GpsSettings {
 
 message DownloadSettingsAction {
 	string hash = 1;
-}
-
-message InventorySettings {
-	int32 max_pokemon = 1;
-	int32 max_bag_items = 2;
-	int32 base_pokemon = 3;
-	int32 base_bag_items = 4;
-	int32 base_eggs = 5;
 }
 

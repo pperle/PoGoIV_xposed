@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.github.aeonlucid.pogoprotos.networking.platform;
+
+option java_package = "com.github.aeonlucid.pogoprotos.networking";
+option java_outer_classname = "Platform";
+
+enum PlatformRequestType {
+	METHOD_UNSET = 0;
+	BUY_ITEM_POKECOINS = 2;
+	BUY_ITEM_ANDROID = 3;
+	BUY_ITEM_IOS = 4;
+	GET_STORE_ITEMS = 5;
+	SEND_ENCRYPTED_SIGNATURE = 6;
+}
+

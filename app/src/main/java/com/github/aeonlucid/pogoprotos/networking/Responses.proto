@@ -5,105 +5,27 @@ package com.github.aeonlucid.pogoprotos.networking.responses;
 option java_package = "com.github.aeonlucid.pogoprotos.networking";
 option java_outer_classname = "Responses";
 
+import "com/github/aeonlucid/pogoprotos/data/Logs.proto";
 import "com/github/aeonlucid/pogoprotos/Inventory.proto";
-import "com/github/aeonlucid/pogoprotos/data/Capture.proto";
-import "com/github/aeonlucid/pogoprotos/map/Pokemon.proto";
 import "com/github/aeonlucid/pogoprotos/Data.proto";
 import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
-import "com/github/aeonlucid/pogoprotos/settings/Master.proto";
-import "com/github/aeonlucid/pogoprotos/Enums.proto";
-import "com/github/aeonlucid/pogoprotos/map/Fort.proto";
-import "com/github/aeonlucid/pogoprotos/Map.proto";
-import "com/github/aeonlucid/pogoprotos/data/Battle.proto";
 import "com/github/aeonlucid/pogoprotos/Settings.proto";
+import "com/github/aeonlucid/pogoprotos/map/Fort.proto";
+import "com/github/aeonlucid/pogoprotos/map/Pokemon.proto";
+import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/data/Capture.proto";
+import "com/github/aeonlucid/pogoprotos/settings/Master.proto";
+import "com/github/aeonlucid/pogoprotos/data/Battle.proto";
+import "com/github/aeonlucid/pogoprotos/Map.proto";
 import "com/github/aeonlucid/pogoprotos/data/Gym.proto";
-import "com/github/aeonlucid/pogoprotos/data/Logs.proto";
 import "com/github/aeonlucid/pogoprotos/data/Player.proto";
 
-message UseItemEggIncubatorResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.UseItemEggIncubatorResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.inventory.EggIncubator egg_incubator = 2;
+message SfidaActionLogResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.SfidaActionLogResponse.Result result = 1;
+	repeated com.github.aeonlucid.pogoprotos.data.logs.ActionLogEntry log_entries = 2;
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
-		ERROR_INCUBATOR_NOT_FOUND = 2;
-		ERROR_POKEMON_EGG_NOT_FOUND = 3;
-		ERROR_POKEMON_ID_NOT_EGG = 4;
-		ERROR_INCUBATOR_ALREADY_IN_USE = 5;
-		ERROR_POKEMON_ALREADY_INCUBATING = 6;
-		ERROR_INCUBATOR_NO_USES_REMAINING = 7;
-	}
-}
-
-message EncounterResponse {
-	com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemon = 1;
-	Background background = 2;
-	Status status = 3;
-	com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability capture_probability = 4;
-	enum Background {
-		PARK = 0;
-		DESERT = 1;
-	}
-	enum Status {
-		ENCOUNTER_ERROR = 0;
-		ENCOUNTER_SUCCESS = 1;
-		ENCOUNTER_NOT_FOUND = 2;
-		ENCOUNTER_CLOSED = 3;
-		ENCOUNTER_POKEMON_FLED = 4;
-		ENCOUNTER_NOT_IN_RANGE = 5;
-		ENCOUNTER_ALREADY_HAPPENED = 6;
-		POKEMON_INVENTORY_FULL = 7;
-	}
-}
-
-message EchoResponse {
-	string context = 1;
-}
-
-message UseIncenseResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.UseIncenseResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.inventory.AppliedItem applied_incense = 2;
-	enum Result {
-		UNKNOWN = 0;
-		SUCCESS = 1;
-		INCENSE_ALREADY_ACTIVE = 2;
-		NONE_IN_INVENTORY = 3;
-		LOCATION_UNSET = 4;
-	}
-}
-
-message GetDownloadUrlsResponse {
-	repeated com.github.aeonlucid.pogoprotos.data.DownloadUrlEntry download_urls = 1;
-}
-
-message UseItemCaptureResponse {
-	bool success = 1;
-	double item_capture_mult = 2;
-	double item_flee_mult = 3;
-	bool stop_movement = 4;
-	bool stop_attack = 5;
-	bool target_max = 6;
-	bool target_slow = 7;
-}
-
-message RecycleInventoryItemResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.RecycleInventoryItemResponse.Result result = 1;
-	int32 new_count = 2;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_NOT_ENOUGH_COPIES = 2;
-		ERROR_CANNOT_RECYCLE_INCUBATORS = 3;
-	}
-}
-
-message SetFavoritePokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.SetFavoritePokemonResponse.Result result = 1;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_POKEMON_NOT_FOUND = 2;
-		ERROR_POKEMON_IS_EGG = 3;
 	}
 }
 
@@ -125,6 +47,84 @@ message GetSuggestedCodenamesResponse {
 	bool success = 2;
 }
 
+message UseItemCaptureResponse {
+	bool success = 1;
+	double item_capture_mult = 2;
+	double item_flee_mult = 3;
+	bool stop_movement = 4;
+	bool stop_attack = 5;
+	bool target_max = 6;
+	bool target_slow = 7;
+}
+
+message FortSearchResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.FortSearchResponse.Result result = 1;
+	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemAward items_awarded = 2;
+	int32 gems_awarded = 3;
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data_egg = 4;
+	int32 experience_awarded = 5;
+	int64 cooldown_complete_timestamp_ms = 6;
+	int32 chain_hack_sequence_number = 7;
+	enum Result {
+		NO_RESULT_SET = 0;
+		SUCCESS = 1;
+		OUT_OF_RANGE = 2;
+		IN_COOLDOWN_PERIOD = 3;
+		INVENTORY_FULL = 4;
+		EXCEEDED_DAILY_LIMIT = 5;
+	}
+}
+
+message UpgradePokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.UpgradePokemonResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.data.PokemonData upgraded_pokemon = 2;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_POKEMON_NOT_FOUND = 2;
+		ERROR_INSUFFICIENT_RESOURCES = 3;
+		ERROR_UPGRADE_NOT_AVAILABLE = 4;
+		ERROR_POKEMON_IS_DEPLOYED = 5;
+	}
+}
+
+message MarkTutorialCompleteResponse {
+	bool success = 1;
+	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
+}
+
+message FortRecallPokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.FortRecallPokemonResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.networking.responses.FortDetailsResponse fort_details = 2;
+	enum Result {
+		NO_RESULT_SET = 0;
+		SUCCESS = 1;
+		ERROR_NOT_IN_RANGE = 2;
+		ERROR_POKEMON_NOT_ON_FORT = 3;
+		ERROR_NO_PLAYER = 4;
+	}
+}
+
+message GetInventoryResponse {
+	bool success = 1;
+	com.github.aeonlucid.pogoprotos.inventory.InventoryDelta inventory_delta = 2;
+}
+
+message CheckCodenameAvailableResponse {
+	string codename = 1;
+	string user_message = 2;
+	bool is_assignable = 3;
+	com.github.aeonlucid.pogoprotos.networking.responses.CheckCodenameAvailableResponse.Status status = 4;
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		CODENAME_NOT_AVAILABLE = 2;
+		CODENAME_NOT_VALID = 3;
+		CURRENT_OWNER = 4;
+		CODENAME_CHANGE_NOT_ALLOWED = 5;
+	}
+}
+
 message LevelUpRewardsResponse {
 	com.github.aeonlucid.pogoprotos.networking.responses.LevelUpRewardsResponse.Result result = 1;
 	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemAward items_awarded = 2;
@@ -133,6 +133,155 @@ message LevelUpRewardsResponse {
 		UNSET = 0;
 		SUCCESS = 1;
 		AWARDED_ALREADY = 2;
+	}
+}
+
+message SetAvatarResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.SetAvatarResponse.Status status = 1;
+	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		AVATAR_ALREADY_SET = 2;
+		FAILURE = 3;
+	}
+}
+
+message SetContactSettingsResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.SetContactSettingsResponse.Status status = 1;
+	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+}
+
+message DownloadSettingsResponse {
+	string error = 1;
+	string hash = 2;
+	com.github.aeonlucid.pogoprotos.settings.GlobalSettings settings = 3;
+}
+
+message GetHatchedEggsResponse {
+	bool success = 1;
+	repeated fixed64 pokemon_id = 2 [packed=true];
+	repeated int32 experience_awarded = 3;
+	repeated int32 candy_awarded = 4;
+	repeated int32 stardust_awarded = 5;
+}
+
+message EvolvePokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.EvolvePokemonResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.data.PokemonData evolved_pokemon_data = 2;
+	int32 experience_awarded = 3;
+	int32 candy_awarded = 4;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILED_POKEMON_MISSING = 2;
+		FAILED_INSUFFICIENT_RESOURCES = 3;
+		FAILED_POKEMON_CANNOT_EVOLVE = 4;
+		FAILED_POKEMON_IS_DEPLOYED = 5;
+	}
+}
+
+message GetPlayerProfileResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.GetPlayerProfileResponse.Result result = 1;
+	int64 start_time = 2;
+	repeated com.github.aeonlucid.pogoprotos.data.PlayerBadge badges = 3;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+}
+
+message UseItemReviveResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.UseItemReviveResponse.Result result = 1;
+	int32 stamina = 2;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_NO_POKEMON = 2;
+		ERROR_CANNOT_USE = 3;
+		ERROR_DEPLOYED_TO_FORT = 4;
+	}
+}
+
+message RecycleInventoryItemResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.RecycleInventoryItemResponse.Result result = 1;
+	int32 new_count = 2;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_NOT_ENOUGH_COPIES = 2;
+		ERROR_CANNOT_RECYCLE_INCUBATORS = 3;
+	}
+}
+
+message UseItemEggIncubatorResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.UseItemEggIncubatorResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.inventory.EggIncubator egg_incubator = 2;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_INCUBATOR_NOT_FOUND = 2;
+		ERROR_POKEMON_EGG_NOT_FOUND = 3;
+		ERROR_POKEMON_ID_NOT_EGG = 4;
+		ERROR_INCUBATOR_ALREADY_IN_USE = 5;
+		ERROR_POKEMON_ALREADY_INCUBATING = 6;
+		ERROR_INCUBATOR_NO_USES_REMAINING = 7;
+	}
+}
+
+message PlayerUpdateResponse {
+	repeated com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 1;
+	repeated com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 2;
+	int32 forts_nearby = 3;
+}
+
+message GetIncensePokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.GetIncensePokemonResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 2;
+	double latitude = 3;
+	double longitude = 4;
+	string encounter_location = 5;
+	fixed64 encounter_id = 6;
+	int64 disappear_timestamp_ms = 7;
+	enum Result {
+		INCENSE_ENCOUNTER_UNKNOWN = 0;
+		INCENSE_ENCOUNTER_AVAILABLE = 1;
+		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
+	}
+}
+
+message CheckAwardedBadgesResponse {
+	bool success = 1;
+	repeated com.github.aeonlucid.pogoprotos.enums.BadgeType awarded_badges = 2;
+	repeated int32 awarded_badge_levels = 3;
+}
+
+message IncenseEncounterResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.IncenseEncounterResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 2;
+	com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability capture_probability = 3;
+	enum Result {
+		INCENSE_ENCOUNTER_UNKNOWN = 0;
+		INCENSE_ENCOUNTER_SUCCESS = 1;
+		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
+		POKEMON_INVENTORY_FULL = 3;
+	}
+}
+
+message UseIncenseResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.UseIncenseResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.inventory.AppliedItem applied_incense = 2;
+	enum Result {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		INCENSE_ALREADY_ACTIVE = 2;
+		NONE_IN_INVENTORY = 3;
+		LOCATION_UNSET = 4;
 	}
 }
 
@@ -150,57 +299,44 @@ message CollectDailyDefenderBonusResponse {
 	}
 }
 
-message UseItemReviveResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.UseItemReviveResponse.Result result = 1;
-	int32 stamina = 2;
+message CheckChallengeResponse {
+	bool show_challenge = 1;
+	string challenge_url = 2;
+}
+
+message DiskEncounterResponse {
+	Result result = 1;
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 2;
+	com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability capture_probability = 3;
+	enum Result {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		NOT_AVAILABLE = 2;
+		NOT_IN_RANGE = 3;
+		ENCOUNTER_ALREADY_FINISHED = 4;
+		POKEMON_INVENTORY_FULL = 5;
+	}
+}
+
+message AddFortModifierResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.AddFortModifierResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.networking.responses.FortDetailsResponse fort_details = 2;
+	enum Result {
+		NO_RESULT_SET = 0;
+		SUCCESS = 1;
+		FORT_ALREADY_HAS_MODIFIER = 2;
+		TOO_FAR_AWAY = 3;
+		NO_ITEM_IN_INVENTORY = 4;
+	}
+}
+
+message CollectDailyBonusResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.CollectDailyBonusResponse.Result result = 1;
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
-		ERROR_NO_POKEMON = 2;
-		ERROR_CANNOT_USE = 3;
-		ERROR_DEPLOYED_TO_FORT = 4;
-	}
-}
-
-message SetPlayerTeamResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.SetPlayerTeamResponse.Status status = 1;
-	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		TEAM_ALREADY_SET = 2;
-		FAILURE = 3;
-	}
-}
-
-message ClaimCodenameResponse {
-	string codename = 1;
-	string user_message = 2;
-	bool is_assignable = 3;
-	com.github.aeonlucid.pogoprotos.networking.responses.ClaimCodenameResponse.Status status = 4;
-	com.github.aeonlucid.pogoprotos.data.PlayerData updated_player = 5;
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		CODENAME_NOT_AVAILABLE = 2;
-		CODENAME_NOT_VALID = 3;
-		CURRENT_OWNER = 4;
-		CODENAME_CHANGE_NOT_ALLOWED = 5;
-	}
-}
-
-message CheckCodenameAvailableResponse {
-	string codename = 1;
-	string user_message = 2;
-	bool is_assignable = 3;
-	com.github.aeonlucid.pogoprotos.networking.responses.CheckCodenameAvailableResponse.Status status = 4;
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		CODENAME_NOT_AVAILABLE = 2;
-		CODENAME_NOT_VALID = 3;
-		CURRENT_OWNER = 4;
-		CODENAME_CHANGE_NOT_ALLOWED = 5;
+		FAILURE = 2;
+		TOO_SOON = 3;
 	}
 }
 
@@ -228,9 +364,141 @@ message DownloadItemTemplatesResponse {
 	}
 }
 
+message SetFavoritePokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.SetFavoritePokemonResponse.Result result = 1;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_POKEMON_NOT_FOUND = 2;
+		ERROR_POKEMON_IS_EGG = 3;
+	}
+}
+
+message AttackGymResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.AttackGymResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.data.battle.BattleLog battle_log = 2;
+	string battle_id = 3;
+	com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo active_defender = 4;
+	com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo active_attacker = 5;
+    enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_INVALID_ATTACK_ACTIONS = 2;
+		ERROR_NOT_IN_RANGE = 3;
+    }
+}
+
+message GetMapObjectsResponse {
+	repeated com.github.aeonlucid.pogoprotos.map.MapCell map_cells = 1;
+	com.github.aeonlucid.pogoprotos.map.MapObjectsStatus status = 2;
+}
+
+message ClaimCodenameResponse {
+	string codename = 1;
+	string user_message = 2;
+	bool is_assignable = 3;
+	com.github.aeonlucid.pogoprotos.networking.responses.ClaimCodenameResponse.Status status = 4;
+	com.github.aeonlucid.pogoprotos.data.PlayerData updated_player = 5;
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		CODENAME_NOT_AVAILABLE = 2;
+		CODENAME_NOT_VALID = 3;
+		CURRENT_OWNER = 4;
+		CODENAME_CHANGE_NOT_ALLOWED = 5;
+	}
+}
+
+message UseItemGymResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.UseItemGymResponse.Result result = 1;
+	int64 updated_gp = 2; // Gym Points (?)
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_CANNOT_USE = 2;
+		ERROR_NOT_IN_RANGE = 3;
+	}
+}
+
+message GetGymDetailsResponse {
+	com.github.aeonlucid.pogoprotos.data.gym.GymState gym_state = 1;
+	string name = 2;
+	repeated string urls = 3;
+	com.github.aeonlucid.pogoprotos.networking.responses.GetGymDetailsResponse.Result result = 4;
+	string description = 5;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_NOT_IN_RANGE = 2;
+	}
+}
+
+message SetPlayerTeamResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.SetPlayerTeamResponse.Status status = 1;
+	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		TEAM_ALREADY_SET = 2;
+		FAILURE = 3;
+	}
+}
+
+message EncounterResponse {
+	com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemon = 1;
+	Background background = 2;
+	Status status = 3;
+	com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability capture_probability = 4;
+	enum Background {
+		PARK = 0;
+		DESERT = 1;
+	}
+	enum Status {
+		ENCOUNTER_ERROR = 0;
+		ENCOUNTER_SUCCESS = 1;
+		ENCOUNTER_NOT_FOUND = 2;
+		ENCOUNTER_CLOSED = 3;
+		ENCOUNTER_POKEMON_FLED = 4;
+		ENCOUNTER_NOT_IN_RANGE = 5;
+		ENCOUNTER_ALREADY_HAPPENED = 6;
+		POKEMON_INVENTORY_FULL = 7;
+	}
+}
+
+message GetBuddyWalkedResponse
+{
+	bool success = 1;
+	com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId family_candy_id = 2;
+	int32 candy_earned_count = 3;
+}
+
+message FortDeployPokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.FortDeployPokemonResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.networking.responses.FortDetailsResponse fort_details = 2;
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 3;
+	com.github.aeonlucid.pogoprotos.data.gym.GymState gym_state = 4;
+	enum Result {
+		NO_RESULT_SET = 0;
+		SUCCESS = 1;
+		ERROR_ALREADY_HAS_POKEMON_ON_FORT = 2;
+		ERROR_OPPOSING_TEAM_OWNS_FORT = 3;
+		ERROR_FORT_IS_FULL = 4;
+		ERROR_NOT_IN_RANGE = 5;
+		ERROR_PLAYER_HAS_NO_TEAM = 6;
+		ERROR_POKEMON_NOT_FULL_HP = 7;
+		ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 8;
+		ERROR_POKEMON_IS_BUDDY = 9;
+	}
+}
+
 message GetAssetDigestResponse {
 	repeated com.github.aeonlucid.pogoprotos.data.AssetDigestEntry digest = 1;
 	uint64 timestamp_ms = 2;
+}
+
+message GetPlayerResponse {
+	bool success = 1;
+	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
 }
 
 message NicknamePokemonResponse {
@@ -240,6 +508,19 @@ message NicknamePokemonResponse {
 		SUCCESS = 1;
 		ERROR_INVALID_NICKNAME = 2;
 		ERROR_POKEMON_NOT_FOUND = 3;
+		ERROR_POKEMON_IS_EGG = 4;
+	}
+}
+
+message SetBuddyPokemonResponse
+{
+	com.github.aeonlucid.pogoprotos.networking.responses.SetBuddyPokemonResponse.Result result = 1;
+	com.github.aeonlucid.pogoprotos.data.BuddyPokemon updated_buddy = 2;
+	enum Result {
+		UNEST = 0;
+		SUCCESS = 1;
+		ERROR_POKEMON_DEPLOYED = 2;
+		ERROR_POKEMON_NOT_OWNED = 3;
 		ERROR_POKEMON_IS_EGG = 4;
 	}
 }
@@ -260,39 +541,29 @@ message FortDetailsResponse {
 	repeated com.github.aeonlucid.pogoprotos.map.fort.FortModifier modifiers = 13;
 }
 
-message GetMapObjectsResponse {
-	repeated com.github.aeonlucid.pogoprotos.map.MapCell map_cells = 1;
-	com.github.aeonlucid.pogoprotos.map.MapObjectsStatus status = 2;
-}
-
-message GetIncensePokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.GetIncensePokemonResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 2;
-	double latitude = 3;
-	double longitude = 4;
-	string encounter_location = 5;
-	fixed64 encounter_id = 6;
-	int64 disappear_timestamp_ms = 7;
+message UseItemPotionResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.UseItemPotionResponse.Result result = 1;
+	int32 stamina = 2;
 	enum Result {
-		INCENSE_ENCOUNTER_UNKNOWN = 0;
-		INCENSE_ENCOUNTER_AVAILABLE = 1;
-		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_NO_POKEMON = 2;
+		ERROR_CANNOT_USE = 3;
+		ERROR_DEPLOYED_TO_FORT = 4;
 	}
 }
 
-message PlayerUpdateResponse {
-	repeated com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 1;
-	repeated com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 2;
-	int32 forts_nearby = 3;
-}
-
-message SetContactSettingsResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.SetContactSettingsResponse.Status status = 1;
-	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
+message CatchPokemonResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.CatchPokemonResponse.CatchStatus status = 1;
+	double miss_percent = 2;
+	fixed64 captured_pokemon_id = 3;
+	com.github.aeonlucid.pogoprotos.data.capture.CaptureAward capture_award = 4;
+	enum CatchStatus {
+		CATCH_ERROR = 0;
+		CATCH_SUCCESS = 1;
+		CATCH_ESCAPE = 2;
+		CATCH_FLEE = 3;
+		CATCH_MISSED = 4;
 	}
 }
 
@@ -321,175 +592,6 @@ message StartGymBattleResponse {
 	}
 }
 
-message DownloadSettingsResponse {
-	string error = 1;
-	string hash = 2;
-	com.github.aeonlucid.pogoprotos.settings.GlobalSettings settings = 3;
-}
-
-message FortRecallPokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.FortRecallPokemonResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.networking.responses.FortDetailsResponse fort_details = 2;
-	enum Result {
-		NO_RESULT_SET = 0;
-		SUCCESS = 1;
-		ERROR_NOT_IN_RANGE = 2;
-		ERROR_POKEMON_NOT_ON_FORT = 3;
-		ERROR_NO_PLAYER = 4;
-	}
-}
-
-message IncenseEncounterResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.IncenseEncounterResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 2;
-	com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability capture_probability = 3;
-	enum Result {
-		INCENSE_ENCOUNTER_UNKNOWN = 0;
-		INCENSE_ENCOUNTER_SUCCESS = 1;
-		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
-		POKEMON_INVENTORY_FULL = 3;
-	}
-}
-
-message CollectDailyBonusResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.CollectDailyBonusResponse.Result result = 1;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-		TOO_SOON = 3;
-	}
-}
-
-message AddFortModifierResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.AddFortModifierResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.networking.responses.FortDetailsResponse fort_details = 2;
-	enum Result {
-		NO_RESULT_SET = 0;
-		SUCCESS = 1;
-		FORT_ALREADY_HAS_MODIFIER = 2;
-		TOO_FAR_AWAY = 3;
-		NO_ITEM_IN_INVENTORY = 4;
-	}
-}
-
-message UseItemPotionResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.UseItemPotionResponse.Result result = 1;
-	int32 stamina = 2;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_NO_POKEMON = 2;
-		ERROR_CANNOT_USE = 3;
-		ERROR_DEPLOYED_TO_FORT = 4;
-	}
-}
-
-message FortDeployPokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.FortDeployPokemonResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.networking.responses.FortDetailsResponse fort_details = 2;
-	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 3;
-	com.github.aeonlucid.pogoprotos.data.gym.GymState gym_state = 4;
-	enum Result {
-		NO_RESULT_SET = 0;
-		SUCCESS = 1;
-		ERROR_ALREADY_HAS_POKEMON_ON_FORT = 2;
-		ERROR_OPPOSING_TEAM_OWNS_FORT = 3;
-		ERROR_FORT_IS_FULL = 4;
-		ERROR_NOT_IN_RANGE = 5;
-		ERROR_PLAYER_HAS_NO_TEAM = 6;
-		ERROR_POKEMON_NOT_FULL_HP = 7;
-		ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 8;
-	}
-}
-
-message MarkTutorialCompleteResponse {
-	bool success = 1;
-	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
-}
-
-message GetPlayerProfileResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.GetPlayerProfileResponse.Result result = 1;
-	int64 start_time = 2;
-	repeated com.github.aeonlucid.pogoprotos.data.PlayerBadge badges = 3;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-	}
-}
-
-message AttackGymResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.AttackGymResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.data.battle.BattleLog battle_log = 2;
-	string battle_id = 3;
-	com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo active_defender = 4;
-	com.github.aeonlucid.pogoprotos.data.battle.BattlePokemonInfo active_attacker = 5;
-    enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_INVALID_ATTACK_ACTIONS = 2;
-		ERROR_NOT_IN_RANGE = 3;
-    }
-}
-
-message DownloadRemoteConfigVersionResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.DownloadRemoteConfigVersionResponse.Result result = 1;
-	uint64 item_templates_timestamp_ms = 2; // Latest available?
-	uint64 asset_digest_timestamp_ms = 3;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-	}
-}
-
-message GetInventoryResponse {
-	bool success = 1;
-	com.github.aeonlucid.pogoprotos.inventory.InventoryDelta inventory_delta = 2;
-}
-
-message GetGymDetailsResponse {
-	com.github.aeonlucid.pogoprotos.data.gym.GymState gym_state = 1;
-	string name = 2;
-	repeated string urls = 3;
-	com.github.aeonlucid.pogoprotos.networking.responses.GetGymDetailsResponse.Result result = 4;
-	string description = 5;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_NOT_IN_RANGE = 2;
-	}
-}
-
-message CheckAwardedBadgesResponse {
-	bool success = 1;
-	repeated com.github.aeonlucid.pogoprotos.enums.BadgeType awarded_badges = 2;
-	repeated int32 awarded_badge_levels = 3;
-}
-
-message UseItemGymResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.UseItemGymResponse.Result result = 1;
-	int64 updated_gp = 2; // Gym Points (?)
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_CANNOT_USE = 2;
-		ERROR_NOT_IN_RANGE = 3;
-	}
-}
-
-message UpgradePokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.UpgradePokemonResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.data.PokemonData upgraded_pokemon = 2;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_POKEMON_NOT_FOUND = 2;
-		ERROR_INSUFFICIENT_RESOURCES = 3;
-		ERROR_UPGRADE_NOT_AVAILABLE = 4;
-		ERROR_POKEMON_IS_DEPLOYED = 5;
-	}
-}
-
 message EncounterTutorialCompleteResponse {
 	com.github.aeonlucid.pogoprotos.networking.responses.EncounterTutorialCompleteResponse.Result result = 1;
 	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 2;
@@ -501,21 +603,8 @@ message EncounterTutorialCompleteResponse {
 	}
 }
 
-message FortSearchResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.FortSearchResponse.Result result = 1;
-	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemAward items_awarded = 2;
-	int32 gems_awarded = 3;
-	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data_egg = 4;
-	int32 experience_awarded = 5;
-	int64 cooldown_complete_timestamp_ms = 6;
-	int32 chain_hack_sequence_number = 7;
-	enum Result {
-		NO_RESULT_SET = 0;
-		SUCCESS = 1;
-		OUT_OF_RANGE = 2;
-		IN_COOLDOWN_PERIOD = 3;
-		INVENTORY_FULL = 4;
-	}
+message GetDownloadUrlsResponse {
+	repeated com.github.aeonlucid.pogoprotos.data.DownloadUrlEntry download_urls = 1;
 }
 
 message ReleasePokemonResponse {
@@ -527,37 +616,14 @@ message ReleasePokemonResponse {
 		POKEMON_DEPLOYED = 2;
 		FAILED = 3;
 		ERROR_POKEMON_IS_EGG = 4;
+		ERROR_POKEMON_IS_BUDDY = 5;
 	}
 }
 
-message CatchPokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.CatchPokemonResponse.CatchStatus status = 1;
-	double miss_percent = 2;
-	fixed64 captured_pokemon_id = 3;
-	com.github.aeonlucid.pogoprotos.data.capture.CaptureAward capture_award = 4;
-	enum CatchStatus {
-		CATCH_ERROR = 0;
-		CATCH_SUCCESS = 1;
-		CATCH_ESCAPE = 2;
-		CATCH_FLEE = 3;
-		CATCH_MISSED = 4;
-	}
-}
-
-message SetAvatarResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.SetAvatarResponse.Status status = 1;
-	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		AVATAR_ALREADY_SET = 2;
-		FAILURE = 3;
-	}
-}
-
-message SfidaActionLogResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.SfidaActionLogResponse.Result result = 1;
-	repeated com.github.aeonlucid.pogoprotos.data.logs.ActionLogEntry log_entries = 2;
+message DownloadRemoteConfigVersionResponse {
+	com.github.aeonlucid.pogoprotos.networking.responses.DownloadRemoteConfigVersionResponse.Result result = 1;
+	uint64 item_templates_timestamp_ms = 2; // Latest available?
+	uint64 asset_digest_timestamp_ms = 3;
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -575,45 +641,11 @@ message EquipBadgeResponse {
 	}
 }
 
-message GetPlayerResponse {
+message EchoResponse {
+	string context = 1;
+}
+
+message VerifyChallengeResponse {
 	bool success = 1;
-	com.github.aeonlucid.pogoprotos.data.PlayerData player_data = 2;
-}
-
-message EvolvePokemonResponse {
-	com.github.aeonlucid.pogoprotos.networking.responses.EvolvePokemonResponse.Result result = 1;
-	com.github.aeonlucid.pogoprotos.data.PokemonData evolved_pokemon_data = 2;
-	int32 experience_awarded = 3;
-	int32 candy_awarded = 4;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILED_POKEMON_MISSING = 2;
-		FAILED_INSUFFICIENT_RESOURCES = 3;
-		FAILED_POKEMON_CANNOT_EVOLVE = 4;
-		FAILED_POKEMON_IS_DEPLOYED = 5;
-	}
-}
-
-message DiskEncounterResponse {
-	Result result = 1;
-	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 2;
-	com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability capture_probability = 3;
-	enum Result {
-		UNKNOWN = 0;
-		SUCCESS = 1;
-		NOT_AVAILABLE = 2;
-		NOT_IN_RANGE = 3;
-		ENCOUNTER_ALREADY_FINISHED = 4;
-		POKEMON_INVENTORY_FULL = 5;
-	}
-}
-
-message GetHatchedEggsResponse {
-	bool success = 1;
-	repeated fixed64 pokemon_id = 2 [packed=true];
-	repeated int32 experience_awarded = 3;
-	repeated int32 candy_awarded = 4;
-	repeated int32 stardust_awarded = 5;
 }
 

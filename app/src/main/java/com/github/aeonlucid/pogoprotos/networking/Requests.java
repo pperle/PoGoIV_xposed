@@ -436,6 +436,14 @@ public final class Requests {
      */
     SET_CONTACT_SETTINGS(151),
     /**
+     * <code>SET_BUDDY_POKEMON = 152;</code>
+     */
+    SET_BUDDY_POKEMON(152),
+    /**
+     * <code>GET_BUDDY_WALKED = 153;</code>
+     */
+    GET_BUDDY_WALKED(153),
+    /**
      * <pre>
      * Implemented [R &amp; M]
      * </pre>
@@ -507,6 +515,14 @@ public final class Requests {
      * <code>LOAD_SPAWN_POINTS = 500;</code>
      */
     LOAD_SPAWN_POINTS(500),
+    /**
+     * <code>CHECK_CHALLENGE = 600;</code>
+     */
+    CHECK_CHALLENGE(600),
+    /**
+     * <code>VERIFY_CHALLENGE = 601;</code>
+     */
+    VERIFY_CHALLENGE(601),
     /**
      * <pre>
      * Implemented [R &amp; M]
@@ -999,6 +1015,14 @@ public final class Requests {
      */
     public static final int SET_CONTACT_SETTINGS_VALUE = 151;
     /**
+     * <code>SET_BUDDY_POKEMON = 152;</code>
+     */
+    public static final int SET_BUDDY_POKEMON_VALUE = 152;
+    /**
+     * <code>GET_BUDDY_WALKED = 153;</code>
+     */
+    public static final int GET_BUDDY_WALKED_VALUE = 153;
+    /**
      * <pre>
      * Implemented [R &amp; M]
      * </pre>
@@ -1070,6 +1094,14 @@ public final class Requests {
      * <code>LOAD_SPAWN_POINTS = 500;</code>
      */
     public static final int LOAD_SPAWN_POINTS_VALUE = 500;
+    /**
+     * <code>CHECK_CHALLENGE = 600;</code>
+     */
+    public static final int CHECK_CHALLENGE_VALUE = 600;
+    /**
+     * <code>VERIFY_CHALLENGE = 601;</code>
+     */
+    public static final int VERIFY_CHALLENGE_VALUE = 601;
     /**
      * <pre>
      * Implemented [R &amp; M]
@@ -1214,6 +1246,8 @@ public final class Requests {
         case 149: return NICKNAME_POKEMON;
         case 150: return EQUIP_BADGE;
         case 151: return SET_CONTACT_SETTINGS;
+        case 152: return SET_BUDDY_POKEMON;
+        case 153: return GET_BUDDY_WALKED;
         case 300: return GET_ASSET_DIGEST;
         case 301: return GET_DOWNLOAD_URLS;
         case 401: return GET_SUGGESTED_CODENAMES;
@@ -1223,6 +1257,8 @@ public final class Requests {
         case 405: return SET_PLAYER_TEAM;
         case 406: return MARK_TUTORIAL_COMPLETE;
         case 500: return LOAD_SPAWN_POINTS;
+        case 600: return CHECK_CHALLENGE;
+        case 601: return VERIFY_CHALLENGE;
         case 666: return ECHO;
         case 700: return DEBUG_UPDATE_INVENTORY;
         case 701: return DEBUG_DELETE_PLAYER;
@@ -1828,7 +1864,7 @@ public final class Requests {
       "d.pogoprotos.networking.requests\"z\n\007Requ" +
       "est\022V\n\014request_type\030\001 \001(\0162@.com.github.a" +
       "eonlucid.pogoprotos.networking.requests." +
-      "RequestType\022\027\n\017request_message\030\002 \001(\014*\301\014\n" +
+      "RequestType\022\027\n\017request_message\030\002 \001(\014*\235\r\n" +
       "\013RequestType\022\020\n\014METHOD_UNSET\020\000\022\021\n\rPLAYER" +
       "_UPDATE\020\001\022\016\n\nGET_PLAYER\020\002\022\021\n\rGET_INVENTO" +
       "RY\020\004\022\025\n\021DOWNLOAD_SETTINGS\020\005\022\033\n\027DOWNLOAD_" +
@@ -1858,19 +1894,21 @@ public final class Requests {
       "US\020\222\001\022\024\n\017UPGRADE_POKEMON\020\223\001\022\031\n\024SET_FAVOR" +
       "ITE_POKEMON\020\224\001\022\025\n\020NICKNAME_POKEMON\020\225\001\022\020\n" +
       "\013EQUIP_BADGE\020\226\001\022\031\n\024SET_CONTACT_SETTINGS\020" +
-      "\227\001\022\025\n\020GET_ASSET_DIGEST\020\254\002\022\026\n\021GET_DOWNLOA" +
-      "D_URLS\020\255\002\022\034\n\027GET_SUGGESTED_CODENAMES\020\221\003\022" +
-      "\035\n\030CHECK_CODENAME_AVAILABLE\020\222\003\022\023\n\016CLAIM_" +
-      "CODENAME\020\223\003\022\017\n\nSET_AVATAR\020\224\003\022\024\n\017SET_PLAY" +
-      "ER_TEAM\020\225\003\022\033\n\026MARK_TUTORIAL_COMPLETE\020\226\003\022",
-      "\026\n\021LOAD_SPAWN_POINTS\020\364\003\022\t\n\004ECHO\020\232\005\022\033\n\026DE" +
-      "BUG_UPDATE_INVENTORY\020\274\005\022\030\n\023DEBUG_DELETE_" +
-      "PLAYER\020\275\005\022\027\n\022SFIDA_REGISTRATION\020\240\006\022\025\n\020SF" +
-      "IDA_ACTION_LOG\020\241\006\022\030\n\023SFIDA_CERTIFICATION" +
-      "\020\242\006\022\021\n\014SFIDA_UPDATE\020\243\006\022\021\n\014SFIDA_ACTION\020\244" +
-      "\006\022\021\n\014SFIDA_DOWSER\020\245\006\022\022\n\rSFIDA_CAPTURE\020\246\006" +
-      "B6\n*com.github.aeonlucid.pogoprotos.netw" +
-      "orkingB\010Requestsb\006proto3"
+      "\227\001\022\026\n\021SET_BUDDY_POKEMON\020\230\001\022\025\n\020GET_BUDDY_" +
+      "WALKED\020\231\001\022\025\n\020GET_ASSET_DIGEST\020\254\002\022\026\n\021GET_" +
+      "DOWNLOAD_URLS\020\255\002\022\034\n\027GET_SUGGESTED_CODENA" +
+      "MES\020\221\003\022\035\n\030CHECK_CODENAME_AVAILABLE\020\222\003\022\023\n" +
+      "\016CLAIM_CODENAME\020\223\003\022\017\n\nSET_AVATAR\020\224\003\022\024\n\017S",
+      "ET_PLAYER_TEAM\020\225\003\022\033\n\026MARK_TUTORIAL_COMPL" +
+      "ETE\020\226\003\022\026\n\021LOAD_SPAWN_POINTS\020\364\003\022\024\n\017CHECK_" +
+      "CHALLENGE\020\330\004\022\025\n\020VERIFY_CHALLENGE\020\331\004\022\t\n\004E" +
+      "CHO\020\232\005\022\033\n\026DEBUG_UPDATE_INVENTORY\020\274\005\022\030\n\023D" +
+      "EBUG_DELETE_PLAYER\020\275\005\022\027\n\022SFIDA_REGISTRAT" +
+      "ION\020\240\006\022\025\n\020SFIDA_ACTION_LOG\020\241\006\022\030\n\023SFIDA_C" +
+      "ERTIFICATION\020\242\006\022\021\n\014SFIDA_UPDATE\020\243\006\022\021\n\014SF" +
+      "IDA_ACTION\020\244\006\022\021\n\014SFIDA_DOWSER\020\245\006\022\022\n\rSFID" +
+      "A_CAPTURE\020\246\006B6\n*com.github.aeonlucid.pog" +
+      "oprotos.networkingB\010Requestsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

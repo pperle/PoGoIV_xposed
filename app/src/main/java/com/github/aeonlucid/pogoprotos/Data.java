@@ -14,167 +14,56 @@ public final class Data {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface PlayerDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.PlayerData)
+  public interface PokedexEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 creation_timestamp_ms = 1;</code>
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
      */
-    long getCreationTimestampMs();
+    int getPokemonIdValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+     */
+    com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId();
 
     /**
-     * <code>optional string username = 2;</code>
+     * <code>optional int32 times_encountered = 2;</code>
      */
-    java.lang.String getUsername();
-    /**
-     * <code>optional string username = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getUsernameBytes();
+    int getTimesEncountered();
 
     /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+     * <code>optional int32 times_captured = 3;</code>
      */
-    int getTeamValue();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Enums.TeamColor getTeam();
+    int getTimesCaptured();
 
     /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     * <code>optional int32 evolution_stone_pieces = 4;</code>
      */
-    java.util.List<com.github.aeonlucid.pogoprotos.Enums.TutorialState> getTutorialStateList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    int getTutorialStateCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    com.github.aeonlucid.pogoprotos.Enums.TutorialState getTutorialState(int index);
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    java.util.List<java.lang.Integer>
-    getTutorialStateValueList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    int getTutorialStateValue(int index);
+    int getEvolutionStonePieces();
 
     /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     * <code>optional int32 evolution_stones = 5;</code>
      */
-    boolean hasAvatar();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar getAvatar();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder getAvatarOrBuilder();
-
-    /**
-     * <code>optional int32 max_pokemon_storage = 9;</code>
-     */
-    int getMaxPokemonStorage();
-
-    /**
-     * <code>optional int32 max_item_storage = 10;</code>
-     */
-    int getMaxItemStorage();
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-     */
-    boolean hasDailyBonus();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.DailyBonus getDailyBonus();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder getDailyBonusOrBuilder();
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-     */
-    boolean hasEquippedBadge();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge getEquippedBadge();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder getEquippedBadgeOrBuilder();
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-     */
-    boolean hasContactSettings();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.ContactSettings getContactSettings();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder getContactSettingsOrBuilder();
-
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> 
-        getCurrenciesList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencies(int index);
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    int getCurrenciesCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-        getCurrenciesOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrenciesOrBuilder(
-        int index);
-
-    /**
-     * <code>optional int32 remaining_codename_claims = 15;</code>
-     */
-    int getRemainingCodenameClaims();
+    int getEvolutionStones();
   }
   /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PlayerData}
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PokedexEntry}
    */
-  public  static final class PlayerData extends
+  public  static final class PokedexEntry extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.PlayerData)
-      PlayerDataOrBuilder {
-    // Use PlayerData.newBuilder() to construct.
-    private PlayerData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
+      PokedexEntryOrBuilder {
+    // Use PokedexEntry.newBuilder() to construct.
+    private PokedexEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PlayerData() {
-      creationTimestampMs_ = 0L;
-      username_ = "";
-      team_ = 0;
-      tutorialState_ = java.util.Collections.emptyList();
-      maxPokemonStorage_ = 0;
-      maxItemStorage_ = 0;
-      currencies_ = java.util.Collections.emptyList();
-      remainingCodenameClaims_ = 0;
+    private PokedexEntry() {
+      pokemonId_ = 0;
+      timesEncountered_ = 0;
+      timesCaptured_ = 0;
+      evolutionStonePieces_ = 0;
+      evolutionStones_ = 0;
     }
 
     @java.lang.Override
@@ -182,7 +71,7 @@ public final class Data {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private PlayerData(
+    private PokedexEntry(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -203,2186 +92,29 @@ public final class Data {
               break;
             }
             case 8: {
-
-              creationTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              username_ = s;
-              break;
-            }
-            case 40: {
               int rawValue = input.readEnum();
 
-              team_ = rawValue;
+              pokemonId_ = rawValue;
               break;
             }
-            case 56: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                tutorialState_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              tutorialState_.add(rawValue);
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                  tutorialState_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                tutorialState_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 66: {
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder subBuilder = null;
-              if (avatar_ != null) {
-                subBuilder = avatar_.toBuilder();
-              }
-              avatar_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(avatar_);
-                avatar_ = subBuilder.buildPartial();
-              }
+            case 16: {
 
-              break;
-            }
-            case 72: {
-
-              maxPokemonStorage_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              maxItemStorage_ = input.readInt32();
-              break;
-            }
-            case 90: {
-              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder subBuilder = null;
-              if (dailyBonus_ != null) {
-                subBuilder = dailyBonus_.toBuilder();
-              }
-              dailyBonus_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dailyBonus_);
-                dailyBonus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder subBuilder = null;
-              if (equippedBadge_ != null) {
-                subBuilder = equippedBadge_.toBuilder();
-              }
-              equippedBadge_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(equippedBadge_);
-                equippedBadge_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder subBuilder = null;
-              if (contactSettings_ != null) {
-                subBuilder = contactSettings_.toBuilder();
-              }
-              contactSettings_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(contactSettings_);
-                contactSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                currencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              currencies_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              remainingCodenameClaims_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          tutorialState_ = java.util.Collections.unmodifiableList(tutorialState_);
-        }
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-          currencies_ = java.util.Collections.unmodifiableList(currencies_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Data.PlayerData.class, com.github.aeonlucid.pogoprotos.Data.PlayerData.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int CREATION_TIMESTAMP_MS_FIELD_NUMBER = 1;
-    private long creationTimestampMs_;
-    /**
-     * <code>optional int64 creation_timestamp_ms = 1;</code>
-     */
-    public long getCreationTimestampMs() {
-      return creationTimestampMs_;
-    }
-
-    public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object username_;
-    /**
-     * <code>optional string username = 2;</code>
-     */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string username = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TEAM_FIELD_NUMBER = 5;
-    private int team_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-     */
-    public int getTeamValue() {
-      return team_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.Enums.TeamColor getTeam() {
-      com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.valueOf(team_);
-      return result == null ? com.github.aeonlucid.pogoprotos.Enums.TeamColor.UNRECOGNIZED : result;
-    }
-
-    public static final int TUTORIAL_STATE_FIELD_NUMBER = 7;
-    private java.util.List<java.lang.Integer> tutorialState_;
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-        java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState> tutorialState_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState>() {
-              public com.github.aeonlucid.pogoprotos.Enums.TutorialState convert(java.lang.Integer from) {
-                com.github.aeonlucid.pogoprotos.Enums.TutorialState result = com.github.aeonlucid.pogoprotos.Enums.TutorialState.valueOf(from);
-                return result == null ? com.github.aeonlucid.pogoprotos.Enums.TutorialState.UNRECOGNIZED : result;
-              }
-            };
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    public java.util.List<com.github.aeonlucid.pogoprotos.Enums.TutorialState> getTutorialStateList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState>(tutorialState_, tutorialState_converter_);
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    public int getTutorialStateCount() {
-      return tutorialState_.size();
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    public com.github.aeonlucid.pogoprotos.Enums.TutorialState getTutorialState(int index) {
-      return tutorialState_converter_.convert(tutorialState_.get(index));
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    public java.util.List<java.lang.Integer>
-    getTutorialStateValueList() {
-      return tutorialState_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-     */
-    public int getTutorialStateValue(int index) {
-      return tutorialState_.get(index);
-    }
-    private int tutorialStateMemoizedSerializedSize;
-
-    public static final int AVATAR_FIELD_NUMBER = 8;
-    private com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar avatar_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-     */
-    public boolean hasAvatar() {
-      return avatar_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar getAvatar() {
-      return avatar_ == null ? com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.getDefaultInstance() : avatar_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder getAvatarOrBuilder() {
-      return getAvatar();
-    }
-
-    public static final int MAX_POKEMON_STORAGE_FIELD_NUMBER = 9;
-    private int maxPokemonStorage_;
-    /**
-     * <code>optional int32 max_pokemon_storage = 9;</code>
-     */
-    public int getMaxPokemonStorage() {
-      return maxPokemonStorage_;
-    }
-
-    public static final int MAX_ITEM_STORAGE_FIELD_NUMBER = 10;
-    private int maxItemStorage_;
-    /**
-     * <code>optional int32 max_item_storage = 10;</code>
-     */
-    public int getMaxItemStorage() {
-      return maxItemStorage_;
-    }
-
-    public static final int DAILY_BONUS_FIELD_NUMBER = 11;
-    private com.github.aeonlucid.pogoprotos.data.Player.DailyBonus dailyBonus_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-     */
-    public boolean hasDailyBonus() {
-      return dailyBonus_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.DailyBonus getDailyBonus() {
-      return dailyBonus_ == null ? com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.getDefaultInstance() : dailyBonus_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder getDailyBonusOrBuilder() {
-      return getDailyBonus();
-    }
-
-    public static final int EQUIPPED_BADGE_FIELD_NUMBER = 12;
-    private com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge equippedBadge_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-     */
-    public boolean hasEquippedBadge() {
-      return equippedBadge_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge getEquippedBadge() {
-      return equippedBadge_ == null ? com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.getDefaultInstance() : equippedBadge_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder getEquippedBadgeOrBuilder() {
-      return getEquippedBadge();
-    }
-
-    public static final int CONTACT_SETTINGS_FIELD_NUMBER = 13;
-    private com.github.aeonlucid.pogoprotos.data.Player.ContactSettings contactSettings_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-     */
-    public boolean hasContactSettings() {
-      return contactSettings_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.ContactSettings getContactSettings() {
-      return contactSettings_ == null ? com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.getDefaultInstance() : contactSettings_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder getContactSettingsOrBuilder() {
-      return getContactSettings();
-    }
-
-    public static final int CURRENCIES_FIELD_NUMBER = 14;
-    private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> currencies_;
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getCurrenciesList() {
-      return currencies_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-        getCurrenciesOrBuilderList() {
-      return currencies_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    public int getCurrenciesCount() {
-      return currencies_.size();
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencies(int index) {
-      return currencies_.get(index);
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrenciesOrBuilder(
-        int index) {
-      return currencies_.get(index);
-    }
-
-    public static final int REMAINING_CODENAME_CLAIMS_FIELD_NUMBER = 15;
-    private int remainingCodenameClaims_;
-    /**
-     * <code>optional int32 remaining_codename_claims = 15;</code>
-     */
-    public int getRemainingCodenameClaims() {
-      return remainingCodenameClaims_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (creationTimestampMs_ != 0L) {
-        output.writeInt64(1, creationTimestampMs_);
-      }
-      if (!getUsernameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
-      }
-      if (team_ != com.github.aeonlucid.pogoprotos.Enums.TeamColor.NEUTRAL.getNumber()) {
-        output.writeEnum(5, team_);
-      }
-      if (getTutorialStateList().size() > 0) {
-        output.writeUInt32NoTag(58);
-        output.writeUInt32NoTag(tutorialStateMemoizedSerializedSize);
-      }
-      for (int i = 0; i < tutorialState_.size(); i++) {
-        output.writeEnumNoTag(tutorialState_.get(i));
-      }
-      if (avatar_ != null) {
-        output.writeMessage(8, getAvatar());
-      }
-      if (maxPokemonStorage_ != 0) {
-        output.writeInt32(9, maxPokemonStorage_);
-      }
-      if (maxItemStorage_ != 0) {
-        output.writeInt32(10, maxItemStorage_);
-      }
-      if (dailyBonus_ != null) {
-        output.writeMessage(11, getDailyBonus());
-      }
-      if (equippedBadge_ != null) {
-        output.writeMessage(12, getEquippedBadge());
-      }
-      if (contactSettings_ != null) {
-        output.writeMessage(13, getContactSettings());
-      }
-      for (int i = 0; i < currencies_.size(); i++) {
-        output.writeMessage(14, currencies_.get(i));
-      }
-      if (remainingCodenameClaims_ != 0) {
-        output.writeInt32(15, remainingCodenameClaims_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (creationTimestampMs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, creationTimestampMs_);
-      }
-      if (!getUsernameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
-      }
-      if (team_ != com.github.aeonlucid.pogoprotos.Enums.TeamColor.NEUTRAL.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, team_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tutorialState_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(tutorialState_.get(i));
-        }
-        size += dataSize;
-        if (!getTutorialStateList().isEmpty()) {  size += 1;
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dataSize);
-        }tutorialStateMemoizedSerializedSize = dataSize;
-      }
-      if (avatar_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getAvatar());
-      }
-      if (maxPokemonStorage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, maxPokemonStorage_);
-      }
-      if (maxItemStorage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, maxItemStorage_);
-      }
-      if (dailyBonus_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getDailyBonus());
-      }
-      if (equippedBadge_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getEquippedBadge());
-      }
-      if (contactSettings_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getContactSettings());
-      }
-      for (int i = 0; i < currencies_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, currencies_.get(i));
-      }
-      if (remainingCodenameClaims_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, remainingCodenameClaims_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.PlayerData)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.Data.PlayerData other = (com.github.aeonlucid.pogoprotos.Data.PlayerData) obj;
-
-      boolean result = true;
-      result = result && (getCreationTimestampMs()
-          == other.getCreationTimestampMs());
-      result = result && getUsername()
-          .equals(other.getUsername());
-      result = result && team_ == other.team_;
-      result = result && tutorialState_.equals(other.tutorialState_);
-      result = result && (hasAvatar() == other.hasAvatar());
-      if (hasAvatar()) {
-        result = result && getAvatar()
-            .equals(other.getAvatar());
-      }
-      result = result && (getMaxPokemonStorage()
-          == other.getMaxPokemonStorage());
-      result = result && (getMaxItemStorage()
-          == other.getMaxItemStorage());
-      result = result && (hasDailyBonus() == other.hasDailyBonus());
-      if (hasDailyBonus()) {
-        result = result && getDailyBonus()
-            .equals(other.getDailyBonus());
-      }
-      result = result && (hasEquippedBadge() == other.hasEquippedBadge());
-      if (hasEquippedBadge()) {
-        result = result && getEquippedBadge()
-            .equals(other.getEquippedBadge());
-      }
-      result = result && (hasContactSettings() == other.hasContactSettings());
-      if (hasContactSettings()) {
-        result = result && getContactSettings()
-            .equals(other.getContactSettings());
-      }
-      result = result && getCurrenciesList()
-          .equals(other.getCurrenciesList());
-      result = result && (getRemainingCodenameClaims()
-          == other.getRemainingCodenameClaims());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + CREATION_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreationTimestampMs());
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + TEAM_FIELD_NUMBER;
-      hash = (53 * hash) + team_;
-      if (getTutorialStateCount() > 0) {
-        hash = (37 * hash) + TUTORIAL_STATE_FIELD_NUMBER;
-        hash = (53 * hash) + tutorialState_.hashCode();
-      }
-      if (hasAvatar()) {
-        hash = (37 * hash) + AVATAR_FIELD_NUMBER;
-        hash = (53 * hash) + getAvatar().hashCode();
-      }
-      hash = (37 * hash) + MAX_POKEMON_STORAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxPokemonStorage();
-      hash = (37 * hash) + MAX_ITEM_STORAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxItemStorage();
-      if (hasDailyBonus()) {
-        hash = (37 * hash) + DAILY_BONUS_FIELD_NUMBER;
-        hash = (53 * hash) + getDailyBonus().hashCode();
-      }
-      if (hasEquippedBadge()) {
-        hash = (37 * hash) + EQUIPPED_BADGE_FIELD_NUMBER;
-        hash = (53 * hash) + getEquippedBadge().hashCode();
-      }
-      if (hasContactSettings()) {
-        hash = (37 * hash) + CONTACT_SETTINGS_FIELD_NUMBER;
-        hash = (53 * hash) + getContactSettings().hashCode();
-      }
-      if (getCurrenciesCount() > 0) {
-        hash = (37 * hash) + CURRENCIES_FIELD_NUMBER;
-        hash = (53 * hash) + getCurrenciesList().hashCode();
-      }
-      hash = (37 * hash) + REMAINING_CODENAME_CLAIMS_FIELD_NUMBER;
-      hash = (53 * hash) + getRemainingCodenameClaims();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.PlayerData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PlayerData}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.PlayerData)
-        com.github.aeonlucid.pogoprotos.Data.PlayerDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Data.PlayerData.class, com.github.aeonlucid.pogoprotos.Data.PlayerData.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.Data.PlayerData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCurrenciesFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        creationTimestampMs_ = 0L;
-
-        username_ = "";
-
-        team_ = 0;
-
-        tutorialState_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        if (avatarBuilder_ == null) {
-          avatar_ = null;
-        } else {
-          avatar_ = null;
-          avatarBuilder_ = null;
-        }
-        maxPokemonStorage_ = 0;
-
-        maxItemStorage_ = 0;
-
-        if (dailyBonusBuilder_ == null) {
-          dailyBonus_ = null;
-        } else {
-          dailyBonus_ = null;
-          dailyBonusBuilder_ = null;
-        }
-        if (equippedBadgeBuilder_ == null) {
-          equippedBadge_ = null;
-        } else {
-          equippedBadge_ = null;
-          equippedBadgeBuilder_ = null;
-        }
-        if (contactSettingsBuilder_ == null) {
-          contactSettings_ = null;
-        } else {
-          contactSettings_ = null;
-          contactSettingsBuilder_ = null;
-        }
-        if (currenciesBuilder_ == null) {
-          currencies_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
-        } else {
-          currenciesBuilder_.clear();
-        }
-        remainingCodenameClaims_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Data.PlayerData getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Data.PlayerData.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.Data.PlayerData build() {
-        com.github.aeonlucid.pogoprotos.Data.PlayerData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Data.PlayerData buildPartial() {
-        com.github.aeonlucid.pogoprotos.Data.PlayerData result = new com.github.aeonlucid.pogoprotos.Data.PlayerData(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.creationTimestampMs_ = creationTimestampMs_;
-        result.username_ = username_;
-        result.team_ = team_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          tutorialState_ = java.util.Collections.unmodifiableList(tutorialState_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.tutorialState_ = tutorialState_;
-        if (avatarBuilder_ == null) {
-          result.avatar_ = avatar_;
-        } else {
-          result.avatar_ = avatarBuilder_.build();
-        }
-        result.maxPokemonStorage_ = maxPokemonStorage_;
-        result.maxItemStorage_ = maxItemStorage_;
-        if (dailyBonusBuilder_ == null) {
-          result.dailyBonus_ = dailyBonus_;
-        } else {
-          result.dailyBonus_ = dailyBonusBuilder_.build();
-        }
-        if (equippedBadgeBuilder_ == null) {
-          result.equippedBadge_ = equippedBadge_;
-        } else {
-          result.equippedBadge_ = equippedBadgeBuilder_.build();
-        }
-        if (contactSettingsBuilder_ == null) {
-          result.contactSettings_ = contactSettings_;
-        } else {
-          result.contactSettings_ = contactSettingsBuilder_.build();
-        }
-        if (currenciesBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400)) {
-            currencies_ = java.util.Collections.unmodifiableList(currencies_);
-            bitField0_ = (bitField0_ & ~0x00000400);
-          }
-          result.currencies_ = currencies_;
-        } else {
-          result.currencies_ = currenciesBuilder_.build();
-        }
-        result.remainingCodenameClaims_ = remainingCodenameClaims_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Data.PlayerData) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.PlayerData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.PlayerData other) {
-        if (other == com.github.aeonlucid.pogoprotos.Data.PlayerData.getDefaultInstance()) return this;
-        if (other.getCreationTimestampMs() != 0L) {
-          setCreationTimestampMs(other.getCreationTimestampMs());
-        }
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
-          onChanged();
-        }
-        if (other.team_ != 0) {
-          setTeamValue(other.getTeamValue());
-        }
-        if (!other.tutorialState_.isEmpty()) {
-          if (tutorialState_.isEmpty()) {
-            tutorialState_ = other.tutorialState_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureTutorialStateIsMutable();
-            tutorialState_.addAll(other.tutorialState_);
-          }
-          onChanged();
-        }
-        if (other.hasAvatar()) {
-          mergeAvatar(other.getAvatar());
-        }
-        if (other.getMaxPokemonStorage() != 0) {
-          setMaxPokemonStorage(other.getMaxPokemonStorage());
-        }
-        if (other.getMaxItemStorage() != 0) {
-          setMaxItemStorage(other.getMaxItemStorage());
-        }
-        if (other.hasDailyBonus()) {
-          mergeDailyBonus(other.getDailyBonus());
-        }
-        if (other.hasEquippedBadge()) {
-          mergeEquippedBadge(other.getEquippedBadge());
-        }
-        if (other.hasContactSettings()) {
-          mergeContactSettings(other.getContactSettings());
-        }
-        if (currenciesBuilder_ == null) {
-          if (!other.currencies_.isEmpty()) {
-            if (currencies_.isEmpty()) {
-              currencies_ = other.currencies_;
-              bitField0_ = (bitField0_ & ~0x00000400);
-            } else {
-              ensureCurrenciesIsMutable();
-              currencies_.addAll(other.currencies_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.currencies_.isEmpty()) {
-            if (currenciesBuilder_.isEmpty()) {
-              currenciesBuilder_.dispose();
-              currenciesBuilder_ = null;
-              currencies_ = other.currencies_;
-              bitField0_ = (bitField0_ & ~0x00000400);
-              currenciesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCurrenciesFieldBuilder() : null;
-            } else {
-              currenciesBuilder_.addAllMessages(other.currencies_);
-            }
-          }
-        }
-        if (other.getRemainingCodenameClaims() != 0) {
-          setRemainingCodenameClaims(other.getRemainingCodenameClaims());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Data.PlayerData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.PlayerData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long creationTimestampMs_ ;
-      /**
-       * <code>optional int64 creation_timestamp_ms = 1;</code>
-       */
-      public long getCreationTimestampMs() {
-        return creationTimestampMs_;
-      }
-      /**
-       * <code>optional int64 creation_timestamp_ms = 1;</code>
-       */
-      public Builder setCreationTimestampMs(long value) {
-        
-        creationTimestampMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 creation_timestamp_ms = 1;</code>
-       */
-      public Builder clearCreationTimestampMs() {
-        
-        creationTimestampMs_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object username_ = "";
-      /**
-       * <code>optional string username = 2;</code>
-       */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          username_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string username = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUsernameBytes() {
-        java.lang.Object ref = username_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          username_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string username = 2;</code>
-       */
-      public Builder setUsername(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        username_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string username = 2;</code>
-       */
-      public Builder clearUsername() {
-        
-        username_ = getDefaultInstance().getUsername();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string username = 2;</code>
-       */
-      public Builder setUsernameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        username_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int team_ = 0;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-       */
-      public int getTeamValue() {
-        return team_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-       */
-      public Builder setTeamValue(int value) {
-        team_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Enums.TeamColor getTeam() {
-        com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.valueOf(team_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.TeamColor.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-       */
-      public Builder setTeam(com.github.aeonlucid.pogoprotos.Enums.TeamColor value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        team_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
-       */
-      public Builder clearTeam() {
-        
-        team_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<java.lang.Integer> tutorialState_ =
-        java.util.Collections.emptyList();
-      private void ensureTutorialStateIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          tutorialState_ = new java.util.ArrayList<java.lang.Integer>(tutorialState_);
-          bitField0_ |= 0x00000008;
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.Enums.TutorialState> getTutorialStateList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState>(tutorialState_, tutorialState_converter_);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public int getTutorialStateCount() {
-        return tutorialState_.size();
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Enums.TutorialState getTutorialState(int index) {
-        return tutorialState_converter_.convert(tutorialState_.get(index));
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder setTutorialState(
-          int index, com.github.aeonlucid.pogoprotos.Enums.TutorialState value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTutorialStateIsMutable();
-        tutorialState_.set(index, value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder addTutorialState(com.github.aeonlucid.pogoprotos.Enums.TutorialState value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTutorialStateIsMutable();
-        tutorialState_.add(value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder addAllTutorialState(
-          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Enums.TutorialState> values) {
-        ensureTutorialStateIsMutable();
-        for (com.github.aeonlucid.pogoprotos.Enums.TutorialState value : values) {
-          tutorialState_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder clearTutorialState() {
-        tutorialState_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public java.util.List<java.lang.Integer>
-      getTutorialStateValueList() {
-        return java.util.Collections.unmodifiableList(tutorialState_);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public int getTutorialStateValue(int index) {
-        return tutorialState_.get(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder setTutorialStateValue(
-          int index, int value) {
-        ensureTutorialStateIsMutable();
-        tutorialState_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder addTutorialStateValue(int value) {
-        ensureTutorialStateIsMutable();
-        tutorialState_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
-       */
-      public Builder addAllTutorialStateValue(
-          java.lang.Iterable<java.lang.Integer> values) {
-        ensureTutorialStateIsMutable();
-        for (int value : values) {
-          tutorialState_.add(value);
-        }
-        onChanged();
-        return this;
-      }
-
-      private com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar avatar_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder> avatarBuilder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public boolean hasAvatar() {
-        return avatarBuilder_ != null || avatar_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar getAvatar() {
-        if (avatarBuilder_ == null) {
-          return avatar_ == null ? com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.getDefaultInstance() : avatar_;
-        } else {
-          return avatarBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public Builder setAvatar(com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar value) {
-        if (avatarBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          avatar_ = value;
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public Builder setAvatar(
-          com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder builderForValue) {
-        if (avatarBuilder_ == null) {
-          avatar_ = builderForValue.build();
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public Builder mergeAvatar(com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar value) {
-        if (avatarBuilder_ == null) {
-          if (avatar_ != null) {
-            avatar_ =
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.newBuilder(avatar_).mergeFrom(value).buildPartial();
-          } else {
-            avatar_ = value;
-          }
-          onChanged();
-        } else {
-          avatarBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public Builder clearAvatar() {
-        if (avatarBuilder_ == null) {
-          avatar_ = null;
-          onChanged();
-        } else {
-          avatar_ = null;
-          avatarBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder getAvatarBuilder() {
-        
-        onChanged();
-        return getAvatarFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder getAvatarOrBuilder() {
-        if (avatarBuilder_ != null) {
-          return avatarBuilder_.getMessageOrBuilder();
-        } else {
-          return avatar_ == null ?
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.getDefaultInstance() : avatar_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder> 
-          getAvatarFieldBuilder() {
-        if (avatarBuilder_ == null) {
-          avatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder>(
-                  getAvatar(),
-                  getParentForChildren(),
-                  isClean());
-          avatar_ = null;
-        }
-        return avatarBuilder_;
-      }
-
-      private int maxPokemonStorage_ ;
-      /**
-       * <code>optional int32 max_pokemon_storage = 9;</code>
-       */
-      public int getMaxPokemonStorage() {
-        return maxPokemonStorage_;
-      }
-      /**
-       * <code>optional int32 max_pokemon_storage = 9;</code>
-       */
-      public Builder setMaxPokemonStorage(int value) {
-        
-        maxPokemonStorage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 max_pokemon_storage = 9;</code>
-       */
-      public Builder clearMaxPokemonStorage() {
-        
-        maxPokemonStorage_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int maxItemStorage_ ;
-      /**
-       * <code>optional int32 max_item_storage = 10;</code>
-       */
-      public int getMaxItemStorage() {
-        return maxItemStorage_;
-      }
-      /**
-       * <code>optional int32 max_item_storage = 10;</code>
-       */
-      public Builder setMaxItemStorage(int value) {
-        
-        maxItemStorage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 max_item_storage = 10;</code>
-       */
-      public Builder clearMaxItemStorage() {
-        
-        maxItemStorage_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.github.aeonlucid.pogoprotos.data.Player.DailyBonus dailyBonus_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.DailyBonus, com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder, com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder> dailyBonusBuilder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public boolean hasDailyBonus() {
-        return dailyBonusBuilder_ != null || dailyBonus_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.DailyBonus getDailyBonus() {
-        if (dailyBonusBuilder_ == null) {
-          return dailyBonus_ == null ? com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.getDefaultInstance() : dailyBonus_;
-        } else {
-          return dailyBonusBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public Builder setDailyBonus(com.github.aeonlucid.pogoprotos.data.Player.DailyBonus value) {
-        if (dailyBonusBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dailyBonus_ = value;
-          onChanged();
-        } else {
-          dailyBonusBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public Builder setDailyBonus(
-          com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder builderForValue) {
-        if (dailyBonusBuilder_ == null) {
-          dailyBonus_ = builderForValue.build();
-          onChanged();
-        } else {
-          dailyBonusBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public Builder mergeDailyBonus(com.github.aeonlucid.pogoprotos.data.Player.DailyBonus value) {
-        if (dailyBonusBuilder_ == null) {
-          if (dailyBonus_ != null) {
-            dailyBonus_ =
-              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.newBuilder(dailyBonus_).mergeFrom(value).buildPartial();
-          } else {
-            dailyBonus_ = value;
-          }
-          onChanged();
-        } else {
-          dailyBonusBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public Builder clearDailyBonus() {
-        if (dailyBonusBuilder_ == null) {
-          dailyBonus_ = null;
-          onChanged();
-        } else {
-          dailyBonus_ = null;
-          dailyBonusBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder getDailyBonusBuilder() {
-        
-        onChanged();
-        return getDailyBonusFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder getDailyBonusOrBuilder() {
-        if (dailyBonusBuilder_ != null) {
-          return dailyBonusBuilder_.getMessageOrBuilder();
-        } else {
-          return dailyBonus_ == null ?
-              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.getDefaultInstance() : dailyBonus_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.DailyBonus, com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder, com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder> 
-          getDailyBonusFieldBuilder() {
-        if (dailyBonusBuilder_ == null) {
-          dailyBonusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus, com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder, com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder>(
-                  getDailyBonus(),
-                  getParentForChildren(),
-                  isClean());
-          dailyBonus_ = null;
-        }
-        return dailyBonusBuilder_;
-      }
-
-      private com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge equippedBadge_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder> equippedBadgeBuilder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public boolean hasEquippedBadge() {
-        return equippedBadgeBuilder_ != null || equippedBadge_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge getEquippedBadge() {
-        if (equippedBadgeBuilder_ == null) {
-          return equippedBadge_ == null ? com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.getDefaultInstance() : equippedBadge_;
-        } else {
-          return equippedBadgeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public Builder setEquippedBadge(com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge value) {
-        if (equippedBadgeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          equippedBadge_ = value;
-          onChanged();
-        } else {
-          equippedBadgeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public Builder setEquippedBadge(
-          com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder builderForValue) {
-        if (equippedBadgeBuilder_ == null) {
-          equippedBadge_ = builderForValue.build();
-          onChanged();
-        } else {
-          equippedBadgeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public Builder mergeEquippedBadge(com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge value) {
-        if (equippedBadgeBuilder_ == null) {
-          if (equippedBadge_ != null) {
-            equippedBadge_ =
-              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.newBuilder(equippedBadge_).mergeFrom(value).buildPartial();
-          } else {
-            equippedBadge_ = value;
-          }
-          onChanged();
-        } else {
-          equippedBadgeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public Builder clearEquippedBadge() {
-        if (equippedBadgeBuilder_ == null) {
-          equippedBadge_ = null;
-          onChanged();
-        } else {
-          equippedBadge_ = null;
-          equippedBadgeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder getEquippedBadgeBuilder() {
-        
-        onChanged();
-        return getEquippedBadgeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder getEquippedBadgeOrBuilder() {
-        if (equippedBadgeBuilder_ != null) {
-          return equippedBadgeBuilder_.getMessageOrBuilder();
-        } else {
-          return equippedBadge_ == null ?
-              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.getDefaultInstance() : equippedBadge_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder> 
-          getEquippedBadgeFieldBuilder() {
-        if (equippedBadgeBuilder_ == null) {
-          equippedBadgeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder>(
-                  getEquippedBadge(),
-                  getParentForChildren(),
-                  isClean());
-          equippedBadge_ = null;
-        }
-        return equippedBadgeBuilder_;
-      }
-
-      private com.github.aeonlucid.pogoprotos.data.Player.ContactSettings contactSettings_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.ContactSettings, com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder, com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder> contactSettingsBuilder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public boolean hasContactSettings() {
-        return contactSettingsBuilder_ != null || contactSettings_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.ContactSettings getContactSettings() {
-        if (contactSettingsBuilder_ == null) {
-          return contactSettings_ == null ? com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.getDefaultInstance() : contactSettings_;
-        } else {
-          return contactSettingsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public Builder setContactSettings(com.github.aeonlucid.pogoprotos.data.Player.ContactSettings value) {
-        if (contactSettingsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          contactSettings_ = value;
-          onChanged();
-        } else {
-          contactSettingsBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public Builder setContactSettings(
-          com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder builderForValue) {
-        if (contactSettingsBuilder_ == null) {
-          contactSettings_ = builderForValue.build();
-          onChanged();
-        } else {
-          contactSettingsBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public Builder mergeContactSettings(com.github.aeonlucid.pogoprotos.data.Player.ContactSettings value) {
-        if (contactSettingsBuilder_ == null) {
-          if (contactSettings_ != null) {
-            contactSettings_ =
-              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.newBuilder(contactSettings_).mergeFrom(value).buildPartial();
-          } else {
-            contactSettings_ = value;
-          }
-          onChanged();
-        } else {
-          contactSettingsBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public Builder clearContactSettings() {
-        if (contactSettingsBuilder_ == null) {
-          contactSettings_ = null;
-          onChanged();
-        } else {
-          contactSettings_ = null;
-          contactSettingsBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder getContactSettingsBuilder() {
-        
-        onChanged();
-        return getContactSettingsFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder getContactSettingsOrBuilder() {
-        if (contactSettingsBuilder_ != null) {
-          return contactSettingsBuilder_.getMessageOrBuilder();
-        } else {
-          return contactSettings_ == null ?
-              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.getDefaultInstance() : contactSettings_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.ContactSettings, com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder, com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder> 
-          getContactSettingsFieldBuilder() {
-        if (contactSettingsBuilder_ == null) {
-          contactSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings, com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder, com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder>(
-                  getContactSettings(),
-                  getParentForChildren(),
-                  isClean());
-          contactSettings_ = null;
-        }
-        return contactSettingsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> currencies_ =
-        java.util.Collections.emptyList();
-      private void ensureCurrenciesIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-          currencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>(currencies_);
-          bitField0_ |= 0x00000400;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> currenciesBuilder_;
-
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getCurrenciesList() {
-        if (currenciesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(currencies_);
-        } else {
-          return currenciesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public int getCurrenciesCount() {
-        if (currenciesBuilder_ == null) {
-          return currencies_.size();
-        } else {
-          return currenciesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencies(int index) {
-        if (currenciesBuilder_ == null) {
-          return currencies_.get(index);
-        } else {
-          return currenciesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder setCurrencies(
-          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-        if (currenciesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCurrenciesIsMutable();
-          currencies_.set(index, value);
-          onChanged();
-        } else {
-          currenciesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder setCurrencies(
-          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-        if (currenciesBuilder_ == null) {
-          ensureCurrenciesIsMutable();
-          currencies_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          currenciesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder addCurrencies(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-        if (currenciesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCurrenciesIsMutable();
-          currencies_.add(value);
-          onChanged();
-        } else {
-          currenciesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder addCurrencies(
-          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-        if (currenciesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCurrenciesIsMutable();
-          currencies_.add(index, value);
-          onChanged();
-        } else {
-          currenciesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder addCurrencies(
-          com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-        if (currenciesBuilder_ == null) {
-          ensureCurrenciesIsMutable();
-          currencies_.add(builderForValue.build());
-          onChanged();
-        } else {
-          currenciesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder addCurrencies(
-          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-        if (currenciesBuilder_ == null) {
-          ensureCurrenciesIsMutable();
-          currencies_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          currenciesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder addAllCurrencies(
-          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Player.Currency> values) {
-        if (currenciesBuilder_ == null) {
-          ensureCurrenciesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, currencies_);
-          onChanged();
-        } else {
-          currenciesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder clearCurrencies() {
-        if (currenciesBuilder_ == null) {
-          currencies_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
-          onChanged();
-        } else {
-          currenciesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public Builder removeCurrencies(int index) {
-        if (currenciesBuilder_ == null) {
-          ensureCurrenciesIsMutable();
-          currencies_.remove(index);
-          onChanged();
-        } else {
-          currenciesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getCurrenciesBuilder(
-          int index) {
-        return getCurrenciesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrenciesOrBuilder(
-          int index) {
-        if (currenciesBuilder_ == null) {
-          return currencies_.get(index);  } else {
-          return currenciesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-           getCurrenciesOrBuilderList() {
-        if (currenciesBuilder_ != null) {
-          return currenciesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(currencies_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addCurrenciesBuilder() {
-        return getCurrenciesFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addCurrenciesBuilder(
-          int index) {
-        return getCurrenciesFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder> 
-           getCurrenciesBuilderList() {
-        return getCurrenciesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-          getCurrenciesFieldBuilder() {
-        if (currenciesBuilder_ == null) {
-          currenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                  currencies_,
-                  ((bitField0_ & 0x00000400) == 0x00000400),
-                  getParentForChildren(),
-                  isClean());
-          currencies_ = null;
-        }
-        return currenciesBuilder_;
-      }
-
-      private int remainingCodenameClaims_ ;
-      /**
-       * <code>optional int32 remaining_codename_claims = 15;</code>
-       */
-      public int getRemainingCodenameClaims() {
-        return remainingCodenameClaims_;
-      }
-      /**
-       * <code>optional int32 remaining_codename_claims = 15;</code>
-       */
-      public Builder setRemainingCodenameClaims(int value) {
-        
-        remainingCodenameClaims_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 remaining_codename_claims = 15;</code>
-       */
-      public Builder clearRemainingCodenameClaims() {
-        
-        remainingCodenameClaims_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.PlayerData)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.PlayerData)
-    private static final com.github.aeonlucid.pogoprotos.Data.PlayerData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.PlayerData();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.Data.PlayerData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PlayerData>
-        PARSER = new com.google.protobuf.AbstractParser<PlayerData>() {
-      public PlayerData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerData(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PlayerData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PlayerData> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.Data.PlayerData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AssetDigestEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string asset_id = 1;</code>
-     */
-    java.lang.String getAssetId();
-    /**
-     * <code>optional string asset_id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getAssetIdBytes();
-
-    /**
-     * <code>optional string bundle_name = 2;</code>
-     */
-    java.lang.String getBundleName();
-    /**
-     * <code>optional string bundle_name = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getBundleNameBytes();
-
-    /**
-     * <code>optional int64 version = 3;</code>
-     */
-    long getVersion();
-
-    /**
-     * <code>optional fixed32 checksum = 4;</code>
-     */
-    int getChecksum();
-
-    /**
-     * <code>optional int32 size = 5;</code>
-     */
-    int getSize();
-
-    /**
-     * <code>optional bytes key = 6;</code>
-     */
-    com.google.protobuf.ByteString getKey();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.AssetDigestEntry}
-   */
-  public  static final class AssetDigestEntry extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
-      AssetDigestEntryOrBuilder {
-    // Use AssetDigestEntry.newBuilder() to construct.
-    private AssetDigestEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AssetDigestEntry() {
-      assetId_ = "";
-      bundleName_ = "";
-      version_ = 0L;
-      checksum_ = 0;
-      size_ = 0;
-      key_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private AssetDigestEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              assetId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bundleName_ = s;
+              timesEncountered_ = input.readInt32();
               break;
             }
             case 24: {
 
-              version_ = input.readInt64();
+              timesCaptured_ = input.readInt32();
               break;
             }
-            case 37: {
+            case 32: {
 
-              checksum_ = input.readFixed32();
+              evolutionStonePieces_ = input.readInt32();
               break;
             }
             case 40: {
 
-              size_ = input.readInt32();
-              break;
-            }
-            case 50: {
-
-              key_ = input.readBytes();
+              evolutionStones_ = input.readInt32();
               break;
             }
           }
@@ -2398,118 +130,66 @@ public final class Data {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.class, com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.Builder.class);
+              com.github.aeonlucid.pogoprotos.Data.PokedexEntry.class, com.github.aeonlucid.pogoprotos.Data.PokedexEntry.Builder.class);
     }
 
-    public static final int ASSET_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object assetId_;
+    public static final int POKEMON_ID_FIELD_NUMBER = 1;
+    private int pokemonId_;
     /**
-     * <code>optional string asset_id = 1;</code>
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
      */
-    public java.lang.String getAssetId() {
-      java.lang.Object ref = assetId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        assetId_ = s;
-        return s;
-      }
+    public int getPokemonIdValue() {
+      return pokemonId_;
     }
     /**
-     * <code>optional string asset_id = 1;</code>
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getAssetIdBytes() {
-      java.lang.Object ref = assetId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        assetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
+      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
+      return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
     }
 
-    public static final int BUNDLE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object bundleName_;
+    public static final int TIMES_ENCOUNTERED_FIELD_NUMBER = 2;
+    private int timesEncountered_;
     /**
-     * <code>optional string bundle_name = 2;</code>
+     * <code>optional int32 times_encountered = 2;</code>
      */
-    public java.lang.String getBundleName() {
-      java.lang.Object ref = bundleName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bundleName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string bundle_name = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getBundleNameBytes() {
-      java.lang.Object ref = bundleName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bundleName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getTimesEncountered() {
+      return timesEncountered_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 3;
-    private long version_;
+    public static final int TIMES_CAPTURED_FIELD_NUMBER = 3;
+    private int timesCaptured_;
     /**
-     * <code>optional int64 version = 3;</code>
+     * <code>optional int32 times_captured = 3;</code>
      */
-    public long getVersion() {
-      return version_;
+    public int getTimesCaptured() {
+      return timesCaptured_;
     }
 
-    public static final int CHECKSUM_FIELD_NUMBER = 4;
-    private int checksum_;
+    public static final int EVOLUTION_STONE_PIECES_FIELD_NUMBER = 4;
+    private int evolutionStonePieces_;
     /**
-     * <code>optional fixed32 checksum = 4;</code>
+     * <code>optional int32 evolution_stone_pieces = 4;</code>
      */
-    public int getChecksum() {
-      return checksum_;
+    public int getEvolutionStonePieces() {
+      return evolutionStonePieces_;
     }
 
-    public static final int SIZE_FIELD_NUMBER = 5;
-    private int size_;
+    public static final int EVOLUTION_STONES_FIELD_NUMBER = 5;
+    private int evolutionStones_;
     /**
-     * <code>optional int32 size = 5;</code>
+     * <code>optional int32 evolution_stones = 5;</code>
      */
-    public int getSize() {
-      return size_;
-    }
-
-    public static final int KEY_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString key_;
-    /**
-     * <code>optional bytes key = 6;</code>
-     */
-    public com.google.protobuf.ByteString getKey() {
-      return key_;
+    public int getEvolutionStones() {
+      return evolutionStones_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2524,23 +204,20 @@ public final class Data {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAssetIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, assetId_);
+      if (pokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
+        output.writeEnum(1, pokemonId_);
       }
-      if (!getBundleNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bundleName_);
+      if (timesEncountered_ != 0) {
+        output.writeInt32(2, timesEncountered_);
       }
-      if (version_ != 0L) {
-        output.writeInt64(3, version_);
+      if (timesCaptured_ != 0) {
+        output.writeInt32(3, timesCaptured_);
       }
-      if (checksum_ != 0) {
-        output.writeFixed32(4, checksum_);
+      if (evolutionStonePieces_ != 0) {
+        output.writeInt32(4, evolutionStonePieces_);
       }
-      if (size_ != 0) {
-        output.writeInt32(5, size_);
-      }
-      if (!key_.isEmpty()) {
-        output.writeBytes(6, key_);
+      if (evolutionStones_ != 0) {
+        output.writeInt32(5, evolutionStones_);
       }
     }
 
@@ -2549,27 +226,25 @@ public final class Data {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAssetIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, assetId_);
-      }
-      if (!getBundleNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bundleName_);
-      }
-      if (version_ != 0L) {
+      if (pokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, version_);
+          .computeEnumSize(1, pokemonId_);
       }
-      if (checksum_ != 0) {
+      if (timesEncountered_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(4, checksum_);
+          .computeInt32Size(2, timesEncountered_);
       }
-      if (size_ != 0) {
+      if (timesCaptured_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, size_);
+          .computeInt32Size(3, timesCaptured_);
       }
-      if (!key_.isEmpty()) {
+      if (evolutionStonePieces_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, key_);
+          .computeInt32Size(4, evolutionStonePieces_);
+      }
+      if (evolutionStones_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, evolutionStones_);
       }
       memoizedSize = size;
       return size;
@@ -2581,24 +256,21 @@ public final class Data {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry)) {
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.PokedexEntry)) {
         return super.equals(obj);
       }
-      com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry other = (com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry) obj;
+      com.github.aeonlucid.pogoprotos.Data.PokedexEntry other = (com.github.aeonlucid.pogoprotos.Data.PokedexEntry) obj;
 
       boolean result = true;
-      result = result && getAssetId()
-          .equals(other.getAssetId());
-      result = result && getBundleName()
-          .equals(other.getBundleName());
-      result = result && (getVersion()
-          == other.getVersion());
-      result = result && (getChecksum()
-          == other.getChecksum());
-      result = result && (getSize()
-          == other.getSize());
-      result = result && getKey()
-          .equals(other.getKey());
+      result = result && pokemonId_ == other.pokemonId_;
+      result = result && (getTimesEncountered()
+          == other.getTimesEncountered());
+      result = result && (getTimesCaptured()
+          == other.getTimesCaptured());
+      result = result && (getEvolutionStonePieces()
+          == other.getEvolutionStonePieces());
+      result = result && (getEvolutionStones()
+          == other.getEvolutionStones());
       return result;
     }
 
@@ -2609,76 +281,73 @@ public final class Data {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAssetId().hashCode();
-      hash = (37 * hash) + BUNDLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getBundleName().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getVersion());
-      hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
-      hash = (53 * hash) + getChecksum();
-      hash = (37 * hash) + SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getSize();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + POKEMON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + pokemonId_;
+      hash = (37 * hash) + TIMES_ENCOUNTERED_FIELD_NUMBER;
+      hash = (53 * hash) + getTimesEncountered();
+      hash = (37 * hash) + TIMES_CAPTURED_FIELD_NUMBER;
+      hash = (53 * hash) + getTimesCaptured();
+      hash = (37 * hash) + EVOLUTION_STONE_PIECES_FIELD_NUMBER;
+      hash = (53 * hash) + getEvolutionStonePieces();
+      hash = (37 * hash) + EVOLUTION_STONES_FIELD_NUMBER;
+      hash = (53 * hash) + getEvolutionStones();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(byte[] data)
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseDelimitedFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2690,7 +359,7 @@ public final class Data {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry prototype) {
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.PokedexEntry prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2705,25 +374,25 @@ public final class Data {
       return builder;
     }
     /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.AssetDigestEntry}
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PokedexEntry}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
-        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntryOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
+        com.github.aeonlucid.pogoprotos.Data.PokedexEntryOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.class, com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.Builder.class);
+                com.github.aeonlucid.pogoprotos.Data.PokedexEntry.class, com.github.aeonlucid.pogoprotos.Data.PokedexEntry.Builder.class);
       }
 
-      // Construct using com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.newBuilder()
+      // Construct using com.github.aeonlucid.pogoprotos.Data.PokedexEntry.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2740,46 +409,43 @@ public final class Data {
       }
       public Builder clear() {
         super.clear();
-        assetId_ = "";
+        pokemonId_ = 0;
 
-        bundleName_ = "";
+        timesEncountered_ = 0;
 
-        version_ = 0L;
+        timesCaptured_ = 0;
 
-        checksum_ = 0;
+        evolutionStonePieces_ = 0;
 
-        size_ = 0;
-
-        key_ = com.google.protobuf.ByteString.EMPTY;
+        evolutionStones_ = 0;
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
       }
 
-      public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.getDefaultInstance();
+      public com.github.aeonlucid.pogoprotos.Data.PokedexEntry getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Data.PokedexEntry.getDefaultInstance();
       }
 
-      public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry build() {
-        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry result = buildPartial();
+      public com.github.aeonlucid.pogoprotos.Data.PokedexEntry build() {
+        com.github.aeonlucid.pogoprotos.Data.PokedexEntry result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry buildPartial() {
-        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry result = new com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry(this);
-        result.assetId_ = assetId_;
-        result.bundleName_ = bundleName_;
-        result.version_ = version_;
-        result.checksum_ = checksum_;
-        result.size_ = size_;
-        result.key_ = key_;
+      public com.github.aeonlucid.pogoprotos.Data.PokedexEntry buildPartial() {
+        com.github.aeonlucid.pogoprotos.Data.PokedexEntry result = new com.github.aeonlucid.pogoprotos.Data.PokedexEntry(this);
+        result.pokemonId_ = pokemonId_;
+        result.timesEncountered_ = timesEncountered_;
+        result.timesCaptured_ = timesCaptured_;
+        result.evolutionStonePieces_ = evolutionStonePieces_;
+        result.evolutionStones_ = evolutionStones_;
         onBuilt();
         return result;
       }
@@ -2811,35 +477,30 @@ public final class Data {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry)other);
+        if (other instanceof com.github.aeonlucid.pogoprotos.Data.PokedexEntry) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.PokedexEntry)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry other) {
-        if (other == com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.getDefaultInstance()) return this;
-        if (!other.getAssetId().isEmpty()) {
-          assetId_ = other.assetId_;
-          onChanged();
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.PokedexEntry other) {
+        if (other == com.github.aeonlucid.pogoprotos.Data.PokedexEntry.getDefaultInstance()) return this;
+        if (other.pokemonId_ != 0) {
+          setPokemonIdValue(other.getPokemonIdValue());
         }
-        if (!other.getBundleName().isEmpty()) {
-          bundleName_ = other.bundleName_;
-          onChanged();
+        if (other.getTimesEncountered() != 0) {
+          setTimesEncountered(other.getTimesEncountered());
         }
-        if (other.getVersion() != 0L) {
-          setVersion(other.getVersion());
+        if (other.getTimesCaptured() != 0) {
+          setTimesCaptured(other.getTimesCaptured());
         }
-        if (other.getChecksum() != 0) {
-          setChecksum(other.getChecksum());
+        if (other.getEvolutionStonePieces() != 0) {
+          setEvolutionStonePieces(other.getEvolutionStonePieces());
         }
-        if (other.getSize() != 0) {
-          setSize(other.getSize());
-        }
-        if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
-          setKey(other.getKey());
+        if (other.getEvolutionStones() != 0) {
+          setEvolutionStones(other.getEvolutionStones());
         }
         onChanged();
         return this;
@@ -2853,11 +514,11 @@ public final class Data {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parsedMessage = null;
+        com.github.aeonlucid.pogoprotos.Data.PokedexEntry parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry) e.getUnfinishedMessage();
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.PokedexEntry) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2867,247 +528,150 @@ public final class Data {
         return this;
       }
 
-      private java.lang.Object assetId_ = "";
+      private int pokemonId_ = 0;
       /**
-       * <code>optional string asset_id = 1;</code>
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
-      public java.lang.String getAssetId() {
-        java.lang.Object ref = assetId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          assetId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      public int getPokemonIdValue() {
+        return pokemonId_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+       */
+      public Builder setPokemonIdValue(int value) {
+        pokemonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
+        com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
+        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+       */
+      public Builder setPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-      }
-      /**
-       * <code>optional string asset_id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAssetIdBytes() {
-        java.lang.Object ref = assetId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          assetId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string asset_id = 1;</code>
-       */
-      public Builder setAssetId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        assetId_ = value;
+        
+        pokemonId_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string asset_id = 1;</code>
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
-      public Builder clearAssetId() {
+      public Builder clearPokemonId() {
         
-        assetId_ = getDefaultInstance().getAssetId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string asset_id = 1;</code>
-       */
-      public Builder setAssetIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        assetId_ = value;
+        pokemonId_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object bundleName_ = "";
+      private int timesEncountered_ ;
       /**
-       * <code>optional string bundle_name = 2;</code>
+       * <code>optional int32 times_encountered = 2;</code>
        */
-      public java.lang.String getBundleName() {
-        java.lang.Object ref = bundleName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          bundleName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getTimesEncountered() {
+        return timesEncountered_;
       }
       /**
-       * <code>optional string bundle_name = 2;</code>
+       * <code>optional int32 times_encountered = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getBundleNameBytes() {
-        java.lang.Object ref = bundleName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          bundleName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string bundle_name = 2;</code>
-       */
-      public Builder setBundleName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        bundleName_ = value;
+      public Builder setTimesEncountered(int value) {
+        
+        timesEncountered_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string bundle_name = 2;</code>
+       * <code>optional int32 times_encountered = 2;</code>
        */
-      public Builder clearBundleName() {
+      public Builder clearTimesEncountered() {
         
-        bundleName_ = getDefaultInstance().getBundleName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string bundle_name = 2;</code>
-       */
-      public Builder setBundleNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        bundleName_ = value;
+        timesEncountered_ = 0;
         onChanged();
         return this;
       }
 
-      private long version_ ;
+      private int timesCaptured_ ;
       /**
-       * <code>optional int64 version = 3;</code>
+       * <code>optional int32 times_captured = 3;</code>
        */
-      public long getVersion() {
-        return version_;
+      public int getTimesCaptured() {
+        return timesCaptured_;
       }
       /**
-       * <code>optional int64 version = 3;</code>
+       * <code>optional int32 times_captured = 3;</code>
        */
-      public Builder setVersion(long value) {
+      public Builder setTimesCaptured(int value) {
         
-        version_ = value;
+        timesCaptured_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 version = 3;</code>
+       * <code>optional int32 times_captured = 3;</code>
        */
-      public Builder clearVersion() {
+      public Builder clearTimesCaptured() {
         
-        version_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int checksum_ ;
-      /**
-       * <code>optional fixed32 checksum = 4;</code>
-       */
-      public int getChecksum() {
-        return checksum_;
-      }
-      /**
-       * <code>optional fixed32 checksum = 4;</code>
-       */
-      public Builder setChecksum(int value) {
-        
-        checksum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional fixed32 checksum = 4;</code>
-       */
-      public Builder clearChecksum() {
-        
-        checksum_ = 0;
+        timesCaptured_ = 0;
         onChanged();
         return this;
       }
 
-      private int size_ ;
+      private int evolutionStonePieces_ ;
       /**
-       * <code>optional int32 size = 5;</code>
+       * <code>optional int32 evolution_stone_pieces = 4;</code>
        */
-      public int getSize() {
-        return size_;
+      public int getEvolutionStonePieces() {
+        return evolutionStonePieces_;
       }
       /**
-       * <code>optional int32 size = 5;</code>
+       * <code>optional int32 evolution_stone_pieces = 4;</code>
        */
-      public Builder setSize(int value) {
+      public Builder setEvolutionStonePieces(int value) {
         
-        size_ = value;
+        evolutionStonePieces_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 size = 5;</code>
+       * <code>optional int32 evolution_stone_pieces = 4;</code>
        */
-      public Builder clearSize() {
+      public Builder clearEvolutionStonePieces() {
         
-        size_ = 0;
+        evolutionStonePieces_ = 0;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+      private int evolutionStones_ ;
       /**
-       * <code>optional bytes key = 6;</code>
+       * <code>optional int32 evolution_stones = 5;</code>
        */
-      public com.google.protobuf.ByteString getKey() {
-        return key_;
+      public int getEvolutionStones() {
+        return evolutionStones_;
       }
       /**
-       * <code>optional bytes key = 6;</code>
+       * <code>optional int32 evolution_stones = 5;</code>
        */
-      public Builder setKey(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        key_ = value;
+      public Builder setEvolutionStones(int value) {
+        
+        evolutionStones_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bytes key = 6;</code>
+       * <code>optional int32 evolution_stones = 5;</code>
        */
-      public Builder clearKey() {
+      public Builder clearEvolutionStones() {
         
-        key_ = getDefaultInstance().getKey();
+        evolutionStones_ = 0;
         onChanged();
         return this;
       }
@@ -3122,39 +686,39 @@ public final class Data {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
     }
 
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
-    private static final com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
+    private static final com.github.aeonlucid.pogoprotos.Data.PokedexEntry DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry();
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.PokedexEntry();
     }
 
-    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry getDefaultInstance() {
+    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AssetDigestEntry>
-        PARSER = new com.google.protobuf.AbstractParser<AssetDigestEntry>() {
-      public AssetDigestEntry parsePartialFrom(
+    private static final com.google.protobuf.Parser<PokedexEntry>
+        PARSER = new com.google.protobuf.AbstractParser<PokedexEntry>() {
+      public PokedexEntry parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AssetDigestEntry(input, extensionRegistry);
+          return new PokedexEntry(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AssetDigestEntry> parser() {
+    public static com.google.protobuf.Parser<PokedexEntry> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AssetDigestEntry> getParserForType() {
+    public com.google.protobuf.Parser<PokedexEntry> getParserForType() {
       return PARSER;
     }
 
-    public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry getDefaultInstanceForType() {
+    public com.github.aeonlucid.pogoprotos.Data.PokedexEntry getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4639,6 +2203,3908 @@ public final class Data {
 
   }
 
+  public interface PlayerDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.PlayerData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int64 creation_timestamp_ms = 1;</code>
+     */
+    long getCreationTimestampMs();
+
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+     */
+    int getTeamValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+     */
+    com.github.aeonlucid.pogoprotos.Enums.TeamColor getTeam();
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    java.util.List<com.github.aeonlucid.pogoprotos.Enums.TutorialState> getTutorialStateList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    int getTutorialStateCount();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    com.github.aeonlucid.pogoprotos.Enums.TutorialState getTutorialState(int index);
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    java.util.List<java.lang.Integer>
+    getTutorialStateValueList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    int getTutorialStateValue(int index);
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     */
+    boolean hasAvatar();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar getAvatar();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder getAvatarOrBuilder();
+
+    /**
+     * <code>optional int32 max_pokemon_storage = 9;</code>
+     */
+    int getMaxPokemonStorage();
+
+    /**
+     * <code>optional int32 max_item_storage = 10;</code>
+     */
+    int getMaxItemStorage();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+     */
+    boolean hasDailyBonus();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.DailyBonus getDailyBonus();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder getDailyBonusOrBuilder();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+     */
+    boolean hasEquippedBadge();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge getEquippedBadge();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder getEquippedBadgeOrBuilder();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+     */
+    boolean hasContactSettings();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.ContactSettings getContactSettings();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder getContactSettingsOrBuilder();
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> 
+        getCurrenciesList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencies(int index);
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    int getCurrenciesCount();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
+        getCurrenciesOrBuilderList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrenciesOrBuilder(
+        int index);
+
+    /**
+     * <code>optional int32 remaining_codename_claims = 15;</code>
+     */
+    int getRemainingCodenameClaims();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+     */
+    boolean hasBuddyPokemon();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+     */
+    com.github.aeonlucid.pogoprotos.Data.BuddyPokemon getBuddyPokemon();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+     */
+    com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder getBuddyPokemonOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PlayerData}
+   */
+  public  static final class PlayerData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.PlayerData)
+      PlayerDataOrBuilder {
+    // Use PlayerData.newBuilder() to construct.
+    private PlayerData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PlayerData() {
+      creationTimestampMs_ = 0L;
+      username_ = "";
+      team_ = 0;
+      tutorialState_ = java.util.Collections.emptyList();
+      maxPokemonStorage_ = 0;
+      maxItemStorage_ = 0;
+      currencies_ = java.util.Collections.emptyList();
+      remainingCodenameClaims_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private PlayerData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              creationTimestampMs_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              team_ = rawValue;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                tutorialState_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              tutorialState_.add(rawValue);
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  tutorialState_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                tutorialState_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            case 66: {
+              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder subBuilder = null;
+              if (avatar_ != null) {
+                subBuilder = avatar_.toBuilder();
+              }
+              avatar_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(avatar_);
+                avatar_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+
+              maxPokemonStorage_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              maxItemStorage_ = input.readInt32();
+              break;
+            }
+            case 90: {
+              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder subBuilder = null;
+              if (dailyBonus_ != null) {
+                subBuilder = dailyBonus_.toBuilder();
+              }
+              dailyBonus_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dailyBonus_);
+                dailyBonus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder subBuilder = null;
+              if (equippedBadge_ != null) {
+                subBuilder = equippedBadge_.toBuilder();
+              }
+              equippedBadge_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(equippedBadge_);
+                equippedBadge_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 106: {
+              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder subBuilder = null;
+              if (contactSettings_ != null) {
+                subBuilder = contactSettings_.toBuilder();
+              }
+              contactSettings_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(contactSettings_);
+                contactSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                currencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              currencies_.add(
+                  input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+
+              remainingCodenameClaims_ = input.readInt32();
+              break;
+            }
+            case 130: {
+              com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder subBuilder = null;
+              if (buddyPokemon_ != null) {
+                subBuilder = buddyPokemon_.toBuilder();
+              }
+              buddyPokemon_ = input.readMessage(com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(buddyPokemon_);
+                buddyPokemon_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          tutorialState_ = java.util.Collections.unmodifiableList(tutorialState_);
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          currencies_ = java.util.Collections.unmodifiableList(currencies_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.Data.PlayerData.class, com.github.aeonlucid.pogoprotos.Data.PlayerData.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int CREATION_TIMESTAMP_MS_FIELD_NUMBER = 1;
+    private long creationTimestampMs_;
+    /**
+     * <code>optional int64 creation_timestamp_ms = 1;</code>
+     */
+    public long getCreationTimestampMs() {
+      return creationTimestampMs_;
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string username = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEAM_FIELD_NUMBER = 5;
+    private int team_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+     */
+    public int getTeamValue() {
+      return team_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.Enums.TeamColor getTeam() {
+      com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.valueOf(team_);
+      return result == null ? com.github.aeonlucid.pogoprotos.Enums.TeamColor.UNRECOGNIZED : result;
+    }
+
+    public static final int TUTORIAL_STATE_FIELD_NUMBER = 7;
+    private java.util.List<java.lang.Integer> tutorialState_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState> tutorialState_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState>() {
+              public com.github.aeonlucid.pogoprotos.Enums.TutorialState convert(java.lang.Integer from) {
+                com.github.aeonlucid.pogoprotos.Enums.TutorialState result = com.github.aeonlucid.pogoprotos.Enums.TutorialState.valueOf(from);
+                return result == null ? com.github.aeonlucid.pogoprotos.Enums.TutorialState.UNRECOGNIZED : result;
+              }
+            };
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    public java.util.List<com.github.aeonlucid.pogoprotos.Enums.TutorialState> getTutorialStateList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState>(tutorialState_, tutorialState_converter_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    public int getTutorialStateCount() {
+      return tutorialState_.size();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    public com.github.aeonlucid.pogoprotos.Enums.TutorialState getTutorialState(int index) {
+      return tutorialState_converter_.convert(tutorialState_.get(index));
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    public java.util.List<java.lang.Integer>
+    getTutorialStateValueList() {
+      return tutorialState_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+     */
+    public int getTutorialStateValue(int index) {
+      return tutorialState_.get(index);
+    }
+    private int tutorialStateMemoizedSerializedSize;
+
+    public static final int AVATAR_FIELD_NUMBER = 8;
+    private com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar avatar_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     */
+    public boolean hasAvatar() {
+      return avatar_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar getAvatar() {
+      return avatar_ == null ? com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.getDefaultInstance() : avatar_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder getAvatarOrBuilder() {
+      return getAvatar();
+    }
+
+    public static final int MAX_POKEMON_STORAGE_FIELD_NUMBER = 9;
+    private int maxPokemonStorage_;
+    /**
+     * <code>optional int32 max_pokemon_storage = 9;</code>
+     */
+    public int getMaxPokemonStorage() {
+      return maxPokemonStorage_;
+    }
+
+    public static final int MAX_ITEM_STORAGE_FIELD_NUMBER = 10;
+    private int maxItemStorage_;
+    /**
+     * <code>optional int32 max_item_storage = 10;</code>
+     */
+    public int getMaxItemStorage() {
+      return maxItemStorage_;
+    }
+
+    public static final int DAILY_BONUS_FIELD_NUMBER = 11;
+    private com.github.aeonlucid.pogoprotos.data.Player.DailyBonus dailyBonus_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+     */
+    public boolean hasDailyBonus() {
+      return dailyBonus_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.DailyBonus getDailyBonus() {
+      return dailyBonus_ == null ? com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.getDefaultInstance() : dailyBonus_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder getDailyBonusOrBuilder() {
+      return getDailyBonus();
+    }
+
+    public static final int EQUIPPED_BADGE_FIELD_NUMBER = 12;
+    private com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge equippedBadge_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+     */
+    public boolean hasEquippedBadge() {
+      return equippedBadge_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge getEquippedBadge() {
+      return equippedBadge_ == null ? com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.getDefaultInstance() : equippedBadge_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder getEquippedBadgeOrBuilder() {
+      return getEquippedBadge();
+    }
+
+    public static final int CONTACT_SETTINGS_FIELD_NUMBER = 13;
+    private com.github.aeonlucid.pogoprotos.data.Player.ContactSettings contactSettings_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+     */
+    public boolean hasContactSettings() {
+      return contactSettings_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.ContactSettings getContactSettings() {
+      return contactSettings_ == null ? com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.getDefaultInstance() : contactSettings_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder getContactSettingsOrBuilder() {
+      return getContactSettings();
+    }
+
+    public static final int CURRENCIES_FIELD_NUMBER = 14;
+    private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> currencies_;
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getCurrenciesList() {
+      return currencies_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
+        getCurrenciesOrBuilderList() {
+      return currencies_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    public int getCurrenciesCount() {
+      return currencies_.size();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencies(int index) {
+      return currencies_.get(index);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrenciesOrBuilder(
+        int index) {
+      return currencies_.get(index);
+    }
+
+    public static final int REMAINING_CODENAME_CLAIMS_FIELD_NUMBER = 15;
+    private int remainingCodenameClaims_;
+    /**
+     * <code>optional int32 remaining_codename_claims = 15;</code>
+     */
+    public int getRemainingCodenameClaims() {
+      return remainingCodenameClaims_;
+    }
+
+    public static final int BUDDY_POKEMON_FIELD_NUMBER = 16;
+    private com.github.aeonlucid.pogoprotos.Data.BuddyPokemon buddyPokemon_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+     */
+    public boolean hasBuddyPokemon() {
+      return buddyPokemon_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon getBuddyPokemon() {
+      return buddyPokemon_ == null ? com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.getDefaultInstance() : buddyPokemon_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder getBuddyPokemonOrBuilder() {
+      return getBuddyPokemon();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (creationTimestampMs_ != 0L) {
+        output.writeInt64(1, creationTimestampMs_);
+      }
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+      }
+      if (team_ != com.github.aeonlucid.pogoprotos.Enums.TeamColor.NEUTRAL.getNumber()) {
+        output.writeEnum(5, team_);
+      }
+      if (getTutorialStateList().size() > 0) {
+        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(tutorialStateMemoizedSerializedSize);
+      }
+      for (int i = 0; i < tutorialState_.size(); i++) {
+        output.writeEnumNoTag(tutorialState_.get(i));
+      }
+      if (avatar_ != null) {
+        output.writeMessage(8, getAvatar());
+      }
+      if (maxPokemonStorage_ != 0) {
+        output.writeInt32(9, maxPokemonStorage_);
+      }
+      if (maxItemStorage_ != 0) {
+        output.writeInt32(10, maxItemStorage_);
+      }
+      if (dailyBonus_ != null) {
+        output.writeMessage(11, getDailyBonus());
+      }
+      if (equippedBadge_ != null) {
+        output.writeMessage(12, getEquippedBadge());
+      }
+      if (contactSettings_ != null) {
+        output.writeMessage(13, getContactSettings());
+      }
+      for (int i = 0; i < currencies_.size(); i++) {
+        output.writeMessage(14, currencies_.get(i));
+      }
+      if (remainingCodenameClaims_ != 0) {
+        output.writeInt32(15, remainingCodenameClaims_);
+      }
+      if (buddyPokemon_ != null) {
+        output.writeMessage(16, getBuddyPokemon());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (creationTimestampMs_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, creationTimestampMs_);
+      }
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+      }
+      if (team_ != com.github.aeonlucid.pogoprotos.Enums.TeamColor.NEUTRAL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, team_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tutorialState_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeEnumSizeNoTag(tutorialState_.get(i));
+        }
+        size += dataSize;
+        if (!getTutorialStateList().isEmpty()) {  size += 1;
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dataSize);
+        }tutorialStateMemoizedSerializedSize = dataSize;
+      }
+      if (avatar_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getAvatar());
+      }
+      if (maxPokemonStorage_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, maxPokemonStorage_);
+      }
+      if (maxItemStorage_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, maxItemStorage_);
+      }
+      if (dailyBonus_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getDailyBonus());
+      }
+      if (equippedBadge_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getEquippedBadge());
+      }
+      if (contactSettings_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getContactSettings());
+      }
+      for (int i = 0; i < currencies_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, currencies_.get(i));
+      }
+      if (remainingCodenameClaims_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, remainingCodenameClaims_);
+      }
+      if (buddyPokemon_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getBuddyPokemon());
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.PlayerData)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.Data.PlayerData other = (com.github.aeonlucid.pogoprotos.Data.PlayerData) obj;
+
+      boolean result = true;
+      result = result && (getCreationTimestampMs()
+          == other.getCreationTimestampMs());
+      result = result && getUsername()
+          .equals(other.getUsername());
+      result = result && team_ == other.team_;
+      result = result && tutorialState_.equals(other.tutorialState_);
+      result = result && (hasAvatar() == other.hasAvatar());
+      if (hasAvatar()) {
+        result = result && getAvatar()
+            .equals(other.getAvatar());
+      }
+      result = result && (getMaxPokemonStorage()
+          == other.getMaxPokemonStorage());
+      result = result && (getMaxItemStorage()
+          == other.getMaxItemStorage());
+      result = result && (hasDailyBonus() == other.hasDailyBonus());
+      if (hasDailyBonus()) {
+        result = result && getDailyBonus()
+            .equals(other.getDailyBonus());
+      }
+      result = result && (hasEquippedBadge() == other.hasEquippedBadge());
+      if (hasEquippedBadge()) {
+        result = result && getEquippedBadge()
+            .equals(other.getEquippedBadge());
+      }
+      result = result && (hasContactSettings() == other.hasContactSettings());
+      if (hasContactSettings()) {
+        result = result && getContactSettings()
+            .equals(other.getContactSettings());
+      }
+      result = result && getCurrenciesList()
+          .equals(other.getCurrenciesList());
+      result = result && (getRemainingCodenameClaims()
+          == other.getRemainingCodenameClaims());
+      result = result && (hasBuddyPokemon() == other.hasBuddyPokemon());
+      if (hasBuddyPokemon()) {
+        result = result && getBuddyPokemon()
+            .equals(other.getBuddyPokemon());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + CREATION_TIMESTAMP_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreationTimestampMs());
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + TEAM_FIELD_NUMBER;
+      hash = (53 * hash) + team_;
+      if (getTutorialStateCount() > 0) {
+        hash = (37 * hash) + TUTORIAL_STATE_FIELD_NUMBER;
+        hash = (53 * hash) + tutorialState_.hashCode();
+      }
+      if (hasAvatar()) {
+        hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+        hash = (53 * hash) + getAvatar().hashCode();
+      }
+      hash = (37 * hash) + MAX_POKEMON_STORAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxPokemonStorage();
+      hash = (37 * hash) + MAX_ITEM_STORAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxItemStorage();
+      if (hasDailyBonus()) {
+        hash = (37 * hash) + DAILY_BONUS_FIELD_NUMBER;
+        hash = (53 * hash) + getDailyBonus().hashCode();
+      }
+      if (hasEquippedBadge()) {
+        hash = (37 * hash) + EQUIPPED_BADGE_FIELD_NUMBER;
+        hash = (53 * hash) + getEquippedBadge().hashCode();
+      }
+      if (hasContactSettings()) {
+        hash = (37 * hash) + CONTACT_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getContactSettings().hashCode();
+      }
+      if (getCurrenciesCount() > 0) {
+        hash = (37 * hash) + CURRENCIES_FIELD_NUMBER;
+        hash = (53 * hash) + getCurrenciesList().hashCode();
+      }
+      hash = (37 * hash) + REMAINING_CODENAME_CLAIMS_FIELD_NUMBER;
+      hash = (53 * hash) + getRemainingCodenameClaims();
+      if (hasBuddyPokemon()) {
+        hash = (37 * hash) + BUDDY_POKEMON_FIELD_NUMBER;
+        hash = (53 * hash) + getBuddyPokemon().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.PlayerData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PlayerData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.PlayerData)
+        com.github.aeonlucid.pogoprotos.Data.PlayerDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.Data.PlayerData.class, com.github.aeonlucid.pogoprotos.Data.PlayerData.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.Data.PlayerData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCurrenciesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        creationTimestampMs_ = 0L;
+
+        username_ = "";
+
+        team_ = 0;
+
+        tutorialState_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (avatarBuilder_ == null) {
+          avatar_ = null;
+        } else {
+          avatar_ = null;
+          avatarBuilder_ = null;
+        }
+        maxPokemonStorage_ = 0;
+
+        maxItemStorage_ = 0;
+
+        if (dailyBonusBuilder_ == null) {
+          dailyBonus_ = null;
+        } else {
+          dailyBonus_ = null;
+          dailyBonusBuilder_ = null;
+        }
+        if (equippedBadgeBuilder_ == null) {
+          equippedBadge_ = null;
+        } else {
+          equippedBadge_ = null;
+          equippedBadgeBuilder_ = null;
+        }
+        if (contactSettingsBuilder_ == null) {
+          contactSettings_ = null;
+        } else {
+          contactSettings_ = null;
+          contactSettingsBuilder_ = null;
+        }
+        if (currenciesBuilder_ == null) {
+          currencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          currenciesBuilder_.clear();
+        }
+        remainingCodenameClaims_ = 0;
+
+        if (buddyPokemonBuilder_ == null) {
+          buddyPokemon_ = null;
+        } else {
+          buddyPokemon_ = null;
+          buddyPokemonBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.PlayerData getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Data.PlayerData.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.PlayerData build() {
+        com.github.aeonlucid.pogoprotos.Data.PlayerData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.PlayerData buildPartial() {
+        com.github.aeonlucid.pogoprotos.Data.PlayerData result = new com.github.aeonlucid.pogoprotos.Data.PlayerData(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.creationTimestampMs_ = creationTimestampMs_;
+        result.username_ = username_;
+        result.team_ = team_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          tutorialState_ = java.util.Collections.unmodifiableList(tutorialState_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.tutorialState_ = tutorialState_;
+        if (avatarBuilder_ == null) {
+          result.avatar_ = avatar_;
+        } else {
+          result.avatar_ = avatarBuilder_.build();
+        }
+        result.maxPokemonStorage_ = maxPokemonStorage_;
+        result.maxItemStorage_ = maxItemStorage_;
+        if (dailyBonusBuilder_ == null) {
+          result.dailyBonus_ = dailyBonus_;
+        } else {
+          result.dailyBonus_ = dailyBonusBuilder_.build();
+        }
+        if (equippedBadgeBuilder_ == null) {
+          result.equippedBadge_ = equippedBadge_;
+        } else {
+          result.equippedBadge_ = equippedBadgeBuilder_.build();
+        }
+        if (contactSettingsBuilder_ == null) {
+          result.contactSettings_ = contactSettings_;
+        } else {
+          result.contactSettings_ = contactSettingsBuilder_.build();
+        }
+        if (currenciesBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            currencies_ = java.util.Collections.unmodifiableList(currencies_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.currencies_ = currencies_;
+        } else {
+          result.currencies_ = currenciesBuilder_.build();
+        }
+        result.remainingCodenameClaims_ = remainingCodenameClaims_;
+        if (buddyPokemonBuilder_ == null) {
+          result.buddyPokemon_ = buddyPokemon_;
+        } else {
+          result.buddyPokemon_ = buddyPokemonBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.Data.PlayerData) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.PlayerData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.PlayerData other) {
+        if (other == com.github.aeonlucid.pogoprotos.Data.PlayerData.getDefaultInstance()) return this;
+        if (other.getCreationTimestampMs() != 0L) {
+          setCreationTimestampMs(other.getCreationTimestampMs());
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (other.team_ != 0) {
+          setTeamValue(other.getTeamValue());
+        }
+        if (!other.tutorialState_.isEmpty()) {
+          if (tutorialState_.isEmpty()) {
+            tutorialState_ = other.tutorialState_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureTutorialStateIsMutable();
+            tutorialState_.addAll(other.tutorialState_);
+          }
+          onChanged();
+        }
+        if (other.hasAvatar()) {
+          mergeAvatar(other.getAvatar());
+        }
+        if (other.getMaxPokemonStorage() != 0) {
+          setMaxPokemonStorage(other.getMaxPokemonStorage());
+        }
+        if (other.getMaxItemStorage() != 0) {
+          setMaxItemStorage(other.getMaxItemStorage());
+        }
+        if (other.hasDailyBonus()) {
+          mergeDailyBonus(other.getDailyBonus());
+        }
+        if (other.hasEquippedBadge()) {
+          mergeEquippedBadge(other.getEquippedBadge());
+        }
+        if (other.hasContactSettings()) {
+          mergeContactSettings(other.getContactSettings());
+        }
+        if (currenciesBuilder_ == null) {
+          if (!other.currencies_.isEmpty()) {
+            if (currencies_.isEmpty()) {
+              currencies_ = other.currencies_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensureCurrenciesIsMutable();
+              currencies_.addAll(other.currencies_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.currencies_.isEmpty()) {
+            if (currenciesBuilder_.isEmpty()) {
+              currenciesBuilder_.dispose();
+              currenciesBuilder_ = null;
+              currencies_ = other.currencies_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              currenciesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCurrenciesFieldBuilder() : null;
+            } else {
+              currenciesBuilder_.addAllMessages(other.currencies_);
+            }
+          }
+        }
+        if (other.getRemainingCodenameClaims() != 0) {
+          setRemainingCodenameClaims(other.getRemainingCodenameClaims());
+        }
+        if (other.hasBuddyPokemon()) {
+          mergeBuddyPokemon(other.getBuddyPokemon());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.Data.PlayerData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.PlayerData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long creationTimestampMs_ ;
+      /**
+       * <code>optional int64 creation_timestamp_ms = 1;</code>
+       */
+      public long getCreationTimestampMs() {
+        return creationTimestampMs_;
+      }
+      /**
+       * <code>optional int64 creation_timestamp_ms = 1;</code>
+       */
+      public Builder setCreationTimestampMs(long value) {
+        
+        creationTimestampMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 creation_timestamp_ms = 1;</code>
+       */
+      public Builder clearCreationTimestampMs() {
+        
+        creationTimestampMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>optional string username = 2;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string username = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string username = 2;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string username = 2;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string username = 2;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int team_ = 0;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+       */
+      public int getTeamValue() {
+        return team_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+       */
+      public Builder setTeamValue(int value) {
+        team_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Enums.TeamColor getTeam() {
+        com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.valueOf(team_);
+        return result == null ? com.github.aeonlucid.pogoprotos.Enums.TeamColor.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+       */
+      public Builder setTeam(com.github.aeonlucid.pogoprotos.Enums.TeamColor value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        team_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor team = 5;</code>
+       */
+      public Builder clearTeam() {
+        
+        team_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> tutorialState_ =
+        java.util.Collections.emptyList();
+      private void ensureTutorialStateIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          tutorialState_ = new java.util.ArrayList<java.lang.Integer>(tutorialState_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.Enums.TutorialState> getTutorialStateList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.TutorialState>(tutorialState_, tutorialState_converter_);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public int getTutorialStateCount() {
+        return tutorialState_.size();
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Enums.TutorialState getTutorialState(int index) {
+        return tutorialState_converter_.convert(tutorialState_.get(index));
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder setTutorialState(
+          int index, com.github.aeonlucid.pogoprotos.Enums.TutorialState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTutorialStateIsMutable();
+        tutorialState_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder addTutorialState(com.github.aeonlucid.pogoprotos.Enums.TutorialState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTutorialStateIsMutable();
+        tutorialState_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder addAllTutorialState(
+          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Enums.TutorialState> values) {
+        ensureTutorialStateIsMutable();
+        for (com.github.aeonlucid.pogoprotos.Enums.TutorialState value : values) {
+          tutorialState_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder clearTutorialState() {
+        tutorialState_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public java.util.List<java.lang.Integer>
+      getTutorialStateValueList() {
+        return java.util.Collections.unmodifiableList(tutorialState_);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public int getTutorialStateValue(int index) {
+        return tutorialState_.get(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder setTutorialStateValue(
+          int index, int value) {
+        ensureTutorialStateIsMutable();
+        tutorialState_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder addTutorialStateValue(int value) {
+        ensureTutorialStateIsMutable();
+        tutorialState_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.enums.TutorialState tutorial_state = 7 [packed = true];</code>
+       */
+      public Builder addAllTutorialStateValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureTutorialStateIsMutable();
+        for (int value : values) {
+          tutorialState_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      private com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar avatar_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder> avatarBuilder_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public boolean hasAvatar() {
+        return avatarBuilder_ != null || avatar_ != null;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar getAvatar() {
+        if (avatarBuilder_ == null) {
+          return avatar_ == null ? com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.getDefaultInstance() : avatar_;
+        } else {
+          return avatarBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public Builder setAvatar(com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar value) {
+        if (avatarBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          avatar_ = value;
+          onChanged();
+        } else {
+          avatarBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public Builder setAvatar(
+          com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder builderForValue) {
+        if (avatarBuilder_ == null) {
+          avatar_ = builderForValue.build();
+          onChanged();
+        } else {
+          avatarBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public Builder mergeAvatar(com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar value) {
+        if (avatarBuilder_ == null) {
+          if (avatar_ != null) {
+            avatar_ =
+              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.newBuilder(avatar_).mergeFrom(value).buildPartial();
+          } else {
+            avatar_ = value;
+          }
+          onChanged();
+        } else {
+          avatarBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public Builder clearAvatar() {
+        if (avatarBuilder_ == null) {
+          avatar_ = null;
+          onChanged();
+        } else {
+          avatar_ = null;
+          avatarBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder getAvatarBuilder() {
+        
+        onChanged();
+        return getAvatarFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder getAvatarOrBuilder() {
+        if (avatarBuilder_ != null) {
+          return avatarBuilder_.getMessageOrBuilder();
+        } else {
+          return avatar_ == null ?
+              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.getDefaultInstance() : avatar_;
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerAvatar avatar = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder> 
+          getAvatarFieldBuilder() {
+        if (avatarBuilder_ == null) {
+          avatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatar.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerAvatarOrBuilder>(
+                  getAvatar(),
+                  getParentForChildren(),
+                  isClean());
+          avatar_ = null;
+        }
+        return avatarBuilder_;
+      }
+
+      private int maxPokemonStorage_ ;
+      /**
+       * <code>optional int32 max_pokemon_storage = 9;</code>
+       */
+      public int getMaxPokemonStorage() {
+        return maxPokemonStorage_;
+      }
+      /**
+       * <code>optional int32 max_pokemon_storage = 9;</code>
+       */
+      public Builder setMaxPokemonStorage(int value) {
+        
+        maxPokemonStorage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 max_pokemon_storage = 9;</code>
+       */
+      public Builder clearMaxPokemonStorage() {
+        
+        maxPokemonStorage_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxItemStorage_ ;
+      /**
+       * <code>optional int32 max_item_storage = 10;</code>
+       */
+      public int getMaxItemStorage() {
+        return maxItemStorage_;
+      }
+      /**
+       * <code>optional int32 max_item_storage = 10;</code>
+       */
+      public Builder setMaxItemStorage(int value) {
+        
+        maxItemStorage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 max_item_storage = 10;</code>
+       */
+      public Builder clearMaxItemStorage() {
+        
+        maxItemStorage_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.github.aeonlucid.pogoprotos.data.Player.DailyBonus dailyBonus_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.DailyBonus, com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder, com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder> dailyBonusBuilder_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public boolean hasDailyBonus() {
+        return dailyBonusBuilder_ != null || dailyBonus_ != null;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.DailyBonus getDailyBonus() {
+        if (dailyBonusBuilder_ == null) {
+          return dailyBonus_ == null ? com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.getDefaultInstance() : dailyBonus_;
+        } else {
+          return dailyBonusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public Builder setDailyBonus(com.github.aeonlucid.pogoprotos.data.Player.DailyBonus value) {
+        if (dailyBonusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dailyBonus_ = value;
+          onChanged();
+        } else {
+          dailyBonusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public Builder setDailyBonus(
+          com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder builderForValue) {
+        if (dailyBonusBuilder_ == null) {
+          dailyBonus_ = builderForValue.build();
+          onChanged();
+        } else {
+          dailyBonusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public Builder mergeDailyBonus(com.github.aeonlucid.pogoprotos.data.Player.DailyBonus value) {
+        if (dailyBonusBuilder_ == null) {
+          if (dailyBonus_ != null) {
+            dailyBonus_ =
+              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.newBuilder(dailyBonus_).mergeFrom(value).buildPartial();
+          } else {
+            dailyBonus_ = value;
+          }
+          onChanged();
+        } else {
+          dailyBonusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public Builder clearDailyBonus() {
+        if (dailyBonusBuilder_ == null) {
+          dailyBonus_ = null;
+          onChanged();
+        } else {
+          dailyBonus_ = null;
+          dailyBonusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder getDailyBonusBuilder() {
+        
+        onChanged();
+        return getDailyBonusFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder getDailyBonusOrBuilder() {
+        if (dailyBonusBuilder_ != null) {
+          return dailyBonusBuilder_.getMessageOrBuilder();
+        } else {
+          return dailyBonus_ == null ?
+              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.getDefaultInstance() : dailyBonus_;
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.DailyBonus daily_bonus = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.DailyBonus, com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder, com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder> 
+          getDailyBonusFieldBuilder() {
+        if (dailyBonusBuilder_ == null) {
+          dailyBonusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.data.Player.DailyBonus, com.github.aeonlucid.pogoprotos.data.Player.DailyBonus.Builder, com.github.aeonlucid.pogoprotos.data.Player.DailyBonusOrBuilder>(
+                  getDailyBonus(),
+                  getParentForChildren(),
+                  isClean());
+          dailyBonus_ = null;
+        }
+        return dailyBonusBuilder_;
+      }
+
+      private com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge equippedBadge_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder> equippedBadgeBuilder_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public boolean hasEquippedBadge() {
+        return equippedBadgeBuilder_ != null || equippedBadge_ != null;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge getEquippedBadge() {
+        if (equippedBadgeBuilder_ == null) {
+          return equippedBadge_ == null ? com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.getDefaultInstance() : equippedBadge_;
+        } else {
+          return equippedBadgeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public Builder setEquippedBadge(com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge value) {
+        if (equippedBadgeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          equippedBadge_ = value;
+          onChanged();
+        } else {
+          equippedBadgeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public Builder setEquippedBadge(
+          com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder builderForValue) {
+        if (equippedBadgeBuilder_ == null) {
+          equippedBadge_ = builderForValue.build();
+          onChanged();
+        } else {
+          equippedBadgeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public Builder mergeEquippedBadge(com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge value) {
+        if (equippedBadgeBuilder_ == null) {
+          if (equippedBadge_ != null) {
+            equippedBadge_ =
+              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.newBuilder(equippedBadge_).mergeFrom(value).buildPartial();
+          } else {
+            equippedBadge_ = value;
+          }
+          onChanged();
+        } else {
+          equippedBadgeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public Builder clearEquippedBadge() {
+        if (equippedBadgeBuilder_ == null) {
+          equippedBadge_ = null;
+          onChanged();
+        } else {
+          equippedBadge_ = null;
+          equippedBadgeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder getEquippedBadgeBuilder() {
+        
+        onChanged();
+        return getEquippedBadgeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder getEquippedBadgeOrBuilder() {
+        if (equippedBadgeBuilder_ != null) {
+          return equippedBadgeBuilder_.getMessageOrBuilder();
+        } else {
+          return equippedBadge_ == null ?
+              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.getDefaultInstance() : equippedBadge_;
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.EquippedBadge equipped_badge = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder> 
+          getEquippedBadgeFieldBuilder() {
+        if (equippedBadgeBuilder_ == null) {
+          equippedBadgeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadge.Builder, com.github.aeonlucid.pogoprotos.data.Player.EquippedBadgeOrBuilder>(
+                  getEquippedBadge(),
+                  getParentForChildren(),
+                  isClean());
+          equippedBadge_ = null;
+        }
+        return equippedBadgeBuilder_;
+      }
+
+      private com.github.aeonlucid.pogoprotos.data.Player.ContactSettings contactSettings_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.ContactSettings, com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder, com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder> contactSettingsBuilder_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public boolean hasContactSettings() {
+        return contactSettingsBuilder_ != null || contactSettings_ != null;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.ContactSettings getContactSettings() {
+        if (contactSettingsBuilder_ == null) {
+          return contactSettings_ == null ? com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.getDefaultInstance() : contactSettings_;
+        } else {
+          return contactSettingsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public Builder setContactSettings(com.github.aeonlucid.pogoprotos.data.Player.ContactSettings value) {
+        if (contactSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          contactSettings_ = value;
+          onChanged();
+        } else {
+          contactSettingsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public Builder setContactSettings(
+          com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder builderForValue) {
+        if (contactSettingsBuilder_ == null) {
+          contactSettings_ = builderForValue.build();
+          onChanged();
+        } else {
+          contactSettingsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public Builder mergeContactSettings(com.github.aeonlucid.pogoprotos.data.Player.ContactSettings value) {
+        if (contactSettingsBuilder_ == null) {
+          if (contactSettings_ != null) {
+            contactSettings_ =
+              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.newBuilder(contactSettings_).mergeFrom(value).buildPartial();
+          } else {
+            contactSettings_ = value;
+          }
+          onChanged();
+        } else {
+          contactSettingsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public Builder clearContactSettings() {
+        if (contactSettingsBuilder_ == null) {
+          contactSettings_ = null;
+          onChanged();
+        } else {
+          contactSettings_ = null;
+          contactSettingsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder getContactSettingsBuilder() {
+        
+        onChanged();
+        return getContactSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder getContactSettingsOrBuilder() {
+        if (contactSettingsBuilder_ != null) {
+          return contactSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return contactSettings_ == null ?
+              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.getDefaultInstance() : contactSettings_;
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.ContactSettings contact_settings = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.ContactSettings, com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder, com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder> 
+          getContactSettingsFieldBuilder() {
+        if (contactSettingsBuilder_ == null) {
+          contactSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.data.Player.ContactSettings, com.github.aeonlucid.pogoprotos.data.Player.ContactSettings.Builder, com.github.aeonlucid.pogoprotos.data.Player.ContactSettingsOrBuilder>(
+                  getContactSettings(),
+                  getParentForChildren(),
+                  isClean());
+          contactSettings_ = null;
+        }
+        return contactSettingsBuilder_;
+      }
+
+      private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> currencies_ =
+        java.util.Collections.emptyList();
+      private void ensureCurrenciesIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          currencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>(currencies_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> currenciesBuilder_;
+
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getCurrenciesList() {
+        if (currenciesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(currencies_);
+        } else {
+          return currenciesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public int getCurrenciesCount() {
+        if (currenciesBuilder_ == null) {
+          return currencies_.size();
+        } else {
+          return currenciesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencies(int index) {
+        if (currenciesBuilder_ == null) {
+          return currencies_.get(index);
+        } else {
+          return currenciesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder setCurrencies(
+          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (currenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCurrenciesIsMutable();
+          currencies_.set(index, value);
+          onChanged();
+        } else {
+          currenciesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder setCurrencies(
+          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+        if (currenciesBuilder_ == null) {
+          ensureCurrenciesIsMutable();
+          currencies_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          currenciesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder addCurrencies(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (currenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCurrenciesIsMutable();
+          currencies_.add(value);
+          onChanged();
+        } else {
+          currenciesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder addCurrencies(
+          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (currenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCurrenciesIsMutable();
+          currencies_.add(index, value);
+          onChanged();
+        } else {
+          currenciesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder addCurrencies(
+          com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+        if (currenciesBuilder_ == null) {
+          ensureCurrenciesIsMutable();
+          currencies_.add(builderForValue.build());
+          onChanged();
+        } else {
+          currenciesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder addCurrencies(
+          int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+        if (currenciesBuilder_ == null) {
+          ensureCurrenciesIsMutable();
+          currencies_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          currenciesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder addAllCurrencies(
+          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Player.Currency> values) {
+        if (currenciesBuilder_ == null) {
+          ensureCurrenciesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, currencies_);
+          onChanged();
+        } else {
+          currenciesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder clearCurrencies() {
+        if (currenciesBuilder_ == null) {
+          currencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          currenciesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public Builder removeCurrencies(int index) {
+        if (currenciesBuilder_ == null) {
+          ensureCurrenciesIsMutable();
+          currencies_.remove(index);
+          onChanged();
+        } else {
+          currenciesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getCurrenciesBuilder(
+          int index) {
+        return getCurrenciesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrenciesOrBuilder(
+          int index) {
+        if (currenciesBuilder_ == null) {
+          return currencies_.get(index);  } else {
+          return currenciesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
+           getCurrenciesOrBuilderList() {
+        if (currenciesBuilder_ != null) {
+          return currenciesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(currencies_);
+        }
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addCurrenciesBuilder() {
+        return getCurrenciesFieldBuilder().addBuilder(
+            com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addCurrenciesBuilder(
+          int index) {
+        return getCurrenciesFieldBuilder().addBuilder(
+            index, com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency currencies = 14;</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder> 
+           getCurrenciesBuilderList() {
+        return getCurrenciesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
+          getCurrenciesFieldBuilder() {
+        if (currenciesBuilder_ == null) {
+          currenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
+                  currencies_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          currencies_ = null;
+        }
+        return currenciesBuilder_;
+      }
+
+      private int remainingCodenameClaims_ ;
+      /**
+       * <code>optional int32 remaining_codename_claims = 15;</code>
+       */
+      public int getRemainingCodenameClaims() {
+        return remainingCodenameClaims_;
+      }
+      /**
+       * <code>optional int32 remaining_codename_claims = 15;</code>
+       */
+      public Builder setRemainingCodenameClaims(int value) {
+        
+        remainingCodenameClaims_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 remaining_codename_claims = 15;</code>
+       */
+      public Builder clearRemainingCodenameClaims() {
+        
+        remainingCodenameClaims_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.github.aeonlucid.pogoprotos.Data.BuddyPokemon buddyPokemon_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.Data.BuddyPokemon, com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder, com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder> buddyPokemonBuilder_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public boolean hasBuddyPokemon() {
+        return buddyPokemonBuilder_ != null || buddyPokemon_ != null;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon getBuddyPokemon() {
+        if (buddyPokemonBuilder_ == null) {
+          return buddyPokemon_ == null ? com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.getDefaultInstance() : buddyPokemon_;
+        } else {
+          return buddyPokemonBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public Builder setBuddyPokemon(com.github.aeonlucid.pogoprotos.Data.BuddyPokemon value) {
+        if (buddyPokemonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          buddyPokemon_ = value;
+          onChanged();
+        } else {
+          buddyPokemonBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public Builder setBuddyPokemon(
+          com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder builderForValue) {
+        if (buddyPokemonBuilder_ == null) {
+          buddyPokemon_ = builderForValue.build();
+          onChanged();
+        } else {
+          buddyPokemonBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public Builder mergeBuddyPokemon(com.github.aeonlucid.pogoprotos.Data.BuddyPokemon value) {
+        if (buddyPokemonBuilder_ == null) {
+          if (buddyPokemon_ != null) {
+            buddyPokemon_ =
+              com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.newBuilder(buddyPokemon_).mergeFrom(value).buildPartial();
+          } else {
+            buddyPokemon_ = value;
+          }
+          onChanged();
+        } else {
+          buddyPokemonBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public Builder clearBuddyPokemon() {
+        if (buddyPokemonBuilder_ == null) {
+          buddyPokemon_ = null;
+          onChanged();
+        } else {
+          buddyPokemon_ = null;
+          buddyPokemonBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder getBuddyPokemonBuilder() {
+        
+        onChanged();
+        return getBuddyPokemonFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder getBuddyPokemonOrBuilder() {
+        if (buddyPokemonBuilder_ != null) {
+          return buddyPokemonBuilder_.getMessageOrBuilder();
+        } else {
+          return buddyPokemon_ == null ?
+              com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.getDefaultInstance() : buddyPokemon_;
+        }
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.github.aeonlucid.pogoprotos.Data.BuddyPokemon, com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder, com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder> 
+          getBuddyPokemonFieldBuilder() {
+        if (buddyPokemonBuilder_ == null) {
+          buddyPokemonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.github.aeonlucid.pogoprotos.Data.BuddyPokemon, com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder, com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder>(
+                  getBuddyPokemon(),
+                  getParentForChildren(),
+                  isClean());
+          buddyPokemon_ = null;
+        }
+        return buddyPokemonBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.PlayerData)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.PlayerData)
+    private static final com.github.aeonlucid.pogoprotos.Data.PlayerData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.PlayerData();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Data.PlayerData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PlayerData>
+        PARSER = new com.google.protobuf.AbstractParser<PlayerData>() {
+      public PlayerData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PlayerData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PlayerData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlayerData> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.Data.PlayerData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BuddyPokemonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.BuddyPokemon)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional fixed64 id = 1;</code>
+     */
+    long getId();
+
+    /**
+     * <code>optional double start_km_walked = 2;</code>
+     */
+    double getStartKmWalked();
+
+    /**
+     * <code>optional double last_km_awarded = 3;</code>
+     */
+    double getLastKmAwarded();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.BuddyPokemon}
+   */
+  public  static final class BuddyPokemon extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.BuddyPokemon)
+      BuddyPokemonOrBuilder {
+    // Use BuddyPokemon.newBuilder() to construct.
+    private BuddyPokemon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BuddyPokemon() {
+      id_ = 0L;
+      startKmWalked_ = 0D;
+      lastKmAwarded_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private BuddyPokemon(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 9: {
+
+              id_ = input.readFixed64();
+              break;
+            }
+            case 17: {
+
+              startKmWalked_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              lastKmAwarded_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.class, com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>optional fixed64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    public static final int START_KM_WALKED_FIELD_NUMBER = 2;
+    private double startKmWalked_;
+    /**
+     * <code>optional double start_km_walked = 2;</code>
+     */
+    public double getStartKmWalked() {
+      return startKmWalked_;
+    }
+
+    public static final int LAST_KM_AWARDED_FIELD_NUMBER = 3;
+    private double lastKmAwarded_;
+    /**
+     * <code>optional double last_km_awarded = 3;</code>
+     */
+    public double getLastKmAwarded() {
+      return lastKmAwarded_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeFixed64(1, id_);
+      }
+      if (startKmWalked_ != 0D) {
+        output.writeDouble(2, startKmWalked_);
+      }
+      if (lastKmAwarded_ != 0D) {
+        output.writeDouble(3, lastKmAwarded_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed64Size(1, id_);
+      }
+      if (startKmWalked_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, startKmWalked_);
+      }
+      if (lastKmAwarded_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, lastKmAwarded_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.BuddyPokemon)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.Data.BuddyPokemon other = (com.github.aeonlucid.pogoprotos.Data.BuddyPokemon) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getStartKmWalked())
+          == java.lang.Double.doubleToLongBits(
+              other.getStartKmWalked()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLastKmAwarded())
+          == java.lang.Double.doubleToLongBits(
+              other.getLastKmAwarded()));
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + START_KM_WALKED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getStartKmWalked()));
+      hash = (37 * hash) + LAST_KM_AWARDED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLastKmAwarded()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.BuddyPokemon prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.BuddyPokemon}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.BuddyPokemon)
+        com.github.aeonlucid.pogoprotos.Data.BuddyPokemonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.class, com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        startKmWalked_ = 0D;
+
+        lastKmAwarded_ = 0D;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon build() {
+        com.github.aeonlucid.pogoprotos.Data.BuddyPokemon result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon buildPartial() {
+        com.github.aeonlucid.pogoprotos.Data.BuddyPokemon result = new com.github.aeonlucid.pogoprotos.Data.BuddyPokemon(this);
+        result.id_ = id_;
+        result.startKmWalked_ = startKmWalked_;
+        result.lastKmAwarded_ = lastKmAwarded_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.Data.BuddyPokemon) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.BuddyPokemon)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.BuddyPokemon other) {
+        if (other == com.github.aeonlucid.pogoprotos.Data.BuddyPokemon.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.getStartKmWalked() != 0D) {
+          setStartKmWalked(other.getStartKmWalked());
+        }
+        if (other.getLastKmAwarded() != 0D) {
+          setLastKmAwarded(other.getLastKmAwarded());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.Data.BuddyPokemon parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.BuddyPokemon) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>optional fixed64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>optional fixed64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional fixed64 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double startKmWalked_ ;
+      /**
+       * <code>optional double start_km_walked = 2;</code>
+       */
+      public double getStartKmWalked() {
+        return startKmWalked_;
+      }
+      /**
+       * <code>optional double start_km_walked = 2;</code>
+       */
+      public Builder setStartKmWalked(double value) {
+        
+        startKmWalked_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double start_km_walked = 2;</code>
+       */
+      public Builder clearStartKmWalked() {
+        
+        startKmWalked_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double lastKmAwarded_ ;
+      /**
+       * <code>optional double last_km_awarded = 3;</code>
+       */
+      public double getLastKmAwarded() {
+        return lastKmAwarded_;
+      }
+      /**
+       * <code>optional double last_km_awarded = 3;</code>
+       */
+      public Builder setLastKmAwarded(double value) {
+        
+        lastKmAwarded_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double last_km_awarded = 3;</code>
+       */
+      public Builder clearLastKmAwarded() {
+        
+        lastKmAwarded_ = 0D;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.BuddyPokemon)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.BuddyPokemon)
+    private static final com.github.aeonlucid.pogoprotos.Data.BuddyPokemon DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.BuddyPokemon();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Data.BuddyPokemon getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BuddyPokemon>
+        PARSER = new com.google.protobuf.AbstractParser<BuddyPokemon>() {
+      public BuddyPokemon parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BuddyPokemon(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BuddyPokemon> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuddyPokemon> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.Data.BuddyPokemon getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AssetDigestEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string asset_id = 1;</code>
+     */
+    java.lang.String getAssetId();
+    /**
+     * <code>optional string asset_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAssetIdBytes();
+
+    /**
+     * <code>optional string bundle_name = 2;</code>
+     */
+    java.lang.String getBundleName();
+    /**
+     * <code>optional string bundle_name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getBundleNameBytes();
+
+    /**
+     * <code>optional int64 version = 3;</code>
+     */
+    long getVersion();
+
+    /**
+     * <code>optional fixed32 checksum = 4;</code>
+     */
+    int getChecksum();
+
+    /**
+     * <code>optional int32 size = 5;</code>
+     */
+    int getSize();
+
+    /**
+     * <code>optional bytes key = 6;</code>
+     */
+    com.google.protobuf.ByteString getKey();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.AssetDigestEntry}
+   */
+  public  static final class AssetDigestEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
+      AssetDigestEntryOrBuilder {
+    // Use AssetDigestEntry.newBuilder() to construct.
+    private AssetDigestEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AssetDigestEntry() {
+      assetId_ = "";
+      bundleName_ = "";
+      version_ = 0L;
+      checksum_ = 0;
+      size_ = 0;
+      key_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AssetDigestEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              assetId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bundleName_ = s;
+              break;
+            }
+            case 24: {
+
+              version_ = input.readInt64();
+              break;
+            }
+            case 37: {
+
+              checksum_ = input.readFixed32();
+              break;
+            }
+            case 40: {
+
+              size_ = input.readInt32();
+              break;
+            }
+            case 50: {
+
+              key_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.class, com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.Builder.class);
+    }
+
+    public static final int ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object assetId_;
+    /**
+     * <code>optional string asset_id = 1;</code>
+     */
+    public java.lang.String getAssetId() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string asset_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAssetIdBytes() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        assetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUNDLE_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object bundleName_;
+    /**
+     * <code>optional string bundle_name = 2;</code>
+     */
+    public java.lang.String getBundleName() {
+      java.lang.Object ref = bundleName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bundleName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string bundle_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBundleNameBytes() {
+      java.lang.Object ref = bundleName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bundleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 3;
+    private long version_;
+    /**
+     * <code>optional int64 version = 3;</code>
+     */
+    public long getVersion() {
+      return version_;
+    }
+
+    public static final int CHECKSUM_FIELD_NUMBER = 4;
+    private int checksum_;
+    /**
+     * <code>optional fixed32 checksum = 4;</code>
+     */
+    public int getChecksum() {
+      return checksum_;
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 5;
+    private int size_;
+    /**
+     * <code>optional int32 size = 5;</code>
+     */
+    public int getSize() {
+      return size_;
+    }
+
+    public static final int KEY_FIELD_NUMBER = 6;
+    private com.google.protobuf.ByteString key_;
+    /**
+     * <code>optional bytes key = 6;</code>
+     */
+    public com.google.protobuf.ByteString getKey() {
+      return key_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, assetId_);
+      }
+      if (!getBundleNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bundleName_);
+      }
+      if (version_ != 0L) {
+        output.writeInt64(3, version_);
+      }
+      if (checksum_ != 0) {
+        output.writeFixed32(4, checksum_);
+      }
+      if (size_ != 0) {
+        output.writeInt32(5, size_);
+      }
+      if (!key_.isEmpty()) {
+        output.writeBytes(6, key_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, assetId_);
+      }
+      if (!getBundleNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bundleName_);
+      }
+      if (version_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, version_);
+      }
+      if (checksum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(4, checksum_);
+      }
+      if (size_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, size_);
+      }
+      if (!key_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, key_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry)) {
+        return super.equals(obj);
+      }
+      com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry other = (com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry) obj;
+
+      boolean result = true;
+      result = result && getAssetId()
+          .equals(other.getAssetId());
+      result = result && getBundleName()
+          .equals(other.getBundleName());
+      result = result && (getVersion()
+          == other.getVersion());
+      result = result && (getChecksum()
+          == other.getChecksum());
+      result = result && (getSize()
+          == other.getSize());
+      result = result && getKey()
+          .equals(other.getKey());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetId().hashCode();
+      hash = (37 * hash) + BUNDLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getBundleName().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersion());
+      hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
+      hash = (53 * hash) + getChecksum();
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getSize();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.AssetDigestEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
+        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.class, com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.Builder.class);
+      }
+
+      // Construct using com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        assetId_ = "";
+
+        bundleName_ = "";
+
+        version_ = 0L;
+
+        checksum_ = 0;
+
+        size_ = 0;
+
+        key_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry getDefaultInstanceForType() {
+        return com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.getDefaultInstance();
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry build() {
+        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry buildPartial() {
+        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry result = new com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry(this);
+        result.assetId_ = assetId_;
+        result.bundleName_ = bundleName_;
+        result.version_ = version_;
+        result.checksum_ = checksum_;
+        result.size_ = size_;
+        result.key_ = key_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry) {
+          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry other) {
+        if (other == com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry.getDefaultInstance()) return this;
+        if (!other.getAssetId().isEmpty()) {
+          assetId_ = other.assetId_;
+          onChanged();
+        }
+        if (!other.getBundleName().isEmpty()) {
+          bundleName_ = other.bundleName_;
+          onChanged();
+        }
+        if (other.getVersion() != 0L) {
+          setVersion(other.getVersion());
+        }
+        if (other.getChecksum() != 0) {
+          setChecksum(other.getChecksum());
+        }
+        if (other.getSize() != 0) {
+          setSize(other.getSize());
+        }
+        if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
+          setKey(other.getKey());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object assetId_ = "";
+      /**
+       * <code>optional string asset_id = 1;</code>
+       */
+      public java.lang.String getAssetId() {
+        java.lang.Object ref = assetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          assetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string asset_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAssetIdBytes() {
+        java.lang.Object ref = assetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          assetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string asset_id = 1;</code>
+       */
+      public Builder setAssetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        assetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string asset_id = 1;</code>
+       */
+      public Builder clearAssetId() {
+        
+        assetId_ = getDefaultInstance().getAssetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string asset_id = 1;</code>
+       */
+      public Builder setAssetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        assetId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bundleName_ = "";
+      /**
+       * <code>optional string bundle_name = 2;</code>
+       */
+      public java.lang.String getBundleName() {
+        java.lang.Object ref = bundleName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bundleName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string bundle_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBundleNameBytes() {
+        java.lang.Object ref = bundleName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bundleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string bundle_name = 2;</code>
+       */
+      public Builder setBundleName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bundleName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bundle_name = 2;</code>
+       */
+      public Builder clearBundleName() {
+        
+        bundleName_ = getDefaultInstance().getBundleName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bundle_name = 2;</code>
+       */
+      public Builder setBundleNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bundleName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long version_ ;
+      /**
+       * <code>optional int64 version = 3;</code>
+       */
+      public long getVersion() {
+        return version_;
+      }
+      /**
+       * <code>optional int64 version = 3;</code>
+       */
+      public Builder setVersion(long value) {
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 version = 3;</code>
+       */
+      public Builder clearVersion() {
+        
+        version_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int checksum_ ;
+      /**
+       * <code>optional fixed32 checksum = 4;</code>
+       */
+      public int getChecksum() {
+        return checksum_;
+      }
+      /**
+       * <code>optional fixed32 checksum = 4;</code>
+       */
+      public Builder setChecksum(int value) {
+        
+        checksum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional fixed32 checksum = 4;</code>
+       */
+      public Builder clearChecksum() {
+        
+        checksum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int size_ ;
+      /**
+       * <code>optional int32 size = 5;</code>
+       */
+      public int getSize() {
+        return size_;
+      }
+      /**
+       * <code>optional int32 size = 5;</code>
+       */
+      public Builder setSize(int value) {
+        
+        size_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 size = 5;</code>
+       */
+      public Builder clearSize() {
+        
+        size_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes key = 6;</code>
+       */
+      public com.google.protobuf.ByteString getKey() {
+        return key_;
+      }
+      /**
+       * <code>optional bytes key = 6;</code>
+       */
+      public Builder setKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes key = 6;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.AssetDigestEntry)
+    private static final com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AssetDigestEntry>
+        PARSER = new com.google.protobuf.AbstractParser<AssetDigestEntry>() {
+      public AssetDigestEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AssetDigestEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AssetDigestEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AssetDigestEntry> getParserForType() {
+      return PARSER;
+    }
+
+    public com.github.aeonlucid.pogoprotos.Data.AssetDigestEntry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PokemonDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.PokemonData)
       com.google.protobuf.MessageOrBuilder {
@@ -4828,6 +6294,11 @@ public final class Data {
      * <code>optional int32 from_fort = 31;</code>
      */
     int getFromFort();
+
+    /**
+     * <code>optional int32 buddy_candy_awarded = 32;</code>
+     */
+    int getBuddyCandyAwarded();
   }
   /**
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PokemonData}
@@ -4871,6 +6342,7 @@ public final class Data {
       favorite_ = 0;
       nickname_ = "";
       fromFort_ = 0;
+      buddyCandyAwarded_ = 0;
     }
 
     @java.lang.Override
@@ -5054,6 +6526,11 @@ public final class Data {
             case 248: {
 
               fromFort_ = input.readInt32();
+              break;
+            }
+            case 256: {
+
+              buddyCandyAwarded_ = input.readInt32();
               break;
             }
           }
@@ -5477,6 +6954,15 @@ public final class Data {
       return fromFort_;
     }
 
+    public static final int BUDDY_CANDY_AWARDED_FIELD_NUMBER = 32;
+    private int buddyCandyAwarded_;
+    /**
+     * <code>optional int32 buddy_candy_awarded = 32;</code>
+     */
+    public int getBuddyCandyAwarded() {
+      return buddyCandyAwarded_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -5578,6 +7064,9 @@ public final class Data {
       }
       if (fromFort_ != 0) {
         output.writeInt32(31, fromFort_);
+      }
+      if (buddyCandyAwarded_ != 0) {
+        output.writeInt32(32, buddyCandyAwarded_);
       }
     }
 
@@ -5702,6 +7191,10 @@ public final class Data {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(31, fromFort_);
       }
+      if (buddyCandyAwarded_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(32, buddyCandyAwarded_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -5786,6 +7279,8 @@ public final class Data {
           .equals(other.getNickname());
       result = result && (getFromFort()
           == other.getFromFort());
+      result = result && (getBuddyCandyAwarded()
+          == other.getBuddyCandyAwarded());
       return result;
     }
 
@@ -5866,6 +7361,8 @@ public final class Data {
       hash = (53 * hash) + getNickname().hashCode();
       hash = (37 * hash) + FROM_FORT_FIELD_NUMBER;
       hash = (53 * hash) + getFromFort();
+      hash = (37 * hash) + BUDDY_CANDY_AWARDED_FIELD_NUMBER;
+      hash = (53 * hash) + getBuddyCandyAwarded();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6044,6 +7541,8 @@ public final class Data {
 
         fromFort_ = 0;
 
+        buddyCandyAwarded_ = 0;
+
         return this;
       }
 
@@ -6096,6 +7595,7 @@ public final class Data {
         result.favorite_ = favorite_;
         result.nickname_ = nickname_;
         result.fromFort_ = fromFort_;
+        result.buddyCandyAwarded_ = buddyCandyAwarded_;
         onBuilt();
         return result;
       }
@@ -6230,6 +7730,9 @@ public final class Data {
         }
         if (other.getFromFort() != 0) {
           setFromFort(other.getFromFort());
+        }
+        if (other.getBuddyCandyAwarded() != 0) {
+          setBuddyCandyAwarded(other.getBuddyCandyAwarded());
         }
         onChanged();
         return this;
@@ -7280,6 +8783,32 @@ public final class Data {
         onChanged();
         return this;
       }
+
+      private int buddyCandyAwarded_ ;
+      /**
+       * <code>optional int32 buddy_candy_awarded = 32;</code>
+       */
+      public int getBuddyCandyAwarded() {
+        return buddyCandyAwarded_;
+      }
+      /**
+       * <code>optional int32 buddy_candy_awarded = 32;</code>
+       */
+      public Builder setBuddyCandyAwarded(int value) {
+        
+        buddyCandyAwarded_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 buddy_candy_awarded = 32;</code>
+       */
+      public Builder clearBuddyCandyAwarded() {
+        
+        buddyCandyAwarded_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -7329,726 +8858,11 @@ public final class Data {
 
   }
 
-  public interface PokedexEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-     */
-    int getPokemonIdValue();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId();
-
-    /**
-     * <code>optional int32 times_encountered = 2;</code>
-     */
-    int getTimesEncountered();
-
-    /**
-     * <code>optional int32 times_captured = 3;</code>
-     */
-    int getTimesCaptured();
-
-    /**
-     * <code>optional int32 evolution_stone_pieces = 4;</code>
-     */
-    int getEvolutionStonePieces();
-
-    /**
-     * <code>optional int32 evolution_stones = 5;</code>
-     */
-    int getEvolutionStones();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PokedexEntry}
-   */
-  public  static final class PokedexEntry extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
-      PokedexEntryOrBuilder {
-    // Use PokedexEntry.newBuilder() to construct.
-    private PokedexEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PokedexEntry() {
-      pokemonId_ = 0;
-      timesEncountered_ = 0;
-      timesCaptured_ = 0;
-      evolutionStonePieces_ = 0;
-      evolutionStones_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private PokedexEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              pokemonId_ = rawValue;
-              break;
-            }
-            case 16: {
-
-              timesEncountered_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              timesCaptured_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              evolutionStonePieces_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              evolutionStones_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Data.PokedexEntry.class, com.github.aeonlucid.pogoprotos.Data.PokedexEntry.Builder.class);
-    }
-
-    public static final int POKEMON_ID_FIELD_NUMBER = 1;
-    private int pokemonId_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-     */
-    public int getPokemonIdValue() {
-      return pokemonId_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
-      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
-      return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
-    }
-
-    public static final int TIMES_ENCOUNTERED_FIELD_NUMBER = 2;
-    private int timesEncountered_;
-    /**
-     * <code>optional int32 times_encountered = 2;</code>
-     */
-    public int getTimesEncountered() {
-      return timesEncountered_;
-    }
-
-    public static final int TIMES_CAPTURED_FIELD_NUMBER = 3;
-    private int timesCaptured_;
-    /**
-     * <code>optional int32 times_captured = 3;</code>
-     */
-    public int getTimesCaptured() {
-      return timesCaptured_;
-    }
-
-    public static final int EVOLUTION_STONE_PIECES_FIELD_NUMBER = 4;
-    private int evolutionStonePieces_;
-    /**
-     * <code>optional int32 evolution_stone_pieces = 4;</code>
-     */
-    public int getEvolutionStonePieces() {
-      return evolutionStonePieces_;
-    }
-
-    public static final int EVOLUTION_STONES_FIELD_NUMBER = 5;
-    private int evolutionStones_;
-    /**
-     * <code>optional int32 evolution_stones = 5;</code>
-     */
-    public int getEvolutionStones() {
-      return evolutionStones_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (pokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
-        output.writeEnum(1, pokemonId_);
-      }
-      if (timesEncountered_ != 0) {
-        output.writeInt32(2, timesEncountered_);
-      }
-      if (timesCaptured_ != 0) {
-        output.writeInt32(3, timesCaptured_);
-      }
-      if (evolutionStonePieces_ != 0) {
-        output.writeInt32(4, evolutionStonePieces_);
-      }
-      if (evolutionStones_ != 0) {
-        output.writeInt32(5, evolutionStones_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (pokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, pokemonId_);
-      }
-      if (timesEncountered_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, timesEncountered_);
-      }
-      if (timesCaptured_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, timesCaptured_);
-      }
-      if (evolutionStonePieces_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, evolutionStonePieces_);
-      }
-      if (evolutionStones_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, evolutionStones_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Data.PokedexEntry)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.Data.PokedexEntry other = (com.github.aeonlucid.pogoprotos.Data.PokedexEntry) obj;
-
-      boolean result = true;
-      result = result && pokemonId_ == other.pokemonId_;
-      result = result && (getTimesEncountered()
-          == other.getTimesEncountered());
-      result = result && (getTimesCaptured()
-          == other.getTimesCaptured());
-      result = result && (getEvolutionStonePieces()
-          == other.getEvolutionStonePieces());
-      result = result && (getEvolutionStones()
-          == other.getEvolutionStones());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + POKEMON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + pokemonId_;
-      hash = (37 * hash) + TIMES_ENCOUNTERED_FIELD_NUMBER;
-      hash = (53 * hash) + getTimesEncountered();
-      hash = (37 * hash) + TIMES_CAPTURED_FIELD_NUMBER;
-      hash = (53 * hash) + getTimesCaptured();
-      hash = (37 * hash) + EVOLUTION_STONE_PIECES_FIELD_NUMBER;
-      hash = (53 * hash) + getEvolutionStonePieces();
-      hash = (37 * hash) + EVOLUTION_STONES_FIELD_NUMBER;
-      hash = (53 * hash) + getEvolutionStones();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Data.PokedexEntry prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.PokedexEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
-        com.github.aeonlucid.pogoprotos.Data.PokedexEntryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Data.PokedexEntry.class, com.github.aeonlucid.pogoprotos.Data.PokedexEntry.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.Data.PokedexEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        pokemonId_ = 0;
-
-        timesEncountered_ = 0;
-
-        timesCaptured_ = 0;
-
-        evolutionStonePieces_ = 0;
-
-        evolutionStones_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Data.internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Data.PokedexEntry getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Data.PokedexEntry.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.Data.PokedexEntry build() {
-        com.github.aeonlucid.pogoprotos.Data.PokedexEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Data.PokedexEntry buildPartial() {
-        com.github.aeonlucid.pogoprotos.Data.PokedexEntry result = new com.github.aeonlucid.pogoprotos.Data.PokedexEntry(this);
-        result.pokemonId_ = pokemonId_;
-        result.timesEncountered_ = timesEncountered_;
-        result.timesCaptured_ = timesCaptured_;
-        result.evolutionStonePieces_ = evolutionStonePieces_;
-        result.evolutionStones_ = evolutionStones_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Data.PokedexEntry) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Data.PokedexEntry)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Data.PokedexEntry other) {
-        if (other == com.github.aeonlucid.pogoprotos.Data.PokedexEntry.getDefaultInstance()) return this;
-        if (other.pokemonId_ != 0) {
-          setPokemonIdValue(other.getPokemonIdValue());
-        }
-        if (other.getTimesEncountered() != 0) {
-          setTimesEncountered(other.getTimesEncountered());
-        }
-        if (other.getTimesCaptured() != 0) {
-          setTimesCaptured(other.getTimesCaptured());
-        }
-        if (other.getEvolutionStonePieces() != 0) {
-          setEvolutionStonePieces(other.getEvolutionStonePieces());
-        }
-        if (other.getEvolutionStones() != 0) {
-          setEvolutionStones(other.getEvolutionStones());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Data.PokedexEntry parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Data.PokedexEntry) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int pokemonId_ = 0;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-       */
-      public int getPokemonIdValue() {
-        return pokemonId_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-       */
-      public Builder setPokemonIdValue(int value) {
-        pokemonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
-        com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-       */
-      public Builder setPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        pokemonId_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
-       */
-      public Builder clearPokemonId() {
-        
-        pokemonId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int timesEncountered_ ;
-      /**
-       * <code>optional int32 times_encountered = 2;</code>
-       */
-      public int getTimesEncountered() {
-        return timesEncountered_;
-      }
-      /**
-       * <code>optional int32 times_encountered = 2;</code>
-       */
-      public Builder setTimesEncountered(int value) {
-        
-        timesEncountered_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 times_encountered = 2;</code>
-       */
-      public Builder clearTimesEncountered() {
-        
-        timesEncountered_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int timesCaptured_ ;
-      /**
-       * <code>optional int32 times_captured = 3;</code>
-       */
-      public int getTimesCaptured() {
-        return timesCaptured_;
-      }
-      /**
-       * <code>optional int32 times_captured = 3;</code>
-       */
-      public Builder setTimesCaptured(int value) {
-        
-        timesCaptured_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 times_captured = 3;</code>
-       */
-      public Builder clearTimesCaptured() {
-        
-        timesCaptured_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int evolutionStonePieces_ ;
-      /**
-       * <code>optional int32 evolution_stone_pieces = 4;</code>
-       */
-      public int getEvolutionStonePieces() {
-        return evolutionStonePieces_;
-      }
-      /**
-       * <code>optional int32 evolution_stone_pieces = 4;</code>
-       */
-      public Builder setEvolutionStonePieces(int value) {
-        
-        evolutionStonePieces_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 evolution_stone_pieces = 4;</code>
-       */
-      public Builder clearEvolutionStonePieces() {
-        
-        evolutionStonePieces_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int evolutionStones_ ;
-      /**
-       * <code>optional int32 evolution_stones = 5;</code>
-       */
-      public int getEvolutionStones() {
-        return evolutionStones_;
-      }
-      /**
-       * <code>optional int32 evolution_stones = 5;</code>
-       */
-      public Builder setEvolutionStones(int value) {
-        
-        evolutionStones_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 evolution_stones = 5;</code>
-       */
-      public Builder clearEvolutionStones() {
-        
-        evolutionStones_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.PokedexEntry)
-    private static final com.github.aeonlucid.pogoprotos.Data.PokedexEntry DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Data.PokedexEntry();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.Data.PokedexEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PokedexEntry>
-        PARSER = new com.google.protobuf.AbstractParser<PokedexEntry>() {
-      public PokedexEntry parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PokedexEntry(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PokedexEntry> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PokedexEntry> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.Data.PokedexEntry getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
+    internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable;
+      internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_data_PlayerBadge_descriptor;
   private static final 
@@ -8060,15 +8874,25 @@ public final class Data {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_data_DownloadUrlEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_aeonlucid_pogoprotos_data_PokemonData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_github_aeonlucid_pogoprotos_data_PokemonData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8083,62 +8907,67 @@ public final class Data {
       "ta\032+com/github/aeonlucid/pogoprotos/Enum" +
       "s.proto\0321com/github/aeonlucid/pogoprotos" +
       "/data/Player.proto\0324com/github/aeonlucid" +
-      "/pogoprotos/inventory/Item.proto\"\271\005\n\nPla" +
-      "yerData\022\035\n\025creation_timestamp_ms\030\001 \001(\003\022\020" +
-      "\n\010username\030\002 \001(\t\022>\n\004team\030\005 \001(\01620.com.git" +
-      "hub.aeonlucid.pogoprotos.enums.TeamColor" +
-      "\022P\n\016tutorial_state\030\007 \003(\01624.com.github.ae",
-      "onlucid.pogoprotos.enums.TutorialStateB\002" +
-      "\020\001\022I\n\006avatar\030\010 \001(\01329.com.github.aeonluci" +
-      "d.pogoprotos.data.player.PlayerAvatar\022\033\n" +
-      "\023max_pokemon_storage\030\t \001(\005\022\030\n\020max_item_s" +
-      "torage\030\n \001(\005\022L\n\013daily_bonus\030\013 \001(\01327.com." +
-      "github.aeonlucid.pogoprotos.data.player." +
-      "DailyBonus\022R\n\016equipped_badge\030\014 \001(\0132:.com" +
-      ".github.aeonlucid.pogoprotos.data.player" +
-      ".EquippedBadge\022V\n\020contact_settings\030\r \001(\013" +
-      "2<.com.github.aeonlucid.pogoprotos.data.",
-      "player.ContactSettings\022I\n\ncurrencies\030\016 \003" +
-      "(\01325.com.github.aeonlucid.pogoprotos.dat" +
-      "a.player.Currency\022!\n\031remaining_codename_" +
-      "claims\030\017 \001(\005\"w\n\020AssetDigestEntry\022\020\n\010asse" +
-      "t_id\030\001 \001(\t\022\023\n\013bundle_name\030\002 \001(\t\022\017\n\007versi" +
-      "on\030\003 \001(\003\022\020\n\010checksum\030\004 \001(\007\022\014\n\004size\030\005 \001(\005" +
-      "\022\013\n\003key\030\006 \001(\014\"\240\001\n\013PlayerBadge\022D\n\nbadge_t" +
-      "ype\030\001 \001(\01620.com.github.aeonlucid.pogopro" +
-      "tos.enums.BadgeType\022\014\n\004rank\030\002 \001(\005\022\023\n\013sta" +
-      "rt_value\030\003 \001(\005\022\021\n\tend_value\030\004 \001(\005\022\025\n\rcur",
-      "rent_value\030\005 \001(\001\"Q\n\020DownloadUrlEntry\022\020\n\010" +
-      "asset_id\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004size\030\003 \001(" +
-      "\005\022\020\n\010checksum\030\004 \001(\007\"\354\006\n\013PokemonData\022\n\n\002i" +
-      "d\030\001 \001(\006\022D\n\npokemon_id\030\002 \001(\01620.com.github" +
-      ".aeonlucid.pogoprotos.enums.PokemonId\022\n\n" +
-      "\002cp\030\003 \001(\005\022\017\n\007stamina\030\004 \001(\005\022\023\n\013stamina_ma" +
-      "x\030\005 \001(\005\022B\n\006move_1\030\006 \001(\01622.com.github.aeo" +
-      "nlucid.pogoprotos.enums.PokemonMove\022B\n\006m" +
-      "ove_2\030\007 \001(\01622.com.github.aeonlucid.pogop" +
-      "rotos.enums.PokemonMove\022\030\n\020deployed_fort",
-      "_id\030\010 \001(\t\022\022\n\nowner_name\030\t \001(\t\022\016\n\006is_egg\030" +
-      "\n \001(\010\022\034\n\024egg_km_walked_target\030\013 \001(\001\022\033\n\023e" +
-      "gg_km_walked_start\030\014 \001(\001\022\016\n\006origin\030\016 \001(\005" +
-      "\022\020\n\010height_m\030\017 \001(\002\022\021\n\tweight_kg\030\020 \001(\002\022\031\n" +
-      "\021individual_attack\030\021 \001(\005\022\032\n\022individual_d" +
-      "efense\030\022 \001(\005\022\032\n\022individual_stamina\030\023 \001(\005" +
-      "\022\025\n\rcp_multiplier\030\024 \001(\002\022H\n\010pokeball\030\025 \001(" +
-      "\01626.com.github.aeonlucid.pogoprotos.inve" +
-      "ntory.item.ItemId\022\030\n\020captured_cell_id\030\026 " +
-      "\001(\004\022\030\n\020battles_attacked\030\027 \001(\005\022\030\n\020battles",
-      "_defended\030\030 \001(\005\022\030\n\020egg_incubator_id\030\031 \001(" +
-      "\t\022\030\n\020creation_time_ms\030\032 \001(\004\022\024\n\014num_upgra" +
-      "des\030\033 \001(\005\022 \n\030additional_cp_multiplier\030\034 " +
-      "\001(\002\022\020\n\010favorite\030\035 \001(\005\022\020\n\010nickname\030\036 \001(\t\022" +
-      "\021\n\tfrom_fort\030\037 \001(\005\"\301\001\n\014PokedexEntry\022D\n\np" +
-      "okemon_id\030\001 \001(\01620.com.github.aeonlucid.p" +
-      "ogoprotos.enums.PokemonId\022\031\n\021times_encou" +
-      "ntered\030\002 \001(\005\022\026\n\016times_captured\030\003 \001(\005\022\036\n\026" +
-      "evolution_stone_pieces\030\004 \001(\005\022\030\n\020evolutio" +
-      "n_stones\030\005 \001(\005B\'\n\037com.github.aeonlucid.p",
-      "ogoprotosB\004Datab\006proto3"
+      "/pogoprotos/inventory/Item.proto\"\301\001\n\014Pok" +
+      "edexEntry\022D\n\npokemon_id\030\001 \001(\01620.com.gith" +
+      "ub.aeonlucid.pogoprotos.enums.PokemonId\022" +
+      "\031\n\021times_encountered\030\002 \001(\005\022\026\n\016times_capt" +
+      "ured\030\003 \001(\005\022\036\n\026evolution_stone_pieces\030\004 \001",
+      "(\005\022\030\n\020evolution_stones\030\005 \001(\005\"\240\001\n\013PlayerB" +
+      "adge\022D\n\nbadge_type\030\001 \001(\01620.com.github.ae" +
+      "onlucid.pogoprotos.enums.BadgeType\022\014\n\004ra" +
+      "nk\030\002 \001(\005\022\023\n\013start_value\030\003 \001(\005\022\021\n\tend_val" +
+      "ue\030\004 \001(\005\022\025\n\rcurrent_value\030\005 \001(\001\"Q\n\020Downl" +
+      "oadUrlEntry\022\020\n\010asset_id\030\001 \001(\t\022\013\n\003url\030\002 \001" +
+      "(\t\022\014\n\004size\030\003 \001(\005\022\020\n\010checksum\030\004 \001(\007\"\204\006\n\nP" +
+      "layerData\022\035\n\025creation_timestamp_ms\030\001 \001(\003" +
+      "\022\020\n\010username\030\002 \001(\t\022>\n\004team\030\005 \001(\01620.com.g" +
+      "ithub.aeonlucid.pogoprotos.enums.TeamCol",
+      "or\022P\n\016tutorial_state\030\007 \003(\01624.com.github." +
+      "aeonlucid.pogoprotos.enums.TutorialState" +
+      "B\002\020\001\022I\n\006avatar\030\010 \001(\01329.com.github.aeonlu" +
+      "cid.pogoprotos.data.player.PlayerAvatar\022" +
+      "\033\n\023max_pokemon_storage\030\t \001(\005\022\030\n\020max_item" +
+      "_storage\030\n \001(\005\022L\n\013daily_bonus\030\013 \001(\01327.co" +
+      "m.github.aeonlucid.pogoprotos.data.playe" +
+      "r.DailyBonus\022R\n\016equipped_badge\030\014 \001(\0132:.c" +
+      "om.github.aeonlucid.pogoprotos.data.play" +
+      "er.EquippedBadge\022V\n\020contact_settings\030\r \001",
+      "(\0132<.com.github.aeonlucid.pogoprotos.dat" +
+      "a.player.ContactSettings\022I\n\ncurrencies\030\016" +
+      " \003(\01325.com.github.aeonlucid.pogoprotos.d" +
+      "ata.player.Currency\022!\n\031remaining_codenam" +
+      "e_claims\030\017 \001(\005\022I\n\rbuddy_pokemon\030\020 \001(\01322." +
+      "com.github.aeonlucid.pogoprotos.data.Bud" +
+      "dyPokemon\"L\n\014BuddyPokemon\022\n\n\002id\030\001 \001(\006\022\027\n" +
+      "\017start_km_walked\030\002 \001(\001\022\027\n\017last_km_awarde" +
+      "d\030\003 \001(\001\"w\n\020AssetDigestEntry\022\020\n\010asset_id\030" +
+      "\001 \001(\t\022\023\n\013bundle_name\030\002 \001(\t\022\017\n\007version\030\003 ",
+      "\001(\003\022\020\n\010checksum\030\004 \001(\007\022\014\n\004size\030\005 \001(\005\022\013\n\003k" +
+      "ey\030\006 \001(\014\"\211\007\n\013PokemonData\022\n\n\002id\030\001 \001(\006\022D\n\n" +
+      "pokemon_id\030\002 \001(\01620.com.github.aeonlucid." +
+      "pogoprotos.enums.PokemonId\022\n\n\002cp\030\003 \001(\005\022\017" +
+      "\n\007stamina\030\004 \001(\005\022\023\n\013stamina_max\030\005 \001(\005\022B\n\006" +
+      "move_1\030\006 \001(\01622.com.github.aeonlucid.pogo" +
+      "protos.enums.PokemonMove\022B\n\006move_2\030\007 \001(\016" +
+      "22.com.github.aeonlucid.pogoprotos.enums" +
+      ".PokemonMove\022\030\n\020deployed_fort_id\030\010 \001(\t\022\022" +
+      "\n\nowner_name\030\t \001(\t\022\016\n\006is_egg\030\n \001(\010\022\034\n\024eg",
+      "g_km_walked_target\030\013 \001(\001\022\033\n\023egg_km_walke" +
+      "d_start\030\014 \001(\001\022\016\n\006origin\030\016 \001(\005\022\020\n\010height_" +
+      "m\030\017 \001(\002\022\021\n\tweight_kg\030\020 \001(\002\022\031\n\021individual" +
+      "_attack\030\021 \001(\005\022\032\n\022individual_defense\030\022 \001(" +
+      "\005\022\032\n\022individual_stamina\030\023 \001(\005\022\025\n\rcp_mult" +
+      "iplier\030\024 \001(\002\022H\n\010pokeball\030\025 \001(\01626.com.git" +
+      "hub.aeonlucid.pogoprotos.inventory.item." +
+      "ItemId\022\030\n\020captured_cell_id\030\026 \001(\004\022\030\n\020batt" +
+      "les_attacked\030\027 \001(\005\022\030\n\020battles_defended\030\030" +
+      " \001(\005\022\030\n\020egg_incubator_id\030\031 \001(\t\022\030\n\020creati",
+      "on_time_ms\030\032 \001(\004\022\024\n\014num_upgrades\030\033 \001(\005\022 " +
+      "\n\030additional_cp_multiplier\030\034 \001(\002\022\020\n\010favo" +
+      "rite\030\035 \001(\005\022\020\n\010nickname\030\036 \001(\t\022\021\n\tfrom_for" +
+      "t\030\037 \001(\005\022\033\n\023buddy_candy_awarded\030  \001(\005B\'\n\037" +
+      "com.github.aeonlucid.pogoprotosB\004Datab\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8155,42 +8984,48 @@ public final class Data {
           com.github.aeonlucid.pogoprotos.data.Player.getDescriptor(),
           com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor(),
         }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor =
+    internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable = new
+    internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor,
-        new java.lang.String[] { "CreationTimestampMs", "Username", "Team", "TutorialState", "Avatar", "MaxPokemonStorage", "MaxItemStorage", "DailyBonus", "EquippedBadge", "ContactSettings", "Currencies", "RemainingCodenameClaims", });
-    internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor,
-        new java.lang.String[] { "AssetId", "BundleName", "Version", "Checksum", "Size", "Key", });
+        internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor,
+        new java.lang.String[] { "PokemonId", "TimesEncountered", "TimesCaptured", "EvolutionStonePieces", "EvolutionStones", });
     internal_static_com_github_aeonlucid_pogoprotos_data_PlayerBadge_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_github_aeonlucid_pogoprotos_data_PlayerBadge_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_data_PlayerBadge_descriptor,
         new java.lang.String[] { "BadgeType", "Rank", "StartValue", "EndValue", "CurrentValue", });
     internal_static_com_github_aeonlucid_pogoprotos_data_DownloadUrlEntry_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_github_aeonlucid_pogoprotos_data_DownloadUrlEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_data_DownloadUrlEntry_descriptor,
         new java.lang.String[] { "AssetId", "Url", "Size", "Checksum", });
-    internal_static_com_github_aeonlucid_pogoprotos_data_PokemonData_descriptor =
+    internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_data_PlayerData_descriptor,
+        new java.lang.String[] { "CreationTimestampMs", "Username", "Team", "TutorialState", "Avatar", "MaxPokemonStorage", "MaxItemStorage", "DailyBonus", "EquippedBadge", "ContactSettings", "Currencies", "RemainingCodenameClaims", "BuddyPokemon", });
+    internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_data_BuddyPokemon_descriptor,
+        new java.lang.String[] { "Id", "StartKmWalked", "LastKmAwarded", });
+    internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_github_aeonlucid_pogoprotos_data_AssetDigestEntry_descriptor,
+        new java.lang.String[] { "AssetId", "BundleName", "Version", "Checksum", "Size", "Key", });
+    internal_static_com_github_aeonlucid_pogoprotos_data_PokemonData_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_com_github_aeonlucid_pogoprotos_data_PokemonData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_github_aeonlucid_pogoprotos_data_PokemonData_descriptor,
-        new java.lang.String[] { "Id", "PokemonId", "Cp", "Stamina", "StaminaMax", "Move1", "Move2", "DeployedFortId", "OwnerName", "IsEgg", "EggKmWalkedTarget", "EggKmWalkedStart", "Origin", "HeightM", "WeightKg", "IndividualAttack", "IndividualDefense", "IndividualStamina", "CpMultiplier", "Pokeball", "CapturedCellId", "BattlesAttacked", "BattlesDefended", "EggIncubatorId", "CreationTimeMs", "NumUpgrades", "AdditionalCpMultiplier", "Favorite", "Nickname", "FromFort", });
-    internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_PokedexEntry_descriptor,
-        new java.lang.String[] { "PokemonId", "TimesEncountered", "TimesCaptured", "EvolutionStonePieces", "EvolutionStones", });
+        new java.lang.String[] { "Id", "PokemonId", "Cp", "Stamina", "StaminaMax", "Move1", "Move2", "DeployedFortId", "OwnerName", "IsEgg", "EggKmWalkedTarget", "EggKmWalkedStart", "Origin", "HeightM", "WeightKg", "IndividualAttack", "IndividualDefense", "IndividualStamina", "CpMultiplier", "Pokeball", "CapturedCellId", "BattlesAttacked", "BattlesDefended", "EggIncubatorId", "CreationTimeMs", "NumUpgrades", "AdditionalCpMultiplier", "Favorite", "Nickname", "FromFort", "BuddyCandyAwarded", });
     com.github.aeonlucid.pogoprotos.Enums.getDescriptor();
     com.github.aeonlucid.pogoprotos.data.Player.getDescriptor();
     com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor();

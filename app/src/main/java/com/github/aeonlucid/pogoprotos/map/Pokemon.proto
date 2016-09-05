@@ -5,17 +5,15 @@ package com.github.aeonlucid.pogoprotos.map.pokemon;
 option java_package = "com.github.aeonlucid.pogoprotos.map";
 option java_outer_classname = "Pokemon";
 
-import "com/github/aeonlucid/pogoprotos/Data.proto";
 import "com/github/aeonlucid/pogoprotos/Enums.proto";
+import "com/github/aeonlucid/pogoprotos/Data.proto";
 
-message WildPokemon {
-	fixed64 encounter_id = 1;
-	int64 last_modified_timestamp_ms = 2;
-	double latitude = 3;
-	double longitude = 4;
-	string spawn_point_id = 5;
-	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;
-	int32 time_till_hidden_ms = 11;
+message NearbyPokemon {
+	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;
+	float distance_in_meters = 2;
+	fixed64 encounter_id = 3;
+	string fort_id = 4;
+	string fort_image_url = 5;
 }
 
 message MapPokemon {
@@ -28,11 +26,13 @@ message MapPokemon {
 	double longitude = 6;
 }
 
-message NearbyPokemon {
-	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;
-	float distance_in_meters = 2;
-	fixed64 encounter_id = 3;
-	string fort_id = 4;
-	string fort_image_url = 5;
+message WildPokemon {
+	fixed64 encounter_id = 1;
+	int64 last_modified_timestamp_ms = 2;
+	double latitude = 3;
+	double longitude = 4;
+	string spawn_point_id = 5;
+	com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;
+	int32 time_till_hidden_ms = 11;
 }
 

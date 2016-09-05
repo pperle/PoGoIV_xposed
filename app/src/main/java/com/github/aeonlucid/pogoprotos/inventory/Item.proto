@@ -11,6 +11,11 @@ message ItemData {
 	bool unseen = 3;
 }
 
+message ItemAward {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	int32 item_count = 2;
+}
+
 enum ItemType {
 	ITEM_TYPE_NONE = 0;
 	ITEM_TYPE_POKEBALL = 1;
@@ -25,11 +30,6 @@ enum ItemType {
 	ITEM_TYPE_INCENSE = 10;
 	ITEM_TYPE_XP_BOOST = 11;
 	ITEM_TYPE_INVENTORY_UPGRADE = 12;
-}
-
-message ItemAward {
-	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
-	int32 item_count = 2;
 }
 
 enum ItemId {
