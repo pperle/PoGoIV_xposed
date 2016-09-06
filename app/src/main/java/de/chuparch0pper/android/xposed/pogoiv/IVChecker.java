@@ -292,7 +292,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         enableModule = preferences.getBoolean("enable_module", true);
         showIvNotification = preferences.getBoolean("show_iv_notification", true);
         showCaughtToast = preferences.getBoolean("show_caught_toast", true);
-        showStartupNotification = preferences.getBoolean("show_startup_notification", true);
+        showStartupNotification = preferences.getBoolean("show_startup_notification", false);
 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
