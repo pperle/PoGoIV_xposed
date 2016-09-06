@@ -321,7 +321,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         showCaughtToast = preferences.getBoolean("show_caught_toast", true);
         showGymDetails = preferences.getBoolean("show_gym_details", true);
         showPokestopSpinResults = preferences.getBoolean("show_pokestop_spin_results", true);
-        showStartupNotification = preferences.getBoolean("show_startup_notification", true);
+        showStartupNotification = preferences.getBoolean("show_startup_notification", false);
 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
