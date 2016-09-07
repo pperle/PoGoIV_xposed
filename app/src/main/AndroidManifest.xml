@@ -27,6 +27,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".NotificationReceiver">
+            <intent-filter>
+                <action android:name="TOAST" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

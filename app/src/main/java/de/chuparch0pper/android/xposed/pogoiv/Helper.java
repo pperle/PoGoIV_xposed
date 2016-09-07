@@ -3,7 +3,9 @@ package de.chuparch0pper.android.xposed.pogoiv;
 import android.app.AndroidAppHelper;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Looper;
@@ -62,6 +64,12 @@ public class Helper {
                 mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(longText));
                 mBuilder.setVibrate(new long[]{1000});
                 mBuilder.setPriority(Notification.PRIORITY_MAX);
+
+                Intent showToastIntent = new Intent();
+                showToastIntent.putExtra("longText",longText);
+                showToastIntent.setAction(NotificationReceiver.TOAST);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getPokeContext(), 0, showToastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                mBuilder.setContentIntent(pendingIntent);
 
                 NotificationManager mNotificationManager = (NotificationManager) getPokeContext().getSystemService(Context.NOTIFICATION_SERVICE);
                 mNotificationManager.notify(699511, mBuilder.build());
