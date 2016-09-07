@@ -153,6 +153,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
     private static final Map<Long, List<Requests.RequestType>> requestMap = new HashMap<>();
     private final Map<Long, EggHatchRewards> hatchedEggs = new HashMap<>();
     private final Map<Item.ItemId, Integer> inventoryItems = new EnumMap<>(Item.ItemId.class);
+    private int maxItemStorage = 0;
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
@@ -291,6 +292,10 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 GetHatchedEggs(payload);
             }
 
+            if (requestType == Requests.RequestType.GET_PLAYER) {
+                GetPlayer(payload);
+            }
+
             if (requestType == Requests.RequestType.GET_INVENTORY) {
                 GetInventory(payload);
             }
@@ -316,7 +321,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         showCaughtToast = preferences.getBoolean("show_caught_toast", true);
         showGymDetails = preferences.getBoolean("show_gym_details", true);
         showPokestopSpinResults = preferences.getBoolean("show_pokestop_spin_results", true);
-        showStartupNotification = preferences.getBoolean("show_startup_notification", true);
+        showStartupNotification = preferences.getBoolean("show_startup_notification", false);
 
         Helper.Log("preferences - enableModule = " + enableModule);
         Helper.Log("preferences - showIvNotification = " + showIvNotification);
@@ -514,8 +519,18 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 return;
         }
 
-        if (itemsAwardedCount > 0)
-            Helper.showToast(Html.fromHtml("You now have <b>" + (getItemCount() + itemsAwardedCount) + " items</b>"), Toast.LENGTH_LONG);
+        if (itemsAwardedCount > 0) {
+            int newItemCount = getItemCount() + itemsAwardedCount;
+            String toastText = "You now have <b>" + newItemCount + "/" + maxItemStorage + "</b> items";
+            if (maxItemStorage > 0) {
+                int slotsLeft = maxItemStorage - newItemCount;
+                if (slotsLeft <= 0)
+                    toastText += "<br><i><b>WARNING</b>: Bag is FULL!</i>";
+                else if (slotsLeft <= 10)
+                    toastText += "<br><i>WARNING: Bag almost full! <b>" + slotsLeft + "</b> slots left</i>";
+            }
+            Helper.showToast(Html.fromHtml(toastText), Toast.LENGTH_LONG);
+        }
 
         final String title = "Pokéstop: Got " + itemsAwardedCount + " items and " + experienceAwarded + " XP";
 
@@ -576,6 +591,25 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                                                                   getHatchedEggsResponse.getStardustAwarded(i));
             hatchedEggs.put(getHatchedEggsResponse.getPokemonId(i), eggHatchRewards);
         }
+    }
+
+    private void GetPlayer(ByteString payload) {
+        Responses.GetPlayerResponse getPlayerResponse;
+        try {
+            getPlayerResponse = Responses.GetPlayerResponse.parseFrom(payload);
+        } catch (InvalidProtocolBufferException e) {
+            Helper.Log("Parsing getPlayerResponse failed " + e);
+            return;
+        }
+
+        Helper.Log("getPlayerResponse = ", getPlayerResponse.getAllFields().entrySet());
+
+        if (!getPlayerResponse.getSuccess() || !getPlayerResponse.hasPlayerData())
+            return;
+
+        com.github.aeonlucid.pogoprotos.Data.PlayerData playerData = getPlayerResponse.getPlayerData();
+
+        maxItemStorage = playerData.getMaxItemStorage();
     }
 
     private void GetInventory(ByteString payload) {
