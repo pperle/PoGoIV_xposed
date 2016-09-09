@@ -778,6 +778,10 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
                 */
 
         Helper.showNotification(pokemonName, pokemonIV, pokemonIVandMoreInfo);
+
+        if (Helper.isBubblestratPokemon(encounteredPokemon.getPokemonIdValue(), calcLevel(encounteredPokemon))) {
+            Helper.showToast("This pokémon is compatible with Bubblestrat!", Toast.LENGTH_SHORT);
+        }
     }
 
     private static double getCatchRate(Capture.CaptureProbability captureProbability, int index, double multiplier) {

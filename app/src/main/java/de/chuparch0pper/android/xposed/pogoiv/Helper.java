@@ -18,10 +18,34 @@ import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.ProtocolMessageEnum;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 import java.util.Set;
 
 import de.robv.android.xposed.XposedBridge;
+
+class BubblestratPokemon {
+    private int pokeNr;
+    private double maxLevel;
+
+    public BubblestratPokemon(int pokeNr, double maxLevel) {
+        this.pokeNr = pokeNr;
+        this.maxLevel = maxLevel;
+    }
+
+    public int getPokeNr() {
+        return pokeNr;
+    }
+
+    public double getMaxLevel() {
+        return maxLevel;
+    }
+}
 
 public class Helper {
     public static final String PACKAGE_NAME = IVChecker.class.getPackage().getName();
@@ -30,6 +54,7 @@ public class Helper {
     private static Context pokeContext = null;
 
     private static String[] pokemonNames = null;
+    private static BubblestratPokemon[] bubblestratPokemons = null;
 
     public static void Log(String message) {
         if (BuildConfig.DEBUG) {
@@ -66,7 +91,7 @@ public class Helper {
                 mBuilder.setPriority(Notification.PRIORITY_MAX);
 
                 Intent showToastIntent = new Intent();
-                showToastIntent.putExtra("longText",longText);
+                showToastIntent.putExtra("longText", longText);
                 showToastIntent.setAction(NotificationReceiver.TOAST);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getPokeContext(), 0, showToastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 mBuilder.setContentIntent(pendingIntent);
@@ -166,4 +191,56 @@ public class Helper {
     public static String getCpName() {
         return getContext().getResources().getString(R.string.cp);
     }
+
+
+    private static String loadJSONFromAsset() {
+        try {
+            InputStream inputStream = getContext().getAssets().open("bubblestrat.json");
+            byte[] buffer = new byte[inputStream.available()];
+            inputStream.read(buffer);
+            inputStream.close();
+            return new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private static void loadBubblestratPokemon() {
+        try {
+            JSONObject jsonObject = new JSONObject(loadJSONFromAsset());
+            JSONArray jsonArray = jsonObject.getJSONArray("defenders");
+
+            bubblestratPokemons = new BubblestratPokemon[jsonArray.length()];
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectInArray = jsonArray.getJSONObject(i);
+                bubblestratPokemons[i] = new BubblestratPokemon(jsonObjectInArray.getInt("id"), jsonObjectInArray.getDouble("max_level"));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static boolean isBubblestratPokemon(int pokemonId, double level) {
+        double epsilon = 0.0001;
+
+        if (bubblestratPokemons == null) {
+            loadBubblestratPokemon();
+        }
+
+        if (Math.abs(level - 2) < epsilon) { // all bubblestrat compatible Pokémon are level 2 or lower
+            return false;
+        }
+
+        for (BubblestratPokemon bubblestratPokemon : bubblestratPokemons) {
+            if (bubblestratPokemon.getPokeNr() == pokemonId && Math.abs(bubblestratPokemon.getMaxLevel() - level) < epsilon) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
