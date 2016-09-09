@@ -15,8 +15,7 @@ import android.widget.Toast;
 import com.github.aeonlucid.pogoprotos.Enums;
 import com.github.aeonlucid.pogoprotos.inventory.Item;
 import com.github.aeonlucid.pogoprotos.networking.Responses;
-import com.google.protobuf.Descriptors;
-import com.google.protobuf.ProtocolMessageEnum;
+import com.google.protobuf.Internal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,8 +23,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
-import java.util.Set;
 
 import de.robv.android.xposed.XposedBridge;
 
@@ -61,13 +58,14 @@ public class Helper {
             XposedBridge.log(message);
         }
     }
-
+/*
     public static void Log(String message, Set<Map.Entry<Descriptors.FieldDescriptor, Object>> entries) {
         for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : entries) {
             Helper.Log(message + entry.getKey() + " - " + entry.getValue());
         }
 
     }
+*/
 
     public static void showToast(final CharSequence message, final int length) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -174,7 +172,7 @@ public class Helper {
         return getItemName(itemAward.getItemId(), itemAward.getItemCount());
     }
 
-    public static String getGenericEnumName(ProtocolMessageEnum enumEntry) {
+    public static String getGenericEnumName(Internal.EnumLite enumEntry) {
         return prettyPrintEnum(enumEntry.toString());
     }
 

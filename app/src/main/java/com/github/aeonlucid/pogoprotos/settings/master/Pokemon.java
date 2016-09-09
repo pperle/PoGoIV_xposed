@@ -8,1329 +8,9 @@ public final class Pokemon {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface StatsAttributesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional int32 base_stamina = 1;</code>
-     */
-    int getBaseStamina();
-
-    /**
-     * <code>optional int32 base_attack = 2;</code>
-     */
-    int getBaseAttack();
-
-    /**
-     * <code>optional int32 base_defense = 3;</code>
-     */
-    int getBaseDefense();
-
-    /**
-     * <code>optional int32 dodge_energy_delta = 8;</code>
-     */
-    int getDodgeEnergyDelta();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes}
-   */
-  public  static final class StatsAttributes extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
-      StatsAttributesOrBuilder {
-    // Use StatsAttributes.newBuilder() to construct.
-    private StatsAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StatsAttributes() {
-      baseStamina_ = 0;
-      baseAttack_ = 0;
-      baseDefense_ = 0;
-      dodgeEnergyDelta_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private StatsAttributes(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              baseStamina_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              baseAttack_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              baseDefense_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              dodgeEnergyDelta_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.class, com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.Builder.class);
-    }
-
-    public static final int BASE_STAMINA_FIELD_NUMBER = 1;
-    private int baseStamina_;
-    /**
-     * <code>optional int32 base_stamina = 1;</code>
-     */
-    public int getBaseStamina() {
-      return baseStamina_;
-    }
-
-    public static final int BASE_ATTACK_FIELD_NUMBER = 2;
-    private int baseAttack_;
-    /**
-     * <code>optional int32 base_attack = 2;</code>
-     */
-    public int getBaseAttack() {
-      return baseAttack_;
-    }
-
-    public static final int BASE_DEFENSE_FIELD_NUMBER = 3;
-    private int baseDefense_;
-    /**
-     * <code>optional int32 base_defense = 3;</code>
-     */
-    public int getBaseDefense() {
-      return baseDefense_;
-    }
-
-    public static final int DODGE_ENERGY_DELTA_FIELD_NUMBER = 8;
-    private int dodgeEnergyDelta_;
-    /**
-     * <code>optional int32 dodge_energy_delta = 8;</code>
-     */
-    public int getDodgeEnergyDelta() {
-      return dodgeEnergyDelta_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (baseStamina_ != 0) {
-        output.writeInt32(1, baseStamina_);
-      }
-      if (baseAttack_ != 0) {
-        output.writeInt32(2, baseAttack_);
-      }
-      if (baseDefense_ != 0) {
-        output.writeInt32(3, baseDefense_);
-      }
-      if (dodgeEnergyDelta_ != 0) {
-        output.writeInt32(8, dodgeEnergyDelta_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (baseStamina_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, baseStamina_);
-      }
-      if (baseAttack_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, baseAttack_);
-      }
-      if (baseDefense_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, baseDefense_);
-      }
-      if (dodgeEnergyDelta_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, dodgeEnergyDelta_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes other = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes) obj;
-
-      boolean result = true;
-      result = result && (getBaseStamina()
-          == other.getBaseStamina());
-      result = result && (getBaseAttack()
-          == other.getBaseAttack());
-      result = result && (getBaseDefense()
-          == other.getBaseDefense());
-      result = result && (getDodgeEnergyDelta()
-          == other.getDodgeEnergyDelta());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + BASE_STAMINA_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseStamina();
-      hash = (37 * hash) + BASE_ATTACK_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseAttack();
-      hash = (37 * hash) + BASE_DEFENSE_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseDefense();
-      hash = (37 * hash) + DODGE_ENERGY_DELTA_FIELD_NUMBER;
-      hash = (53 * hash) + getDodgeEnergyDelta();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.class, com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        baseStamina_ = 0;
-
-        baseAttack_ = 0;
-
-        baseDefense_ = 0;
-
-        dodgeEnergyDelta_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes build() {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes buildPartial() {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes result = new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes(this);
-        result.baseStamina_ = baseStamina_;
-        result.baseAttack_ = baseAttack_;
-        result.baseDefense_ = baseDefense_;
-        result.dodgeEnergyDelta_ = dodgeEnergyDelta_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes other) {
-        if (other == com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.getDefaultInstance()) return this;
-        if (other.getBaseStamina() != 0) {
-          setBaseStamina(other.getBaseStamina());
-        }
-        if (other.getBaseAttack() != 0) {
-          setBaseAttack(other.getBaseAttack());
-        }
-        if (other.getBaseDefense() != 0) {
-          setBaseDefense(other.getBaseDefense());
-        }
-        if (other.getDodgeEnergyDelta() != 0) {
-          setDodgeEnergyDelta(other.getDodgeEnergyDelta());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int baseStamina_ ;
-      /**
-       * <code>optional int32 base_stamina = 1;</code>
-       */
-      public int getBaseStamina() {
-        return baseStamina_;
-      }
-      /**
-       * <code>optional int32 base_stamina = 1;</code>
-       */
-      public Builder setBaseStamina(int value) {
-        
-        baseStamina_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 base_stamina = 1;</code>
-       */
-      public Builder clearBaseStamina() {
-        
-        baseStamina_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int baseAttack_ ;
-      /**
-       * <code>optional int32 base_attack = 2;</code>
-       */
-      public int getBaseAttack() {
-        return baseAttack_;
-      }
-      /**
-       * <code>optional int32 base_attack = 2;</code>
-       */
-      public Builder setBaseAttack(int value) {
-        
-        baseAttack_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 base_attack = 2;</code>
-       */
-      public Builder clearBaseAttack() {
-        
-        baseAttack_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int baseDefense_ ;
-      /**
-       * <code>optional int32 base_defense = 3;</code>
-       */
-      public int getBaseDefense() {
-        return baseDefense_;
-      }
-      /**
-       * <code>optional int32 base_defense = 3;</code>
-       */
-      public Builder setBaseDefense(int value) {
-        
-        baseDefense_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 base_defense = 3;</code>
-       */
-      public Builder clearBaseDefense() {
-        
-        baseDefense_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int dodgeEnergyDelta_ ;
-      /**
-       * <code>optional int32 dodge_energy_delta = 8;</code>
-       */
-      public int getDodgeEnergyDelta() {
-        return dodgeEnergyDelta_;
-      }
-      /**
-       * <code>optional int32 dodge_energy_delta = 8;</code>
-       */
-      public Builder setDodgeEnergyDelta(int value) {
-        
-        dodgeEnergyDelta_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 dodge_energy_delta = 8;</code>
-       */
-      public Builder clearDodgeEnergyDelta() {
-        
-        dodgeEnergyDelta_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
-    private static final com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StatsAttributes>
-        PARSER = new com.google.protobuf.AbstractParser<StatsAttributes>() {
-      public StatsAttributes parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StatsAttributes(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StatsAttributes> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StatsAttributes> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CameraAttributesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional float disk_radius_m = 1;</code>
-     */
-    float getDiskRadiusM();
-
-    /**
-     * <code>optional float cylinder_radius_m = 2;</code>
-     */
-    float getCylinderRadiusM();
-
-    /**
-     * <code>optional float cylinder_height_m = 3;</code>
-     */
-    float getCylinderHeightM();
-
-    /**
-     * <code>optional float cylinder_ground_m = 4;</code>
-     */
-    float getCylinderGroundM();
-
-    /**
-     * <code>optional float shoulder_mode_scale = 5;</code>
-     */
-    float getShoulderModeScale();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes}
-   */
-  public  static final class CameraAttributes extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
-      CameraAttributesOrBuilder {
-    // Use CameraAttributes.newBuilder() to construct.
-    private CameraAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CameraAttributes() {
-      diskRadiusM_ = 0F;
-      cylinderRadiusM_ = 0F;
-      cylinderHeightM_ = 0F;
-      cylinderGroundM_ = 0F;
-      shoulderModeScale_ = 0F;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private CameraAttributes(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 13: {
-
-              diskRadiusM_ = input.readFloat();
-              break;
-            }
-            case 21: {
-
-              cylinderRadiusM_ = input.readFloat();
-              break;
-            }
-            case 29: {
-
-              cylinderHeightM_ = input.readFloat();
-              break;
-            }
-            case 37: {
-
-              cylinderGroundM_ = input.readFloat();
-              break;
-            }
-            case 45: {
-
-              shoulderModeScale_ = input.readFloat();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.class, com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.Builder.class);
-    }
-
-    public static final int DISK_RADIUS_M_FIELD_NUMBER = 1;
-    private float diskRadiusM_;
-    /**
-     * <code>optional float disk_radius_m = 1;</code>
-     */
-    public float getDiskRadiusM() {
-      return diskRadiusM_;
-    }
-
-    public static final int CYLINDER_RADIUS_M_FIELD_NUMBER = 2;
-    private float cylinderRadiusM_;
-    /**
-     * <code>optional float cylinder_radius_m = 2;</code>
-     */
-    public float getCylinderRadiusM() {
-      return cylinderRadiusM_;
-    }
-
-    public static final int CYLINDER_HEIGHT_M_FIELD_NUMBER = 3;
-    private float cylinderHeightM_;
-    /**
-     * <code>optional float cylinder_height_m = 3;</code>
-     */
-    public float getCylinderHeightM() {
-      return cylinderHeightM_;
-    }
-
-    public static final int CYLINDER_GROUND_M_FIELD_NUMBER = 4;
-    private float cylinderGroundM_;
-    /**
-     * <code>optional float cylinder_ground_m = 4;</code>
-     */
-    public float getCylinderGroundM() {
-      return cylinderGroundM_;
-    }
-
-    public static final int SHOULDER_MODE_SCALE_FIELD_NUMBER = 5;
-    private float shoulderModeScale_;
-    /**
-     * <code>optional float shoulder_mode_scale = 5;</code>
-     */
-    public float getShoulderModeScale() {
-      return shoulderModeScale_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (diskRadiusM_ != 0F) {
-        output.writeFloat(1, diskRadiusM_);
-      }
-      if (cylinderRadiusM_ != 0F) {
-        output.writeFloat(2, cylinderRadiusM_);
-      }
-      if (cylinderHeightM_ != 0F) {
-        output.writeFloat(3, cylinderHeightM_);
-      }
-      if (cylinderGroundM_ != 0F) {
-        output.writeFloat(4, cylinderGroundM_);
-      }
-      if (shoulderModeScale_ != 0F) {
-        output.writeFloat(5, shoulderModeScale_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (diskRadiusM_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, diskRadiusM_);
-      }
-      if (cylinderRadiusM_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, cylinderRadiusM_);
-      }
-      if (cylinderHeightM_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, cylinderHeightM_);
-      }
-      if (cylinderGroundM_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, cylinderGroundM_);
-      }
-      if (shoulderModeScale_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, shoulderModeScale_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes other = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes) obj;
-
-      boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getDiskRadiusM())
-          == java.lang.Float.floatToIntBits(
-              other.getDiskRadiusM()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCylinderRadiusM())
-          == java.lang.Float.floatToIntBits(
-              other.getCylinderRadiusM()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCylinderHeightM())
-          == java.lang.Float.floatToIntBits(
-              other.getCylinderHeightM()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCylinderGroundM())
-          == java.lang.Float.floatToIntBits(
-              other.getCylinderGroundM()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getShoulderModeScale())
-          == java.lang.Float.floatToIntBits(
-              other.getShoulderModeScale()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + DISK_RADIUS_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getDiskRadiusM());
-      hash = (37 * hash) + CYLINDER_RADIUS_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCylinderRadiusM());
-      hash = (37 * hash) + CYLINDER_HEIGHT_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCylinderHeightM());
-      hash = (37 * hash) + CYLINDER_GROUND_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCylinderGroundM());
-      hash = (37 * hash) + SHOULDER_MODE_SCALE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getShoulderModeScale());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.class, com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        diskRadiusM_ = 0F;
-
-        cylinderRadiusM_ = 0F;
-
-        cylinderHeightM_ = 0F;
-
-        cylinderGroundM_ = 0F;
-
-        shoulderModeScale_ = 0F;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes build() {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes buildPartial() {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes result = new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes(this);
-        result.diskRadiusM_ = diskRadiusM_;
-        result.cylinderRadiusM_ = cylinderRadiusM_;
-        result.cylinderHeightM_ = cylinderHeightM_;
-        result.cylinderGroundM_ = cylinderGroundM_;
-        result.shoulderModeScale_ = shoulderModeScale_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes other) {
-        if (other == com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.getDefaultInstance()) return this;
-        if (other.getDiskRadiusM() != 0F) {
-          setDiskRadiusM(other.getDiskRadiusM());
-        }
-        if (other.getCylinderRadiusM() != 0F) {
-          setCylinderRadiusM(other.getCylinderRadiusM());
-        }
-        if (other.getCylinderHeightM() != 0F) {
-          setCylinderHeightM(other.getCylinderHeightM());
-        }
-        if (other.getCylinderGroundM() != 0F) {
-          setCylinderGroundM(other.getCylinderGroundM());
-        }
-        if (other.getShoulderModeScale() != 0F) {
-          setShoulderModeScale(other.getShoulderModeScale());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private float diskRadiusM_ ;
-      /**
-       * <code>optional float disk_radius_m = 1;</code>
-       */
-      public float getDiskRadiusM() {
-        return diskRadiusM_;
-      }
-      /**
-       * <code>optional float disk_radius_m = 1;</code>
-       */
-      public Builder setDiskRadiusM(float value) {
-        
-        diskRadiusM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float disk_radius_m = 1;</code>
-       */
-      public Builder clearDiskRadiusM() {
-        
-        diskRadiusM_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float cylinderRadiusM_ ;
-      /**
-       * <code>optional float cylinder_radius_m = 2;</code>
-       */
-      public float getCylinderRadiusM() {
-        return cylinderRadiusM_;
-      }
-      /**
-       * <code>optional float cylinder_radius_m = 2;</code>
-       */
-      public Builder setCylinderRadiusM(float value) {
-        
-        cylinderRadiusM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float cylinder_radius_m = 2;</code>
-       */
-      public Builder clearCylinderRadiusM() {
-        
-        cylinderRadiusM_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float cylinderHeightM_ ;
-      /**
-       * <code>optional float cylinder_height_m = 3;</code>
-       */
-      public float getCylinderHeightM() {
-        return cylinderHeightM_;
-      }
-      /**
-       * <code>optional float cylinder_height_m = 3;</code>
-       */
-      public Builder setCylinderHeightM(float value) {
-        
-        cylinderHeightM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float cylinder_height_m = 3;</code>
-       */
-      public Builder clearCylinderHeightM() {
-        
-        cylinderHeightM_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float cylinderGroundM_ ;
-      /**
-       * <code>optional float cylinder_ground_m = 4;</code>
-       */
-      public float getCylinderGroundM() {
-        return cylinderGroundM_;
-      }
-      /**
-       * <code>optional float cylinder_ground_m = 4;</code>
-       */
-      public Builder setCylinderGroundM(float value) {
-        
-        cylinderGroundM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float cylinder_ground_m = 4;</code>
-       */
-      public Builder clearCylinderGroundM() {
-        
-        cylinderGroundM_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float shoulderModeScale_ ;
-      /**
-       * <code>optional float shoulder_mode_scale = 5;</code>
-       */
-      public float getShoulderModeScale() {
-        return shoulderModeScale_;
-      }
-      /**
-       * <code>optional float shoulder_mode_scale = 5;</code>
-       */
-      public Builder setShoulderModeScale(float value) {
-        
-        shoulderModeScale_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional float shoulder_mode_scale = 5;</code>
-       */
-      public Builder clearShoulderModeScale() {
-        
-        shoulderModeScale_ = 0F;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
-    private static final com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CameraAttributes>
-        PARSER = new com.google.protobuf.AbstractParser<CameraAttributes>() {
-      public CameraAttributes parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CameraAttributes(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CameraAttributes> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CameraAttributes> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface EncounterAttributesOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional float base_capture_rate = 1;</code>
@@ -1385,119 +65,12 @@ public final class Pokemon {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes}
    */
   public  static final class EncounterAttributes extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          EncounterAttributes, EncounterAttributes.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes)
       EncounterAttributesOrBuilder {
-    // Use EncounterAttributes.newBuilder() to construct.
-    private EncounterAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private EncounterAttributes() {
-      baseCaptureRate_ = 0F;
-      baseFleeRate_ = 0F;
-      collisionRadiusM_ = 0F;
-      collisionHeightM_ = 0F;
-      collisionHeadRadiusM_ = 0F;
-      movementType_ = 0;
-      movementTimerS_ = 0F;
-      jumpTimeS_ = 0F;
-      attackTimerS_ = 0F;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private EncounterAttributes(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 13: {
-
-              baseCaptureRate_ = input.readFloat();
-              break;
-            }
-            case 21: {
-
-              baseFleeRate_ = input.readFloat();
-              break;
-            }
-            case 29: {
-
-              collisionRadiusM_ = input.readFloat();
-              break;
-            }
-            case 37: {
-
-              collisionHeightM_ = input.readFloat();
-              break;
-            }
-            case 45: {
-
-              collisionHeadRadiusM_ = input.readFloat();
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-
-              movementType_ = rawValue;
-              break;
-            }
-            case 61: {
-
-              movementTimerS_ = input.readFloat();
-              break;
-            }
-            case 69: {
-
-              jumpTimeS_ = input.readFloat();
-              break;
-            }
-            case 77: {
-
-              attackTimerS_ = input.readFloat();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.class, com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.Builder.class);
-    }
-
     public static final int BASE_CAPTURE_RATE_FIELD_NUMBER = 1;
     private float baseCaptureRate_;
     /**
@@ -1505,6 +78,20 @@ public final class Pokemon {
      */
     public float getBaseCaptureRate() {
       return baseCaptureRate_;
+    }
+    /**
+     * <code>optional float base_capture_rate = 1;</code>
+     */
+    private void setBaseCaptureRate(float value) {
+      
+      baseCaptureRate_ = value;
+    }
+    /**
+     * <code>optional float base_capture_rate = 1;</code>
+     */
+    private void clearBaseCaptureRate() {
+      
+      baseCaptureRate_ = 0F;
     }
 
     public static final int BASE_FLEE_RATE_FIELD_NUMBER = 2;
@@ -1515,6 +102,20 @@ public final class Pokemon {
     public float getBaseFleeRate() {
       return baseFleeRate_;
     }
+    /**
+     * <code>optional float base_flee_rate = 2;</code>
+     */
+    private void setBaseFleeRate(float value) {
+      
+      baseFleeRate_ = value;
+    }
+    /**
+     * <code>optional float base_flee_rate = 2;</code>
+     */
+    private void clearBaseFleeRate() {
+      
+      baseFleeRate_ = 0F;
+    }
 
     public static final int COLLISION_RADIUS_M_FIELD_NUMBER = 3;
     private float collisionRadiusM_;
@@ -1523,6 +124,20 @@ public final class Pokemon {
      */
     public float getCollisionRadiusM() {
       return collisionRadiusM_;
+    }
+    /**
+     * <code>optional float collision_radius_m = 3;</code>
+     */
+    private void setCollisionRadiusM(float value) {
+      
+      collisionRadiusM_ = value;
+    }
+    /**
+     * <code>optional float collision_radius_m = 3;</code>
+     */
+    private void clearCollisionRadiusM() {
+      
+      collisionRadiusM_ = 0F;
     }
 
     public static final int COLLISION_HEIGHT_M_FIELD_NUMBER = 4;
@@ -1533,6 +148,20 @@ public final class Pokemon {
     public float getCollisionHeightM() {
       return collisionHeightM_;
     }
+    /**
+     * <code>optional float collision_height_m = 4;</code>
+     */
+    private void setCollisionHeightM(float value) {
+      
+      collisionHeightM_ = value;
+    }
+    /**
+     * <code>optional float collision_height_m = 4;</code>
+     */
+    private void clearCollisionHeightM() {
+      
+      collisionHeightM_ = 0F;
+    }
 
     public static final int COLLISION_HEAD_RADIUS_M_FIELD_NUMBER = 5;
     private float collisionHeadRadiusM_;
@@ -1541,6 +170,20 @@ public final class Pokemon {
      */
     public float getCollisionHeadRadiusM() {
       return collisionHeadRadiusM_;
+    }
+    /**
+     * <code>optional float collision_head_radius_m = 5;</code>
+     */
+    private void setCollisionHeadRadiusM(float value) {
+      
+      collisionHeadRadiusM_ = value;
+    }
+    /**
+     * <code>optional float collision_head_radius_m = 5;</code>
+     */
+    private void clearCollisionHeadRadiusM() {
+      
+      collisionHeadRadiusM_ = 0F;
     }
 
     public static final int MOVEMENT_TYPE_FIELD_NUMBER = 6;
@@ -1555,8 +198,31 @@ public final class Pokemon {
      * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
      */
     public com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType getMovementType() {
-      com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType result = com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType.valueOf(movementType_);
+      com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType result = com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType.forNumber(movementType_);
       return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
+     */
+    private void setMovementTypeValue(int value) {
+        movementType_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
+     */
+    private void setMovementType(com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      movementType_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
+     */
+    private void clearMovementType() {
+      
+      movementType_ = 0;
     }
 
     public static final int MOVEMENT_TIMER_S_FIELD_NUMBER = 7;
@@ -1567,6 +233,20 @@ public final class Pokemon {
     public float getMovementTimerS() {
       return movementTimerS_;
     }
+    /**
+     * <code>optional float movement_timer_s = 7;</code>
+     */
+    private void setMovementTimerS(float value) {
+      
+      movementTimerS_ = value;
+    }
+    /**
+     * <code>optional float movement_timer_s = 7;</code>
+     */
+    private void clearMovementTimerS() {
+      
+      movementTimerS_ = 0F;
+    }
 
     public static final int JUMP_TIME_S_FIELD_NUMBER = 8;
     private float jumpTimeS_;
@@ -1575,6 +255,20 @@ public final class Pokemon {
      */
     public float getJumpTimeS() {
       return jumpTimeS_;
+    }
+    /**
+     * <code>optional float jump_time_s = 8;</code>
+     */
+    private void setJumpTimeS(float value) {
+      
+      jumpTimeS_ = value;
+    }
+    /**
+     * <code>optional float jump_time_s = 8;</code>
+     */
+    private void clearJumpTimeS() {
+      
+      jumpTimeS_ = 0F;
     }
 
     public static final int ATTACK_TIMER_S_FIELD_NUMBER = 9;
@@ -1585,15 +279,19 @@ public final class Pokemon {
     public float getAttackTimerS() {
       return attackTimerS_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional float attack_timer_s = 9;</code>
+     */
+    private void setAttackTimerS(float value) {
+      
+      attackTimerS_ = value;
+    }
+    /**
+     * <code>optional float attack_timer_s = 9;</code>
+     */
+    private void clearAttackTimerS() {
+      
+      attackTimerS_ = 0F;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -1628,7 +326,7 @@ public final class Pokemon {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1668,730 +366,1454 @@ public final class Pokemon {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(9, attackTimerS_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes other = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes) obj;
-
-      boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getBaseCaptureRate())
-          == java.lang.Float.floatToIntBits(
-              other.getBaseCaptureRate()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getBaseFleeRate())
-          == java.lang.Float.floatToIntBits(
-              other.getBaseFleeRate()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCollisionRadiusM())
-          == java.lang.Float.floatToIntBits(
-              other.getCollisionRadiusM()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCollisionHeightM())
-          == java.lang.Float.floatToIntBits(
-              other.getCollisionHeightM()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCollisionHeadRadiusM())
-          == java.lang.Float.floatToIntBits(
-              other.getCollisionHeadRadiusM()));
-      result = result && movementType_ == other.movementType_;
-      result = result && (
-          java.lang.Float.floatToIntBits(getMovementTimerS())
-          == java.lang.Float.floatToIntBits(
-              other.getMovementTimerS()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getJumpTimeS())
-          == java.lang.Float.floatToIntBits(
-              other.getJumpTimeS()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getAttackTimerS())
-          == java.lang.Float.floatToIntBits(
-              other.getAttackTimerS()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + BASE_CAPTURE_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getBaseCaptureRate());
-      hash = (37 * hash) + BASE_FLEE_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getBaseFleeRate());
-      hash = (37 * hash) + COLLISION_RADIUS_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCollisionRadiusM());
-      hash = (37 * hash) + COLLISION_HEIGHT_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCollisionHeightM());
-      hash = (37 * hash) + COLLISION_HEAD_RADIUS_M_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getCollisionHeadRadiusM());
-      hash = (37 * hash) + MOVEMENT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + movementType_;
-      hash = (37 * hash) + MOVEMENT_TIMER_S_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getMovementTimerS());
-      hash = (37 * hash) + JUMP_TIME_S_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getJumpTimeS());
-      hash = (37 * hash) + ATTACK_TIMER_S_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAttackTimerS());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes)
         com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.class, com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        baseCaptureRate_ = 0F;
 
-        baseFleeRate_ = 0F;
-
-        collisionRadiusM_ = 0F;
-
-        collisionHeightM_ = 0F;
-
-        collisionHeadRadiusM_ = 0F;
-
-        movementType_ = 0;
-
-        movementTimerS_ = 0F;
-
-        jumpTimeS_ = 0F;
-
-        attackTimerS_ = 0F;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes build() {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes buildPartial() {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes result = new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes(this);
-        result.baseCaptureRate_ = baseCaptureRate_;
-        result.baseFleeRate_ = baseFleeRate_;
-        result.collisionRadiusM_ = collisionRadiusM_;
-        result.collisionHeightM_ = collisionHeightM_;
-        result.collisionHeadRadiusM_ = collisionHeadRadiusM_;
-        result.movementType_ = movementType_;
-        result.movementTimerS_ = movementTimerS_;
-        result.jumpTimeS_ = jumpTimeS_;
-        result.attackTimerS_ = attackTimerS_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes other) {
-        if (other == com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.getDefaultInstance()) return this;
-        if (other.getBaseCaptureRate() != 0F) {
-          setBaseCaptureRate(other.getBaseCaptureRate());
-        }
-        if (other.getBaseFleeRate() != 0F) {
-          setBaseFleeRate(other.getBaseFleeRate());
-        }
-        if (other.getCollisionRadiusM() != 0F) {
-          setCollisionRadiusM(other.getCollisionRadiusM());
-        }
-        if (other.getCollisionHeightM() != 0F) {
-          setCollisionHeightM(other.getCollisionHeightM());
-        }
-        if (other.getCollisionHeadRadiusM() != 0F) {
-          setCollisionHeadRadiusM(other.getCollisionHeadRadiusM());
-        }
-        if (other.movementType_ != 0) {
-          setMovementTypeValue(other.getMovementTypeValue());
-        }
-        if (other.getMovementTimerS() != 0F) {
-          setMovementTimerS(other.getMovementTimerS());
-        }
-        if (other.getJumpTimeS() != 0F) {
-          setJumpTimeS(other.getJumpTimeS());
-        }
-        if (other.getAttackTimerS() != 0F) {
-          setAttackTimerS(other.getAttackTimerS());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private float baseCaptureRate_ ;
       /**
        * <code>optional float base_capture_rate = 1;</code>
        */
       public float getBaseCaptureRate() {
-        return baseCaptureRate_;
+        return instance.getBaseCaptureRate();
       }
       /**
        * <code>optional float base_capture_rate = 1;</code>
        */
       public Builder setBaseCaptureRate(float value) {
-        
-        baseCaptureRate_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setBaseCaptureRate(value);
         return this;
       }
       /**
        * <code>optional float base_capture_rate = 1;</code>
        */
       public Builder clearBaseCaptureRate() {
-        
-        baseCaptureRate_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearBaseCaptureRate();
         return this;
       }
 
-      private float baseFleeRate_ ;
       /**
        * <code>optional float base_flee_rate = 2;</code>
        */
       public float getBaseFleeRate() {
-        return baseFleeRate_;
+        return instance.getBaseFleeRate();
       }
       /**
        * <code>optional float base_flee_rate = 2;</code>
        */
       public Builder setBaseFleeRate(float value) {
-        
-        baseFleeRate_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setBaseFleeRate(value);
         return this;
       }
       /**
        * <code>optional float base_flee_rate = 2;</code>
        */
       public Builder clearBaseFleeRate() {
-        
-        baseFleeRate_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearBaseFleeRate();
         return this;
       }
 
-      private float collisionRadiusM_ ;
       /**
        * <code>optional float collision_radius_m = 3;</code>
        */
       public float getCollisionRadiusM() {
-        return collisionRadiusM_;
+        return instance.getCollisionRadiusM();
       }
       /**
        * <code>optional float collision_radius_m = 3;</code>
        */
       public Builder setCollisionRadiusM(float value) {
-        
-        collisionRadiusM_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setCollisionRadiusM(value);
         return this;
       }
       /**
        * <code>optional float collision_radius_m = 3;</code>
        */
       public Builder clearCollisionRadiusM() {
-        
-        collisionRadiusM_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearCollisionRadiusM();
         return this;
       }
 
-      private float collisionHeightM_ ;
       /**
        * <code>optional float collision_height_m = 4;</code>
        */
       public float getCollisionHeightM() {
-        return collisionHeightM_;
+        return instance.getCollisionHeightM();
       }
       /**
        * <code>optional float collision_height_m = 4;</code>
        */
       public Builder setCollisionHeightM(float value) {
-        
-        collisionHeightM_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setCollisionHeightM(value);
         return this;
       }
       /**
        * <code>optional float collision_height_m = 4;</code>
        */
       public Builder clearCollisionHeightM() {
-        
-        collisionHeightM_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearCollisionHeightM();
         return this;
       }
 
-      private float collisionHeadRadiusM_ ;
       /**
        * <code>optional float collision_head_radius_m = 5;</code>
        */
       public float getCollisionHeadRadiusM() {
-        return collisionHeadRadiusM_;
+        return instance.getCollisionHeadRadiusM();
       }
       /**
        * <code>optional float collision_head_radius_m = 5;</code>
        */
       public Builder setCollisionHeadRadiusM(float value) {
-        
-        collisionHeadRadiusM_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setCollisionHeadRadiusM(value);
         return this;
       }
       /**
        * <code>optional float collision_head_radius_m = 5;</code>
        */
       public Builder clearCollisionHeadRadiusM() {
-        
-        collisionHeadRadiusM_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearCollisionHeadRadiusM();
         return this;
       }
 
-      private int movementType_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
        */
       public int getMovementTypeValue() {
-        return movementType_;
+        return instance.getMovementTypeValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
        */
       public Builder setMovementTypeValue(int value) {
-        movementType_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setMovementTypeValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
        */
       public com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType getMovementType() {
-        com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType result = com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType.valueOf(movementType_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType.UNRECOGNIZED : result;
+        return instance.getMovementType();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
        */
       public Builder setMovementType(com.github.aeonlucid.pogoprotos.Enums.PokemonMovementType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        movementType_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setMovementType(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonMovementType movement_type = 6;</code>
        */
       public Builder clearMovementType() {
-        
-        movementType_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearMovementType();
         return this;
       }
 
-      private float movementTimerS_ ;
       /**
        * <code>optional float movement_timer_s = 7;</code>
        */
       public float getMovementTimerS() {
-        return movementTimerS_;
+        return instance.getMovementTimerS();
       }
       /**
        * <code>optional float movement_timer_s = 7;</code>
        */
       public Builder setMovementTimerS(float value) {
-        
-        movementTimerS_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setMovementTimerS(value);
         return this;
       }
       /**
        * <code>optional float movement_timer_s = 7;</code>
        */
       public Builder clearMovementTimerS() {
-        
-        movementTimerS_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearMovementTimerS();
         return this;
       }
 
-      private float jumpTimeS_ ;
       /**
        * <code>optional float jump_time_s = 8;</code>
        */
       public float getJumpTimeS() {
-        return jumpTimeS_;
+        return instance.getJumpTimeS();
       }
       /**
        * <code>optional float jump_time_s = 8;</code>
        */
       public Builder setJumpTimeS(float value) {
-        
-        jumpTimeS_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setJumpTimeS(value);
         return this;
       }
       /**
        * <code>optional float jump_time_s = 8;</code>
        */
       public Builder clearJumpTimeS() {
-        
-        jumpTimeS_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearJumpTimeS();
         return this;
       }
 
-      private float attackTimerS_ ;
       /**
        * <code>optional float attack_timer_s = 9;</code>
        */
       public float getAttackTimerS() {
-        return attackTimerS_;
+        return instance.getAttackTimerS();
       }
       /**
        * <code>optional float attack_timer_s = 9;</code>
        */
       public Builder setAttackTimerS(float value) {
-        
-        attackTimerS_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAttackTimerS(value);
         return this;
       }
       /**
        * <code>optional float attack_timer_s = 9;</code>
        */
       public Builder clearAttackTimerS() {
-        
-        attackTimerS_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearAttackTimerS();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes other = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes) arg1;
+          baseCaptureRate_ = visitor.visitFloat(baseCaptureRate_ != 0F, baseCaptureRate_,
+              other.baseCaptureRate_ != 0F, other.baseCaptureRate_);
+          baseFleeRate_ = visitor.visitFloat(baseFleeRate_ != 0F, baseFleeRate_,
+              other.baseFleeRate_ != 0F, other.baseFleeRate_);
+          collisionRadiusM_ = visitor.visitFloat(collisionRadiusM_ != 0F, collisionRadiusM_,
+              other.collisionRadiusM_ != 0F, other.collisionRadiusM_);
+          collisionHeightM_ = visitor.visitFloat(collisionHeightM_ != 0F, collisionHeightM_,
+              other.collisionHeightM_ != 0F, other.collisionHeightM_);
+          collisionHeadRadiusM_ = visitor.visitFloat(collisionHeadRadiusM_ != 0F, collisionHeadRadiusM_,
+              other.collisionHeadRadiusM_ != 0F, other.collisionHeadRadiusM_);
+          movementType_ = visitor.visitInt(movementType_ != 0, movementType_,    other.movementType_ != 0, other.movementType_);
+          movementTimerS_ = visitor.visitFloat(movementTimerS_ != 0F, movementTimerS_,
+              other.movementTimerS_ != 0F, other.movementTimerS_);
+          jumpTimeS_ = visitor.visitFloat(jumpTimeS_ != 0F, jumpTimeS_,
+              other.jumpTimeS_ != 0F, other.jumpTimeS_);
+          attackTimerS_ = visitor.visitFloat(attackTimerS_ != 0F, attackTimerS_,
+              other.attackTimerS_ != 0F, other.attackTimerS_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 13: {
+
+                  baseCaptureRate_ = input.readFloat();
+                  break;
+                }
+                case 21: {
+
+                  baseFleeRate_ = input.readFloat();
+                  break;
+                }
+                case 29: {
+
+                  collisionRadiusM_ = input.readFloat();
+                  break;
+                }
+                case 37: {
+
+                  collisionHeightM_ = input.readFloat();
+                  break;
+                }
+                case 45: {
+
+                  collisionHeadRadiusM_ = input.readFloat();
+                  break;
+                }
+                case 48: {
+                  int rawValue = input.readEnum();
+
+                  movementType_ = rawValue;
+                  break;
+                }
+                case 61: {
+
+                  movementTimerS_ = input.readFloat();
+                  break;
+                }
+                case 69: {
+
+                  jumpTimeS_ = input.readFloat();
+                  break;
+                }
+                case 77: {
+
+                  attackTimerS_ = input.readFloat();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.EncounterAttributes)
     private static final com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes();
+      DEFAULT_INSTANCE = new EncounterAttributes();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<EncounterAttributes>
-        PARSER = new com.google.protobuf.AbstractParser<EncounterAttributes>() {
-      public EncounterAttributes parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EncounterAttributes(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<EncounterAttributes> PARSER;
 
     public static com.google.protobuf.Parser<EncounterAttributes> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface StatsAttributesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional int32 base_stamina = 1;</code>
+     */
+    int getBaseStamina();
+
+    /**
+     * <code>optional int32 base_attack = 2;</code>
+     */
+    int getBaseAttack();
+
+    /**
+     * <code>optional int32 base_defense = 3;</code>
+     */
+    int getBaseDefense();
+
+    /**
+     * <code>optional int32 dodge_energy_delta = 8;</code>
+     */
+    int getDodgeEnergyDelta();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes}
+   */
+  public  static final class StatsAttributes extends
+      com.google.protobuf.GeneratedMessageLite<
+          StatsAttributes, StatsAttributes.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
+      StatsAttributesOrBuilder {
+    private StatsAttributes() {
+    }
+    public static final int BASE_STAMINA_FIELD_NUMBER = 1;
+    private int baseStamina_;
+    /**
+     * <code>optional int32 base_stamina = 1;</code>
+     */
+    public int getBaseStamina() {
+      return baseStamina_;
+    }
+    /**
+     * <code>optional int32 base_stamina = 1;</code>
+     */
+    private void setBaseStamina(int value) {
+      
+      baseStamina_ = value;
+    }
+    /**
+     * <code>optional int32 base_stamina = 1;</code>
+     */
+    private void clearBaseStamina() {
+      
+      baseStamina_ = 0;
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Parser<EncounterAttributes> getParserForType() {
-      return PARSER;
+    public static final int BASE_ATTACK_FIELD_NUMBER = 2;
+    private int baseAttack_;
+    /**
+     * <code>optional int32 base_attack = 2;</code>
+     */
+    public int getBaseAttack() {
+      return baseAttack_;
+    }
+    /**
+     * <code>optional int32 base_attack = 2;</code>
+     */
+    private void setBaseAttack(int value) {
+      
+      baseAttack_ = value;
+    }
+    /**
+     * <code>optional int32 base_attack = 2;</code>
+     */
+    private void clearBaseAttack() {
+      
+      baseAttack_ = 0;
     }
 
-    public com.github.aeonlucid.pogoprotos.settings.master.Pokemon.EncounterAttributes getDefaultInstanceForType() {
+    public static final int BASE_DEFENSE_FIELD_NUMBER = 3;
+    private int baseDefense_;
+    /**
+     * <code>optional int32 base_defense = 3;</code>
+     */
+    public int getBaseDefense() {
+      return baseDefense_;
+    }
+    /**
+     * <code>optional int32 base_defense = 3;</code>
+     */
+    private void setBaseDefense(int value) {
+      
+      baseDefense_ = value;
+    }
+    /**
+     * <code>optional int32 base_defense = 3;</code>
+     */
+    private void clearBaseDefense() {
+      
+      baseDefense_ = 0;
+    }
+
+    public static final int DODGE_ENERGY_DELTA_FIELD_NUMBER = 8;
+    private int dodgeEnergyDelta_;
+    /**
+     * <code>optional int32 dodge_energy_delta = 8;</code>
+     */
+    public int getDodgeEnergyDelta() {
+      return dodgeEnergyDelta_;
+    }
+    /**
+     * <code>optional int32 dodge_energy_delta = 8;</code>
+     */
+    private void setDodgeEnergyDelta(int value) {
+      
+      dodgeEnergyDelta_ = value;
+    }
+    /**
+     * <code>optional int32 dodge_energy_delta = 8;</code>
+     */
+    private void clearDodgeEnergyDelta() {
+      
+      dodgeEnergyDelta_ = 0;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (baseStamina_ != 0) {
+        output.writeInt32(1, baseStamina_);
+      }
+      if (baseAttack_ != 0) {
+        output.writeInt32(2, baseAttack_);
+      }
+      if (baseDefense_ != 0) {
+        output.writeInt32(3, baseDefense_);
+      }
+      if (dodgeEnergyDelta_ != 0) {
+        output.writeInt32(8, dodgeEnergyDelta_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (baseStamina_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, baseStamina_);
+      }
+      if (baseAttack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, baseAttack_);
+      }
+      if (baseDefense_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, baseDefense_);
+      }
+      if (dodgeEnergyDelta_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, dodgeEnergyDelta_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
+        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributesOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional int32 base_stamina = 1;</code>
+       */
+      public int getBaseStamina() {
+        return instance.getBaseStamina();
+      }
+      /**
+       * <code>optional int32 base_stamina = 1;</code>
+       */
+      public Builder setBaseStamina(int value) {
+        copyOnWrite();
+        instance.setBaseStamina(value);
+        return this;
+      }
+      /**
+       * <code>optional int32 base_stamina = 1;</code>
+       */
+      public Builder clearBaseStamina() {
+        copyOnWrite();
+        instance.clearBaseStamina();
+        return this;
+      }
+
+      /**
+       * <code>optional int32 base_attack = 2;</code>
+       */
+      public int getBaseAttack() {
+        return instance.getBaseAttack();
+      }
+      /**
+       * <code>optional int32 base_attack = 2;</code>
+       */
+      public Builder setBaseAttack(int value) {
+        copyOnWrite();
+        instance.setBaseAttack(value);
+        return this;
+      }
+      /**
+       * <code>optional int32 base_attack = 2;</code>
+       */
+      public Builder clearBaseAttack() {
+        copyOnWrite();
+        instance.clearBaseAttack();
+        return this;
+      }
+
+      /**
+       * <code>optional int32 base_defense = 3;</code>
+       */
+      public int getBaseDefense() {
+        return instance.getBaseDefense();
+      }
+      /**
+       * <code>optional int32 base_defense = 3;</code>
+       */
+      public Builder setBaseDefense(int value) {
+        copyOnWrite();
+        instance.setBaseDefense(value);
+        return this;
+      }
+      /**
+       * <code>optional int32 base_defense = 3;</code>
+       */
+      public Builder clearBaseDefense() {
+        copyOnWrite();
+        instance.clearBaseDefense();
+        return this;
+      }
+
+      /**
+       * <code>optional int32 dodge_energy_delta = 8;</code>
+       */
+      public int getDodgeEnergyDelta() {
+        return instance.getDodgeEnergyDelta();
+      }
+      /**
+       * <code>optional int32 dodge_energy_delta = 8;</code>
+       */
+      public Builder setDodgeEnergyDelta(int value) {
+        copyOnWrite();
+        instance.setDodgeEnergyDelta(value);
+        return this;
+      }
+      /**
+       * <code>optional int32 dodge_energy_delta = 8;</code>
+       */
+      public Builder clearDodgeEnergyDelta() {
+        copyOnWrite();
+        instance.clearDodgeEnergyDelta();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes other = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes) arg1;
+          baseStamina_ = visitor.visitInt(baseStamina_ != 0, baseStamina_,
+              other.baseStamina_ != 0, other.baseStamina_);
+          baseAttack_ = visitor.visitInt(baseAttack_ != 0, baseAttack_,
+              other.baseAttack_ != 0, other.baseAttack_);
+          baseDefense_ = visitor.visitInt(baseDefense_ != 0, baseDefense_,
+              other.baseDefense_ != 0, other.baseDefense_);
+          dodgeEnergyDelta_ = visitor.visitInt(dodgeEnergyDelta_ != 0, dodgeEnergyDelta_,
+              other.dodgeEnergyDelta_ != 0, other.dodgeEnergyDelta_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  baseStamina_ = input.readInt32();
+                  break;
+                }
+                case 16: {
+
+                  baseAttack_ = input.readInt32();
+                  break;
+                }
+                case 24: {
+
+                  baseDefense_ = input.readInt32();
+                  break;
+                }
+                case 64: {
+
+                  dodgeEnergyDelta_ = input.readInt32();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.StatsAttributes)
+    private static final com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new StatsAttributes();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.StatsAttributes getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
+    private static volatile com.google.protobuf.Parser<StatsAttributes> PARSER;
+
+    public static com.google.protobuf.Parser<StatsAttributes> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_fieldAccessorTable;
+  public interface CameraAttributesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
+    /**
+     * <code>optional float disk_radius_m = 1;</code>
+     */
+    float getDiskRadiusM();
+
+    /**
+     * <code>optional float cylinder_radius_m = 2;</code>
+     */
+    float getCylinderRadiusM();
+
+    /**
+     * <code>optional float cylinder_height_m = 3;</code>
+     */
+    float getCylinderHeightM();
+
+    /**
+     * <code>optional float cylinder_ground_m = 4;</code>
+     */
+    float getCylinderGroundM();
+
+    /**
+     * <code>optional float shoulder_mode_scale = 5;</code>
+     */
+    float getShoulderModeScale();
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n=com/github/aeonlucid/pogoprotos/settin" +
-      "gs/master/Pokemon.proto\0227com.github.aeon" +
-      "lucid.pogoprotos.settings.master.pokemon" +
-      "\032+com/github/aeonlucid/pogoprotos/Enums." +
-      "proto\"n\n\017StatsAttributes\022\024\n\014base_stamina" +
-      "\030\001 \001(\005\022\023\n\013base_attack\030\002 \001(\005\022\024\n\014base_defe" +
-      "nse\030\003 \001(\005\022\032\n\022dodge_energy_delta\030\010 \001(\005\"\227\001" +
-      "\n\020CameraAttributes\022\025\n\rdisk_radius_m\030\001 \001(" +
-      "\002\022\031\n\021cylinder_radius_m\030\002 \001(\002\022\031\n\021cylinder" +
-      "_height_m\030\003 \001(\002\022\031\n\021cylinder_ground_m\030\004 \001",
-      "(\002\022\033\n\023shoulder_mode_scale\030\005 \001(\002\"\273\002\n\023Enco" +
-      "unterAttributes\022\031\n\021base_capture_rate\030\001 \001" +
-      "(\002\022\026\n\016base_flee_rate\030\002 \001(\002\022\032\n\022collision_" +
-      "radius_m\030\003 \001(\002\022\032\n\022collision_height_m\030\004 \001" +
-      "(\002\022\037\n\027collision_head_radius_m\030\005 \001(\002\022Q\n\rm" +
-      "ovement_type\030\006 \001(\0162:.com.github.aeonluci" +
-      "d.pogoprotos.enums.PokemonMovementType\022\030" +
-      "\n\020movement_timer_s\030\007 \001(\002\022\023\n\013jump_time_s\030" +
-      "\010 \001(\002\022\026\n\016attack_timer_s\030\t \001(\002B:\n/com.git" +
-      "hub.aeonlucid.pogoprotos.settings.master",
-      "B\007Pokemonb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes}
+   */
+  public  static final class CameraAttributes extends
+      com.google.protobuf.GeneratedMessageLite<
+          CameraAttributes, CameraAttributes.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
+      CameraAttributesOrBuilder {
+    private CameraAttributes() {
+    }
+    public static final int DISK_RADIUS_M_FIELD_NUMBER = 1;
+    private float diskRadiusM_;
+    /**
+     * <code>optional float disk_radius_m = 1;</code>
+     */
+    public float getDiskRadiusM() {
+      return diskRadiusM_;
+    }
+    /**
+     * <code>optional float disk_radius_m = 1;</code>
+     */
+    private void setDiskRadiusM(float value) {
+      
+      diskRadiusM_ = value;
+    }
+    /**
+     * <code>optional float disk_radius_m = 1;</code>
+     */
+    private void clearDiskRadiusM() {
+      
+      diskRadiusM_ = 0F;
+    }
+
+    public static final int CYLINDER_RADIUS_M_FIELD_NUMBER = 2;
+    private float cylinderRadiusM_;
+    /**
+     * <code>optional float cylinder_radius_m = 2;</code>
+     */
+    public float getCylinderRadiusM() {
+      return cylinderRadiusM_;
+    }
+    /**
+     * <code>optional float cylinder_radius_m = 2;</code>
+     */
+    private void setCylinderRadiusM(float value) {
+      
+      cylinderRadiusM_ = value;
+    }
+    /**
+     * <code>optional float cylinder_radius_m = 2;</code>
+     */
+    private void clearCylinderRadiusM() {
+      
+      cylinderRadiusM_ = 0F;
+    }
+
+    public static final int CYLINDER_HEIGHT_M_FIELD_NUMBER = 3;
+    private float cylinderHeightM_;
+    /**
+     * <code>optional float cylinder_height_m = 3;</code>
+     */
+    public float getCylinderHeightM() {
+      return cylinderHeightM_;
+    }
+    /**
+     * <code>optional float cylinder_height_m = 3;</code>
+     */
+    private void setCylinderHeightM(float value) {
+      
+      cylinderHeightM_ = value;
+    }
+    /**
+     * <code>optional float cylinder_height_m = 3;</code>
+     */
+    private void clearCylinderHeightM() {
+      
+      cylinderHeightM_ = 0F;
+    }
+
+    public static final int CYLINDER_GROUND_M_FIELD_NUMBER = 4;
+    private float cylinderGroundM_;
+    /**
+     * <code>optional float cylinder_ground_m = 4;</code>
+     */
+    public float getCylinderGroundM() {
+      return cylinderGroundM_;
+    }
+    /**
+     * <code>optional float cylinder_ground_m = 4;</code>
+     */
+    private void setCylinderGroundM(float value) {
+      
+      cylinderGroundM_ = value;
+    }
+    /**
+     * <code>optional float cylinder_ground_m = 4;</code>
+     */
+    private void clearCylinderGroundM() {
+      
+      cylinderGroundM_ = 0F;
+    }
+
+    public static final int SHOULDER_MODE_SCALE_FIELD_NUMBER = 5;
+    private float shoulderModeScale_;
+    /**
+     * <code>optional float shoulder_mode_scale = 5;</code>
+     */
+    public float getShoulderModeScale() {
+      return shoulderModeScale_;
+    }
+    /**
+     * <code>optional float shoulder_mode_scale = 5;</code>
+     */
+    private void setShoulderModeScale(float value) {
+      
+      shoulderModeScale_ = value;
+    }
+    /**
+     * <code>optional float shoulder_mode_scale = 5;</code>
+     */
+    private void clearShoulderModeScale() {
+      
+      shoulderModeScale_ = 0F;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (diskRadiusM_ != 0F) {
+        output.writeFloat(1, diskRadiusM_);
+      }
+      if (cylinderRadiusM_ != 0F) {
+        output.writeFloat(2, cylinderRadiusM_);
+      }
+      if (cylinderHeightM_ != 0F) {
+        output.writeFloat(3, cylinderHeightM_);
+      }
+      if (cylinderGroundM_ != 0F) {
+        output.writeFloat(4, cylinderGroundM_);
+      }
+      if (shoulderModeScale_ != 0F) {
+        output.writeFloat(5, shoulderModeScale_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (diskRadiusM_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, diskRadiusM_);
+      }
+      if (cylinderRadiusM_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, cylinderRadiusM_);
+      }
+      if (cylinderHeightM_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, cylinderHeightM_);
+      }
+      if (cylinderGroundM_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, cylinderGroundM_);
+      }
+      if (shoulderModeScale_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, shoulderModeScale_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
+        com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributesOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional float disk_radius_m = 1;</code>
+       */
+      public float getDiskRadiusM() {
+        return instance.getDiskRadiusM();
+      }
+      /**
+       * <code>optional float disk_radius_m = 1;</code>
+       */
+      public Builder setDiskRadiusM(float value) {
+        copyOnWrite();
+        instance.setDiskRadiusM(value);
+        return this;
+      }
+      /**
+       * <code>optional float disk_radius_m = 1;</code>
+       */
+      public Builder clearDiskRadiusM() {
+        copyOnWrite();
+        instance.clearDiskRadiusM();
+        return this;
+      }
+
+      /**
+       * <code>optional float cylinder_radius_m = 2;</code>
+       */
+      public float getCylinderRadiusM() {
+        return instance.getCylinderRadiusM();
+      }
+      /**
+       * <code>optional float cylinder_radius_m = 2;</code>
+       */
+      public Builder setCylinderRadiusM(float value) {
+        copyOnWrite();
+        instance.setCylinderRadiusM(value);
+        return this;
+      }
+      /**
+       * <code>optional float cylinder_radius_m = 2;</code>
+       */
+      public Builder clearCylinderRadiusM() {
+        copyOnWrite();
+        instance.clearCylinderRadiusM();
+        return this;
+      }
+
+      /**
+       * <code>optional float cylinder_height_m = 3;</code>
+       */
+      public float getCylinderHeightM() {
+        return instance.getCylinderHeightM();
+      }
+      /**
+       * <code>optional float cylinder_height_m = 3;</code>
+       */
+      public Builder setCylinderHeightM(float value) {
+        copyOnWrite();
+        instance.setCylinderHeightM(value);
+        return this;
+      }
+      /**
+       * <code>optional float cylinder_height_m = 3;</code>
+       */
+      public Builder clearCylinderHeightM() {
+        copyOnWrite();
+        instance.clearCylinderHeightM();
+        return this;
+      }
+
+      /**
+       * <code>optional float cylinder_ground_m = 4;</code>
+       */
+      public float getCylinderGroundM() {
+        return instance.getCylinderGroundM();
+      }
+      /**
+       * <code>optional float cylinder_ground_m = 4;</code>
+       */
+      public Builder setCylinderGroundM(float value) {
+        copyOnWrite();
+        instance.setCylinderGroundM(value);
+        return this;
+      }
+      /**
+       * <code>optional float cylinder_ground_m = 4;</code>
+       */
+      public Builder clearCylinderGroundM() {
+        copyOnWrite();
+        instance.clearCylinderGroundM();
+        return this;
+      }
+
+      /**
+       * <code>optional float shoulder_mode_scale = 5;</code>
+       */
+      public float getShoulderModeScale() {
+        return instance.getShoulderModeScale();
+      }
+      /**
+       * <code>optional float shoulder_mode_scale = 5;</code>
+       */
+      public Builder setShoulderModeScale(float value) {
+        copyOnWrite();
+        instance.setShoulderModeScale(value);
+        return this;
+      }
+      /**
+       * <code>optional float shoulder_mode_scale = 5;</code>
+       */
+      public Builder clearShoulderModeScale() {
+        copyOnWrite();
+        instance.clearShoulderModeScale();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes other = (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes) arg1;
+          diskRadiusM_ = visitor.visitFloat(diskRadiusM_ != 0F, diskRadiusM_,
+              other.diskRadiusM_ != 0F, other.diskRadiusM_);
+          cylinderRadiusM_ = visitor.visitFloat(cylinderRadiusM_ != 0F, cylinderRadiusM_,
+              other.cylinderRadiusM_ != 0F, other.cylinderRadiusM_);
+          cylinderHeightM_ = visitor.visitFloat(cylinderHeightM_ != 0F, cylinderHeightM_,
+              other.cylinderHeightM_ != 0F, other.cylinderHeightM_);
+          cylinderGroundM_ = visitor.visitFloat(cylinderGroundM_ != 0F, cylinderGroundM_,
+              other.cylinderGroundM_ != 0F, other.cylinderGroundM_);
+          shoulderModeScale_ = visitor.visitFloat(shoulderModeScale_ != 0F, shoulderModeScale_,
+              other.shoulderModeScale_ != 0F, other.shoulderModeScale_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
           }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.Enums.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_StatsAttributes_descriptor,
-        new java.lang.String[] { "BaseStamina", "BaseAttack", "BaseDefense", "DodgeEnergyDelta", });
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_CameraAttributes_descriptor,
-        new java.lang.String[] { "DiskRadiusM", "CylinderRadiusM", "CylinderHeightM", "CylinderGroundM", "ShoulderModeScale", });
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_settings_master_pokemon_EncounterAttributes_descriptor,
-        new java.lang.String[] { "BaseCaptureRate", "BaseFleeRate", "CollisionRadiusM", "CollisionHeightM", "CollisionHeadRadiusM", "MovementType", "MovementTimerS", "JumpTimeS", "AttackTimerS", });
-    com.github.aeonlucid.pogoprotos.Enums.getDescriptor();
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 13: {
+
+                  diskRadiusM_ = input.readFloat();
+                  break;
+                }
+                case 21: {
+
+                  cylinderRadiusM_ = input.readFloat();
+                  break;
+                }
+                case 29: {
+
+                  cylinderHeightM_ = input.readFloat();
+                  break;
+                }
+                case 37: {
+
+                  cylinderGroundM_ = input.readFloat();
+                  break;
+                }
+                case 45: {
+
+                  shoulderModeScale_ = input.readFloat();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.settings.master.pokemon.CameraAttributes)
+    private static final com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new CameraAttributes();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.settings.master.Pokemon.CameraAttributes getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<CameraAttributes> PARSER;
+
+    public static com.google.protobuf.Parser<CameraAttributes> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+
+  static {
   }
 
   // @@protoc_insertion_point(outer_class_scope)

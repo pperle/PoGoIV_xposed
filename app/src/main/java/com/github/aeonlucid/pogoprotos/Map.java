@@ -8,17 +8,11 @@ public final class Map {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.map.MapObjectsStatus}
    */
   public enum MapObjectsStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>UNSET_STATUS = 0;</code>
      */
@@ -49,10 +43,6 @@ public final class Map {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -85,33 +75,6 @@ public final class Map {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Map.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final MapObjectsStatus[] VALUES = values();
-
-    public static MapObjectsStatus valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private MapObjectsStatus(int value) {
@@ -123,7 +86,7 @@ public final class Map {
 
   public interface MapCellOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.MapCell)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <pre>
@@ -152,16 +115,6 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
      */
     int getFortsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder> 
-        getFortsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder getFortsOrBuilder(
-        int index);
 
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
@@ -176,21 +129,11 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
      */
     int getSpawnPointsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> 
-        getSpawnPointsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder getSpawnPointsOrBuilder(
-        int index);
 
     /**
      * <code>repeated string deleted_objects = 6;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<String>
         getDeletedObjectsList();
     /**
      * <code>repeated string deleted_objects = 6;</code>
@@ -224,16 +167,6 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
      */
     int getFortSummariesCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder> 
-        getFortSummariesOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder getFortSummariesOrBuilder(
-        int index);
 
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
@@ -248,16 +181,6 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
      */
     int getDecimatedSpawnPointsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> 
-        getDecimatedSpawnPointsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder getDecimatedSpawnPointsOrBuilder(
-        int index);
 
     /**
      * <pre>
@@ -284,24 +207,6 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
      */
     int getWildPokemonsCount();
-    /**
-     * <pre>
-     * Pokemon within 2 steps or less.
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder> 
-        getWildPokemonsOrBuilderList();
-    /**
-     * <pre>
-     * Pokemon within 2 steps or less.
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder getWildPokemonsOrBuilder(
-        int index);
 
     /**
      * <pre>
@@ -328,24 +233,6 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
      */
     int getCatchablePokemonsCount();
-    /**
-     * <pre>
-     * Pokemon within 1 step or none.
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder> 
-        getCatchablePokemonsOrBuilderList();
-    /**
-     * <pre>
-     * Pokemon within 1 step or none.
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder getCatchablePokemonsOrBuilder(
-        int index);
 
     /**
      * <pre>
@@ -372,209 +259,25 @@ public final class Map {
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
      */
     int getNearbyPokemonsCount();
-    /**
-     * <pre>
-     * Pokemon farther away than 2 steps, but still in the area.
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder> 
-        getNearbyPokemonsOrBuilderList();
-    /**
-     * <pre>
-     * Pokemon farther away than 2 steps, but still in the area.
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder getNearbyPokemonsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.MapCell}
    */
   public  static final class MapCell extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          MapCell, MapCell.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.MapCell)
       MapCellOrBuilder {
-    // Use MapCell.newBuilder() to construct.
-    private MapCell(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private MapCell() {
-      s2CellId_ = 0L;
-      currentTimestampMs_ = 0L;
-      forts_ = java.util.Collections.emptyList();
-      spawnPoints_ = java.util.Collections.emptyList();
-      deletedObjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      isTruncatedList_ = false;
-      fortSummaries_ = java.util.Collections.emptyList();
-      decimatedSpawnPoints_ = java.util.Collections.emptyList();
-      wildPokemons_ = java.util.Collections.emptyList();
-      catchablePokemons_ = java.util.Collections.emptyList();
-      nearbyPokemons_ = java.util.Collections.emptyList();
+      forts_ = emptyProtobufList();
+      spawnPoints_ = emptyProtobufList();
+      deletedObjects_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+      fortSummaries_ = emptyProtobufList();
+      decimatedSpawnPoints_ = emptyProtobufList();
+      wildPokemons_ = emptyProtobufList();
+      catchablePokemons_ = emptyProtobufList();
+      nearbyPokemons_ = emptyProtobufList();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private MapCell(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              s2CellId_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              currentTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                forts_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Fort.FortData>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              forts_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortData.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                spawnPoints_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.Map.SpawnPoint>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              spawnPoints_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.Map.SpawnPoint.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                wildPokemons_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon>();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              wildPokemons_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                deletedObjects_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              deletedObjects_.add(s);
-              break;
-            }
-            case 56: {
-
-              isTruncatedList_ = input.readBool();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                fortSummaries_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              fortSummaries_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                decimatedSpawnPoints_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.Map.SpawnPoint>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              decimatedSpawnPoints_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.Map.SpawnPoint.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-                catchablePokemons_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon>();
-                mutable_bitField0_ |= 0x00000200;
-              }
-              catchablePokemons_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                nearbyPokemons_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon>();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              nearbyPokemons_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.parser(), extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          forts_ = java.util.Collections.unmodifiableList(forts_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          spawnPoints_ = java.util.Collections.unmodifiableList(spawnPoints_);
-        }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-          wildPokemons_ = java.util.Collections.unmodifiableList(wildPokemons_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          deletedObjects_ = deletedObjects_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-          fortSummaries_ = java.util.Collections.unmodifiableList(fortSummaries_);
-        }
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-          decimatedSpawnPoints_ = java.util.Collections.unmodifiableList(decimatedSpawnPoints_);
-        }
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-          catchablePokemons_ = java.util.Collections.unmodifiableList(catchablePokemons_);
-        }
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-          nearbyPokemons_ = java.util.Collections.unmodifiableList(nearbyPokemons_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Map.MapCell.class, com.github.aeonlucid.pogoprotos.Map.MapCell.Builder.class);
-    }
-
     private int bitField0_;
     public static final int S2_CELL_ID_FIELD_NUMBER = 1;
     private long s2CellId_;
@@ -588,6 +291,28 @@ public final class Map {
     public long getS2CellId() {
       return s2CellId_;
     }
+    /**
+     * <pre>
+     * S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
+     * </pre>
+     *
+     * <code>optional uint64 s2_cell_id = 1;</code>
+     */
+    private void setS2CellId(long value) {
+      
+      s2CellId_ = value;
+    }
+    /**
+     * <pre>
+     * S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
+     * </pre>
+     *
+     * <code>optional uint64 s2_cell_id = 1;</code>
+     */
+    private void clearS2CellId() {
+      
+      s2CellId_ = 0L;
+    }
 
     public static final int CURRENT_TIMESTAMP_MS_FIELD_NUMBER = 2;
     private long currentTimestampMs_;
@@ -597,9 +322,23 @@ public final class Map {
     public long getCurrentTimestampMs() {
       return currentTimestampMs_;
     }
+    /**
+     * <code>optional int64 current_timestamp_ms = 2;</code>
+     */
+    private void setCurrentTimestampMs(long value) {
+      
+      currentTimestampMs_ = value;
+    }
+    /**
+     * <code>optional int64 current_timestamp_ms = 2;</code>
+     */
+    private void clearCurrentTimestampMs() {
+      
+      currentTimestampMs_ = 0L;
+    }
 
     public static final int FORTS_FIELD_NUMBER = 3;
-    private java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortData> forts_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.map.Fort.FortData> forts_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
      */
@@ -632,9 +371,94 @@ public final class Map {
         int index) {
       return forts_.get(index);
     }
+    private void ensureFortsIsMutable() {
+      if (!forts_.isModifiable()) {
+        forts_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(forts_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void setForts(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFortsIsMutable();
+      forts_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void setForts(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
+      ensureFortsIsMutable();
+      forts_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void addForts(com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFortsIsMutable();
+      forts_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void addForts(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFortsIsMutable();
+      forts_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void addForts(
+        com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
+      ensureFortsIsMutable();
+      forts_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void addForts(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
+      ensureFortsIsMutable();
+      forts_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void addAllForts(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortData> values) {
+      ensureFortsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, forts_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void clearForts() {
+      forts_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
+     */
+    private void removeForts(int index) {
+      ensureFortsIsMutable();
+      forts_.remove(index);
+    }
 
     public static final int SPAWN_POINTS_FIELD_NUMBER = 4;
-    private java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> spawnPoints_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> spawnPoints_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
      */
@@ -667,14 +491,98 @@ public final class Map {
         int index) {
       return spawnPoints_.get(index);
     }
+    private void ensureSpawnPointsIsMutable() {
+      if (!spawnPoints_.isModifiable()) {
+        spawnPoints_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(spawnPoints_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void setSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void setSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void addSpawnPoints(com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void addSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void addSpawnPoints(
+        com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void addSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void addAllSpawnPoints(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPoint> values) {
+      ensureSpawnPointsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, spawnPoints_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void clearSpawnPoints() {
+      spawnPoints_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
+     */
+    private void removeSpawnPoints(int index) {
+      ensureSpawnPointsIsMutable();
+      spawnPoints_.remove(index);
+    }
 
     public static final int DELETED_OBJECTS_FIELD_NUMBER = 6;
-    private com.google.protobuf.LazyStringList deletedObjects_;
+    private com.google.protobuf.Internal.ProtobufList<String> deletedObjects_;
     /**
      * <code>repeated string deleted_objects = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getDeletedObjectsList() {
+    public java.util.List<String> getDeletedObjectsList() {
       return deletedObjects_;
     }
     /**
@@ -694,7 +602,63 @@ public final class Map {
      */
     public com.google.protobuf.ByteString
         getDeletedObjectsBytes(int index) {
-      return deletedObjects_.getByteString(index);
+      return com.google.protobuf.ByteString.copyFromUtf8(
+          deletedObjects_.get(index));
+    }
+    private void ensureDeletedObjectsIsMutable() {
+      if (!deletedObjects_.isModifiable()) {
+        deletedObjects_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(deletedObjects_);
+       }
+    }
+    /**
+     * <code>repeated string deleted_objects = 6;</code>
+     */
+    private void setDeletedObjects(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeletedObjectsIsMutable();
+      deletedObjects_.set(index, value);
+    }
+    /**
+     * <code>repeated string deleted_objects = 6;</code>
+     */
+    private void addDeletedObjects(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeletedObjectsIsMutable();
+      deletedObjects_.add(value);
+    }
+    /**
+     * <code>repeated string deleted_objects = 6;</code>
+     */
+    private void addAllDeletedObjects(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDeletedObjectsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, deletedObjects_);
+    }
+    /**
+     * <code>repeated string deleted_objects = 6;</code>
+     */
+    private void clearDeletedObjects() {
+      deletedObjects_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    }
+    /**
+     * <code>repeated string deleted_objects = 6;</code>
+     */
+    private void addDeletedObjectsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureDeletedObjectsIsMutable();
+      deletedObjects_.add(value.toStringUtf8());
     }
 
     public static final int IS_TRUNCATED_LIST_FIELD_NUMBER = 7;
@@ -705,9 +669,23 @@ public final class Map {
     public boolean getIsTruncatedList() {
       return isTruncatedList_;
     }
+    /**
+     * <code>optional bool is_truncated_list = 7;</code>
+     */
+    private void setIsTruncatedList(boolean value) {
+      
+      isTruncatedList_ = value;
+    }
+    /**
+     * <code>optional bool is_truncated_list = 7;</code>
+     */
+    private void clearIsTruncatedList() {
+      
+      isTruncatedList_ = false;
+    }
 
     public static final int FORT_SUMMARIES_FIELD_NUMBER = 8;
-    private java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary> fortSummaries_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary> fortSummaries_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
      */
@@ -740,9 +718,94 @@ public final class Map {
         int index) {
       return fortSummaries_.get(index);
     }
+    private void ensureFortSummariesIsMutable() {
+      if (!fortSummaries_.isModifiable()) {
+        fortSummaries_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(fortSummaries_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void setFortSummaries(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFortSummariesIsMutable();
+      fortSummaries_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void setFortSummaries(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder builderForValue) {
+      ensureFortSummariesIsMutable();
+      fortSummaries_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void addFortSummaries(com.github.aeonlucid.pogoprotos.map.Fort.FortSummary value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFortSummariesIsMutable();
+      fortSummaries_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void addFortSummaries(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFortSummariesIsMutable();
+      fortSummaries_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void addFortSummaries(
+        com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder builderForValue) {
+      ensureFortSummariesIsMutable();
+      fortSummaries_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void addFortSummaries(
+        int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder builderForValue) {
+      ensureFortSummariesIsMutable();
+      fortSummaries_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void addAllFortSummaries(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortSummary> values) {
+      ensureFortSummariesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, fortSummaries_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void clearFortSummaries() {
+      fortSummaries_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
+     */
+    private void removeFortSummaries(int index) {
+      ensureFortSummariesIsMutable();
+      fortSummaries_.remove(index);
+    }
 
     public static final int DECIMATED_SPAWN_POINTS_FIELD_NUMBER = 9;
-    private java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> decimatedSpawnPoints_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> decimatedSpawnPoints_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
      */
@@ -775,9 +838,94 @@ public final class Map {
         int index) {
       return decimatedSpawnPoints_.get(index);
     }
+    private void ensureDecimatedSpawnPointsIsMutable() {
+      if (!decimatedSpawnPoints_.isModifiable()) {
+        decimatedSpawnPoints_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(decimatedSpawnPoints_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void setDecimatedSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void setDecimatedSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void addDecimatedSpawnPoints(com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void addDecimatedSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void addDecimatedSpawnPoints(
+        com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void addDecimatedSpawnPoints(
+        int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void addAllDecimatedSpawnPoints(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPoint> values) {
+      ensureDecimatedSpawnPointsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, decimatedSpawnPoints_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void clearDecimatedSpawnPoints() {
+      decimatedSpawnPoints_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
+     */
+    private void removeDecimatedSpawnPoints(int index) {
+      ensureDecimatedSpawnPointsIsMutable();
+      decimatedSpawnPoints_.remove(index);
+    }
 
     public static final int WILD_POKEMONS_FIELD_NUMBER = 5;
-    private java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon> wildPokemons_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon> wildPokemons_;
     /**
      * <pre>
      * Pokemon within 2 steps or less.
@@ -830,9 +978,130 @@ public final class Map {
         int index) {
       return wildPokemons_.get(index);
     }
+    private void ensureWildPokemonsIsMutable() {
+      if (!wildPokemons_.isModifiable()) {
+        wildPokemons_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(wildPokemons_);
+       }
+    }
+
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void setWildPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.set(index, value);
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void setWildPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder builderForValue) {
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.set(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void addWildPokemons(com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.add(value);
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void addWildPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.add(index, value);
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void addWildPokemons(
+        com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder builderForValue) {
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.add(builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void addWildPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder builderForValue) {
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.add(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void addAllWildPokemons(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon> values) {
+      ensureWildPokemonsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, wildPokemons_);
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void clearWildPokemons() {
+      wildPokemons_ = emptyProtobufList();
+    }
+    /**
+     * <pre>
+     * Pokemon within 2 steps or less.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
+     */
+    private void removeWildPokemons(int index) {
+      ensureWildPokemonsIsMutable();
+      wildPokemons_.remove(index);
+    }
 
     public static final int CATCHABLE_POKEMONS_FIELD_NUMBER = 10;
-    private java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon> catchablePokemons_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon> catchablePokemons_;
     /**
      * <pre>
      * Pokemon within 1 step or none.
@@ -885,9 +1154,130 @@ public final class Map {
         int index) {
       return catchablePokemons_.get(index);
     }
+    private void ensureCatchablePokemonsIsMutable() {
+      if (!catchablePokemons_.isModifiable()) {
+        catchablePokemons_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(catchablePokemons_);
+       }
+    }
+
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void setCatchablePokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.set(index, value);
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void setCatchablePokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder builderForValue) {
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.set(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void addCatchablePokemons(com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.add(value);
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void addCatchablePokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.add(index, value);
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void addCatchablePokemons(
+        com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder builderForValue) {
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.add(builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void addCatchablePokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder builderForValue) {
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.add(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void addAllCatchablePokemons(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon> values) {
+      ensureCatchablePokemonsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, catchablePokemons_);
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void clearCatchablePokemons() {
+      catchablePokemons_ = emptyProtobufList();
+    }
+    /**
+     * <pre>
+     * Pokemon within 1 step or none.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
+     */
+    private void removeCatchablePokemons(int index) {
+      ensureCatchablePokemonsIsMutable();
+      catchablePokemons_.remove(index);
+    }
 
     public static final int NEARBY_POKEMONS_FIELD_NUMBER = 11;
-    private java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon> nearbyPokemons_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon> nearbyPokemons_;
     /**
      * <pre>
      * Pokemon farther away than 2 steps, but still in the area.
@@ -940,15 +1330,126 @@ public final class Map {
         int index) {
       return nearbyPokemons_.get(index);
     }
+    private void ensureNearbyPokemonsIsMutable() {
+      if (!nearbyPokemons_.isModifiable()) {
+        nearbyPokemons_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(nearbyPokemons_);
+       }
+    }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void setNearbyPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.set(index, value);
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void setNearbyPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder builderForValue) {
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.set(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void addNearbyPokemons(com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.add(value);
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void addNearbyPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.add(index, value);
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void addNearbyPokemons(
+        com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder builderForValue) {
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.add(builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void addNearbyPokemons(
+        int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder builderForValue) {
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.add(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void addAllNearbyPokemons(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon> values) {
+      ensureNearbyPokemonsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, nearbyPokemons_);
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void clearNearbyPokemons() {
+      nearbyPokemons_ = emptyProtobufList();
+    }
+    /**
+     * <pre>
+     * Pokemon farther away than 2 steps, but still in the area.
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
+     */
+    private void removeNearbyPokemons(int index) {
+      ensureNearbyPokemonsIsMutable();
+      nearbyPokemons_.remove(index);
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -969,7 +1470,7 @@ public final class Map {
         output.writeMessage(5, wildPokemons_.get(i));
       }
       for (int i = 0; i < deletedObjects_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deletedObjects_.getRaw(i));
+        output.writeString(6, deletedObjects_.get(i));
       }
       if (isTruncatedList_ != false) {
         output.writeBool(7, isTruncatedList_);
@@ -989,7 +1490,7 @@ public final class Map {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1016,7 +1517,8 @@ public final class Map {
       {
         int dataSize = 0;
         for (int i = 0; i < deletedObjects_.size(); i++) {
-          dataSize += computeStringSizeNoTag(deletedObjects_.getRaw(i));
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeStringSizeNoTag(deletedObjects_.get(i));
         }
         size += dataSize;
         size += 1 * getDeletedObjectsList().size();
@@ -1041,636 +1543,92 @@ public final class Map {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, nearbyPokemons_.get(i));
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Map.MapCell)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.Map.MapCell other = (com.github.aeonlucid.pogoprotos.Map.MapCell) obj;
-
-      boolean result = true;
-      result = result && (getS2CellId()
-          == other.getS2CellId());
-      result = result && (getCurrentTimestampMs()
-          == other.getCurrentTimestampMs());
-      result = result && getFortsList()
-          .equals(other.getFortsList());
-      result = result && getSpawnPointsList()
-          .equals(other.getSpawnPointsList());
-      result = result && getDeletedObjectsList()
-          .equals(other.getDeletedObjectsList());
-      result = result && (getIsTruncatedList()
-          == other.getIsTruncatedList());
-      result = result && getFortSummariesList()
-          .equals(other.getFortSummariesList());
-      result = result && getDecimatedSpawnPointsList()
-          .equals(other.getDecimatedSpawnPointsList());
-      result = result && getWildPokemonsList()
-          .equals(other.getWildPokemonsList());
-      result = result && getCatchablePokemonsList()
-          .equals(other.getCatchablePokemonsList());
-      result = result && getNearbyPokemonsList()
-          .equals(other.getNearbyPokemonsList());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + S2_CELL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getS2CellId());
-      hash = (37 * hash) + CURRENT_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCurrentTimestampMs());
-      if (getFortsCount() > 0) {
-        hash = (37 * hash) + FORTS_FIELD_NUMBER;
-        hash = (53 * hash) + getFortsList().hashCode();
-      }
-      if (getSpawnPointsCount() > 0) {
-        hash = (37 * hash) + SPAWN_POINTS_FIELD_NUMBER;
-        hash = (53 * hash) + getSpawnPointsList().hashCode();
-      }
-      if (getDeletedObjectsCount() > 0) {
-        hash = (37 * hash) + DELETED_OBJECTS_FIELD_NUMBER;
-        hash = (53 * hash) + getDeletedObjectsList().hashCode();
-      }
-      hash = (37 * hash) + IS_TRUNCATED_LIST_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsTruncatedList());
-      if (getFortSummariesCount() > 0) {
-        hash = (37 * hash) + FORT_SUMMARIES_FIELD_NUMBER;
-        hash = (53 * hash) + getFortSummariesList().hashCode();
-      }
-      if (getDecimatedSpawnPointsCount() > 0) {
-        hash = (37 * hash) + DECIMATED_SPAWN_POINTS_FIELD_NUMBER;
-        hash = (53 * hash) + getDecimatedSpawnPointsList().hashCode();
-      }
-      if (getWildPokemonsCount() > 0) {
-        hash = (37 * hash) + WILD_POKEMONS_FIELD_NUMBER;
-        hash = (53 * hash) + getWildPokemonsList().hashCode();
-      }
-      if (getCatchablePokemonsCount() > 0) {
-        hash = (37 * hash) + CATCHABLE_POKEMONS_FIELD_NUMBER;
-        hash = (53 * hash) + getCatchablePokemonsList().hashCode();
-      }
-      if (getNearbyPokemonsCount() > 0) {
-        hash = (37 * hash) + NEARBY_POKEMONS_FIELD_NUMBER;
-        hash = (53 * hash) + getNearbyPokemonsList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.Map.MapCell parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Map.MapCell prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.MapCell}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.Map.MapCell, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.MapCell)
         com.github.aeonlucid.pogoprotos.Map.MapCellOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Map.MapCell.class, com.github.aeonlucid.pogoprotos.Map.MapCell.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.Map.MapCell.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFortsFieldBuilder();
-          getSpawnPointsFieldBuilder();
-          getFortSummariesFieldBuilder();
-          getDecimatedSpawnPointsFieldBuilder();
-          getWildPokemonsFieldBuilder();
-          getCatchablePokemonsFieldBuilder();
-          getNearbyPokemonsFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        s2CellId_ = 0L;
 
-        currentTimestampMs_ = 0L;
-
-        if (fortsBuilder_ == null) {
-          forts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          fortsBuilder_.clear();
-        }
-        if (spawnPointsBuilder_ == null) {
-          spawnPoints_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          spawnPointsBuilder_.clear();
-        }
-        deletedObjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        isTruncatedList_ = false;
-
-        if (fortSummariesBuilder_ == null) {
-          fortSummaries_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        } else {
-          fortSummariesBuilder_.clear();
-        }
-        if (decimatedSpawnPointsBuilder_ == null) {
-          decimatedSpawnPoints_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        } else {
-          decimatedSpawnPointsBuilder_.clear();
-        }
-        if (wildPokemonsBuilder_ == null) {
-          wildPokemons_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
-        } else {
-          wildPokemonsBuilder_.clear();
-        }
-        if (catchablePokemonsBuilder_ == null) {
-          catchablePokemons_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
-        } else {
-          catchablePokemonsBuilder_.clear();
-        }
-        if (nearbyPokemonsBuilder_ == null) {
-          nearbyPokemons_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
-        } else {
-          nearbyPokemonsBuilder_.clear();
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Map.MapCell getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Map.MapCell.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.Map.MapCell build() {
-        com.github.aeonlucid.pogoprotos.Map.MapCell result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Map.MapCell buildPartial() {
-        com.github.aeonlucid.pogoprotos.Map.MapCell result = new com.github.aeonlucid.pogoprotos.Map.MapCell(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.s2CellId_ = s2CellId_;
-        result.currentTimestampMs_ = currentTimestampMs_;
-        if (fortsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            forts_ = java.util.Collections.unmodifiableList(forts_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.forts_ = forts_;
-        } else {
-          result.forts_ = fortsBuilder_.build();
-        }
-        if (spawnPointsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            spawnPoints_ = java.util.Collections.unmodifiableList(spawnPoints_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.spawnPoints_ = spawnPoints_;
-        } else {
-          result.spawnPoints_ = spawnPointsBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          deletedObjects_ = deletedObjects_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.deletedObjects_ = deletedObjects_;
-        result.isTruncatedList_ = isTruncatedList_;
-        if (fortSummariesBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
-            fortSummaries_ = java.util.Collections.unmodifiableList(fortSummaries_);
-            bitField0_ = (bitField0_ & ~0x00000040);
-          }
-          result.fortSummaries_ = fortSummaries_;
-        } else {
-          result.fortSummaries_ = fortSummariesBuilder_.build();
-        }
-        if (decimatedSpawnPointsBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
-            decimatedSpawnPoints_ = java.util.Collections.unmodifiableList(decimatedSpawnPoints_);
-            bitField0_ = (bitField0_ & ~0x00000080);
-          }
-          result.decimatedSpawnPoints_ = decimatedSpawnPoints_;
-        } else {
-          result.decimatedSpawnPoints_ = decimatedSpawnPointsBuilder_.build();
-        }
-        if (wildPokemonsBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
-            wildPokemons_ = java.util.Collections.unmodifiableList(wildPokemons_);
-            bitField0_ = (bitField0_ & ~0x00000100);
-          }
-          result.wildPokemons_ = wildPokemons_;
-        } else {
-          result.wildPokemons_ = wildPokemonsBuilder_.build();
-        }
-        if (catchablePokemonsBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200)) {
-            catchablePokemons_ = java.util.Collections.unmodifiableList(catchablePokemons_);
-            bitField0_ = (bitField0_ & ~0x00000200);
-          }
-          result.catchablePokemons_ = catchablePokemons_;
-        } else {
-          result.catchablePokemons_ = catchablePokemonsBuilder_.build();
-        }
-        if (nearbyPokemonsBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400)) {
-            nearbyPokemons_ = java.util.Collections.unmodifiableList(nearbyPokemons_);
-            bitField0_ = (bitField0_ & ~0x00000400);
-          }
-          result.nearbyPokemons_ = nearbyPokemons_;
-        } else {
-          result.nearbyPokemons_ = nearbyPokemonsBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Map.MapCell) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Map.MapCell)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Map.MapCell other) {
-        if (other == com.github.aeonlucid.pogoprotos.Map.MapCell.getDefaultInstance()) return this;
-        if (other.getS2CellId() != 0L) {
-          setS2CellId(other.getS2CellId());
-        }
-        if (other.getCurrentTimestampMs() != 0L) {
-          setCurrentTimestampMs(other.getCurrentTimestampMs());
-        }
-        if (fortsBuilder_ == null) {
-          if (!other.forts_.isEmpty()) {
-            if (forts_.isEmpty()) {
-              forts_ = other.forts_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureFortsIsMutable();
-              forts_.addAll(other.forts_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.forts_.isEmpty()) {
-            if (fortsBuilder_.isEmpty()) {
-              fortsBuilder_.dispose();
-              fortsBuilder_ = null;
-              forts_ = other.forts_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              fortsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getFortsFieldBuilder() : null;
-            } else {
-              fortsBuilder_.addAllMessages(other.forts_);
-            }
-          }
-        }
-        if (spawnPointsBuilder_ == null) {
-          if (!other.spawnPoints_.isEmpty()) {
-            if (spawnPoints_.isEmpty()) {
-              spawnPoints_ = other.spawnPoints_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureSpawnPointsIsMutable();
-              spawnPoints_.addAll(other.spawnPoints_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.spawnPoints_.isEmpty()) {
-            if (spawnPointsBuilder_.isEmpty()) {
-              spawnPointsBuilder_.dispose();
-              spawnPointsBuilder_ = null;
-              spawnPoints_ = other.spawnPoints_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              spawnPointsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSpawnPointsFieldBuilder() : null;
-            } else {
-              spawnPointsBuilder_.addAllMessages(other.spawnPoints_);
-            }
-          }
-        }
-        if (!other.deletedObjects_.isEmpty()) {
-          if (deletedObjects_.isEmpty()) {
-            deletedObjects_ = other.deletedObjects_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensureDeletedObjectsIsMutable();
-            deletedObjects_.addAll(other.deletedObjects_);
-          }
-          onChanged();
-        }
-        if (other.getIsTruncatedList() != false) {
-          setIsTruncatedList(other.getIsTruncatedList());
-        }
-        if (fortSummariesBuilder_ == null) {
-          if (!other.fortSummaries_.isEmpty()) {
-            if (fortSummaries_.isEmpty()) {
-              fortSummaries_ = other.fortSummaries_;
-              bitField0_ = (bitField0_ & ~0x00000040);
-            } else {
-              ensureFortSummariesIsMutable();
-              fortSummaries_.addAll(other.fortSummaries_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.fortSummaries_.isEmpty()) {
-            if (fortSummariesBuilder_.isEmpty()) {
-              fortSummariesBuilder_.dispose();
-              fortSummariesBuilder_ = null;
-              fortSummaries_ = other.fortSummaries_;
-              bitField0_ = (bitField0_ & ~0x00000040);
-              fortSummariesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getFortSummariesFieldBuilder() : null;
-            } else {
-              fortSummariesBuilder_.addAllMessages(other.fortSummaries_);
-            }
-          }
-        }
-        if (decimatedSpawnPointsBuilder_ == null) {
-          if (!other.decimatedSpawnPoints_.isEmpty()) {
-            if (decimatedSpawnPoints_.isEmpty()) {
-              decimatedSpawnPoints_ = other.decimatedSpawnPoints_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-            } else {
-              ensureDecimatedSpawnPointsIsMutable();
-              decimatedSpawnPoints_.addAll(other.decimatedSpawnPoints_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.decimatedSpawnPoints_.isEmpty()) {
-            if (decimatedSpawnPointsBuilder_.isEmpty()) {
-              decimatedSpawnPointsBuilder_.dispose();
-              decimatedSpawnPointsBuilder_ = null;
-              decimatedSpawnPoints_ = other.decimatedSpawnPoints_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-              decimatedSpawnPointsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDecimatedSpawnPointsFieldBuilder() : null;
-            } else {
-              decimatedSpawnPointsBuilder_.addAllMessages(other.decimatedSpawnPoints_);
-            }
-          }
-        }
-        if (wildPokemonsBuilder_ == null) {
-          if (!other.wildPokemons_.isEmpty()) {
-            if (wildPokemons_.isEmpty()) {
-              wildPokemons_ = other.wildPokemons_;
-              bitField0_ = (bitField0_ & ~0x00000100);
-            } else {
-              ensureWildPokemonsIsMutable();
-              wildPokemons_.addAll(other.wildPokemons_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.wildPokemons_.isEmpty()) {
-            if (wildPokemonsBuilder_.isEmpty()) {
-              wildPokemonsBuilder_.dispose();
-              wildPokemonsBuilder_ = null;
-              wildPokemons_ = other.wildPokemons_;
-              bitField0_ = (bitField0_ & ~0x00000100);
-              wildPokemonsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getWildPokemonsFieldBuilder() : null;
-            } else {
-              wildPokemonsBuilder_.addAllMessages(other.wildPokemons_);
-            }
-          }
-        }
-        if (catchablePokemonsBuilder_ == null) {
-          if (!other.catchablePokemons_.isEmpty()) {
-            if (catchablePokemons_.isEmpty()) {
-              catchablePokemons_ = other.catchablePokemons_;
-              bitField0_ = (bitField0_ & ~0x00000200);
-            } else {
-              ensureCatchablePokemonsIsMutable();
-              catchablePokemons_.addAll(other.catchablePokemons_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.catchablePokemons_.isEmpty()) {
-            if (catchablePokemonsBuilder_.isEmpty()) {
-              catchablePokemonsBuilder_.dispose();
-              catchablePokemonsBuilder_ = null;
-              catchablePokemons_ = other.catchablePokemons_;
-              bitField0_ = (bitField0_ & ~0x00000200);
-              catchablePokemonsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCatchablePokemonsFieldBuilder() : null;
-            } else {
-              catchablePokemonsBuilder_.addAllMessages(other.catchablePokemons_);
-            }
-          }
-        }
-        if (nearbyPokemonsBuilder_ == null) {
-          if (!other.nearbyPokemons_.isEmpty()) {
-            if (nearbyPokemons_.isEmpty()) {
-              nearbyPokemons_ = other.nearbyPokemons_;
-              bitField0_ = (bitField0_ & ~0x00000400);
-            } else {
-              ensureNearbyPokemonsIsMutable();
-              nearbyPokemons_.addAll(other.nearbyPokemons_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.nearbyPokemons_.isEmpty()) {
-            if (nearbyPokemonsBuilder_.isEmpty()) {
-              nearbyPokemonsBuilder_.dispose();
-              nearbyPokemonsBuilder_ = null;
-              nearbyPokemons_ = other.nearbyPokemons_;
-              bitField0_ = (bitField0_ & ~0x00000400);
-              nearbyPokemonsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNearbyPokemonsFieldBuilder() : null;
-            } else {
-              nearbyPokemonsBuilder_.addAllMessages(other.nearbyPokemons_);
-            }
-          }
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Map.MapCell parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Map.MapCell) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long s2CellId_ ;
       /**
        * <pre>
        * S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
@@ -1679,7 +1637,7 @@ public final class Map {
        * <code>optional uint64 s2_cell_id = 1;</code>
        */
       public long getS2CellId() {
-        return s2CellId_;
+        return instance.getS2CellId();
       }
       /**
        * <pre>
@@ -1689,9 +1647,8 @@ public final class Map {
        * <code>optional uint64 s2_cell_id = 1;</code>
        */
       public Builder setS2CellId(long value) {
-        
-        s2CellId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setS2CellId(value);
         return this;
       }
       /**
@@ -1702,95 +1659,59 @@ public final class Map {
        * <code>optional uint64 s2_cell_id = 1;</code>
        */
       public Builder clearS2CellId() {
-        
-        s2CellId_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearS2CellId();
         return this;
       }
 
-      private long currentTimestampMs_ ;
       /**
        * <code>optional int64 current_timestamp_ms = 2;</code>
        */
       public long getCurrentTimestampMs() {
-        return currentTimestampMs_;
+        return instance.getCurrentTimestampMs();
       }
       /**
        * <code>optional int64 current_timestamp_ms = 2;</code>
        */
       public Builder setCurrentTimestampMs(long value) {
-        
-        currentTimestampMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setCurrentTimestampMs(value);
         return this;
       }
       /**
        * <code>optional int64 current_timestamp_ms = 2;</code>
        */
       public Builder clearCurrentTimestampMs() {
-        
-        currentTimestampMs_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearCurrentTimestampMs();
         return this;
       }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortData> forts_ =
-        java.util.Collections.emptyList();
-      private void ensureFortsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          forts_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Fort.FortData>(forts_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortData, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder> fortsBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortData> getFortsList() {
-        if (fortsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(forts_);
-        } else {
-          return fortsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getFortsList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public int getFortsCount() {
-        if (fortsBuilder_ == null) {
-          return forts_.size();
-        } else {
-          return fortsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getFortsCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortData getForts(int index) {
-        if (fortsBuilder_ == null) {
-          return forts_.get(index);
-        } else {
-          return fortsBuilder_.getMessage(index);
-        }
+        return instance.getForts(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public Builder setForts(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
-        if (fortsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFortsIsMutable();
-          forts_.set(index, value);
-          onChanged();
-        } else {
-          fortsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setForts(index, value);
         return this;
       }
       /**
@@ -1798,29 +1719,16 @@ public final class Map {
        */
       public Builder setForts(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
-        if (fortsBuilder_ == null) {
-          ensureFortsIsMutable();
-          forts_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          fortsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setForts(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public Builder addForts(com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
-        if (fortsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFortsIsMutable();
-          forts_.add(value);
-          onChanged();
-        } else {
-          fortsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addForts(value);
         return this;
       }
       /**
@@ -1828,16 +1736,8 @@ public final class Map {
        */
       public Builder addForts(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
-        if (fortsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFortsIsMutable();
-          forts_.add(index, value);
-          onChanged();
-        } else {
-          fortsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addForts(index, value);
         return this;
       }
       /**
@@ -1845,13 +1745,8 @@ public final class Map {
        */
       public Builder addForts(
           com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
-        if (fortsBuilder_ == null) {
-          ensureFortsIsMutable();
-          forts_.add(builderForValue.build());
-          onChanged();
-        } else {
-          fortsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addForts(builderForValue);
         return this;
       }
       /**
@@ -1859,13 +1754,8 @@ public final class Map {
        */
       public Builder addForts(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
-        if (fortsBuilder_ == null) {
-          ensureFortsIsMutable();
-          forts_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          fortsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addForts(index, builderForValue);
         return this;
       }
       /**
@@ -1873,164 +1763,52 @@ public final class Map {
        */
       public Builder addAllForts(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortData> values) {
-        if (fortsBuilder_ == null) {
-          ensureFortsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, forts_);
-          onChanged();
-        } else {
-          fortsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllForts(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public Builder clearForts() {
-        if (fortsBuilder_ == null) {
-          forts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          fortsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearForts();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
        */
       public Builder removeForts(int index) {
-        if (fortsBuilder_ == null) {
-          ensureFortsIsMutable();
-          forts_.remove(index);
-          onChanged();
-        } else {
-          fortsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeForts(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder getFortsBuilder(
-          int index) {
-        return getFortsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder getFortsOrBuilder(
-          int index) {
-        if (fortsBuilder_ == null) {
-          return forts_.get(index);  } else {
-          return fortsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder> 
-           getFortsOrBuilderList() {
-        if (fortsBuilder_ != null) {
-          return fortsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(forts_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder addFortsBuilder() {
-        return getFortsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder addFortsBuilder(
-          int index) {
-        return getFortsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortData forts = 3;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder> 
-           getFortsBuilderList() {
-        return getFortsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortData, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder> 
-          getFortsFieldBuilder() {
-        if (fortsBuilder_ == null) {
-          fortsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Fort.FortData, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder>(
-                  forts_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
-          forts_ = null;
-        }
-        return fortsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> spawnPoints_ =
-        java.util.Collections.emptyList();
-      private void ensureSpawnPointsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          spawnPoints_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.Map.SpawnPoint>(spawnPoints_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Map.SpawnPoint, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder, com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> spawnPointsBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> getSpawnPointsList() {
-        if (spawnPointsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(spawnPoints_);
-        } else {
-          return spawnPointsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getSpawnPointsList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public int getSpawnPointsCount() {
-        if (spawnPointsBuilder_ == null) {
-          return spawnPoints_.size();
-        } else {
-          return spawnPointsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getSpawnPointsCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public com.github.aeonlucid.pogoprotos.Map.SpawnPoint getSpawnPoints(int index) {
-        if (spawnPointsBuilder_ == null) {
-          return spawnPoints_.get(index);
-        } else {
-          return spawnPointsBuilder_.getMessage(index);
-        }
+        return instance.getSpawnPoints(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public Builder setSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
-        if (spawnPointsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.set(index, value);
-          onChanged();
-        } else {
-          spawnPointsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setSpawnPoints(index, value);
         return this;
       }
       /**
@@ -2038,29 +1816,16 @@ public final class Map {
        */
       public Builder setSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
-        if (spawnPointsBuilder_ == null) {
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          spawnPointsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setSpawnPoints(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public Builder addSpawnPoints(com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
-        if (spawnPointsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.add(value);
-          onChanged();
-        } else {
-          spawnPointsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addSpawnPoints(value);
         return this;
       }
       /**
@@ -2068,16 +1833,8 @@ public final class Map {
        */
       public Builder addSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
-        if (spawnPointsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.add(index, value);
-          onChanged();
-        } else {
-          spawnPointsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addSpawnPoints(index, value);
         return this;
       }
       /**
@@ -2085,13 +1842,8 @@ public final class Map {
        */
       public Builder addSpawnPoints(
           com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
-        if (spawnPointsBuilder_ == null) {
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.add(builderForValue.build());
-          onChanged();
-        } else {
-          spawnPointsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addSpawnPoints(builderForValue);
         return this;
       }
       /**
@@ -2099,13 +1851,8 @@ public final class Map {
        */
       public Builder addSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
-        if (spawnPointsBuilder_ == null) {
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          spawnPointsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addSpawnPoints(index, builderForValue);
         return this;
       }
       /**
@@ -2113,151 +1860,61 @@ public final class Map {
        */
       public Builder addAllSpawnPoints(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPoint> values) {
-        if (spawnPointsBuilder_ == null) {
-          ensureSpawnPointsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, spawnPoints_);
-          onChanged();
-        } else {
-          spawnPointsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllSpawnPoints(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public Builder clearSpawnPoints() {
-        if (spawnPointsBuilder_ == null) {
-          spawnPoints_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          spawnPointsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearSpawnPoints();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
        */
       public Builder removeSpawnPoints(int index) {
-        if (spawnPointsBuilder_ == null) {
-          ensureSpawnPointsIsMutable();
-          spawnPoints_.remove(index);
-          onChanged();
-        } else {
-          spawnPointsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeSpawnPoints(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder getSpawnPointsBuilder(
-          int index) {
-        return getSpawnPointsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder getSpawnPointsOrBuilder(
-          int index) {
-        if (spawnPointsBuilder_ == null) {
-          return spawnPoints_.get(index);  } else {
-          return spawnPointsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> 
-           getSpawnPointsOrBuilderList() {
-        if (spawnPointsBuilder_ != null) {
-          return spawnPointsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(spawnPoints_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder addSpawnPointsBuilder() {
-        return getSpawnPointsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.Map.SpawnPoint.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder addSpawnPointsBuilder(
-          int index) {
-        return getSpawnPointsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint spawn_points = 4;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder> 
-           getSpawnPointsBuilderList() {
-        return getSpawnPointsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Map.SpawnPoint, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder, com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> 
-          getSpawnPointsFieldBuilder() {
-        if (spawnPointsBuilder_ == null) {
-          spawnPointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.Map.SpawnPoint, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder, com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder>(
-                  spawnPoints_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
-          spawnPoints_ = null;
-        }
-        return spawnPointsBuilder_;
-      }
 
-      private com.google.protobuf.LazyStringList deletedObjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureDeletedObjectsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          deletedObjects_ = new com.google.protobuf.LazyStringArrayList(deletedObjects_);
-          bitField0_ |= 0x00000010;
-         }
-      }
       /**
        * <code>repeated string deleted_objects = 6;</code>
        */
-      public com.google.protobuf.ProtocolStringList
+      public java.util.List<String>
           getDeletedObjectsList() {
-        return deletedObjects_.getUnmodifiableView();
+        return java.util.Collections.unmodifiableList(
+            instance.getDeletedObjectsList());
       }
       /**
        * <code>repeated string deleted_objects = 6;</code>
        */
       public int getDeletedObjectsCount() {
-        return deletedObjects_.size();
+        return instance.getDeletedObjectsCount();
       }
       /**
        * <code>repeated string deleted_objects = 6;</code>
        */
       public java.lang.String getDeletedObjects(int index) {
-        return deletedObjects_.get(index);
+        return instance.getDeletedObjects(index);
       }
       /**
        * <code>repeated string deleted_objects = 6;</code>
        */
       public com.google.protobuf.ByteString
           getDeletedObjectsBytes(int index) {
-        return deletedObjects_.getByteString(index);
+        return instance.getDeletedObjectsBytes(index);
       }
       /**
        * <code>repeated string deleted_objects = 6;</code>
        */
       public Builder setDeletedObjects(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDeletedObjectsIsMutable();
-        deletedObjects_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setDeletedObjects(index, value);
         return this;
       }
       /**
@@ -2265,12 +1922,8 @@ public final class Map {
        */
       public Builder addDeletedObjects(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDeletedObjectsIsMutable();
-        deletedObjects_.add(value);
-        onChanged();
+        copyOnWrite();
+        instance.addDeletedObjects(value);
         return this;
       }
       /**
@@ -2278,19 +1931,16 @@ public final class Map {
        */
       public Builder addAllDeletedObjects(
           java.lang.Iterable<java.lang.String> values) {
-        ensureDeletedObjectsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, deletedObjects_);
-        onChanged();
+        copyOnWrite();
+        instance.addAllDeletedObjects(values);
         return this;
       }
       /**
        * <code>repeated string deleted_objects = 6;</code>
        */
       public Builder clearDeletedObjects() {
-        deletedObjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
+        copyOnWrite();
+        instance.clearDeletedObjects();
         return this;
       }
       /**
@@ -2298,99 +1948,59 @@ public final class Map {
        */
       public Builder addDeletedObjectsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureDeletedObjectsIsMutable();
-        deletedObjects_.add(value);
-        onChanged();
+        copyOnWrite();
+        instance.addDeletedObjectsBytes(value);
         return this;
       }
 
-      private boolean isTruncatedList_ ;
       /**
        * <code>optional bool is_truncated_list = 7;</code>
        */
       public boolean getIsTruncatedList() {
-        return isTruncatedList_;
+        return instance.getIsTruncatedList();
       }
       /**
        * <code>optional bool is_truncated_list = 7;</code>
        */
       public Builder setIsTruncatedList(boolean value) {
-        
-        isTruncatedList_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setIsTruncatedList(value);
         return this;
       }
       /**
        * <code>optional bool is_truncated_list = 7;</code>
        */
       public Builder clearIsTruncatedList() {
-        
-        isTruncatedList_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearIsTruncatedList();
         return this;
       }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary> fortSummaries_ =
-        java.util.Collections.emptyList();
-      private void ensureFortSummariesIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          fortSummaries_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary>(fortSummaries_);
-          bitField0_ |= 0x00000040;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortSummary, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder> fortSummariesBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary> getFortSummariesList() {
-        if (fortSummariesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(fortSummaries_);
-        } else {
-          return fortSummariesBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getFortSummariesList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public int getFortSummariesCount() {
-        if (fortSummariesBuilder_ == null) {
-          return fortSummaries_.size();
-        } else {
-          return fortSummariesBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getFortSummariesCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary getFortSummaries(int index) {
-        if (fortSummariesBuilder_ == null) {
-          return fortSummaries_.get(index);
-        } else {
-          return fortSummariesBuilder_.getMessage(index);
-        }
+        return instance.getFortSummaries(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public Builder setFortSummaries(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary value) {
-        if (fortSummariesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFortSummariesIsMutable();
-          fortSummaries_.set(index, value);
-          onChanged();
-        } else {
-          fortSummariesBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setFortSummaries(index, value);
         return this;
       }
       /**
@@ -2398,29 +2008,16 @@ public final class Map {
        */
       public Builder setFortSummaries(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder builderForValue) {
-        if (fortSummariesBuilder_ == null) {
-          ensureFortSummariesIsMutable();
-          fortSummaries_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          fortSummariesBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setFortSummaries(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public Builder addFortSummaries(com.github.aeonlucid.pogoprotos.map.Fort.FortSummary value) {
-        if (fortSummariesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFortSummariesIsMutable();
-          fortSummaries_.add(value);
-          onChanged();
-        } else {
-          fortSummariesBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addFortSummaries(value);
         return this;
       }
       /**
@@ -2428,16 +2025,8 @@ public final class Map {
        */
       public Builder addFortSummaries(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary value) {
-        if (fortSummariesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFortSummariesIsMutable();
-          fortSummaries_.add(index, value);
-          onChanged();
-        } else {
-          fortSummariesBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addFortSummaries(index, value);
         return this;
       }
       /**
@@ -2445,13 +2034,8 @@ public final class Map {
        */
       public Builder addFortSummaries(
           com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder builderForValue) {
-        if (fortSummariesBuilder_ == null) {
-          ensureFortSummariesIsMutable();
-          fortSummaries_.add(builderForValue.build());
-          onChanged();
-        } else {
-          fortSummariesBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addFortSummaries(builderForValue);
         return this;
       }
       /**
@@ -2459,13 +2043,8 @@ public final class Map {
        */
       public Builder addFortSummaries(
           int index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder builderForValue) {
-        if (fortSummariesBuilder_ == null) {
-          ensureFortSummariesIsMutable();
-          fortSummaries_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          fortSummariesBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addFortSummaries(index, builderForValue);
         return this;
       }
       /**
@@ -2473,164 +2052,52 @@ public final class Map {
        */
       public Builder addAllFortSummaries(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortSummary> values) {
-        if (fortSummariesBuilder_ == null) {
-          ensureFortSummariesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, fortSummaries_);
-          onChanged();
-        } else {
-          fortSummariesBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllFortSummaries(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public Builder clearFortSummaries() {
-        if (fortSummariesBuilder_ == null) {
-          fortSummaries_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
-          onChanged();
-        } else {
-          fortSummariesBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearFortSummaries();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
        */
       public Builder removeFortSummaries(int index) {
-        if (fortSummariesBuilder_ == null) {
-          ensureFortSummariesIsMutable();
-          fortSummaries_.remove(index);
-          onChanged();
-        } else {
-          fortSummariesBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeFortSummaries(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder getFortSummariesBuilder(
-          int index) {
-        return getFortSummariesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder getFortSummariesOrBuilder(
-          int index) {
-        if (fortSummariesBuilder_ == null) {
-          return fortSummaries_.get(index);  } else {
-          return fortSummariesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder> 
-           getFortSummariesOrBuilderList() {
-        if (fortSummariesBuilder_ != null) {
-          return fortSummariesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(fortSummaries_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder addFortSummariesBuilder() {
-        return getFortSummariesFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder addFortSummariesBuilder(
-          int index) {
-        return getFortSummariesFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.fort.FortSummary fort_summaries = 8;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder> 
-           getFortSummariesBuilderList() {
-        return getFortSummariesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortSummary, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder> 
-          getFortSummariesFieldBuilder() {
-        if (fortSummariesBuilder_ == null) {
-          fortSummariesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Fort.FortSummary, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder>(
-                  fortSummaries_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
-                  getParentForChildren(),
-                  isClean());
-          fortSummaries_ = null;
-        }
-        return fortSummariesBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> decimatedSpawnPoints_ =
-        java.util.Collections.emptyList();
-      private void ensureDecimatedSpawnPointsIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-          decimatedSpawnPoints_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.Map.SpawnPoint>(decimatedSpawnPoints_);
-          bitField0_ |= 0x00000080;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Map.SpawnPoint, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder, com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> decimatedSpawnPointsBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint> getDecimatedSpawnPointsList() {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(decimatedSpawnPoints_);
-        } else {
-          return decimatedSpawnPointsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getDecimatedSpawnPointsList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public int getDecimatedSpawnPointsCount() {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          return decimatedSpawnPoints_.size();
-        } else {
-          return decimatedSpawnPointsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getDecimatedSpawnPointsCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public com.github.aeonlucid.pogoprotos.Map.SpawnPoint getDecimatedSpawnPoints(int index) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          return decimatedSpawnPoints_.get(index);
-        } else {
-          return decimatedSpawnPointsBuilder_.getMessage(index);
-        }
+        return instance.getDecimatedSpawnPoints(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public Builder setDecimatedSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.set(index, value);
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setDecimatedSpawnPoints(index, value);
         return this;
       }
       /**
@@ -2638,29 +2105,16 @@ public final class Map {
        */
       public Builder setDecimatedSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setDecimatedSpawnPoints(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public Builder addDecimatedSpawnPoints(com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.add(value);
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addDecimatedSpawnPoints(value);
         return this;
       }
       /**
@@ -2668,16 +2122,8 @@ public final class Map {
        */
       public Builder addDecimatedSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint value) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.add(index, value);
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addDecimatedSpawnPoints(index, value);
         return this;
       }
       /**
@@ -2685,13 +2131,8 @@ public final class Map {
        */
       public Builder addDecimatedSpawnPoints(
           com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.add(builderForValue.build());
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addDecimatedSpawnPoints(builderForValue);
         return this;
       }
       /**
@@ -2699,13 +2140,8 @@ public final class Map {
        */
       public Builder addDecimatedSpawnPoints(
           int index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder builderForValue) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addDecimatedSpawnPoints(index, builderForValue);
         return this;
       }
       /**
@@ -2713,118 +2149,26 @@ public final class Map {
        */
       public Builder addAllDecimatedSpawnPoints(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPoint> values) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          ensureDecimatedSpawnPointsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, decimatedSpawnPoints_);
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllDecimatedSpawnPoints(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public Builder clearDecimatedSpawnPoints() {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          decimatedSpawnPoints_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearDecimatedSpawnPoints();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
        */
       public Builder removeDecimatedSpawnPoints(int index) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          ensureDecimatedSpawnPointsIsMutable();
-          decimatedSpawnPoints_.remove(index);
-          onChanged();
-        } else {
-          decimatedSpawnPointsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeDecimatedSpawnPoints(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder getDecimatedSpawnPointsBuilder(
-          int index) {
-        return getDecimatedSpawnPointsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder getDecimatedSpawnPointsOrBuilder(
-          int index) {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          return decimatedSpawnPoints_.get(index);  } else {
-          return decimatedSpawnPointsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> 
-           getDecimatedSpawnPointsOrBuilderList() {
-        if (decimatedSpawnPointsBuilder_ != null) {
-          return decimatedSpawnPointsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(decimatedSpawnPoints_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder addDecimatedSpawnPointsBuilder() {
-        return getDecimatedSpawnPointsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.Map.SpawnPoint.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder addDecimatedSpawnPointsBuilder(
-          int index) {
-        return getDecimatedSpawnPointsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.SpawnPoint decimated_spawn_points = 9;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder> 
-           getDecimatedSpawnPointsBuilderList() {
-        return getDecimatedSpawnPointsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Map.SpawnPoint, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder, com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder> 
-          getDecimatedSpawnPointsFieldBuilder() {
-        if (decimatedSpawnPointsBuilder_ == null) {
-          decimatedSpawnPointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.Map.SpawnPoint, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder, com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder>(
-                  decimatedSpawnPoints_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
-                  getParentForChildren(),
-                  isClean());
-          decimatedSpawnPoints_ = null;
-        }
-        return decimatedSpawnPointsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon> wildPokemons_ =
-        java.util.Collections.emptyList();
-      private void ensureWildPokemonsIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-          wildPokemons_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon>(wildPokemons_);
-          bitField0_ |= 0x00000100;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder> wildPokemonsBuilder_;
 
       /**
        * <pre>
@@ -2834,11 +2178,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon> getWildPokemonsList() {
-        if (wildPokemonsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(wildPokemons_);
-        } else {
-          return wildPokemonsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getWildPokemonsList());
       }
       /**
        * <pre>
@@ -2848,13 +2189,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
        */
       public int getWildPokemonsCount() {
-        if (wildPokemonsBuilder_ == null) {
-          return wildPokemons_.size();
-        } else {
-          return wildPokemonsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getWildPokemonsCount();
+      }/**
        * <pre>
        * Pokemon within 2 steps or less.
        * </pre>
@@ -2862,11 +2198,7 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon getWildPokemons(int index) {
-        if (wildPokemonsBuilder_ == null) {
-          return wildPokemons_.get(index);
-        } else {
-          return wildPokemonsBuilder_.getMessage(index);
-        }
+        return instance.getWildPokemons(index);
       }
       /**
        * <pre>
@@ -2877,16 +2209,8 @@ public final class Map {
        */
       public Builder setWildPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon value) {
-        if (wildPokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.set(index, value);
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setWildPokemons(index, value);
         return this;
       }
       /**
@@ -2898,13 +2222,8 @@ public final class Map {
        */
       public Builder setWildPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder builderForValue) {
-        if (wildPokemonsBuilder_ == null) {
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setWildPokemons(index, builderForValue);
         return this;
       }
       /**
@@ -2915,16 +2234,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
        */
       public Builder addWildPokemons(com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon value) {
-        if (wildPokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.add(value);
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addWildPokemons(value);
         return this;
       }
       /**
@@ -2936,16 +2247,8 @@ public final class Map {
        */
       public Builder addWildPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon value) {
-        if (wildPokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.add(index, value);
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addWildPokemons(index, value);
         return this;
       }
       /**
@@ -2957,13 +2260,8 @@ public final class Map {
        */
       public Builder addWildPokemons(
           com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder builderForValue) {
-        if (wildPokemonsBuilder_ == null) {
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.add(builderForValue.build());
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addWildPokemons(builderForValue);
         return this;
       }
       /**
@@ -2975,13 +2273,8 @@ public final class Map {
        */
       public Builder addWildPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder builderForValue) {
-        if (wildPokemonsBuilder_ == null) {
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addWildPokemons(index, builderForValue);
         return this;
       }
       /**
@@ -2993,14 +2286,8 @@ public final class Map {
        */
       public Builder addAllWildPokemons(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon> values) {
-        if (wildPokemonsBuilder_ == null) {
-          ensureWildPokemonsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, wildPokemons_);
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllWildPokemons(values);
         return this;
       }
       /**
@@ -3011,13 +2298,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
        */
       public Builder clearWildPokemons() {
-        if (wildPokemonsBuilder_ == null) {
-          wildPokemons_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearWildPokemons();
         return this;
       }
       /**
@@ -3028,115 +2310,10 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
        */
       public Builder removeWildPokemons(int index) {
-        if (wildPokemonsBuilder_ == null) {
-          ensureWildPokemonsIsMutable();
-          wildPokemons_.remove(index);
-          onChanged();
-        } else {
-          wildPokemonsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeWildPokemons(index);
         return this;
       }
-      /**
-       * <pre>
-       * Pokemon within 2 steps or less.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder getWildPokemonsBuilder(
-          int index) {
-        return getWildPokemonsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Pokemon within 2 steps or less.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder getWildPokemonsOrBuilder(
-          int index) {
-        if (wildPokemonsBuilder_ == null) {
-          return wildPokemons_.get(index);  } else {
-          return wildPokemonsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Pokemon within 2 steps or less.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder> 
-           getWildPokemonsOrBuilderList() {
-        if (wildPokemonsBuilder_ != null) {
-          return wildPokemonsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(wildPokemons_);
-        }
-      }
-      /**
-       * <pre>
-       * Pokemon within 2 steps or less.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder addWildPokemonsBuilder() {
-        return getWildPokemonsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Pokemon within 2 steps or less.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder addWildPokemonsBuilder(
-          int index) {
-        return getWildPokemonsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Pokemon within 2 steps or less.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon wild_pokemons = 5;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder> 
-           getWildPokemonsBuilderList() {
-        return getWildPokemonsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder> 
-          getWildPokemonsFieldBuilder() {
-        if (wildPokemonsBuilder_ == null) {
-          wildPokemonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder>(
-                  wildPokemons_,
-                  ((bitField0_ & 0x00000100) == 0x00000100),
-                  getParentForChildren(),
-                  isClean());
-          wildPokemons_ = null;
-        }
-        return wildPokemonsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon> catchablePokemons_ =
-        java.util.Collections.emptyList();
-      private void ensureCatchablePokemonsIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-          catchablePokemons_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon>(catchablePokemons_);
-          bitField0_ |= 0x00000200;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder> catchablePokemonsBuilder_;
 
       /**
        * <pre>
@@ -3146,11 +2323,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon> getCatchablePokemonsList() {
-        if (catchablePokemonsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(catchablePokemons_);
-        } else {
-          return catchablePokemonsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getCatchablePokemonsList());
       }
       /**
        * <pre>
@@ -3160,13 +2334,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
        */
       public int getCatchablePokemonsCount() {
-        if (catchablePokemonsBuilder_ == null) {
-          return catchablePokemons_.size();
-        } else {
-          return catchablePokemonsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getCatchablePokemonsCount();
+      }/**
        * <pre>
        * Pokemon within 1 step or none.
        * </pre>
@@ -3174,11 +2343,7 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon getCatchablePokemons(int index) {
-        if (catchablePokemonsBuilder_ == null) {
-          return catchablePokemons_.get(index);
-        } else {
-          return catchablePokemonsBuilder_.getMessage(index);
-        }
+        return instance.getCatchablePokemons(index);
       }
       /**
        * <pre>
@@ -3189,16 +2354,8 @@ public final class Map {
        */
       public Builder setCatchablePokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon value) {
-        if (catchablePokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.set(index, value);
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setCatchablePokemons(index, value);
         return this;
       }
       /**
@@ -3210,13 +2367,8 @@ public final class Map {
        */
       public Builder setCatchablePokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder builderForValue) {
-        if (catchablePokemonsBuilder_ == null) {
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setCatchablePokemons(index, builderForValue);
         return this;
       }
       /**
@@ -3227,16 +2379,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
        */
       public Builder addCatchablePokemons(com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon value) {
-        if (catchablePokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.add(value);
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addCatchablePokemons(value);
         return this;
       }
       /**
@@ -3248,16 +2392,8 @@ public final class Map {
        */
       public Builder addCatchablePokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon value) {
-        if (catchablePokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.add(index, value);
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addCatchablePokemons(index, value);
         return this;
       }
       /**
@@ -3269,13 +2405,8 @@ public final class Map {
        */
       public Builder addCatchablePokemons(
           com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder builderForValue) {
-        if (catchablePokemonsBuilder_ == null) {
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.add(builderForValue.build());
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addCatchablePokemons(builderForValue);
         return this;
       }
       /**
@@ -3287,13 +2418,8 @@ public final class Map {
        */
       public Builder addCatchablePokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder builderForValue) {
-        if (catchablePokemonsBuilder_ == null) {
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addCatchablePokemons(index, builderForValue);
         return this;
       }
       /**
@@ -3305,14 +2431,8 @@ public final class Map {
        */
       public Builder addAllCatchablePokemons(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon> values) {
-        if (catchablePokemonsBuilder_ == null) {
-          ensureCatchablePokemonsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, catchablePokemons_);
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllCatchablePokemons(values);
         return this;
       }
       /**
@@ -3323,13 +2443,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
        */
       public Builder clearCatchablePokemons() {
-        if (catchablePokemonsBuilder_ == null) {
-          catchablePokemons_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearCatchablePokemons();
         return this;
       }
       /**
@@ -3340,115 +2455,10 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
        */
       public Builder removeCatchablePokemons(int index) {
-        if (catchablePokemonsBuilder_ == null) {
-          ensureCatchablePokemonsIsMutable();
-          catchablePokemons_.remove(index);
-          onChanged();
-        } else {
-          catchablePokemonsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeCatchablePokemons(index);
         return this;
       }
-      /**
-       * <pre>
-       * Pokemon within 1 step or none.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder getCatchablePokemonsBuilder(
-          int index) {
-        return getCatchablePokemonsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Pokemon within 1 step or none.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder getCatchablePokemonsOrBuilder(
-          int index) {
-        if (catchablePokemonsBuilder_ == null) {
-          return catchablePokemons_.get(index);  } else {
-          return catchablePokemonsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Pokemon within 1 step or none.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder> 
-           getCatchablePokemonsOrBuilderList() {
-        if (catchablePokemonsBuilder_ != null) {
-          return catchablePokemonsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(catchablePokemons_);
-        }
-      }
-      /**
-       * <pre>
-       * Pokemon within 1 step or none.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder addCatchablePokemonsBuilder() {
-        return getCatchablePokemonsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Pokemon within 1 step or none.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder addCatchablePokemonsBuilder(
-          int index) {
-        return getCatchablePokemonsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Pokemon within 1 step or none.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon catchable_pokemons = 10;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder> 
-           getCatchablePokemonsBuilderList() {
-        return getCatchablePokemonsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder> 
-          getCatchablePokemonsFieldBuilder() {
-        if (catchablePokemonsBuilder_ == null) {
-          catchablePokemonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder>(
-                  catchablePokemons_,
-                  ((bitField0_ & 0x00000200) == 0x00000200),
-                  getParentForChildren(),
-                  isClean());
-          catchablePokemons_ = null;
-        }
-        return catchablePokemonsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon> nearbyPokemons_ =
-        java.util.Collections.emptyList();
-      private void ensureNearbyPokemonsIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-          nearbyPokemons_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon>(nearbyPokemons_);
-          bitField0_ |= 0x00000400;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder> nearbyPokemonsBuilder_;
 
       /**
        * <pre>
@@ -3458,11 +2468,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon> getNearbyPokemonsList() {
-        if (nearbyPokemonsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(nearbyPokemons_);
-        } else {
-          return nearbyPokemonsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getNearbyPokemonsList());
       }
       /**
        * <pre>
@@ -3472,13 +2479,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
        */
       public int getNearbyPokemonsCount() {
-        if (nearbyPokemonsBuilder_ == null) {
-          return nearbyPokemons_.size();
-        } else {
-          return nearbyPokemonsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getNearbyPokemonsCount();
+      }/**
        * <pre>
        * Pokemon farther away than 2 steps, but still in the area.
        * </pre>
@@ -3486,11 +2488,7 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon getNearbyPokemons(int index) {
-        if (nearbyPokemonsBuilder_ == null) {
-          return nearbyPokemons_.get(index);
-        } else {
-          return nearbyPokemonsBuilder_.getMessage(index);
-        }
+        return instance.getNearbyPokemons(index);
       }
       /**
        * <pre>
@@ -3501,16 +2499,8 @@ public final class Map {
        */
       public Builder setNearbyPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon value) {
-        if (nearbyPokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.set(index, value);
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setNearbyPokemons(index, value);
         return this;
       }
       /**
@@ -3522,13 +2512,8 @@ public final class Map {
        */
       public Builder setNearbyPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder builderForValue) {
-        if (nearbyPokemonsBuilder_ == null) {
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setNearbyPokemons(index, builderForValue);
         return this;
       }
       /**
@@ -3539,16 +2524,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
        */
       public Builder addNearbyPokemons(com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon value) {
-        if (nearbyPokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.add(value);
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addNearbyPokemons(value);
         return this;
       }
       /**
@@ -3560,16 +2537,8 @@ public final class Map {
        */
       public Builder addNearbyPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon value) {
-        if (nearbyPokemonsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.add(index, value);
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addNearbyPokemons(index, value);
         return this;
       }
       /**
@@ -3581,13 +2550,8 @@ public final class Map {
        */
       public Builder addNearbyPokemons(
           com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder builderForValue) {
-        if (nearbyPokemonsBuilder_ == null) {
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.add(builderForValue.build());
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addNearbyPokemons(builderForValue);
         return this;
       }
       /**
@@ -3599,13 +2563,8 @@ public final class Map {
        */
       public Builder addNearbyPokemons(
           int index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder builderForValue) {
-        if (nearbyPokemonsBuilder_ == null) {
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addNearbyPokemons(index, builderForValue);
         return this;
       }
       /**
@@ -3617,14 +2576,8 @@ public final class Map {
        */
       public Builder addAllNearbyPokemons(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon> values) {
-        if (nearbyPokemonsBuilder_ == null) {
-          ensureNearbyPokemonsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, nearbyPokemons_);
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllNearbyPokemons(values);
         return this;
       }
       /**
@@ -3635,13 +2588,8 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
        */
       public Builder clearNearbyPokemons() {
-        if (nearbyPokemonsBuilder_ == null) {
-          nearbyPokemons_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearNearbyPokemons();
         return this;
       }
       /**
@@ -3652,155 +2600,215 @@ public final class Map {
        * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
        */
       public Builder removeNearbyPokemons(int index) {
-        if (nearbyPokemonsBuilder_ == null) {
-          ensureNearbyPokemonsIsMutable();
-          nearbyPokemons_.remove(index);
-          onChanged();
-        } else {
-          nearbyPokemonsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeNearbyPokemons(index);
         return this;
       }
-      /**
-       * <pre>
-       * Pokemon farther away than 2 steps, but still in the area.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder getNearbyPokemonsBuilder(
-          int index) {
-        return getNearbyPokemonsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Pokemon farther away than 2 steps, but still in the area.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder getNearbyPokemonsOrBuilder(
-          int index) {
-        if (nearbyPokemonsBuilder_ == null) {
-          return nearbyPokemons_.get(index);  } else {
-          return nearbyPokemonsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Pokemon farther away than 2 steps, but still in the area.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder> 
-           getNearbyPokemonsOrBuilderList() {
-        if (nearbyPokemonsBuilder_ != null) {
-          return nearbyPokemonsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(nearbyPokemons_);
-        }
-      }
-      /**
-       * <pre>
-       * Pokemon farther away than 2 steps, but still in the area.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder addNearbyPokemonsBuilder() {
-        return getNearbyPokemonsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Pokemon farther away than 2 steps, but still in the area.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder addNearbyPokemonsBuilder(
-          int index) {
-        return getNearbyPokemonsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Pokemon farther away than 2 steps, but still in the area.
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon nearby_pokemons = 11;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder> 
-           getNearbyPokemonsBuilderList() {
-        return getNearbyPokemonsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder> 
-          getNearbyPokemonsFieldBuilder() {
-        if (nearbyPokemonsBuilder_ == null) {
-          nearbyPokemonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder>(
-                  nearbyPokemons_,
-                  ((bitField0_ & 0x00000400) == 0x00000400),
-                  getParentForChildren(),
-                  isClean());
-          nearbyPokemons_ = null;
-        }
-        return nearbyPokemonsBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.MapCell)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.Map.MapCell();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          forts_.makeImmutable();
+          spawnPoints_.makeImmutable();
+          deletedObjects_.makeImmutable();
+          fortSummaries_.makeImmutable();
+          decimatedSpawnPoints_.makeImmutable();
+          wildPokemons_.makeImmutable();
+          catchablePokemons_.makeImmutable();
+          nearbyPokemons_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.Map.MapCell other = (com.github.aeonlucid.pogoprotos.Map.MapCell) arg1;
+          s2CellId_ = visitor.visitLong(s2CellId_ != 0L, s2CellId_,
+              other.s2CellId_ != 0L, other.s2CellId_);
+          currentTimestampMs_ = visitor.visitLong(currentTimestampMs_ != 0L, currentTimestampMs_,
+              other.currentTimestampMs_ != 0L, other.currentTimestampMs_);
+          forts_= visitor.visitList(forts_, other.forts_);
+          spawnPoints_= visitor.visitList(spawnPoints_, other.spawnPoints_);
+          deletedObjects_= visitor.visitList(deletedObjects_, other.deletedObjects_);
+          isTruncatedList_ = visitor.visitBoolean(isTruncatedList_ != false, isTruncatedList_,
+              other.isTruncatedList_ != false, other.isTruncatedList_);
+          fortSummaries_= visitor.visitList(fortSummaries_, other.fortSummaries_);
+          decimatedSpawnPoints_= visitor.visitList(decimatedSpawnPoints_, other.decimatedSpawnPoints_);
+          wildPokemons_= visitor.visitList(wildPokemons_, other.wildPokemons_);
+          catchablePokemons_= visitor.visitList(catchablePokemons_, other.catchablePokemons_);
+          nearbyPokemons_= visitor.visitList(nearbyPokemons_, other.nearbyPokemons_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  s2CellId_ = input.readUInt64();
+                  break;
+                }
+                case 16: {
+
+                  currentTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 26: {
+                  if (!forts_.isModifiable()) {
+                    forts_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(forts_);
+                  }
+                  forts_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortData.parser(), extensionRegistry));
+                  break;
+                }
+                case 34: {
+                  if (!spawnPoints_.isModifiable()) {
+                    spawnPoints_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(spawnPoints_);
+                  }
+                  spawnPoints_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.Map.SpawnPoint.parser(), extensionRegistry));
+                  break;
+                }
+                case 42: {
+                  if (!wildPokemons_.isModifiable()) {
+                    wildPokemons_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(wildPokemons_);
+                  }
+                  wildPokemons_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.parser(), extensionRegistry));
+                  break;
+                }
+                case 50: {
+                  String s = input.readStringRequireUtf8();
+                  if (!deletedObjects_.isModifiable()) {
+                    deletedObjects_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(deletedObjects_);
+                  }
+                  deletedObjects_.add(s);
+                  break;
+                }
+                case 56: {
+
+                  isTruncatedList_ = input.readBool();
+                  break;
+                }
+                case 66: {
+                  if (!fortSummaries_.isModifiable()) {
+                    fortSummaries_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(fortSummaries_);
+                  }
+                  fortSummaries_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.parser(), extensionRegistry));
+                  break;
+                }
+                case 74: {
+                  if (!decimatedSpawnPoints_.isModifiable()) {
+                    decimatedSpawnPoints_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(decimatedSpawnPoints_);
+                  }
+                  decimatedSpawnPoints_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.Map.SpawnPoint.parser(), extensionRegistry));
+                  break;
+                }
+                case 82: {
+                  if (!catchablePokemons_.isModifiable()) {
+                    catchablePokemons_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(catchablePokemons_);
+                  }
+                  catchablePokemons_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.parser(), extensionRegistry));
+                  break;
+                }
+                case 90: {
+                  if (!nearbyPokemons_.isModifiable()) {
+                    nearbyPokemons_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(nearbyPokemons_);
+                  }
+                  nearbyPokemons_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.Map.MapCell.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.MapCell)
     private static final com.github.aeonlucid.pogoprotos.Map.MapCell DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Map.MapCell();
+      DEFAULT_INSTANCE = new MapCell();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.Map.MapCell getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MapCell>
-        PARSER = new com.google.protobuf.AbstractParser<MapCell>() {
-      public MapCell parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MapCell(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<MapCell> PARSER;
 
     public static com.google.protobuf.Parser<MapCell> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MapCell> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.Map.MapCell getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface SpawnPointOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.SpawnPoint)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional double latitude = 2;</code>
@@ -3816,76 +2824,12 @@ public final class Map {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.SpawnPoint}
    */
   public  static final class SpawnPoint extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          SpawnPoint, SpawnPoint.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.SpawnPoint)
       SpawnPointOrBuilder {
-    // Use SpawnPoint.newBuilder() to construct.
-    private SpawnPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private SpawnPoint() {
-      latitude_ = 0D;
-      longitude_ = 0D;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private SpawnPoint(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 17: {
-
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 25: {
-
-              longitude_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.Map.SpawnPoint.class, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder.class);
-    }
-
     public static final int LATITUDE_FIELD_NUMBER = 2;
     private double latitude_;
     /**
@@ -3893,6 +2837,20 @@ public final class Map {
      */
     public double getLatitude() {
       return latitude_;
+    }
+    /**
+     * <code>optional double latitude = 2;</code>
+     */
+    private void setLatitude(double value) {
+      
+      latitude_ = value;
+    }
+    /**
+     * <code>optional double latitude = 2;</code>
+     */
+    private void clearLatitude() {
+      
+      latitude_ = 0D;
     }
 
     public static final int LONGITUDE_FIELD_NUMBER = 3;
@@ -3903,15 +2861,19 @@ public final class Map {
     public double getLongitude() {
       return longitude_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional double longitude = 3;</code>
+     */
+    private void setLongitude(double value) {
+      
+      longitude_ = value;
+    }
+    /**
+     * <code>optional double longitude = 3;</code>
+     */
+    private void clearLongitude() {
+      
+      longitude_ = 0D;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -3925,7 +2887,7 @@ public final class Map {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -3937,439 +2899,245 @@ public final class Map {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, longitude_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.Map.SpawnPoint)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.Map.SpawnPoint other = (com.github.aeonlucid.pogoprotos.Map.SpawnPoint) obj;
-
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.Map.SpawnPoint prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.SpawnPoint}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.Map.SpawnPoint, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.SpawnPoint)
         com.github.aeonlucid.pogoprotos.Map.SpawnPointOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.Map.SpawnPoint.class, com.github.aeonlucid.pogoprotos.Map.SpawnPoint.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.Map.SpawnPoint.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        latitude_ = 0D;
 
-        longitude_ = 0D;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.Map.internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.Map.SpawnPoint.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint build() {
-        com.github.aeonlucid.pogoprotos.Map.SpawnPoint result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.Map.SpawnPoint buildPartial() {
-        com.github.aeonlucid.pogoprotos.Map.SpawnPoint result = new com.github.aeonlucid.pogoprotos.Map.SpawnPoint(this);
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.Map.SpawnPoint) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.Map.SpawnPoint)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.Map.SpawnPoint other) {
-        if (other == com.github.aeonlucid.pogoprotos.Map.SpawnPoint.getDefaultInstance()) return this;
-        if (other.getLatitude() != 0D) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.getLongitude() != 0D) {
-          setLongitude(other.getLongitude());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.Map.SpawnPoint parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.Map.SpawnPoint) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private double latitude_ ;
       /**
        * <code>optional double latitude = 2;</code>
        */
       public double getLatitude() {
-        return latitude_;
+        return instance.getLatitude();
       }
       /**
        * <code>optional double latitude = 2;</code>
        */
       public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLatitude(value);
         return this;
       }
       /**
        * <code>optional double latitude = 2;</code>
        */
       public Builder clearLatitude() {
-        
-        latitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLatitude();
         return this;
       }
 
-      private double longitude_ ;
       /**
        * <code>optional double longitude = 3;</code>
        */
       public double getLongitude() {
-        return longitude_;
+        return instance.getLongitude();
       }
       /**
        * <code>optional double longitude = 3;</code>
        */
       public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLongitude(value);
         return this;
       }
       /**
        * <code>optional double longitude = 3;</code>
        */
       public Builder clearLongitude() {
-        
-        longitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLongitude();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.SpawnPoint)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.Map.SpawnPoint();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.Map.SpawnPoint other = (com.github.aeonlucid.pogoprotos.Map.SpawnPoint) arg1;
+          latitude_ = visitor.visitDouble(latitude_ != 0D, latitude_,
+              other.latitude_ != 0D, other.latitude_);
+          longitude_ = visitor.visitDouble(longitude_ != 0D, longitude_,
+              other.longitude_ != 0D, other.longitude_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 17: {
+
+                  latitude_ = input.readDouble();
+                  break;
+                }
+                case 25: {
+
+                  longitude_ = input.readDouble();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.Map.SpawnPoint.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.SpawnPoint)
     private static final com.github.aeonlucid.pogoprotos.Map.SpawnPoint DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.Map.SpawnPoint();
+      DEFAULT_INSTANCE = new SpawnPoint();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.Map.SpawnPoint getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SpawnPoint>
-        PARSER = new com.google.protobuf.AbstractParser<SpawnPoint>() {
-      public SpawnPoint parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SpawnPoint(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<SpawnPoint> PARSER;
 
     public static com.google.protobuf.Parser<SpawnPoint> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SpawnPoint> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.Map.SpawnPoint getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n)com/github/aeonlucid/pogoprotos/Map.pr" +
-      "oto\022#com.github.aeonlucid.pogoprotos.map" +
-      "\032.com/github/aeonlucid/pogoprotos/map/Fo" +
-      "rt.proto\0321com/github/aeonlucid/pogoproto" +
-      "s/map/Pokemon.proto\"\224\005\n\007MapCell\022\022\n\ns2_ce" +
-      "ll_id\030\001 \001(\004\022\034\n\024current_timestamp_ms\030\002 \001(" +
-      "\003\022A\n\005forts\030\003 \003(\01322.com.github.aeonlucid." +
-      "pogoprotos.map.fort.FortData\022E\n\014spawn_po" +
-      "ints\030\004 \003(\0132/.com.github.aeonlucid.pogopr" +
-      "otos.map.SpawnPoint\022\027\n\017deleted_objects\030\006",
-      " \003(\t\022\031\n\021is_truncated_list\030\007 \001(\010\022M\n\016fort_" +
-      "summaries\030\010 \003(\01325.com.github.aeonlucid.p" +
-      "ogoprotos.map.fort.FortSummary\022O\n\026decima" +
-      "ted_spawn_points\030\t \003(\0132/.com.github.aeon" +
-      "lucid.pogoprotos.map.SpawnPoint\022O\n\rwild_" +
-      "pokemons\030\005 \003(\01328.com.github.aeonlucid.po" +
-      "goprotos.map.pokemon.WildPokemon\022S\n\022catc" +
-      "hable_pokemons\030\n \003(\01327.com.github.aeonlu" +
-      "cid.pogoprotos.map.pokemon.MapPokemon\022S\n" +
-      "\017nearby_pokemons\030\013 \003(\0132:.com.github.aeon",
-      "lucid.pogoprotos.map.pokemon.NearbyPokem" +
-      "on\"1\n\nSpawnPoint\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlo" +
-      "ngitude\030\003 \001(\001*E\n\020MapObjectsStatus\022\020\n\014UNS" +
-      "ET_STATUS\020\000\022\013\n\007SUCCESS\020\001\022\022\n\016LOCATION_UNS" +
-      "ET\020\002B&\n\037com.github.aeonlucid.pogoprotosB" +
-      "\003Mapb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.map.Pokemon.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_MapCell_descriptor,
-        new java.lang.String[] { "S2CellId", "CurrentTimestampMs", "Forts", "SpawnPoints", "DeletedObjects", "IsTruncatedList", "FortSummaries", "DecimatedSpawnPoints", "WildPokemons", "CatchablePokemons", "NearbyPokemons", });
-    internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_SpawnPoint_descriptor,
-        new java.lang.String[] { "Latitude", "Longitude", });
-    com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor();
-    com.github.aeonlucid.pogoprotos.map.Pokemon.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -8,83 +8,49 @@ public final class Enums {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonMovementType}
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.TeamColor}
    */
-  public enum PokemonMovementType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum TeamColor
+      implements com.google.protobuf.Internal.EnumLite {
     /**
-     * <code>MOVEMENT_STATIC = 0;</code>
+     * <code>NEUTRAL = 0;</code>
      */
-    MOVEMENT_STATIC(0),
+    NEUTRAL(0),
     /**
-     * <code>MOVEMENT_JUMP = 1;</code>
+     * <code>BLUE = 1;</code>
      */
-    MOVEMENT_JUMP(1),
+    BLUE(1),
     /**
-     * <code>MOVEMENT_VERTICAL = 2;</code>
+     * <code>RED = 2;</code>
      */
-    MOVEMENT_VERTICAL(2),
+    RED(2),
     /**
-     * <code>MOVEMENT_PSYCHIC = 3;</code>
+     * <code>YELLOW = 3;</code>
      */
-    MOVEMENT_PSYCHIC(3),
-    /**
-     * <code>MOVEMENT_ELECTRIC = 4;</code>
-     */
-    MOVEMENT_ELECTRIC(4),
-    /**
-     * <code>MOVEMENT_FLYING = 5;</code>
-     */
-    MOVEMENT_FLYING(5),
-    /**
-     * <code>MOVEMENT_HOVERING = 6;</code>
-     */
-    MOVEMENT_HOVERING(6),
+    YELLOW(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>MOVEMENT_STATIC = 0;</code>
+     * <code>NEUTRAL = 0;</code>
      */
-    public static final int MOVEMENT_STATIC_VALUE = 0;
+    public static final int NEUTRAL_VALUE = 0;
     /**
-     * <code>MOVEMENT_JUMP = 1;</code>
+     * <code>BLUE = 1;</code>
      */
-    public static final int MOVEMENT_JUMP_VALUE = 1;
+    public static final int BLUE_VALUE = 1;
     /**
-     * <code>MOVEMENT_VERTICAL = 2;</code>
+     * <code>RED = 2;</code>
      */
-    public static final int MOVEMENT_VERTICAL_VALUE = 2;
+    public static final int RED_VALUE = 2;
     /**
-     * <code>MOVEMENT_PSYCHIC = 3;</code>
+     * <code>YELLOW = 3;</code>
      */
-    public static final int MOVEMENT_PSYCHIC_VALUE = 3;
-    /**
-     * <code>MOVEMENT_ELECTRIC = 4;</code>
-     */
-    public static final int MOVEMENT_ELECTRIC_VALUE = 4;
-    /**
-     * <code>MOVEMENT_FLYING = 5;</code>
-     */
-    public static final int MOVEMENT_FLYING_VALUE = 5;
-    /**
-     * <code>MOVEMENT_HOVERING = 6;</code>
-     */
-    public static final int MOVEMENT_HOVERING_VALUE = 6;
+    public static final int YELLOW_VALUE = 3;
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -92,291 +58,46 @@ public final class Enums {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static PokemonMovementType valueOf(int value) {
+    public static TeamColor valueOf(int value) {
       return forNumber(value);
     }
 
-    public static PokemonMovementType forNumber(int value) {
+    public static TeamColor forNumber(int value) {
       switch (value) {
-        case 0: return MOVEMENT_STATIC;
-        case 1: return MOVEMENT_JUMP;
-        case 2: return MOVEMENT_VERTICAL;
-        case 3: return MOVEMENT_PSYCHIC;
-        case 4: return MOVEMENT_ELECTRIC;
-        case 5: return MOVEMENT_FLYING;
-        case 6: return MOVEMENT_HOVERING;
+        case 0: return NEUTRAL;
+        case 1: return BLUE;
+        case 2: return RED;
+        case 3: return YELLOW;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<PokemonMovementType>
+    public static com.google.protobuf.Internal.EnumLiteMap<TeamColor>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        PokemonMovementType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PokemonMovementType>() {
-            public PokemonMovementType findValueByNumber(int number) {
-              return PokemonMovementType.forNumber(number);
+        TeamColor> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TeamColor>() {
+            public TeamColor findValueByNumber(int number) {
+              return TeamColor.forNumber(number);
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final PokemonMovementType[] VALUES = values();
-
-    public static PokemonMovementType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
-    private PokemonMovementType(int value) {
+    private TeamColor(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonMovementType)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.ItemEffect}
-   */
-  public enum ItemEffect
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>ITEM_EFFECT_NONE = 0;</code>
-     */
-    ITEM_EFFECT_NONE(0),
-    /**
-     * <code>ITEM_EFFECT_CAP_NO_FLEE = 1000;</code>
-     */
-    ITEM_EFFECT_CAP_NO_FLEE(1000),
-    /**
-     * <code>ITEM_EFFECT_CAP_NO_MOVEMENT = 1002;</code>
-     */
-    ITEM_EFFECT_CAP_NO_MOVEMENT(1002),
-    /**
-     * <code>ITEM_EFFECT_CAP_NO_THREAT = 1003;</code>
-     */
-    ITEM_EFFECT_CAP_NO_THREAT(1003),
-    /**
-     * <code>ITEM_EFFECT_CAP_TARGET_MAX = 1004;</code>
-     */
-    ITEM_EFFECT_CAP_TARGET_MAX(1004),
-    /**
-     * <code>ITEM_EFFECT_CAP_TARGET_SLOW = 1005;</code>
-     */
-    ITEM_EFFECT_CAP_TARGET_SLOW(1005),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_NIGHT = 1006;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_NIGHT(1006),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_TRAINER = 1007;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_TRAINER(1007),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_FIRST_THROW = 1008;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_FIRST_THROW(1008),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_LEGEND = 1009;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_LEGEND(1009),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_HEAVY = 1010;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_HEAVY(1010),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_REPEAT = 1011;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_REPEAT(1011),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_MULTI_THROW = 1012;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_MULTI_THROW(1012),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_ALWAYS = 1013;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_ALWAYS(1013),
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW = 1014;</code>
-     */
-    ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW(1014),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>ITEM_EFFECT_NONE = 0;</code>
-     */
-    public static final int ITEM_EFFECT_NONE_VALUE = 0;
-    /**
-     * <code>ITEM_EFFECT_CAP_NO_FLEE = 1000;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_NO_FLEE_VALUE = 1000;
-    /**
-     * <code>ITEM_EFFECT_CAP_NO_MOVEMENT = 1002;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_NO_MOVEMENT_VALUE = 1002;
-    /**
-     * <code>ITEM_EFFECT_CAP_NO_THREAT = 1003;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_NO_THREAT_VALUE = 1003;
-    /**
-     * <code>ITEM_EFFECT_CAP_TARGET_MAX = 1004;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_TARGET_MAX_VALUE = 1004;
-    /**
-     * <code>ITEM_EFFECT_CAP_TARGET_SLOW = 1005;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_TARGET_SLOW_VALUE = 1005;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_NIGHT = 1006;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_NIGHT_VALUE = 1006;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_TRAINER = 1007;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_TRAINER_VALUE = 1007;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_FIRST_THROW = 1008;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_FIRST_THROW_VALUE = 1008;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_LEGEND = 1009;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_LEGEND_VALUE = 1009;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_HEAVY = 1010;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_HEAVY_VALUE = 1010;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_REPEAT = 1011;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_REPEAT_VALUE = 1011;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_MULTI_THROW = 1012;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_MULTI_THROW_VALUE = 1012;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_ALWAYS = 1013;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_ALWAYS_VALUE = 1013;
-    /**
-     * <code>ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW = 1014;</code>
-     */
-    public static final int ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW_VALUE = 1014;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ItemEffect valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ItemEffect forNumber(int value) {
-      switch (value) {
-        case 0: return ITEM_EFFECT_NONE;
-        case 1000: return ITEM_EFFECT_CAP_NO_FLEE;
-        case 1002: return ITEM_EFFECT_CAP_NO_MOVEMENT;
-        case 1003: return ITEM_EFFECT_CAP_NO_THREAT;
-        case 1004: return ITEM_EFFECT_CAP_TARGET_MAX;
-        case 1005: return ITEM_EFFECT_CAP_TARGET_SLOW;
-        case 1006: return ITEM_EFFECT_CAP_CHANCE_NIGHT;
-        case 1007: return ITEM_EFFECT_CAP_CHANCE_TRAINER;
-        case 1008: return ITEM_EFFECT_CAP_CHANCE_FIRST_THROW;
-        case 1009: return ITEM_EFFECT_CAP_CHANCE_LEGEND;
-        case 1010: return ITEM_EFFECT_CAP_CHANCE_HEAVY;
-        case 1011: return ITEM_EFFECT_CAP_CHANCE_REPEAT;
-        case 1012: return ITEM_EFFECT_CAP_CHANCE_MULTI_THROW;
-        case 1013: return ITEM_EFFECT_CAP_CHANCE_ALWAYS;
-        case 1014: return ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ItemEffect>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ItemEffect> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ItemEffect>() {
-            public ItemEffect findValueByNumber(int number) {
-              return ItemEffect.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(1);
-    }
-
-    private static final ItemEffect[] VALUES = values();
-
-    public static ItemEffect valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ItemEffect(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.ItemEffect)
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.TeamColor)
   }
 
   /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonId}
    */
   public enum PokemonId
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>MISSINGNO = 0;</code>
      */
@@ -1599,10 +1320,6 @@ public final class Enums {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -1784,33 +1501,6 @@ public final class Enums {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(2);
-    }
-
-    private static final PokemonId[] VALUES = values();
-
-    public static PokemonId valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private PokemonId(int value) {
@@ -1821,668 +1511,320 @@ public final class Enums {
   }
 
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId}
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.BadgeType}
    */
-  public enum PokemonFamilyId
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum BadgeType
+      implements com.google.protobuf.Internal.EnumLite {
     /**
-     * <code>FAMILY_UNSET = 0;</code>
+     * <code>BADGE_UNSET = 0;</code>
      */
-    FAMILY_UNSET(0),
+    BADGE_UNSET(0),
     /**
-     * <code>FAMILY_BULBASAUR = 1;</code>
+     * <code>BADGE_TRAVEL_KM = 1;</code>
      */
-    FAMILY_BULBASAUR(1),
+    BADGE_TRAVEL_KM(1),
     /**
-     * <code>FAMILY_CHARMANDER = 4;</code>
+     * <code>BADGE_POKEDEX_ENTRIES = 2;</code>
      */
-    FAMILY_CHARMANDER(4),
+    BADGE_POKEDEX_ENTRIES(2),
     /**
-     * <code>FAMILY_SQUIRTLE = 7;</code>
+     * <code>BADGE_CAPTURE_TOTAL = 3;</code>
      */
-    FAMILY_SQUIRTLE(7),
+    BADGE_CAPTURE_TOTAL(3),
     /**
-     * <code>FAMILY_CATERPIE = 10;</code>
+     * <code>BADGE_DEFEATED_FORT = 4;</code>
      */
-    FAMILY_CATERPIE(10),
+    BADGE_DEFEATED_FORT(4),
     /**
-     * <code>FAMILY_WEEDLE = 13;</code>
+     * <code>BADGE_EVOLVED_TOTAL = 5;</code>
      */
-    FAMILY_WEEDLE(13),
+    BADGE_EVOLVED_TOTAL(5),
     /**
-     * <code>FAMILY_PIDGEY = 16;</code>
+     * <code>BADGE_HATCHED_TOTAL = 6;</code>
      */
-    FAMILY_PIDGEY(16),
+    BADGE_HATCHED_TOTAL(6),
     /**
-     * <code>FAMILY_RATTATA = 19;</code>
+     * <code>BADGE_ENCOUNTERED_TOTAL = 7;</code>
      */
-    FAMILY_RATTATA(19),
+    BADGE_ENCOUNTERED_TOTAL(7),
     /**
-     * <code>FAMILY_SPEAROW = 21;</code>
+     * <code>BADGE_POKESTOPS_VISITED = 8;</code>
      */
-    FAMILY_SPEAROW(21),
+    BADGE_POKESTOPS_VISITED(8),
     /**
-     * <code>FAMILY_EKANS = 23;</code>
+     * <code>BADGE_UNIQUE_POKESTOPS = 9;</code>
      */
-    FAMILY_EKANS(23),
+    BADGE_UNIQUE_POKESTOPS(9),
     /**
-     * <code>FAMILY_PIKACHU = 25;</code>
+     * <code>BADGE_POKEBALL_THROWN = 10;</code>
      */
-    FAMILY_PIKACHU(25),
+    BADGE_POKEBALL_THROWN(10),
     /**
-     * <code>FAMILY_SANDSHREW = 27;</code>
+     * <code>BADGE_BIG_MAGIKARP = 11;</code>
      */
-    FAMILY_SANDSHREW(27),
+    BADGE_BIG_MAGIKARP(11),
     /**
-     * <code>FAMILY_NIDORAN_FEMALE = 29;</code>
+     * <code>BADGE_DEPLOYED_TOTAL = 12;</code>
      */
-    FAMILY_NIDORAN_FEMALE(29),
+    BADGE_DEPLOYED_TOTAL(12),
     /**
-     * <code>FAMILY_NIDORAN_MALE = 32;</code>
+     * <code>BADGE_BATTLE_ATTACK_WON = 13;</code>
      */
-    FAMILY_NIDORAN_MALE(32),
+    BADGE_BATTLE_ATTACK_WON(13),
     /**
-     * <code>FAMILY_CLEFAIRY = 35;</code>
+     * <code>BADGE_BATTLE_TRAINING_WON = 14;</code>
      */
-    FAMILY_CLEFAIRY(35),
+    BADGE_BATTLE_TRAINING_WON(14),
     /**
-     * <code>FAMILY_VULPIX = 37;</code>
+     * <code>BADGE_BATTLE_DEFEND_WON = 15;</code>
      */
-    FAMILY_VULPIX(37),
+    BADGE_BATTLE_DEFEND_WON(15),
     /**
-     * <code>FAMILY_JIGGLYPUFF = 39;</code>
+     * <code>BADGE_PRESTIGE_RAISED = 16;</code>
      */
-    FAMILY_JIGGLYPUFF(39),
+    BADGE_PRESTIGE_RAISED(16),
     /**
-     * <code>FAMILY_ZUBAT = 41;</code>
+     * <code>BADGE_PRESTIGE_DROPPED = 17;</code>
      */
-    FAMILY_ZUBAT(41),
+    BADGE_PRESTIGE_DROPPED(17),
     /**
-     * <code>FAMILY_ODDISH = 43;</code>
+     * <code>BADGE_TYPE_NORMAL = 18;</code>
      */
-    FAMILY_ODDISH(43),
+    BADGE_TYPE_NORMAL(18),
     /**
-     * <code>FAMILY_PARAS = 46;</code>
+     * <code>BADGE_TYPE_FIGHTING = 19;</code>
      */
-    FAMILY_PARAS(46),
+    BADGE_TYPE_FIGHTING(19),
     /**
-     * <code>FAMILY_VENONAT = 48;</code>
+     * <code>BADGE_TYPE_FLYING = 20;</code>
      */
-    FAMILY_VENONAT(48),
+    BADGE_TYPE_FLYING(20),
     /**
-     * <code>FAMILY_DIGLETT = 50;</code>
+     * <code>BADGE_TYPE_POISON = 21;</code>
      */
-    FAMILY_DIGLETT(50),
+    BADGE_TYPE_POISON(21),
     /**
-     * <code>FAMILY_MEOWTH = 52;</code>
+     * <code>BADGE_TYPE_GROUND = 22;</code>
      */
-    FAMILY_MEOWTH(52),
+    BADGE_TYPE_GROUND(22),
     /**
-     * <code>FAMILY_PSYDUCK = 54;</code>
+     * <code>BADGE_TYPE_ROCK = 23;</code>
      */
-    FAMILY_PSYDUCK(54),
+    BADGE_TYPE_ROCK(23),
     /**
-     * <code>FAMILY_MANKEY = 56;</code>
+     * <code>BADGE_TYPE_BUG = 24;</code>
      */
-    FAMILY_MANKEY(56),
+    BADGE_TYPE_BUG(24),
     /**
-     * <code>FAMILY_GROWLITHE = 58;</code>
+     * <code>BADGE_TYPE_GHOST = 25;</code>
      */
-    FAMILY_GROWLITHE(58),
+    BADGE_TYPE_GHOST(25),
     /**
-     * <code>FAMILY_POLIWAG = 60;</code>
+     * <code>BADGE_TYPE_STEEL = 26;</code>
      */
-    FAMILY_POLIWAG(60),
+    BADGE_TYPE_STEEL(26),
     /**
-     * <code>FAMILY_ABRA = 63;</code>
+     * <code>BADGE_TYPE_FIRE = 27;</code>
      */
-    FAMILY_ABRA(63),
+    BADGE_TYPE_FIRE(27),
     /**
-     * <code>FAMILY_MACHOP = 66;</code>
+     * <code>BADGE_TYPE_WATER = 28;</code>
      */
-    FAMILY_MACHOP(66),
+    BADGE_TYPE_WATER(28),
     /**
-     * <code>FAMILY_BELLSPROUT = 69;</code>
+     * <code>BADGE_TYPE_GRASS = 29;</code>
      */
-    FAMILY_BELLSPROUT(69),
+    BADGE_TYPE_GRASS(29),
     /**
-     * <code>FAMILY_TENTACOOL = 72;</code>
+     * <code>BADGE_TYPE_ELECTRIC = 30;</code>
      */
-    FAMILY_TENTACOOL(72),
+    BADGE_TYPE_ELECTRIC(30),
     /**
-     * <code>FAMILY_GEODUDE = 74;</code>
+     * <code>BADGE_TYPE_PSYCHIC = 31;</code>
      */
-    FAMILY_GEODUDE(74),
+    BADGE_TYPE_PSYCHIC(31),
     /**
-     * <code>FAMILY_PONYTA = 77;</code>
+     * <code>BADGE_TYPE_ICE = 32;</code>
      */
-    FAMILY_PONYTA(77),
+    BADGE_TYPE_ICE(32),
     /**
-     * <code>FAMILY_SLOWPOKE = 79;</code>
+     * <code>BADGE_TYPE_DRAGON = 33;</code>
      */
-    FAMILY_SLOWPOKE(79),
+    BADGE_TYPE_DRAGON(33),
     /**
-     * <code>FAMILY_MAGNEMITE = 81;</code>
+     * <code>BADGE_TYPE_DARK = 34;</code>
      */
-    FAMILY_MAGNEMITE(81),
+    BADGE_TYPE_DARK(34),
     /**
-     * <code>FAMILY_FARFETCHD = 83;</code>
+     * <code>BADGE_TYPE_FAIRY = 35;</code>
      */
-    FAMILY_FARFETCHD(83),
+    BADGE_TYPE_FAIRY(35),
     /**
-     * <code>FAMILY_DODUO = 84;</code>
+     * <code>BADGE_SMALL_RATTATA = 36;</code>
      */
-    FAMILY_DODUO(84),
+    BADGE_SMALL_RATTATA(36),
     /**
-     * <code>FAMILY_SEEL = 86;</code>
+     * <code>BADGE_PIKACHU = 37;</code>
      */
-    FAMILY_SEEL(86),
-    /**
-     * <code>FAMILY_GRIMER = 88;</code>
-     */
-    FAMILY_GRIMER(88),
-    /**
-     * <code>FAMILY_SHELLDER = 90;</code>
-     */
-    FAMILY_SHELLDER(90),
-    /**
-     * <code>FAMILY_GASTLY = 92;</code>
-     */
-    FAMILY_GASTLY(92),
-    /**
-     * <code>FAMILY_ONIX = 95;</code>
-     */
-    FAMILY_ONIX(95),
-    /**
-     * <code>FAMILY_DROWZEE = 96;</code>
-     */
-    FAMILY_DROWZEE(96),
-    /**
-     * <code>FAMILY_HYPNO = 97;</code>
-     */
-    FAMILY_HYPNO(97),
-    /**
-     * <code>FAMILY_KRABBY = 98;</code>
-     */
-    FAMILY_KRABBY(98),
-    /**
-     * <code>FAMILY_VOLTORB = 100;</code>
-     */
-    FAMILY_VOLTORB(100),
-    /**
-     * <code>FAMILY_EXEGGCUTE = 102;</code>
-     */
-    FAMILY_EXEGGCUTE(102),
-    /**
-     * <code>FAMILY_CUBONE = 104;</code>
-     */
-    FAMILY_CUBONE(104),
-    /**
-     * <code>FAMILY_HITMONLEE = 106;</code>
-     */
-    FAMILY_HITMONLEE(106),
-    /**
-     * <code>FAMILY_HITMONCHAN = 107;</code>
-     */
-    FAMILY_HITMONCHAN(107),
-    /**
-     * <code>FAMILY_LICKITUNG = 108;</code>
-     */
-    FAMILY_LICKITUNG(108),
-    /**
-     * <code>FAMILY_KOFFING = 109;</code>
-     */
-    FAMILY_KOFFING(109),
-    /**
-     * <code>FAMILY_RHYHORN = 111;</code>
-     */
-    FAMILY_RHYHORN(111),
-    /**
-     * <code>FAMILY_CHANSEY = 113;</code>
-     */
-    FAMILY_CHANSEY(113),
-    /**
-     * <code>FAMILY_TANGELA = 114;</code>
-     */
-    FAMILY_TANGELA(114),
-    /**
-     * <code>FAMILY_KANGASKHAN = 115;</code>
-     */
-    FAMILY_KANGASKHAN(115),
-    /**
-     * <code>FAMILY_HORSEA = 116;</code>
-     */
-    FAMILY_HORSEA(116),
-    /**
-     * <code>FAMILY_GOLDEEN = 118;</code>
-     */
-    FAMILY_GOLDEEN(118),
-    /**
-     * <code>FAMILY_STARYU = 120;</code>
-     */
-    FAMILY_STARYU(120),
-    /**
-     * <code>FAMILY_MR_MIME = 122;</code>
-     */
-    FAMILY_MR_MIME(122),
-    /**
-     * <code>FAMILY_SCYTHER = 123;</code>
-     */
-    FAMILY_SCYTHER(123),
-    /**
-     * <code>FAMILY_JYNX = 124;</code>
-     */
-    FAMILY_JYNX(124),
-    /**
-     * <code>FAMILY_ELECTABUZZ = 125;</code>
-     */
-    FAMILY_ELECTABUZZ(125),
-    /**
-     * <code>FAMILY_MAGMAR = 126;</code>
-     */
-    FAMILY_MAGMAR(126),
-    /**
-     * <code>FAMILY_PINSIR = 127;</code>
-     */
-    FAMILY_PINSIR(127),
-    /**
-     * <code>FAMILY_TAUROS = 128;</code>
-     */
-    FAMILY_TAUROS(128),
-    /**
-     * <code>FAMILY_MAGIKARP = 129;</code>
-     */
-    FAMILY_MAGIKARP(129),
-    /**
-     * <code>FAMILY_LAPRAS = 131;</code>
-     */
-    FAMILY_LAPRAS(131),
-    /**
-     * <code>FAMILY_DITTO = 132;</code>
-     */
-    FAMILY_DITTO(132),
-    /**
-     * <code>FAMILY_EEVEE = 133;</code>
-     */
-    FAMILY_EEVEE(133),
-    /**
-     * <code>FAMILY_PORYGON = 137;</code>
-     */
-    FAMILY_PORYGON(137),
-    /**
-     * <code>FAMILY_OMANYTE = 138;</code>
-     */
-    FAMILY_OMANYTE(138),
-    /**
-     * <code>FAMILY_KABUTO = 140;</code>
-     */
-    FAMILY_KABUTO(140),
-    /**
-     * <code>FAMILY_AERODACTYL = 142;</code>
-     */
-    FAMILY_AERODACTYL(142),
-    /**
-     * <code>FAMILY_SNORLAX = 143;</code>
-     */
-    FAMILY_SNORLAX(143),
-    /**
-     * <code>FAMILY_ARTICUNO = 144;</code>
-     */
-    FAMILY_ARTICUNO(144),
-    /**
-     * <code>FAMILY_ZAPDOS = 145;</code>
-     */
-    FAMILY_ZAPDOS(145),
-    /**
-     * <code>FAMILY_MOLTRES = 146;</code>
-     */
-    FAMILY_MOLTRES(146),
-    /**
-     * <code>FAMILY_DRATINI = 147;</code>
-     */
-    FAMILY_DRATINI(147),
-    /**
-     * <code>FAMILY_MEWTWO = 150;</code>
-     */
-    FAMILY_MEWTWO(150),
-    /**
-     * <code>FAMILY_MEW = 151;</code>
-     */
-    FAMILY_MEW(151),
+    BADGE_PIKACHU(37),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>FAMILY_UNSET = 0;</code>
+     * <code>BADGE_UNSET = 0;</code>
      */
-    public static final int FAMILY_UNSET_VALUE = 0;
+    public static final int BADGE_UNSET_VALUE = 0;
     /**
-     * <code>FAMILY_BULBASAUR = 1;</code>
+     * <code>BADGE_TRAVEL_KM = 1;</code>
      */
-    public static final int FAMILY_BULBASAUR_VALUE = 1;
+    public static final int BADGE_TRAVEL_KM_VALUE = 1;
     /**
-     * <code>FAMILY_CHARMANDER = 4;</code>
+     * <code>BADGE_POKEDEX_ENTRIES = 2;</code>
      */
-    public static final int FAMILY_CHARMANDER_VALUE = 4;
+    public static final int BADGE_POKEDEX_ENTRIES_VALUE = 2;
     /**
-     * <code>FAMILY_SQUIRTLE = 7;</code>
+     * <code>BADGE_CAPTURE_TOTAL = 3;</code>
      */
-    public static final int FAMILY_SQUIRTLE_VALUE = 7;
+    public static final int BADGE_CAPTURE_TOTAL_VALUE = 3;
     /**
-     * <code>FAMILY_CATERPIE = 10;</code>
+     * <code>BADGE_DEFEATED_FORT = 4;</code>
      */
-    public static final int FAMILY_CATERPIE_VALUE = 10;
+    public static final int BADGE_DEFEATED_FORT_VALUE = 4;
     /**
-     * <code>FAMILY_WEEDLE = 13;</code>
+     * <code>BADGE_EVOLVED_TOTAL = 5;</code>
      */
-    public static final int FAMILY_WEEDLE_VALUE = 13;
+    public static final int BADGE_EVOLVED_TOTAL_VALUE = 5;
     /**
-     * <code>FAMILY_PIDGEY = 16;</code>
+     * <code>BADGE_HATCHED_TOTAL = 6;</code>
      */
-    public static final int FAMILY_PIDGEY_VALUE = 16;
+    public static final int BADGE_HATCHED_TOTAL_VALUE = 6;
     /**
-     * <code>FAMILY_RATTATA = 19;</code>
+     * <code>BADGE_ENCOUNTERED_TOTAL = 7;</code>
      */
-    public static final int FAMILY_RATTATA_VALUE = 19;
+    public static final int BADGE_ENCOUNTERED_TOTAL_VALUE = 7;
     /**
-     * <code>FAMILY_SPEAROW = 21;</code>
+     * <code>BADGE_POKESTOPS_VISITED = 8;</code>
      */
-    public static final int FAMILY_SPEAROW_VALUE = 21;
+    public static final int BADGE_POKESTOPS_VISITED_VALUE = 8;
     /**
-     * <code>FAMILY_EKANS = 23;</code>
+     * <code>BADGE_UNIQUE_POKESTOPS = 9;</code>
      */
-    public static final int FAMILY_EKANS_VALUE = 23;
+    public static final int BADGE_UNIQUE_POKESTOPS_VALUE = 9;
     /**
-     * <code>FAMILY_PIKACHU = 25;</code>
+     * <code>BADGE_POKEBALL_THROWN = 10;</code>
      */
-    public static final int FAMILY_PIKACHU_VALUE = 25;
+    public static final int BADGE_POKEBALL_THROWN_VALUE = 10;
     /**
-     * <code>FAMILY_SANDSHREW = 27;</code>
+     * <code>BADGE_BIG_MAGIKARP = 11;</code>
      */
-    public static final int FAMILY_SANDSHREW_VALUE = 27;
+    public static final int BADGE_BIG_MAGIKARP_VALUE = 11;
     /**
-     * <code>FAMILY_NIDORAN_FEMALE = 29;</code>
+     * <code>BADGE_DEPLOYED_TOTAL = 12;</code>
      */
-    public static final int FAMILY_NIDORAN_FEMALE_VALUE = 29;
+    public static final int BADGE_DEPLOYED_TOTAL_VALUE = 12;
     /**
-     * <code>FAMILY_NIDORAN_MALE = 32;</code>
+     * <code>BADGE_BATTLE_ATTACK_WON = 13;</code>
      */
-    public static final int FAMILY_NIDORAN_MALE_VALUE = 32;
+    public static final int BADGE_BATTLE_ATTACK_WON_VALUE = 13;
     /**
-     * <code>FAMILY_CLEFAIRY = 35;</code>
+     * <code>BADGE_BATTLE_TRAINING_WON = 14;</code>
      */
-    public static final int FAMILY_CLEFAIRY_VALUE = 35;
+    public static final int BADGE_BATTLE_TRAINING_WON_VALUE = 14;
     /**
-     * <code>FAMILY_VULPIX = 37;</code>
+     * <code>BADGE_BATTLE_DEFEND_WON = 15;</code>
      */
-    public static final int FAMILY_VULPIX_VALUE = 37;
+    public static final int BADGE_BATTLE_DEFEND_WON_VALUE = 15;
     /**
-     * <code>FAMILY_JIGGLYPUFF = 39;</code>
+     * <code>BADGE_PRESTIGE_RAISED = 16;</code>
      */
-    public static final int FAMILY_JIGGLYPUFF_VALUE = 39;
+    public static final int BADGE_PRESTIGE_RAISED_VALUE = 16;
     /**
-     * <code>FAMILY_ZUBAT = 41;</code>
+     * <code>BADGE_PRESTIGE_DROPPED = 17;</code>
      */
-    public static final int FAMILY_ZUBAT_VALUE = 41;
+    public static final int BADGE_PRESTIGE_DROPPED_VALUE = 17;
     /**
-     * <code>FAMILY_ODDISH = 43;</code>
+     * <code>BADGE_TYPE_NORMAL = 18;</code>
      */
-    public static final int FAMILY_ODDISH_VALUE = 43;
+    public static final int BADGE_TYPE_NORMAL_VALUE = 18;
     /**
-     * <code>FAMILY_PARAS = 46;</code>
+     * <code>BADGE_TYPE_FIGHTING = 19;</code>
      */
-    public static final int FAMILY_PARAS_VALUE = 46;
+    public static final int BADGE_TYPE_FIGHTING_VALUE = 19;
     /**
-     * <code>FAMILY_VENONAT = 48;</code>
+     * <code>BADGE_TYPE_FLYING = 20;</code>
      */
-    public static final int FAMILY_VENONAT_VALUE = 48;
+    public static final int BADGE_TYPE_FLYING_VALUE = 20;
     /**
-     * <code>FAMILY_DIGLETT = 50;</code>
+     * <code>BADGE_TYPE_POISON = 21;</code>
      */
-    public static final int FAMILY_DIGLETT_VALUE = 50;
+    public static final int BADGE_TYPE_POISON_VALUE = 21;
     /**
-     * <code>FAMILY_MEOWTH = 52;</code>
+     * <code>BADGE_TYPE_GROUND = 22;</code>
      */
-    public static final int FAMILY_MEOWTH_VALUE = 52;
+    public static final int BADGE_TYPE_GROUND_VALUE = 22;
     /**
-     * <code>FAMILY_PSYDUCK = 54;</code>
+     * <code>BADGE_TYPE_ROCK = 23;</code>
      */
-    public static final int FAMILY_PSYDUCK_VALUE = 54;
+    public static final int BADGE_TYPE_ROCK_VALUE = 23;
     /**
-     * <code>FAMILY_MANKEY = 56;</code>
+     * <code>BADGE_TYPE_BUG = 24;</code>
      */
-    public static final int FAMILY_MANKEY_VALUE = 56;
+    public static final int BADGE_TYPE_BUG_VALUE = 24;
     /**
-     * <code>FAMILY_GROWLITHE = 58;</code>
+     * <code>BADGE_TYPE_GHOST = 25;</code>
      */
-    public static final int FAMILY_GROWLITHE_VALUE = 58;
+    public static final int BADGE_TYPE_GHOST_VALUE = 25;
     /**
-     * <code>FAMILY_POLIWAG = 60;</code>
+     * <code>BADGE_TYPE_STEEL = 26;</code>
      */
-    public static final int FAMILY_POLIWAG_VALUE = 60;
+    public static final int BADGE_TYPE_STEEL_VALUE = 26;
     /**
-     * <code>FAMILY_ABRA = 63;</code>
+     * <code>BADGE_TYPE_FIRE = 27;</code>
      */
-    public static final int FAMILY_ABRA_VALUE = 63;
+    public static final int BADGE_TYPE_FIRE_VALUE = 27;
     /**
-     * <code>FAMILY_MACHOP = 66;</code>
+     * <code>BADGE_TYPE_WATER = 28;</code>
      */
-    public static final int FAMILY_MACHOP_VALUE = 66;
+    public static final int BADGE_TYPE_WATER_VALUE = 28;
     /**
-     * <code>FAMILY_BELLSPROUT = 69;</code>
+     * <code>BADGE_TYPE_GRASS = 29;</code>
      */
-    public static final int FAMILY_BELLSPROUT_VALUE = 69;
+    public static final int BADGE_TYPE_GRASS_VALUE = 29;
     /**
-     * <code>FAMILY_TENTACOOL = 72;</code>
+     * <code>BADGE_TYPE_ELECTRIC = 30;</code>
      */
-    public static final int FAMILY_TENTACOOL_VALUE = 72;
+    public static final int BADGE_TYPE_ELECTRIC_VALUE = 30;
     /**
-     * <code>FAMILY_GEODUDE = 74;</code>
+     * <code>BADGE_TYPE_PSYCHIC = 31;</code>
      */
-    public static final int FAMILY_GEODUDE_VALUE = 74;
+    public static final int BADGE_TYPE_PSYCHIC_VALUE = 31;
     /**
-     * <code>FAMILY_PONYTA = 77;</code>
+     * <code>BADGE_TYPE_ICE = 32;</code>
      */
-    public static final int FAMILY_PONYTA_VALUE = 77;
+    public static final int BADGE_TYPE_ICE_VALUE = 32;
     /**
-     * <code>FAMILY_SLOWPOKE = 79;</code>
+     * <code>BADGE_TYPE_DRAGON = 33;</code>
      */
-    public static final int FAMILY_SLOWPOKE_VALUE = 79;
+    public static final int BADGE_TYPE_DRAGON_VALUE = 33;
     /**
-     * <code>FAMILY_MAGNEMITE = 81;</code>
+     * <code>BADGE_TYPE_DARK = 34;</code>
      */
-    public static final int FAMILY_MAGNEMITE_VALUE = 81;
+    public static final int BADGE_TYPE_DARK_VALUE = 34;
     /**
-     * <code>FAMILY_FARFETCHD = 83;</code>
+     * <code>BADGE_TYPE_FAIRY = 35;</code>
      */
-    public static final int FAMILY_FARFETCHD_VALUE = 83;
+    public static final int BADGE_TYPE_FAIRY_VALUE = 35;
     /**
-     * <code>FAMILY_DODUO = 84;</code>
+     * <code>BADGE_SMALL_RATTATA = 36;</code>
      */
-    public static final int FAMILY_DODUO_VALUE = 84;
+    public static final int BADGE_SMALL_RATTATA_VALUE = 36;
     /**
-     * <code>FAMILY_SEEL = 86;</code>
+     * <code>BADGE_PIKACHU = 37;</code>
      */
-    public static final int FAMILY_SEEL_VALUE = 86;
-    /**
-     * <code>FAMILY_GRIMER = 88;</code>
-     */
-    public static final int FAMILY_GRIMER_VALUE = 88;
-    /**
-     * <code>FAMILY_SHELLDER = 90;</code>
-     */
-    public static final int FAMILY_SHELLDER_VALUE = 90;
-    /**
-     * <code>FAMILY_GASTLY = 92;</code>
-     */
-    public static final int FAMILY_GASTLY_VALUE = 92;
-    /**
-     * <code>FAMILY_ONIX = 95;</code>
-     */
-    public static final int FAMILY_ONIX_VALUE = 95;
-    /**
-     * <code>FAMILY_DROWZEE = 96;</code>
-     */
-    public static final int FAMILY_DROWZEE_VALUE = 96;
-    /**
-     * <code>FAMILY_HYPNO = 97;</code>
-     */
-    public static final int FAMILY_HYPNO_VALUE = 97;
-    /**
-     * <code>FAMILY_KRABBY = 98;</code>
-     */
-    public static final int FAMILY_KRABBY_VALUE = 98;
-    /**
-     * <code>FAMILY_VOLTORB = 100;</code>
-     */
-    public static final int FAMILY_VOLTORB_VALUE = 100;
-    /**
-     * <code>FAMILY_EXEGGCUTE = 102;</code>
-     */
-    public static final int FAMILY_EXEGGCUTE_VALUE = 102;
-    /**
-     * <code>FAMILY_CUBONE = 104;</code>
-     */
-    public static final int FAMILY_CUBONE_VALUE = 104;
-    /**
-     * <code>FAMILY_HITMONLEE = 106;</code>
-     */
-    public static final int FAMILY_HITMONLEE_VALUE = 106;
-    /**
-     * <code>FAMILY_HITMONCHAN = 107;</code>
-     */
-    public static final int FAMILY_HITMONCHAN_VALUE = 107;
-    /**
-     * <code>FAMILY_LICKITUNG = 108;</code>
-     */
-    public static final int FAMILY_LICKITUNG_VALUE = 108;
-    /**
-     * <code>FAMILY_KOFFING = 109;</code>
-     */
-    public static final int FAMILY_KOFFING_VALUE = 109;
-    /**
-     * <code>FAMILY_RHYHORN = 111;</code>
-     */
-    public static final int FAMILY_RHYHORN_VALUE = 111;
-    /**
-     * <code>FAMILY_CHANSEY = 113;</code>
-     */
-    public static final int FAMILY_CHANSEY_VALUE = 113;
-    /**
-     * <code>FAMILY_TANGELA = 114;</code>
-     */
-    public static final int FAMILY_TANGELA_VALUE = 114;
-    /**
-     * <code>FAMILY_KANGASKHAN = 115;</code>
-     */
-    public static final int FAMILY_KANGASKHAN_VALUE = 115;
-    /**
-     * <code>FAMILY_HORSEA = 116;</code>
-     */
-    public static final int FAMILY_HORSEA_VALUE = 116;
-    /**
-     * <code>FAMILY_GOLDEEN = 118;</code>
-     */
-    public static final int FAMILY_GOLDEEN_VALUE = 118;
-    /**
-     * <code>FAMILY_STARYU = 120;</code>
-     */
-    public static final int FAMILY_STARYU_VALUE = 120;
-    /**
-     * <code>FAMILY_MR_MIME = 122;</code>
-     */
-    public static final int FAMILY_MR_MIME_VALUE = 122;
-    /**
-     * <code>FAMILY_SCYTHER = 123;</code>
-     */
-    public static final int FAMILY_SCYTHER_VALUE = 123;
-    /**
-     * <code>FAMILY_JYNX = 124;</code>
-     */
-    public static final int FAMILY_JYNX_VALUE = 124;
-    /**
-     * <code>FAMILY_ELECTABUZZ = 125;</code>
-     */
-    public static final int FAMILY_ELECTABUZZ_VALUE = 125;
-    /**
-     * <code>FAMILY_MAGMAR = 126;</code>
-     */
-    public static final int FAMILY_MAGMAR_VALUE = 126;
-    /**
-     * <code>FAMILY_PINSIR = 127;</code>
-     */
-    public static final int FAMILY_PINSIR_VALUE = 127;
-    /**
-     * <code>FAMILY_TAUROS = 128;</code>
-     */
-    public static final int FAMILY_TAUROS_VALUE = 128;
-    /**
-     * <code>FAMILY_MAGIKARP = 129;</code>
-     */
-    public static final int FAMILY_MAGIKARP_VALUE = 129;
-    /**
-     * <code>FAMILY_LAPRAS = 131;</code>
-     */
-    public static final int FAMILY_LAPRAS_VALUE = 131;
-    /**
-     * <code>FAMILY_DITTO = 132;</code>
-     */
-    public static final int FAMILY_DITTO_VALUE = 132;
-    /**
-     * <code>FAMILY_EEVEE = 133;</code>
-     */
-    public static final int FAMILY_EEVEE_VALUE = 133;
-    /**
-     * <code>FAMILY_PORYGON = 137;</code>
-     */
-    public static final int FAMILY_PORYGON_VALUE = 137;
-    /**
-     * <code>FAMILY_OMANYTE = 138;</code>
-     */
-    public static final int FAMILY_OMANYTE_VALUE = 138;
-    /**
-     * <code>FAMILY_KABUTO = 140;</code>
-     */
-    public static final int FAMILY_KABUTO_VALUE = 140;
-    /**
-     * <code>FAMILY_AERODACTYL = 142;</code>
-     */
-    public static final int FAMILY_AERODACTYL_VALUE = 142;
-    /**
-     * <code>FAMILY_SNORLAX = 143;</code>
-     */
-    public static final int FAMILY_SNORLAX_VALUE = 143;
-    /**
-     * <code>FAMILY_ARTICUNO = 144;</code>
-     */
-    public static final int FAMILY_ARTICUNO_VALUE = 144;
-    /**
-     * <code>FAMILY_ZAPDOS = 145;</code>
-     */
-    public static final int FAMILY_ZAPDOS_VALUE = 145;
-    /**
-     * <code>FAMILY_MOLTRES = 146;</code>
-     */
-    public static final int FAMILY_MOLTRES_VALUE = 146;
-    /**
-     * <code>FAMILY_DRATINI = 147;</code>
-     */
-    public static final int FAMILY_DRATINI_VALUE = 147;
-    /**
-     * <code>FAMILY_MEWTWO = 150;</code>
-     */
-    public static final int FAMILY_MEWTWO_VALUE = 150;
-    /**
-     * <code>FAMILY_MEW = 151;</code>
-     */
-    public static final int FAMILY_MEW_VALUE = 151;
+    public static final int BADGE_PIKACHU_VALUE = 37;
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -2490,642 +1832,80 @@ public final class Enums {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static PokemonFamilyId valueOf(int value) {
+    public static BadgeType valueOf(int value) {
       return forNumber(value);
     }
 
-    public static PokemonFamilyId forNumber(int value) {
+    public static BadgeType forNumber(int value) {
       switch (value) {
-        case 0: return FAMILY_UNSET;
-        case 1: return FAMILY_BULBASAUR;
-        case 4: return FAMILY_CHARMANDER;
-        case 7: return FAMILY_SQUIRTLE;
-        case 10: return FAMILY_CATERPIE;
-        case 13: return FAMILY_WEEDLE;
-        case 16: return FAMILY_PIDGEY;
-        case 19: return FAMILY_RATTATA;
-        case 21: return FAMILY_SPEAROW;
-        case 23: return FAMILY_EKANS;
-        case 25: return FAMILY_PIKACHU;
-        case 27: return FAMILY_SANDSHREW;
-        case 29: return FAMILY_NIDORAN_FEMALE;
-        case 32: return FAMILY_NIDORAN_MALE;
-        case 35: return FAMILY_CLEFAIRY;
-        case 37: return FAMILY_VULPIX;
-        case 39: return FAMILY_JIGGLYPUFF;
-        case 41: return FAMILY_ZUBAT;
-        case 43: return FAMILY_ODDISH;
-        case 46: return FAMILY_PARAS;
-        case 48: return FAMILY_VENONAT;
-        case 50: return FAMILY_DIGLETT;
-        case 52: return FAMILY_MEOWTH;
-        case 54: return FAMILY_PSYDUCK;
-        case 56: return FAMILY_MANKEY;
-        case 58: return FAMILY_GROWLITHE;
-        case 60: return FAMILY_POLIWAG;
-        case 63: return FAMILY_ABRA;
-        case 66: return FAMILY_MACHOP;
-        case 69: return FAMILY_BELLSPROUT;
-        case 72: return FAMILY_TENTACOOL;
-        case 74: return FAMILY_GEODUDE;
-        case 77: return FAMILY_PONYTA;
-        case 79: return FAMILY_SLOWPOKE;
-        case 81: return FAMILY_MAGNEMITE;
-        case 83: return FAMILY_FARFETCHD;
-        case 84: return FAMILY_DODUO;
-        case 86: return FAMILY_SEEL;
-        case 88: return FAMILY_GRIMER;
-        case 90: return FAMILY_SHELLDER;
-        case 92: return FAMILY_GASTLY;
-        case 95: return FAMILY_ONIX;
-        case 96: return FAMILY_DROWZEE;
-        case 97: return FAMILY_HYPNO;
-        case 98: return FAMILY_KRABBY;
-        case 100: return FAMILY_VOLTORB;
-        case 102: return FAMILY_EXEGGCUTE;
-        case 104: return FAMILY_CUBONE;
-        case 106: return FAMILY_HITMONLEE;
-        case 107: return FAMILY_HITMONCHAN;
-        case 108: return FAMILY_LICKITUNG;
-        case 109: return FAMILY_KOFFING;
-        case 111: return FAMILY_RHYHORN;
-        case 113: return FAMILY_CHANSEY;
-        case 114: return FAMILY_TANGELA;
-        case 115: return FAMILY_KANGASKHAN;
-        case 116: return FAMILY_HORSEA;
-        case 118: return FAMILY_GOLDEEN;
-        case 120: return FAMILY_STARYU;
-        case 122: return FAMILY_MR_MIME;
-        case 123: return FAMILY_SCYTHER;
-        case 124: return FAMILY_JYNX;
-        case 125: return FAMILY_ELECTABUZZ;
-        case 126: return FAMILY_MAGMAR;
-        case 127: return FAMILY_PINSIR;
-        case 128: return FAMILY_TAUROS;
-        case 129: return FAMILY_MAGIKARP;
-        case 131: return FAMILY_LAPRAS;
-        case 132: return FAMILY_DITTO;
-        case 133: return FAMILY_EEVEE;
-        case 137: return FAMILY_PORYGON;
-        case 138: return FAMILY_OMANYTE;
-        case 140: return FAMILY_KABUTO;
-        case 142: return FAMILY_AERODACTYL;
-        case 143: return FAMILY_SNORLAX;
-        case 144: return FAMILY_ARTICUNO;
-        case 145: return FAMILY_ZAPDOS;
-        case 146: return FAMILY_MOLTRES;
-        case 147: return FAMILY_DRATINI;
-        case 150: return FAMILY_MEWTWO;
-        case 151: return FAMILY_MEW;
+        case 0: return BADGE_UNSET;
+        case 1: return BADGE_TRAVEL_KM;
+        case 2: return BADGE_POKEDEX_ENTRIES;
+        case 3: return BADGE_CAPTURE_TOTAL;
+        case 4: return BADGE_DEFEATED_FORT;
+        case 5: return BADGE_EVOLVED_TOTAL;
+        case 6: return BADGE_HATCHED_TOTAL;
+        case 7: return BADGE_ENCOUNTERED_TOTAL;
+        case 8: return BADGE_POKESTOPS_VISITED;
+        case 9: return BADGE_UNIQUE_POKESTOPS;
+        case 10: return BADGE_POKEBALL_THROWN;
+        case 11: return BADGE_BIG_MAGIKARP;
+        case 12: return BADGE_DEPLOYED_TOTAL;
+        case 13: return BADGE_BATTLE_ATTACK_WON;
+        case 14: return BADGE_BATTLE_TRAINING_WON;
+        case 15: return BADGE_BATTLE_DEFEND_WON;
+        case 16: return BADGE_PRESTIGE_RAISED;
+        case 17: return BADGE_PRESTIGE_DROPPED;
+        case 18: return BADGE_TYPE_NORMAL;
+        case 19: return BADGE_TYPE_FIGHTING;
+        case 20: return BADGE_TYPE_FLYING;
+        case 21: return BADGE_TYPE_POISON;
+        case 22: return BADGE_TYPE_GROUND;
+        case 23: return BADGE_TYPE_ROCK;
+        case 24: return BADGE_TYPE_BUG;
+        case 25: return BADGE_TYPE_GHOST;
+        case 26: return BADGE_TYPE_STEEL;
+        case 27: return BADGE_TYPE_FIRE;
+        case 28: return BADGE_TYPE_WATER;
+        case 29: return BADGE_TYPE_GRASS;
+        case 30: return BADGE_TYPE_ELECTRIC;
+        case 31: return BADGE_TYPE_PSYCHIC;
+        case 32: return BADGE_TYPE_ICE;
+        case 33: return BADGE_TYPE_DRAGON;
+        case 34: return BADGE_TYPE_DARK;
+        case 35: return BADGE_TYPE_FAIRY;
+        case 36: return BADGE_SMALL_RATTATA;
+        case 37: return BADGE_PIKACHU;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<PokemonFamilyId>
+    public static com.google.protobuf.Internal.EnumLiteMap<BadgeType>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        PokemonFamilyId> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PokemonFamilyId>() {
-            public PokemonFamilyId findValueByNumber(int number) {
-              return PokemonFamilyId.forNumber(number);
+        BadgeType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BadgeType>() {
+            public BadgeType findValueByNumber(int number) {
+              return BadgeType.forNumber(number);
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(3);
-    }
-
-    private static final PokemonFamilyId[] VALUES = values();
-
-    public static PokemonFamilyId valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
-    private PokemonFamilyId(int value) {
+    private BadgeType(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.HoloIapItemCategory}
-   */
-  public enum HoloIapItemCategory
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>IAP_CATEGORY_NONE = 0;</code>
-     */
-    IAP_CATEGORY_NONE(0),
-    /**
-     * <code>IAP_CATEGORY_BUNDLE = 1;</code>
-     */
-    IAP_CATEGORY_BUNDLE(1),
-    /**
-     * <code>IAP_CATEGORY_ITEMS = 2;</code>
-     */
-    IAP_CATEGORY_ITEMS(2),
-    /**
-     * <code>IAP_CATEGORY_UPGRADES = 3;</code>
-     */
-    IAP_CATEGORY_UPGRADES(3),
-    /**
-     * <code>IAP_CATEGORY_POKECOINS = 4;</code>
-     */
-    IAP_CATEGORY_POKECOINS(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>IAP_CATEGORY_NONE = 0;</code>
-     */
-    public static final int IAP_CATEGORY_NONE_VALUE = 0;
-    /**
-     * <code>IAP_CATEGORY_BUNDLE = 1;</code>
-     */
-    public static final int IAP_CATEGORY_BUNDLE_VALUE = 1;
-    /**
-     * <code>IAP_CATEGORY_ITEMS = 2;</code>
-     */
-    public static final int IAP_CATEGORY_ITEMS_VALUE = 2;
-    /**
-     * <code>IAP_CATEGORY_UPGRADES = 3;</code>
-     */
-    public static final int IAP_CATEGORY_UPGRADES_VALUE = 3;
-    /**
-     * <code>IAP_CATEGORY_POKECOINS = 4;</code>
-     */
-    public static final int IAP_CATEGORY_POKECOINS_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static HoloIapItemCategory valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static HoloIapItemCategory forNumber(int value) {
-      switch (value) {
-        case 0: return IAP_CATEGORY_NONE;
-        case 1: return IAP_CATEGORY_BUNDLE;
-        case 2: return IAP_CATEGORY_ITEMS;
-        case 3: return IAP_CATEGORY_UPGRADES;
-        case 4: return IAP_CATEGORY_POKECOINS;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<HoloIapItemCategory>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        HoloIapItemCategory> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<HoloIapItemCategory>() {
-            public HoloIapItemCategory findValueByNumber(int number) {
-              return HoloIapItemCategory.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(4);
-    }
-
-    private static final HoloIapItemCategory[] VALUES = values();
-
-    public static HoloIapItemCategory valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private HoloIapItemCategory(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.HoloIapItemCategory)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.TeamColor}
-   */
-  public enum TeamColor
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>NEUTRAL = 0;</code>
-     */
-    NEUTRAL(0),
-    /**
-     * <code>BLUE = 1;</code>
-     */
-    BLUE(1),
-    /**
-     * <code>RED = 2;</code>
-     */
-    RED(2),
-    /**
-     * <code>YELLOW = 3;</code>
-     */
-    YELLOW(3),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>NEUTRAL = 0;</code>
-     */
-    public static final int NEUTRAL_VALUE = 0;
-    /**
-     * <code>BLUE = 1;</code>
-     */
-    public static final int BLUE_VALUE = 1;
-    /**
-     * <code>RED = 2;</code>
-     */
-    public static final int RED_VALUE = 2;
-    /**
-     * <code>YELLOW = 3;</code>
-     */
-    public static final int YELLOW_VALUE = 3;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static TeamColor valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static TeamColor forNumber(int value) {
-      switch (value) {
-        case 0: return NEUTRAL;
-        case 1: return BLUE;
-        case 2: return RED;
-        case 3: return YELLOW;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<TeamColor>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        TeamColor> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<TeamColor>() {
-            public TeamColor findValueByNumber(int number) {
-              return TeamColor.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(5);
-    }
-
-    private static final TeamColor[] VALUES = values();
-
-    public static TeamColor valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private TeamColor(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.TeamColor)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonType}
-   */
-  public enum PokemonType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>POKEMON_TYPE_NONE = 0;</code>
-     */
-    POKEMON_TYPE_NONE(0),
-    /**
-     * <code>POKEMON_TYPE_NORMAL = 1;</code>
-     */
-    POKEMON_TYPE_NORMAL(1),
-    /**
-     * <code>POKEMON_TYPE_FIGHTING = 2;</code>
-     */
-    POKEMON_TYPE_FIGHTING(2),
-    /**
-     * <code>POKEMON_TYPE_FLYING = 3;</code>
-     */
-    POKEMON_TYPE_FLYING(3),
-    /**
-     * <code>POKEMON_TYPE_POISON = 4;</code>
-     */
-    POKEMON_TYPE_POISON(4),
-    /**
-     * <code>POKEMON_TYPE_GROUND = 5;</code>
-     */
-    POKEMON_TYPE_GROUND(5),
-    /**
-     * <code>POKEMON_TYPE_ROCK = 6;</code>
-     */
-    POKEMON_TYPE_ROCK(6),
-    /**
-     * <code>POKEMON_TYPE_BUG = 7;</code>
-     */
-    POKEMON_TYPE_BUG(7),
-    /**
-     * <code>POKEMON_TYPE_GHOST = 8;</code>
-     */
-    POKEMON_TYPE_GHOST(8),
-    /**
-     * <code>POKEMON_TYPE_STEEL = 9;</code>
-     */
-    POKEMON_TYPE_STEEL(9),
-    /**
-     * <code>POKEMON_TYPE_FIRE = 10;</code>
-     */
-    POKEMON_TYPE_FIRE(10),
-    /**
-     * <code>POKEMON_TYPE_WATER = 11;</code>
-     */
-    POKEMON_TYPE_WATER(11),
-    /**
-     * <code>POKEMON_TYPE_GRASS = 12;</code>
-     */
-    POKEMON_TYPE_GRASS(12),
-    /**
-     * <code>POKEMON_TYPE_ELECTRIC = 13;</code>
-     */
-    POKEMON_TYPE_ELECTRIC(13),
-    /**
-     * <code>POKEMON_TYPE_PSYCHIC = 14;</code>
-     */
-    POKEMON_TYPE_PSYCHIC(14),
-    /**
-     * <code>POKEMON_TYPE_ICE = 15;</code>
-     */
-    POKEMON_TYPE_ICE(15),
-    /**
-     * <code>POKEMON_TYPE_DRAGON = 16;</code>
-     */
-    POKEMON_TYPE_DRAGON(16),
-    /**
-     * <code>POKEMON_TYPE_DARK = 17;</code>
-     */
-    POKEMON_TYPE_DARK(17),
-    /**
-     * <code>POKEMON_TYPE_FAIRY = 18;</code>
-     */
-    POKEMON_TYPE_FAIRY(18),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>POKEMON_TYPE_NONE = 0;</code>
-     */
-    public static final int POKEMON_TYPE_NONE_VALUE = 0;
-    /**
-     * <code>POKEMON_TYPE_NORMAL = 1;</code>
-     */
-    public static final int POKEMON_TYPE_NORMAL_VALUE = 1;
-    /**
-     * <code>POKEMON_TYPE_FIGHTING = 2;</code>
-     */
-    public static final int POKEMON_TYPE_FIGHTING_VALUE = 2;
-    /**
-     * <code>POKEMON_TYPE_FLYING = 3;</code>
-     */
-    public static final int POKEMON_TYPE_FLYING_VALUE = 3;
-    /**
-     * <code>POKEMON_TYPE_POISON = 4;</code>
-     */
-    public static final int POKEMON_TYPE_POISON_VALUE = 4;
-    /**
-     * <code>POKEMON_TYPE_GROUND = 5;</code>
-     */
-    public static final int POKEMON_TYPE_GROUND_VALUE = 5;
-    /**
-     * <code>POKEMON_TYPE_ROCK = 6;</code>
-     */
-    public static final int POKEMON_TYPE_ROCK_VALUE = 6;
-    /**
-     * <code>POKEMON_TYPE_BUG = 7;</code>
-     */
-    public static final int POKEMON_TYPE_BUG_VALUE = 7;
-    /**
-     * <code>POKEMON_TYPE_GHOST = 8;</code>
-     */
-    public static final int POKEMON_TYPE_GHOST_VALUE = 8;
-    /**
-     * <code>POKEMON_TYPE_STEEL = 9;</code>
-     */
-    public static final int POKEMON_TYPE_STEEL_VALUE = 9;
-    /**
-     * <code>POKEMON_TYPE_FIRE = 10;</code>
-     */
-    public static final int POKEMON_TYPE_FIRE_VALUE = 10;
-    /**
-     * <code>POKEMON_TYPE_WATER = 11;</code>
-     */
-    public static final int POKEMON_TYPE_WATER_VALUE = 11;
-    /**
-     * <code>POKEMON_TYPE_GRASS = 12;</code>
-     */
-    public static final int POKEMON_TYPE_GRASS_VALUE = 12;
-    /**
-     * <code>POKEMON_TYPE_ELECTRIC = 13;</code>
-     */
-    public static final int POKEMON_TYPE_ELECTRIC_VALUE = 13;
-    /**
-     * <code>POKEMON_TYPE_PSYCHIC = 14;</code>
-     */
-    public static final int POKEMON_TYPE_PSYCHIC_VALUE = 14;
-    /**
-     * <code>POKEMON_TYPE_ICE = 15;</code>
-     */
-    public static final int POKEMON_TYPE_ICE_VALUE = 15;
-    /**
-     * <code>POKEMON_TYPE_DRAGON = 16;</code>
-     */
-    public static final int POKEMON_TYPE_DRAGON_VALUE = 16;
-    /**
-     * <code>POKEMON_TYPE_DARK = 17;</code>
-     */
-    public static final int POKEMON_TYPE_DARK_VALUE = 17;
-    /**
-     * <code>POKEMON_TYPE_FAIRY = 18;</code>
-     */
-    public static final int POKEMON_TYPE_FAIRY_VALUE = 18;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static PokemonType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static PokemonType forNumber(int value) {
-      switch (value) {
-        case 0: return POKEMON_TYPE_NONE;
-        case 1: return POKEMON_TYPE_NORMAL;
-        case 2: return POKEMON_TYPE_FIGHTING;
-        case 3: return POKEMON_TYPE_FLYING;
-        case 4: return POKEMON_TYPE_POISON;
-        case 5: return POKEMON_TYPE_GROUND;
-        case 6: return POKEMON_TYPE_ROCK;
-        case 7: return POKEMON_TYPE_BUG;
-        case 8: return POKEMON_TYPE_GHOST;
-        case 9: return POKEMON_TYPE_STEEL;
-        case 10: return POKEMON_TYPE_FIRE;
-        case 11: return POKEMON_TYPE_WATER;
-        case 12: return POKEMON_TYPE_GRASS;
-        case 13: return POKEMON_TYPE_ELECTRIC;
-        case 14: return POKEMON_TYPE_PSYCHIC;
-        case 15: return POKEMON_TYPE_ICE;
-        case 16: return POKEMON_TYPE_DRAGON;
-        case 17: return POKEMON_TYPE_DARK;
-        case 18: return POKEMON_TYPE_FAIRY;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<PokemonType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        PokemonType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PokemonType>() {
-            public PokemonType findValueByNumber(int number) {
-              return PokemonType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(6);
-    }
-
-    private static final PokemonType[] VALUES = values();
-
-    public static PokemonType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private PokemonType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonType)
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.BadgeType)
   }
 
   /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.ItemCategory}
    */
   public enum ItemCategory
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>ITEM_CATEGORY_NONE = 0;</code>
      */
@@ -3228,10 +2008,6 @@ public final class Enums {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -3273,33 +2049,6 @@ public final class Enums {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(7);
-    }
-
-    private static final ItemCategory[] VALUES = values();
-
-    public static ItemCategory valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private ItemCategory(int value) {
@@ -3313,7 +2062,7 @@ public final class Enums {
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.ActivityType}
    */
   public enum ActivityType
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>ACTIVITY_UNKNOWN = 0;</code>
      */
@@ -3512,10 +2261,6 @@ public final class Enums {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -3569,33 +2314,6 @@ public final class Enums {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(8);
-    }
-
-    private static final ActivityType[] VALUES = values();
-
-    public static ActivityType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private ActivityType(int value) {
@@ -3606,340 +2324,10 @@ public final class Enums {
   }
 
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.CameraInterpolation}
-   */
-  public enum CameraInterpolation
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>CAM_INTERP_CUT = 0;</code>
-     */
-    CAM_INTERP_CUT(0),
-    /**
-     * <code>CAM_INTERP_LINEAR = 1;</code>
-     */
-    CAM_INTERP_LINEAR(1),
-    /**
-     * <code>CAM_INTERP_SMOOTH = 2;</code>
-     */
-    CAM_INTERP_SMOOTH(2),
-    /**
-     * <code>CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;</code>
-     */
-    CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE(3),
-    /**
-     * <code>CAM_INTERP_DEPENDS = 4;</code>
-     */
-    CAM_INTERP_DEPENDS(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>CAM_INTERP_CUT = 0;</code>
-     */
-    public static final int CAM_INTERP_CUT_VALUE = 0;
-    /**
-     * <code>CAM_INTERP_LINEAR = 1;</code>
-     */
-    public static final int CAM_INTERP_LINEAR_VALUE = 1;
-    /**
-     * <code>CAM_INTERP_SMOOTH = 2;</code>
-     */
-    public static final int CAM_INTERP_SMOOTH_VALUE = 2;
-    /**
-     * <code>CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;</code>
-     */
-    public static final int CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE_VALUE = 3;
-    /**
-     * <code>CAM_INTERP_DEPENDS = 4;</code>
-     */
-    public static final int CAM_INTERP_DEPENDS_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static CameraInterpolation valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static CameraInterpolation forNumber(int value) {
-      switch (value) {
-        case 0: return CAM_INTERP_CUT;
-        case 1: return CAM_INTERP_LINEAR;
-        case 2: return CAM_INTERP_SMOOTH;
-        case 3: return CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE;
-        case 4: return CAM_INTERP_DEPENDS;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<CameraInterpolation>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        CameraInterpolation> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<CameraInterpolation>() {
-            public CameraInterpolation findValueByNumber(int number) {
-              return CameraInterpolation.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(9);
-    }
-
-    private static final CameraInterpolation[] VALUES = values();
-
-    public static CameraInterpolation valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private CameraInterpolation(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.CameraInterpolation)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonRarity}
-   */
-  public enum PokemonRarity
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>POKEMON_RARITY_NORMAL = 0;</code>
-     */
-    POKEMON_RARITY_NORMAL(0),
-    /**
-     * <code>POKEMON_RARITY_LEGENDARY = 1;</code>
-     */
-    POKEMON_RARITY_LEGENDARY(1),
-    /**
-     * <code>POKEMON_RARITY_MYTHIC = 2;</code>
-     */
-    POKEMON_RARITY_MYTHIC(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>POKEMON_RARITY_NORMAL = 0;</code>
-     */
-    public static final int POKEMON_RARITY_NORMAL_VALUE = 0;
-    /**
-     * <code>POKEMON_RARITY_LEGENDARY = 1;</code>
-     */
-    public static final int POKEMON_RARITY_LEGENDARY_VALUE = 1;
-    /**
-     * <code>POKEMON_RARITY_MYTHIC = 2;</code>
-     */
-    public static final int POKEMON_RARITY_MYTHIC_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static PokemonRarity valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static PokemonRarity forNumber(int value) {
-      switch (value) {
-        case 0: return POKEMON_RARITY_NORMAL;
-        case 1: return POKEMON_RARITY_LEGENDARY;
-        case 2: return POKEMON_RARITY_MYTHIC;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<PokemonRarity>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        PokemonRarity> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PokemonRarity>() {
-            public PokemonRarity findValueByNumber(int number) {
-              return PokemonRarity.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(10);
-    }
-
-    private static final PokemonRarity[] VALUES = values();
-
-    public static PokemonRarity valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private PokemonRarity(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonRarity)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.Gender}
-   */
-  public enum Gender
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>MALE = 0;</code>
-     */
-    MALE(0),
-    /**
-     * <code>FEMALE = 1;</code>
-     */
-    FEMALE(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>MALE = 0;</code>
-     */
-    public static final int MALE_VALUE = 0;
-    /**
-     * <code>FEMALE = 1;</code>
-     */
-    public static final int FEMALE_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Gender valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static Gender forNumber(int value) {
-      switch (value) {
-        case 0: return MALE;
-        case 1: return FEMALE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Gender>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Gender> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Gender>() {
-            public Gender findValueByNumber(int number) {
-              return Gender.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(11);
-    }
-
-    private static final Gender[] VALUES = values();
-
-    public static Gender valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Gender(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.Gender)
-  }
-
-  /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonMove}
    */
   public enum PokemonMove
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>MOVE_UNSET = 0;</code>
      */
@@ -5386,10 +3774,6 @@ public final class Enums {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -5599,33 +3983,6 @@ public final class Enums {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(12);
-    }
-
-    private static final PokemonMove[] VALUES = values();
-
-    public static PokemonMove valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private PokemonMove(int value) {
@@ -5636,60 +3993,96 @@ public final class Enums {
   }
 
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.Platform}
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.TutorialState}
    */
-  public enum Platform
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum TutorialState
+      implements com.google.protobuf.Internal.EnumLite {
     /**
-     * <code>UNSET = 0;</code>
+     * <code>LEGAL_SCREEN = 0;</code>
      */
-    UNSET(0),
+    LEGAL_SCREEN(0),
     /**
-     * <code>IOS = 1;</code>
+     * <code>AVATAR_SELECTION = 1;</code>
      */
-    IOS(1),
+    AVATAR_SELECTION(1),
     /**
-     * <code>ANDROID = 2;</code>
+     * <code>ACCOUNT_CREATION = 2;</code>
      */
-    ANDROID(2),
+    ACCOUNT_CREATION(2),
     /**
-     * <code>OSX = 3;</code>
+     * <code>POKEMON_CAPTURE = 3;</code>
      */
-    OSX(3),
+    POKEMON_CAPTURE(3),
     /**
-     * <code>WINDOWS = 4;</code>
+     * <code>NAME_SELECTION = 4;</code>
      */
-    WINDOWS(4),
+    NAME_SELECTION(4),
+    /**
+     * <code>POKEMON_BERRY = 5;</code>
+     */
+    POKEMON_BERRY(5),
+    /**
+     * <code>USE_ITEM = 6;</code>
+     */
+    USE_ITEM(6),
+    /**
+     * <code>FIRST_TIME_EXPERIENCE_COMPLETE = 7;</code>
+     */
+    FIRST_TIME_EXPERIENCE_COMPLETE(7),
+    /**
+     * <code>POKESTOP_TUTORIAL = 8;</code>
+     */
+    POKESTOP_TUTORIAL(8),
+    /**
+     * <code>GYM_TUTORIAL = 9;</code>
+     */
+    GYM_TUTORIAL(9),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>UNSET = 0;</code>
+     * <code>LEGAL_SCREEN = 0;</code>
      */
-    public static final int UNSET_VALUE = 0;
+    public static final int LEGAL_SCREEN_VALUE = 0;
     /**
-     * <code>IOS = 1;</code>
+     * <code>AVATAR_SELECTION = 1;</code>
      */
-    public static final int IOS_VALUE = 1;
+    public static final int AVATAR_SELECTION_VALUE = 1;
     /**
-     * <code>ANDROID = 2;</code>
+     * <code>ACCOUNT_CREATION = 2;</code>
      */
-    public static final int ANDROID_VALUE = 2;
+    public static final int ACCOUNT_CREATION_VALUE = 2;
     /**
-     * <code>OSX = 3;</code>
+     * <code>POKEMON_CAPTURE = 3;</code>
      */
-    public static final int OSX_VALUE = 3;
+    public static final int POKEMON_CAPTURE_VALUE = 3;
     /**
-     * <code>WINDOWS = 4;</code>
+     * <code>NAME_SELECTION = 4;</code>
      */
-    public static final int WINDOWS_VALUE = 4;
+    public static final int NAME_SELECTION_VALUE = 4;
+    /**
+     * <code>POKEMON_BERRY = 5;</code>
+     */
+    public static final int POKEMON_BERRY_VALUE = 5;
+    /**
+     * <code>USE_ITEM = 6;</code>
+     */
+    public static final int USE_ITEM_VALUE = 6;
+    /**
+     * <code>FIRST_TIME_EXPERIENCE_COMPLETE = 7;</code>
+     */
+    public static final int FIRST_TIME_EXPERIENCE_COMPLETE_VALUE = 7;
+    /**
+     * <code>POKESTOP_TUTORIAL = 8;</code>
+     */
+    public static final int POKESTOP_TUTORIAL_VALUE = 8;
+    /**
+     * <code>GYM_TUTORIAL = 9;</code>
+     */
+    public static final int GYM_TUTORIAL_VALUE = 9;
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -5697,496 +4090,52 @@ public final class Enums {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static Platform valueOf(int value) {
+    public static TutorialState valueOf(int value) {
       return forNumber(value);
     }
 
-    public static Platform forNumber(int value) {
+    public static TutorialState forNumber(int value) {
       switch (value) {
-        case 0: return UNSET;
-        case 1: return IOS;
-        case 2: return ANDROID;
-        case 3: return OSX;
-        case 4: return WINDOWS;
+        case 0: return LEGAL_SCREEN;
+        case 1: return AVATAR_SELECTION;
+        case 2: return ACCOUNT_CREATION;
+        case 3: return POKEMON_CAPTURE;
+        case 4: return NAME_SELECTION;
+        case 5: return POKEMON_BERRY;
+        case 6: return USE_ITEM;
+        case 7: return FIRST_TIME_EXPERIENCE_COMPLETE;
+        case 8: return POKESTOP_TUTORIAL;
+        case 9: return GYM_TUTORIAL;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Platform>
+    public static com.google.protobuf.Internal.EnumLiteMap<TutorialState>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        Platform> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Platform>() {
-            public Platform findValueByNumber(int number) {
-              return Platform.forNumber(number);
+        TutorialState> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TutorialState>() {
+            public TutorialState findValueByNumber(int number) {
+              return TutorialState.forNumber(number);
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(13);
-    }
-
-    private static final Platform[] VALUES = values();
-
-    public static Platform valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
-    private Platform(int value) {
+    private TutorialState(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.Platform)
-  }
-
-  /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.BadgeType}
-   */
-  public enum BadgeType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>BADGE_UNSET = 0;</code>
-     */
-    BADGE_UNSET(0),
-    /**
-     * <code>BADGE_TRAVEL_KM = 1;</code>
-     */
-    BADGE_TRAVEL_KM(1),
-    /**
-     * <code>BADGE_POKEDEX_ENTRIES = 2;</code>
-     */
-    BADGE_POKEDEX_ENTRIES(2),
-    /**
-     * <code>BADGE_CAPTURE_TOTAL = 3;</code>
-     */
-    BADGE_CAPTURE_TOTAL(3),
-    /**
-     * <code>BADGE_DEFEATED_FORT = 4;</code>
-     */
-    BADGE_DEFEATED_FORT(4),
-    /**
-     * <code>BADGE_EVOLVED_TOTAL = 5;</code>
-     */
-    BADGE_EVOLVED_TOTAL(5),
-    /**
-     * <code>BADGE_HATCHED_TOTAL = 6;</code>
-     */
-    BADGE_HATCHED_TOTAL(6),
-    /**
-     * <code>BADGE_ENCOUNTERED_TOTAL = 7;</code>
-     */
-    BADGE_ENCOUNTERED_TOTAL(7),
-    /**
-     * <code>BADGE_POKESTOPS_VISITED = 8;</code>
-     */
-    BADGE_POKESTOPS_VISITED(8),
-    /**
-     * <code>BADGE_UNIQUE_POKESTOPS = 9;</code>
-     */
-    BADGE_UNIQUE_POKESTOPS(9),
-    /**
-     * <code>BADGE_POKEBALL_THROWN = 10;</code>
-     */
-    BADGE_POKEBALL_THROWN(10),
-    /**
-     * <code>BADGE_BIG_MAGIKARP = 11;</code>
-     */
-    BADGE_BIG_MAGIKARP(11),
-    /**
-     * <code>BADGE_DEPLOYED_TOTAL = 12;</code>
-     */
-    BADGE_DEPLOYED_TOTAL(12),
-    /**
-     * <code>BADGE_BATTLE_ATTACK_WON = 13;</code>
-     */
-    BADGE_BATTLE_ATTACK_WON(13),
-    /**
-     * <code>BADGE_BATTLE_TRAINING_WON = 14;</code>
-     */
-    BADGE_BATTLE_TRAINING_WON(14),
-    /**
-     * <code>BADGE_BATTLE_DEFEND_WON = 15;</code>
-     */
-    BADGE_BATTLE_DEFEND_WON(15),
-    /**
-     * <code>BADGE_PRESTIGE_RAISED = 16;</code>
-     */
-    BADGE_PRESTIGE_RAISED(16),
-    /**
-     * <code>BADGE_PRESTIGE_DROPPED = 17;</code>
-     */
-    BADGE_PRESTIGE_DROPPED(17),
-    /**
-     * <code>BADGE_TYPE_NORMAL = 18;</code>
-     */
-    BADGE_TYPE_NORMAL(18),
-    /**
-     * <code>BADGE_TYPE_FIGHTING = 19;</code>
-     */
-    BADGE_TYPE_FIGHTING(19),
-    /**
-     * <code>BADGE_TYPE_FLYING = 20;</code>
-     */
-    BADGE_TYPE_FLYING(20),
-    /**
-     * <code>BADGE_TYPE_POISON = 21;</code>
-     */
-    BADGE_TYPE_POISON(21),
-    /**
-     * <code>BADGE_TYPE_GROUND = 22;</code>
-     */
-    BADGE_TYPE_GROUND(22),
-    /**
-     * <code>BADGE_TYPE_ROCK = 23;</code>
-     */
-    BADGE_TYPE_ROCK(23),
-    /**
-     * <code>BADGE_TYPE_BUG = 24;</code>
-     */
-    BADGE_TYPE_BUG(24),
-    /**
-     * <code>BADGE_TYPE_GHOST = 25;</code>
-     */
-    BADGE_TYPE_GHOST(25),
-    /**
-     * <code>BADGE_TYPE_STEEL = 26;</code>
-     */
-    BADGE_TYPE_STEEL(26),
-    /**
-     * <code>BADGE_TYPE_FIRE = 27;</code>
-     */
-    BADGE_TYPE_FIRE(27),
-    /**
-     * <code>BADGE_TYPE_WATER = 28;</code>
-     */
-    BADGE_TYPE_WATER(28),
-    /**
-     * <code>BADGE_TYPE_GRASS = 29;</code>
-     */
-    BADGE_TYPE_GRASS(29),
-    /**
-     * <code>BADGE_TYPE_ELECTRIC = 30;</code>
-     */
-    BADGE_TYPE_ELECTRIC(30),
-    /**
-     * <code>BADGE_TYPE_PSYCHIC = 31;</code>
-     */
-    BADGE_TYPE_PSYCHIC(31),
-    /**
-     * <code>BADGE_TYPE_ICE = 32;</code>
-     */
-    BADGE_TYPE_ICE(32),
-    /**
-     * <code>BADGE_TYPE_DRAGON = 33;</code>
-     */
-    BADGE_TYPE_DRAGON(33),
-    /**
-     * <code>BADGE_TYPE_DARK = 34;</code>
-     */
-    BADGE_TYPE_DARK(34),
-    /**
-     * <code>BADGE_TYPE_FAIRY = 35;</code>
-     */
-    BADGE_TYPE_FAIRY(35),
-    /**
-     * <code>BADGE_SMALL_RATTATA = 36;</code>
-     */
-    BADGE_SMALL_RATTATA(36),
-    /**
-     * <code>BADGE_PIKACHU = 37;</code>
-     */
-    BADGE_PIKACHU(37),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>BADGE_UNSET = 0;</code>
-     */
-    public static final int BADGE_UNSET_VALUE = 0;
-    /**
-     * <code>BADGE_TRAVEL_KM = 1;</code>
-     */
-    public static final int BADGE_TRAVEL_KM_VALUE = 1;
-    /**
-     * <code>BADGE_POKEDEX_ENTRIES = 2;</code>
-     */
-    public static final int BADGE_POKEDEX_ENTRIES_VALUE = 2;
-    /**
-     * <code>BADGE_CAPTURE_TOTAL = 3;</code>
-     */
-    public static final int BADGE_CAPTURE_TOTAL_VALUE = 3;
-    /**
-     * <code>BADGE_DEFEATED_FORT = 4;</code>
-     */
-    public static final int BADGE_DEFEATED_FORT_VALUE = 4;
-    /**
-     * <code>BADGE_EVOLVED_TOTAL = 5;</code>
-     */
-    public static final int BADGE_EVOLVED_TOTAL_VALUE = 5;
-    /**
-     * <code>BADGE_HATCHED_TOTAL = 6;</code>
-     */
-    public static final int BADGE_HATCHED_TOTAL_VALUE = 6;
-    /**
-     * <code>BADGE_ENCOUNTERED_TOTAL = 7;</code>
-     */
-    public static final int BADGE_ENCOUNTERED_TOTAL_VALUE = 7;
-    /**
-     * <code>BADGE_POKESTOPS_VISITED = 8;</code>
-     */
-    public static final int BADGE_POKESTOPS_VISITED_VALUE = 8;
-    /**
-     * <code>BADGE_UNIQUE_POKESTOPS = 9;</code>
-     */
-    public static final int BADGE_UNIQUE_POKESTOPS_VALUE = 9;
-    /**
-     * <code>BADGE_POKEBALL_THROWN = 10;</code>
-     */
-    public static final int BADGE_POKEBALL_THROWN_VALUE = 10;
-    /**
-     * <code>BADGE_BIG_MAGIKARP = 11;</code>
-     */
-    public static final int BADGE_BIG_MAGIKARP_VALUE = 11;
-    /**
-     * <code>BADGE_DEPLOYED_TOTAL = 12;</code>
-     */
-    public static final int BADGE_DEPLOYED_TOTAL_VALUE = 12;
-    /**
-     * <code>BADGE_BATTLE_ATTACK_WON = 13;</code>
-     */
-    public static final int BADGE_BATTLE_ATTACK_WON_VALUE = 13;
-    /**
-     * <code>BADGE_BATTLE_TRAINING_WON = 14;</code>
-     */
-    public static final int BADGE_BATTLE_TRAINING_WON_VALUE = 14;
-    /**
-     * <code>BADGE_BATTLE_DEFEND_WON = 15;</code>
-     */
-    public static final int BADGE_BATTLE_DEFEND_WON_VALUE = 15;
-    /**
-     * <code>BADGE_PRESTIGE_RAISED = 16;</code>
-     */
-    public static final int BADGE_PRESTIGE_RAISED_VALUE = 16;
-    /**
-     * <code>BADGE_PRESTIGE_DROPPED = 17;</code>
-     */
-    public static final int BADGE_PRESTIGE_DROPPED_VALUE = 17;
-    /**
-     * <code>BADGE_TYPE_NORMAL = 18;</code>
-     */
-    public static final int BADGE_TYPE_NORMAL_VALUE = 18;
-    /**
-     * <code>BADGE_TYPE_FIGHTING = 19;</code>
-     */
-    public static final int BADGE_TYPE_FIGHTING_VALUE = 19;
-    /**
-     * <code>BADGE_TYPE_FLYING = 20;</code>
-     */
-    public static final int BADGE_TYPE_FLYING_VALUE = 20;
-    /**
-     * <code>BADGE_TYPE_POISON = 21;</code>
-     */
-    public static final int BADGE_TYPE_POISON_VALUE = 21;
-    /**
-     * <code>BADGE_TYPE_GROUND = 22;</code>
-     */
-    public static final int BADGE_TYPE_GROUND_VALUE = 22;
-    /**
-     * <code>BADGE_TYPE_ROCK = 23;</code>
-     */
-    public static final int BADGE_TYPE_ROCK_VALUE = 23;
-    /**
-     * <code>BADGE_TYPE_BUG = 24;</code>
-     */
-    public static final int BADGE_TYPE_BUG_VALUE = 24;
-    /**
-     * <code>BADGE_TYPE_GHOST = 25;</code>
-     */
-    public static final int BADGE_TYPE_GHOST_VALUE = 25;
-    /**
-     * <code>BADGE_TYPE_STEEL = 26;</code>
-     */
-    public static final int BADGE_TYPE_STEEL_VALUE = 26;
-    /**
-     * <code>BADGE_TYPE_FIRE = 27;</code>
-     */
-    public static final int BADGE_TYPE_FIRE_VALUE = 27;
-    /**
-     * <code>BADGE_TYPE_WATER = 28;</code>
-     */
-    public static final int BADGE_TYPE_WATER_VALUE = 28;
-    /**
-     * <code>BADGE_TYPE_GRASS = 29;</code>
-     */
-    public static final int BADGE_TYPE_GRASS_VALUE = 29;
-    /**
-     * <code>BADGE_TYPE_ELECTRIC = 30;</code>
-     */
-    public static final int BADGE_TYPE_ELECTRIC_VALUE = 30;
-    /**
-     * <code>BADGE_TYPE_PSYCHIC = 31;</code>
-     */
-    public static final int BADGE_TYPE_PSYCHIC_VALUE = 31;
-    /**
-     * <code>BADGE_TYPE_ICE = 32;</code>
-     */
-    public static final int BADGE_TYPE_ICE_VALUE = 32;
-    /**
-     * <code>BADGE_TYPE_DRAGON = 33;</code>
-     */
-    public static final int BADGE_TYPE_DRAGON_VALUE = 33;
-    /**
-     * <code>BADGE_TYPE_DARK = 34;</code>
-     */
-    public static final int BADGE_TYPE_DARK_VALUE = 34;
-    /**
-     * <code>BADGE_TYPE_FAIRY = 35;</code>
-     */
-    public static final int BADGE_TYPE_FAIRY_VALUE = 35;
-    /**
-     * <code>BADGE_SMALL_RATTATA = 36;</code>
-     */
-    public static final int BADGE_SMALL_RATTATA_VALUE = 36;
-    /**
-     * <code>BADGE_PIKACHU = 37;</code>
-     */
-    public static final int BADGE_PIKACHU_VALUE = 37;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static BadgeType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static BadgeType forNumber(int value) {
-      switch (value) {
-        case 0: return BADGE_UNSET;
-        case 1: return BADGE_TRAVEL_KM;
-        case 2: return BADGE_POKEDEX_ENTRIES;
-        case 3: return BADGE_CAPTURE_TOTAL;
-        case 4: return BADGE_DEFEATED_FORT;
-        case 5: return BADGE_EVOLVED_TOTAL;
-        case 6: return BADGE_HATCHED_TOTAL;
-        case 7: return BADGE_ENCOUNTERED_TOTAL;
-        case 8: return BADGE_POKESTOPS_VISITED;
-        case 9: return BADGE_UNIQUE_POKESTOPS;
-        case 10: return BADGE_POKEBALL_THROWN;
-        case 11: return BADGE_BIG_MAGIKARP;
-        case 12: return BADGE_DEPLOYED_TOTAL;
-        case 13: return BADGE_BATTLE_ATTACK_WON;
-        case 14: return BADGE_BATTLE_TRAINING_WON;
-        case 15: return BADGE_BATTLE_DEFEND_WON;
-        case 16: return BADGE_PRESTIGE_RAISED;
-        case 17: return BADGE_PRESTIGE_DROPPED;
-        case 18: return BADGE_TYPE_NORMAL;
-        case 19: return BADGE_TYPE_FIGHTING;
-        case 20: return BADGE_TYPE_FLYING;
-        case 21: return BADGE_TYPE_POISON;
-        case 22: return BADGE_TYPE_GROUND;
-        case 23: return BADGE_TYPE_ROCK;
-        case 24: return BADGE_TYPE_BUG;
-        case 25: return BADGE_TYPE_GHOST;
-        case 26: return BADGE_TYPE_STEEL;
-        case 27: return BADGE_TYPE_FIRE;
-        case 28: return BADGE_TYPE_WATER;
-        case 29: return BADGE_TYPE_GRASS;
-        case 30: return BADGE_TYPE_ELECTRIC;
-        case 31: return BADGE_TYPE_PSYCHIC;
-        case 32: return BADGE_TYPE_ICE;
-        case 33: return BADGE_TYPE_DRAGON;
-        case 34: return BADGE_TYPE_DARK;
-        case 35: return BADGE_TYPE_FAIRY;
-        case 36: return BADGE_SMALL_RATTATA;
-        case 37: return BADGE_PIKACHU;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<BadgeType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        BadgeType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<BadgeType>() {
-            public BadgeType findValueByNumber(int number) {
-              return BadgeType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(14);
-    }
-
-    private static final BadgeType[] VALUES = values();
-
-    public static BadgeType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private BadgeType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.BadgeType)
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.TutorialState)
   }
 
   /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.CameraTarget}
    */
   public enum CameraTarget
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>CAM_TARGET_ATTACKER = 0;</code>
      */
@@ -6305,10 +4254,6 @@ public final class Enums {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -6352,33 +4297,6 @@ public final class Enums {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(15);
-    }
-
-    private static final CameraTarget[] VALUES = values();
-
-    public static CameraTarget valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private CameraTarget(int value) {
@@ -6389,100 +4307,40 @@ public final class Enums {
   }
 
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.TutorialState}
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonRarity}
    */
-  public enum TutorialState
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum PokemonRarity
+      implements com.google.protobuf.Internal.EnumLite {
     /**
-     * <code>LEGAL_SCREEN = 0;</code>
+     * <code>POKEMON_RARITY_NORMAL = 0;</code>
      */
-    LEGAL_SCREEN(0),
+    POKEMON_RARITY_NORMAL(0),
     /**
-     * <code>AVATAR_SELECTION = 1;</code>
+     * <code>POKEMON_RARITY_LEGENDARY = 1;</code>
      */
-    AVATAR_SELECTION(1),
+    POKEMON_RARITY_LEGENDARY(1),
     /**
-     * <code>ACCOUNT_CREATION = 2;</code>
+     * <code>POKEMON_RARITY_MYTHIC = 2;</code>
      */
-    ACCOUNT_CREATION(2),
-    /**
-     * <code>POKEMON_CAPTURE = 3;</code>
-     */
-    POKEMON_CAPTURE(3),
-    /**
-     * <code>NAME_SELECTION = 4;</code>
-     */
-    NAME_SELECTION(4),
-    /**
-     * <code>POKEMON_BERRY = 5;</code>
-     */
-    POKEMON_BERRY(5),
-    /**
-     * <code>USE_ITEM = 6;</code>
-     */
-    USE_ITEM(6),
-    /**
-     * <code>FIRST_TIME_EXPERIENCE_COMPLETE = 7;</code>
-     */
-    FIRST_TIME_EXPERIENCE_COMPLETE(7),
-    /**
-     * <code>POKESTOP_TUTORIAL = 8;</code>
-     */
-    POKESTOP_TUTORIAL(8),
-    /**
-     * <code>GYM_TUTORIAL = 9;</code>
-     */
-    GYM_TUTORIAL(9),
+    POKEMON_RARITY_MYTHIC(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>LEGAL_SCREEN = 0;</code>
+     * <code>POKEMON_RARITY_NORMAL = 0;</code>
      */
-    public static final int LEGAL_SCREEN_VALUE = 0;
+    public static final int POKEMON_RARITY_NORMAL_VALUE = 0;
     /**
-     * <code>AVATAR_SELECTION = 1;</code>
+     * <code>POKEMON_RARITY_LEGENDARY = 1;</code>
      */
-    public static final int AVATAR_SELECTION_VALUE = 1;
+    public static final int POKEMON_RARITY_LEGENDARY_VALUE = 1;
     /**
-     * <code>ACCOUNT_CREATION = 2;</code>
+     * <code>POKEMON_RARITY_MYTHIC = 2;</code>
      */
-    public static final int ACCOUNT_CREATION_VALUE = 2;
-    /**
-     * <code>POKEMON_CAPTURE = 3;</code>
-     */
-    public static final int POKEMON_CAPTURE_VALUE = 3;
-    /**
-     * <code>NAME_SELECTION = 4;</code>
-     */
-    public static final int NAME_SELECTION_VALUE = 4;
-    /**
-     * <code>POKEMON_BERRY = 5;</code>
-     */
-    public static final int POKEMON_BERRY_VALUE = 5;
-    /**
-     * <code>USE_ITEM = 6;</code>
-     */
-    public static final int USE_ITEM_VALUE = 6;
-    /**
-     * <code>FIRST_TIME_EXPERIENCE_COMPLETE = 7;</code>
-     */
-    public static final int FIRST_TIME_EXPERIENCE_COMPLETE_VALUE = 7;
-    /**
-     * <code>POKESTOP_TUTORIAL = 8;</code>
-     */
-    public static final int POKESTOP_TUTORIAL_VALUE = 8;
-    /**
-     * <code>GYM_TUTORIAL = 9;</code>
-     */
-    public static final int GYM_TUTORIAL_VALUE = 9;
+    public static final int POKEMON_RARITY_MYTHIC_VALUE = 2;
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -6490,382 +4348,1685 @@ public final class Enums {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static TutorialState valueOf(int value) {
+    public static PokemonRarity valueOf(int value) {
       return forNumber(value);
     }
 
-    public static TutorialState forNumber(int value) {
+    public static PokemonRarity forNumber(int value) {
       switch (value) {
-        case 0: return LEGAL_SCREEN;
-        case 1: return AVATAR_SELECTION;
-        case 2: return ACCOUNT_CREATION;
-        case 3: return POKEMON_CAPTURE;
-        case 4: return NAME_SELECTION;
-        case 5: return POKEMON_BERRY;
-        case 6: return USE_ITEM;
-        case 7: return FIRST_TIME_EXPERIENCE_COMPLETE;
-        case 8: return POKESTOP_TUTORIAL;
-        case 9: return GYM_TUTORIAL;
+        case 0: return POKEMON_RARITY_NORMAL;
+        case 1: return POKEMON_RARITY_LEGENDARY;
+        case 2: return POKEMON_RARITY_MYTHIC;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<TutorialState>
+    public static com.google.protobuf.Internal.EnumLiteMap<PokemonRarity>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        TutorialState> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<TutorialState>() {
-            public TutorialState findValueByNumber(int number) {
-              return TutorialState.forNumber(number);
+        PokemonRarity> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PokemonRarity>() {
+            public PokemonRarity findValueByNumber(int number) {
+              return PokemonRarity.forNumber(number);
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.Enums.getDescriptor().getEnumTypes().get(16);
-    }
-
-    private static final TutorialState[] VALUES = values();
-
-    public static TutorialState valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
-    private TutorialState(int value) {
+    private PokemonRarity(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.TutorialState)
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonRarity)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.ItemEffect}
+   */
+  public enum ItemEffect
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>ITEM_EFFECT_NONE = 0;</code>
+     */
+    ITEM_EFFECT_NONE(0),
+    /**
+     * <code>ITEM_EFFECT_CAP_NO_FLEE = 1000;</code>
+     */
+    ITEM_EFFECT_CAP_NO_FLEE(1000),
+    /**
+     * <code>ITEM_EFFECT_CAP_NO_MOVEMENT = 1002;</code>
+     */
+    ITEM_EFFECT_CAP_NO_MOVEMENT(1002),
+    /**
+     * <code>ITEM_EFFECT_CAP_NO_THREAT = 1003;</code>
+     */
+    ITEM_EFFECT_CAP_NO_THREAT(1003),
+    /**
+     * <code>ITEM_EFFECT_CAP_TARGET_MAX = 1004;</code>
+     */
+    ITEM_EFFECT_CAP_TARGET_MAX(1004),
+    /**
+     * <code>ITEM_EFFECT_CAP_TARGET_SLOW = 1005;</code>
+     */
+    ITEM_EFFECT_CAP_TARGET_SLOW(1005),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_NIGHT = 1006;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_NIGHT(1006),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_TRAINER = 1007;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_TRAINER(1007),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_FIRST_THROW = 1008;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_FIRST_THROW(1008),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_LEGEND = 1009;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_LEGEND(1009),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_HEAVY = 1010;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_HEAVY(1010),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_REPEAT = 1011;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_REPEAT(1011),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_MULTI_THROW = 1012;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_MULTI_THROW(1012),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_ALWAYS = 1013;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_ALWAYS(1013),
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW = 1014;</code>
+     */
+    ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW(1014),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>ITEM_EFFECT_NONE = 0;</code>
+     */
+    public static final int ITEM_EFFECT_NONE_VALUE = 0;
+    /**
+     * <code>ITEM_EFFECT_CAP_NO_FLEE = 1000;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_NO_FLEE_VALUE = 1000;
+    /**
+     * <code>ITEM_EFFECT_CAP_NO_MOVEMENT = 1002;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_NO_MOVEMENT_VALUE = 1002;
+    /**
+     * <code>ITEM_EFFECT_CAP_NO_THREAT = 1003;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_NO_THREAT_VALUE = 1003;
+    /**
+     * <code>ITEM_EFFECT_CAP_TARGET_MAX = 1004;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_TARGET_MAX_VALUE = 1004;
+    /**
+     * <code>ITEM_EFFECT_CAP_TARGET_SLOW = 1005;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_TARGET_SLOW_VALUE = 1005;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_NIGHT = 1006;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_NIGHT_VALUE = 1006;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_TRAINER = 1007;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_TRAINER_VALUE = 1007;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_FIRST_THROW = 1008;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_FIRST_THROW_VALUE = 1008;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_LEGEND = 1009;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_LEGEND_VALUE = 1009;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_HEAVY = 1010;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_HEAVY_VALUE = 1010;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_REPEAT = 1011;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_REPEAT_VALUE = 1011;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_MULTI_THROW = 1012;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_MULTI_THROW_VALUE = 1012;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_ALWAYS = 1013;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_ALWAYS_VALUE = 1013;
+    /**
+     * <code>ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW = 1014;</code>
+     */
+    public static final int ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW_VALUE = 1014;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ItemEffect valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ItemEffect forNumber(int value) {
+      switch (value) {
+        case 0: return ITEM_EFFECT_NONE;
+        case 1000: return ITEM_EFFECT_CAP_NO_FLEE;
+        case 1002: return ITEM_EFFECT_CAP_NO_MOVEMENT;
+        case 1003: return ITEM_EFFECT_CAP_NO_THREAT;
+        case 1004: return ITEM_EFFECT_CAP_TARGET_MAX;
+        case 1005: return ITEM_EFFECT_CAP_TARGET_SLOW;
+        case 1006: return ITEM_EFFECT_CAP_CHANCE_NIGHT;
+        case 1007: return ITEM_EFFECT_CAP_CHANCE_TRAINER;
+        case 1008: return ITEM_EFFECT_CAP_CHANCE_FIRST_THROW;
+        case 1009: return ITEM_EFFECT_CAP_CHANCE_LEGEND;
+        case 1010: return ITEM_EFFECT_CAP_CHANCE_HEAVY;
+        case 1011: return ITEM_EFFECT_CAP_CHANCE_REPEAT;
+        case 1012: return ITEM_EFFECT_CAP_CHANCE_MULTI_THROW;
+        case 1013: return ITEM_EFFECT_CAP_CHANCE_ALWAYS;
+        case 1014: return ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ItemEffect>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ItemEffect> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ItemEffect>() {
+            public ItemEffect findValueByNumber(int number) {
+              return ItemEffect.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private ItemEffect(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.ItemEffect)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.HoloIapItemCategory}
+   */
+  public enum HoloIapItemCategory
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>IAP_CATEGORY_NONE = 0;</code>
+     */
+    IAP_CATEGORY_NONE(0),
+    /**
+     * <code>IAP_CATEGORY_BUNDLE = 1;</code>
+     */
+    IAP_CATEGORY_BUNDLE(1),
+    /**
+     * <code>IAP_CATEGORY_ITEMS = 2;</code>
+     */
+    IAP_CATEGORY_ITEMS(2),
+    /**
+     * <code>IAP_CATEGORY_UPGRADES = 3;</code>
+     */
+    IAP_CATEGORY_UPGRADES(3),
+    /**
+     * <code>IAP_CATEGORY_POKECOINS = 4;</code>
+     */
+    IAP_CATEGORY_POKECOINS(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>IAP_CATEGORY_NONE = 0;</code>
+     */
+    public static final int IAP_CATEGORY_NONE_VALUE = 0;
+    /**
+     * <code>IAP_CATEGORY_BUNDLE = 1;</code>
+     */
+    public static final int IAP_CATEGORY_BUNDLE_VALUE = 1;
+    /**
+     * <code>IAP_CATEGORY_ITEMS = 2;</code>
+     */
+    public static final int IAP_CATEGORY_ITEMS_VALUE = 2;
+    /**
+     * <code>IAP_CATEGORY_UPGRADES = 3;</code>
+     */
+    public static final int IAP_CATEGORY_UPGRADES_VALUE = 3;
+    /**
+     * <code>IAP_CATEGORY_POKECOINS = 4;</code>
+     */
+    public static final int IAP_CATEGORY_POKECOINS_VALUE = 4;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static HoloIapItemCategory valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static HoloIapItemCategory forNumber(int value) {
+      switch (value) {
+        case 0: return IAP_CATEGORY_NONE;
+        case 1: return IAP_CATEGORY_BUNDLE;
+        case 2: return IAP_CATEGORY_ITEMS;
+        case 3: return IAP_CATEGORY_UPGRADES;
+        case 4: return IAP_CATEGORY_POKECOINS;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<HoloIapItemCategory>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        HoloIapItemCategory> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<HoloIapItemCategory>() {
+            public HoloIapItemCategory findValueByNumber(int number) {
+              return HoloIapItemCategory.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private HoloIapItemCategory(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.HoloIapItemCategory)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.CameraInterpolation}
+   */
+  public enum CameraInterpolation
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>CAM_INTERP_CUT = 0;</code>
+     */
+    CAM_INTERP_CUT(0),
+    /**
+     * <code>CAM_INTERP_LINEAR = 1;</code>
+     */
+    CAM_INTERP_LINEAR(1),
+    /**
+     * <code>CAM_INTERP_SMOOTH = 2;</code>
+     */
+    CAM_INTERP_SMOOTH(2),
+    /**
+     * <code>CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;</code>
+     */
+    CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE(3),
+    /**
+     * <code>CAM_INTERP_DEPENDS = 4;</code>
+     */
+    CAM_INTERP_DEPENDS(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CAM_INTERP_CUT = 0;</code>
+     */
+    public static final int CAM_INTERP_CUT_VALUE = 0;
+    /**
+     * <code>CAM_INTERP_LINEAR = 1;</code>
+     */
+    public static final int CAM_INTERP_LINEAR_VALUE = 1;
+    /**
+     * <code>CAM_INTERP_SMOOTH = 2;</code>
+     */
+    public static final int CAM_INTERP_SMOOTH_VALUE = 2;
+    /**
+     * <code>CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;</code>
+     */
+    public static final int CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE_VALUE = 3;
+    /**
+     * <code>CAM_INTERP_DEPENDS = 4;</code>
+     */
+    public static final int CAM_INTERP_DEPENDS_VALUE = 4;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CameraInterpolation valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CameraInterpolation forNumber(int value) {
+      switch (value) {
+        case 0: return CAM_INTERP_CUT;
+        case 1: return CAM_INTERP_LINEAR;
+        case 2: return CAM_INTERP_SMOOTH;
+        case 3: return CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE;
+        case 4: return CAM_INTERP_DEPENDS;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CameraInterpolation>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CameraInterpolation> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CameraInterpolation>() {
+            public CameraInterpolation findValueByNumber(int number) {
+              return CameraInterpolation.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private CameraInterpolation(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.CameraInterpolation)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.Platform}
+   */
+  public enum Platform
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>UNSET = 0;</code>
+     */
+    UNSET(0),
+    /**
+     * <code>IOS = 1;</code>
+     */
+    IOS(1),
+    /**
+     * <code>ANDROID = 2;</code>
+     */
+    ANDROID(2),
+    /**
+     * <code>OSX = 3;</code>
+     */
+    OSX(3),
+    /**
+     * <code>WINDOWS = 4;</code>
+     */
+    WINDOWS(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNSET = 0;</code>
+     */
+    public static final int UNSET_VALUE = 0;
+    /**
+     * <code>IOS = 1;</code>
+     */
+    public static final int IOS_VALUE = 1;
+    /**
+     * <code>ANDROID = 2;</code>
+     */
+    public static final int ANDROID_VALUE = 2;
+    /**
+     * <code>OSX = 3;</code>
+     */
+    public static final int OSX_VALUE = 3;
+    /**
+     * <code>WINDOWS = 4;</code>
+     */
+    public static final int WINDOWS_VALUE = 4;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Platform valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Platform forNumber(int value) {
+      switch (value) {
+        case 0: return UNSET;
+        case 1: return IOS;
+        case 2: return ANDROID;
+        case 3: return OSX;
+        case 4: return WINDOWS;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Platform>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Platform> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Platform>() {
+            public Platform findValueByNumber(int number) {
+              return Platform.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private Platform(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.Platform)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId}
+   */
+  public enum PokemonFamilyId
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>FAMILY_UNSET = 0;</code>
+     */
+    FAMILY_UNSET(0),
+    /**
+     * <code>FAMILY_BULBASAUR = 1;</code>
+     */
+    FAMILY_BULBASAUR(1),
+    /**
+     * <code>FAMILY_CHARMANDER = 4;</code>
+     */
+    FAMILY_CHARMANDER(4),
+    /**
+     * <code>FAMILY_SQUIRTLE = 7;</code>
+     */
+    FAMILY_SQUIRTLE(7),
+    /**
+     * <code>FAMILY_CATERPIE = 10;</code>
+     */
+    FAMILY_CATERPIE(10),
+    /**
+     * <code>FAMILY_WEEDLE = 13;</code>
+     */
+    FAMILY_WEEDLE(13),
+    /**
+     * <code>FAMILY_PIDGEY = 16;</code>
+     */
+    FAMILY_PIDGEY(16),
+    /**
+     * <code>FAMILY_RATTATA = 19;</code>
+     */
+    FAMILY_RATTATA(19),
+    /**
+     * <code>FAMILY_SPEAROW = 21;</code>
+     */
+    FAMILY_SPEAROW(21),
+    /**
+     * <code>FAMILY_EKANS = 23;</code>
+     */
+    FAMILY_EKANS(23),
+    /**
+     * <code>FAMILY_PIKACHU = 25;</code>
+     */
+    FAMILY_PIKACHU(25),
+    /**
+     * <code>FAMILY_SANDSHREW = 27;</code>
+     */
+    FAMILY_SANDSHREW(27),
+    /**
+     * <code>FAMILY_NIDORAN_FEMALE = 29;</code>
+     */
+    FAMILY_NIDORAN_FEMALE(29),
+    /**
+     * <code>FAMILY_NIDORAN_MALE = 32;</code>
+     */
+    FAMILY_NIDORAN_MALE(32),
+    /**
+     * <code>FAMILY_CLEFAIRY = 35;</code>
+     */
+    FAMILY_CLEFAIRY(35),
+    /**
+     * <code>FAMILY_VULPIX = 37;</code>
+     */
+    FAMILY_VULPIX(37),
+    /**
+     * <code>FAMILY_JIGGLYPUFF = 39;</code>
+     */
+    FAMILY_JIGGLYPUFF(39),
+    /**
+     * <code>FAMILY_ZUBAT = 41;</code>
+     */
+    FAMILY_ZUBAT(41),
+    /**
+     * <code>FAMILY_ODDISH = 43;</code>
+     */
+    FAMILY_ODDISH(43),
+    /**
+     * <code>FAMILY_PARAS = 46;</code>
+     */
+    FAMILY_PARAS(46),
+    /**
+     * <code>FAMILY_VENONAT = 48;</code>
+     */
+    FAMILY_VENONAT(48),
+    /**
+     * <code>FAMILY_DIGLETT = 50;</code>
+     */
+    FAMILY_DIGLETT(50),
+    /**
+     * <code>FAMILY_MEOWTH = 52;</code>
+     */
+    FAMILY_MEOWTH(52),
+    /**
+     * <code>FAMILY_PSYDUCK = 54;</code>
+     */
+    FAMILY_PSYDUCK(54),
+    /**
+     * <code>FAMILY_MANKEY = 56;</code>
+     */
+    FAMILY_MANKEY(56),
+    /**
+     * <code>FAMILY_GROWLITHE = 58;</code>
+     */
+    FAMILY_GROWLITHE(58),
+    /**
+     * <code>FAMILY_POLIWAG = 60;</code>
+     */
+    FAMILY_POLIWAG(60),
+    /**
+     * <code>FAMILY_ABRA = 63;</code>
+     */
+    FAMILY_ABRA(63),
+    /**
+     * <code>FAMILY_MACHOP = 66;</code>
+     */
+    FAMILY_MACHOP(66),
+    /**
+     * <code>FAMILY_BELLSPROUT = 69;</code>
+     */
+    FAMILY_BELLSPROUT(69),
+    /**
+     * <code>FAMILY_TENTACOOL = 72;</code>
+     */
+    FAMILY_TENTACOOL(72),
+    /**
+     * <code>FAMILY_GEODUDE = 74;</code>
+     */
+    FAMILY_GEODUDE(74),
+    /**
+     * <code>FAMILY_PONYTA = 77;</code>
+     */
+    FAMILY_PONYTA(77),
+    /**
+     * <code>FAMILY_SLOWPOKE = 79;</code>
+     */
+    FAMILY_SLOWPOKE(79),
+    /**
+     * <code>FAMILY_MAGNEMITE = 81;</code>
+     */
+    FAMILY_MAGNEMITE(81),
+    /**
+     * <code>FAMILY_FARFETCHD = 83;</code>
+     */
+    FAMILY_FARFETCHD(83),
+    /**
+     * <code>FAMILY_DODUO = 84;</code>
+     */
+    FAMILY_DODUO(84),
+    /**
+     * <code>FAMILY_SEEL = 86;</code>
+     */
+    FAMILY_SEEL(86),
+    /**
+     * <code>FAMILY_GRIMER = 88;</code>
+     */
+    FAMILY_GRIMER(88),
+    /**
+     * <code>FAMILY_SHELLDER = 90;</code>
+     */
+    FAMILY_SHELLDER(90),
+    /**
+     * <code>FAMILY_GASTLY = 92;</code>
+     */
+    FAMILY_GASTLY(92),
+    /**
+     * <code>FAMILY_ONIX = 95;</code>
+     */
+    FAMILY_ONIX(95),
+    /**
+     * <code>FAMILY_DROWZEE = 96;</code>
+     */
+    FAMILY_DROWZEE(96),
+    /**
+     * <code>FAMILY_HYPNO = 97;</code>
+     */
+    FAMILY_HYPNO(97),
+    /**
+     * <code>FAMILY_KRABBY = 98;</code>
+     */
+    FAMILY_KRABBY(98),
+    /**
+     * <code>FAMILY_VOLTORB = 100;</code>
+     */
+    FAMILY_VOLTORB(100),
+    /**
+     * <code>FAMILY_EXEGGCUTE = 102;</code>
+     */
+    FAMILY_EXEGGCUTE(102),
+    /**
+     * <code>FAMILY_CUBONE = 104;</code>
+     */
+    FAMILY_CUBONE(104),
+    /**
+     * <code>FAMILY_HITMONLEE = 106;</code>
+     */
+    FAMILY_HITMONLEE(106),
+    /**
+     * <code>FAMILY_HITMONCHAN = 107;</code>
+     */
+    FAMILY_HITMONCHAN(107),
+    /**
+     * <code>FAMILY_LICKITUNG = 108;</code>
+     */
+    FAMILY_LICKITUNG(108),
+    /**
+     * <code>FAMILY_KOFFING = 109;</code>
+     */
+    FAMILY_KOFFING(109),
+    /**
+     * <code>FAMILY_RHYHORN = 111;</code>
+     */
+    FAMILY_RHYHORN(111),
+    /**
+     * <code>FAMILY_CHANSEY = 113;</code>
+     */
+    FAMILY_CHANSEY(113),
+    /**
+     * <code>FAMILY_TANGELA = 114;</code>
+     */
+    FAMILY_TANGELA(114),
+    /**
+     * <code>FAMILY_KANGASKHAN = 115;</code>
+     */
+    FAMILY_KANGASKHAN(115),
+    /**
+     * <code>FAMILY_HORSEA = 116;</code>
+     */
+    FAMILY_HORSEA(116),
+    /**
+     * <code>FAMILY_GOLDEEN = 118;</code>
+     */
+    FAMILY_GOLDEEN(118),
+    /**
+     * <code>FAMILY_STARYU = 120;</code>
+     */
+    FAMILY_STARYU(120),
+    /**
+     * <code>FAMILY_MR_MIME = 122;</code>
+     */
+    FAMILY_MR_MIME(122),
+    /**
+     * <code>FAMILY_SCYTHER = 123;</code>
+     */
+    FAMILY_SCYTHER(123),
+    /**
+     * <code>FAMILY_JYNX = 124;</code>
+     */
+    FAMILY_JYNX(124),
+    /**
+     * <code>FAMILY_ELECTABUZZ = 125;</code>
+     */
+    FAMILY_ELECTABUZZ(125),
+    /**
+     * <code>FAMILY_MAGMAR = 126;</code>
+     */
+    FAMILY_MAGMAR(126),
+    /**
+     * <code>FAMILY_PINSIR = 127;</code>
+     */
+    FAMILY_PINSIR(127),
+    /**
+     * <code>FAMILY_TAUROS = 128;</code>
+     */
+    FAMILY_TAUROS(128),
+    /**
+     * <code>FAMILY_MAGIKARP = 129;</code>
+     */
+    FAMILY_MAGIKARP(129),
+    /**
+     * <code>FAMILY_LAPRAS = 131;</code>
+     */
+    FAMILY_LAPRAS(131),
+    /**
+     * <code>FAMILY_DITTO = 132;</code>
+     */
+    FAMILY_DITTO(132),
+    /**
+     * <code>FAMILY_EEVEE = 133;</code>
+     */
+    FAMILY_EEVEE(133),
+    /**
+     * <code>FAMILY_PORYGON = 137;</code>
+     */
+    FAMILY_PORYGON(137),
+    /**
+     * <code>FAMILY_OMANYTE = 138;</code>
+     */
+    FAMILY_OMANYTE(138),
+    /**
+     * <code>FAMILY_KABUTO = 140;</code>
+     */
+    FAMILY_KABUTO(140),
+    /**
+     * <code>FAMILY_AERODACTYL = 142;</code>
+     */
+    FAMILY_AERODACTYL(142),
+    /**
+     * <code>FAMILY_SNORLAX = 143;</code>
+     */
+    FAMILY_SNORLAX(143),
+    /**
+     * <code>FAMILY_ARTICUNO = 144;</code>
+     */
+    FAMILY_ARTICUNO(144),
+    /**
+     * <code>FAMILY_ZAPDOS = 145;</code>
+     */
+    FAMILY_ZAPDOS(145),
+    /**
+     * <code>FAMILY_MOLTRES = 146;</code>
+     */
+    FAMILY_MOLTRES(146),
+    /**
+     * <code>FAMILY_DRATINI = 147;</code>
+     */
+    FAMILY_DRATINI(147),
+    /**
+     * <code>FAMILY_MEWTWO = 150;</code>
+     */
+    FAMILY_MEWTWO(150),
+    /**
+     * <code>FAMILY_MEW = 151;</code>
+     */
+    FAMILY_MEW(151),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>FAMILY_UNSET = 0;</code>
+     */
+    public static final int FAMILY_UNSET_VALUE = 0;
+    /**
+     * <code>FAMILY_BULBASAUR = 1;</code>
+     */
+    public static final int FAMILY_BULBASAUR_VALUE = 1;
+    /**
+     * <code>FAMILY_CHARMANDER = 4;</code>
+     */
+    public static final int FAMILY_CHARMANDER_VALUE = 4;
+    /**
+     * <code>FAMILY_SQUIRTLE = 7;</code>
+     */
+    public static final int FAMILY_SQUIRTLE_VALUE = 7;
+    /**
+     * <code>FAMILY_CATERPIE = 10;</code>
+     */
+    public static final int FAMILY_CATERPIE_VALUE = 10;
+    /**
+     * <code>FAMILY_WEEDLE = 13;</code>
+     */
+    public static final int FAMILY_WEEDLE_VALUE = 13;
+    /**
+     * <code>FAMILY_PIDGEY = 16;</code>
+     */
+    public static final int FAMILY_PIDGEY_VALUE = 16;
+    /**
+     * <code>FAMILY_RATTATA = 19;</code>
+     */
+    public static final int FAMILY_RATTATA_VALUE = 19;
+    /**
+     * <code>FAMILY_SPEAROW = 21;</code>
+     */
+    public static final int FAMILY_SPEAROW_VALUE = 21;
+    /**
+     * <code>FAMILY_EKANS = 23;</code>
+     */
+    public static final int FAMILY_EKANS_VALUE = 23;
+    /**
+     * <code>FAMILY_PIKACHU = 25;</code>
+     */
+    public static final int FAMILY_PIKACHU_VALUE = 25;
+    /**
+     * <code>FAMILY_SANDSHREW = 27;</code>
+     */
+    public static final int FAMILY_SANDSHREW_VALUE = 27;
+    /**
+     * <code>FAMILY_NIDORAN_FEMALE = 29;</code>
+     */
+    public static final int FAMILY_NIDORAN_FEMALE_VALUE = 29;
+    /**
+     * <code>FAMILY_NIDORAN_MALE = 32;</code>
+     */
+    public static final int FAMILY_NIDORAN_MALE_VALUE = 32;
+    /**
+     * <code>FAMILY_CLEFAIRY = 35;</code>
+     */
+    public static final int FAMILY_CLEFAIRY_VALUE = 35;
+    /**
+     * <code>FAMILY_VULPIX = 37;</code>
+     */
+    public static final int FAMILY_VULPIX_VALUE = 37;
+    /**
+     * <code>FAMILY_JIGGLYPUFF = 39;</code>
+     */
+    public static final int FAMILY_JIGGLYPUFF_VALUE = 39;
+    /**
+     * <code>FAMILY_ZUBAT = 41;</code>
+     */
+    public static final int FAMILY_ZUBAT_VALUE = 41;
+    /**
+     * <code>FAMILY_ODDISH = 43;</code>
+     */
+    public static final int FAMILY_ODDISH_VALUE = 43;
+    /**
+     * <code>FAMILY_PARAS = 46;</code>
+     */
+    public static final int FAMILY_PARAS_VALUE = 46;
+    /**
+     * <code>FAMILY_VENONAT = 48;</code>
+     */
+    public static final int FAMILY_VENONAT_VALUE = 48;
+    /**
+     * <code>FAMILY_DIGLETT = 50;</code>
+     */
+    public static final int FAMILY_DIGLETT_VALUE = 50;
+    /**
+     * <code>FAMILY_MEOWTH = 52;</code>
+     */
+    public static final int FAMILY_MEOWTH_VALUE = 52;
+    /**
+     * <code>FAMILY_PSYDUCK = 54;</code>
+     */
+    public static final int FAMILY_PSYDUCK_VALUE = 54;
+    /**
+     * <code>FAMILY_MANKEY = 56;</code>
+     */
+    public static final int FAMILY_MANKEY_VALUE = 56;
+    /**
+     * <code>FAMILY_GROWLITHE = 58;</code>
+     */
+    public static final int FAMILY_GROWLITHE_VALUE = 58;
+    /**
+     * <code>FAMILY_POLIWAG = 60;</code>
+     */
+    public static final int FAMILY_POLIWAG_VALUE = 60;
+    /**
+     * <code>FAMILY_ABRA = 63;</code>
+     */
+    public static final int FAMILY_ABRA_VALUE = 63;
+    /**
+     * <code>FAMILY_MACHOP = 66;</code>
+     */
+    public static final int FAMILY_MACHOP_VALUE = 66;
+    /**
+     * <code>FAMILY_BELLSPROUT = 69;</code>
+     */
+    public static final int FAMILY_BELLSPROUT_VALUE = 69;
+    /**
+     * <code>FAMILY_TENTACOOL = 72;</code>
+     */
+    public static final int FAMILY_TENTACOOL_VALUE = 72;
+    /**
+     * <code>FAMILY_GEODUDE = 74;</code>
+     */
+    public static final int FAMILY_GEODUDE_VALUE = 74;
+    /**
+     * <code>FAMILY_PONYTA = 77;</code>
+     */
+    public static final int FAMILY_PONYTA_VALUE = 77;
+    /**
+     * <code>FAMILY_SLOWPOKE = 79;</code>
+     */
+    public static final int FAMILY_SLOWPOKE_VALUE = 79;
+    /**
+     * <code>FAMILY_MAGNEMITE = 81;</code>
+     */
+    public static final int FAMILY_MAGNEMITE_VALUE = 81;
+    /**
+     * <code>FAMILY_FARFETCHD = 83;</code>
+     */
+    public static final int FAMILY_FARFETCHD_VALUE = 83;
+    /**
+     * <code>FAMILY_DODUO = 84;</code>
+     */
+    public static final int FAMILY_DODUO_VALUE = 84;
+    /**
+     * <code>FAMILY_SEEL = 86;</code>
+     */
+    public static final int FAMILY_SEEL_VALUE = 86;
+    /**
+     * <code>FAMILY_GRIMER = 88;</code>
+     */
+    public static final int FAMILY_GRIMER_VALUE = 88;
+    /**
+     * <code>FAMILY_SHELLDER = 90;</code>
+     */
+    public static final int FAMILY_SHELLDER_VALUE = 90;
+    /**
+     * <code>FAMILY_GASTLY = 92;</code>
+     */
+    public static final int FAMILY_GASTLY_VALUE = 92;
+    /**
+     * <code>FAMILY_ONIX = 95;</code>
+     */
+    public static final int FAMILY_ONIX_VALUE = 95;
+    /**
+     * <code>FAMILY_DROWZEE = 96;</code>
+     */
+    public static final int FAMILY_DROWZEE_VALUE = 96;
+    /**
+     * <code>FAMILY_HYPNO = 97;</code>
+     */
+    public static final int FAMILY_HYPNO_VALUE = 97;
+    /**
+     * <code>FAMILY_KRABBY = 98;</code>
+     */
+    public static final int FAMILY_KRABBY_VALUE = 98;
+    /**
+     * <code>FAMILY_VOLTORB = 100;</code>
+     */
+    public static final int FAMILY_VOLTORB_VALUE = 100;
+    /**
+     * <code>FAMILY_EXEGGCUTE = 102;</code>
+     */
+    public static final int FAMILY_EXEGGCUTE_VALUE = 102;
+    /**
+     * <code>FAMILY_CUBONE = 104;</code>
+     */
+    public static final int FAMILY_CUBONE_VALUE = 104;
+    /**
+     * <code>FAMILY_HITMONLEE = 106;</code>
+     */
+    public static final int FAMILY_HITMONLEE_VALUE = 106;
+    /**
+     * <code>FAMILY_HITMONCHAN = 107;</code>
+     */
+    public static final int FAMILY_HITMONCHAN_VALUE = 107;
+    /**
+     * <code>FAMILY_LICKITUNG = 108;</code>
+     */
+    public static final int FAMILY_LICKITUNG_VALUE = 108;
+    /**
+     * <code>FAMILY_KOFFING = 109;</code>
+     */
+    public static final int FAMILY_KOFFING_VALUE = 109;
+    /**
+     * <code>FAMILY_RHYHORN = 111;</code>
+     */
+    public static final int FAMILY_RHYHORN_VALUE = 111;
+    /**
+     * <code>FAMILY_CHANSEY = 113;</code>
+     */
+    public static final int FAMILY_CHANSEY_VALUE = 113;
+    /**
+     * <code>FAMILY_TANGELA = 114;</code>
+     */
+    public static final int FAMILY_TANGELA_VALUE = 114;
+    /**
+     * <code>FAMILY_KANGASKHAN = 115;</code>
+     */
+    public static final int FAMILY_KANGASKHAN_VALUE = 115;
+    /**
+     * <code>FAMILY_HORSEA = 116;</code>
+     */
+    public static final int FAMILY_HORSEA_VALUE = 116;
+    /**
+     * <code>FAMILY_GOLDEEN = 118;</code>
+     */
+    public static final int FAMILY_GOLDEEN_VALUE = 118;
+    /**
+     * <code>FAMILY_STARYU = 120;</code>
+     */
+    public static final int FAMILY_STARYU_VALUE = 120;
+    /**
+     * <code>FAMILY_MR_MIME = 122;</code>
+     */
+    public static final int FAMILY_MR_MIME_VALUE = 122;
+    /**
+     * <code>FAMILY_SCYTHER = 123;</code>
+     */
+    public static final int FAMILY_SCYTHER_VALUE = 123;
+    /**
+     * <code>FAMILY_JYNX = 124;</code>
+     */
+    public static final int FAMILY_JYNX_VALUE = 124;
+    /**
+     * <code>FAMILY_ELECTABUZZ = 125;</code>
+     */
+    public static final int FAMILY_ELECTABUZZ_VALUE = 125;
+    /**
+     * <code>FAMILY_MAGMAR = 126;</code>
+     */
+    public static final int FAMILY_MAGMAR_VALUE = 126;
+    /**
+     * <code>FAMILY_PINSIR = 127;</code>
+     */
+    public static final int FAMILY_PINSIR_VALUE = 127;
+    /**
+     * <code>FAMILY_TAUROS = 128;</code>
+     */
+    public static final int FAMILY_TAUROS_VALUE = 128;
+    /**
+     * <code>FAMILY_MAGIKARP = 129;</code>
+     */
+    public static final int FAMILY_MAGIKARP_VALUE = 129;
+    /**
+     * <code>FAMILY_LAPRAS = 131;</code>
+     */
+    public static final int FAMILY_LAPRAS_VALUE = 131;
+    /**
+     * <code>FAMILY_DITTO = 132;</code>
+     */
+    public static final int FAMILY_DITTO_VALUE = 132;
+    /**
+     * <code>FAMILY_EEVEE = 133;</code>
+     */
+    public static final int FAMILY_EEVEE_VALUE = 133;
+    /**
+     * <code>FAMILY_PORYGON = 137;</code>
+     */
+    public static final int FAMILY_PORYGON_VALUE = 137;
+    /**
+     * <code>FAMILY_OMANYTE = 138;</code>
+     */
+    public static final int FAMILY_OMANYTE_VALUE = 138;
+    /**
+     * <code>FAMILY_KABUTO = 140;</code>
+     */
+    public static final int FAMILY_KABUTO_VALUE = 140;
+    /**
+     * <code>FAMILY_AERODACTYL = 142;</code>
+     */
+    public static final int FAMILY_AERODACTYL_VALUE = 142;
+    /**
+     * <code>FAMILY_SNORLAX = 143;</code>
+     */
+    public static final int FAMILY_SNORLAX_VALUE = 143;
+    /**
+     * <code>FAMILY_ARTICUNO = 144;</code>
+     */
+    public static final int FAMILY_ARTICUNO_VALUE = 144;
+    /**
+     * <code>FAMILY_ZAPDOS = 145;</code>
+     */
+    public static final int FAMILY_ZAPDOS_VALUE = 145;
+    /**
+     * <code>FAMILY_MOLTRES = 146;</code>
+     */
+    public static final int FAMILY_MOLTRES_VALUE = 146;
+    /**
+     * <code>FAMILY_DRATINI = 147;</code>
+     */
+    public static final int FAMILY_DRATINI_VALUE = 147;
+    /**
+     * <code>FAMILY_MEWTWO = 150;</code>
+     */
+    public static final int FAMILY_MEWTWO_VALUE = 150;
+    /**
+     * <code>FAMILY_MEW = 151;</code>
+     */
+    public static final int FAMILY_MEW_VALUE = 151;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PokemonFamilyId valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PokemonFamilyId forNumber(int value) {
+      switch (value) {
+        case 0: return FAMILY_UNSET;
+        case 1: return FAMILY_BULBASAUR;
+        case 4: return FAMILY_CHARMANDER;
+        case 7: return FAMILY_SQUIRTLE;
+        case 10: return FAMILY_CATERPIE;
+        case 13: return FAMILY_WEEDLE;
+        case 16: return FAMILY_PIDGEY;
+        case 19: return FAMILY_RATTATA;
+        case 21: return FAMILY_SPEAROW;
+        case 23: return FAMILY_EKANS;
+        case 25: return FAMILY_PIKACHU;
+        case 27: return FAMILY_SANDSHREW;
+        case 29: return FAMILY_NIDORAN_FEMALE;
+        case 32: return FAMILY_NIDORAN_MALE;
+        case 35: return FAMILY_CLEFAIRY;
+        case 37: return FAMILY_VULPIX;
+        case 39: return FAMILY_JIGGLYPUFF;
+        case 41: return FAMILY_ZUBAT;
+        case 43: return FAMILY_ODDISH;
+        case 46: return FAMILY_PARAS;
+        case 48: return FAMILY_VENONAT;
+        case 50: return FAMILY_DIGLETT;
+        case 52: return FAMILY_MEOWTH;
+        case 54: return FAMILY_PSYDUCK;
+        case 56: return FAMILY_MANKEY;
+        case 58: return FAMILY_GROWLITHE;
+        case 60: return FAMILY_POLIWAG;
+        case 63: return FAMILY_ABRA;
+        case 66: return FAMILY_MACHOP;
+        case 69: return FAMILY_BELLSPROUT;
+        case 72: return FAMILY_TENTACOOL;
+        case 74: return FAMILY_GEODUDE;
+        case 77: return FAMILY_PONYTA;
+        case 79: return FAMILY_SLOWPOKE;
+        case 81: return FAMILY_MAGNEMITE;
+        case 83: return FAMILY_FARFETCHD;
+        case 84: return FAMILY_DODUO;
+        case 86: return FAMILY_SEEL;
+        case 88: return FAMILY_GRIMER;
+        case 90: return FAMILY_SHELLDER;
+        case 92: return FAMILY_GASTLY;
+        case 95: return FAMILY_ONIX;
+        case 96: return FAMILY_DROWZEE;
+        case 97: return FAMILY_HYPNO;
+        case 98: return FAMILY_KRABBY;
+        case 100: return FAMILY_VOLTORB;
+        case 102: return FAMILY_EXEGGCUTE;
+        case 104: return FAMILY_CUBONE;
+        case 106: return FAMILY_HITMONLEE;
+        case 107: return FAMILY_HITMONCHAN;
+        case 108: return FAMILY_LICKITUNG;
+        case 109: return FAMILY_KOFFING;
+        case 111: return FAMILY_RHYHORN;
+        case 113: return FAMILY_CHANSEY;
+        case 114: return FAMILY_TANGELA;
+        case 115: return FAMILY_KANGASKHAN;
+        case 116: return FAMILY_HORSEA;
+        case 118: return FAMILY_GOLDEEN;
+        case 120: return FAMILY_STARYU;
+        case 122: return FAMILY_MR_MIME;
+        case 123: return FAMILY_SCYTHER;
+        case 124: return FAMILY_JYNX;
+        case 125: return FAMILY_ELECTABUZZ;
+        case 126: return FAMILY_MAGMAR;
+        case 127: return FAMILY_PINSIR;
+        case 128: return FAMILY_TAUROS;
+        case 129: return FAMILY_MAGIKARP;
+        case 131: return FAMILY_LAPRAS;
+        case 132: return FAMILY_DITTO;
+        case 133: return FAMILY_EEVEE;
+        case 137: return FAMILY_PORYGON;
+        case 138: return FAMILY_OMANYTE;
+        case 140: return FAMILY_KABUTO;
+        case 142: return FAMILY_AERODACTYL;
+        case 143: return FAMILY_SNORLAX;
+        case 144: return FAMILY_ARTICUNO;
+        case 145: return FAMILY_ZAPDOS;
+        case 146: return FAMILY_MOLTRES;
+        case 147: return FAMILY_DRATINI;
+        case 150: return FAMILY_MEWTWO;
+        case 151: return FAMILY_MEW;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PokemonFamilyId>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PokemonFamilyId> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PokemonFamilyId>() {
+            public PokemonFamilyId findValueByNumber(int number) {
+              return PokemonFamilyId.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private PokemonFamilyId(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonFamilyId)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.Gender}
+   */
+  public enum Gender
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>MALE = 0;</code>
+     */
+    MALE(0),
+    /**
+     * <code>FEMALE = 1;</code>
+     */
+    FEMALE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>MALE = 0;</code>
+     */
+    public static final int MALE_VALUE = 0;
+    /**
+     * <code>FEMALE = 1;</code>
+     */
+    public static final int FEMALE_VALUE = 1;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Gender valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Gender forNumber(int value) {
+      switch (value) {
+        case 0: return MALE;
+        case 1: return FEMALE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Gender>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Gender> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Gender>() {
+            public Gender findValueByNumber(int number) {
+              return Gender.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private Gender(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.Gender)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonMovementType}
+   */
+  public enum PokemonMovementType
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>MOVEMENT_STATIC = 0;</code>
+     */
+    MOVEMENT_STATIC(0),
+    /**
+     * <code>MOVEMENT_JUMP = 1;</code>
+     */
+    MOVEMENT_JUMP(1),
+    /**
+     * <code>MOVEMENT_VERTICAL = 2;</code>
+     */
+    MOVEMENT_VERTICAL(2),
+    /**
+     * <code>MOVEMENT_PSYCHIC = 3;</code>
+     */
+    MOVEMENT_PSYCHIC(3),
+    /**
+     * <code>MOVEMENT_ELECTRIC = 4;</code>
+     */
+    MOVEMENT_ELECTRIC(4),
+    /**
+     * <code>MOVEMENT_FLYING = 5;</code>
+     */
+    MOVEMENT_FLYING(5),
+    /**
+     * <code>MOVEMENT_HOVERING = 6;</code>
+     */
+    MOVEMENT_HOVERING(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>MOVEMENT_STATIC = 0;</code>
+     */
+    public static final int MOVEMENT_STATIC_VALUE = 0;
+    /**
+     * <code>MOVEMENT_JUMP = 1;</code>
+     */
+    public static final int MOVEMENT_JUMP_VALUE = 1;
+    /**
+     * <code>MOVEMENT_VERTICAL = 2;</code>
+     */
+    public static final int MOVEMENT_VERTICAL_VALUE = 2;
+    /**
+     * <code>MOVEMENT_PSYCHIC = 3;</code>
+     */
+    public static final int MOVEMENT_PSYCHIC_VALUE = 3;
+    /**
+     * <code>MOVEMENT_ELECTRIC = 4;</code>
+     */
+    public static final int MOVEMENT_ELECTRIC_VALUE = 4;
+    /**
+     * <code>MOVEMENT_FLYING = 5;</code>
+     */
+    public static final int MOVEMENT_FLYING_VALUE = 5;
+    /**
+     * <code>MOVEMENT_HOVERING = 6;</code>
+     */
+    public static final int MOVEMENT_HOVERING_VALUE = 6;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PokemonMovementType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PokemonMovementType forNumber(int value) {
+      switch (value) {
+        case 0: return MOVEMENT_STATIC;
+        case 1: return MOVEMENT_JUMP;
+        case 2: return MOVEMENT_VERTICAL;
+        case 3: return MOVEMENT_PSYCHIC;
+        case 4: return MOVEMENT_ELECTRIC;
+        case 5: return MOVEMENT_FLYING;
+        case 6: return MOVEMENT_HOVERING;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PokemonMovementType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PokemonMovementType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PokemonMovementType>() {
+            public PokemonMovementType findValueByNumber(int number) {
+              return PokemonMovementType.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private PokemonMovementType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonMovementType)
+  }
+
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.enums.PokemonType}
+   */
+  public enum PokemonType
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>POKEMON_TYPE_NONE = 0;</code>
+     */
+    POKEMON_TYPE_NONE(0),
+    /**
+     * <code>POKEMON_TYPE_NORMAL = 1;</code>
+     */
+    POKEMON_TYPE_NORMAL(1),
+    /**
+     * <code>POKEMON_TYPE_FIGHTING = 2;</code>
+     */
+    POKEMON_TYPE_FIGHTING(2),
+    /**
+     * <code>POKEMON_TYPE_FLYING = 3;</code>
+     */
+    POKEMON_TYPE_FLYING(3),
+    /**
+     * <code>POKEMON_TYPE_POISON = 4;</code>
+     */
+    POKEMON_TYPE_POISON(4),
+    /**
+     * <code>POKEMON_TYPE_GROUND = 5;</code>
+     */
+    POKEMON_TYPE_GROUND(5),
+    /**
+     * <code>POKEMON_TYPE_ROCK = 6;</code>
+     */
+    POKEMON_TYPE_ROCK(6),
+    /**
+     * <code>POKEMON_TYPE_BUG = 7;</code>
+     */
+    POKEMON_TYPE_BUG(7),
+    /**
+     * <code>POKEMON_TYPE_GHOST = 8;</code>
+     */
+    POKEMON_TYPE_GHOST(8),
+    /**
+     * <code>POKEMON_TYPE_STEEL = 9;</code>
+     */
+    POKEMON_TYPE_STEEL(9),
+    /**
+     * <code>POKEMON_TYPE_FIRE = 10;</code>
+     */
+    POKEMON_TYPE_FIRE(10),
+    /**
+     * <code>POKEMON_TYPE_WATER = 11;</code>
+     */
+    POKEMON_TYPE_WATER(11),
+    /**
+     * <code>POKEMON_TYPE_GRASS = 12;</code>
+     */
+    POKEMON_TYPE_GRASS(12),
+    /**
+     * <code>POKEMON_TYPE_ELECTRIC = 13;</code>
+     */
+    POKEMON_TYPE_ELECTRIC(13),
+    /**
+     * <code>POKEMON_TYPE_PSYCHIC = 14;</code>
+     */
+    POKEMON_TYPE_PSYCHIC(14),
+    /**
+     * <code>POKEMON_TYPE_ICE = 15;</code>
+     */
+    POKEMON_TYPE_ICE(15),
+    /**
+     * <code>POKEMON_TYPE_DRAGON = 16;</code>
+     */
+    POKEMON_TYPE_DRAGON(16),
+    /**
+     * <code>POKEMON_TYPE_DARK = 17;</code>
+     */
+    POKEMON_TYPE_DARK(17),
+    /**
+     * <code>POKEMON_TYPE_FAIRY = 18;</code>
+     */
+    POKEMON_TYPE_FAIRY(18),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>POKEMON_TYPE_NONE = 0;</code>
+     */
+    public static final int POKEMON_TYPE_NONE_VALUE = 0;
+    /**
+     * <code>POKEMON_TYPE_NORMAL = 1;</code>
+     */
+    public static final int POKEMON_TYPE_NORMAL_VALUE = 1;
+    /**
+     * <code>POKEMON_TYPE_FIGHTING = 2;</code>
+     */
+    public static final int POKEMON_TYPE_FIGHTING_VALUE = 2;
+    /**
+     * <code>POKEMON_TYPE_FLYING = 3;</code>
+     */
+    public static final int POKEMON_TYPE_FLYING_VALUE = 3;
+    /**
+     * <code>POKEMON_TYPE_POISON = 4;</code>
+     */
+    public static final int POKEMON_TYPE_POISON_VALUE = 4;
+    /**
+     * <code>POKEMON_TYPE_GROUND = 5;</code>
+     */
+    public static final int POKEMON_TYPE_GROUND_VALUE = 5;
+    /**
+     * <code>POKEMON_TYPE_ROCK = 6;</code>
+     */
+    public static final int POKEMON_TYPE_ROCK_VALUE = 6;
+    /**
+     * <code>POKEMON_TYPE_BUG = 7;</code>
+     */
+    public static final int POKEMON_TYPE_BUG_VALUE = 7;
+    /**
+     * <code>POKEMON_TYPE_GHOST = 8;</code>
+     */
+    public static final int POKEMON_TYPE_GHOST_VALUE = 8;
+    /**
+     * <code>POKEMON_TYPE_STEEL = 9;</code>
+     */
+    public static final int POKEMON_TYPE_STEEL_VALUE = 9;
+    /**
+     * <code>POKEMON_TYPE_FIRE = 10;</code>
+     */
+    public static final int POKEMON_TYPE_FIRE_VALUE = 10;
+    /**
+     * <code>POKEMON_TYPE_WATER = 11;</code>
+     */
+    public static final int POKEMON_TYPE_WATER_VALUE = 11;
+    /**
+     * <code>POKEMON_TYPE_GRASS = 12;</code>
+     */
+    public static final int POKEMON_TYPE_GRASS_VALUE = 12;
+    /**
+     * <code>POKEMON_TYPE_ELECTRIC = 13;</code>
+     */
+    public static final int POKEMON_TYPE_ELECTRIC_VALUE = 13;
+    /**
+     * <code>POKEMON_TYPE_PSYCHIC = 14;</code>
+     */
+    public static final int POKEMON_TYPE_PSYCHIC_VALUE = 14;
+    /**
+     * <code>POKEMON_TYPE_ICE = 15;</code>
+     */
+    public static final int POKEMON_TYPE_ICE_VALUE = 15;
+    /**
+     * <code>POKEMON_TYPE_DRAGON = 16;</code>
+     */
+    public static final int POKEMON_TYPE_DRAGON_VALUE = 16;
+    /**
+     * <code>POKEMON_TYPE_DARK = 17;</code>
+     */
+    public static final int POKEMON_TYPE_DARK_VALUE = 17;
+    /**
+     * <code>POKEMON_TYPE_FAIRY = 18;</code>
+     */
+    public static final int POKEMON_TYPE_FAIRY_VALUE = 18;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PokemonType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PokemonType forNumber(int value) {
+      switch (value) {
+        case 0: return POKEMON_TYPE_NONE;
+        case 1: return POKEMON_TYPE_NORMAL;
+        case 2: return POKEMON_TYPE_FIGHTING;
+        case 3: return POKEMON_TYPE_FLYING;
+        case 4: return POKEMON_TYPE_POISON;
+        case 5: return POKEMON_TYPE_GROUND;
+        case 6: return POKEMON_TYPE_ROCK;
+        case 7: return POKEMON_TYPE_BUG;
+        case 8: return POKEMON_TYPE_GHOST;
+        case 9: return POKEMON_TYPE_STEEL;
+        case 10: return POKEMON_TYPE_FIRE;
+        case 11: return POKEMON_TYPE_WATER;
+        case 12: return POKEMON_TYPE_GRASS;
+        case 13: return POKEMON_TYPE_ELECTRIC;
+        case 14: return POKEMON_TYPE_PSYCHIC;
+        case 15: return POKEMON_TYPE_ICE;
+        case 16: return POKEMON_TYPE_DRAGON;
+        case 17: return POKEMON_TYPE_DARK;
+        case 18: return POKEMON_TYPE_FAIRY;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PokemonType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PokemonType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PokemonType>() {
+            public PokemonType findValueByNumber(int number) {
+              return PokemonType.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private PokemonType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.enums.PokemonType)
   }
 
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n+com/github/aeonlucid/pogoprotos/Enums." +
-      "proto\022%com.github.aeonlucid.pogoprotos.e" +
-      "nums*\255\001\n\023PokemonMovementType\022\023\n\017MOVEMENT" +
-      "_STATIC\020\000\022\021\n\rMOVEMENT_JUMP\020\001\022\025\n\021MOVEMENT" +
-      "_VERTICAL\020\002\022\024\n\020MOVEMENT_PSYCHIC\020\003\022\025\n\021MOV" +
-      "EMENT_ELECTRIC\020\004\022\023\n\017MOVEMENT_FLYING\020\005\022\025\n" +
-      "\021MOVEMENT_HOVERING\020\006*\230\004\n\nItemEffect\022\024\n\020I" +
-      "TEM_EFFECT_NONE\020\000\022\034\n\027ITEM_EFFECT_CAP_NO_" +
-      "FLEE\020\350\007\022 \n\033ITEM_EFFECT_CAP_NO_MOVEMENT\020\352" +
-      "\007\022\036\n\031ITEM_EFFECT_CAP_NO_THREAT\020\353\007\022\037\n\032ITE",
-      "M_EFFECT_CAP_TARGET_MAX\020\354\007\022 \n\033ITEM_EFFEC" +
-      "T_CAP_TARGET_SLOW\020\355\007\022!\n\034ITEM_EFFECT_CAP_" +
-      "CHANCE_NIGHT\020\356\007\022#\n\036ITEM_EFFECT_CAP_CHANC" +
-      "E_TRAINER\020\357\007\022\'\n\"ITEM_EFFECT_CAP_CHANCE_F" +
-      "IRST_THROW\020\360\007\022\"\n\035ITEM_EFFECT_CAP_CHANCE_" +
-      "LEGEND\020\361\007\022!\n\034ITEM_EFFECT_CAP_CHANCE_HEAV" +
-      "Y\020\362\007\022\"\n\035ITEM_EFFECT_CAP_CHANCE_REPEAT\020\363\007" +
-      "\022\'\n\"ITEM_EFFECT_CAP_CHANCE_MULTI_THROW\020\364" +
-      "\007\022\"\n\035ITEM_EFFECT_CAP_CHANCE_ALWAYS\020\365\007\022(\n" +
-      "#ITEM_EFFECT_CAP_CHANCE_SINGLE_THROW\020\366\007*",
-      "\223\020\n\tPokemonId\022\r\n\tMISSINGNO\020\000\022\r\n\tBULBASAU" +
-      "R\020\001\022\013\n\007IVYSAUR\020\002\022\014\n\010VENUSAUR\020\003\022\016\n\nCHARMA" +
-      "NDER\020\004\022\016\n\nCHARMELEON\020\005\022\r\n\tCHARIZARD\020\006\022\014\n" +
-      "\010SQUIRTLE\020\007\022\r\n\tWARTORTLE\020\010\022\r\n\tBLASTOISE\020" +
-      "\t\022\014\n\010CATERPIE\020\n\022\013\n\007METAPOD\020\013\022\016\n\nBUTTERFR" +
-      "EE\020\014\022\n\n\006WEEDLE\020\r\022\n\n\006KAKUNA\020\016\022\014\n\010BEEDRILL" +
-      "\020\017\022\n\n\006PIDGEY\020\020\022\r\n\tPIDGEOTTO\020\021\022\013\n\007PIDGEOT" +
-      "\020\022\022\013\n\007RATTATA\020\023\022\014\n\010RATICATE\020\024\022\013\n\007SPEAROW" +
-      "\020\025\022\n\n\006FEAROW\020\026\022\t\n\005EKANS\020\027\022\t\n\005ARBOK\020\030\022\013\n\007" +
-      "PIKACHU\020\031\022\n\n\006RAICHU\020\032\022\r\n\tSANDSHREW\020\033\022\r\n\t",
-      "SANDSLASH\020\034\022\022\n\016NIDORAN_FEMALE\020\035\022\014\n\010NIDOR" +
-      "INA\020\036\022\r\n\tNIDOQUEEN\020\037\022\020\n\014NIDORAN_MALE\020 \022\014" +
-      "\n\010NIDORINO\020!\022\014\n\010NIDOKING\020\"\022\014\n\010CLEFAIRY\020#" +
-      "\022\014\n\010CLEFABLE\020$\022\n\n\006VULPIX\020%\022\r\n\tNINETALES\020" +
-      "&\022\016\n\nJIGGLYPUFF\020\'\022\016\n\nWIGGLYTUFF\020(\022\t\n\005ZUB" +
-      "AT\020)\022\n\n\006GOLBAT\020*\022\n\n\006ODDISH\020+\022\t\n\005GLOOM\020,\022" +
-      "\r\n\tVILEPLUME\020-\022\t\n\005PARAS\020.\022\014\n\010PARASECT\020/\022" +
-      "\013\n\007VENONAT\0200\022\014\n\010VENOMOTH\0201\022\013\n\007DIGLETT\0202\022" +
-      "\013\n\007DUGTRIO\0203\022\n\n\006MEOWTH\0204\022\013\n\007PERSIAN\0205\022\013\n" +
-      "\007PSYDUCK\0206\022\013\n\007GOLDUCK\0207\022\n\n\006MANKEY\0208\022\014\n\010P",
-      "RIMEAPE\0209\022\r\n\tGROWLITHE\020:\022\014\n\010ARCANINE\020;\022\013" +
-      "\n\007POLIWAG\020<\022\r\n\tPOLIWHIRL\020=\022\r\n\tPOLIWRATH\020" +
-      ">\022\010\n\004ABRA\020?\022\013\n\007KADABRA\020@\022\014\n\010ALAKAZAM\020A\022\n" +
-      "\n\006MACHOP\020B\022\013\n\007MACHOKE\020C\022\013\n\007MACHAMP\020D\022\016\n\n" +
-      "BELLSPROUT\020E\022\016\n\nWEEPINBELL\020F\022\016\n\nVICTREEB" +
-      "EL\020G\022\r\n\tTENTACOOL\020H\022\016\n\nTENTACRUEL\020I\022\013\n\007G" +
-      "EODUDE\020J\022\014\n\010GRAVELER\020K\022\t\n\005GOLEM\020L\022\n\n\006PON" +
-      "YTA\020M\022\014\n\010RAPIDASH\020N\022\014\n\010SLOWPOKE\020O\022\013\n\007SLO" +
-      "WBRO\020P\022\r\n\tMAGNEMITE\020Q\022\014\n\010MAGNETON\020R\022\r\n\tF" +
-      "ARFETCHD\020S\022\t\n\005DODUO\020T\022\n\n\006DODRIO\020U\022\010\n\004SEE",
-      "L\020V\022\013\n\007DEWGONG\020W\022\n\n\006GRIMER\020X\022\007\n\003MUK\020Y\022\014\n" +
-      "\010SHELLDER\020Z\022\014\n\010CLOYSTER\020[\022\n\n\006GASTLY\020\\\022\013\n" +
-      "\007HAUNTER\020]\022\n\n\006GENGAR\020^\022\010\n\004ONIX\020_\022\013\n\007DROW" +
-      "ZEE\020`\022\t\n\005HYPNO\020a\022\n\n\006KRABBY\020b\022\013\n\007KINGLER\020" +
-      "c\022\013\n\007VOLTORB\020d\022\r\n\tELECTRODE\020e\022\r\n\tEXEGGCU" +
-      "TE\020f\022\r\n\tEXEGGUTOR\020g\022\n\n\006CUBONE\020h\022\013\n\007MAROW" +
-      "AK\020i\022\r\n\tHITMONLEE\020j\022\016\n\nHITMONCHAN\020k\022\r\n\tL" +
-      "ICKITUNG\020l\022\013\n\007KOFFING\020m\022\013\n\007WEEZING\020n\022\013\n\007" +
-      "RHYHORN\020o\022\n\n\006RHYDON\020p\022\013\n\007CHANSEY\020q\022\013\n\007TA" +
-      "NGELA\020r\022\016\n\nKANGASKHAN\020s\022\n\n\006HORSEA\020t\022\n\n\006S",
-      "EADRA\020u\022\013\n\007GOLDEEN\020v\022\013\n\007SEAKING\020w\022\n\n\006STA" +
-      "RYU\020x\022\013\n\007STARMIE\020y\022\013\n\007MR_MIME\020z\022\013\n\007SCYTH" +
-      "ER\020{\022\010\n\004JYNX\020|\022\016\n\nELECTABUZZ\020}\022\n\n\006MAGMAR" +
-      "\020~\022\n\n\006PINSIR\020\177\022\013\n\006TAUROS\020\200\001\022\r\n\010MAGIKARP\020" +
-      "\201\001\022\r\n\010GYARADOS\020\202\001\022\013\n\006LAPRAS\020\203\001\022\n\n\005DITTO\020" +
-      "\204\001\022\n\n\005EEVEE\020\205\001\022\r\n\010VAPOREON\020\206\001\022\014\n\007JOLTEON" +
-      "\020\207\001\022\014\n\007FLAREON\020\210\001\022\014\n\007PORYGON\020\211\001\022\014\n\007OMANY" +
-      "TE\020\212\001\022\014\n\007OMASTAR\020\213\001\022\013\n\006KABUTO\020\214\001\022\r\n\010KABU" +
-      "TOPS\020\215\001\022\017\n\nAERODACTYL\020\216\001\022\014\n\007SNORLAX\020\217\001\022\r" +
-      "\n\010ARTICUNO\020\220\001\022\013\n\006ZAPDOS\020\221\001\022\014\n\007MOLTRES\020\222\001",
-      "\022\014\n\007DRATINI\020\223\001\022\016\n\tDRAGONAIR\020\224\001\022\016\n\tDRAGON" +
-      "ITE\020\225\001\022\013\n\006MEWTWO\020\226\001\022\010\n\003MEW\020\227\001*\372\014\n\017Pokemo" +
-      "nFamilyId\022\020\n\014FAMILY_UNSET\020\000\022\024\n\020FAMILY_BU" +
-      "LBASAUR\020\001\022\025\n\021FAMILY_CHARMANDER\020\004\022\023\n\017FAMI" +
-      "LY_SQUIRTLE\020\007\022\023\n\017FAMILY_CATERPIE\020\n\022\021\n\rFA" +
-      "MILY_WEEDLE\020\r\022\021\n\rFAMILY_PIDGEY\020\020\022\022\n\016FAMI" +
-      "LY_RATTATA\020\023\022\022\n\016FAMILY_SPEAROW\020\025\022\020\n\014FAMI" +
-      "LY_EKANS\020\027\022\022\n\016FAMILY_PIKACHU\020\031\022\024\n\020FAMILY" +
-      "_SANDSHREW\020\033\022\031\n\025FAMILY_NIDORAN_FEMALE\020\035\022" +
-      "\027\n\023FAMILY_NIDORAN_MALE\020 \022\023\n\017FAMILY_CLEFA",
-      "IRY\020#\022\021\n\rFAMILY_VULPIX\020%\022\025\n\021FAMILY_JIGGL" +
-      "YPUFF\020\'\022\020\n\014FAMILY_ZUBAT\020)\022\021\n\rFAMILY_ODDI" +
-      "SH\020+\022\020\n\014FAMILY_PARAS\020.\022\022\n\016FAMILY_VENONAT" +
-      "\0200\022\022\n\016FAMILY_DIGLETT\0202\022\021\n\rFAMILY_MEOWTH\020" +
-      "4\022\022\n\016FAMILY_PSYDUCK\0206\022\021\n\rFAMILY_MANKEY\0208" +
-      "\022\024\n\020FAMILY_GROWLITHE\020:\022\022\n\016FAMILY_POLIWAG" +
-      "\020<\022\017\n\013FAMILY_ABRA\020?\022\021\n\rFAMILY_MACHOP\020B\022\025" +
-      "\n\021FAMILY_BELLSPROUT\020E\022\024\n\020FAMILY_TENTACOO" +
-      "L\020H\022\022\n\016FAMILY_GEODUDE\020J\022\021\n\rFAMILY_PONYTA" +
-      "\020M\022\023\n\017FAMILY_SLOWPOKE\020O\022\024\n\020FAMILY_MAGNEM",
-      "ITE\020Q\022\024\n\020FAMILY_FARFETCHD\020S\022\020\n\014FAMILY_DO" +
-      "DUO\020T\022\017\n\013FAMILY_SEEL\020V\022\021\n\rFAMILY_GRIMER\020" +
-      "X\022\023\n\017FAMILY_SHELLDER\020Z\022\021\n\rFAMILY_GASTLY\020" +
-      "\\\022\017\n\013FAMILY_ONIX\020_\022\022\n\016FAMILY_DROWZEE\020`\022\020" +
-      "\n\014FAMILY_HYPNO\020a\022\021\n\rFAMILY_KRABBY\020b\022\022\n\016F" +
-      "AMILY_VOLTORB\020d\022\024\n\020FAMILY_EXEGGCUTE\020f\022\021\n" +
-      "\rFAMILY_CUBONE\020h\022\024\n\020FAMILY_HITMONLEE\020j\022\025" +
-      "\n\021FAMILY_HITMONCHAN\020k\022\024\n\020FAMILY_LICKITUN" +
-      "G\020l\022\022\n\016FAMILY_KOFFING\020m\022\022\n\016FAMILY_RHYHOR" +
-      "N\020o\022\022\n\016FAMILY_CHANSEY\020q\022\022\n\016FAMILY_TANGEL",
-      "A\020r\022\025\n\021FAMILY_KANGASKHAN\020s\022\021\n\rFAMILY_HOR" +
-      "SEA\020t\022\022\n\016FAMILY_GOLDEEN\020v\022\021\n\rFAMILY_STAR" +
-      "YU\020x\022\022\n\016FAMILY_MR_MIME\020z\022\022\n\016FAMILY_SCYTH" +
-      "ER\020{\022\017\n\013FAMILY_JYNX\020|\022\025\n\021FAMILY_ELECTABU" +
-      "ZZ\020}\022\021\n\rFAMILY_MAGMAR\020~\022\021\n\rFAMILY_PINSIR" +
-      "\020\177\022\022\n\rFAMILY_TAUROS\020\200\001\022\024\n\017FAMILY_MAGIKAR" +
-      "P\020\201\001\022\022\n\rFAMILY_LAPRAS\020\203\001\022\021\n\014FAMILY_DITTO" +
-      "\020\204\001\022\021\n\014FAMILY_EEVEE\020\205\001\022\023\n\016FAMILY_PORYGON" +
-      "\020\211\001\022\023\n\016FAMILY_OMANYTE\020\212\001\022\022\n\rFAMILY_KABUT" +
-      "O\020\214\001\022\026\n\021FAMILY_AERODACTYL\020\216\001\022\023\n\016FAMILY_S",
-      "NORLAX\020\217\001\022\024\n\017FAMILY_ARTICUNO\020\220\001\022\022\n\rFAMIL" +
-      "Y_ZAPDOS\020\221\001\022\023\n\016FAMILY_MOLTRES\020\222\001\022\023\n\016FAMI" +
-      "LY_DRATINI\020\223\001\022\022\n\rFAMILY_MEWTWO\020\226\001\022\017\n\nFAM" +
-      "ILY_MEW\020\227\001*\224\001\n\023HoloIapItemCategory\022\025\n\021IA" +
-      "P_CATEGORY_NONE\020\000\022\027\n\023IAP_CATEGORY_BUNDLE" +
-      "\020\001\022\026\n\022IAP_CATEGORY_ITEMS\020\002\022\031\n\025IAP_CATEGO" +
-      "RY_UPGRADES\020\003\022\032\n\026IAP_CATEGORY_POKECOINS\020" +
-      "\004*7\n\tTeamColor\022\013\n\007NEUTRAL\020\000\022\010\n\004BLUE\020\001\022\007\n" +
-      "\003RED\020\002\022\n\n\006YELLOW\020\003*\332\003\n\013PokemonType\022\025\n\021PO" +
-      "KEMON_TYPE_NONE\020\000\022\027\n\023POKEMON_TYPE_NORMAL",
-      "\020\001\022\031\n\025POKEMON_TYPE_FIGHTING\020\002\022\027\n\023POKEMON" +
-      "_TYPE_FLYING\020\003\022\027\n\023POKEMON_TYPE_POISON\020\004\022" +
-      "\027\n\023POKEMON_TYPE_GROUND\020\005\022\025\n\021POKEMON_TYPE" +
-      "_ROCK\020\006\022\024\n\020POKEMON_TYPE_BUG\020\007\022\026\n\022POKEMON" +
-      "_TYPE_GHOST\020\010\022\026\n\022POKEMON_TYPE_STEEL\020\t\022\025\n" +
-      "\021POKEMON_TYPE_FIRE\020\n\022\026\n\022POKEMON_TYPE_WAT" +
-      "ER\020\013\022\026\n\022POKEMON_TYPE_GRASS\020\014\022\031\n\025POKEMON_" +
-      "TYPE_ELECTRIC\020\r\022\030\n\024POKEMON_TYPE_PSYCHIC\020" +
-      "\016\022\024\n\020POKEMON_TYPE_ICE\020\017\022\027\n\023POKEMON_TYPE_" +
-      "DRAGON\020\020\022\025\n\021POKEMON_TYPE_DARK\020\021\022\026\n\022POKEM",
-      "ON_TYPE_FAIRY\020\022*\326\002\n\014ItemCategory\022\026\n\022ITEM" +
-      "_CATEGORY_NONE\020\000\022\032\n\026ITEM_CATEGORY_POKEBA" +
-      "LL\020\001\022\026\n\022ITEM_CATEGORY_FOOD\020\002\022\032\n\026ITEM_CAT" +
-      "EGORY_MEDICINE\020\003\022\027\n\023ITEM_CATEGORY_BOOST\020" +
-      "\004\022\032\n\026ITEM_CATEGORY_UTILITES\020\005\022\030\n\024ITEM_CA" +
-      "TEGORY_CAMERA\020\006\022\026\n\022ITEM_CATEGORY_DISK\020\007\022" +
-      "\033\n\027ITEM_CATEGORY_INCUBATOR\020\010\022\031\n\025ITEM_CAT" +
-      "EGORY_INCENSE\020\t\022\032\n\026ITEM_CATEGORY_XP_BOOS" +
-      "T\020\n\022#\n\037ITEM_CATEGORY_INVENTORY_UPGRADE\020\013" +
-      "*\354\005\n\014ActivityType\022\024\n\020ACTIVITY_UNKNOWN\020\000\022",
-      "\032\n\026ACTIVITY_CATCH_POKEMON\020\001\022!\n\035ACTIVITY_" +
-      "CATCH_LEGEND_POKEMON\020\002\022\031\n\025ACTIVITY_FLEE_" +
-      "POKEMON\020\003\022\030\n\024ACTIVITY_DEFEAT_FORT\020\004\022\033\n\027A" +
-      "CTIVITY_EVOLVE_POKEMON\020\005\022\026\n\022ACTIVITY_HAT" +
-      "CH_EGG\020\006\022\024\n\020ACTIVITY_WALK_KM\020\007\022\036\n\032ACTIVI" +
-      "TY_POKEDEX_ENTRY_NEW\020\010\022\036\n\032ACTIVITY_CATCH" +
-      "_FIRST_THROW\020\t\022\035\n\031ACTIVITY_CATCH_NICE_TH" +
-      "ROW\020\n\022\036\n\032ACTIVITY_CATCH_GREAT_THROW\020\013\022\"\n" +
-      "\036ACTIVITY_CATCH_EXCELLENT_THROW\020\014\022\034\n\030ACT" +
-      "IVITY_CATCH_CURVEBALL\020\r\022%\n!ACTIVITY_CATC",
-      "H_FIRST_CATCH_OF_DAY\020\016\022\034\n\030ACTIVITY_CATCH" +
-      "_MILESTONE\020\017\022\032\n\026ACTIVITY_TRAIN_POKEMON\020\020" +
-      "\022\030\n\024ACTIVITY_SEARCH_FORT\020\021\022\034\n\030ACTIVITY_R" +
-      "ELEASE_POKEMON\020\022\022\"\n\036ACTIVITY_HATCH_EGG_S" +
-      "MALL_BONUS\020\023\022#\n\037ACTIVITY_HATCH_EGG_MEDIU" +
-      "M_BONUS\020\024\022\"\n\036ACTIVITY_HATCH_EGG_LARGE_BO" +
-      "NUS\020\025\022 \n\034ACTIVITY_DEFEAT_GYM_DEFENDER\020\026\022" +
-      "\036\n\032ACTIVITY_DEFEAT_GYM_LEADER\020\027*\226\001\n\023Came" +
-      "raInterpolation\022\022\n\016CAM_INTERP_CUT\020\000\022\025\n\021C" +
-      "AM_INTERP_LINEAR\020\001\022\025\n\021CAM_INTERP_SMOOTH\020",
-      "\002\022%\n!CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE\020\003" +
-      "\022\026\n\022CAM_INTERP_DEPENDS\020\004*c\n\rPokemonRarit" +
-      "y\022\031\n\025POKEMON_RARITY_NORMAL\020\000\022\034\n\030POKEMON_" +
-      "RARITY_LEGENDARY\020\001\022\031\n\025POKEMON_RARITY_MYT" +
-      "HIC\020\002*\036\n\006Gender\022\010\n\004MALE\020\000\022\n\n\006FEMALE\020\001*\316\027" +
-      "\n\013PokemonMove\022\016\n\nMOVE_UNSET\020\000\022\021\n\rTHUNDER" +
-      "_SHOCK\020\001\022\020\n\014QUICK_ATTACK\020\002\022\013\n\007SCRATCH\020\003\022" +
-      "\t\n\005EMBER\020\004\022\r\n\tVINE_WHIP\020\005\022\n\n\006TACKLE\020\006\022\016\n" +
-      "\nRAZOR_LEAF\020\007\022\r\n\tTAKE_DOWN\020\010\022\r\n\tWATER_GU" +
-      "N\020\t\022\010\n\004BITE\020\n\022\t\n\005POUND\020\013\022\017\n\013DOUBLE_SLAP\020",
-      "\014\022\010\n\004WRAP\020\r\022\016\n\nHYPER_BEAM\020\016\022\010\n\004LICK\020\017\022\016\n" +
-      "\nDARK_PULSE\020\020\022\010\n\004SMOG\020\021\022\n\n\006SLUDGE\020\022\022\016\n\nM" +
-      "ETAL_CLAW\020\023\022\r\n\tVICE_GRIP\020\024\022\017\n\013FLAME_WHEE" +
-      "L\020\025\022\014\n\010MEGAHORN\020\026\022\017\n\013WING_ATTACK\020\027\022\020\n\014FL" +
-      "AMETHROWER\020\030\022\020\n\014SUCKER_PUNCH\020\031\022\007\n\003DIG\020\032\022" +
-      "\014\n\010LOW_KICK\020\033\022\016\n\nCROSS_CHOP\020\034\022\016\n\nPSYCHO_" +
-      "CUT\020\035\022\013\n\007PSYBEAM\020\036\022\016\n\nEARTHQUAKE\020\037\022\016\n\nST" +
-      "ONE_EDGE\020 \022\r\n\tICE_PUNCH\020!\022\017\n\013HEART_STAMP" +
-      "\020\"\022\r\n\tDISCHARGE\020#\022\020\n\014FLASH_CANNON\020$\022\010\n\004P" +
-      "ECK\020%\022\016\n\nDRILL_PECK\020&\022\014\n\010ICE_BEAM\020\'\022\014\n\010B",
-      "LIZZARD\020(\022\r\n\tAIR_SLASH\020)\022\r\n\tHEAT_WAVE\020*\022" +
-      "\r\n\tTWINEEDLE\020+\022\016\n\nPOISON_JAB\020,\022\016\n\nAERIAL" +
-      "_ACE\020-\022\r\n\tDRILL_RUN\020.\022\022\n\016PETAL_BLIZZARD\020" +
-      "/\022\016\n\nMEGA_DRAIN\0200\022\014\n\010BUG_BUZZ\0201\022\017\n\013POISO" +
-      "N_FANG\0202\022\017\n\013NIGHT_SLASH\0203\022\t\n\005SLASH\0204\022\017\n\013" +
-      "BUBBLE_BEAM\0205\022\016\n\nSUBMISSION\0206\022\017\n\013KARATE_" +
-      "CHOP\0207\022\r\n\tLOW_SWEEP\0208\022\014\n\010AQUA_JET\0209\022\r\n\tA" +
-      "QUA_TAIL\020:\022\r\n\tSEED_BOMB\020;\022\014\n\010PSYSHOCK\020<\022" +
-      "\016\n\nROCK_THROW\020=\022\021\n\rANCIENT_POWER\020>\022\r\n\tRO" +
-      "CK_TOMB\020?\022\016\n\nROCK_SLIDE\020@\022\r\n\tPOWER_GEM\020A",
-      "\022\020\n\014SHADOW_SNEAK\020B\022\020\n\014SHADOW_PUNCH\020C\022\017\n\013" +
-      "SHADOW_CLAW\020D\022\020\n\014OMINOUS_WIND\020E\022\017\n\013SHADO" +
-      "W_BALL\020F\022\020\n\014BULLET_PUNCH\020G\022\017\n\013MAGNET_BOM" +
-      "B\020H\022\016\n\nSTEEL_WING\020I\022\r\n\tIRON_HEAD\020J\022\024\n\020PA" +
-      "RABOLIC_CHARGE\020K\022\t\n\005SPARK\020L\022\021\n\rTHUNDER_P" +
-      "UNCH\020M\022\013\n\007THUNDER\020N\022\017\n\013THUNDERBOLT\020O\022\013\n\007" +
-      "TWISTER\020P\022\021\n\rDRAGON_BREATH\020Q\022\020\n\014DRAGON_P" +
-      "ULSE\020R\022\017\n\013DRAGON_CLAW\020S\022\023\n\017DISARMING_VOI" +
-      "CE\020T\022\021\n\rDRAINING_KISS\020U\022\022\n\016DAZZLING_GLEA" +
-      "M\020V\022\r\n\tMOONBLAST\020W\022\016\n\nPLAY_ROUGH\020X\022\020\n\014CR",
-      "OSS_POISON\020Y\022\017\n\013SLUDGE_BOMB\020Z\022\017\n\013SLUDGE_" +
-      "WAVE\020[\022\r\n\tGUNK_SHOT\020\\\022\014\n\010MUD_SHOT\020]\022\r\n\tB" +
-      "ONE_CLUB\020^\022\014\n\010BULLDOZE\020_\022\014\n\010MUD_BOMB\020`\022\017" +
-      "\n\013FURY_CUTTER\020a\022\014\n\010BUG_BITE\020b\022\017\n\013SIGNAL_" +
-      "BEAM\020c\022\r\n\tX_SCISSOR\020d\022\020\n\014FLAME_CHARGE\020e\022" +
-      "\017\n\013FLAME_BURST\020f\022\016\n\nFIRE_BLAST\020g\022\t\n\005BRIN" +
-      "E\020h\022\017\n\013WATER_PULSE\020i\022\t\n\005SCALD\020j\022\016\n\nHYDRO" +
-      "_PUMP\020k\022\013\n\007PSYCHIC\020l\022\r\n\tPSYSTRIKE\020m\022\r\n\tI" +
-      "CE_SHARD\020n\022\014\n\010ICY_WIND\020o\022\020\n\014FROST_BREATH" +
-      "\020p\022\n\n\006ABSORB\020q\022\016\n\nGIGA_DRAIN\020r\022\016\n\nFIRE_P",
-      "UNCH\020s\022\016\n\nSOLAR_BEAM\020t\022\016\n\nLEAF_BLADE\020u\022\016" +
-      "\n\nPOWER_WHIP\020v\022\n\n\006SPLASH\020w\022\010\n\004ACID\020x\022\016\n\n" +
-      "AIR_CUTTER\020y\022\r\n\tHURRICANE\020z\022\017\n\013BRICK_BRE" +
-      "AK\020{\022\007\n\003CUT\020|\022\t\n\005SWIFT\020}\022\017\n\013HORN_ATTACK\020" +
-      "~\022\t\n\005STOMP\020\177\022\r\n\010HEADBUTT\020\200\001\022\017\n\nHYPER_FAN" +
-      "G\020\201\001\022\t\n\004SLAM\020\202\001\022\016\n\tBODY_SLAM\020\203\001\022\t\n\004REST\020" +
-      "\204\001\022\r\n\010STRUGGLE\020\205\001\022\024\n\017SCALD_BLASTOISE\020\206\001\022" +
-      "\031\n\024HYDRO_PUMP_BLASTOISE\020\207\001\022\017\n\nWRAP_GREEN" +
-      "\020\210\001\022\016\n\tWRAP_PINK\020\211\001\022\025\n\020FURY_CUTTER_FAST\020" +
-      "\310\001\022\022\n\rBUG_BITE_FAST\020\311\001\022\016\n\tBITE_FAST\020\312\001\022\026",
-      "\n\021SUCKER_PUNCH_FAST\020\313\001\022\027\n\022DRAGON_BREATH_" +
-      "FAST\020\314\001\022\027\n\022THUNDER_SHOCK_FAST\020\315\001\022\017\n\nSPAR" +
-      "K_FAST\020\316\001\022\022\n\rLOW_KICK_FAST\020\317\001\022\025\n\020KARATE_" +
-      "CHOP_FAST\020\320\001\022\017\n\nEMBER_FAST\020\321\001\022\025\n\020WING_AT" +
-      "TACK_FAST\020\322\001\022\016\n\tPECK_FAST\020\323\001\022\016\n\tLICK_FAS" +
-      "T\020\324\001\022\025\n\020SHADOW_CLAW_FAST\020\325\001\022\023\n\016VINE_WHIP" +
-      "_FAST\020\326\001\022\024\n\017RAZOR_LEAF_FAST\020\327\001\022\022\n\rMUD_SH" +
-      "OT_FAST\020\330\001\022\023\n\016ICE_SHARD_FAST\020\331\001\022\026\n\021FROST" +
-      "_BREATH_FAST\020\332\001\022\026\n\021QUICK_ATTACK_FAST\020\333\001\022" +
-      "\021\n\014SCRATCH_FAST\020\334\001\022\020\n\013TACKLE_FAST\020\335\001\022\017\n\n",
-      "POUND_FAST\020\336\001\022\r\n\010CUT_FAST\020\337\001\022\024\n\017POISON_J" +
-      "AB_FAST\020\340\001\022\016\n\tACID_FAST\020\341\001\022\024\n\017PSYCHO_CUT" +
-      "_FAST\020\342\001\022\024\n\017ROCK_THROW_FAST\020\343\001\022\024\n\017METAL_" +
-      "CLAW_FAST\020\344\001\022\026\n\021BULLET_PUNCH_FAST\020\345\001\022\023\n\016" +
-      "WATER_GUN_FAST\020\346\001\022\020\n\013SPLASH_FAST\020\347\001\022\035\n\030W" +
-      "ATER_GUN_FAST_BLASTOISE\020\350\001\022\022\n\rMUD_SLAP_F" +
-      "AST\020\351\001\022\026\n\021ZEN_HEADBUTT_FAST\020\352\001\022\023\n\016CONFUS" +
-      "ION_FAST\020\353\001\022\026\n\021POISON_STING_FAST\020\354\001\022\020\n\013B" +
-      "UBBLE_FAST\020\355\001\022\026\n\021FEINT_ATTACK_FAST\020\356\001\022\024\n" +
-      "\017STEEL_WING_FAST\020\357\001\022\023\n\016FIRE_FANG_FAST\020\360\001",
-      "\022\024\n\017ROCK_SMASH_FAST\020\361\001*A\n\010Platform\022\t\n\005UN" +
-      "SET\020\000\022\007\n\003IOS\020\001\022\013\n\007ANDROID\020\002\022\007\n\003OSX\020\003\022\013\n\007" +
-      "WINDOWS\020\004*\241\007\n\tBadgeType\022\017\n\013BADGE_UNSET\020\000" +
-      "\022\023\n\017BADGE_TRAVEL_KM\020\001\022\031\n\025BADGE_POKEDEX_E" +
-      "NTRIES\020\002\022\027\n\023BADGE_CAPTURE_TOTAL\020\003\022\027\n\023BAD" +
-      "GE_DEFEATED_FORT\020\004\022\027\n\023BADGE_EVOLVED_TOTA" +
-      "L\020\005\022\027\n\023BADGE_HATCHED_TOTAL\020\006\022\033\n\027BADGE_EN" +
-      "COUNTERED_TOTAL\020\007\022\033\n\027BADGE_POKESTOPS_VIS" +
-      "ITED\020\010\022\032\n\026BADGE_UNIQUE_POKESTOPS\020\t\022\031\n\025BA" +
-      "DGE_POKEBALL_THROWN\020\n\022\026\n\022BADGE_BIG_MAGIK",
-      "ARP\020\013\022\030\n\024BADGE_DEPLOYED_TOTAL\020\014\022\033\n\027BADGE" +
-      "_BATTLE_ATTACK_WON\020\r\022\035\n\031BADGE_BATTLE_TRA" +
-      "INING_WON\020\016\022\033\n\027BADGE_BATTLE_DEFEND_WON\020\017" +
-      "\022\031\n\025BADGE_PRESTIGE_RAISED\020\020\022\032\n\026BADGE_PRE" +
-      "STIGE_DROPPED\020\021\022\025\n\021BADGE_TYPE_NORMAL\020\022\022\027" +
-      "\n\023BADGE_TYPE_FIGHTING\020\023\022\025\n\021BADGE_TYPE_FL" +
-      "YING\020\024\022\025\n\021BADGE_TYPE_POISON\020\025\022\025\n\021BADGE_T" +
-      "YPE_GROUND\020\026\022\023\n\017BADGE_TYPE_ROCK\020\027\022\022\n\016BAD" +
-      "GE_TYPE_BUG\020\030\022\024\n\020BADGE_TYPE_GHOST\020\031\022\024\n\020B" +
-      "ADGE_TYPE_STEEL\020\032\022\023\n\017BADGE_TYPE_FIRE\020\033\022\024",
-      "\n\020BADGE_TYPE_WATER\020\034\022\024\n\020BADGE_TYPE_GRASS" +
-      "\020\035\022\027\n\023BADGE_TYPE_ELECTRIC\020\036\022\026\n\022BADGE_TYP" +
-      "E_PSYCHIC\020\037\022\022\n\016BADGE_TYPE_ICE\020 \022\025\n\021BADGE" +
-      "_TYPE_DRAGON\020!\022\023\n\017BADGE_TYPE_DARK\020\"\022\024\n\020B" +
-      "ADGE_TYPE_FAIRY\020#\022\027\n\023BADGE_SMALL_RATTATA" +
-      "\020$\022\021\n\rBADGE_PIKACHU\020%*\374\003\n\014CameraTarget\022\027" +
-      "\n\023CAM_TARGET_ATTACKER\020\000\022\034\n\030CAM_TARGET_AT" +
-      "TACKER_EDGE\020\001\022\036\n\032CAM_TARGET_ATTACKER_GRO" +
-      "UND\020\002\022\027\n\023CAM_TARGET_DEFENDER\020\003\022\034\n\030CAM_TA" +
-      "RGET_DEFENDER_EDGE\020\004\022\036\n\032CAM_TARGET_DEFEN",
-      "DER_GROUND\020\005\022 \n\034CAM_TARGET_ATTACKER_DEFE" +
-      "NDER\020\006\022%\n!CAM_TARGET_ATTACKER_DEFENDER_E" +
-      "DGE\020\007\022 \n\034CAM_TARGET_DEFENDER_ATTACKER\020\010\022" +
-      "%\n!CAM_TARGET_DEFENDER_ATTACKER_EDGE\020\t\022\'" +
-      "\n#CAM_TARGET_ATTACKER_DEFENDER_MIRROR\020\013\022" +
-      ")\n%CAM_TARGET_SHOULDER_ATTACKER_DEFENDER" +
-      "\020\014\0220\n,CAM_TARGET_SHOULDER_ATTACKER_DEFEN" +
-      "DER_MIRROR\020\r\022&\n\"CAM_TARGET_ATTACKER_DEFE" +
-      "NDER_WORLD\020\016*\344\001\n\rTutorialState\022\020\n\014LEGAL_" +
-      "SCREEN\020\000\022\024\n\020AVATAR_SELECTION\020\001\022\024\n\020ACCOUN",
-      "T_CREATION\020\002\022\023\n\017POKEMON_CAPTURE\020\003\022\022\n\016NAM" +
-      "E_SELECTION\020\004\022\021\n\rPOKEMON_BERRY\020\005\022\014\n\010USE_" +
-      "ITEM\020\006\022\"\n\036FIRST_TIME_EXPERIENCE_COMPLETE" +
-      "\020\007\022\025\n\021POKESTOP_TUTORIAL\020\010\022\020\n\014GYM_TUTORIA" +
-      "L\020\tB(\n\037com.github.aeonlucid.pogoprotosB\005" +
-      "Enumsb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

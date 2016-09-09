@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.settings.master.item;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.settings.master.item;
 
 option java_package = "com.github.aeonlucid.pogoprotos.settings.master";
 option java_outer_classname = "Item";
@@ -8,9 +9,19 @@ option java_outer_classname = "Item";
 import "com/github/aeonlucid/pogoprotos/Enums.proto";
 import "com/github/aeonlucid/pogoprotos/Inventory.proto";
 
+message FoodAttributes {
+	repeated com.github.aeonlucid.pogoprotos.enums.ItemEffect item_effect = 1;
+	repeated float item_effect_percent = 2;
+	float growth_percent = 3;
+}
+
 message FortModifierAttributes {
 	int32 modifier_lifetime_seconds = 1;
 	int32 troy_disk_num_pokemon_spawned = 2;
+}
+
+message BattleAttributes {
+	float sta_percent = 1;
 }
 
 message PokeballAttributes {
@@ -20,10 +31,6 @@ message PokeballAttributes {
 	float item_effect_mod = 4;
 }
 
-message BattleAttributes {
-	float sta_percent = 1;
-}
-
 message ReviveAttributes {
 	float sta_percent = 1;
 }
@@ -31,12 +38,6 @@ message ReviveAttributes {
 message PotionAttributes {
 	float sta_percent = 1;
 	int32 sta_amount = 2;
-}
-
-message FoodAttributes {
-	repeated com.github.aeonlucid.pogoprotos.enums.ItemEffect item_effect = 1;
-	repeated float item_effect_percent = 2;
-	float growth_percent = 3;
 }
 
 message IncenseAttributes {
@@ -54,14 +55,14 @@ message ExperienceBoostAttributes {
 	int32 boost_duration_ms = 2;
 }
 
-message InventoryUpgradeAttributes {
-	int32 additional_storage = 1;
-	com.github.aeonlucid.pogoprotos.inventory.InventoryUpgradeType upgrade_type = 2;
-}
-
 message EggIncubatorAttributes {
   com.github.aeonlucid.pogoprotos.inventory.EggIncubatorType incubator_type = 1;
   int32 uses = 2;
   float distance_multiplier = 3;
+}
+
+message InventoryUpgradeAttributes {
+	int32 additional_storage = 1;
+	com.github.aeonlucid.pogoprotos.inventory.InventoryUpgradeType upgrade_type = 2;
 }
 

@@ -8,15 +8,9 @@ public final class Gym {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   public interface GymMembershipOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.gym.GymMembership)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
@@ -26,10 +20,6 @@ public final class Gym {
      * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
      */
     com.github.aeonlucid.pogoprotos.Data.PokemonData getPokemonData();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder getPokemonDataOrBuilder();
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
@@ -39,99 +29,17 @@ public final class Gym {
      * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
      */
     com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile getTrainerPublicProfile();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfileOrBuilder getTrainerPublicProfileOrBuilder();
   }
   /**
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.gym.GymMembership}
    */
   public  static final class GymMembership extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          GymMembership, GymMembership.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.gym.GymMembership)
       GymMembershipOrBuilder {
-    // Use GymMembership.newBuilder() to construct.
-    private GymMembership(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private GymMembership() {
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private GymMembership(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder subBuilder = null;
-              if (pokemonData_ != null) {
-                subBuilder = pokemonData_.toBuilder();
-              }
-              pokemonData_ = input.readMessage(com.github.aeonlucid.pogoprotos.Data.PokemonData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pokemonData_);
-                pokemonData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder subBuilder = null;
-              if (trainerPublicProfile_ != null) {
-                subBuilder = trainerPublicProfile_.toBuilder();
-              }
-              trainerPublicProfile_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(trainerPublicProfile_);
-                trainerPublicProfile_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.class, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder.class);
-    }
-
     public static final int POKEMON_DATA_FIELD_NUMBER = 1;
     private com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData_;
     /**
@@ -149,8 +57,39 @@ public final class Gym {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
      */
-    public com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder getPokemonDataOrBuilder() {
-      return getPokemonData();
+    private void setPokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pokemonData_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
+     */
+    private void setPokemonData(
+        com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder builderForValue) {
+      pokemonData_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
+     */
+    private void mergePokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
+      if (pokemonData_ != null &&
+          pokemonData_ != com.github.aeonlucid.pogoprotos.Data.PokemonData.getDefaultInstance()) {
+        pokemonData_ =
+          com.github.aeonlucid.pogoprotos.Data.PokemonData.newBuilder(pokemonData_).mergeFrom(value).buildPartial();
+      } else {
+        pokemonData_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
+     */
+    private void clearPokemonData() {  pokemonData_ = null;
+      
     }
 
     public static final int TRAINER_PUBLIC_PROFILE_FIELD_NUMBER = 2;
@@ -170,18 +109,39 @@ public final class Gym {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
      */
-    public com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfileOrBuilder getTrainerPublicProfileOrBuilder() {
-      return getTrainerPublicProfile();
+    private void setTrainerPublicProfile(com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      trainerPublicProfile_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
+     */
+    private void setTrainerPublicProfile(
+        com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder builderForValue) {
+      trainerPublicProfile_ = builderForValue.build();
+      
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
+     */
+    private void mergeTrainerPublicProfile(com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile value) {
+      if (trainerPublicProfile_ != null &&
+          trainerPublicProfile_ != com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.getDefaultInstance()) {
+        trainerPublicProfile_ =
+          com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.newBuilder(trainerPublicProfile_).mergeFrom(value).buildPartial();
+      } else {
+        trainerPublicProfile_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
+     */
+    private void clearTrainerPublicProfile() {  trainerPublicProfile_ = null;
+      
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -195,7 +155,7 @@ public final class Gym {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -207,570 +167,304 @@ public final class Gym {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTrainerPublicProfile());
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.data.Gym.GymMembership)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.data.Gym.GymMembership other = (com.github.aeonlucid.pogoprotos.data.Gym.GymMembership) obj;
-
-      boolean result = true;
-      result = result && (hasPokemonData() == other.hasPokemonData());
-      if (hasPokemonData()) {
-        result = result && getPokemonData()
-            .equals(other.getPokemonData());
-      }
-      result = result && (hasTrainerPublicProfile() == other.hasTrainerPublicProfile());
-      if (hasTrainerPublicProfile()) {
-        result = result && getTrainerPublicProfile()
-            .equals(other.getTrainerPublicProfile());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasPokemonData()) {
-        hash = (37 * hash) + POKEMON_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getPokemonData().hashCode();
-      }
-      if (hasTrainerPublicProfile()) {
-        hash = (37 * hash) + TRAINER_PUBLIC_PROFILE_FIELD_NUMBER;
-        hash = (53 * hash) + getTrainerPublicProfile().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.data.Gym.GymMembership prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.gym.GymMembership}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.data.Gym.GymMembership, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.gym.GymMembership)
         com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.class, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (pokemonDataBuilder_ == null) {
-          pokemonData_ = null;
-        } else {
-          pokemonData_ = null;
-          pokemonDataBuilder_ = null;
-        }
-        if (trainerPublicProfileBuilder_ == null) {
-          trainerPublicProfile_ = null;
-        } else {
-          trainerPublicProfile_ = null;
-          trainerPublicProfileBuilder_ = null;
-        }
-        return this;
-      }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership build() {
-        com.github.aeonlucid.pogoprotos.data.Gym.GymMembership result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership buildPartial() {
-        com.github.aeonlucid.pogoprotos.data.Gym.GymMembership result = new com.github.aeonlucid.pogoprotos.data.Gym.GymMembership(this);
-        if (pokemonDataBuilder_ == null) {
-          result.pokemonData_ = pokemonData_;
-        } else {
-          result.pokemonData_ = pokemonDataBuilder_.build();
-        }
-        if (trainerPublicProfileBuilder_ == null) {
-          result.trainerPublicProfile_ = trainerPublicProfile_;
-        } else {
-          result.trainerPublicProfile_ = trainerPublicProfileBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.data.Gym.GymMembership) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.data.Gym.GymMembership)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.data.Gym.GymMembership other) {
-        if (other == com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.getDefaultInstance()) return this;
-        if (other.hasPokemonData()) {
-          mergePokemonData(other.getPokemonData());
-        }
-        if (other.hasTrainerPublicProfile()) {
-          mergeTrainerPublicProfile(other.getTrainerPublicProfile());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.data.Gym.GymMembership parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.data.Gym.GymMembership) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Data.PokemonData, com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder, com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder> pokemonDataBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
        */
       public boolean hasPokemonData() {
-        return pokemonDataBuilder_ != null || pokemonData_ != null;
+        return instance.hasPokemonData();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.Data.PokemonData getPokemonData() {
-        if (pokemonDataBuilder_ == null) {
-          return pokemonData_ == null ? com.github.aeonlucid.pogoprotos.Data.PokemonData.getDefaultInstance() : pokemonData_;
-        } else {
-          return pokemonDataBuilder_.getMessage();
-        }
+        return instance.getPokemonData();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
        */
       public Builder setPokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
-        if (pokemonDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          pokemonData_ = value;
-          onChanged();
-        } else {
-          pokemonDataBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setPokemonData(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
        */
       public Builder setPokemonData(
           com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder builderForValue) {
-        if (pokemonDataBuilder_ == null) {
-          pokemonData_ = builderForValue.build();
-          onChanged();
-        } else {
-          pokemonDataBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setPokemonData(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
        */
       public Builder mergePokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
-        if (pokemonDataBuilder_ == null) {
-          if (pokemonData_ != null) {
-            pokemonData_ =
-              com.github.aeonlucid.pogoprotos.Data.PokemonData.newBuilder(pokemonData_).mergeFrom(value).buildPartial();
-          } else {
-            pokemonData_ = value;
-          }
-          onChanged();
-        } else {
-          pokemonDataBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergePokemonData(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
        */
-      public Builder clearPokemonData() {
-        if (pokemonDataBuilder_ == null) {
-          pokemonData_ = null;
-          onChanged();
-        } else {
-          pokemonData_ = null;
-          pokemonDataBuilder_ = null;
-        }
-
+      public Builder clearPokemonData() {  copyOnWrite();
+        instance.clearPokemonData();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder getPokemonDataBuilder() {
-        
-        onChanged();
-        return getPokemonDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder getPokemonDataOrBuilder() {
-        if (pokemonDataBuilder_ != null) {
-          return pokemonDataBuilder_.getMessageOrBuilder();
-        } else {
-          return pokemonData_ == null ?
-              com.github.aeonlucid.pogoprotos.Data.PokemonData.getDefaultInstance() : pokemonData_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Data.PokemonData, com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder, com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder> 
-          getPokemonDataFieldBuilder() {
-        if (pokemonDataBuilder_ == null) {
-          pokemonDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.Data.PokemonData, com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder, com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder>(
-                  getPokemonData(),
-                  getParentForChildren(),
-                  isClean());
-          pokemonData_ = null;
-        }
-        return pokemonDataBuilder_;
-      }
 
-      private com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile trainerPublicProfile_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile, com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfileOrBuilder> trainerPublicProfileBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
        */
       public boolean hasTrainerPublicProfile() {
-        return trainerPublicProfileBuilder_ != null || trainerPublicProfile_ != null;
+        return instance.hasTrainerPublicProfile();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
        */
       public com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile getTrainerPublicProfile() {
-        if (trainerPublicProfileBuilder_ == null) {
-          return trainerPublicProfile_ == null ? com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.getDefaultInstance() : trainerPublicProfile_;
-        } else {
-          return trainerPublicProfileBuilder_.getMessage();
-        }
+        return instance.getTrainerPublicProfile();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
        */
       public Builder setTrainerPublicProfile(com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile value) {
-        if (trainerPublicProfileBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          trainerPublicProfile_ = value;
-          onChanged();
-        } else {
-          trainerPublicProfileBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setTrainerPublicProfile(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
        */
       public Builder setTrainerPublicProfile(
           com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder builderForValue) {
-        if (trainerPublicProfileBuilder_ == null) {
-          trainerPublicProfile_ = builderForValue.build();
-          onChanged();
-        } else {
-          trainerPublicProfileBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setTrainerPublicProfile(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
        */
       public Builder mergeTrainerPublicProfile(com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile value) {
-        if (trainerPublicProfileBuilder_ == null) {
-          if (trainerPublicProfile_ != null) {
-            trainerPublicProfile_ =
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.newBuilder(trainerPublicProfile_).mergeFrom(value).buildPartial();
-          } else {
-            trainerPublicProfile_ = value;
-          }
-          onChanged();
-        } else {
-          trainerPublicProfileBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeTrainerPublicProfile(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
        */
-      public Builder clearTrainerPublicProfile() {
-        if (trainerPublicProfileBuilder_ == null) {
-          trainerPublicProfile_ = null;
-          onChanged();
-        } else {
-          trainerPublicProfile_ = null;
-          trainerPublicProfileBuilder_ = null;
-        }
-
+      public Builder clearTrainerPublicProfile() {  copyOnWrite();
+        instance.clearTrainerPublicProfile();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder getTrainerPublicProfileBuilder() {
-        
-        onChanged();
-        return getTrainerPublicProfileFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfileOrBuilder getTrainerPublicProfileOrBuilder() {
-        if (trainerPublicProfileBuilder_ != null) {
-          return trainerPublicProfileBuilder_.getMessageOrBuilder();
-        } else {
-          return trainerPublicProfile_ == null ?
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.getDefaultInstance() : trainerPublicProfile_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.PlayerPublicProfile trainer_public_profile = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile, com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfileOrBuilder> 
-          getTrainerPublicProfileFieldBuilder() {
-        if (trainerPublicProfileBuilder_ == null) {
-          trainerPublicProfileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile, com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder, com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfileOrBuilder>(
-                  getTrainerPublicProfile(),
-                  getParentForChildren(),
-                  isClean());
-          trainerPublicProfile_ = null;
-        }
-        return trainerPublicProfileBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.gym.GymMembership)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.data.Gym.GymMembership();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.data.Gym.GymMembership other = (com.github.aeonlucid.pogoprotos.data.Gym.GymMembership) arg1;
+          pokemonData_ = visitor.visitMessage(pokemonData_, other.pokemonData_);
+          trainerPublicProfile_ = visitor.visitMessage(trainerPublicProfile_, other.trainerPublicProfile_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder subBuilder = null;
+                  if (pokemonData_ != null) {
+                    subBuilder = pokemonData_.toBuilder();
+                  }
+                  pokemonData_ = input.readMessage(com.github.aeonlucid.pogoprotos.Data.PokemonData.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(pokemonData_);
+                    pokemonData_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 18: {
+                  com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.Builder subBuilder = null;
+                  if (trainerPublicProfile_ != null) {
+                    subBuilder = trainerPublicProfile_.toBuilder();
+                  }
+                  trainerPublicProfile_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.PlayerPublicProfile.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(trainerPublicProfile_);
+                    trainerPublicProfile_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.gym.GymMembership)
     private static final com.github.aeonlucid.pogoprotos.data.Gym.GymMembership DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.data.Gym.GymMembership();
+      DEFAULT_INSTANCE = new GymMembership();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymMembership getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GymMembership>
-        PARSER = new com.google.protobuf.AbstractParser<GymMembership>() {
-      public GymMembership parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GymMembership(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<GymMembership> PARSER;
 
     public static com.google.protobuf.Parser<GymMembership> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GymMembership> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface GymStateOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.gym.GymState)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
@@ -780,10 +474,6 @@ public final class Gym {
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
      */
     com.github.aeonlucid.pogoprotos.map.Fort.FortData getFortData();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder getFortDataOrBuilder();
 
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
@@ -798,105 +488,18 @@ public final class Gym {
      * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
      */
     int getMembershipsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder> 
-        getMembershipsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder getMembershipsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.gym.GymState}
    */
   public  static final class GymState extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          GymState, GymState.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.gym.GymState)
       GymStateOrBuilder {
-    // Use GymState.newBuilder() to construct.
-    private GymState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private GymState() {
-      memberships_ = java.util.Collections.emptyList();
+      memberships_ = emptyProtobufList();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private GymState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder subBuilder = null;
-              if (fortData_ != null) {
-                subBuilder = fortData_.toBuilder();
-              }
-              fortData_ = input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fortData_);
-                fortData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                memberships_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              memberships_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.parser(), extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          memberships_ = java.util.Collections.unmodifiableList(memberships_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.data.Gym.GymState.class, com.github.aeonlucid.pogoprotos.data.Gym.GymState.Builder.class);
-    }
-
     private int bitField0_;
     public static final int FORT_DATA_FIELD_NUMBER = 1;
     private com.github.aeonlucid.pogoprotos.map.Fort.FortData fortData_;
@@ -915,12 +518,43 @@ public final class Gym {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
      */
-    public com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder getFortDataOrBuilder() {
-      return getFortData();
+    private void setFortData(com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      fortData_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
+     */
+    private void setFortData(
+        com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
+      fortData_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
+     */
+    private void mergeFortData(com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
+      if (fortData_ != null &&
+          fortData_ != com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance()) {
+        fortData_ =
+          com.github.aeonlucid.pogoprotos.map.Fort.FortData.newBuilder(fortData_).mergeFrom(value).buildPartial();
+      } else {
+        fortData_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
+     */
+    private void clearFortData() {  fortData_ = null;
+      
     }
 
     public static final int MEMBERSHIPS_FIELD_NUMBER = 2;
-    private java.util.List<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership> memberships_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership> memberships_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
      */
@@ -953,15 +587,90 @@ public final class Gym {
         int index) {
       return memberships_.get(index);
     }
+    private void ensureMembershipsIsMutable() {
+      if (!memberships_.isModifiable()) {
+        memberships_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(memberships_);
+       }
+    }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void setMemberships(
+        int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMembershipsIsMutable();
+      memberships_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void setMemberships(
+        int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder builderForValue) {
+      ensureMembershipsIsMutable();
+      memberships_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void addMemberships(com.github.aeonlucid.pogoprotos.data.Gym.GymMembership value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMembershipsIsMutable();
+      memberships_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void addMemberships(
+        int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMembershipsIsMutable();
+      memberships_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void addMemberships(
+        com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder builderForValue) {
+      ensureMembershipsIsMutable();
+      memberships_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void addMemberships(
+        int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder builderForValue) {
+      ensureMembershipsIsMutable();
+      memberships_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void addAllMemberships(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Gym.GymMembership> values) {
+      ensureMembershipsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, memberships_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void clearMemberships() {
+      memberships_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
+     */
+    private void removeMemberships(int index) {
+      ensureMembershipsIsMutable();
+      memberships_.remove(index);
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -975,7 +684,7 @@ public final class Gym {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -987,488 +696,162 @@ public final class Gym {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, memberships_.get(i));
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.data.Gym.GymState)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.data.Gym.GymState other = (com.github.aeonlucid.pogoprotos.data.Gym.GymState) obj;
-
-      boolean result = true;
-      result = result && (hasFortData() == other.hasFortData());
-      if (hasFortData()) {
-        result = result && getFortData()
-            .equals(other.getFortData());
-      }
-      result = result && getMembershipsList()
-          .equals(other.getMembershipsList());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasFortData()) {
-        hash = (37 * hash) + FORT_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getFortData().hashCode();
-      }
-      if (getMembershipsCount() > 0) {
-        hash = (37 * hash) + MEMBERSHIPS_FIELD_NUMBER;
-        hash = (53 * hash) + getMembershipsList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.data.Gym.GymState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.gym.GymState}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.data.Gym.GymState, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.gym.GymState)
         com.github.aeonlucid.pogoprotos.data.Gym.GymStateOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.data.Gym.GymState.class, com.github.aeonlucid.pogoprotos.data.Gym.GymState.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.data.Gym.GymState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMembershipsFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (fortDataBuilder_ == null) {
-          fortData_ = null;
-        } else {
-          fortData_ = null;
-          fortDataBuilder_ = null;
-        }
-        if (membershipsBuilder_ == null) {
-          memberships_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          membershipsBuilder_.clear();
-        }
-        return this;
-      }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymState getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.data.Gym.GymState.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymState build() {
-        com.github.aeonlucid.pogoprotos.data.Gym.GymState result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymState buildPartial() {
-        com.github.aeonlucid.pogoprotos.data.Gym.GymState result = new com.github.aeonlucid.pogoprotos.data.Gym.GymState(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (fortDataBuilder_ == null) {
-          result.fortData_ = fortData_;
-        } else {
-          result.fortData_ = fortDataBuilder_.build();
-        }
-        if (membershipsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            memberships_ = java.util.Collections.unmodifiableList(memberships_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.memberships_ = memberships_;
-        } else {
-          result.memberships_ = membershipsBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.data.Gym.GymState) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.data.Gym.GymState)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.data.Gym.GymState other) {
-        if (other == com.github.aeonlucid.pogoprotos.data.Gym.GymState.getDefaultInstance()) return this;
-        if (other.hasFortData()) {
-          mergeFortData(other.getFortData());
-        }
-        if (membershipsBuilder_ == null) {
-          if (!other.memberships_.isEmpty()) {
-            if (memberships_.isEmpty()) {
-              memberships_ = other.memberships_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureMembershipsIsMutable();
-              memberships_.addAll(other.memberships_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.memberships_.isEmpty()) {
-            if (membershipsBuilder_.isEmpty()) {
-              membershipsBuilder_.dispose();
-              membershipsBuilder_ = null;
-              memberships_ = other.memberships_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              membershipsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMembershipsFieldBuilder() : null;
-            } else {
-              membershipsBuilder_.addAllMessages(other.memberships_);
-            }
-          }
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.data.Gym.GymState parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.data.Gym.GymState) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.github.aeonlucid.pogoprotos.map.Fort.FortData fortData_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortData, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder> fortDataBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
        */
       public boolean hasFortData() {
-        return fortDataBuilder_ != null || fortData_ != null;
+        return instance.hasFortData();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortData getFortData() {
-        if (fortDataBuilder_ == null) {
-          return fortData_ == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance() : fortData_;
-        } else {
-          return fortDataBuilder_.getMessage();
-        }
+        return instance.getFortData();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
        */
       public Builder setFortData(com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
-        if (fortDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          fortData_ = value;
-          onChanged();
-        } else {
-          fortDataBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setFortData(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
        */
       public Builder setFortData(
           com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder builderForValue) {
-        if (fortDataBuilder_ == null) {
-          fortData_ = builderForValue.build();
-          onChanged();
-        } else {
-          fortDataBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setFortData(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
        */
       public Builder mergeFortData(com.github.aeonlucid.pogoprotos.map.Fort.FortData value) {
-        if (fortDataBuilder_ == null) {
-          if (fortData_ != null) {
-            fortData_ =
-              com.github.aeonlucid.pogoprotos.map.Fort.FortData.newBuilder(fortData_).mergeFrom(value).buildPartial();
-          } else {
-            fortData_ = value;
-          }
-          onChanged();
-        } else {
-          fortDataBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeFortData(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
        */
-      public Builder clearFortData() {
-        if (fortDataBuilder_ == null) {
-          fortData_ = null;
-          onChanged();
-        } else {
-          fortData_ = null;
-          fortDataBuilder_ = null;
-        }
-
+      public Builder clearFortData() {  copyOnWrite();
+        instance.clearFortData();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder getFortDataBuilder() {
-        
-        onChanged();
-        return getFortDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder getFortDataOrBuilder() {
-        if (fortDataBuilder_ != null) {
-          return fortDataBuilder_.getMessageOrBuilder();
-        } else {
-          return fortData_ == null ?
-              com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance() : fortData_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortData fort_data = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortData, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder> 
-          getFortDataFieldBuilder() {
-        if (fortDataBuilder_ == null) {
-          fortDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Fort.FortData, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder>(
-                  getFortData(),
-                  getParentForChildren(),
-                  isClean());
-          fortData_ = null;
-        }
-        return fortDataBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership> memberships_ =
-        java.util.Collections.emptyList();
-      private void ensureMembershipsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          memberships_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership>(memberships_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Gym.GymMembership, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder, com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder> membershipsBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership> getMembershipsList() {
-        if (membershipsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(memberships_);
-        } else {
-          return membershipsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getMembershipsList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public int getMembershipsCount() {
-        if (membershipsBuilder_ == null) {
-          return memberships_.size();
-        } else {
-          return membershipsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getMembershipsCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership getMemberships(int index) {
-        if (membershipsBuilder_ == null) {
-          return memberships_.get(index);
-        } else {
-          return membershipsBuilder_.getMessage(index);
-        }
+        return instance.getMemberships(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public Builder setMemberships(
           int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership value) {
-        if (membershipsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMembershipsIsMutable();
-          memberships_.set(index, value);
-          onChanged();
-        } else {
-          membershipsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setMemberships(index, value);
         return this;
       }
       /**
@@ -1476,29 +859,16 @@ public final class Gym {
        */
       public Builder setMemberships(
           int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder builderForValue) {
-        if (membershipsBuilder_ == null) {
-          ensureMembershipsIsMutable();
-          memberships_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          membershipsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setMemberships(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public Builder addMemberships(com.github.aeonlucid.pogoprotos.data.Gym.GymMembership value) {
-        if (membershipsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMembershipsIsMutable();
-          memberships_.add(value);
-          onChanged();
-        } else {
-          membershipsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addMemberships(value);
         return this;
       }
       /**
@@ -1506,16 +876,8 @@ public final class Gym {
        */
       public Builder addMemberships(
           int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership value) {
-        if (membershipsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMembershipsIsMutable();
-          memberships_.add(index, value);
-          onChanged();
-        } else {
-          membershipsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addMemberships(index, value);
         return this;
       }
       /**
@@ -1523,13 +885,8 @@ public final class Gym {
        */
       public Builder addMemberships(
           com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder builderForValue) {
-        if (membershipsBuilder_ == null) {
-          ensureMembershipsIsMutable();
-          memberships_.add(builderForValue.build());
-          onChanged();
-        } else {
-          membershipsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addMemberships(builderForValue);
         return this;
       }
       /**
@@ -1537,13 +894,8 @@ public final class Gym {
        */
       public Builder addMemberships(
           int index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder builderForValue) {
-        if (membershipsBuilder_ == null) {
-          ensureMembershipsIsMutable();
-          memberships_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          membershipsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addMemberships(index, builderForValue);
         return this;
       }
       /**
@@ -1551,221 +903,146 @@ public final class Gym {
        */
       public Builder addAllMemberships(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Gym.GymMembership> values) {
-        if (membershipsBuilder_ == null) {
-          ensureMembershipsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, memberships_);
-          onChanged();
-        } else {
-          membershipsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllMemberships(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public Builder clearMemberships() {
-        if (membershipsBuilder_ == null) {
-          memberships_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          membershipsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearMemberships();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
        */
       public Builder removeMemberships(int index) {
-        if (membershipsBuilder_ == null) {
-          ensureMembershipsIsMutable();
-          memberships_.remove(index);
-          onChanged();
-        } else {
-          membershipsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeMemberships(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder getMembershipsBuilder(
-          int index) {
-        return getMembershipsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder getMembershipsOrBuilder(
-          int index) {
-        if (membershipsBuilder_ == null) {
-          return memberships_.get(index);  } else {
-          return membershipsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder> 
-           getMembershipsOrBuilderList() {
-        if (membershipsBuilder_ != null) {
-          return membershipsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(memberships_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder addMembershipsBuilder() {
-        return getMembershipsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder addMembershipsBuilder(
-          int index) {
-        return getMembershipsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.gym.GymMembership memberships = 2;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder> 
-           getMembershipsBuilderList() {
-        return getMembershipsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Gym.GymMembership, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder, com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder> 
-          getMembershipsFieldBuilder() {
-        if (membershipsBuilder_ == null) {
-          membershipsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Gym.GymMembership, com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.Builder, com.github.aeonlucid.pogoprotos.data.Gym.GymMembershipOrBuilder>(
-                  memberships_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          memberships_ = null;
-        }
-        return membershipsBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.gym.GymState)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.data.Gym.GymState();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          memberships_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.data.Gym.GymState other = (com.github.aeonlucid.pogoprotos.data.Gym.GymState) arg1;
+          fortData_ = visitor.visitMessage(fortData_, other.fortData_);
+          memberships_= visitor.visitList(memberships_, other.memberships_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder subBuilder = null;
+                  if (fortData_ != null) {
+                    subBuilder = fortData_.toBuilder();
+                  }
+                  fortData_ = input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortData.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(fortData_);
+                    fortData_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 18: {
+                  if (!memberships_.isModifiable()) {
+                    memberships_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(memberships_);
+                  }
+                  memberships_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.data.Gym.GymMembership.parser(), extensionRegistry));
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.data.Gym.GymState.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.gym.GymState)
     private static final com.github.aeonlucid.pogoprotos.data.Gym.GymState DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.data.Gym.GymState();
+      DEFAULT_INSTANCE = new GymState();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.data.Gym.GymState getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GymState>
-        PARSER = new com.google.protobuf.AbstractParser<GymState>() {
-      public GymState parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GymState(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<GymState> PARSER;
 
     public static com.google.protobuf.Parser<GymState> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GymState> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.data.Gym.GymState getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n.com/github/aeonlucid/pogoprotos/data/G" +
-      "ym.proto\022(com.github.aeonlucid.pogoproto" +
-      "s.data.gym\032*com/github/aeonlucid/pogopro" +
-      "tos/Data.proto\0321com/github/aeonlucid/pog" +
-      "oprotos/data/Player.proto\032.com/github/ae" +
-      "onlucid/pogoprotos/map/Fort.proto\"\272\001\n\rGy" +
-      "mMembership\022G\n\014pokemon_data\030\001 \001(\01321.com." +
-      "github.aeonlucid.pogoprotos.data.Pokemon" +
-      "Data\022`\n\026trainer_public_profile\030\002 \001(\0132@.c" +
-      "om.github.aeonlucid.pogoprotos.data.play",
-      "er.PlayerPublicProfile\"\237\001\n\010GymState\022E\n\tf" +
-      "ort_data\030\001 \001(\01322.com.github.aeonlucid.po" +
-      "goprotos.map.fort.FortData\022L\n\013membership" +
-      "s\030\002 \003(\01327.com.github.aeonlucid.pogoproto" +
-      "s.data.gym.GymMembershipB+\n$com.github.a" +
-      "eonlucid.pogoprotos.dataB\003Gymb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.Data.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.data.Player.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymMembership_descriptor,
-        new java.lang.String[] { "PokemonData", "TrainerPublicProfile", });
-    internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_gym_GymState_descriptor,
-        new java.lang.String[] { "FortData", "Memberships", });
-    com.github.aeonlucid.pogoprotos.Data.getDescriptor();
-    com.github.aeonlucid.pogoprotos.data.Player.getDescriptor();
-    com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

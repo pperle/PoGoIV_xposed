@@ -8,17 +8,11 @@ public final class Fort {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.map.fort.FortSponsor}
    */
   public enum FortSponsor
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>UNSET_SPONSOR = 0;</code>
      */
@@ -49,10 +43,6 @@ public final class Fort {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -85,33 +75,6 @@ public final class Fort {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final FortSponsor[] VALUES = values();
-
-    public static FortSponsor valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private FortSponsor(int value) {
@@ -122,108 +85,10 @@ public final class Fort {
   }
 
   /**
-   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType}
-   */
-  public enum FortRenderingType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>DEFAULT = 0;</code>
-     */
-    DEFAULT(0),
-    /**
-     * <code>INTERNAL_TEST = 1;</code>
-     */
-    INTERNAL_TEST(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>DEFAULT = 0;</code>
-     */
-    public static final int DEFAULT_VALUE = 0;
-    /**
-     * <code>INTERNAL_TEST = 1;</code>
-     */
-    public static final int INTERNAL_TEST_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static FortRenderingType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static FortRenderingType forNumber(int value) {
-      switch (value) {
-        case 0: return DEFAULT;
-        case 1: return INTERNAL_TEST;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<FortRenderingType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        FortRenderingType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<FortRenderingType>() {
-            public FortRenderingType findValueByNumber(int number) {
-              return FortRenderingType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor().getEnumTypes().get(1);
-    }
-
-    private static final FortRenderingType[] VALUES = values();
-
-    public static FortRenderingType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private FortRenderingType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType)
-  }
-
-  /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.map.fort.FortType}
    */
   public enum FortType
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <code>GYM = 0;</code>
      */
@@ -246,10 +111,6 @@ public final class Fort {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -281,33 +142,6 @@ public final class Fort {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.getDescriptor().getEnumTypes().get(2);
-    }
-
-    private static final FortType[] VALUES = values();
-
-    public static FortType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private FortType(int value) {
@@ -317,9 +151,1093 @@ public final class Fort {
     // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.map.fort.FortType)
   }
 
+  /**
+   * Protobuf enum {@code com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType}
+   */
+  public enum FortRenderingType
+      implements com.google.protobuf.Internal.EnumLite {
+    /**
+     * <code>DEFAULT = 0;</code>
+     */
+    DEFAULT(0),
+    /**
+     * <code>INTERNAL_TEST = 1;</code>
+     */
+    INTERNAL_TEST(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>DEFAULT = 0;</code>
+     */
+    public static final int DEFAULT_VALUE = 0;
+    /**
+     * <code>INTERNAL_TEST = 1;</code>
+     */
+    public static final int INTERNAL_TEST_VALUE = 1;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FortRenderingType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static FortRenderingType forNumber(int value) {
+      switch (value) {
+        case 0: return DEFAULT;
+        case 1: return INTERNAL_TEST;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FortRenderingType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        FortRenderingType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FortRenderingType>() {
+            public FortRenderingType findValueByNumber(int number) {
+              return FortRenderingType.forNumber(number);
+            }
+          };
+
+    private final int value;
+
+    private FortRenderingType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType)
+  }
+
+  public interface FortLureInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    java.lang.String getFortId();
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getFortIdBytes();
+
+    /**
+     * <code>optional fixed64 encounter_id = 2;</code>
+     */
+    long getEncounterId();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    int getActivePokemonIdValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    com.github.aeonlucid.pogoprotos.Enums.PokemonId getActivePokemonId();
+
+    /**
+     * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+     */
+    long getLureExpiresTimestampMs();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo}
+   */
+  public  static final class FortLureInfo extends
+      com.google.protobuf.GeneratedMessageLite<
+          FortLureInfo, FortLureInfo.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
+      FortLureInfoOrBuilder {
+    private FortLureInfo() {
+      fortId_ = "";
+    }
+    public static final int FORT_ID_FIELD_NUMBER = 1;
+    private java.lang.String fortId_;
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    public java.lang.String getFortId() {
+      return fortId_;
+    }
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFortIdBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(fortId_);
+    }
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    private void setFortId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fortId_ = value;
+    }
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    private void clearFortId() {
+      
+      fortId_ = getDefaultInstance().getFortId();
+    }
+    /**
+     * <code>optional string fort_id = 1;</code>
+     */
+    private void setFortIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fortId_ = value.toStringUtf8();
+    }
+
+    public static final int ENCOUNTER_ID_FIELD_NUMBER = 2;
+    private long encounterId_;
+    /**
+     * <code>optional fixed64 encounter_id = 2;</code>
+     */
+    public long getEncounterId() {
+      return encounterId_;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 2;</code>
+     */
+    private void setEncounterId(long value) {
+      
+      encounterId_ = value;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 2;</code>
+     */
+    private void clearEncounterId() {
+      
+      encounterId_ = 0L;
+    }
+
+    public static final int ACTIVE_POKEMON_ID_FIELD_NUMBER = 3;
+    private int activePokemonId_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    public int getActivePokemonIdValue() {
+      return activePokemonId_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.Enums.PokemonId getActivePokemonId() {
+      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.forNumber(activePokemonId_);
+      return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    private void setActivePokemonIdValue(int value) {
+        activePokemonId_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    private void setActivePokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      activePokemonId_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+     */
+    private void clearActivePokemonId() {
+      
+      activePokemonId_ = 0;
+    }
+
+    public static final int LURE_EXPIRES_TIMESTAMP_MS_FIELD_NUMBER = 4;
+    private long lureExpiresTimestampMs_;
+    /**
+     * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+     */
+    public long getLureExpiresTimestampMs() {
+      return lureExpiresTimestampMs_;
+    }
+    /**
+     * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+     */
+    private void setLureExpiresTimestampMs(long value) {
+      
+      lureExpiresTimestampMs_ = value;
+    }
+    /**
+     * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+     */
+    private void clearLureExpiresTimestampMs() {
+      
+      lureExpiresTimestampMs_ = 0L;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!fortId_.isEmpty()) {
+        output.writeString(1, getFortId());
+      }
+      if (encounterId_ != 0L) {
+        output.writeFixed64(2, encounterId_);
+      }
+      if (activePokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
+        output.writeEnum(3, activePokemonId_);
+      }
+      if (lureExpiresTimestampMs_ != 0L) {
+        output.writeInt64(4, lureExpiresTimestampMs_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!fortId_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getFortId());
+      }
+      if (encounterId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed64Size(2, encounterId_);
+      }
+      if (activePokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, activePokemonId_);
+      }
+      if (lureExpiresTimestampMs_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, lureExpiresTimestampMs_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
+        com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional string fort_id = 1;</code>
+       */
+      public java.lang.String getFortId() {
+        return instance.getFortId();
+      }
+      /**
+       * <code>optional string fort_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFortIdBytes() {
+        return instance.getFortIdBytes();
+      }
+      /**
+       * <code>optional string fort_id = 1;</code>
+       */
+      public Builder setFortId(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setFortId(value);
+        return this;
+      }
+      /**
+       * <code>optional string fort_id = 1;</code>
+       */
+      public Builder clearFortId() {
+        copyOnWrite();
+        instance.clearFortId();
+        return this;
+      }
+      /**
+       * <code>optional string fort_id = 1;</code>
+       */
+      public Builder setFortIdBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setFortIdBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional fixed64 encounter_id = 2;</code>
+       */
+      public long getEncounterId() {
+        return instance.getEncounterId();
+      }
+      /**
+       * <code>optional fixed64 encounter_id = 2;</code>
+       */
+      public Builder setEncounterId(long value) {
+        copyOnWrite();
+        instance.setEncounterId(value);
+        return this;
+      }
+      /**
+       * <code>optional fixed64 encounter_id = 2;</code>
+       */
+      public Builder clearEncounterId() {
+        copyOnWrite();
+        instance.clearEncounterId();
+        return this;
+      }
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+       */
+      public int getActivePokemonIdValue() {
+        return instance.getActivePokemonIdValue();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+       */
+      public Builder setActivePokemonIdValue(int value) {
+        copyOnWrite();
+        instance.setActivePokemonIdValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.Enums.PokemonId getActivePokemonId() {
+        return instance.getActivePokemonId();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+       */
+      public Builder setActivePokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
+        copyOnWrite();
+        instance.setActivePokemonId(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
+       */
+      public Builder clearActivePokemonId() {
+        copyOnWrite();
+        instance.clearActivePokemonId();
+        return this;
+      }
+
+      /**
+       * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+       */
+      public long getLureExpiresTimestampMs() {
+        return instance.getLureExpiresTimestampMs();
+      }
+      /**
+       * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+       */
+      public Builder setLureExpiresTimestampMs(long value) {
+        copyOnWrite();
+        instance.setLureExpiresTimestampMs(value);
+        return this;
+      }
+      /**
+       * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
+       */
+      public Builder clearLureExpiresTimestampMs() {
+        copyOnWrite();
+        instance.clearLureExpiresTimestampMs();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo other = (com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo) arg1;
+          fortId_ = visitor.visitString(!fortId_.isEmpty(), fortId_,
+              !other.fortId_.isEmpty(), other.fortId_);
+          encounterId_ = visitor.visitLong(encounterId_ != 0L, encounterId_,
+              other.encounterId_ != 0L, other.encounterId_);
+          activePokemonId_ = visitor.visitInt(activePokemonId_ != 0, activePokemonId_,    other.activePokemonId_ != 0, other.activePokemonId_);
+          lureExpiresTimestampMs_ = visitor.visitLong(lureExpiresTimestampMs_ != 0L, lureExpiresTimestampMs_,
+              other.lureExpiresTimestampMs_ != 0L, other.lureExpiresTimestampMs_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  fortId_ = s;
+                  break;
+                }
+                case 17: {
+
+                  encounterId_ = input.readFixed64();
+                  break;
+                }
+                case 24: {
+                  int rawValue = input.readEnum();
+
+                  activePokemonId_ = rawValue;
+                  break;
+                }
+                case 32: {
+
+                  lureExpiresTimestampMs_ = input.readInt64();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
+    private static final com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new FortLureInfo();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<FortLureInfo> PARSER;
+
+    public static com.google.protobuf.Parser<FortLureInfo> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface FortModifierOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    int getItemIdValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId();
+
+    /**
+     * <code>optional int64 expiration_timestamp_ms = 2;</code>
+     */
+    long getExpirationTimestampMs();
+
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    java.lang.String getDeployerPlayerCodename();
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeployerPlayerCodenameBytes();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortModifier}
+   */
+  public  static final class FortModifier extends
+      com.google.protobuf.GeneratedMessageLite<
+          FortModifier, FortModifier.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
+      FortModifierOrBuilder {
+    private FortModifier() {
+      deployerPlayerCodename_ = "";
+    }
+    public static final int ITEM_ID_FIELD_NUMBER = 1;
+    private int itemId_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    public int getItemIdValue() {
+      return itemId_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
+      com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.forNumber(itemId_);
+      return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    private void setItemIdValue(int value) {
+        itemId_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    private void setItemId(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      itemId_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+     */
+    private void clearItemId() {
+      
+      itemId_ = 0;
+    }
+
+    public static final int EXPIRATION_TIMESTAMP_MS_FIELD_NUMBER = 2;
+    private long expirationTimestampMs_;
+    /**
+     * <code>optional int64 expiration_timestamp_ms = 2;</code>
+     */
+    public long getExpirationTimestampMs() {
+      return expirationTimestampMs_;
+    }
+    /**
+     * <code>optional int64 expiration_timestamp_ms = 2;</code>
+     */
+    private void setExpirationTimestampMs(long value) {
+      
+      expirationTimestampMs_ = value;
+    }
+    /**
+     * <code>optional int64 expiration_timestamp_ms = 2;</code>
+     */
+    private void clearExpirationTimestampMs() {
+      
+      expirationTimestampMs_ = 0L;
+    }
+
+    public static final int DEPLOYER_PLAYER_CODENAME_FIELD_NUMBER = 3;
+    private java.lang.String deployerPlayerCodename_;
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    public java.lang.String getDeployerPlayerCodename() {
+      return deployerPlayerCodename_;
+    }
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeployerPlayerCodenameBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(deployerPlayerCodename_);
+    }
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    private void setDeployerPlayerCodename(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deployerPlayerCodename_ = value;
+    }
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    private void clearDeployerPlayerCodename() {
+      
+      deployerPlayerCodename_ = getDefaultInstance().getDeployerPlayerCodename();
+    }
+    /**
+     * <code>optional string deployer_player_codename = 3;</code>
+     */
+    private void setDeployerPlayerCodenameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deployerPlayerCodename_ = value.toStringUtf8();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
+        output.writeEnum(1, itemId_);
+      }
+      if (expirationTimestampMs_ != 0L) {
+        output.writeInt64(2, expirationTimestampMs_);
+      }
+      if (!deployerPlayerCodename_.isEmpty()) {
+        output.writeString(3, getDeployerPlayerCodename());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, itemId_);
+      }
+      if (expirationTimestampMs_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, expirationTimestampMs_);
+      }
+      if (!deployerPlayerCodename_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getDeployerPlayerCodename());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Fort.FortModifier prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortModifier}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Fort.FortModifier, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
+        com.github.aeonlucid.pogoprotos.map.Fort.FortModifierOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public int getItemIdValue() {
+        return instance.getItemIdValue();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public Builder setItemIdValue(int value) {
+        copyOnWrite();
+        instance.setItemIdValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
+        return instance.getItemId();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public Builder setItemId(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+        copyOnWrite();
+        instance.setItemId(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
+       */
+      public Builder clearItemId() {
+        copyOnWrite();
+        instance.clearItemId();
+        return this;
+      }
+
+      /**
+       * <code>optional int64 expiration_timestamp_ms = 2;</code>
+       */
+      public long getExpirationTimestampMs() {
+        return instance.getExpirationTimestampMs();
+      }
+      /**
+       * <code>optional int64 expiration_timestamp_ms = 2;</code>
+       */
+      public Builder setExpirationTimestampMs(long value) {
+        copyOnWrite();
+        instance.setExpirationTimestampMs(value);
+        return this;
+      }
+      /**
+       * <code>optional int64 expiration_timestamp_ms = 2;</code>
+       */
+      public Builder clearExpirationTimestampMs() {
+        copyOnWrite();
+        instance.clearExpirationTimestampMs();
+        return this;
+      }
+
+      /**
+       * <code>optional string deployer_player_codename = 3;</code>
+       */
+      public java.lang.String getDeployerPlayerCodename() {
+        return instance.getDeployerPlayerCodename();
+      }
+      /**
+       * <code>optional string deployer_player_codename = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeployerPlayerCodenameBytes() {
+        return instance.getDeployerPlayerCodenameBytes();
+      }
+      /**
+       * <code>optional string deployer_player_codename = 3;</code>
+       */
+      public Builder setDeployerPlayerCodename(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setDeployerPlayerCodename(value);
+        return this;
+      }
+      /**
+       * <code>optional string deployer_player_codename = 3;</code>
+       */
+      public Builder clearDeployerPlayerCodename() {
+        copyOnWrite();
+        instance.clearDeployerPlayerCodename();
+        return this;
+      }
+      /**
+       * <code>optional string deployer_player_codename = 3;</code>
+       */
+      public Builder setDeployerPlayerCodenameBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setDeployerPlayerCodenameBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Fort.FortModifier();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Fort.FortModifier other = (com.github.aeonlucid.pogoprotos.map.Fort.FortModifier) arg1;
+          itemId_ = visitor.visitInt(itemId_ != 0, itemId_,    other.itemId_ != 0, other.itemId_);
+          expirationTimestampMs_ = visitor.visitLong(expirationTimestampMs_ != 0L, expirationTimestampMs_,
+              other.expirationTimestampMs_ != 0L, other.expirationTimestampMs_);
+          deployerPlayerCodename_ = visitor.visitString(!deployerPlayerCodename_.isEmpty(), deployerPlayerCodename_,
+              !other.deployerPlayerCodename_.isEmpty(), other.deployerPlayerCodename_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  itemId_ = rawValue;
+                  break;
+                }
+                case 16: {
+
+                  expirationTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 26: {
+                  String s = input.readStringRequireUtf8();
+
+                  deployerPlayerCodename_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
+    private static final com.github.aeonlucid.pogoprotos.map.Fort.FortModifier DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new FortModifier();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<FortModifier> PARSER;
+
+    public static com.google.protobuf.Parser<FortModifier> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
   public interface FortSummaryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.fort.FortSummary)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional string fort_summary_id = 1;</code>
@@ -350,121 +1268,57 @@ public final class Fort {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortSummary}
    */
   public  static final class FortSummary extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          FortSummary, FortSummary.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.fort.FortSummary)
       FortSummaryOrBuilder {
-    // Use FortSummary.newBuilder() to construct.
-    private FortSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private FortSummary() {
       fortSummaryId_ = "";
-      lastModifiedTimestampMs_ = 0L;
-      latitude_ = 0D;
-      longitude_ = 0D;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private FortSummary(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fortSummaryId_ = s;
-              break;
-            }
-            case 16: {
-
-              lastModifiedTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 25: {
-
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 33: {
-
-              longitude_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.class, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder.class);
-    }
-
     public static final int FORT_SUMMARY_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object fortSummaryId_;
+    private java.lang.String fortSummaryId_;
     /**
      * <code>optional string fort_summary_id = 1;</code>
      */
     public java.lang.String getFortSummaryId() {
-      java.lang.Object ref = fortSummaryId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fortSummaryId_ = s;
-        return s;
-      }
+      return fortSummaryId_;
     }
     /**
      * <code>optional string fort_summary_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getFortSummaryIdBytes() {
-      java.lang.Object ref = fortSummaryId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fortSummaryId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(fortSummaryId_);
+    }
+    /**
+     * <code>optional string fort_summary_id = 1;</code>
+     */
+    private void setFortSummaryId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fortSummaryId_ = value;
+    }
+    /**
+     * <code>optional string fort_summary_id = 1;</code>
+     */
+    private void clearFortSummaryId() {
+      
+      fortSummaryId_ = getDefaultInstance().getFortSummaryId();
+    }
+    /**
+     * <code>optional string fort_summary_id = 1;</code>
+     */
+    private void setFortSummaryIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fortSummaryId_ = value.toStringUtf8();
     }
 
     public static final int LAST_MODIFIED_TIMESTAMP_MS_FIELD_NUMBER = 2;
@@ -475,6 +1329,20 @@ public final class Fort {
     public long getLastModifiedTimestampMs() {
       return lastModifiedTimestampMs_;
     }
+    /**
+     * <code>optional int64 last_modified_timestamp_ms = 2;</code>
+     */
+    private void setLastModifiedTimestampMs(long value) {
+      
+      lastModifiedTimestampMs_ = value;
+    }
+    /**
+     * <code>optional int64 last_modified_timestamp_ms = 2;</code>
+     */
+    private void clearLastModifiedTimestampMs() {
+      
+      lastModifiedTimestampMs_ = 0L;
+    }
 
     public static final int LATITUDE_FIELD_NUMBER = 3;
     private double latitude_;
@@ -483,6 +1351,20 @@ public final class Fort {
      */
     public double getLatitude() {
       return latitude_;
+    }
+    /**
+     * <code>optional double latitude = 3;</code>
+     */
+    private void setLatitude(double value) {
+      
+      latitude_ = value;
+    }
+    /**
+     * <code>optional double latitude = 3;</code>
+     */
+    private void clearLatitude() {
+      
+      latitude_ = 0D;
     }
 
     public static final int LONGITUDE_FIELD_NUMBER = 4;
@@ -493,21 +1375,25 @@ public final class Fort {
     public double getLongitude() {
       return longitude_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional double longitude = 4;</code>
+     */
+    private void setLongitude(double value) {
+      
+      longitude_ = value;
+    }
+    /**
+     * <code>optional double longitude = 4;</code>
+     */
+    private void clearLongitude() {
+      
+      longitude_ = 0D;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFortSummaryIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fortSummaryId_);
+      if (!fortSummaryId_.isEmpty()) {
+        output.writeString(1, getFortSummaryId());
       }
       if (lastModifiedTimestampMs_ != 0L) {
         output.writeInt64(2, lastModifiedTimestampMs_);
@@ -521,12 +1407,13 @@ public final class Fort {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFortSummaryIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fortSummaryId_);
+      if (!fortSummaryId_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getFortSummaryId());
       }
       if (lastModifiedTimestampMs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -540,339 +1427,120 @@ public final class Fort {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, longitude_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortSummary)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Fort.FortSummary other = (com.github.aeonlucid.pogoprotos.map.Fort.FortSummary) obj;
-
-      boolean result = true;
-      result = result && getFortSummaryId()
-          .equals(other.getFortSummaryId());
-      result = result && (getLastModifiedTimestampMs()
-          == other.getLastModifiedTimestampMs());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + FORT_SUMMARY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFortSummaryId().hashCode();
-      hash = (37 * hash) + LAST_MODIFIED_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLastModifiedTimestampMs());
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Fort.FortSummary prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortSummary}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Fort.FortSummary, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.fort.FortSummary)
         com.github.aeonlucid.pogoprotos.map.Fort.FortSummaryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.class, com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        fortSummaryId_ = "";
 
-        lastModifiedTimestampMs_ = 0L;
-
-        latitude_ = 0D;
-
-        longitude_ = 0D;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary build() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortSummary result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortSummary result = new com.github.aeonlucid.pogoprotos.map.Fort.FortSummary(this);
-        result.fortSummaryId_ = fortSummaryId_;
-        result.lastModifiedTimestampMs_ = lastModifiedTimestampMs_;
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortSummary) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Fort.FortSummary)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Fort.FortSummary other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.getDefaultInstance()) return this;
-        if (!other.getFortSummaryId().isEmpty()) {
-          fortSummaryId_ = other.fortSummaryId_;
-          onChanged();
-        }
-        if (other.getLastModifiedTimestampMs() != 0L) {
-          setLastModifiedTimestampMs(other.getLastModifiedTimestampMs());
-        }
-        if (other.getLatitude() != 0D) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.getLongitude() != 0D) {
-          setLongitude(other.getLongitude());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortSummary parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Fort.FortSummary) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object fortSummaryId_ = "";
       /**
        * <code>optional string fort_summary_id = 1;</code>
        */
       public java.lang.String getFortSummaryId() {
-        java.lang.Object ref = fortSummaryId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fortSummaryId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getFortSummaryId();
       }
       /**
        * <code>optional string fort_summary_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getFortSummaryIdBytes() {
-        java.lang.Object ref = fortSummaryId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fortSummaryId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getFortSummaryIdBytes();
       }
       /**
        * <code>optional string fort_summary_id = 1;</code>
        */
       public Builder setFortSummaryId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        fortSummaryId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFortSummaryId(value);
         return this;
       }
       /**
        * <code>optional string fort_summary_id = 1;</code>
        */
       public Builder clearFortSummaryId() {
-        
-        fortSummaryId_ = getDefaultInstance().getFortSummaryId();
-        onChanged();
+        copyOnWrite();
+        instance.clearFortSummaryId();
         return this;
       }
       /**
@@ -880,145 +1548,203 @@ public final class Fort {
        */
       public Builder setFortSummaryIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fortSummaryId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFortSummaryIdBytes(value);
         return this;
       }
 
-      private long lastModifiedTimestampMs_ ;
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public long getLastModifiedTimestampMs() {
-        return lastModifiedTimestampMs_;
+        return instance.getLastModifiedTimestampMs();
       }
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public Builder setLastModifiedTimestampMs(long value) {
-        
-        lastModifiedTimestampMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLastModifiedTimestampMs(value);
         return this;
       }
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public Builder clearLastModifiedTimestampMs() {
-        
-        lastModifiedTimestampMs_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearLastModifiedTimestampMs();
         return this;
       }
 
-      private double latitude_ ;
       /**
        * <code>optional double latitude = 3;</code>
        */
       public double getLatitude() {
-        return latitude_;
+        return instance.getLatitude();
       }
       /**
        * <code>optional double latitude = 3;</code>
        */
       public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLatitude(value);
         return this;
       }
       /**
        * <code>optional double latitude = 3;</code>
        */
       public Builder clearLatitude() {
-        
-        latitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLatitude();
         return this;
       }
 
-      private double longitude_ ;
       /**
        * <code>optional double longitude = 4;</code>
        */
       public double getLongitude() {
-        return longitude_;
+        return instance.getLongitude();
       }
       /**
        * <code>optional double longitude = 4;</code>
        */
       public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLongitude(value);
         return this;
       }
       /**
        * <code>optional double longitude = 4;</code>
        */
       public Builder clearLongitude() {
-        
-        longitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLongitude();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.fort.FortSummary)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Fort.FortSummary();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Fort.FortSummary other = (com.github.aeonlucid.pogoprotos.map.Fort.FortSummary) arg1;
+          fortSummaryId_ = visitor.visitString(!fortSummaryId_.isEmpty(), fortSummaryId_,
+              !other.fortSummaryId_.isEmpty(), other.fortSummaryId_);
+          lastModifiedTimestampMs_ = visitor.visitLong(lastModifiedTimestampMs_ != 0L, lastModifiedTimestampMs_,
+              other.lastModifiedTimestampMs_ != 0L, other.lastModifiedTimestampMs_);
+          latitude_ = visitor.visitDouble(latitude_ != 0D, latitude_,
+              other.latitude_ != 0D, other.latitude_);
+          longitude_ = visitor.visitDouble(longitude_ != 0D, longitude_,
+              other.longitude_ != 0D, other.longitude_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  fortSummaryId_ = s;
+                  break;
+                }
+                case 16: {
+
+                  lastModifiedTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 25: {
+
+                  latitude_ = input.readDouble();
+                  break;
+                }
+                case 33: {
+
+                  longitude_ = input.readDouble();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Fort.FortSummary.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.fort.FortSummary)
     private static final com.github.aeonlucid.pogoprotos.map.Fort.FortSummary DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Fort.FortSummary();
+      DEFAULT_INSTANCE = new FortSummary();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortSummary getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FortSummary>
-        PARSER = new com.google.protobuf.AbstractParser<FortSummary>() {
-      public FortSummary parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FortSummary(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<FortSummary> PARSER;
 
     public static com.google.protobuf.Parser<FortSummary> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FortSummary> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Fort.FortSummary getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface FortDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.fort.FortData)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional string id = 1;</code>
@@ -1168,10 +1894,6 @@ public final class Fort {
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
      */
     com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo getLureInfo();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
-     */
-    com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder getLureInfoOrBuilder();
 
     /**
      * <pre>
@@ -1204,227 +1926,59 @@ public final class Fort {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortData}
    */
   public  static final class FortData extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          FortData, FortData.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.fort.FortData)
       FortDataOrBuilder {
-    // Use FortData.newBuilder() to construct.
-    private FortData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private FortData() {
       id_ = "";
-      lastModifiedTimestampMs_ = 0L;
-      latitude_ = 0D;
-      longitude_ = 0D;
-      enabled_ = false;
-      type_ = 0;
-      ownedByTeam_ = 0;
-      guardPokemonId_ = 0;
-      guardPokemonCp_ = 0;
-      gymPoints_ = 0L;
-      isInBattle_ = false;
-      activeFortModifier_ = java.util.Collections.emptyList();
-      cooldownCompleteTimestampMs_ = 0L;
-      sponsor_ = 0;
-      renderingType_ = 0;
+      activeFortModifier_ = emptyIntList();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private FortData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-            case 16: {
-
-              lastModifiedTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 25: {
-
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 33: {
-
-              longitude_ = input.readDouble();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              ownedByTeam_ = rawValue;
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-
-              guardPokemonId_ = rawValue;
-              break;
-            }
-            case 56: {
-
-              guardPokemonCp_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              enabled_ = input.readBool();
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 80: {
-
-              gymPoints_ = input.readInt64();
-              break;
-            }
-            case 88: {
-
-              isInBattle_ = input.readBool();
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                activeFortModifier_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000800;
-              }
-              activeFortModifier_.add(rawValue);
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-                  activeFortModifier_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000800;
-                }
-                activeFortModifier_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 106: {
-              com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder subBuilder = null;
-              if (lureInfo_ != null) {
-                subBuilder = lureInfo_.toBuilder();
-              }
-              lureInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lureInfo_);
-                lureInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              cooldownCompleteTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 120: {
-              int rawValue = input.readEnum();
-
-              sponsor_ = rawValue;
-              break;
-            }
-            case 128: {
-              int rawValue = input.readEnum();
-
-              renderingType_ = rawValue;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-          activeFortModifier_ = java.util.Collections.unmodifiableList(activeFortModifier_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Fort.FortData.class, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder.class);
-    }
-
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private java.lang.String id_;
     /**
      * <code>optional string id = 1;</code>
      */
     public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
+      return id_;
     }
     /**
      * <code>optional string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(id_);
+    }
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    private void setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+    }
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    private void clearId() {
+      
+      id_ = getDefaultInstance().getId();
+    }
+    /**
+     * <code>optional string id = 1;</code>
+     */
+    private void setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value.toStringUtf8();
     }
 
     public static final int LAST_MODIFIED_TIMESTAMP_MS_FIELD_NUMBER = 2;
@@ -1435,6 +1989,20 @@ public final class Fort {
     public long getLastModifiedTimestampMs() {
       return lastModifiedTimestampMs_;
     }
+    /**
+     * <code>optional int64 last_modified_timestamp_ms = 2;</code>
+     */
+    private void setLastModifiedTimestampMs(long value) {
+      
+      lastModifiedTimestampMs_ = value;
+    }
+    /**
+     * <code>optional int64 last_modified_timestamp_ms = 2;</code>
+     */
+    private void clearLastModifiedTimestampMs() {
+      
+      lastModifiedTimestampMs_ = 0L;
+    }
 
     public static final int LATITUDE_FIELD_NUMBER = 3;
     private double latitude_;
@@ -1443,6 +2011,20 @@ public final class Fort {
      */
     public double getLatitude() {
       return latitude_;
+    }
+    /**
+     * <code>optional double latitude = 3;</code>
+     */
+    private void setLatitude(double value) {
+      
+      latitude_ = value;
+    }
+    /**
+     * <code>optional double latitude = 3;</code>
+     */
+    private void clearLatitude() {
+      
+      latitude_ = 0D;
     }
 
     public static final int LONGITUDE_FIELD_NUMBER = 4;
@@ -1453,6 +2035,20 @@ public final class Fort {
     public double getLongitude() {
       return longitude_;
     }
+    /**
+     * <code>optional double longitude = 4;</code>
+     */
+    private void setLongitude(double value) {
+      
+      longitude_ = value;
+    }
+    /**
+     * <code>optional double longitude = 4;</code>
+     */
+    private void clearLongitude() {
+      
+      longitude_ = 0D;
+    }
 
     public static final int ENABLED_FIELD_NUMBER = 8;
     private boolean enabled_;
@@ -1461,6 +2057,20 @@ public final class Fort {
      */
     public boolean getEnabled() {
       return enabled_;
+    }
+    /**
+     * <code>optional bool enabled = 8;</code>
+     */
+    private void setEnabled(boolean value) {
+      
+      enabled_ = value;
+    }
+    /**
+     * <code>optional bool enabled = 8;</code>
+     */
+    private void clearEnabled() {
+      
+      enabled_ = false;
     }
 
     public static final int TYPE_FIELD_NUMBER = 9;
@@ -1475,8 +2085,31 @@ public final class Fort {
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
      */
     public com.github.aeonlucid.pogoprotos.map.Fort.FortType getType() {
-      com.github.aeonlucid.pogoprotos.map.Fort.FortType result = com.github.aeonlucid.pogoprotos.map.Fort.FortType.valueOf(type_);
+      com.github.aeonlucid.pogoprotos.map.Fort.FortType result = com.github.aeonlucid.pogoprotos.map.Fort.FortType.forNumber(type_);
       return result == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
+     */
+    private void setTypeValue(int value) {
+        type_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
+     */
+    private void setType(com.github.aeonlucid.pogoprotos.map.Fort.FortType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
+     */
+    private void clearType() {
+      
+      type_ = 0;
     }
 
     public static final int OWNED_BY_TEAM_FIELD_NUMBER = 5;
@@ -1501,8 +2134,46 @@ public final class Fort {
      * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
      */
     public com.github.aeonlucid.pogoprotos.Enums.TeamColor getOwnedByTeam() {
-      com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.valueOf(ownedByTeam_);
+      com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.forNumber(ownedByTeam_);
       return result == null ? com.github.aeonlucid.pogoprotos.Enums.TeamColor.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to gyms only
+     * Team that owns the gym
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
+     */
+    private void setOwnedByTeamValue(int value) {
+        ownedByTeam_ = value;
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to gyms only
+     * Team that owns the gym
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
+     */
+    private void setOwnedByTeam(com.github.aeonlucid.pogoprotos.Enums.TeamColor value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      ownedByTeam_ = value.getNumber();
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to gyms only
+     * Team that owns the gym
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
+     */
+    private void clearOwnedByTeam() {
+      
+      ownedByTeam_ = 0;
     }
 
     public static final int GUARD_POKEMON_ID_FIELD_NUMBER = 6;
@@ -1525,8 +2196,43 @@ public final class Fort {
      * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
      */
     public com.github.aeonlucid.pogoprotos.Enums.PokemonId getGuardPokemonId() {
-      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(guardPokemonId_);
+      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.forNumber(guardPokemonId_);
       return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Highest CP Pokemon at the gym
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
+     */
+    private void setGuardPokemonIdValue(int value) {
+        guardPokemonId_ = value;
+    }
+    /**
+     * <pre>
+     * Highest CP Pokemon at the gym
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
+     */
+    private void setGuardPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      guardPokemonId_ = value.getNumber();
+    }
+    /**
+     * <pre>
+     * Highest CP Pokemon at the gym
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
+     */
+    private void clearGuardPokemonId() {
+      
+      guardPokemonId_ = 0;
     }
 
     public static final int GUARD_POKEMON_CP_FIELD_NUMBER = 7;
@@ -1536,6 +2242,20 @@ public final class Fort {
      */
     public int getGuardPokemonCp() {
       return guardPokemonCp_;
+    }
+    /**
+     * <code>optional int32 guard_pokemon_cp = 7;</code>
+     */
+    private void setGuardPokemonCp(int value) {
+      
+      guardPokemonCp_ = value;
+    }
+    /**
+     * <code>optional int32 guard_pokemon_cp = 7;</code>
+     */
+    private void clearGuardPokemonCp() {
+      
+      guardPokemonCp_ = 0;
     }
 
     public static final int GYM_POINTS_FIELD_NUMBER = 10;
@@ -1550,6 +2270,28 @@ public final class Fort {
     public long getGymPoints() {
       return gymPoints_;
     }
+    /**
+     * <pre>
+     * Prestigate / experience of the gym
+     * </pre>
+     *
+     * <code>optional int64 gym_points = 10;</code>
+     */
+    private void setGymPoints(long value) {
+      
+      gymPoints_ = value;
+    }
+    /**
+     * <pre>
+     * Prestigate / experience of the gym
+     * </pre>
+     *
+     * <code>optional int64 gym_points = 10;</code>
+     */
+    private void clearGymPoints() {
+      
+      gymPoints_ = 0L;
+    }
 
     public static final int IS_IN_BATTLE_FIELD_NUMBER = 11;
     private boolean isInBattle_;
@@ -1563,15 +2305,37 @@ public final class Fort {
     public boolean getIsInBattle() {
       return isInBattle_;
     }
+    /**
+     * <pre>
+     * Whether someone is battling at the gym currently
+     * </pre>
+     *
+     * <code>optional bool is_in_battle = 11;</code>
+     */
+    private void setIsInBattle(boolean value) {
+      
+      isInBattle_ = value;
+    }
+    /**
+     * <pre>
+     * Whether someone is battling at the gym currently
+     * </pre>
+     *
+     * <code>optional bool is_in_battle = 11;</code>
+     */
+    private void clearIsInBattle() {
+      
+      isInBattle_ = false;
+    }
 
     public static final int ACTIVE_FORT_MODIFIER_FIELD_NUMBER = 12;
-    private java.util.List<java.lang.Integer> activeFortModifier_;
+    private com.google.protobuf.Internal.IntList activeFortModifier_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> activeFortModifier_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>() {
               public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId convert(java.lang.Integer from) {
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(from);
+                com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.forNumber(from);
                 return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
               }
             };
@@ -1604,7 +2368,7 @@ public final class Fort {
      * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
      */
     public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getActiveFortModifier(int index) {
-      return activeFortModifier_converter_.convert(activeFortModifier_.get(index));
+      return activeFortModifier_converter_.convert(activeFortModifier_.getInt(index));
     }
     /**
      * <pre>
@@ -1625,9 +2389,104 @@ public final class Fort {
      * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
      */
     public int getActiveFortModifierValue(int index) {
-      return activeFortModifier_.get(index);
+      return activeFortModifier_.getInt(index);
     }
-    private int activeFortModifierMemoizedSerializedSize;
+    private void ensureActiveFortModifierIsMutable() {
+      if (!activeFortModifier_.isModifiable()) {
+        activeFortModifier_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(activeFortModifier_);
+      }
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void setActiveFortModifier(
+        int index, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActiveFortModifierIsMutable();
+      activeFortModifier_.setInt(index, value.getNumber());
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void addActiveFortModifier(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActiveFortModifierIsMutable();
+      activeFortModifier_.addInt(value.getNumber());
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void addAllActiveFortModifier(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> values) {
+      ensureActiveFortModifierIsMutable();
+      for (com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value : values) {
+        activeFortModifier_.addInt(value.getNumber());
+      }
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void clearActiveFortModifier() {
+      activeFortModifier_ = emptyIntList();
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void setActiveFortModifierValue(
+        int index, int value) {
+      ensureActiveFortModifierIsMutable();
+      activeFortModifier_.setInt(index, value);
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void addActiveFortModifierValue(int value) {
+      ensureActiveFortModifierIsMutable();
+      activeFortModifier_.addInt(value);
+    }
+    /**
+     * <pre>
+     *&#47;/ Fields related to pokestops only
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
+     */
+    private void addAllActiveFortModifierValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureActiveFortModifierIsMutable();
+      for (int value : values) {
+        activeFortModifier_.addInt(value);
+      }
+    }
 
     public static final int LURE_INFO_FIELD_NUMBER = 13;
     private com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo lureInfo_;
@@ -1646,8 +2505,39 @@ public final class Fort {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
      */
-    public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder getLureInfoOrBuilder() {
-      return getLureInfo();
+    private void setLureInfo(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      lureInfo_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
+     */
+    private void setLureInfo(
+        com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder builderForValue) {
+      lureInfo_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
+     */
+    private void mergeLureInfo(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo value) {
+      if (lureInfo_ != null &&
+          lureInfo_ != com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.getDefaultInstance()) {
+        lureInfo_ =
+          com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.newBuilder(lureInfo_).mergeFrom(value).buildPartial();
+      } else {
+        lureInfo_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
+     */
+    private void clearLureInfo() {  lureInfo_ = null;
+      
     }
 
     public static final int COOLDOWN_COMPLETE_TIMESTAMP_MS_FIELD_NUMBER = 14;
@@ -1662,6 +2552,28 @@ public final class Fort {
     public long getCooldownCompleteTimestampMs() {
       return cooldownCompleteTimestampMs_;
     }
+    /**
+     * <pre>
+     * Timestamp when the pokestop can be activated again to get items / xp
+     * </pre>
+     *
+     * <code>optional int64 cooldown_complete_timestamp_ms = 14;</code>
+     */
+    private void setCooldownCompleteTimestampMs(long value) {
+      
+      cooldownCompleteTimestampMs_ = value;
+    }
+    /**
+     * <pre>
+     * Timestamp when the pokestop can be activated again to get items / xp
+     * </pre>
+     *
+     * <code>optional int64 cooldown_complete_timestamp_ms = 14;</code>
+     */
+    private void clearCooldownCompleteTimestampMs() {
+      
+      cooldownCompleteTimestampMs_ = 0L;
+    }
 
     public static final int SPONSOR_FIELD_NUMBER = 15;
     private int sponsor_;
@@ -1675,8 +2587,31 @@ public final class Fort {
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
      */
     public com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor getSponsor() {
-      com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor result = com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor.valueOf(sponsor_);
+      com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor result = com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor.forNumber(sponsor_);
       return result == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
+     */
+    private void setSponsorValue(int value) {
+        sponsor_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
+     */
+    private void setSponsor(com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      sponsor_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
+     */
+    private void clearSponsor() {
+      
+      sponsor_ = 0;
     }
 
     public static final int RENDERING_TYPE_FIELD_NUMBER = 16;
@@ -1691,25 +2626,38 @@ public final class Fort {
      * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
      */
     public com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType getRenderingType() {
-      com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType result = com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType.valueOf(renderingType_);
+      com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType result = com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType.forNumber(renderingType_);
       return result == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType.UNRECOGNIZED : result;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
+     */
+    private void setRenderingTypeValue(int value) {
+        renderingType_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
+     */
+    private void setRenderingType(com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      renderingType_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
+     */
+    private void clearRenderingType() {
+      
+      renderingType_ = 0;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (!id_.isEmpty()) {
+        output.writeString(1, getId());
       }
       if (lastModifiedTimestampMs_ != 0L) {
         output.writeInt64(2, lastModifiedTimestampMs_);
@@ -1741,12 +2689,8 @@ public final class Fort {
       if (isInBattle_ != false) {
         output.writeBool(11, isInBattle_);
       }
-      if (getActiveFortModifierList().size() > 0) {
-        output.writeUInt32NoTag(98);
-        output.writeUInt32NoTag(activeFortModifierMemoizedSerializedSize);
-      }
       for (int i = 0; i < activeFortModifier_.size(); i++) {
-        output.writeEnumNoTag(activeFortModifier_.get(i));
+        output.writeEnum(12, activeFortModifier_.getInt(i));
       }
       if (lureInfo_ != null) {
         output.writeMessage(13, getLureInfo());
@@ -1763,12 +2707,13 @@ public final class Fort {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      if (!id_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getId());
       }
       if (lastModifiedTimestampMs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -1814,13 +2759,10 @@ public final class Fort {
         int dataSize = 0;
         for (int i = 0; i < activeFortModifier_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(activeFortModifier_.get(i));
+            .computeEnumSizeNoTag(activeFortModifier_.getInt(i));
         }
         size += dataSize;
-        if (!getActiveFortModifierList().isEmpty()) {  size += 1;
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dataSize);
-        }activeFortModifierMemoizedSerializedSize = dataSize;
+        size += 1 * activeFortModifier_.size();
       }
       if (lureInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -1838,487 +2780,120 @@ public final class Fort {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(16, renderingType_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortData)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Fort.FortData other = (com.github.aeonlucid.pogoprotos.map.Fort.FortData) obj;
-
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && (getLastModifiedTimestampMs()
-          == other.getLastModifiedTimestampMs());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      result = result && (getEnabled()
-          == other.getEnabled());
-      result = result && type_ == other.type_;
-      result = result && ownedByTeam_ == other.ownedByTeam_;
-      result = result && guardPokemonId_ == other.guardPokemonId_;
-      result = result && (getGuardPokemonCp()
-          == other.getGuardPokemonCp());
-      result = result && (getGymPoints()
-          == other.getGymPoints());
-      result = result && (getIsInBattle()
-          == other.getIsInBattle());
-      result = result && activeFortModifier_.equals(other.activeFortModifier_);
-      result = result && (hasLureInfo() == other.hasLureInfo());
-      if (hasLureInfo()) {
-        result = result && getLureInfo()
-            .equals(other.getLureInfo());
-      }
-      result = result && (getCooldownCompleteTimestampMs()
-          == other.getCooldownCompleteTimestampMs());
-      result = result && sponsor_ == other.sponsor_;
-      result = result && renderingType_ == other.renderingType_;
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + LAST_MODIFIED_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLastModifiedTimestampMs());
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEnabled());
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      hash = (37 * hash) + OWNED_BY_TEAM_FIELD_NUMBER;
-      hash = (53 * hash) + ownedByTeam_;
-      hash = (37 * hash) + GUARD_POKEMON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + guardPokemonId_;
-      hash = (37 * hash) + GUARD_POKEMON_CP_FIELD_NUMBER;
-      hash = (53 * hash) + getGuardPokemonCp();
-      hash = (37 * hash) + GYM_POINTS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGymPoints());
-      hash = (37 * hash) + IS_IN_BATTLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsInBattle());
-      if (getActiveFortModifierCount() > 0) {
-        hash = (37 * hash) + ACTIVE_FORT_MODIFIER_FIELD_NUMBER;
-        hash = (53 * hash) + activeFortModifier_.hashCode();
-      }
-      if (hasLureInfo()) {
-        hash = (37 * hash) + LURE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getLureInfo().hashCode();
-      }
-      hash = (37 * hash) + COOLDOWN_COMPLETE_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCooldownCompleteTimestampMs());
-      hash = (37 * hash) + SPONSOR_FIELD_NUMBER;
-      hash = (53 * hash) + sponsor_;
-      hash = (37 * hash) + RENDERING_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + renderingType_;
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Fort.FortData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Fort.FortData, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.fort.FortData)
         com.github.aeonlucid.pogoprotos.map.Fort.FortDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Fort.FortData.class, com.github.aeonlucid.pogoprotos.map.Fort.FortData.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.map.Fort.FortData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        id_ = "";
 
-        lastModifiedTimestampMs_ = 0L;
-
-        latitude_ = 0D;
-
-        longitude_ = 0D;
-
-        enabled_ = false;
-
-        type_ = 0;
-
-        ownedByTeam_ = 0;
-
-        guardPokemonId_ = 0;
-
-        guardPokemonCp_ = 0;
-
-        gymPoints_ = 0L;
-
-        isInBattle_ = false;
-
-        activeFortModifier_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        if (lureInfoBuilder_ == null) {
-          lureInfo_ = null;
-        } else {
-          lureInfo_ = null;
-          lureInfoBuilder_ = null;
-        }
-        cooldownCompleteTimestampMs_ = 0L;
-
-        sponsor_ = 0;
-
-        renderingType_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData build() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortData buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortData result = new com.github.aeonlucid.pogoprotos.map.Fort.FortData(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.id_ = id_;
-        result.lastModifiedTimestampMs_ = lastModifiedTimestampMs_;
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
-        result.enabled_ = enabled_;
-        result.type_ = type_;
-        result.ownedByTeam_ = ownedByTeam_;
-        result.guardPokemonId_ = guardPokemonId_;
-        result.guardPokemonCp_ = guardPokemonCp_;
-        result.gymPoints_ = gymPoints_;
-        result.isInBattle_ = isInBattle_;
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
-          activeFortModifier_ = java.util.Collections.unmodifiableList(activeFortModifier_);
-          bitField0_ = (bitField0_ & ~0x00000800);
-        }
-        result.activeFortModifier_ = activeFortModifier_;
-        if (lureInfoBuilder_ == null) {
-          result.lureInfo_ = lureInfo_;
-        } else {
-          result.lureInfo_ = lureInfoBuilder_.build();
-        }
-        result.cooldownCompleteTimestampMs_ = cooldownCompleteTimestampMs_;
-        result.sponsor_ = sponsor_;
-        result.renderingType_ = renderingType_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortData) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Fort.FortData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Fort.FortData other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Fort.FortData.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
-        }
-        if (other.getLastModifiedTimestampMs() != 0L) {
-          setLastModifiedTimestampMs(other.getLastModifiedTimestampMs());
-        }
-        if (other.getLatitude() != 0D) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.getLongitude() != 0D) {
-          setLongitude(other.getLongitude());
-        }
-        if (other.getEnabled() != false) {
-          setEnabled(other.getEnabled());
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
-        }
-        if (other.ownedByTeam_ != 0) {
-          setOwnedByTeamValue(other.getOwnedByTeamValue());
-        }
-        if (other.guardPokemonId_ != 0) {
-          setGuardPokemonIdValue(other.getGuardPokemonIdValue());
-        }
-        if (other.getGuardPokemonCp() != 0) {
-          setGuardPokemonCp(other.getGuardPokemonCp());
-        }
-        if (other.getGymPoints() != 0L) {
-          setGymPoints(other.getGymPoints());
-        }
-        if (other.getIsInBattle() != false) {
-          setIsInBattle(other.getIsInBattle());
-        }
-        if (!other.activeFortModifier_.isEmpty()) {
-          if (activeFortModifier_.isEmpty()) {
-            activeFortModifier_ = other.activeFortModifier_;
-            bitField0_ = (bitField0_ & ~0x00000800);
-          } else {
-            ensureActiveFortModifierIsMutable();
-            activeFortModifier_.addAll(other.activeFortModifier_);
-          }
-          onChanged();
-        }
-        if (other.hasLureInfo()) {
-          mergeLureInfo(other.getLureInfo());
-        }
-        if (other.getCooldownCompleteTimestampMs() != 0L) {
-          setCooldownCompleteTimestampMs(other.getCooldownCompleteTimestampMs());
-        }
-        if (other.sponsor_ != 0) {
-          setSponsorValue(other.getSponsorValue());
-        }
-        if (other.renderingType_ != 0) {
-          setRenderingTypeValue(other.getRenderingTypeValue());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Fort.FortData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object id_ = "";
       /**
        * <code>optional string id = 1;</code>
        */
       public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getId();
       }
       /**
        * <code>optional string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getIdBytes();
       }
       /**
        * <code>optional string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setId(value);
         return this;
       }
       /**
        * <code>optional string id = 1;</code>
        */
       public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
+        copyOnWrite();
+        instance.clearId();
         return this;
       }
       /**
@@ -2326,165 +2901,140 @@ public final class Fort {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setIdBytes(value);
         return this;
       }
 
-      private long lastModifiedTimestampMs_ ;
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public long getLastModifiedTimestampMs() {
-        return lastModifiedTimestampMs_;
+        return instance.getLastModifiedTimestampMs();
       }
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public Builder setLastModifiedTimestampMs(long value) {
-        
-        lastModifiedTimestampMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLastModifiedTimestampMs(value);
         return this;
       }
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public Builder clearLastModifiedTimestampMs() {
-        
-        lastModifiedTimestampMs_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearLastModifiedTimestampMs();
         return this;
       }
 
-      private double latitude_ ;
       /**
        * <code>optional double latitude = 3;</code>
        */
       public double getLatitude() {
-        return latitude_;
+        return instance.getLatitude();
       }
       /**
        * <code>optional double latitude = 3;</code>
        */
       public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLatitude(value);
         return this;
       }
       /**
        * <code>optional double latitude = 3;</code>
        */
       public Builder clearLatitude() {
-        
-        latitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLatitude();
         return this;
       }
 
-      private double longitude_ ;
       /**
        * <code>optional double longitude = 4;</code>
        */
       public double getLongitude() {
-        return longitude_;
+        return instance.getLongitude();
       }
       /**
        * <code>optional double longitude = 4;</code>
        */
       public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLongitude(value);
         return this;
       }
       /**
        * <code>optional double longitude = 4;</code>
        */
       public Builder clearLongitude() {
-        
-        longitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLongitude();
         return this;
       }
 
-      private boolean enabled_ ;
       /**
        * <code>optional bool enabled = 8;</code>
        */
       public boolean getEnabled() {
-        return enabled_;
+        return instance.getEnabled();
       }
       /**
        * <code>optional bool enabled = 8;</code>
        */
       public Builder setEnabled(boolean value) {
-        
-        enabled_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setEnabled(value);
         return this;
       }
       /**
        * <code>optional bool enabled = 8;</code>
        */
       public Builder clearEnabled() {
-        
-        enabled_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearEnabled();
         return this;
       }
 
-      private int type_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
        */
       public int getTypeValue() {
-        return type_;
+        return instance.getTypeValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
        */
       public Builder setTypeValue(int value) {
-        type_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setTypeValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortType getType() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortType result = com.github.aeonlucid.pogoprotos.map.Fort.FortType.valueOf(type_);
-        return result == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortType.UNRECOGNIZED : result;
+        return instance.getType();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
        */
       public Builder setType(com.github.aeonlucid.pogoprotos.map.Fort.FortType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setType(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortType type = 9;</code>
        */
       public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearType();
         return this;
       }
 
-      private int ownedByTeam_ = 0;
       /**
        * <pre>
        *&#47;/ Fields related to gyms only
@@ -2494,7 +3044,7 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
        */
       public int getOwnedByTeamValue() {
-        return ownedByTeam_;
+        return instance.getOwnedByTeamValue();
       }
       /**
        * <pre>
@@ -2505,8 +3055,8 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
        */
       public Builder setOwnedByTeamValue(int value) {
-        ownedByTeam_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setOwnedByTeamValue(value);
         return this;
       }
       /**
@@ -2518,8 +3068,7 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
        */
       public com.github.aeonlucid.pogoprotos.Enums.TeamColor getOwnedByTeam() {
-        com.github.aeonlucid.pogoprotos.Enums.TeamColor result = com.github.aeonlucid.pogoprotos.Enums.TeamColor.valueOf(ownedByTeam_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.TeamColor.UNRECOGNIZED : result;
+        return instance.getOwnedByTeam();
       }
       /**
        * <pre>
@@ -2530,12 +3079,8 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
        */
       public Builder setOwnedByTeam(com.github.aeonlucid.pogoprotos.Enums.TeamColor value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        ownedByTeam_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setOwnedByTeam(value);
         return this;
       }
       /**
@@ -2547,13 +3092,11 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.TeamColor owned_by_team = 5;</code>
        */
       public Builder clearOwnedByTeam() {
-        
-        ownedByTeam_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearOwnedByTeam();
         return this;
       }
 
-      private int guardPokemonId_ = 0;
       /**
        * <pre>
        * Highest CP Pokemon at the gym
@@ -2562,7 +3105,7 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
        */
       public int getGuardPokemonIdValue() {
-        return guardPokemonId_;
+        return instance.getGuardPokemonIdValue();
       }
       /**
        * <pre>
@@ -2572,8 +3115,8 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
        */
       public Builder setGuardPokemonIdValue(int value) {
-        guardPokemonId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setGuardPokemonIdValue(value);
         return this;
       }
       /**
@@ -2584,8 +3127,7 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
        */
       public com.github.aeonlucid.pogoprotos.Enums.PokemonId getGuardPokemonId() {
-        com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(guardPokemonId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+        return instance.getGuardPokemonId();
       }
       /**
        * <pre>
@@ -2595,12 +3137,8 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
        */
       public Builder setGuardPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        guardPokemonId_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setGuardPokemonId(value);
         return this;
       }
       /**
@@ -2611,39 +3149,34 @@ public final class Fort {
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId guard_pokemon_id = 6;</code>
        */
       public Builder clearGuardPokemonId() {
-        
-        guardPokemonId_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearGuardPokemonId();
         return this;
       }
 
-      private int guardPokemonCp_ ;
       /**
        * <code>optional int32 guard_pokemon_cp = 7;</code>
        */
       public int getGuardPokemonCp() {
-        return guardPokemonCp_;
+        return instance.getGuardPokemonCp();
       }
       /**
        * <code>optional int32 guard_pokemon_cp = 7;</code>
        */
       public Builder setGuardPokemonCp(int value) {
-        
-        guardPokemonCp_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setGuardPokemonCp(value);
         return this;
       }
       /**
        * <code>optional int32 guard_pokemon_cp = 7;</code>
        */
       public Builder clearGuardPokemonCp() {
-        
-        guardPokemonCp_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearGuardPokemonCp();
         return this;
       }
 
-      private long gymPoints_ ;
       /**
        * <pre>
        * Prestigate / experience of the gym
@@ -2652,7 +3185,7 @@ public final class Fort {
        * <code>optional int64 gym_points = 10;</code>
        */
       public long getGymPoints() {
-        return gymPoints_;
+        return instance.getGymPoints();
       }
       /**
        * <pre>
@@ -2662,9 +3195,8 @@ public final class Fort {
        * <code>optional int64 gym_points = 10;</code>
        */
       public Builder setGymPoints(long value) {
-        
-        gymPoints_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setGymPoints(value);
         return this;
       }
       /**
@@ -2675,13 +3207,11 @@ public final class Fort {
        * <code>optional int64 gym_points = 10;</code>
        */
       public Builder clearGymPoints() {
-        
-        gymPoints_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearGymPoints();
         return this;
       }
 
-      private boolean isInBattle_ ;
       /**
        * <pre>
        * Whether someone is battling at the gym currently
@@ -2690,7 +3220,7 @@ public final class Fort {
        * <code>optional bool is_in_battle = 11;</code>
        */
       public boolean getIsInBattle() {
-        return isInBattle_;
+        return instance.getIsInBattle();
       }
       /**
        * <pre>
@@ -2700,9 +3230,8 @@ public final class Fort {
        * <code>optional bool is_in_battle = 11;</code>
        */
       public Builder setIsInBattle(boolean value) {
-        
-        isInBattle_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setIsInBattle(value);
         return this;
       }
       /**
@@ -2713,20 +3242,11 @@ public final class Fort {
        * <code>optional bool is_in_battle = 11;</code>
        */
       public Builder clearIsInBattle() {
-        
-        isInBattle_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearIsInBattle();
         return this;
       }
 
-      private java.util.List<java.lang.Integer> activeFortModifier_ =
-        java.util.Collections.emptyList();
-      private void ensureActiveFortModifierIsMutable() {
-        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-          activeFortModifier_ = new java.util.ArrayList<java.lang.Integer>(activeFortModifier_);
-          bitField0_ |= 0x00000800;
-        }
-      }
       /**
        * <pre>
        *&#47;/ Fields related to pokestops only
@@ -2735,8 +3255,7 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getActiveFortModifierList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>(activeFortModifier_, activeFortModifier_converter_);
+        return instance.getActiveFortModifierList();
       }
       /**
        * <pre>
@@ -2746,7 +3265,7 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public int getActiveFortModifierCount() {
-        return activeFortModifier_.size();
+        return instance.getActiveFortModifierCount();
       }
       /**
        * <pre>
@@ -2756,7 +3275,7 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getActiveFortModifier(int index) {
-        return activeFortModifier_converter_.convert(activeFortModifier_.get(index));
+        return instance.getActiveFortModifier(index);
       }
       /**
        * <pre>
@@ -2767,12 +3286,8 @@ public final class Fort {
        */
       public Builder setActiveFortModifier(
           int index, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureActiveFortModifierIsMutable();
-        activeFortModifier_.set(index, value.getNumber());
-        onChanged();
+        copyOnWrite();
+        instance.setActiveFortModifier(index, value);
         return this;
       }
       /**
@@ -2783,12 +3298,8 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public Builder addActiveFortModifier(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureActiveFortModifierIsMutable();
-        activeFortModifier_.add(value.getNumber());
-        onChanged();
+        copyOnWrite();
+        instance.addActiveFortModifier(value);
         return this;
       }
       /**
@@ -2800,12 +3311,8 @@ public final class Fort {
        */
       public Builder addAllActiveFortModifier(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> values) {
-        ensureActiveFortModifierIsMutable();
-        for (com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value : values) {
-          activeFortModifier_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
+        copyOnWrite();
+        instance.addAllActiveFortModifier(values);  return this;
       }
       /**
        * <pre>
@@ -2815,9 +3322,8 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public Builder clearActiveFortModifier() {
-        activeFortModifier_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        onChanged();
+        copyOnWrite();
+        instance.clearActiveFortModifier();
         return this;
       }
       /**
@@ -2829,7 +3335,8 @@ public final class Fort {
        */
       public java.util.List<java.lang.Integer>
       getActiveFortModifierValueList() {
-        return java.util.Collections.unmodifiableList(activeFortModifier_);
+        return java.util.Collections.unmodifiableList(
+            instance.getActiveFortModifierValueList());
       }
       /**
        * <pre>
@@ -2839,7 +3346,7 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public int getActiveFortModifierValue(int index) {
-        return activeFortModifier_.get(index);
+        return instance.getActiveFortModifierValue(index);
       }
       /**
        * <pre>
@@ -2850,9 +3357,8 @@ public final class Fort {
        */
       public Builder setActiveFortModifierValue(
           int index, int value) {
-        ensureActiveFortModifierIsMutable();
-        activeFortModifier_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setActiveFortModifierValue(index, value);
         return this;
       }
       /**
@@ -2863,9 +3369,7 @@ public final class Fort {
        * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId active_fort_modifier = 12;</code>
        */
       public Builder addActiveFortModifierValue(int value) {
-        ensureActiveFortModifierIsMutable();
-        activeFortModifier_.add(value);
-        onChanged();
+        instance.addActiveFortModifierValue(value);
         return this;
       }
       /**
@@ -2877,132 +3381,56 @@ public final class Fort {
        */
       public Builder addAllActiveFortModifierValue(
           java.lang.Iterable<java.lang.Integer> values) {
-        ensureActiveFortModifierIsMutable();
-        for (int value : values) {
-          activeFortModifier_.add(value);
-        }
-        onChanged();
+        copyOnWrite();
+        instance.addAllActiveFortModifierValue(values);
         return this;
       }
 
-      private com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo lureInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder> lureInfoBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
        */
       public boolean hasLureInfo() {
-        return lureInfoBuilder_ != null || lureInfo_ != null;
+        return instance.hasLureInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo getLureInfo() {
-        if (lureInfoBuilder_ == null) {
-          return lureInfo_ == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.getDefaultInstance() : lureInfo_;
-        } else {
-          return lureInfoBuilder_.getMessage();
-        }
+        return instance.getLureInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
        */
       public Builder setLureInfo(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo value) {
-        if (lureInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          lureInfo_ = value;
-          onChanged();
-        } else {
-          lureInfoBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setLureInfo(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
        */
       public Builder setLureInfo(
           com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder builderForValue) {
-        if (lureInfoBuilder_ == null) {
-          lureInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          lureInfoBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setLureInfo(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
        */
       public Builder mergeLureInfo(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo value) {
-        if (lureInfoBuilder_ == null) {
-          if (lureInfo_ != null) {
-            lureInfo_ =
-              com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.newBuilder(lureInfo_).mergeFrom(value).buildPartial();
-          } else {
-            lureInfo_ = value;
-          }
-          onChanged();
-        } else {
-          lureInfoBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeLureInfo(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
        */
-      public Builder clearLureInfo() {
-        if (lureInfoBuilder_ == null) {
-          lureInfo_ = null;
-          onChanged();
-        } else {
-          lureInfo_ = null;
-          lureInfoBuilder_ = null;
-        }
-
+      public Builder clearLureInfo() {  copyOnWrite();
+        instance.clearLureInfo();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder getLureInfoBuilder() {
-        
-        onChanged();
-        return getLureInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder getLureInfoOrBuilder() {
-        if (lureInfoBuilder_ != null) {
-          return lureInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return lureInfo_ == null ?
-              com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.getDefaultInstance() : lureInfo_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo lure_info = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder> 
-          getLureInfoFieldBuilder() {
-        if (lureInfoBuilder_ == null) {
-          lureInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder>(
-                  getLureInfo(),
-                  getParentForChildren(),
-                  isClean());
-          lureInfo_ = null;
-        }
-        return lureInfoBuilder_;
-      }
 
-      private long cooldownCompleteTimestampMs_ ;
       /**
        * <pre>
        * Timestamp when the pokestop can be activated again to get items / xp
@@ -3011,7 +3439,7 @@ public final class Fort {
        * <code>optional int64 cooldown_complete_timestamp_ms = 14;</code>
        */
       public long getCooldownCompleteTimestampMs() {
-        return cooldownCompleteTimestampMs_;
+        return instance.getCooldownCompleteTimestampMs();
       }
       /**
        * <pre>
@@ -3021,9 +3449,8 @@ public final class Fort {
        * <code>optional int64 cooldown_complete_timestamp_ms = 14;</code>
        */
       public Builder setCooldownCompleteTimestampMs(long value) {
-        
-        cooldownCompleteTimestampMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setCooldownCompleteTimestampMs(value);
         return this;
       }
       /**
@@ -3034,1640 +3461,315 @@ public final class Fort {
        * <code>optional int64 cooldown_complete_timestamp_ms = 14;</code>
        */
       public Builder clearCooldownCompleteTimestampMs() {
-        
-        cooldownCompleteTimestampMs_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearCooldownCompleteTimestampMs();
         return this;
       }
 
-      private int sponsor_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
        */
       public int getSponsorValue() {
-        return sponsor_;
+        return instance.getSponsorValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
        */
       public Builder setSponsorValue(int value) {
-        sponsor_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSponsorValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor getSponsor() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor result = com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor.valueOf(sponsor_);
-        return result == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor.UNRECOGNIZED : result;
+        return instance.getSponsor();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
        */
       public Builder setSponsor(com.github.aeonlucid.pogoprotos.map.Fort.FortSponsor value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        sponsor_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setSponsor(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;</code>
        */
       public Builder clearSponsor() {
-        
-        sponsor_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearSponsor();
         return this;
       }
 
-      private int renderingType_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
        */
       public int getRenderingTypeValue() {
-        return renderingType_;
+        return instance.getRenderingTypeValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
        */
       public Builder setRenderingTypeValue(int value) {
-        renderingType_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setRenderingTypeValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
        */
       public com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType getRenderingType() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType result = com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType.valueOf(renderingType_);
-        return result == null ? com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType.UNRECOGNIZED : result;
+        return instance.getRenderingType();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
        */
       public Builder setRenderingType(com.github.aeonlucid.pogoprotos.map.Fort.FortRenderingType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        renderingType_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setRenderingType(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;</code>
        */
       public Builder clearRenderingType() {
-        
-        renderingType_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearRenderingType();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.fort.FortData)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Fort.FortData();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          activeFortModifier_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Fort.FortData other = (com.github.aeonlucid.pogoprotos.map.Fort.FortData) arg1;
+          id_ = visitor.visitString(!id_.isEmpty(), id_,
+              !other.id_.isEmpty(), other.id_);
+          lastModifiedTimestampMs_ = visitor.visitLong(lastModifiedTimestampMs_ != 0L, lastModifiedTimestampMs_,
+              other.lastModifiedTimestampMs_ != 0L, other.lastModifiedTimestampMs_);
+          latitude_ = visitor.visitDouble(latitude_ != 0D, latitude_,
+              other.latitude_ != 0D, other.latitude_);
+          longitude_ = visitor.visitDouble(longitude_ != 0D, longitude_,
+              other.longitude_ != 0D, other.longitude_);
+          enabled_ = visitor.visitBoolean(enabled_ != false, enabled_,
+              other.enabled_ != false, other.enabled_);
+          type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
+          ownedByTeam_ = visitor.visitInt(ownedByTeam_ != 0, ownedByTeam_,    other.ownedByTeam_ != 0, other.ownedByTeam_);
+          guardPokemonId_ = visitor.visitInt(guardPokemonId_ != 0, guardPokemonId_,    other.guardPokemonId_ != 0, other.guardPokemonId_);
+          guardPokemonCp_ = visitor.visitInt(guardPokemonCp_ != 0, guardPokemonCp_,
+              other.guardPokemonCp_ != 0, other.guardPokemonCp_);
+          gymPoints_ = visitor.visitLong(gymPoints_ != 0L, gymPoints_,
+              other.gymPoints_ != 0L, other.gymPoints_);
+          isInBattle_ = visitor.visitBoolean(isInBattle_ != false, isInBattle_,
+              other.isInBattle_ != false, other.isInBattle_);
+          activeFortModifier_= visitor.visitIntList(activeFortModifier_, other.activeFortModifier_);
+          lureInfo_ = visitor.visitMessage(lureInfo_, other.lureInfo_);
+          cooldownCompleteTimestampMs_ = visitor.visitLong(cooldownCompleteTimestampMs_ != 0L, cooldownCompleteTimestampMs_,
+              other.cooldownCompleteTimestampMs_ != 0L, other.cooldownCompleteTimestampMs_);
+          sponsor_ = visitor.visitInt(sponsor_ != 0, sponsor_,    other.sponsor_ != 0, other.sponsor_);
+          renderingType_ = visitor.visitInt(renderingType_ != 0, renderingType_,    other.renderingType_ != 0, other.renderingType_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  id_ = s;
+                  break;
+                }
+                case 16: {
+
+                  lastModifiedTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 25: {
+
+                  latitude_ = input.readDouble();
+                  break;
+                }
+                case 33: {
+
+                  longitude_ = input.readDouble();
+                  break;
+                }
+                case 40: {
+                  int rawValue = input.readEnum();
+
+                  ownedByTeam_ = rawValue;
+                  break;
+                }
+                case 48: {
+                  int rawValue = input.readEnum();
+
+                  guardPokemonId_ = rawValue;
+                  break;
+                }
+                case 56: {
+
+                  guardPokemonCp_ = input.readInt32();
+                  break;
+                }
+                case 64: {
+
+                  enabled_ = input.readBool();
+                  break;
+                }
+                case 72: {
+                  int rawValue = input.readEnum();
+
+                  type_ = rawValue;
+                  break;
+                }
+                case 80: {
+
+                  gymPoints_ = input.readInt64();
+                  break;
+                }
+                case 88: {
+
+                  isInBattle_ = input.readBool();
+                  break;
+                }
+                case 96: {
+                  if (!activeFortModifier_.isModifiable()) {
+                    activeFortModifier_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(activeFortModifier_);
+                  }
+                  activeFortModifier_.addInt(input.readEnum());
+                  break;
+                }
+                case 98: {
+                  if (!activeFortModifier_.isModifiable()) {
+                    activeFortModifier_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(activeFortModifier_);
+                  }
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while(input.getBytesUntilLimit() > 0) {
+                    activeFortModifier_.addInt(input.readEnum());
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                }
+                case 106: {
+                  com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder subBuilder = null;
+                  if (lureInfo_ != null) {
+                    subBuilder = lureInfo_.toBuilder();
+                  }
+                  lureInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(lureInfo_);
+                    lureInfo_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 112: {
+
+                  cooldownCompleteTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 120: {
+                  int rawValue = input.readEnum();
+
+                  sponsor_ = rawValue;
+                  break;
+                }
+                case 128: {
+                  int rawValue = input.readEnum();
+
+                  renderingType_ = rawValue;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Fort.FortData.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.fort.FortData)
     private static final com.github.aeonlucid.pogoprotos.map.Fort.FortData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Fort.FortData();
+      DEFAULT_INSTANCE = new FortData();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Fort.FortData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FortData>
-        PARSER = new com.google.protobuf.AbstractParser<FortData>() {
-      public FortData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FortData(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<FortData> PARSER;
 
     public static com.google.protobuf.Parser<FortData> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FortData> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Fort.FortData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface FortLureInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
-      com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>optional string fort_id = 1;</code>
-     */
-    java.lang.String getFortId();
-    /**
-     * <code>optional string fort_id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getFortIdBytes();
-
-    /**
-     * <code>optional fixed64 encounter_id = 2;</code>
-     */
-    long getEncounterId();
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-     */
-    int getActivePokemonIdValue();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Enums.PokemonId getActivePokemonId();
-
-    /**
-     * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
-     */
-    long getLureExpiresTimestampMs();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo}
-   */
-  public  static final class FortLureInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
-      FortLureInfoOrBuilder {
-    // Use FortLureInfo.newBuilder() to construct.
-    private FortLureInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FortLureInfo() {
-      fortId_ = "";
-      encounterId_ = 0L;
-      activePokemonId_ = 0;
-      lureExpiresTimestampMs_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private FortLureInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fortId_ = s;
-              break;
-            }
-            case 17: {
-
-              encounterId_ = input.readFixed64();
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              activePokemonId_ = rawValue;
-              break;
-            }
-            case 32: {
-
-              lureExpiresTimestampMs_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.class, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder.class);
-    }
-
-    public static final int FORT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object fortId_;
-    /**
-     * <code>optional string fort_id = 1;</code>
-     */
-    public java.lang.String getFortId() {
-      java.lang.Object ref = fortId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fortId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string fort_id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFortIdBytes() {
-      java.lang.Object ref = fortId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fortId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENCOUNTER_ID_FIELD_NUMBER = 2;
-    private long encounterId_;
-    /**
-     * <code>optional fixed64 encounter_id = 2;</code>
-     */
-    public long getEncounterId() {
-      return encounterId_;
-    }
-
-    public static final int ACTIVE_POKEMON_ID_FIELD_NUMBER = 3;
-    private int activePokemonId_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-     */
-    public int getActivePokemonIdValue() {
-      return activePokemonId_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.Enums.PokemonId getActivePokemonId() {
-      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(activePokemonId_);
-      return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
-    }
-
-    public static final int LURE_EXPIRES_TIMESTAMP_MS_FIELD_NUMBER = 4;
-    private long lureExpiresTimestampMs_;
-    /**
-     * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
-     */
-    public long getLureExpiresTimestampMs() {
-      return lureExpiresTimestampMs_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getFortIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fortId_);
-      }
-      if (encounterId_ != 0L) {
-        output.writeFixed64(2, encounterId_);
-      }
-      if (activePokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
-        output.writeEnum(3, activePokemonId_);
-      }
-      if (lureExpiresTimestampMs_ != 0L) {
-        output.writeInt64(4, lureExpiresTimestampMs_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getFortIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fortId_);
-      }
-      if (encounterId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFixed64Size(2, encounterId_);
-      }
-      if (activePokemonId_ != com.github.aeonlucid.pogoprotos.Enums.PokemonId.MISSINGNO.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, activePokemonId_);
-      }
-      if (lureExpiresTimestampMs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, lureExpiresTimestampMs_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo other = (com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo) obj;
-
-      boolean result = true;
-      result = result && getFortId()
-          .equals(other.getFortId());
-      result = result && (getEncounterId()
-          == other.getEncounterId());
-      result = result && activePokemonId_ == other.activePokemonId_;
-      result = result && (getLureExpiresTimestampMs()
-          == other.getLureExpiresTimestampMs());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + FORT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFortId().hashCode();
-      hash = (37 * hash) + ENCOUNTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEncounterId());
-      hash = (37 * hash) + ACTIVE_POKEMON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + activePokemonId_;
-      hash = (37 * hash) + LURE_EXPIRES_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLureExpiresTimestampMs());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
-        com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.class, com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        fortId_ = "";
-
-        encounterId_ = 0L;
-
-        activePokemonId_ = 0;
-
-        lureExpiresTimestampMs_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo build() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo result = new com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo(this);
-        result.fortId_ = fortId_;
-        result.encounterId_ = encounterId_;
-        result.activePokemonId_ = activePokemonId_;
-        result.lureExpiresTimestampMs_ = lureExpiresTimestampMs_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo.getDefaultInstance()) return this;
-        if (!other.getFortId().isEmpty()) {
-          fortId_ = other.fortId_;
-          onChanged();
-        }
-        if (other.getEncounterId() != 0L) {
-          setEncounterId(other.getEncounterId());
-        }
-        if (other.activePokemonId_ != 0) {
-          setActivePokemonIdValue(other.getActivePokemonIdValue());
-        }
-        if (other.getLureExpiresTimestampMs() != 0L) {
-          setLureExpiresTimestampMs(other.getLureExpiresTimestampMs());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object fortId_ = "";
-      /**
-       * <code>optional string fort_id = 1;</code>
-       */
-      public java.lang.String getFortId() {
-        java.lang.Object ref = fortId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fortId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string fort_id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFortIdBytes() {
-        java.lang.Object ref = fortId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fortId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string fort_id = 1;</code>
-       */
-      public Builder setFortId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        fortId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string fort_id = 1;</code>
-       */
-      public Builder clearFortId() {
-        
-        fortId_ = getDefaultInstance().getFortId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string fort_id = 1;</code>
-       */
-      public Builder setFortIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fortId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long encounterId_ ;
-      /**
-       * <code>optional fixed64 encounter_id = 2;</code>
-       */
-      public long getEncounterId() {
-        return encounterId_;
-      }
-      /**
-       * <code>optional fixed64 encounter_id = 2;</code>
-       */
-      public Builder setEncounterId(long value) {
-        
-        encounterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional fixed64 encounter_id = 2;</code>
-       */
-      public Builder clearEncounterId() {
-        
-        encounterId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int activePokemonId_ = 0;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-       */
-      public int getActivePokemonIdValue() {
-        return activePokemonId_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-       */
-      public Builder setActivePokemonIdValue(int value) {
-        activePokemonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Enums.PokemonId getActivePokemonId() {
-        com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(activePokemonId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-       */
-      public Builder setActivePokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        activePokemonId_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;</code>
-       */
-      public Builder clearActivePokemonId() {
-        
-        activePokemonId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long lureExpiresTimestampMs_ ;
-      /**
-       * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
-       */
-      public long getLureExpiresTimestampMs() {
-        return lureExpiresTimestampMs_;
-      }
-      /**
-       * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
-       */
-      public Builder setLureExpiresTimestampMs(long value) {
-        
-        lureExpiresTimestampMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 lure_expires_timestamp_ms = 4;</code>
-       */
-      public Builder clearLureExpiresTimestampMs() {
-        
-        lureExpiresTimestampMs_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.fort.FortLureInfo)
-    private static final com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FortLureInfo>
-        PARSER = new com.google.protobuf.AbstractParser<FortLureInfo>() {
-      public FortLureInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FortLureInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FortLureInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FortLureInfo> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Fort.FortLureInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FortModifierOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    int getItemIdValue();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId();
-
-    /**
-     * <code>optional int64 expiration_timestamp_ms = 2;</code>
-     */
-    long getExpirationTimestampMs();
-
-    /**
-     * <code>optional string deployer_player_codename = 3;</code>
-     */
-    java.lang.String getDeployerPlayerCodename();
-    /**
-     * <code>optional string deployer_player_codename = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeployerPlayerCodenameBytes();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortModifier}
-   */
-  public  static final class FortModifier extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
-      FortModifierOrBuilder {
-    // Use FortModifier.newBuilder() to construct.
-    private FortModifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FortModifier() {
-      itemId_ = 0;
-      expirationTimestampMs_ = 0L;
-      deployerPlayerCodename_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private FortModifier(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              itemId_ = rawValue;
-              break;
-            }
-            case 16: {
-
-              expirationTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deployerPlayerCodename_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.class, com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.Builder.class);
-    }
-
-    public static final int ITEM_ID_FIELD_NUMBER = 1;
-    private int itemId_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    public int getItemIdValue() {
-      return itemId_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
-      com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(itemId_);
-      return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
-    }
-
-    public static final int EXPIRATION_TIMESTAMP_MS_FIELD_NUMBER = 2;
-    private long expirationTimestampMs_;
-    /**
-     * <code>optional int64 expiration_timestamp_ms = 2;</code>
-     */
-    public long getExpirationTimestampMs() {
-      return expirationTimestampMs_;
-    }
-
-    public static final int DEPLOYER_PLAYER_CODENAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object deployerPlayerCodename_;
-    /**
-     * <code>optional string deployer_player_codename = 3;</code>
-     */
-    public java.lang.String getDeployerPlayerCodename() {
-      java.lang.Object ref = deployerPlayerCodename_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deployerPlayerCodename_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string deployer_player_codename = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeployerPlayerCodenameBytes() {
-      java.lang.Object ref = deployerPlayerCodename_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deployerPlayerCodename_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
-        output.writeEnum(1, itemId_);
-      }
-      if (expirationTimestampMs_ != 0L) {
-        output.writeInt64(2, expirationTimestampMs_);
-      }
-      if (!getDeployerPlayerCodenameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deployerPlayerCodename_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (itemId_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.ITEM_UNKNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, itemId_);
-      }
-      if (expirationTimestampMs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, expirationTimestampMs_);
-      }
-      if (!getDeployerPlayerCodenameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deployerPlayerCodename_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortModifier)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Fort.FortModifier other = (com.github.aeonlucid.pogoprotos.map.Fort.FortModifier) obj;
-
-      boolean result = true;
-      result = result && itemId_ == other.itemId_;
-      result = result && (getExpirationTimestampMs()
-          == other.getExpirationTimestampMs());
-      result = result && getDeployerPlayerCodename()
-          .equals(other.getDeployerPlayerCodename());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + itemId_;
-      hash = (37 * hash) + EXPIRATION_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpirationTimestampMs());
-      hash = (37 * hash) + DEPLOYER_PLAYER_CODENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDeployerPlayerCodename().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Fort.FortModifier prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.fort.FortModifier}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
-        com.github.aeonlucid.pogoprotos.map.Fort.FortModifierOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.class, com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        itemId_ = 0;
-
-        expirationTimestampMs_ = 0L;
-
-        deployerPlayerCodename_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortModifier getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortModifier build() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortModifier result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Fort.FortModifier buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortModifier result = new com.github.aeonlucid.pogoprotos.map.Fort.FortModifier(this);
-        result.itemId_ = itemId_;
-        result.expirationTimestampMs_ = expirationTimestampMs_;
-        result.deployerPlayerCodename_ = deployerPlayerCodename_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Fort.FortModifier) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Fort.FortModifier)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Fort.FortModifier other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Fort.FortModifier.getDefaultInstance()) return this;
-        if (other.itemId_ != 0) {
-          setItemIdValue(other.getItemIdValue());
-        }
-        if (other.getExpirationTimestampMs() != 0L) {
-          setExpirationTimestampMs(other.getExpirationTimestampMs());
-        }
-        if (!other.getDeployerPlayerCodename().isEmpty()) {
-          deployerPlayerCodename_ = other.deployerPlayerCodename_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Fort.FortModifier parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Fort.FortModifier) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int itemId_ = 0;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public int getItemIdValue() {
-        return itemId_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public Builder setItemIdValue(int value) {
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getItemId() {
-        com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(itemId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public Builder setItemId(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        itemId_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;</code>
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long expirationTimestampMs_ ;
-      /**
-       * <code>optional int64 expiration_timestamp_ms = 2;</code>
-       */
-      public long getExpirationTimestampMs() {
-        return expirationTimestampMs_;
-      }
-      /**
-       * <code>optional int64 expiration_timestamp_ms = 2;</code>
-       */
-      public Builder setExpirationTimestampMs(long value) {
-        
-        expirationTimestampMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 expiration_timestamp_ms = 2;</code>
-       */
-      public Builder clearExpirationTimestampMs() {
-        
-        expirationTimestampMs_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object deployerPlayerCodename_ = "";
-      /**
-       * <code>optional string deployer_player_codename = 3;</code>
-       */
-      public java.lang.String getDeployerPlayerCodename() {
-        java.lang.Object ref = deployerPlayerCodename_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deployerPlayerCodename_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string deployer_player_codename = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDeployerPlayerCodenameBytes() {
-        java.lang.Object ref = deployerPlayerCodename_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deployerPlayerCodename_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string deployer_player_codename = 3;</code>
-       */
-      public Builder setDeployerPlayerCodename(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deployerPlayerCodename_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string deployer_player_codename = 3;</code>
-       */
-      public Builder clearDeployerPlayerCodename() {
-        
-        deployerPlayerCodename_ = getDefaultInstance().getDeployerPlayerCodename();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string deployer_player_codename = 3;</code>
-       */
-      public Builder setDeployerPlayerCodenameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deployerPlayerCodename_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.fort.FortModifier)
-    private static final com.github.aeonlucid.pogoprotos.map.Fort.FortModifier DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Fort.FortModifier();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.map.Fort.FortModifier getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FortModifier>
-        PARSER = new com.google.protobuf.AbstractParser<FortModifier>() {
-      public FortModifier parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FortModifier(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FortModifier> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FortModifier> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Fort.FortModifier getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n.com/github/aeonlucid/pogoprotos/map/Fo" +
-      "rt.proto\022(com.github.aeonlucid.pogoproto" +
-      "s.map.fort\032+com/github/aeonlucid/pogopro" +
-      "tos/Enums.proto\0324com/github/aeonlucid/po" +
-      "goprotos/inventory/Item.proto\"o\n\013FortSum" +
-      "mary\022\027\n\017fort_summary_id\030\001 \001(\t\022\"\n\032last_mo" +
-      "dified_timestamp_ms\030\002 \001(\003\022\020\n\010latitude\030\003 " +
-      "\001(\001\022\021\n\tlongitude\030\004 \001(\001\"\361\005\n\010FortData\022\n\n\002i" +
-      "d\030\001 \001(\t\022\"\n\032last_modified_timestamp_ms\030\002 " +
-      "\001(\003\022\020\n\010latitude\030\003 \001(\001\022\021\n\tlongitude\030\004 \001(\001",
-      "\022\017\n\007enabled\030\010 \001(\010\022@\n\004type\030\t \001(\01622.com.gi" +
-      "thub.aeonlucid.pogoprotos.map.fort.FortT" +
-      "ype\022G\n\rowned_by_team\030\005 \001(\01620.com.github." +
-      "aeonlucid.pogoprotos.enums.TeamColor\022J\n\020" +
-      "guard_pokemon_id\030\006 \001(\01620.com.github.aeon" +
-      "lucid.pogoprotos.enums.PokemonId\022\030\n\020guar" +
-      "d_pokemon_cp\030\007 \001(\005\022\022\n\ngym_points\030\n \001(\003\022\024" +
-      "\n\014is_in_battle\030\013 \001(\010\022T\n\024active_fort_modi" +
-      "fier\030\014 \003(\01626.com.github.aeonlucid.pogopr" +
-      "otos.inventory.item.ItemId\022I\n\tlure_info\030",
-      "\r \001(\01326.com.github.aeonlucid.pogoprotos." +
-      "map.fort.FortLureInfo\022&\n\036cooldown_comple" +
-      "te_timestamp_ms\030\016 \001(\003\022F\n\007sponsor\030\017 \001(\01625" +
-      ".com.github.aeonlucid.pogoprotos.map.for" +
-      "t.FortSponsor\022S\n\016rendering_type\030\020 \001(\0162;." +
-      "com.github.aeonlucid.pogoprotos.map.fort" +
-      ".FortRenderingType\"\245\001\n\014FortLureInfo\022\017\n\007f" +
-      "ort_id\030\001 \001(\t\022\024\n\014encounter_id\030\002 \001(\006\022K\n\021ac" +
-      "tive_pokemon_id\030\003 \001(\01620.com.github.aeonl" +
-      "ucid.pogoprotos.enums.PokemonId\022!\n\031lure_",
-      "expires_timestamp_ms\030\004 \001(\003\"\232\001\n\014FortModif" +
-      "ier\022G\n\007item_id\030\001 \001(\01626.com.github.aeonlu" +
-      "cid.pogoprotos.inventory.item.ItemId\022\037\n\027" +
-      "expiration_timestamp_ms\030\002 \001(\003\022 \n\030deploye" +
-      "r_player_codename\030\003 \001(\t*B\n\013FortSponsor\022\021" +
-      "\n\rUNSET_SPONSOR\020\000\022\r\n\tMCDONALDS\020\001\022\021\n\rPOKE" +
-      "MON_STORE\020\002*3\n\021FortRenderingType\022\013\n\007DEFA" +
-      "ULT\020\000\022\021\n\rINTERNAL_TEST\020\001*#\n\010FortType\022\007\n\003" +
-      "GYM\020\000\022\016\n\nCHECKPOINT\020\001B+\n#com.github.aeon" +
-      "lucid.pogoprotos.mapB\004Fortb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.Enums.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortSummary_descriptor,
-        new java.lang.String[] { "FortSummaryId", "LastModifiedTimestampMs", "Latitude", "Longitude", });
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortData_descriptor,
-        new java.lang.String[] { "Id", "LastModifiedTimestampMs", "Latitude", "Longitude", "Enabled", "Type", "OwnedByTeam", "GuardPokemonId", "GuardPokemonCp", "GymPoints", "IsInBattle", "ActiveFortModifier", "LureInfo", "CooldownCompleteTimestampMs", "Sponsor", "RenderingType", });
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortLureInfo_descriptor,
-        new java.lang.String[] { "FortId", "EncounterId", "ActivePokemonId", "LureExpiresTimestampMs", });
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_fort_FortModifier_descriptor,
-        new java.lang.String[] { "ItemId", "ExpirationTimestampMs", "DeployerPlayerCodename", });
-    com.github.aeonlucid.pogoprotos.Enums.getDescriptor();
-    com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

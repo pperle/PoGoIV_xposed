@@ -8,15 +8,716 @@ public final class Capture {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+  public interface CaptureProbabilityOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getPokeballTypeList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    int getPokeballTypeCount();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getPokeballType(int index);
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    java.util.List<java.lang.Integer>
+    getPokeballTypeValueList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    int getPokeballTypeValue(int index);
+
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    java.util.List<java.lang.Float> getCaptureProbabilityList();
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    int getCaptureProbabilityCount();
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    float getCaptureProbability(int index);
+
+    /**
+     * <code>optional double reticle_difficulty_scale = 12;</code>
+     */
+    double getReticleDifficultyScale();
   }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability}
+   */
+  public  static final class CaptureProbability extends
+      com.google.protobuf.GeneratedMessageLite<
+          CaptureProbability, CaptureProbability.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
+      CaptureProbabilityOrBuilder {
+    private CaptureProbability() {
+      pokeballType_ = emptyIntList();
+      captureProbability_ = emptyFloatList();
+    }
+    private int bitField0_;
+    public static final int POKEBALL_TYPE_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.IntList pokeballType_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> pokeballType_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>() {
+              public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId convert(java.lang.Integer from) {
+                com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.forNumber(from);
+                return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
+              }
+            };
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    public java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getPokeballTypeList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>(pokeballType_, pokeballType_converter_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    public int getPokeballTypeCount() {
+      return pokeballType_.size();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getPokeballType(int index) {
+      return pokeballType_converter_.convert(pokeballType_.getInt(index));
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    public java.util.List<java.lang.Integer>
+    getPokeballTypeValueList() {
+      return pokeballType_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    public int getPokeballTypeValue(int index) {
+      return pokeballType_.getInt(index);
+    }
+    private int pokeballTypeMemoizedSerializedSize;
+    private void ensurePokeballTypeIsMutable() {
+      if (!pokeballType_.isModifiable()) {
+        pokeballType_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(pokeballType_);
+      }
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void setPokeballType(
+        int index, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePokeballTypeIsMutable();
+      pokeballType_.setInt(index, value.getNumber());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void addPokeballType(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePokeballTypeIsMutable();
+      pokeballType_.addInt(value.getNumber());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void addAllPokeballType(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> values) {
+      ensurePokeballTypeIsMutable();
+      for (com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value : values) {
+        pokeballType_.addInt(value.getNumber());
+      }
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void clearPokeballType() {
+      pokeballType_ = emptyIntList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void setPokeballTypeValue(
+        int index, int value) {
+      ensurePokeballTypeIsMutable();
+      pokeballType_.setInt(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void addPokeballTypeValue(int value) {
+      ensurePokeballTypeIsMutable();
+      pokeballType_.addInt(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+     */
+    private void addAllPokeballTypeValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensurePokeballTypeIsMutable();
+      for (int value : values) {
+        pokeballType_.addInt(value);
+      }
+    }
+
+    public static final int CAPTURE_PROBABILITY_FIELD_NUMBER = 2;
+    private com.google.protobuf.Internal.FloatList captureProbability_;
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    public java.util.List<java.lang.Float>
+        getCaptureProbabilityList() {
+      return captureProbability_;
+    }
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    public int getCaptureProbabilityCount() {
+      return captureProbability_.size();
+    }
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    public float getCaptureProbability(int index) {
+      return captureProbability_.getFloat(index);
+    }
+    private int captureProbabilityMemoizedSerializedSize = -1;
+    private void ensureCaptureProbabilityIsMutable() {
+      if (!captureProbability_.isModifiable()) {
+        captureProbability_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(captureProbability_);
+       }
+    }
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    private void setCaptureProbability(
+        int index, float value) {
+      ensureCaptureProbabilityIsMutable();
+      captureProbability_.setFloat(index, value);
+    }
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    private void addCaptureProbability(float value) {
+      ensureCaptureProbabilityIsMutable();
+      captureProbability_.addFloat(value);
+    }
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    private void addAllCaptureProbability(
+        java.lang.Iterable<? extends java.lang.Float> values) {
+      ensureCaptureProbabilityIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, captureProbability_);
+    }
+    /**
+     * <code>repeated float capture_probability = 2 [packed = true];</code>
+     */
+    private void clearCaptureProbability() {
+      captureProbability_ = emptyFloatList();
+    }
+
+    public static final int RETICLE_DIFFICULTY_SCALE_FIELD_NUMBER = 12;
+    private double reticleDifficultyScale_;
+    /**
+     * <code>optional double reticle_difficulty_scale = 12;</code>
+     */
+    public double getReticleDifficultyScale() {
+      return reticleDifficultyScale_;
+    }
+    /**
+     * <code>optional double reticle_difficulty_scale = 12;</code>
+     */
+    private void setReticleDifficultyScale(double value) {
+      
+      reticleDifficultyScale_ = value;
+    }
+    /**
+     * <code>optional double reticle_difficulty_scale = 12;</code>
+     */
+    private void clearReticleDifficultyScale() {
+      
+      reticleDifficultyScale_ = 0D;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getPokeballTypeList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(pokeballTypeMemoizedSerializedSize);
+      }
+      for (int i = 0; i < pokeballType_.size(); i++) {
+        output.writeEnumNoTag(pokeballType_.getInt(i));
+      }
+      if (getCaptureProbabilityList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(captureProbabilityMemoizedSerializedSize);
+      }
+      for (int i = 0; i < captureProbability_.size(); i++) {
+        output.writeFloatNoTag(captureProbability_.getFloat(i));
+      }
+      if (reticleDifficultyScale_ != 0D) {
+        output.writeDouble(12, reticleDifficultyScale_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pokeballType_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeEnumSizeNoTag(pokeballType_.getInt(i));
+        }
+        size += dataSize;
+        if (!getPokeballTypeList().isEmpty()) {  size += 1;
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dataSize);
+        }pokeballTypeMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        dataSize = 4 * getCaptureProbabilityList().size();
+        size += dataSize;
+        if (!getCaptureProbabilityList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        captureProbabilityMemoizedSerializedSize = dataSize;
+      }
+      if (reticleDifficultyScale_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(12, reticleDifficultyScale_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
+        com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbabilityOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getPokeballTypeList() {
+        return instance.getPokeballTypeList();
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public int getPokeballTypeCount() {
+        return instance.getPokeballTypeCount();
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getPokeballType(int index) {
+        return instance.getPokeballType(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder setPokeballType(
+          int index, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+        copyOnWrite();
+        instance.setPokeballType(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder addPokeballType(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
+        copyOnWrite();
+        instance.addPokeballType(value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder addAllPokeballType(
+          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> values) {
+        copyOnWrite();
+        instance.addAllPokeballType(values);  return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder clearPokeballType() {
+        copyOnWrite();
+        instance.clearPokeballType();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public java.util.List<java.lang.Integer>
+      getPokeballTypeValueList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getPokeballTypeValueList());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public int getPokeballTypeValue(int index) {
+        return instance.getPokeballTypeValue(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder setPokeballTypeValue(
+          int index, int value) {
+        copyOnWrite();
+        instance.setPokeballTypeValue(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder addPokeballTypeValue(int value) {
+        instance.addPokeballTypeValue(value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
+       */
+      public Builder addAllPokeballTypeValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        copyOnWrite();
+        instance.addAllPokeballTypeValue(values);
+        return this;
+      }
+
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public java.util.List<java.lang.Float>
+          getCaptureProbabilityList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getCaptureProbabilityList());
+      }
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public int getCaptureProbabilityCount() {
+        return instance.getCaptureProbabilityCount();
+      }
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public float getCaptureProbability(int index) {
+        return instance.getCaptureProbability(index);
+      }
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public Builder setCaptureProbability(
+          int index, float value) {
+        copyOnWrite();
+        instance.setCaptureProbability(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public Builder addCaptureProbability(float value) {
+        copyOnWrite();
+        instance.addCaptureProbability(value);
+        return this;
+      }
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public Builder addAllCaptureProbability(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        copyOnWrite();
+        instance.addAllCaptureProbability(values);
+        return this;
+      }
+      /**
+       * <code>repeated float capture_probability = 2 [packed = true];</code>
+       */
+      public Builder clearCaptureProbability() {
+        copyOnWrite();
+        instance.clearCaptureProbability();
+        return this;
+      }
+
+      /**
+       * <code>optional double reticle_difficulty_scale = 12;</code>
+       */
+      public double getReticleDifficultyScale() {
+        return instance.getReticleDifficultyScale();
+      }
+      /**
+       * <code>optional double reticle_difficulty_scale = 12;</code>
+       */
+      public Builder setReticleDifficultyScale(double value) {
+        copyOnWrite();
+        instance.setReticleDifficultyScale(value);
+        return this;
+      }
+      /**
+       * <code>optional double reticle_difficulty_scale = 12;</code>
+       */
+      public Builder clearReticleDifficultyScale() {
+        copyOnWrite();
+        instance.clearReticleDifficultyScale();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          pokeballType_.makeImmutable();
+          captureProbability_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability other = (com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability) arg1;
+          pokeballType_= visitor.visitIntList(pokeballType_, other.pokeballType_);
+          captureProbability_= visitor.visitFloatList(captureProbability_, other.captureProbability_);
+          reticleDifficultyScale_ = visitor.visitDouble(reticleDifficultyScale_ != 0D, reticleDifficultyScale_,
+              other.reticleDifficultyScale_ != 0D, other.reticleDifficultyScale_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  if (!pokeballType_.isModifiable()) {
+                    pokeballType_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(pokeballType_);
+                  }
+                  pokeballType_.addInt(input.readEnum());
+                  break;
+                }
+                case 10: {
+                  if (!pokeballType_.isModifiable()) {
+                    pokeballType_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(pokeballType_);
+                  }
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while(input.getBytesUntilLimit() > 0) {
+                    pokeballType_.addInt(input.readEnum());
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                }
+                case 21: {
+                  if (!captureProbability_.isModifiable()) {
+                    captureProbability_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(captureProbability_);
+                  }
+                  captureProbability_.addFloat(input.readFloat());
+                  break;
+                }
+                case 18: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!captureProbability_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    final int currentSize = captureProbability_.size();
+                    captureProbability_ = captureProbability_.mutableCopyWithCapacity(
+                        currentSize + (length/4));
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    captureProbability_.addFloat(input.readFloat());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+                case 97: {
+
+                  reticleDifficultyScale_ = input.readDouble();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
+    private static final com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new CaptureProbability();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<CaptureProbability> PARSER;
+
+    public static com.google.protobuf.Parser<CaptureProbability> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
   public interface CaptureAwardOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.capture.CaptureAward)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
@@ -83,174 +784,24 @@ public final class Capture {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.capture.CaptureAward}
    */
   public  static final class CaptureAward extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          CaptureAward, CaptureAward.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.capture.CaptureAward)
       CaptureAwardOrBuilder {
-    // Use CaptureAward.newBuilder() to construct.
-    private CaptureAward(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private CaptureAward() {
-      activityType_ = java.util.Collections.emptyList();
-      xp_ = java.util.Collections.emptyList();
-      candy_ = java.util.Collections.emptyList();
-      stardust_ = java.util.Collections.emptyList();
+      activityType_ = emptyIntList();
+      xp_ = emptyIntList();
+      candy_ = emptyIntList();
+      stardust_ = emptyIntList();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private CaptureAward(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                activityType_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              activityType_.add(rawValue);
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  activityType_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                activityType_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                xp_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              xp_.add(input.readInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                xp_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                xp_.add(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                candy_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              candy_.add(input.readInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                candy_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                candy_.add(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                stardust_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              stardust_.add(input.readInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                stardust_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                stardust_.add(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          activityType_ = java.util.Collections.unmodifiableList(activityType_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          xp_ = java.util.Collections.unmodifiableList(xp_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          candy_ = java.util.Collections.unmodifiableList(candy_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          stardust_ = java.util.Collections.unmodifiableList(stardust_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.class, com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.Builder.class);
-    }
-
     public static final int ACTIVITY_TYPE_FIELD_NUMBER = 1;
-    private java.util.List<java.lang.Integer> activityType_;
+    private com.google.protobuf.Internal.IntList activityType_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.ActivityType> activityType_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.ActivityType>() {
               public com.github.aeonlucid.pogoprotos.Enums.ActivityType convert(java.lang.Integer from) {
-                com.github.aeonlucid.pogoprotos.Enums.ActivityType result = com.github.aeonlucid.pogoprotos.Enums.ActivityType.valueOf(from);
+                com.github.aeonlucid.pogoprotos.Enums.ActivityType result = com.github.aeonlucid.pogoprotos.Enums.ActivityType.forNumber(from);
                 return result == null ? com.github.aeonlucid.pogoprotos.Enums.ActivityType.UNRECOGNIZED : result;
               }
             };
@@ -271,7 +822,7 @@ public final class Capture {
      * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
      */
     public com.github.aeonlucid.pogoprotos.Enums.ActivityType getActivityType(int index) {
-      return activityType_converter_.convert(activityType_.get(index));
+      return activityType_converter_.convert(activityType_.getInt(index));
     }
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
@@ -284,12 +835,80 @@ public final class Capture {
      * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
      */
     public int getActivityTypeValue(int index) {
-      return activityType_.get(index);
+      return activityType_.getInt(index);
     }
     private int activityTypeMemoizedSerializedSize;
+    private void ensureActivityTypeIsMutable() {
+      if (!activityType_.isModifiable()) {
+        activityType_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(activityType_);
+      }
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void setActivityType(
+        int index, com.github.aeonlucid.pogoprotos.Enums.ActivityType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActivityTypeIsMutable();
+      activityType_.setInt(index, value.getNumber());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void addActivityType(com.github.aeonlucid.pogoprotos.Enums.ActivityType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActivityTypeIsMutable();
+      activityType_.addInt(value.getNumber());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void addAllActivityType(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Enums.ActivityType> values) {
+      ensureActivityTypeIsMutable();
+      for (com.github.aeonlucid.pogoprotos.Enums.ActivityType value : values) {
+        activityType_.addInt(value.getNumber());
+      }
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void clearActivityType() {
+      activityType_ = emptyIntList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void setActivityTypeValue(
+        int index, int value) {
+      ensureActivityTypeIsMutable();
+      activityType_.setInt(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void addActivityTypeValue(int value) {
+      ensureActivityTypeIsMutable();
+      activityType_.addInt(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
+     */
+    private void addAllActivityTypeValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureActivityTypeIsMutable();
+      for (int value : values) {
+        activityType_.addInt(value);
+      }
+    }
 
     public static final int XP_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Integer> xp_;
+    private com.google.protobuf.Internal.IntList xp_;
     /**
      * <code>repeated int32 xp = 2 [packed = true];</code>
      */
@@ -307,12 +926,48 @@ public final class Capture {
      * <code>repeated int32 xp = 2 [packed = true];</code>
      */
     public int getXp(int index) {
-      return xp_.get(index);
+      return xp_.getInt(index);
     }
     private int xpMemoizedSerializedSize = -1;
+    private void ensureXpIsMutable() {
+      if (!xp_.isModifiable()) {
+        xp_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(xp_);
+       }
+    }
+    /**
+     * <code>repeated int32 xp = 2 [packed = true];</code>
+     */
+    private void setXp(
+        int index, int value) {
+      ensureXpIsMutable();
+      xp_.setInt(index, value);
+    }
+    /**
+     * <code>repeated int32 xp = 2 [packed = true];</code>
+     */
+    private void addXp(int value) {
+      ensureXpIsMutable();
+      xp_.addInt(value);
+    }
+    /**
+     * <code>repeated int32 xp = 2 [packed = true];</code>
+     */
+    private void addAllXp(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureXpIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, xp_);
+    }
+    /**
+     * <code>repeated int32 xp = 2 [packed = true];</code>
+     */
+    private void clearXp() {
+      xp_ = emptyIntList();
+    }
 
     public static final int CANDY_FIELD_NUMBER = 3;
-    private java.util.List<java.lang.Integer> candy_;
+    private com.google.protobuf.Internal.IntList candy_;
     /**
      * <code>repeated int32 candy = 3 [packed = true];</code>
      */
@@ -330,12 +985,48 @@ public final class Capture {
      * <code>repeated int32 candy = 3 [packed = true];</code>
      */
     public int getCandy(int index) {
-      return candy_.get(index);
+      return candy_.getInt(index);
     }
     private int candyMemoizedSerializedSize = -1;
+    private void ensureCandyIsMutable() {
+      if (!candy_.isModifiable()) {
+        candy_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(candy_);
+       }
+    }
+    /**
+     * <code>repeated int32 candy = 3 [packed = true];</code>
+     */
+    private void setCandy(
+        int index, int value) {
+      ensureCandyIsMutable();
+      candy_.setInt(index, value);
+    }
+    /**
+     * <code>repeated int32 candy = 3 [packed = true];</code>
+     */
+    private void addCandy(int value) {
+      ensureCandyIsMutable();
+      candy_.addInt(value);
+    }
+    /**
+     * <code>repeated int32 candy = 3 [packed = true];</code>
+     */
+    private void addAllCandy(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureCandyIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, candy_);
+    }
+    /**
+     * <code>repeated int32 candy = 3 [packed = true];</code>
+     */
+    private void clearCandy() {
+      candy_ = emptyIntList();
+    }
 
     public static final int STARDUST_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Integer> stardust_;
+    private com.google.protobuf.Internal.IntList stardust_;
     /**
      * <code>repeated int32 stardust = 4 [packed = true];</code>
      */
@@ -353,18 +1044,44 @@ public final class Capture {
      * <code>repeated int32 stardust = 4 [packed = true];</code>
      */
     public int getStardust(int index) {
-      return stardust_.get(index);
+      return stardust_.getInt(index);
     }
     private int stardustMemoizedSerializedSize = -1;
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    private void ensureStardustIsMutable() {
+      if (!stardust_.isModifiable()) {
+        stardust_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(stardust_);
+       }
+    }
+    /**
+     * <code>repeated int32 stardust = 4 [packed = true];</code>
+     */
+    private void setStardust(
+        int index, int value) {
+      ensureStardustIsMutable();
+      stardust_.setInt(index, value);
+    }
+    /**
+     * <code>repeated int32 stardust = 4 [packed = true];</code>
+     */
+    private void addStardust(int value) {
+      ensureStardustIsMutable();
+      stardust_.addInt(value);
+    }
+    /**
+     * <code>repeated int32 stardust = 4 [packed = true];</code>
+     */
+    private void addAllStardust(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureStardustIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, stardust_);
+    }
+    /**
+     * <code>repeated int32 stardust = 4 [packed = true];</code>
+     */
+    private void clearStardust() {
+      stardust_ = emptyIntList();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -375,33 +1092,33 @@ public final class Capture {
         output.writeUInt32NoTag(activityTypeMemoizedSerializedSize);
       }
       for (int i = 0; i < activityType_.size(); i++) {
-        output.writeEnumNoTag(activityType_.get(i));
+        output.writeEnumNoTag(activityType_.getInt(i));
       }
       if (getXpList().size() > 0) {
         output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(xpMemoizedSerializedSize);
       }
       for (int i = 0; i < xp_.size(); i++) {
-        output.writeInt32NoTag(xp_.get(i));
+        output.writeInt32NoTag(xp_.getInt(i));
       }
       if (getCandyList().size() > 0) {
         output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(candyMemoizedSerializedSize);
       }
       for (int i = 0; i < candy_.size(); i++) {
-        output.writeInt32NoTag(candy_.get(i));
+        output.writeInt32NoTag(candy_.getInt(i));
       }
       if (getStardustList().size() > 0) {
         output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(stardustMemoizedSerializedSize);
       }
       for (int i = 0; i < stardust_.size(); i++) {
-        output.writeInt32NoTag(stardust_.get(i));
+        output.writeInt32NoTag(stardust_.getInt(i));
       }
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -409,7 +1126,7 @@ public final class Capture {
         int dataSize = 0;
         for (int i = 0; i < activityType_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(activityType_.get(i));
+            .computeEnumSizeNoTag(activityType_.getInt(i));
         }
         size += dataSize;
         if (!getActivityTypeList().isEmpty()) {  size += 1;
@@ -421,7 +1138,7 @@ public final class Capture {
         int dataSize = 0;
         for (int i = 0; i < xp_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(xp_.get(i));
+            .computeInt32SizeNoTag(xp_.getInt(i));
         }
         size += dataSize;
         if (!getXpList().isEmpty()) {
@@ -435,7 +1152,7 @@ public final class Capture {
         int dataSize = 0;
         for (int i = 0; i < candy_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(candy_.get(i));
+            .computeInt32SizeNoTag(candy_.getInt(i));
         }
         size += dataSize;
         if (!getCandyList().isEmpty()) {
@@ -449,7 +1166,7 @@ public final class Capture {
         int dataSize = 0;
         for (int i = 0; i < stardust_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(stardust_.get(i));
+            .computeInt32SizeNoTag(stardust_.getInt(i));
         }
         size += dataSize;
         if (!getStardustList().isEmpty()) {
@@ -459,382 +1176,125 @@ public final class Capture {
         }
         stardustMemoizedSerializedSize = dataSize;
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward other = (com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward) obj;
-
-      boolean result = true;
-      result = result && activityType_.equals(other.activityType_);
-      result = result && getXpList()
-          .equals(other.getXpList());
-      result = result && getCandyList()
-          .equals(other.getCandyList());
-      result = result && getStardustList()
-          .equals(other.getStardustList());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getActivityTypeCount() > 0) {
-        hash = (37 * hash) + ACTIVITY_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + activityType_.hashCode();
-      }
-      if (getXpCount() > 0) {
-        hash = (37 * hash) + XP_FIELD_NUMBER;
-        hash = (53 * hash) + getXpList().hashCode();
-      }
-      if (getCandyCount() > 0) {
-        hash = (37 * hash) + CANDY_FIELD_NUMBER;
-        hash = (53 * hash) + getCandyList().hashCode();
-      }
-      if (getStardustCount() > 0) {
-        hash = (37 * hash) + STARDUST_FIELD_NUMBER;
-        hash = (53 * hash) + getStardustList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.capture.CaptureAward}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.capture.CaptureAward)
         com.github.aeonlucid.pogoprotos.data.Capture.CaptureAwardOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.class, com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        activityType_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        xp_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        candy_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        stardust_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward build() {
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward buildPartial() {
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward result = new com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          activityType_ = java.util.Collections.unmodifiableList(activityType_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.activityType_ = activityType_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          xp_ = java.util.Collections.unmodifiableList(xp_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.xp_ = xp_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          candy_ = java.util.Collections.unmodifiableList(candy_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.candy_ = candy_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          stardust_ = java.util.Collections.unmodifiableList(stardust_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.stardust_ = stardust_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward other) {
-        if (other == com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.getDefaultInstance()) return this;
-        if (!other.activityType_.isEmpty()) {
-          if (activityType_.isEmpty()) {
-            activityType_ = other.activityType_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureActivityTypeIsMutable();
-            activityType_.addAll(other.activityType_);
-          }
-          onChanged();
-        }
-        if (!other.xp_.isEmpty()) {
-          if (xp_.isEmpty()) {
-            xp_ = other.xp_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureXpIsMutable();
-            xp_.addAll(other.xp_);
-          }
-          onChanged();
-        }
-        if (!other.candy_.isEmpty()) {
-          if (candy_.isEmpty()) {
-            candy_ = other.candy_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureCandyIsMutable();
-            candy_.addAll(other.candy_);
-          }
-          onChanged();
-        }
-        if (!other.stardust_.isEmpty()) {
-          if (stardust_.isEmpty()) {
-            stardust_ = other.stardust_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureStardustIsMutable();
-            stardust_.addAll(other.stardust_);
-          }
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.util.List<java.lang.Integer> activityType_ =
-        java.util.Collections.emptyList();
-      private void ensureActivityTypeIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          activityType_ = new java.util.ArrayList<java.lang.Integer>(activityType_);
-          bitField0_ |= 0x00000001;
-        }
-      }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.Enums.ActivityType> getActivityTypeList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.github.aeonlucid.pogoprotos.Enums.ActivityType>(activityType_, activityType_converter_);
+        return instance.getActivityTypeList();
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public int getActivityTypeCount() {
-        return activityType_.size();
+        return instance.getActivityTypeCount();
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public com.github.aeonlucid.pogoprotos.Enums.ActivityType getActivityType(int index) {
-        return activityType_converter_.convert(activityType_.get(index));
+        return instance.getActivityType(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public Builder setActivityType(
           int index, com.github.aeonlucid.pogoprotos.Enums.ActivityType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureActivityTypeIsMutable();
-        activityType_.set(index, value.getNumber());
-        onChanged();
+        copyOnWrite();
+        instance.setActivityType(index, value);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public Builder addActivityType(com.github.aeonlucid.pogoprotos.Enums.ActivityType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureActivityTypeIsMutable();
-        activityType_.add(value.getNumber());
-        onChanged();
+        copyOnWrite();
+        instance.addActivityType(value);
         return this;
       }
       /**
@@ -842,20 +1302,15 @@ public final class Capture {
        */
       public Builder addAllActivityType(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.Enums.ActivityType> values) {
-        ensureActivityTypeIsMutable();
-        for (com.github.aeonlucid.pogoprotos.Enums.ActivityType value : values) {
-          activityType_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
+        copyOnWrite();
+        instance.addAllActivityType(values);  return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public Builder clearActivityType() {
-        activityType_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        copyOnWrite();
+        instance.clearActivityType();
         return this;
       }
       /**
@@ -863,31 +1318,29 @@ public final class Capture {
        */
       public java.util.List<java.lang.Integer>
       getActivityTypeValueList() {
-        return java.util.Collections.unmodifiableList(activityType_);
+        return java.util.Collections.unmodifiableList(
+            instance.getActivityTypeValueList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public int getActivityTypeValue(int index) {
-        return activityType_.get(index);
+        return instance.getActivityTypeValue(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public Builder setActivityTypeValue(
           int index, int value) {
-        ensureActivityTypeIsMutable();
-        activityType_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setActivityTypeValue(index, value);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.enums.ActivityType activity_type = 1 [packed = true];</code>
        */
       public Builder addActivityTypeValue(int value) {
-        ensureActivityTypeIsMutable();
-        activityType_.add(value);
-        onChanged();
+        instance.addActivityTypeValue(value);
         return this;
       }
       /**
@@ -895,57 +1348,46 @@ public final class Capture {
        */
       public Builder addAllActivityTypeValue(
           java.lang.Iterable<java.lang.Integer> values) {
-        ensureActivityTypeIsMutable();
-        for (int value : values) {
-          activityType_.add(value);
-        }
-        onChanged();
+        copyOnWrite();
+        instance.addAllActivityTypeValue(values);
         return this;
       }
 
-      private java.util.List<java.lang.Integer> xp_ = java.util.Collections.emptyList();
-      private void ensureXpIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          xp_ = new java.util.ArrayList<java.lang.Integer>(xp_);
-          bitField0_ |= 0x00000002;
-         }
-      }
       /**
        * <code>repeated int32 xp = 2 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getXpList() {
-        return java.util.Collections.unmodifiableList(xp_);
+        return java.util.Collections.unmodifiableList(
+            instance.getXpList());
       }
       /**
        * <code>repeated int32 xp = 2 [packed = true];</code>
        */
       public int getXpCount() {
-        return xp_.size();
+        return instance.getXpCount();
       }
       /**
        * <code>repeated int32 xp = 2 [packed = true];</code>
        */
       public int getXp(int index) {
-        return xp_.get(index);
+        return instance.getXp(index);
       }
       /**
        * <code>repeated int32 xp = 2 [packed = true];</code>
        */
       public Builder setXp(
           int index, int value) {
-        ensureXpIsMutable();
-        xp_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setXp(index, value);
         return this;
       }
       /**
        * <code>repeated int32 xp = 2 [packed = true];</code>
        */
       public Builder addXp(int value) {
-        ensureXpIsMutable();
-        xp_.add(value);
-        onChanged();
+        copyOnWrite();
+        instance.addXp(value);
         return this;
       }
       /**
@@ -953,65 +1395,54 @@ public final class Capture {
        */
       public Builder addAllXp(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureXpIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, xp_);
-        onChanged();
+        copyOnWrite();
+        instance.addAllXp(values);
         return this;
       }
       /**
        * <code>repeated int32 xp = 2 [packed = true];</code>
        */
       public Builder clearXp() {
-        xp_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
+        copyOnWrite();
+        instance.clearXp();
         return this;
       }
 
-      private java.util.List<java.lang.Integer> candy_ = java.util.Collections.emptyList();
-      private void ensureCandyIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          candy_ = new java.util.ArrayList<java.lang.Integer>(candy_);
-          bitField0_ |= 0x00000004;
-         }
-      }
       /**
        * <code>repeated int32 candy = 3 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getCandyList() {
-        return java.util.Collections.unmodifiableList(candy_);
+        return java.util.Collections.unmodifiableList(
+            instance.getCandyList());
       }
       /**
        * <code>repeated int32 candy = 3 [packed = true];</code>
        */
       public int getCandyCount() {
-        return candy_.size();
+        return instance.getCandyCount();
       }
       /**
        * <code>repeated int32 candy = 3 [packed = true];</code>
        */
       public int getCandy(int index) {
-        return candy_.get(index);
+        return instance.getCandy(index);
       }
       /**
        * <code>repeated int32 candy = 3 [packed = true];</code>
        */
       public Builder setCandy(
           int index, int value) {
-        ensureCandyIsMutable();
-        candy_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setCandy(index, value);
         return this;
       }
       /**
        * <code>repeated int32 candy = 3 [packed = true];</code>
        */
       public Builder addCandy(int value) {
-        ensureCandyIsMutable();
-        candy_.add(value);
-        onChanged();
+        copyOnWrite();
+        instance.addCandy(value);
         return this;
       }
       /**
@@ -1019,65 +1450,54 @@ public final class Capture {
        */
       public Builder addAllCandy(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureCandyIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, candy_);
-        onChanged();
+        copyOnWrite();
+        instance.addAllCandy(values);
         return this;
       }
       /**
        * <code>repeated int32 candy = 3 [packed = true];</code>
        */
       public Builder clearCandy() {
-        candy_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
+        copyOnWrite();
+        instance.clearCandy();
         return this;
       }
 
-      private java.util.List<java.lang.Integer> stardust_ = java.util.Collections.emptyList();
-      private void ensureStardustIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          stardust_ = new java.util.ArrayList<java.lang.Integer>(stardust_);
-          bitField0_ |= 0x00000008;
-         }
-      }
       /**
        * <code>repeated int32 stardust = 4 [packed = true];</code>
        */
       public java.util.List<java.lang.Integer>
           getStardustList() {
-        return java.util.Collections.unmodifiableList(stardust_);
+        return java.util.Collections.unmodifiableList(
+            instance.getStardustList());
       }
       /**
        * <code>repeated int32 stardust = 4 [packed = true];</code>
        */
       public int getStardustCount() {
-        return stardust_.size();
+        return instance.getStardustCount();
       }
       /**
        * <code>repeated int32 stardust = 4 [packed = true];</code>
        */
       public int getStardust(int index) {
-        return stardust_.get(index);
+        return instance.getStardust(index);
       }
       /**
        * <code>repeated int32 stardust = 4 [packed = true];</code>
        */
       public Builder setStardust(
           int index, int value) {
-        ensureStardustIsMutable();
-        stardust_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setStardust(index, value);
         return this;
       }
       /**
        * <code>repeated int32 stardust = 4 [packed = true];</code>
        */
       public Builder addStardust(int value) {
-        ensureStardustIsMutable();
-        stardust_.add(value);
-        onChanged();
+        copyOnWrite();
+        instance.addStardust(value);
         return this;
       }
       /**
@@ -1085,992 +1505,204 @@ public final class Capture {
        */
       public Builder addAllStardust(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureStardustIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, stardust_);
-        onChanged();
+        copyOnWrite();
+        instance.addAllStardust(values);
         return this;
       }
       /**
        * <code>repeated int32 stardust = 4 [packed = true];</code>
        */
       public Builder clearStardust() {
-        stardust_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
+        copyOnWrite();
+        instance.clearStardust();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.capture.CaptureAward)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          activityType_.makeImmutable();
+          xp_.makeImmutable();
+          candy_.makeImmutable();
+          stardust_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward other = (com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward) arg1;
+          activityType_= visitor.visitIntList(activityType_, other.activityType_);
+          xp_= visitor.visitIntList(xp_, other.xp_);
+          candy_= visitor.visitIntList(candy_, other.candy_);
+          stardust_= visitor.visitIntList(stardust_, other.stardust_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  if (!activityType_.isModifiable()) {
+                    activityType_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(activityType_);
+                  }
+                  activityType_.addInt(input.readEnum());
+                  break;
+                }
+                case 10: {
+                  if (!activityType_.isModifiable()) {
+                    activityType_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(activityType_);
+                  }
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while(input.getBytesUntilLimit() > 0) {
+                    activityType_.addInt(input.readEnum());
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                }
+                case 16: {
+                  if (!xp_.isModifiable()) {
+                    xp_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(xp_);
+                  }
+                  xp_.addInt(input.readInt32());
+                  break;
+                }
+                case 18: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!xp_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    xp_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(xp_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    xp_.addInt(input.readInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+                case 24: {
+                  if (!candy_.isModifiable()) {
+                    candy_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(candy_);
+                  }
+                  candy_.addInt(input.readInt32());
+                  break;
+                }
+                case 26: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!candy_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    candy_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(candy_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    candy_.addInt(input.readInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+                case 32: {
+                  if (!stardust_.isModifiable()) {
+                    stardust_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(stardust_);
+                  }
+                  stardust_.addInt(input.readInt32());
+                  break;
+                }
+                case 34: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!stardust_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    stardust_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(stardust_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    stardust_.addInt(input.readInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.capture.CaptureAward)
     private static final com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward();
+      DEFAULT_INSTANCE = new CaptureAward();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CaptureAward>
-        PARSER = new com.google.protobuf.AbstractParser<CaptureAward>() {
-      public CaptureAward parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CaptureAward(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<CaptureAward> PARSER;
 
     public static com.google.protobuf.Parser<CaptureAward> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CaptureAward> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.data.Capture.CaptureAward getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface CaptureProbabilityOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
-      com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getPokeballTypeList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    int getPokeballTypeCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getPokeballType(int index);
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    java.util.List<java.lang.Integer>
-    getPokeballTypeValueList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    int getPokeballTypeValue(int index);
-
-    /**
-     * <code>repeated float capture_probability = 2 [packed = true];</code>
-     */
-    java.util.List<java.lang.Float> getCaptureProbabilityList();
-    /**
-     * <code>repeated float capture_probability = 2 [packed = true];</code>
-     */
-    int getCaptureProbabilityCount();
-    /**
-     * <code>repeated float capture_probability = 2 [packed = true];</code>
-     */
-    float getCaptureProbability(int index);
-
-    /**
-     * <code>optional double reticle_difficulty_scale = 12;</code>
-     */
-    double getReticleDifficultyScale();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability}
-   */
-  public  static final class CaptureProbability extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
-      CaptureProbabilityOrBuilder {
-    // Use CaptureProbability.newBuilder() to construct.
-    private CaptureProbability(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CaptureProbability() {
-      pokeballType_ = java.util.Collections.emptyList();
-      captureProbability_ = java.util.Collections.emptyList();
-      reticleDifficultyScale_ = 0D;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private CaptureProbability(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                pokeballType_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pokeballType_.add(rawValue);
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  pokeballType_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                pokeballType_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 21: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                captureProbability_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              captureProbability_.add(input.readFloat());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                captureProbability_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                captureProbability_.add(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 97: {
-
-              reticleDifficultyScale_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          pokeballType_ = java.util.Collections.unmodifiableList(pokeballType_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          captureProbability_ = java.util.Collections.unmodifiableList(captureProbability_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.class, com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int POKEBALL_TYPE_FIELD_NUMBER = 1;
-    private java.util.List<java.lang.Integer> pokeballType_;
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-        java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> pokeballType_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>() {
-              public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId convert(java.lang.Integer from) {
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemId result = com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.valueOf(from);
-                return result == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemId.UNRECOGNIZED : result;
-              }
-            };
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    public java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getPokeballTypeList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>(pokeballType_, pokeballType_converter_);
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    public int getPokeballTypeCount() {
-      return pokeballType_.size();
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getPokeballType(int index) {
-      return pokeballType_converter_.convert(pokeballType_.get(index));
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    public java.util.List<java.lang.Integer>
-    getPokeballTypeValueList() {
-      return pokeballType_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-     */
-    public int getPokeballTypeValue(int index) {
-      return pokeballType_.get(index);
-    }
-    private int pokeballTypeMemoizedSerializedSize;
-
-    public static final int CAPTURE_PROBABILITY_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Float> captureProbability_;
-    /**
-     * <code>repeated float capture_probability = 2 [packed = true];</code>
-     */
-    public java.util.List<java.lang.Float>
-        getCaptureProbabilityList() {
-      return captureProbability_;
-    }
-    /**
-     * <code>repeated float capture_probability = 2 [packed = true];</code>
-     */
-    public int getCaptureProbabilityCount() {
-      return captureProbability_.size();
-    }
-    /**
-     * <code>repeated float capture_probability = 2 [packed = true];</code>
-     */
-    public float getCaptureProbability(int index) {
-      return captureProbability_.get(index);
-    }
-    private int captureProbabilityMemoizedSerializedSize = -1;
-
-    public static final int RETICLE_DIFFICULTY_SCALE_FIELD_NUMBER = 12;
-    private double reticleDifficultyScale_;
-    /**
-     * <code>optional double reticle_difficulty_scale = 12;</code>
-     */
-    public double getReticleDifficultyScale() {
-      return reticleDifficultyScale_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (getPokeballTypeList().size() > 0) {
-        output.writeUInt32NoTag(10);
-        output.writeUInt32NoTag(pokeballTypeMemoizedSerializedSize);
-      }
-      for (int i = 0; i < pokeballType_.size(); i++) {
-        output.writeEnumNoTag(pokeballType_.get(i));
-      }
-      if (getCaptureProbabilityList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(captureProbabilityMemoizedSerializedSize);
-      }
-      for (int i = 0; i < captureProbability_.size(); i++) {
-        output.writeFloatNoTag(captureProbability_.get(i));
-      }
-      if (reticleDifficultyScale_ != 0D) {
-        output.writeDouble(12, reticleDifficultyScale_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < pokeballType_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(pokeballType_.get(i));
-        }
-        size += dataSize;
-        if (!getPokeballTypeList().isEmpty()) {  size += 1;
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dataSize);
-        }pokeballTypeMemoizedSerializedSize = dataSize;
-      }
-      {
-        int dataSize = 0;
-        dataSize = 4 * getCaptureProbabilityList().size();
-        size += dataSize;
-        if (!getCaptureProbabilityList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        captureProbabilityMemoizedSerializedSize = dataSize;
-      }
-      if (reticleDifficultyScale_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(12, reticleDifficultyScale_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability other = (com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability) obj;
-
-      boolean result = true;
-      result = result && pokeballType_.equals(other.pokeballType_);
-      result = result && getCaptureProbabilityList()
-          .equals(other.getCaptureProbabilityList());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getReticleDifficultyScale())
-          == java.lang.Double.doubleToLongBits(
-              other.getReticleDifficultyScale()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getPokeballTypeCount() > 0) {
-        hash = (37 * hash) + POKEBALL_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + pokeballType_.hashCode();
-      }
-      if (getCaptureProbabilityCount() > 0) {
-        hash = (37 * hash) + CAPTURE_PROBABILITY_FIELD_NUMBER;
-        hash = (53 * hash) + getCaptureProbabilityList().hashCode();
-      }
-      hash = (37 * hash) + RETICLE_DIFFICULTY_SCALE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getReticleDifficultyScale()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbabilityOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.class, com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        pokeballType_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        captureProbability_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        reticleDifficultyScale_ = 0D;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability build() {
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability buildPartial() {
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability result = new com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          pokeballType_ = java.util.Collections.unmodifiableList(pokeballType_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.pokeballType_ = pokeballType_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          captureProbability_ = java.util.Collections.unmodifiableList(captureProbability_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.captureProbability_ = captureProbability_;
-        result.reticleDifficultyScale_ = reticleDifficultyScale_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability other) {
-        if (other == com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability.getDefaultInstance()) return this;
-        if (!other.pokeballType_.isEmpty()) {
-          if (pokeballType_.isEmpty()) {
-            pokeballType_ = other.pokeballType_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensurePokeballTypeIsMutable();
-            pokeballType_.addAll(other.pokeballType_);
-          }
-          onChanged();
-        }
-        if (!other.captureProbability_.isEmpty()) {
-          if (captureProbability_.isEmpty()) {
-            captureProbability_ = other.captureProbability_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureCaptureProbabilityIsMutable();
-            captureProbability_.addAll(other.captureProbability_);
-          }
-          onChanged();
-        }
-        if (other.getReticleDifficultyScale() != 0D) {
-          setReticleDifficultyScale(other.getReticleDifficultyScale());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.util.List<java.lang.Integer> pokeballType_ =
-        java.util.Collections.emptyList();
-      private void ensurePokeballTypeIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          pokeballType_ = new java.util.ArrayList<java.lang.Integer>(pokeballType_);
-          bitField0_ |= 0x00000001;
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> getPokeballTypeList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId>(pokeballType_, pokeballType_converter_);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public int getPokeballTypeCount() {
-        return pokeballType_.size();
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemId getPokeballType(int index) {
-        return pokeballType_converter_.convert(pokeballType_.get(index));
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder setPokeballType(
-          int index, com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePokeballTypeIsMutable();
-        pokeballType_.set(index, value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder addPokeballType(com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePokeballTypeIsMutable();
-        pokeballType_.add(value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder addAllPokeballType(
-          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.inventory.Item.ItemId> values) {
-        ensurePokeballTypeIsMutable();
-        for (com.github.aeonlucid.pogoprotos.inventory.Item.ItemId value : values) {
-          pokeballType_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder clearPokeballType() {
-        pokeballType_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public java.util.List<java.lang.Integer>
-      getPokeballTypeValueList() {
-        return java.util.Collections.unmodifiableList(pokeballType_);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public int getPokeballTypeValue(int index) {
-        return pokeballType_.get(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder setPokeballTypeValue(
-          int index, int value) {
-        ensurePokeballTypeIsMutable();
-        pokeballType_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder addPokeballTypeValue(int value) {
-        ensurePokeballTypeIsMutable();
-        pokeballType_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.inventory.item.ItemId pokeball_type = 1 [packed = true];</code>
-       */
-      public Builder addAllPokeballTypeValue(
-          java.lang.Iterable<java.lang.Integer> values) {
-        ensurePokeballTypeIsMutable();
-        for (int value : values) {
-          pokeballType_.add(value);
-        }
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<java.lang.Float> captureProbability_ = java.util.Collections.emptyList();
-      private void ensureCaptureProbabilityIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          captureProbability_ = new java.util.ArrayList<java.lang.Float>(captureProbability_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public java.util.List<java.lang.Float>
-          getCaptureProbabilityList() {
-        return java.util.Collections.unmodifiableList(captureProbability_);
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public int getCaptureProbabilityCount() {
-        return captureProbability_.size();
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public float getCaptureProbability(int index) {
-        return captureProbability_.get(index);
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public Builder setCaptureProbability(
-          int index, float value) {
-        ensureCaptureProbabilityIsMutable();
-        captureProbability_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public Builder addCaptureProbability(float value) {
-        ensureCaptureProbabilityIsMutable();
-        captureProbability_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public Builder addAllCaptureProbability(
-          java.lang.Iterable<? extends java.lang.Float> values) {
-        ensureCaptureProbabilityIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, captureProbability_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float capture_probability = 2 [packed = true];</code>
-       */
-      public Builder clearCaptureProbability() {
-        captureProbability_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private double reticleDifficultyScale_ ;
-      /**
-       * <code>optional double reticle_difficulty_scale = 12;</code>
-       */
-      public double getReticleDifficultyScale() {
-        return reticleDifficultyScale_;
-      }
-      /**
-       * <code>optional double reticle_difficulty_scale = 12;</code>
-       */
-      public Builder setReticleDifficultyScale(double value) {
-        
-        reticleDifficultyScale_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double reticle_difficulty_scale = 12;</code>
-       */
-      public Builder clearReticleDifficultyScale() {
-        
-        reticleDifficultyScale_ = 0D;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.data.capture.CaptureProbability)
-    private static final com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CaptureProbability>
-        PARSER = new com.google.protobuf.AbstractParser<CaptureProbability>() {
-      public CaptureProbability parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CaptureProbability(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CaptureProbability> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CaptureProbability> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.data.Capture.CaptureProbability getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n2com/github/aeonlucid/pogoprotos/data/C" +
-      "apture.proto\022,com.github.aeonlucid.pogop" +
-      "rotos.data.capture\032+com/github/aeonlucid" +
-      "/pogoprotos/Enums.proto\0324com/github/aeon" +
-      "lucid/pogoprotos/inventory/Item.proto\"\227\001" +
-      "\n\014CaptureAward\022N\n\ractivity_type\030\001 \003(\01623." +
-      "com.github.aeonlucid.pogoprotos.enums.Ac" +
-      "tivityTypeB\002\020\001\022\016\n\002xp\030\002 \003(\005B\002\020\001\022\021\n\005candy\030" +
-      "\003 \003(\005B\002\020\001\022\024\n\010stardust\030\004 \003(\005B\002\020\001\"\252\001\n\022Capt" +
-      "ureProbability\022Q\n\rpokeball_type\030\001 \003(\01626.",
-      "com.github.aeonlucid.pogoprotos.inventor" +
-      "y.item.ItemIdB\002\020\001\022\037\n\023capture_probability" +
-      "\030\002 \003(\002B\002\020\001\022 \n\030reticle_difficulty_scale\030\014" +
-      " \001(\001B/\n$com.github.aeonlucid.pogoprotos." +
-      "dataB\007Captureb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.Enums.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureAward_descriptor,
-        new java.lang.String[] { "ActivityType", "Xp", "Candy", "Stardust", });
-    internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_data_capture_CaptureProbability_descriptor,
-        new java.lang.String[] { "PokeballType", "CaptureProbability", "ReticleDifficultyScale", });
-    com.github.aeonlucid.pogoprotos.Enums.getDescriptor();
-    com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

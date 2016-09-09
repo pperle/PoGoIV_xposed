@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.data;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.data;
 
 option java_package = "com.github.aeonlucid.pogoprotos";
 option java_outer_classname = "Data";
@@ -8,14 +9,6 @@ option java_outer_classname = "Data";
 import "com/github/aeonlucid/pogoprotos/Enums.proto";
 import "com/github/aeonlucid/pogoprotos/data/Player.proto";
 import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
-
-message PokedexEntry {
-	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;
-	int32 times_encountered = 2;
-	int32 times_captured = 3;
-	int32 evolution_stone_pieces = 4;
-	int32 evolution_stones = 5;
-}
 
 message PlayerBadge {
 	com.github.aeonlucid.pogoprotos.enums.BadgeType badge_type = 1;
@@ -25,11 +18,26 @@ message PlayerBadge {
 	double current_value = 5;
 }
 
+message BuddyPokemon {
+	fixed64 id = 1;
+	double start_km_walked = 2;
+	double last_km_awarded = 3;
+}
+
 message DownloadUrlEntry {
 	string asset_id = 1;
 	string url = 2;
 	int32 size = 3;
 	fixed32 checksum = 4;
+}
+
+message AssetDigestEntry {
+	string asset_id = 1;
+	string bundle_name = 2;
+	int64 version = 3;
+	fixed32 checksum = 4;
+	int32 size = 5;
+	bytes key = 6;
 }
 
 message PlayerData {
@@ -48,19 +56,12 @@ message PlayerData {
 	com.github.aeonlucid.pogoprotos.data.BuddyPokemon buddy_pokemon = 16;
 }
 
-message BuddyPokemon {
-	fixed64 id = 1;
-	double start_km_walked = 2;
-	double last_km_awarded = 3;
-}
-
-message AssetDigestEntry {
-	string asset_id = 1;
-	string bundle_name = 2;
-	int64 version = 3;
-	fixed32 checksum = 4;
-	int32 size = 5;
-	bytes key = 6;
+message PokedexEntry {
+	com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;
+	int32 times_encountered = 2;
+	int32 times_captured = 3;
+	int32 evolution_stone_pieces = 4;
+	int32 evolution_stones = 5;
 }
 
 message PokemonData {

@@ -8,15 +8,9 @@ public final class Pokemon {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   public interface NearbyPokemonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
@@ -61,97 +55,14 @@ public final class Pokemon {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon}
    */
   public  static final class NearbyPokemon extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          NearbyPokemon, NearbyPokemon.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon)
       NearbyPokemonOrBuilder {
-    // Use NearbyPokemon.newBuilder() to construct.
-    private NearbyPokemon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private NearbyPokemon() {
-      pokemonId_ = 0;
-      distanceInMeters_ = 0F;
-      encounterId_ = 0L;
       fortId_ = "";
       fortImageUrl_ = "";
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private NearbyPokemon(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              pokemonId_ = rawValue;
-              break;
-            }
-            case 21: {
-
-              distanceInMeters_ = input.readFloat();
-              break;
-            }
-            case 25: {
-
-              encounterId_ = input.readFixed64();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fortId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fortImageUrl_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.class, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder.class);
-    }
-
     public static final int POKEMON_ID_FIELD_NUMBER = 1;
     private int pokemonId_;
     /**
@@ -164,8 +75,31 @@ public final class Pokemon {
      * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
      */
     public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
-      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
+      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.forNumber(pokemonId_);
       return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+     */
+    private void setPokemonIdValue(int value) {
+        pokemonId_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+     */
+    private void setPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      pokemonId_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
+     */
+    private void clearPokemonId() {
+      
+      pokemonId_ = 0;
     }
 
     public static final int DISTANCE_IN_METERS_FIELD_NUMBER = 2;
@@ -176,6 +110,20 @@ public final class Pokemon {
     public float getDistanceInMeters() {
       return distanceInMeters_;
     }
+    /**
+     * <code>optional float distance_in_meters = 2;</code>
+     */
+    private void setDistanceInMeters(float value) {
+      
+      distanceInMeters_ = value;
+    }
+    /**
+     * <code>optional float distance_in_meters = 2;</code>
+     */
+    private void clearDistanceInMeters() {
+      
+      distanceInMeters_ = 0F;
+    }
 
     public static final int ENCOUNTER_ID_FIELD_NUMBER = 3;
     private long encounterId_;
@@ -185,83 +133,111 @@ public final class Pokemon {
     public long getEncounterId() {
       return encounterId_;
     }
+    /**
+     * <code>optional fixed64 encounter_id = 3;</code>
+     */
+    private void setEncounterId(long value) {
+      
+      encounterId_ = value;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 3;</code>
+     */
+    private void clearEncounterId() {
+      
+      encounterId_ = 0L;
+    }
 
     public static final int FORT_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object fortId_;
+    private java.lang.String fortId_;
     /**
      * <code>optional string fort_id = 4;</code>
      */
     public java.lang.String getFortId() {
-      java.lang.Object ref = fortId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fortId_ = s;
-        return s;
-      }
+      return fortId_;
     }
     /**
      * <code>optional string fort_id = 4;</code>
      */
     public com.google.protobuf.ByteString
         getFortIdBytes() {
-      java.lang.Object ref = fortId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fortId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(fortId_);
+    }
+    /**
+     * <code>optional string fort_id = 4;</code>
+     */
+    private void setFortId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fortId_ = value;
+    }
+    /**
+     * <code>optional string fort_id = 4;</code>
+     */
+    private void clearFortId() {
+      
+      fortId_ = getDefaultInstance().getFortId();
+    }
+    /**
+     * <code>optional string fort_id = 4;</code>
+     */
+    private void setFortIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fortId_ = value.toStringUtf8();
     }
 
     public static final int FORT_IMAGE_URL_FIELD_NUMBER = 5;
-    private volatile java.lang.Object fortImageUrl_;
+    private java.lang.String fortImageUrl_;
     /**
      * <code>optional string fort_image_url = 5;</code>
      */
     public java.lang.String getFortImageUrl() {
-      java.lang.Object ref = fortImageUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fortImageUrl_ = s;
-        return s;
-      }
+      return fortImageUrl_;
     }
     /**
      * <code>optional string fort_image_url = 5;</code>
      */
     public com.google.protobuf.ByteString
         getFortImageUrlBytes() {
-      java.lang.Object ref = fortImageUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fortImageUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(fortImageUrl_);
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional string fort_image_url = 5;</code>
+     */
+    private void setFortImageUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fortImageUrl_ = value;
+    }
+    /**
+     * <code>optional string fort_image_url = 5;</code>
+     */
+    private void clearFortImageUrl() {
+      
+      fortImageUrl_ = getDefaultInstance().getFortImageUrl();
+    }
+    /**
+     * <code>optional string fort_image_url = 5;</code>
+     */
+    private void setFortImageUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fortImageUrl_ = value.toStringUtf8();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -275,16 +251,16 @@ public final class Pokemon {
       if (encounterId_ != 0L) {
         output.writeFixed64(3, encounterId_);
       }
-      if (!getFortIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fortId_);
+      if (!fortId_.isEmpty()) {
+        output.writeString(4, getFortId());
       }
-      if (!getFortImageUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fortImageUrl_);
+      if (!fortImageUrl_.isEmpty()) {
+        output.writeString(5, getFortImageUrl());
       }
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -300,448 +276,211 @@ public final class Pokemon {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed64Size(3, encounterId_);
       }
-      if (!getFortIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fortId_);
+      if (!fortId_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, getFortId());
       }
-      if (!getFortImageUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fortImageUrl_);
+      if (!fortImageUrl_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(5, getFortImageUrl());
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon other = (com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon) obj;
-
-      boolean result = true;
-      result = result && pokemonId_ == other.pokemonId_;
-      result = result && (
-          java.lang.Float.floatToIntBits(getDistanceInMeters())
-          == java.lang.Float.floatToIntBits(
-              other.getDistanceInMeters()));
-      result = result && (getEncounterId()
-          == other.getEncounterId());
-      result = result && getFortId()
-          .equals(other.getFortId());
-      result = result && getFortImageUrl()
-          .equals(other.getFortImageUrl());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + POKEMON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + pokemonId_;
-      hash = (37 * hash) + DISTANCE_IN_METERS_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getDistanceInMeters());
-      hash = (37 * hash) + ENCOUNTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEncounterId());
-      hash = (37 * hash) + FORT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFortId().hashCode();
-      hash = (37 * hash) + FORT_IMAGE_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getFortImageUrl().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon)
         com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemonOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.class, com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        pokemonId_ = 0;
 
-        distanceInMeters_ = 0F;
-
-        encounterId_ = 0L;
-
-        fortId_ = "";
-
-        fortImageUrl_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon build() {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon result = new com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon(this);
-        result.pokemonId_ = pokemonId_;
-        result.distanceInMeters_ = distanceInMeters_;
-        result.encounterId_ = encounterId_;
-        result.fortId_ = fortId_;
-        result.fortImageUrl_ = fortImageUrl_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.getDefaultInstance()) return this;
-        if (other.pokemonId_ != 0) {
-          setPokemonIdValue(other.getPokemonIdValue());
-        }
-        if (other.getDistanceInMeters() != 0F) {
-          setDistanceInMeters(other.getDistanceInMeters());
-        }
-        if (other.getEncounterId() != 0L) {
-          setEncounterId(other.getEncounterId());
-        }
-        if (!other.getFortId().isEmpty()) {
-          fortId_ = other.fortId_;
-          onChanged();
-        }
-        if (!other.getFortImageUrl().isEmpty()) {
-          fortImageUrl_ = other.fortImageUrl_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int pokemonId_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
       public int getPokemonIdValue() {
-        return pokemonId_;
+        return instance.getPokemonIdValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
       public Builder setPokemonIdValue(int value) {
-        pokemonId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPokemonIdValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
-        com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+        return instance.getPokemonId();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
       public Builder setPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        pokemonId_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setPokemonId(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 1;</code>
        */
       public Builder clearPokemonId() {
-        
-        pokemonId_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearPokemonId();
         return this;
       }
 
-      private float distanceInMeters_ ;
       /**
        * <code>optional float distance_in_meters = 2;</code>
        */
       public float getDistanceInMeters() {
-        return distanceInMeters_;
+        return instance.getDistanceInMeters();
       }
       /**
        * <code>optional float distance_in_meters = 2;</code>
        */
       public Builder setDistanceInMeters(float value) {
-        
-        distanceInMeters_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setDistanceInMeters(value);
         return this;
       }
       /**
        * <code>optional float distance_in_meters = 2;</code>
        */
       public Builder clearDistanceInMeters() {
-        
-        distanceInMeters_ = 0F;
-        onChanged();
+        copyOnWrite();
+        instance.clearDistanceInMeters();
         return this;
       }
 
-      private long encounterId_ ;
       /**
        * <code>optional fixed64 encounter_id = 3;</code>
        */
       public long getEncounterId() {
-        return encounterId_;
+        return instance.getEncounterId();
       }
       /**
        * <code>optional fixed64 encounter_id = 3;</code>
        */
       public Builder setEncounterId(long value) {
-        
-        encounterId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setEncounterId(value);
         return this;
       }
       /**
        * <code>optional fixed64 encounter_id = 3;</code>
        */
       public Builder clearEncounterId() {
-        
-        encounterId_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearEncounterId();
         return this;
       }
 
-      private java.lang.Object fortId_ = "";
       /**
        * <code>optional string fort_id = 4;</code>
        */
       public java.lang.String getFortId() {
-        java.lang.Object ref = fortId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fortId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getFortId();
       }
       /**
        * <code>optional string fort_id = 4;</code>
        */
       public com.google.protobuf.ByteString
           getFortIdBytes() {
-        java.lang.Object ref = fortId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fortId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getFortIdBytes();
       }
       /**
        * <code>optional string fort_id = 4;</code>
        */
       public Builder setFortId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        fortId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFortId(value);
         return this;
       }
       /**
        * <code>optional string fort_id = 4;</code>
        */
       public Builder clearFortId() {
-        
-        fortId_ = getDefaultInstance().getFortId();
-        onChanged();
+        copyOnWrite();
+        instance.clearFortId();
         return this;
       }
       /**
@@ -749,68 +488,39 @@ public final class Pokemon {
        */
       public Builder setFortIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fortId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFortIdBytes(value);
         return this;
       }
 
-      private java.lang.Object fortImageUrl_ = "";
       /**
        * <code>optional string fort_image_url = 5;</code>
        */
       public java.lang.String getFortImageUrl() {
-        java.lang.Object ref = fortImageUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fortImageUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getFortImageUrl();
       }
       /**
        * <code>optional string fort_image_url = 5;</code>
        */
       public com.google.protobuf.ByteString
           getFortImageUrlBytes() {
-        java.lang.Object ref = fortImageUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fortImageUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getFortImageUrlBytes();
       }
       /**
        * <code>optional string fort_image_url = 5;</code>
        */
       public Builder setFortImageUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        fortImageUrl_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFortImageUrl(value);
         return this;
       }
       /**
        * <code>optional string fort_image_url = 5;</code>
        */
       public Builder clearFortImageUrl() {
-        
-        fortImageUrl_ = getDefaultInstance().getFortImageUrl();
-        onChanged();
+        copyOnWrite();
+        instance.clearFortImageUrl();
         return this;
       }
       /**
@@ -818,67 +528,142 @@ public final class Pokemon {
        */
       public Builder setFortImageUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        fortImageUrl_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFortImageUrlBytes(value);
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon other = (com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon) arg1;
+          pokemonId_ = visitor.visitInt(pokemonId_ != 0, pokemonId_,    other.pokemonId_ != 0, other.pokemonId_);
+          distanceInMeters_ = visitor.visitFloat(distanceInMeters_ != 0F, distanceInMeters_,
+              other.distanceInMeters_ != 0F, other.distanceInMeters_);
+          encounterId_ = visitor.visitLong(encounterId_ != 0L, encounterId_,
+              other.encounterId_ != 0L, other.encounterId_);
+          fortId_ = visitor.visitString(!fortId_.isEmpty(), fortId_,
+              !other.fortId_.isEmpty(), other.fortId_);
+          fortImageUrl_ = visitor.visitString(!fortImageUrl_.isEmpty(), fortImageUrl_,
+              !other.fortImageUrl_.isEmpty(), other.fortImageUrl_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  pokemonId_ = rawValue;
+                  break;
+                }
+                case 21: {
+
+                  distanceInMeters_ = input.readFloat();
+                  break;
+                }
+                case 25: {
+
+                  encounterId_ = input.readFixed64();
+                  break;
+                }
+                case 34: {
+                  String s = input.readStringRequireUtf8();
+
+                  fortId_ = s;
+                  break;
+                }
+                case 42: {
+                  String s = input.readStringRequireUtf8();
+
+                  fortImageUrl_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.pokemon.NearbyPokemon)
     private static final com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon();
+      DEFAULT_INSTANCE = new NearbyPokemon();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<NearbyPokemon>
-        PARSER = new com.google.protobuf.AbstractParser<NearbyPokemon>() {
-      public NearbyPokemon parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NearbyPokemon(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<NearbyPokemon> PARSER;
 
     public static com.google.protobuf.Parser<NearbyPokemon> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<NearbyPokemon> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Pokemon.NearbyPokemon getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface MapPokemonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional string spawn_point_id = 1;</code>
@@ -927,134 +712,57 @@ public final class Pokemon {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon}
    */
   public  static final class MapPokemon extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          MapPokemon, MapPokemon.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon)
       MapPokemonOrBuilder {
-    // Use MapPokemon.newBuilder() to construct.
-    private MapPokemon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private MapPokemon() {
       spawnPointId_ = "";
-      encounterId_ = 0L;
-      pokemonId_ = 0;
-      expirationTimestampMs_ = 0L;
-      latitude_ = 0D;
-      longitude_ = 0D;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private MapPokemon(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spawnPointId_ = s;
-              break;
-            }
-            case 17: {
-
-              encounterId_ = input.readFixed64();
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              pokemonId_ = rawValue;
-              break;
-            }
-            case 32: {
-
-              expirationTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 41: {
-
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              longitude_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.class, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder.class);
-    }
-
     public static final int SPAWN_POINT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object spawnPointId_;
+    private java.lang.String spawnPointId_;
     /**
      * <code>optional string spawn_point_id = 1;</code>
      */
     public java.lang.String getSpawnPointId() {
-      java.lang.Object ref = spawnPointId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spawnPointId_ = s;
-        return s;
-      }
+      return spawnPointId_;
     }
     /**
      * <code>optional string spawn_point_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSpawnPointIdBytes() {
-      java.lang.Object ref = spawnPointId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spawnPointId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(spawnPointId_);
+    }
+    /**
+     * <code>optional string spawn_point_id = 1;</code>
+     */
+    private void setSpawnPointId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      spawnPointId_ = value;
+    }
+    /**
+     * <code>optional string spawn_point_id = 1;</code>
+     */
+    private void clearSpawnPointId() {
+      
+      spawnPointId_ = getDefaultInstance().getSpawnPointId();
+    }
+    /**
+     * <code>optional string spawn_point_id = 1;</code>
+     */
+    private void setSpawnPointIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      spawnPointId_ = value.toStringUtf8();
     }
 
     public static final int ENCOUNTER_ID_FIELD_NUMBER = 2;
@@ -1064,6 +772,20 @@ public final class Pokemon {
      */
     public long getEncounterId() {
       return encounterId_;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 2;</code>
+     */
+    private void setEncounterId(long value) {
+      
+      encounterId_ = value;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 2;</code>
+     */
+    private void clearEncounterId() {
+      
+      encounterId_ = 0L;
     }
 
     public static final int POKEMON_ID_FIELD_NUMBER = 3;
@@ -1078,8 +800,31 @@ public final class Pokemon {
      * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
      */
     public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
-      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
+      com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.forNumber(pokemonId_);
       return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
+     */
+    private void setPokemonIdValue(int value) {
+        pokemonId_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
+     */
+    private void setPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      pokemonId_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
+     */
+    private void clearPokemonId() {
+      
+      pokemonId_ = 0;
     }
 
     public static final int EXPIRATION_TIMESTAMP_MS_FIELD_NUMBER = 4;
@@ -1094,6 +839,28 @@ public final class Pokemon {
     public long getExpirationTimestampMs() {
       return expirationTimestampMs_;
     }
+    /**
+     * <pre>
+     * After this timestamp, the pokemon will be gone.
+     * </pre>
+     *
+     * <code>optional int64 expiration_timestamp_ms = 4;</code>
+     */
+    private void setExpirationTimestampMs(long value) {
+      
+      expirationTimestampMs_ = value;
+    }
+    /**
+     * <pre>
+     * After this timestamp, the pokemon will be gone.
+     * </pre>
+     *
+     * <code>optional int64 expiration_timestamp_ms = 4;</code>
+     */
+    private void clearExpirationTimestampMs() {
+      
+      expirationTimestampMs_ = 0L;
+    }
 
     public static final int LATITUDE_FIELD_NUMBER = 5;
     private double latitude_;
@@ -1102,6 +869,20 @@ public final class Pokemon {
      */
     public double getLatitude() {
       return latitude_;
+    }
+    /**
+     * <code>optional double latitude = 5;</code>
+     */
+    private void setLatitude(double value) {
+      
+      latitude_ = value;
+    }
+    /**
+     * <code>optional double latitude = 5;</code>
+     */
+    private void clearLatitude() {
+      
+      latitude_ = 0D;
     }
 
     public static final int LONGITUDE_FIELD_NUMBER = 6;
@@ -1112,21 +893,25 @@ public final class Pokemon {
     public double getLongitude() {
       return longitude_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional double longitude = 6;</code>
+     */
+    private void setLongitude(double value) {
+      
+      longitude_ = value;
+    }
+    /**
+     * <code>optional double longitude = 6;</code>
+     */
+    private void clearLongitude() {
+      
+      longitude_ = 0D;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpawnPointIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spawnPointId_);
+      if (!spawnPointId_.isEmpty()) {
+        output.writeString(1, getSpawnPointId());
       }
       if (encounterId_ != 0L) {
         output.writeFixed64(2, encounterId_);
@@ -1146,12 +931,13 @@ public final class Pokemon {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpawnPointIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spawnPointId_);
+      if (!spawnPointId_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getSpawnPointId());
       }
       if (encounterId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -1173,359 +959,120 @@ public final class Pokemon {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(6, longitude_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon other = (com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon) obj;
-
-      boolean result = true;
-      result = result && getSpawnPointId()
-          .equals(other.getSpawnPointId());
-      result = result && (getEncounterId()
-          == other.getEncounterId());
-      result = result && pokemonId_ == other.pokemonId_;
-      result = result && (getExpirationTimestampMs()
-          == other.getExpirationTimestampMs());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + SPAWN_POINT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpawnPointId().hashCode();
-      hash = (37 * hash) + ENCOUNTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEncounterId());
-      hash = (37 * hash) + POKEMON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + pokemonId_;
-      hash = (37 * hash) + EXPIRATION_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpirationTimestampMs());
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon)
         com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemonOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.class, com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        spawnPointId_ = "";
 
-        encounterId_ = 0L;
-
-        pokemonId_ = 0;
-
-        expirationTimestampMs_ = 0L;
-
-        latitude_ = 0D;
-
-        longitude_ = 0D;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon build() {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon result = new com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon(this);
-        result.spawnPointId_ = spawnPointId_;
-        result.encounterId_ = encounterId_;
-        result.pokemonId_ = pokemonId_;
-        result.expirationTimestampMs_ = expirationTimestampMs_;
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.getDefaultInstance()) return this;
-        if (!other.getSpawnPointId().isEmpty()) {
-          spawnPointId_ = other.spawnPointId_;
-          onChanged();
-        }
-        if (other.getEncounterId() != 0L) {
-          setEncounterId(other.getEncounterId());
-        }
-        if (other.pokemonId_ != 0) {
-          setPokemonIdValue(other.getPokemonIdValue());
-        }
-        if (other.getExpirationTimestampMs() != 0L) {
-          setExpirationTimestampMs(other.getExpirationTimestampMs());
-        }
-        if (other.getLatitude() != 0D) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.getLongitude() != 0D) {
-          setLongitude(other.getLongitude());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object spawnPointId_ = "";
       /**
        * <code>optional string spawn_point_id = 1;</code>
        */
       public java.lang.String getSpawnPointId() {
-        java.lang.Object ref = spawnPointId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spawnPointId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getSpawnPointId();
       }
       /**
        * <code>optional string spawn_point_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSpawnPointIdBytes() {
-        java.lang.Object ref = spawnPointId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spawnPointId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getSpawnPointIdBytes();
       }
       /**
        * <code>optional string spawn_point_id = 1;</code>
        */
       public Builder setSpawnPointId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spawnPointId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSpawnPointId(value);
         return this;
       }
       /**
        * <code>optional string spawn_point_id = 1;</code>
        */
       public Builder clearSpawnPointId() {
-        
-        spawnPointId_ = getDefaultInstance().getSpawnPointId();
-        onChanged();
+        copyOnWrite();
+        instance.clearSpawnPointId();
         return this;
       }
       /**
@@ -1533,87 +1080,71 @@ public final class Pokemon {
        */
       public Builder setSpawnPointIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spawnPointId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSpawnPointIdBytes(value);
         return this;
       }
 
-      private long encounterId_ ;
       /**
        * <code>optional fixed64 encounter_id = 2;</code>
        */
       public long getEncounterId() {
-        return encounterId_;
+        return instance.getEncounterId();
       }
       /**
        * <code>optional fixed64 encounter_id = 2;</code>
        */
       public Builder setEncounterId(long value) {
-        
-        encounterId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setEncounterId(value);
         return this;
       }
       /**
        * <code>optional fixed64 encounter_id = 2;</code>
        */
       public Builder clearEncounterId() {
-        
-        encounterId_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearEncounterId();
         return this;
       }
 
-      private int pokemonId_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
        */
       public int getPokemonIdValue() {
-        return pokemonId_;
+        return instance.getPokemonIdValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
        */
       public Builder setPokemonIdValue(int value) {
-        pokemonId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPokemonIdValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
        */
       public com.github.aeonlucid.pogoprotos.Enums.PokemonId getPokemonId() {
-        com.github.aeonlucid.pogoprotos.Enums.PokemonId result = com.github.aeonlucid.pogoprotos.Enums.PokemonId.valueOf(pokemonId_);
-        return result == null ? com.github.aeonlucid.pogoprotos.Enums.PokemonId.UNRECOGNIZED : result;
+        return instance.getPokemonId();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
        */
       public Builder setPokemonId(com.github.aeonlucid.pogoprotos.Enums.PokemonId value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        pokemonId_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setPokemonId(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.enums.PokemonId pokemon_id = 3;</code>
        */
       public Builder clearPokemonId() {
-        
-        pokemonId_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearPokemonId();
         return this;
       }
 
-      private long expirationTimestampMs_ ;
       /**
        * <pre>
        * After this timestamp, the pokemon will be gone.
@@ -1622,7 +1153,7 @@ public final class Pokemon {
        * <code>optional int64 expiration_timestamp_ms = 4;</code>
        */
       public long getExpirationTimestampMs() {
-        return expirationTimestampMs_;
+        return instance.getExpirationTimestampMs();
       }
       /**
        * <pre>
@@ -1632,9 +1163,8 @@ public final class Pokemon {
        * <code>optional int64 expiration_timestamp_ms = 4;</code>
        */
       public Builder setExpirationTimestampMs(long value) {
-        
-        expirationTimestampMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setExpirationTimestampMs(value);
         return this;
       }
       /**
@@ -1645,115 +1175,194 @@ public final class Pokemon {
        * <code>optional int64 expiration_timestamp_ms = 4;</code>
        */
       public Builder clearExpirationTimestampMs() {
-        
-        expirationTimestampMs_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearExpirationTimestampMs();
         return this;
       }
 
-      private double latitude_ ;
       /**
        * <code>optional double latitude = 5;</code>
        */
       public double getLatitude() {
-        return latitude_;
+        return instance.getLatitude();
       }
       /**
        * <code>optional double latitude = 5;</code>
        */
       public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLatitude(value);
         return this;
       }
       /**
        * <code>optional double latitude = 5;</code>
        */
       public Builder clearLatitude() {
-        
-        latitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLatitude();
         return this;
       }
 
-      private double longitude_ ;
       /**
        * <code>optional double longitude = 6;</code>
        */
       public double getLongitude() {
-        return longitude_;
+        return instance.getLongitude();
       }
       /**
        * <code>optional double longitude = 6;</code>
        */
       public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLongitude(value);
         return this;
       }
       /**
        * <code>optional double longitude = 6;</code>
        */
       public Builder clearLongitude() {
-        
-        longitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLongitude();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon other = (com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon) arg1;
+          spawnPointId_ = visitor.visitString(!spawnPointId_.isEmpty(), spawnPointId_,
+              !other.spawnPointId_.isEmpty(), other.spawnPointId_);
+          encounterId_ = visitor.visitLong(encounterId_ != 0L, encounterId_,
+              other.encounterId_ != 0L, other.encounterId_);
+          pokemonId_ = visitor.visitInt(pokemonId_ != 0, pokemonId_,    other.pokemonId_ != 0, other.pokemonId_);
+          expirationTimestampMs_ = visitor.visitLong(expirationTimestampMs_ != 0L, expirationTimestampMs_,
+              other.expirationTimestampMs_ != 0L, other.expirationTimestampMs_);
+          latitude_ = visitor.visitDouble(latitude_ != 0D, latitude_,
+              other.latitude_ != 0D, other.latitude_);
+          longitude_ = visitor.visitDouble(longitude_ != 0D, longitude_,
+              other.longitude_ != 0D, other.longitude_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  spawnPointId_ = s;
+                  break;
+                }
+                case 17: {
+
+                  encounterId_ = input.readFixed64();
+                  break;
+                }
+                case 24: {
+                  int rawValue = input.readEnum();
+
+                  pokemonId_ = rawValue;
+                  break;
+                }
+                case 32: {
+
+                  expirationTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 41: {
+
+                  latitude_ = input.readDouble();
+                  break;
+                }
+                case 49: {
+
+                  longitude_ = input.readDouble();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.pokemon.MapPokemon)
     private static final com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon();
+      DEFAULT_INSTANCE = new MapPokemon();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MapPokemon>
-        PARSER = new com.google.protobuf.AbstractParser<MapPokemon>() {
-      public MapPokemon parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MapPokemon(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<MapPokemon> PARSER;
 
     public static com.google.protobuf.Parser<MapPokemon> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MapPokemon> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Pokemon.MapPokemon getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface WildPokemonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional fixed64 encounter_id = 1;</code>
@@ -1793,10 +1402,6 @@ public final class Pokemon {
      * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
      */
     com.github.aeonlucid.pogoprotos.Data.PokemonData getPokemonData();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
-     */
-    com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder getPokemonDataOrBuilder();
 
     /**
      * <code>optional int32 time_till_hidden_ms = 11;</code>
@@ -1807,114 +1412,13 @@ public final class Pokemon {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon}
    */
   public  static final class WildPokemon extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          WildPokemon, WildPokemon.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon)
       WildPokemonOrBuilder {
-    // Use WildPokemon.newBuilder() to construct.
-    private WildPokemon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private WildPokemon() {
-      encounterId_ = 0L;
-      lastModifiedTimestampMs_ = 0L;
-      latitude_ = 0D;
-      longitude_ = 0D;
       spawnPointId_ = "";
-      timeTillHiddenMs_ = 0;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private WildPokemon(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 9: {
-
-              encounterId_ = input.readFixed64();
-              break;
-            }
-            case 16: {
-
-              lastModifiedTimestampMs_ = input.readInt64();
-              break;
-            }
-            case 25: {
-
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 33: {
-
-              longitude_ = input.readDouble();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spawnPointId_ = s;
-              break;
-            }
-            case 58: {
-              com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder subBuilder = null;
-              if (pokemonData_ != null) {
-                subBuilder = pokemonData_.toBuilder();
-              }
-              pokemonData_ = input.readMessage(com.github.aeonlucid.pogoprotos.Data.PokemonData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pokemonData_);
-                pokemonData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              timeTillHiddenMs_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.class, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder.class);
-    }
-
     public static final int ENCOUNTER_ID_FIELD_NUMBER = 1;
     private long encounterId_;
     /**
@@ -1922,6 +1426,20 @@ public final class Pokemon {
      */
     public long getEncounterId() {
       return encounterId_;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 1;</code>
+     */
+    private void setEncounterId(long value) {
+      
+      encounterId_ = value;
+    }
+    /**
+     * <code>optional fixed64 encounter_id = 1;</code>
+     */
+    private void clearEncounterId() {
+      
+      encounterId_ = 0L;
     }
 
     public static final int LAST_MODIFIED_TIMESTAMP_MS_FIELD_NUMBER = 2;
@@ -1932,6 +1450,20 @@ public final class Pokemon {
     public long getLastModifiedTimestampMs() {
       return lastModifiedTimestampMs_;
     }
+    /**
+     * <code>optional int64 last_modified_timestamp_ms = 2;</code>
+     */
+    private void setLastModifiedTimestampMs(long value) {
+      
+      lastModifiedTimestampMs_ = value;
+    }
+    /**
+     * <code>optional int64 last_modified_timestamp_ms = 2;</code>
+     */
+    private void clearLastModifiedTimestampMs() {
+      
+      lastModifiedTimestampMs_ = 0L;
+    }
 
     public static final int LATITUDE_FIELD_NUMBER = 3;
     private double latitude_;
@@ -1940,6 +1472,20 @@ public final class Pokemon {
      */
     public double getLatitude() {
       return latitude_;
+    }
+    /**
+     * <code>optional double latitude = 3;</code>
+     */
+    private void setLatitude(double value) {
+      
+      latitude_ = value;
+    }
+    /**
+     * <code>optional double latitude = 3;</code>
+     */
+    private void clearLatitude() {
+      
+      latitude_ = 0D;
     }
 
     public static final int LONGITUDE_FIELD_NUMBER = 4;
@@ -1950,39 +1496,65 @@ public final class Pokemon {
     public double getLongitude() {
       return longitude_;
     }
+    /**
+     * <code>optional double longitude = 4;</code>
+     */
+    private void setLongitude(double value) {
+      
+      longitude_ = value;
+    }
+    /**
+     * <code>optional double longitude = 4;</code>
+     */
+    private void clearLongitude() {
+      
+      longitude_ = 0D;
+    }
 
     public static final int SPAWN_POINT_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object spawnPointId_;
+    private java.lang.String spawnPointId_;
     /**
      * <code>optional string spawn_point_id = 5;</code>
      */
     public java.lang.String getSpawnPointId() {
-      java.lang.Object ref = spawnPointId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spawnPointId_ = s;
-        return s;
-      }
+      return spawnPointId_;
     }
     /**
      * <code>optional string spawn_point_id = 5;</code>
      */
     public com.google.protobuf.ByteString
         getSpawnPointIdBytes() {
-      java.lang.Object ref = spawnPointId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spawnPointId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(spawnPointId_);
+    }
+    /**
+     * <code>optional string spawn_point_id = 5;</code>
+     */
+    private void setSpawnPointId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      spawnPointId_ = value;
+    }
+    /**
+     * <code>optional string spawn_point_id = 5;</code>
+     */
+    private void clearSpawnPointId() {
+      
+      spawnPointId_ = getDefaultInstance().getSpawnPointId();
+    }
+    /**
+     * <code>optional string spawn_point_id = 5;</code>
+     */
+    private void setSpawnPointIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      spawnPointId_ = value.toStringUtf8();
     }
 
     public static final int POKEMON_DATA_FIELD_NUMBER = 7;
@@ -2002,8 +1574,39 @@ public final class Pokemon {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
      */
-    public com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder getPokemonDataOrBuilder() {
-      return getPokemonData();
+    private void setPokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pokemonData_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
+     */
+    private void setPokemonData(
+        com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder builderForValue) {
+      pokemonData_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
+     */
+    private void mergePokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
+      if (pokemonData_ != null &&
+          pokemonData_ != com.github.aeonlucid.pogoprotos.Data.PokemonData.getDefaultInstance()) {
+        pokemonData_ =
+          com.github.aeonlucid.pogoprotos.Data.PokemonData.newBuilder(pokemonData_).mergeFrom(value).buildPartial();
+      } else {
+        pokemonData_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
+     */
+    private void clearPokemonData() {  pokemonData_ = null;
+      
     }
 
     public static final int TIME_TILL_HIDDEN_MS_FIELD_NUMBER = 11;
@@ -2014,15 +1617,19 @@ public final class Pokemon {
     public int getTimeTillHiddenMs() {
       return timeTillHiddenMs_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional int32 time_till_hidden_ms = 11;</code>
+     */
+    private void setTimeTillHiddenMs(int value) {
+      
+      timeTillHiddenMs_ = value;
+    }
+    /**
+     * <code>optional int32 time_till_hidden_ms = 11;</code>
+     */
+    private void clearTimeTillHiddenMs() {
+      
+      timeTillHiddenMs_ = 0;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -2039,8 +1646,8 @@ public final class Pokemon {
       if (longitude_ != 0D) {
         output.writeDouble(4, longitude_);
       }
-      if (!getSpawnPointIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, spawnPointId_);
+      if (!spawnPointId_.isEmpty()) {
+        output.writeString(5, getSpawnPointId());
       }
       if (pokemonData_ != null) {
         output.writeMessage(7, getPokemonData());
@@ -2051,7 +1658,7 @@ public final class Pokemon {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -2071,8 +1678,9 @@ public final class Pokemon {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, longitude_);
       }
-      if (!getSpawnPointIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, spawnPointId_);
+      if (!spawnPointId_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(5, getSpawnPointId());
       }
       if (pokemonData_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -2082,487 +1690,212 @@ public final class Pokemon {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, timeTillHiddenMs_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon other = (com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon) obj;
-
-      boolean result = true;
-      result = result && (getEncounterId()
-          == other.getEncounterId());
-      result = result && (getLastModifiedTimestampMs()
-          == other.getLastModifiedTimestampMs());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      result = result && getSpawnPointId()
-          .equals(other.getSpawnPointId());
-      result = result && (hasPokemonData() == other.hasPokemonData());
-      if (hasPokemonData()) {
-        result = result && getPokemonData()
-            .equals(other.getPokemonData());
-      }
-      result = result && (getTimeTillHiddenMs()
-          == other.getTimeTillHiddenMs());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + ENCOUNTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEncounterId());
-      hash = (37 * hash) + LAST_MODIFIED_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLastModifiedTimestampMs());
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (37 * hash) + SPAWN_POINT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpawnPointId().hashCode();
-      if (hasPokemonData()) {
-        hash = (37 * hash) + POKEMON_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getPokemonData().hashCode();
-      }
-      hash = (37 * hash) + TIME_TILL_HIDDEN_MS_FIELD_NUMBER;
-      hash = (53 * hash) + getTimeTillHiddenMs();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon)
         com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemonOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.class, com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        encounterId_ = 0L;
 
-        lastModifiedTimestampMs_ = 0L;
-
-        latitude_ = 0D;
-
-        longitude_ = 0D;
-
-        spawnPointId_ = "";
-
-        if (pokemonDataBuilder_ == null) {
-          pokemonData_ = null;
-        } else {
-          pokemonData_ = null;
-          pokemonDataBuilder_ = null;
-        }
-        timeTillHiddenMs_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon build() {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon buildPartial() {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon result = new com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon(this);
-        result.encounterId_ = encounterId_;
-        result.lastModifiedTimestampMs_ = lastModifiedTimestampMs_;
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
-        result.spawnPointId_ = spawnPointId_;
-        if (pokemonDataBuilder_ == null) {
-          result.pokemonData_ = pokemonData_;
-        } else {
-          result.pokemonData_ = pokemonDataBuilder_.build();
-        }
-        result.timeTillHiddenMs_ = timeTillHiddenMs_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon other) {
-        if (other == com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.getDefaultInstance()) return this;
-        if (other.getEncounterId() != 0L) {
-          setEncounterId(other.getEncounterId());
-        }
-        if (other.getLastModifiedTimestampMs() != 0L) {
-          setLastModifiedTimestampMs(other.getLastModifiedTimestampMs());
-        }
-        if (other.getLatitude() != 0D) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.getLongitude() != 0D) {
-          setLongitude(other.getLongitude());
-        }
-        if (!other.getSpawnPointId().isEmpty()) {
-          spawnPointId_ = other.spawnPointId_;
-          onChanged();
-        }
-        if (other.hasPokemonData()) {
-          mergePokemonData(other.getPokemonData());
-        }
-        if (other.getTimeTillHiddenMs() != 0) {
-          setTimeTillHiddenMs(other.getTimeTillHiddenMs());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long encounterId_ ;
       /**
        * <code>optional fixed64 encounter_id = 1;</code>
        */
       public long getEncounterId() {
-        return encounterId_;
+        return instance.getEncounterId();
       }
       /**
        * <code>optional fixed64 encounter_id = 1;</code>
        */
       public Builder setEncounterId(long value) {
-        
-        encounterId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setEncounterId(value);
         return this;
       }
       /**
        * <code>optional fixed64 encounter_id = 1;</code>
        */
       public Builder clearEncounterId() {
-        
-        encounterId_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearEncounterId();
         return this;
       }
 
-      private long lastModifiedTimestampMs_ ;
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public long getLastModifiedTimestampMs() {
-        return lastModifiedTimestampMs_;
+        return instance.getLastModifiedTimestampMs();
       }
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public Builder setLastModifiedTimestampMs(long value) {
-        
-        lastModifiedTimestampMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLastModifiedTimestampMs(value);
         return this;
       }
       /**
        * <code>optional int64 last_modified_timestamp_ms = 2;</code>
        */
       public Builder clearLastModifiedTimestampMs() {
-        
-        lastModifiedTimestampMs_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearLastModifiedTimestampMs();
         return this;
       }
 
-      private double latitude_ ;
       /**
        * <code>optional double latitude = 3;</code>
        */
       public double getLatitude() {
-        return latitude_;
+        return instance.getLatitude();
       }
       /**
        * <code>optional double latitude = 3;</code>
        */
       public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLatitude(value);
         return this;
       }
       /**
        * <code>optional double latitude = 3;</code>
        */
       public Builder clearLatitude() {
-        
-        latitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLatitude();
         return this;
       }
 
-      private double longitude_ ;
       /**
        * <code>optional double longitude = 4;</code>
        */
       public double getLongitude() {
-        return longitude_;
+        return instance.getLongitude();
       }
       /**
        * <code>optional double longitude = 4;</code>
        */
       public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLongitude(value);
         return this;
       }
       /**
        * <code>optional double longitude = 4;</code>
        */
       public Builder clearLongitude() {
-        
-        longitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLongitude();
         return this;
       }
 
-      private java.lang.Object spawnPointId_ = "";
       /**
        * <code>optional string spawn_point_id = 5;</code>
        */
       public java.lang.String getSpawnPointId() {
-        java.lang.Object ref = spawnPointId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spawnPointId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getSpawnPointId();
       }
       /**
        * <code>optional string spawn_point_id = 5;</code>
        */
       public com.google.protobuf.ByteString
           getSpawnPointIdBytes() {
-        java.lang.Object ref = spawnPointId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spawnPointId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getSpawnPointIdBytes();
       }
       /**
        * <code>optional string spawn_point_id = 5;</code>
        */
       public Builder setSpawnPointId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spawnPointId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSpawnPointId(value);
         return this;
       }
       /**
        * <code>optional string spawn_point_id = 5;</code>
        */
       public Builder clearSpawnPointId() {
-        
-        spawnPointId_ = getDefaultInstance().getSpawnPointId();
-        onChanged();
+        copyOnWrite();
+        instance.clearSpawnPointId();
         return this;
       }
       /**
@@ -2570,288 +1903,229 @@ public final class Pokemon {
        */
       public Builder setSpawnPointIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spawnPointId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSpawnPointIdBytes(value);
         return this;
       }
 
-      private com.github.aeonlucid.pogoprotos.Data.PokemonData pokemonData_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Data.PokemonData, com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder, com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder> pokemonDataBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
        */
       public boolean hasPokemonData() {
-        return pokemonDataBuilder_ != null || pokemonData_ != null;
+        return instance.hasPokemonData();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
        */
       public com.github.aeonlucid.pogoprotos.Data.PokemonData getPokemonData() {
-        if (pokemonDataBuilder_ == null) {
-          return pokemonData_ == null ? com.github.aeonlucid.pogoprotos.Data.PokemonData.getDefaultInstance() : pokemonData_;
-        } else {
-          return pokemonDataBuilder_.getMessage();
-        }
+        return instance.getPokemonData();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
        */
       public Builder setPokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
-        if (pokemonDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          pokemonData_ = value;
-          onChanged();
-        } else {
-          pokemonDataBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setPokemonData(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
        */
       public Builder setPokemonData(
           com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder builderForValue) {
-        if (pokemonDataBuilder_ == null) {
-          pokemonData_ = builderForValue.build();
-          onChanged();
-        } else {
-          pokemonDataBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setPokemonData(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
        */
       public Builder mergePokemonData(com.github.aeonlucid.pogoprotos.Data.PokemonData value) {
-        if (pokemonDataBuilder_ == null) {
-          if (pokemonData_ != null) {
-            pokemonData_ =
-              com.github.aeonlucid.pogoprotos.Data.PokemonData.newBuilder(pokemonData_).mergeFrom(value).buildPartial();
-          } else {
-            pokemonData_ = value;
-          }
-          onChanged();
-        } else {
-          pokemonDataBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergePokemonData(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
        */
-      public Builder clearPokemonData() {
-        if (pokemonDataBuilder_ == null) {
-          pokemonData_ = null;
-          onChanged();
-        } else {
-          pokemonData_ = null;
-          pokemonDataBuilder_ = null;
-        }
-
+      public Builder clearPokemonData() {  copyOnWrite();
+        instance.clearPokemonData();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder getPokemonDataBuilder() {
-        
-        onChanged();
-        return getPokemonDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder getPokemonDataOrBuilder() {
-        if (pokemonDataBuilder_ != null) {
-          return pokemonDataBuilder_.getMessageOrBuilder();
-        } else {
-          return pokemonData_ == null ?
-              com.github.aeonlucid.pogoprotos.Data.PokemonData.getDefaultInstance() : pokemonData_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.PokemonData pokemon_data = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.Data.PokemonData, com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder, com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder> 
-          getPokemonDataFieldBuilder() {
-        if (pokemonDataBuilder_ == null) {
-          pokemonDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.Data.PokemonData, com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder, com.github.aeonlucid.pogoprotos.Data.PokemonDataOrBuilder>(
-                  getPokemonData(),
-                  getParentForChildren(),
-                  isClean());
-          pokemonData_ = null;
-        }
-        return pokemonDataBuilder_;
-      }
 
-      private int timeTillHiddenMs_ ;
       /**
        * <code>optional int32 time_till_hidden_ms = 11;</code>
        */
       public int getTimeTillHiddenMs() {
-        return timeTillHiddenMs_;
+        return instance.getTimeTillHiddenMs();
       }
       /**
        * <code>optional int32 time_till_hidden_ms = 11;</code>
        */
       public Builder setTimeTillHiddenMs(int value) {
-        
-        timeTillHiddenMs_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setTimeTillHiddenMs(value);
         return this;
       }
       /**
        * <code>optional int32 time_till_hidden_ms = 11;</code>
        */
       public Builder clearTimeTillHiddenMs() {
-        
-        timeTillHiddenMs_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearTimeTillHiddenMs();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon other = (com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon) arg1;
+          encounterId_ = visitor.visitLong(encounterId_ != 0L, encounterId_,
+              other.encounterId_ != 0L, other.encounterId_);
+          lastModifiedTimestampMs_ = visitor.visitLong(lastModifiedTimestampMs_ != 0L, lastModifiedTimestampMs_,
+              other.lastModifiedTimestampMs_ != 0L, other.lastModifiedTimestampMs_);
+          latitude_ = visitor.visitDouble(latitude_ != 0D, latitude_,
+              other.latitude_ != 0D, other.latitude_);
+          longitude_ = visitor.visitDouble(longitude_ != 0D, longitude_,
+              other.longitude_ != 0D, other.longitude_);
+          spawnPointId_ = visitor.visitString(!spawnPointId_.isEmpty(), spawnPointId_,
+              !other.spawnPointId_.isEmpty(), other.spawnPointId_);
+          pokemonData_ = visitor.visitMessage(pokemonData_, other.pokemonData_);
+          timeTillHiddenMs_ = visitor.visitInt(timeTillHiddenMs_ != 0, timeTillHiddenMs_,
+              other.timeTillHiddenMs_ != 0, other.timeTillHiddenMs_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 9: {
+
+                  encounterId_ = input.readFixed64();
+                  break;
+                }
+                case 16: {
+
+                  lastModifiedTimestampMs_ = input.readInt64();
+                  break;
+                }
+                case 25: {
+
+                  latitude_ = input.readDouble();
+                  break;
+                }
+                case 33: {
+
+                  longitude_ = input.readDouble();
+                  break;
+                }
+                case 42: {
+                  String s = input.readStringRequireUtf8();
+
+                  spawnPointId_ = s;
+                  break;
+                }
+                case 58: {
+                  com.github.aeonlucid.pogoprotos.Data.PokemonData.Builder subBuilder = null;
+                  if (pokemonData_ != null) {
+                    subBuilder = pokemonData_.toBuilder();
+                  }
+                  pokemonData_ = input.readMessage(com.github.aeonlucid.pogoprotos.Data.PokemonData.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(pokemonData_);
+                    pokemonData_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 88: {
+
+                  timeTillHiddenMs_ = input.readInt32();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.map.pokemon.WildPokemon)
     private static final com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon();
+      DEFAULT_INSTANCE = new WildPokemon();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WildPokemon>
-        PARSER = new com.google.protobuf.AbstractParser<WildPokemon>() {
-      public WildPokemon parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WildPokemon(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<WildPokemon> PARSER;
 
     public static com.google.protobuf.Parser<WildPokemon> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<WildPokemon> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.map.Pokemon.WildPokemon getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n1com/github/aeonlucid/pogoprotos/map/Po" +
-      "kemon.proto\022+com.github.aeonlucid.pogopr" +
-      "otos.map.pokemon\032+com/github/aeonlucid/p" +
-      "ogoprotos/Enums.proto\032*com/github/aeonlu" +
-      "cid/pogoprotos/Data.proto\"\260\001\n\rNearbyPoke" +
-      "mon\022D\n\npokemon_id\030\001 \001(\01620.com.github.aeo" +
-      "nlucid.pogoprotos.enums.PokemonId\022\032\n\022dis" +
-      "tance_in_meters\030\002 \001(\002\022\024\n\014encounter_id\030\003 " +
-      "\001(\006\022\017\n\007fort_id\030\004 \001(\t\022\026\n\016fort_image_url\030\005" +
-      " \001(\t\"\306\001\n\nMapPokemon\022\026\n\016spawn_point_id\030\001 ",
-      "\001(\t\022\024\n\014encounter_id\030\002 \001(\006\022D\n\npokemon_id\030" +
-      "\003 \001(\01620.com.github.aeonlucid.pogoprotos." +
-      "enums.PokemonId\022\037\n\027expiration_timestamp_" +
-      "ms\030\004 \001(\003\022\020\n\010latitude\030\005 \001(\001\022\021\n\tlongitude\030" +
-      "\006 \001(\001\"\352\001\n\013WildPokemon\022\024\n\014encounter_id\030\001 " +
-      "\001(\006\022\"\n\032last_modified_timestamp_ms\030\002 \001(\003\022" +
-      "\020\n\010latitude\030\003 \001(\001\022\021\n\tlongitude\030\004 \001(\001\022\026\n\016" +
-      "spawn_point_id\030\005 \001(\t\022G\n\014pokemon_data\030\007 \001" +
-      "(\01321.com.github.aeonlucid.pogoprotos.dat" +
-      "a.PokemonData\022\033\n\023time_till_hidden_ms\030\013 \001",
-      "(\005B.\n#com.github.aeonlucid.pogoprotos.ma" +
-      "pB\007Pokemonb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.Enums.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.Data.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_NearbyPokemon_descriptor,
-        new java.lang.String[] { "PokemonId", "DistanceInMeters", "EncounterId", "FortId", "FortImageUrl", });
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_MapPokemon_descriptor,
-        new java.lang.String[] { "SpawnPointId", "EncounterId", "PokemonId", "ExpirationTimestampMs", "Latitude", "Longitude", });
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_map_pokemon_WildPokemon_descriptor,
-        new java.lang.String[] { "EncounterId", "LastModifiedTimestampMs", "Latitude", "Longitude", "SpawnPointId", "PokemonData", "TimeTillHiddenMs", });
-    com.github.aeonlucid.pogoprotos.Enums.getDescriptor();
-    com.github.aeonlucid.pogoprotos.Data.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.networking.platform;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.networking.platform;
 
 option java_package = "com.github.aeonlucid.pogoprotos.networking";
 option java_outer_classname = "Platform";

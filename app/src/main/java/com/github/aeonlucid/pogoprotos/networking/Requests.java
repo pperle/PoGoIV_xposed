@@ -8,17 +8,11 @@ public final class Requests {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   /**
    * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.requests.RequestType}
    */
   public enum RequestType
-      implements com.google.protobuf.ProtocolMessageEnum {
+      implements com.google.protobuf.Internal.EnumLite {
     /**
      * <pre>
      * No implementation required
@@ -1177,10 +1171,6 @@ public final class Requests {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
       return value;
     }
 
@@ -1285,33 +1275,6 @@ public final class Requests {
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Requests.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final RequestType[] VALUES = values();
-
-    public static RequestType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
     private final int value;
 
     private RequestType(int value) {
@@ -1323,7 +1286,7 @@ public final class Requests {
 
   public interface RequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.requests.Request)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
@@ -1343,77 +1306,13 @@ public final class Requests {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.requests.Request}
    */
   public  static final class Request extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          Request, Request.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.requests.Request)
       RequestOrBuilder {
-    // Use Request.newBuilder() to construct.
-    private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private Request() {
-      requestType_ = 0;
       requestMessage_ = com.google.protobuf.ByteString.EMPTY;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private Request(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              requestType_ = rawValue;
-              break;
-            }
-            case 18: {
-
-              requestMessage_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Requests.internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Requests.internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Requests.Request.class, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder.class);
-    }
-
     public static final int REQUEST_TYPE_FIELD_NUMBER = 1;
     private int requestType_;
     /**
@@ -1426,8 +1325,31 @@ public final class Requests {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
      */
     public com.github.aeonlucid.pogoprotos.networking.Requests.RequestType getRequestType() {
-      com.github.aeonlucid.pogoprotos.networking.Requests.RequestType result = com.github.aeonlucid.pogoprotos.networking.Requests.RequestType.valueOf(requestType_);
+      com.github.aeonlucid.pogoprotos.networking.Requests.RequestType result = com.github.aeonlucid.pogoprotos.networking.Requests.RequestType.forNumber(requestType_);
       return result == null ? com.github.aeonlucid.pogoprotos.networking.Requests.RequestType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
+     */
+    private void setRequestTypeValue(int value) {
+        requestType_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
+     */
+    private void setRequestType(com.github.aeonlucid.pogoprotos.networking.Requests.RequestType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      requestType_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
+     */
+    private void clearRequestType() {
+      
+      requestType_ = 0;
     }
 
     public static final int REQUEST_MESSAGE_FIELD_NUMBER = 2;
@@ -1438,15 +1360,22 @@ public final class Requests {
     public com.google.protobuf.ByteString getRequestMessage() {
       return requestMessage_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional bytes request_message = 2;</code>
+     */
+    private void setRequestMessage(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestMessage_ = value;
+    }
+    /**
+     * <code>optional bytes request_message = 2;</code>
+     */
+    private void clearRequestMessage() {
+      
+      requestMessage_ = getDefaultInstance().getRequestMessage();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -1460,7 +1389,7 @@ public final class Requests {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1472,462 +1401,259 @@ public final class Requests {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, requestMessage_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Requests.Request)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Requests.Request other = (com.github.aeonlucid.pogoprotos.networking.Requests.Request) obj;
-
-      boolean result = true;
-      result = result && requestType_ == other.requestType_;
-      result = result && getRequestMessage()
-          .equals(other.getRequestMessage());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + REQUEST_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + requestType_;
-      hash = (37 * hash) + REQUEST_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Requests.Request prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.requests.Request}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.Requests.Request, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.requests.Request)
         com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Requests.internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Requests.internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Requests.Request.class, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.networking.Requests.Request.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        requestType_ = 0;
 
-        requestMessage_ = com.google.protobuf.ByteString.EMPTY;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Requests.internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Requests.Request getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Requests.Request.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Requests.Request build() {
-        com.github.aeonlucid.pogoprotos.networking.Requests.Request result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Requests.Request buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Requests.Request result = new com.github.aeonlucid.pogoprotos.networking.Requests.Request(this);
-        result.requestType_ = requestType_;
-        result.requestMessage_ = requestMessage_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Requests.Request) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Requests.Request)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Requests.Request other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Requests.Request.getDefaultInstance()) return this;
-        if (other.requestType_ != 0) {
-          setRequestTypeValue(other.getRequestTypeValue());
-        }
-        if (other.getRequestMessage() != com.google.protobuf.ByteString.EMPTY) {
-          setRequestMessage(other.getRequestMessage());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Requests.Request parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Requests.Request) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int requestType_ = 0;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
        */
       public int getRequestTypeValue() {
-        return requestType_;
+        return instance.getRequestTypeValue();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
        */
       public Builder setRequestTypeValue(int value) {
-        requestType_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setRequestTypeValue(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Requests.RequestType getRequestType() {
-        com.github.aeonlucid.pogoprotos.networking.Requests.RequestType result = com.github.aeonlucid.pogoprotos.networking.Requests.RequestType.valueOf(requestType_);
-        return result == null ? com.github.aeonlucid.pogoprotos.networking.Requests.RequestType.UNRECOGNIZED : result;
+        return instance.getRequestType();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
        */
       public Builder setRequestType(com.github.aeonlucid.pogoprotos.networking.Requests.RequestType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        requestType_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setRequestType(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;</code>
        */
       public Builder clearRequestType() {
-        
-        requestType_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearRequestType();
         return this;
       }
 
-      private com.google.protobuf.ByteString requestMessage_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes request_message = 2;</code>
        */
       public com.google.protobuf.ByteString getRequestMessage() {
-        return requestMessage_;
+        return instance.getRequestMessage();
       }
       /**
        * <code>optional bytes request_message = 2;</code>
        */
       public Builder setRequestMessage(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        requestMessage_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setRequestMessage(value);
         return this;
       }
       /**
        * <code>optional bytes request_message = 2;</code>
        */
       public Builder clearRequestMessage() {
-        
-        requestMessage_ = getDefaultInstance().getRequestMessage();
-        onChanged();
+        copyOnWrite();
+        instance.clearRequestMessage();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.requests.Request)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.Requests.Request();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.Requests.Request other = (com.github.aeonlucid.pogoprotos.networking.Requests.Request) arg1;
+          requestType_ = visitor.visitInt(requestType_ != 0, requestType_,    other.requestType_ != 0, other.requestType_);
+          requestMessage_ = visitor.visitByteString(requestMessage_ != com.google.protobuf.ByteString.EMPTY, requestMessage_,
+              other.requestMessage_ != com.google.protobuf.ByteString.EMPTY, other.requestMessage_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  requestType_ = rawValue;
+                  break;
+                }
+                case 18: {
+
+                  requestMessage_ = input.readBytes();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Requests.Request.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.requests.Request)
     private static final com.github.aeonlucid.pogoprotos.networking.Requests.Request DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Requests.Request();
+      DEFAULT_INSTANCE = new Request();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.Requests.Request getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Request>
-        PARSER = new com.google.protobuf.AbstractParser<Request>() {
-      public Request parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Request(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<Request> PARSER;
 
     public static com.google.protobuf.Parser<Request> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Request> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Requests.Request getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n9com/github/aeonlucid/pogoprotos/networ" +
-      "king/Requests.proto\0223com.github.aeonluci" +
-      "d.pogoprotos.networking.requests\"z\n\007Requ" +
-      "est\022V\n\014request_type\030\001 \001(\0162@.com.github.a" +
-      "eonlucid.pogoprotos.networking.requests." +
-      "RequestType\022\027\n\017request_message\030\002 \001(\014*\235\r\n" +
-      "\013RequestType\022\020\n\014METHOD_UNSET\020\000\022\021\n\rPLAYER" +
-      "_UPDATE\020\001\022\016\n\nGET_PLAYER\020\002\022\021\n\rGET_INVENTO" +
-      "RY\020\004\022\025\n\021DOWNLOAD_SETTINGS\020\005\022\033\n\027DOWNLOAD_" +
-      "ITEM_TEMPLATES\020\006\022\"\n\036DOWNLOAD_REMOTE_CONF",
-      "IG_VERSION\020\007\022\017\n\013FORT_SEARCH\020e\022\r\n\tENCOUNT" +
-      "ER\020f\022\021\n\rCATCH_POKEMON\020g\022\020\n\014FORT_DETAILS\020" +
-      "h\022\014\n\010ITEM_USE\020i\022\023\n\017GET_MAP_OBJECTS\020j\022\027\n\023" +
-      "FORT_DEPLOY_POKEMON\020n\022\027\n\023FORT_RECALL_POK" +
-      "EMON\020o\022\023\n\017RELEASE_POKEMON\020p\022\023\n\017USE_ITEM_" +
-      "POTION\020q\022\024\n\020USE_ITEM_CAPTURE\020r\022\021\n\rUSE_IT" +
-      "EM_FLEE\020s\022\023\n\017USE_ITEM_REVIVE\020t\022\020\n\014TRADE_" +
-      "SEARCH\020u\022\017\n\013TRADE_OFFER\020v\022\022\n\016TRADE_RESPO" +
-      "NSE\020w\022\020\n\014TRADE_RESULT\020x\022\026\n\022GET_PLAYER_PR" +
-      "OFILE\020y\022\021\n\rGET_ITEM_PACK\020z\022\021\n\rBUY_ITEM_P",
-      "ACK\020{\022\020\n\014BUY_GEM_PACK\020|\022\022\n\016EVOLVE_POKEMO" +
-      "N\020}\022\024\n\020GET_HATCHED_EGGS\020~\022\037\n\033ENCOUNTER_T" +
-      "UTORIAL_COMPLETE\020\177\022\025\n\020LEVEL_UP_REWARDS\020\200" +
-      "\001\022\031\n\024CHECK_AWARDED_BADGES\020\201\001\022\021\n\014USE_ITEM" +
-      "_GYM\020\205\001\022\024\n\017GET_GYM_DETAILS\020\206\001\022\025\n\020START_G" +
-      "YM_BATTLE\020\207\001\022\017\n\nATTACK_GYM\020\210\001\022\033\n\026RECYCLE" +
-      "_INVENTORY_ITEM\020\211\001\022\030\n\023COLLECT_DAILY_BONU" +
-      "S\020\212\001\022\026\n\021USE_ITEM_XP_BOOST\020\213\001\022\033\n\026USE_ITEM" +
-      "_EGG_INCUBATOR\020\214\001\022\020\n\013USE_INCENSE\020\215\001\022\030\n\023G" +
-      "ET_INCENSE_POKEMON\020\216\001\022\026\n\021INCENSE_ENCOUNT",
-      "ER\020\217\001\022\026\n\021ADD_FORT_MODIFIER\020\220\001\022\023\n\016DISK_EN" +
-      "COUNTER\020\221\001\022!\n\034COLLECT_DAILY_DEFENDER_BON" +
-      "US\020\222\001\022\024\n\017UPGRADE_POKEMON\020\223\001\022\031\n\024SET_FAVOR" +
-      "ITE_POKEMON\020\224\001\022\025\n\020NICKNAME_POKEMON\020\225\001\022\020\n" +
-      "\013EQUIP_BADGE\020\226\001\022\031\n\024SET_CONTACT_SETTINGS\020" +
-      "\227\001\022\026\n\021SET_BUDDY_POKEMON\020\230\001\022\025\n\020GET_BUDDY_" +
-      "WALKED\020\231\001\022\025\n\020GET_ASSET_DIGEST\020\254\002\022\026\n\021GET_" +
-      "DOWNLOAD_URLS\020\255\002\022\034\n\027GET_SUGGESTED_CODENA" +
-      "MES\020\221\003\022\035\n\030CHECK_CODENAME_AVAILABLE\020\222\003\022\023\n" +
-      "\016CLAIM_CODENAME\020\223\003\022\017\n\nSET_AVATAR\020\224\003\022\024\n\017S",
-      "ET_PLAYER_TEAM\020\225\003\022\033\n\026MARK_TUTORIAL_COMPL" +
-      "ETE\020\226\003\022\026\n\021LOAD_SPAWN_POINTS\020\364\003\022\024\n\017CHECK_" +
-      "CHALLENGE\020\330\004\022\025\n\020VERIFY_CHALLENGE\020\331\004\022\t\n\004E" +
-      "CHO\020\232\005\022\033\n\026DEBUG_UPDATE_INVENTORY\020\274\005\022\030\n\023D" +
-      "EBUG_DELETE_PLAYER\020\275\005\022\027\n\022SFIDA_REGISTRAT" +
-      "ION\020\240\006\022\025\n\020SFIDA_ACTION_LOG\020\241\006\022\030\n\023SFIDA_C" +
-      "ERTIFICATION\020\242\006\022\021\n\014SFIDA_UPDATE\020\243\006\022\021\n\014SF" +
-      "IDA_ACTION\020\244\006\022\021\n\014SFIDA_DOWSER\020\245\006\022\022\n\rSFID" +
-      "A_CAPTURE\020\246\006B6\n*com.github.aeonlucid.pog" +
-      "oprotos.networkingB\010Requestsb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_requests_Request_descriptor,
-        new java.lang.String[] { "RequestType", "RequestMessage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

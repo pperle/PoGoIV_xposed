@@ -1,9 +1,15 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.networking.requests;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.networking.requests;
 
 option java_package = "com.github.aeonlucid.pogoprotos.networking";
 option java_outer_classname = "Requests";
+
+message Request {
+	com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;
+	bytes request_message = 2;
+}
 
 enum RequestType {
 	METHOD_UNSET = 0;                     // No implementation required
@@ -81,10 +87,5 @@ enum RequestType {
 	SFIDA_ACTION = 804;                   // Not yet released.
 	SFIDA_DOWSER = 805;                   // Not yet released.
 	SFIDA_CAPTURE = 806;                  // Not yet released.
-}
-
-message Request {
-	com.github.aeonlucid.pogoprotos.networking.requests.RequestType request_type = 1;
-	bytes request_message = 2;
 }
 

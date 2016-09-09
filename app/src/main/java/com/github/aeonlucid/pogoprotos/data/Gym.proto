@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.data.gym;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.data.gym;
 
 option java_package = "com.github.aeonlucid.pogoprotos.data";
 option java_outer_classname = "Gym";

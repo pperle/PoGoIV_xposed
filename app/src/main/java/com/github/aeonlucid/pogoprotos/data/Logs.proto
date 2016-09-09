@@ -1,23 +1,13 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.data.logs;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.data.logs;
 
 option java_package = "com.github.aeonlucid.pogoprotos.data";
 option java_outer_classname = "Logs";
 
-import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
 import "com/github/aeonlucid/pogoprotos/Enums.proto";
-
-message FortSearchLogEntry {
-	com.github.aeonlucid.pogoprotos.data.logs.FortSearchLogEntry.Result result = 1;
-	string fort_id = 2;
-	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemData items = 3;
-	int32 eggs = 4;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-	}
-}
+import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
 
 message CatchPokemonLogEntry {
 	com.github.aeonlucid.pogoprotos.data.logs.CatchPokemonLogEntry.Result result = 1;
@@ -39,6 +29,17 @@ message BuddyPokemonLogEntry {
 	enum Result {
 		UNSET = 0;
 		CANDY_FOUND = 1;
+	}
+}
+
+message FortSearchLogEntry {
+	com.github.aeonlucid.pogoprotos.data.logs.FortSearchLogEntry.Result result = 1;
+	string fort_id = 2;
+	repeated com.github.aeonlucid.pogoprotos.inventory.item.ItemData items = 3;
+	int32 eggs = 4;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
 	}
 }
 

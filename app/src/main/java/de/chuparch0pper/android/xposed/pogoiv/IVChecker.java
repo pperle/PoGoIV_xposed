@@ -343,7 +343,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon = encounterResponse.getWildPokemon().getPokemonData();
         Capture.CaptureProbability captureProbability = encounterResponse.getCaptureProbability();
 
-        Helper.Log("encounterResponse = ", encounterResponse.getAllFields().entrySet());
+        // Helper.Log("encounterResponse = ", encounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
     }
 
@@ -359,7 +359,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon = incenseEncounterResponse.getPokemonData();
         Capture.CaptureProbability captureProbability = incenseEncounterResponse.getCaptureProbability();
 
-        Helper.Log("IncenseEncounter = ", incenseEncounterResponse.getAllFields().entrySet());
+        // Helper.Log("IncenseEncounter = ", incenseEncounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
     }
 
@@ -375,7 +375,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         com.github.aeonlucid.pogoprotos.Data.PokemonData encounteredPokemon = diskEncounterResponse.getPokemonData();
         Capture.CaptureProbability captureProbability = diskEncounterResponse.getCaptureProbability();
 
-        Helper.Log("DiskEncounterResponse = ", diskEncounterResponse.getAllFields().entrySet());
+        // Helper.Log("DiskEncounterResponse = ", diskEncounterResponse.getAllFields().entrySet());
         createEncounterNotification(encounteredPokemon, captureProbability);
     }
 
@@ -388,7 +388,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
         }
 
-        Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
+        // Helper.Log("catchPokemonResponse = ", catchPokemonResponse.getAllFields().entrySet());
 
         String catchMessage = Helper.getCatchName(catchPokemonResponse.getStatus());
         double missPercent = catchPokemonResponse.getMissPercent();
@@ -407,7 +407,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
         }
 
-        Helper.Log("getGymDetailsResponse = ", getGymDetailsResponse.getAllFields().entrySet());
+        // Helper.Log("getGymDetailsResponse = ", getGymDetailsResponse.getAllFields().entrySet());
 
         if (!getGymDetailsResponse.hasGymState())
             return;
@@ -508,7 +508,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
         }
 
-        Helper.Log("fortSearchResponse = ", fortSearchResponse.getAllFields().entrySet());
+        // Helper.Log("fortSearchResponse = ", fortSearchResponse.getAllFields().entrySet());
 
         int itemsAwardedCount = fortSearchResponse.getItemsAwardedCount();
         int experienceAwarded = fortSearchResponse.getExperienceAwarded();
@@ -580,7 +580,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
         }
 
-        Helper.Log("getHatchedEggsResponse = ", getHatchedEggsResponse.getAllFields().entrySet());
+        // Helper.Log("getHatchedEggsResponse = ", getHatchedEggsResponse.getAllFields().entrySet());
 
         if (!getHatchedEggsResponse.getSuccess())
             return;
@@ -602,7 +602,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
         }
 
-        Helper.Log("getPlayerResponse = ", getPlayerResponse.getAllFields().entrySet());
+        // Helper.Log("getPlayerResponse = ", getPlayerResponse.getAllFields().entrySet());
 
         if (!getPlayerResponse.getSuccess() || !getPlayerResponse.hasPlayerData())
             return;
@@ -621,7 +621,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
             return;
         }
 
-        Helper.Log("getInventoryResponse = ", getInventoryResponse.getAllFields().entrySet());
+        // Helper.Log("getInventoryResponse = ", getInventoryResponse.getAllFields().entrySet());
 
         if (!getInventoryResponse.getSuccess() || !getInventoryResponse.hasInventoryDelta())
             return;

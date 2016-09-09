@@ -1,37 +1,13 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.networking.envelopes;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.networking.envelopes;
 
 option java_package = "com.github.aeonlucid.pogoprotos.networking";
 option java_outer_classname = "Envelopes";
 
 import "com/github/aeonlucid/pogoprotos/networking/Platform.proto";
 import "com/github/aeonlucid/pogoprotos/networking/Requests.proto";
-
-message ResponseEnvelope {
-	StatusCode status_code = 1;
-	uint64 request_id = 2;
-	string api_url = 3;
-	repeated PlatformResponse platform_returns = 6;
-	com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;
-	repeated bytes returns = 100;
-	string error = 101;
-	message PlatformResponse {
-		com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;
-		bytes response = 2;
-	}
-	enum StatusCode {
-		UNKNOWN = 0;
-		OK = 1; // valid response with no api url
-		OK_RPC_URL_IN_RESPONSE = 2; // the response envelope has api_url set and this response is valid
-		BAD_REQUEST = 3; // bad request
-		INVALID_REQUEST = 51; // using unimplemented request or corrupt request
-		INVALID_PLATFORM_REQUEST = 52; // invalid platform request or corrupt platform request
-		REDIRECT = 53; // a new rpc endpoint is available and you should redirect to there
-		SESSION_INVALIDATED = 100; // occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
-		INVALID_AUTH_TOKEN = 102; // occurs when the login token is invalid
-    }
-}
 
 message Signature {
     message LocationFix {
@@ -121,6 +97,37 @@ message Signature {
     int64 unknown25 = 25; // for 0.33 its static -8537042734809897855 or 0x898654dd2753a481, generated via xxHash64("\"b8fa9757195897aae92c53dbcf8a60fb3d86d745\"".ToByteArray(), 0x88533787)
 }
 
+message ResponseEnvelope {
+	StatusCode status_code = 1;
+	uint64 request_id = 2;
+	string api_url = 3;
+	repeated PlatformResponse platform_returns = 6;
+	com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;
+	repeated bytes returns = 100;
+	string error = 101;
+	message PlatformResponse {
+		com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;
+		bytes response = 2;
+	}
+	enum StatusCode {
+		UNKNOWN = 0;
+		OK = 1; // valid response with no api url
+		OK_RPC_URL_IN_RESPONSE = 2; // the response envelope has api_url set and this response is valid
+		BAD_REQUEST = 3; // bad request
+		INVALID_REQUEST = 51; // using unimplemented request or corrupt request
+		INVALID_PLATFORM_REQUEST = 52; // invalid platform request or corrupt platform request
+		REDIRECT = 53; // a new rpc endpoint is available and you should redirect to there
+		SESSION_INVALIDATED = 100; // occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
+		INVALID_AUTH_TOKEN = 102; // occurs when the login token is invalid
+    }
+}
+
+message AuthTicket {
+	bytes start = 1;
+	uint64 expire_timestamp_ms = 2;
+	bytes end = 3;
+}
+
 message RequestEnvelope {
 	int32 status_code = 1;
 	uint64 request_id = 3;
@@ -144,11 +151,5 @@ message RequestEnvelope {
 		com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;
 		bytes request_message = 2;
 	}
-}
-
-message AuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
 }
 

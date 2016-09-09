@@ -8,1070 +8,9 @@ public final class Responses {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface SendEncryptedSignatureResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * speculated, could be an enum
-     * </pre>
-     *
-     * <code>optional bool received = 1;</code>
-     */
-    boolean getReceived();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse}
-   */
-  public  static final class SendEncryptedSignatureResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
-      SendEncryptedSignatureResponseOrBuilder {
-    // Use SendEncryptedSignatureResponse.newBuilder() to construct.
-    private SendEncryptedSignatureResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SendEncryptedSignatureResponse() {
-      received_ = false;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private SendEncryptedSignatureResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              received_ = input.readBool();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.Builder.class);
-    }
-
-    public static final int RECEIVED_FIELD_NUMBER = 1;
-    private boolean received_;
-    /**
-     * <pre>
-     * speculated, could be an enum
-     * </pre>
-     *
-     * <code>optional bool received = 1;</code>
-     */
-    public boolean getReceived() {
-      return received_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (received_ != false) {
-        output.writeBool(1, received_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (received_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, received_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse) obj;
-
-      boolean result = true;
-      result = result && (getReceived()
-          == other.getReceived());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + RECEIVED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getReceived());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        received_ = false;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse build() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse result = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse(this);
-        result.received_ = received_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.getDefaultInstance()) return this;
-        if (other.getReceived() != false) {
-          setReceived(other.getReceived());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private boolean received_ ;
-      /**
-       * <pre>
-       * speculated, could be an enum
-       * </pre>
-       *
-       * <code>optional bool received = 1;</code>
-       */
-      public boolean getReceived() {
-        return received_;
-      }
-      /**
-       * <pre>
-       * speculated, could be an enum
-       * </pre>
-       *
-       * <code>optional bool received = 1;</code>
-       */
-      public Builder setReceived(boolean value) {
-        
-        received_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * speculated, could be an enum
-       * </pre>
-       *
-       * <code>optional bool received = 1;</code>
-       */
-      public Builder clearReceived() {
-        
-        received_ = false;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
-    private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SendEncryptedSignatureResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SendEncryptedSignatureResponse>() {
-      public SendEncryptedSignatureResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SendEncryptedSignatureResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SendEncryptedSignatureResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SendEncryptedSignatureResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface BuyItemPokeCoinsResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * result
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-     */
-    int getResultValue();
-    /**
-     * <pre>
-     * result
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status getResult();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse}
-   */
-  public  static final class BuyItemPokeCoinsResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
-      BuyItemPokeCoinsResponseOrBuilder {
-    // Use BuyItemPokeCoinsResponse.newBuilder() to construct.
-    private BuyItemPokeCoinsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private BuyItemPokeCoinsResponse() {
-      result_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private BuyItemPokeCoinsResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              result_ = rawValue;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Builder.class);
-    }
-
-    /**
-     * <pre>
-     * THESE ARE SOMEWHAT SPECULATED, should be a NOT ENOUGH ROOM status too for bag being full somewhere.
-     * </pre>
-     *
-     * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status}
-     */
-    public enum Status
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>UNKNOWN = 0;</code>
-       */
-      UNKNOWN(0),
-      /**
-       * <code>SUCCESS = 1;</code>
-       */
-      SUCCESS(1),
-      /**
-       * <code>NOT_ENOUGH_POKECOINS = 3;</code>
-       */
-      NOT_ENOUGH_POKECOINS(3),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>UNKNOWN = 0;</code>
-       */
-      public static final int UNKNOWN_VALUE = 0;
-      /**
-       * <code>SUCCESS = 1;</code>
-       */
-      public static final int SUCCESS_VALUE = 1;
-      /**
-       * <code>NOT_ENOUGH_POKECOINS = 3;</code>
-       */
-      public static final int NOT_ENOUGH_POKECOINS_VALUE = 3;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Status valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static Status forNumber(int value) {
-        switch (value) {
-          case 0: return UNKNOWN;
-          case 1: return SUCCESS;
-          case 3: return NOT_ENOUGH_POKECOINS;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Status>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Status> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-              public Status findValueByNumber(int number) {
-                return Status.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Status[] VALUES = values();
-
-      public static Status valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Status(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status)
-    }
-
-    public static final int RESULT_FIELD_NUMBER = 1;
-    private int result_;
-    /**
-     * <pre>
-     * result
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-     */
-    public int getResultValue() {
-      return result_;
-    }
-    /**
-     * <pre>
-     * result
-     * </pre>
-     *
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status getResult() {
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.valueOf(result_);
-      return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNRECOGNIZED : result;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (result_ != com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNKNOWN.getNumber()) {
-        output.writeEnum(1, result_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (result_ != com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNKNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, result_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse) obj;
-
-      boolean result = true;
-      result = result && result_ == other.result_;
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + result_;
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        result_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse build() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse result = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse(this);
-        result.result_ = result_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.getDefaultInstance()) return this;
-        if (other.result_ != 0) {
-          setResultValue(other.getResultValue());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int result_ = 0;
-      /**
-       * <pre>
-       * result
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-       */
-      public int getResultValue() {
-        return result_;
-      }
-      /**
-       * <pre>
-       * result
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-       */
-      public Builder setResultValue(int value) {
-        result_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * result
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status getResult() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.valueOf(result_);
-        return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * result
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-       */
-      public Builder setResult(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        result_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * result
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
-       */
-      public Builder clearResult() {
-        
-        result_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
-    private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<BuyItemPokeCoinsResponse>
-        PARSER = new com.google.protobuf.AbstractParser<BuyItemPokeCoinsResponse>() {
-      public BuyItemPokeCoinsResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuyItemPokeCoinsResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<BuyItemPokeCoinsResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<BuyItemPokeCoinsResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface GetStoreItemsResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <pre>
@@ -1115,24 +54,6 @@ public final class Responses {
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
      */
     int getItemsCount();
-    /**
-     * <pre>
-     * Items to show in the shop
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder> 
-        getItemsOrBuilderList();
-    /**
-     * <pre>
-     * Items to show in the shop
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder getItemsOrBuilder(
-        int index);
 
     /**
      * <pre>
@@ -1159,24 +80,6 @@ public final class Responses {
      * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
      */
     int getPlayerCurrenciesCount();
-    /**
-     * <pre>
-     * currencies that player has at the moment
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-        getPlayerCurrenciesOrBuilderList();
-    /**
-     * <pre>
-     * currencies that player has at the moment
-     * </pre>
-     *
-     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-     */
-    com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getPlayerCurrenciesOrBuilder(
-        int index);
 
     /**
      * <pre>
@@ -1200,109 +103,20 @@ public final class Responses {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse}
    */
   public  static final class GetStoreItemsResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          GetStoreItemsResponse, GetStoreItemsResponse.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse)
       GetStoreItemsResponseOrBuilder {
-    // Use GetStoreItemsResponse.newBuilder() to construct.
-    private GetStoreItemsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private GetStoreItemsResponse() {
-      status_ = 0;
-      items_ = java.util.Collections.emptyList();
-      playerCurrencies_ = java.util.Collections.emptyList();
+      items_ = emptyProtobufList();
+      playerCurrencies_ = emptyProtobufList();
       unknown4_ = "";
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private GetStoreItemsResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                items_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              items_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                playerCurrencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              playerCurrencies_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unknown4_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          items_ = java.util.Collections.unmodifiableList(items_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          playerCurrencies_ = java.util.Collections.unmodifiableList(playerCurrencies_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Builder.class);
-    }
-
     /**
      * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status}
      */
     public enum Status
-        implements com.google.protobuf.ProtocolMessageEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       /**
        * <code>UNDEFINED = 0;</code>
        */
@@ -1325,10 +139,6 @@ public final class Responses {
 
 
       public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
         return value;
       }
 
@@ -1360,33 +170,6 @@ public final class Responses {
               }
             };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Status[] VALUES = values();
-
-      public static Status valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
       private final int value;
 
       private Status(int value) {
@@ -1398,7 +181,7 @@ public final class Responses {
 
     public interface StoreItemOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <pre>
@@ -1443,14 +226,6 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
        */
       com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencyToBuy();
-      /**
-       * <pre>
-       * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-       */
-      com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrencyToBuyOrBuilder();
 
       /**
        * <pre>
@@ -1468,14 +243,6 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
        */
       com.github.aeonlucid.pogoprotos.data.Player.Currency getYieldsCurrency();
-      /**
-       * <pre>
-       * When bought, this IAP will yield this much currency
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-       */
-      com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getYieldsCurrencyOrBuilder();
 
       /**
        * <pre>
@@ -1493,14 +260,6 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
        */
       com.github.aeonlucid.pogoprotos.inventory.Item.ItemData getYieldsItem();
-      /**
-       * <pre>
-       * The item and count of such item that this IAP will yield
-       * </pre>
-       *
-       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-       */
-      com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder getYieldsItemOrBuilder();
 
       /**
        * <pre>
@@ -1569,148 +328,16 @@ public final class Responses {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem}
      */
     public  static final class StoreItem extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            StoreItem, StoreItem.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem)
         StoreItemOrBuilder {
-      // Use StoreItem.newBuilder() to construct.
-      private StoreItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private StoreItem() {
         itemId_ = "";
-        isIap_ = false;
-        unknown7_ = 0;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private StoreItem(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                itemId_ = s;
-                break;
-              }
-              case 16: {
-
-                isIap_ = input.readBool();
-                break;
-              }
-              case 26: {
-                com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder subBuilder = null;
-                if (currencyToBuy_ != null) {
-                  subBuilder = currencyToBuy_.toBuilder();
-                }
-                currencyToBuy_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(currencyToBuy_);
-                  currencyToBuy_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 34: {
-                com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder subBuilder = null;
-                if (yieldsCurrency_ != null) {
-                  subBuilder = yieldsCurrency_.toBuilder();
-                }
-                yieldsCurrency_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(yieldsCurrency_);
-                  yieldsCurrency_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 42: {
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder subBuilder = null;
-                if (yieldsItem_ != null) {
-                  subBuilder = yieldsItem_.toBuilder();
-                }
-                yieldsItem_ = input.readMessage(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(yieldsItem_);
-                  yieldsItem_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 50: {
-                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                  tags_ = com.google.protobuf.MapField.newMapField(
-                      TagsDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000020;
-                }
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                tags = input.readMessage(
-                    TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                tags_.getMutableMap().put(tags.getKey(), tags.getValue());
-                break;
-              }
-              case 56: {
-
-                unknown7_ = input.readInt32();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 6:
-            return internalGetTags();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder.class);
-      }
-
       private int bitField0_;
       public static final int ITEM_ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object itemId_;
+      private java.lang.String itemId_;
       /**
        * <pre>
        * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
@@ -1719,16 +346,7 @@ public final class Responses {
        * <code>optional string item_id = 1;</code>
        */
       public java.lang.String getItemId() {
-        java.lang.Object ref = itemId_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          itemId_ = s;
-          return s;
-        }
+        return itemId_;
       }
       /**
        * <pre>
@@ -1739,16 +357,49 @@ public final class Responses {
        */
       public com.google.protobuf.ByteString
           getItemIdBytes() {
-        java.lang.Object ref = itemId_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          itemId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(itemId_);
+      }
+      /**
+       * <pre>
+       * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
+       * </pre>
+       *
+       * <code>optional string item_id = 1;</code>
+       */
+      private void setItemId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        itemId_ = value;
+      }
+      /**
+       * <pre>
+       * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
+       * </pre>
+       *
+       * <code>optional string item_id = 1;</code>
+       */
+      private void clearItemId() {
+        
+        itemId_ = getDefaultInstance().getItemId();
+      }
+      /**
+       * <pre>
+       * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
+       * </pre>
+       *
+       * <code>optional string item_id = 1;</code>
+       */
+      private void setItemIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        itemId_ = value.toStringUtf8();
       }
 
       public static final int IS_IAP_FIELD_NUMBER = 2;
@@ -1762,6 +413,28 @@ public final class Responses {
        */
       public boolean getIsIap() {
         return isIap_;
+      }
+      /**
+       * <pre>
+       * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
+       * </pre>
+       *
+       * <code>optional bool is_iap = 2;</code>
+       */
+      private void setIsIap(boolean value) {
+        
+        isIap_ = value;
+      }
+      /**
+       * <pre>
+       * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
+       * </pre>
+       *
+       * <code>optional bool is_iap = 2;</code>
+       */
+      private void clearIsIap() {
+        
+        isIap_ = false;
       }
 
       public static final int CURRENCY_TO_BUY_FIELD_NUMBER = 3;
@@ -1793,8 +466,51 @@ public final class Responses {
        *
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
        */
-      public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrencyToBuyOrBuilder() {
-        return getCurrencyToBuy();
+      private void setCurrencyToBuy(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        currencyToBuy_ = value;
+        
+        }
+      /**
+       * <pre>
+       * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
+       */
+      private void setCurrencyToBuy(
+          com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+        currencyToBuy_ = builderForValue.build();
+        
+      }
+      /**
+       * <pre>
+       * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
+       */
+      private void mergeCurrencyToBuy(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (currencyToBuy_ != null &&
+            currencyToBuy_ != com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance()) {
+          currencyToBuy_ =
+            com.github.aeonlucid.pogoprotos.data.Player.Currency.newBuilder(currencyToBuy_).mergeFrom(value).buildPartial();
+        } else {
+          currencyToBuy_ = value;
+        }
+        
+      }
+      /**
+       * <pre>
+       * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
+       */
+      private void clearCurrencyToBuy() {  currencyToBuy_ = null;
+        
       }
 
       public static final int YIELDS_CURRENCY_FIELD_NUMBER = 4;
@@ -1826,8 +542,51 @@ public final class Responses {
        *
        * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
        */
-      public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getYieldsCurrencyOrBuilder() {
-        return getYieldsCurrency();
+      private void setYieldsCurrency(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        yieldsCurrency_ = value;
+        
+        }
+      /**
+       * <pre>
+       * When bought, this IAP will yield this much currency
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
+       */
+      private void setYieldsCurrency(
+          com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+        yieldsCurrency_ = builderForValue.build();
+        
+      }
+      /**
+       * <pre>
+       * When bought, this IAP will yield this much currency
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
+       */
+      private void mergeYieldsCurrency(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+        if (yieldsCurrency_ != null &&
+            yieldsCurrency_ != com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance()) {
+          yieldsCurrency_ =
+            com.github.aeonlucid.pogoprotos.data.Player.Currency.newBuilder(yieldsCurrency_).mergeFrom(value).buildPartial();
+        } else {
+          yieldsCurrency_ = value;
+        }
+        
+      }
+      /**
+       * <pre>
+       * When bought, this IAP will yield this much currency
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
+       */
+      private void clearYieldsCurrency() {  yieldsCurrency_ = null;
+        
       }
 
       public static final int YIELDS_ITEM_FIELD_NUMBER = 5;
@@ -1859,35 +618,81 @@ public final class Responses {
        *
        * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
        */
-      public com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder getYieldsItemOrBuilder() {
-        return getYieldsItem();
+      private void setYieldsItem(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        yieldsItem_ = value;
+        
+        }
+      /**
+       * <pre>
+       * The item and count of such item that this IAP will yield
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
+       */
+      private void setYieldsItem(
+          com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder builderForValue) {
+        yieldsItem_ = builderForValue.build();
+        
+      }
+      /**
+       * <pre>
+       * The item and count of such item that this IAP will yield
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
+       */
+      private void mergeYieldsItem(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData value) {
+        if (yieldsItem_ != null &&
+            yieldsItem_ != com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.getDefaultInstance()) {
+          yieldsItem_ =
+            com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.newBuilder(yieldsItem_).mergeFrom(value).buildPartial();
+        } else {
+          yieldsItem_ = value;
+        }
+        
+      }
+      /**
+       * <pre>
+       * The item and count of such item that this IAP will yield
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
+       */
+      private void clearYieldsItem() {  yieldsItem_ = null;
+        
       }
 
       public static final int TAGS_FIELD_NUMBER = 6;
       private static final class TagsDefaultEntryHolder {
-        static final com.google.protobuf.MapEntry<
+        static final com.google.protobuf.MapEntryLite<
             java.lang.String, java.lang.String> defaultEntry =
-                com.google.protobuf.MapEntry
+                com.google.protobuf.MapEntryLite
                 .<java.lang.String, java.lang.String>newDefaultInstance(
-                    com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_TagsEntry_descriptor, 
                     com.google.protobuf.WireFormat.FieldType.STRING,
                     "",
                     com.google.protobuf.WireFormat.FieldType.STRING,
                     "");
       }
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> tags_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      private com.google.protobuf.MapFieldLite<
+          java.lang.String, java.lang.String> tags_ =
+              com.google.protobuf.MapFieldLite.emptyMapField();
+      private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
       internalGetTags() {
-        if (tags_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              TagsDefaultEntryHolder.defaultEntry);
+        return tags_;
+      }
+      private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
+      internalGetMutableTags() {
+        if (!tags_.isMutable()) {
+          tags_ = tags_.mutableCopy();
         }
         return tags_;
       }
 
       public int getTagsCount() {
-        return internalGetTags().getMap().size();
+        return internalGetTags().size();
       }
       /**
        * <pre>
@@ -1900,7 +705,7 @@ public final class Responses {
       public boolean containsTags(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetTags().getMap().containsKey(key);
+        return internalGetTags().containsKey(key);
       }
       /**
        * Use {@link #getTagsMap()} instead.
@@ -1918,7 +723,8 @@ public final class Responses {
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
-        return internalGetTags().getMap();
+        return java.util.Collections.unmodifiableMap(
+            internalGetTags());
       }
       /**
        * <pre>
@@ -1933,7 +739,7 @@ public final class Responses {
           java.lang.String defaultValue) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetTags().getMap();
+            internalGetTags();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
@@ -1948,11 +754,22 @@ public final class Responses {
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetTags().getMap();
+            internalGetTags();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
+      }
+      /**
+       * <pre>
+       * Stuff like SORT:12, CATEGORY:ITEMS
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; tags = 6;</code>
+       */
+      private java.util.Map<java.lang.String, java.lang.String>
+      getMutableTagsMap() {
+        return internalGetMutableTags();
       }
 
       public static final int UNKNOWN7_FIELD_NUMBER = 7;
@@ -1967,21 +784,33 @@ public final class Responses {
       public int getUnknown7() {
         return unknown7_;
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <pre>
+       * Possibly something to toggle visibility in the store/purchasibility?
+       * </pre>
+       *
+       * <code>optional int32 unknown7 = 7;</code>
+       */
+      private void setUnknown7(int value) {
+        
+        unknown7_ = value;
+      }
+      /**
+       * <pre>
+       * Possibly something to toggle visibility in the store/purchasibility?
+       * </pre>
+       *
+       * <code>optional int32 unknown7 = 7;</code>
+       */
+      private void clearUnknown7() {
+        
+        unknown7_ = 0;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getItemIdBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, itemId_);
+        if (!itemId_.isEmpty()) {
+          output.writeString(1, getItemId());
         }
         if (isIap_ != false) {
           output.writeBool(2, isIap_);
@@ -1996,13 +825,9 @@ public final class Responses {
           output.writeMessage(5, getYieldsItem());
         }
         for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-             : internalGetTags().getMap().entrySet()) {
-          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-          tags = TagsDefaultEntryHolder.defaultEntry.newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-          output.writeMessage(6, tags);
+             : internalGetTags().entrySet()) {
+          TagsDefaultEntryHolder.defaultEntry.serializeTo(
+              output, 6, entry.getKey(), entry.getValue());
         }
         if (unknown7_ != 0) {
           output.writeInt32(7, unknown7_);
@@ -2010,12 +835,13 @@ public final class Responses {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (!getItemIdBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, itemId_);
+        if (!itemId_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(1, getItemId());
         }
         if (isIap_ != false) {
           size += com.google.protobuf.CodedOutputStream
@@ -2034,391 +860,100 @@ public final class Responses {
             .computeMessageSize(5, getYieldsItem());
         }
         for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-             : internalGetTags().getMap().entrySet()) {
-          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-          tags = TagsDefaultEntryHolder.defaultEntry.newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-          size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(6, tags);
+             : internalGetTags().entrySet()) {
+          size += TagsDefaultEntryHolder.defaultEntry.computeMessageSize(
+            6, entry.getKey(), entry.getValue());
         }
         if (unknown7_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(7, unknown7_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem) obj;
-
-        boolean result = true;
-        result = result && getItemId()
-            .equals(other.getItemId());
-        result = result && (getIsIap()
-            == other.getIsIap());
-        result = result && (hasCurrencyToBuy() == other.hasCurrencyToBuy());
-        if (hasCurrencyToBuy()) {
-          result = result && getCurrencyToBuy()
-              .equals(other.getCurrencyToBuy());
-        }
-        result = result && (hasYieldsCurrency() == other.hasYieldsCurrency());
-        if (hasYieldsCurrency()) {
-          result = result && getYieldsCurrency()
-              .equals(other.getYieldsCurrency());
-        }
-        result = result && (hasYieldsItem() == other.hasYieldsItem());
-        if (hasYieldsItem()) {
-          result = result && getYieldsItem()
-              .equals(other.getYieldsItem());
-        }
-        result = result && internalGetTags().equals(
-            other.internalGetTags());
-        result = result && (getUnknown7()
-            == other.getUnknown7());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getItemId().hashCode();
-        hash = (37 * hash) + IS_IAP_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getIsIap());
-        if (hasCurrencyToBuy()) {
-          hash = (37 * hash) + CURRENCY_TO_BUY_FIELD_NUMBER;
-          hash = (53 * hash) + getCurrencyToBuy().hashCode();
-        }
-        if (hasYieldsCurrency()) {
-          hash = (37 * hash) + YIELDS_CURRENCY_FIELD_NUMBER;
-          hash = (53 * hash) + getYieldsCurrency().hashCode();
-        }
-        if (hasYieldsItem()) {
-          hash = (37 * hash) + YIELDS_ITEM_FIELD_NUMBER;
-          hash = (53 * hash) + getYieldsItem().hashCode();
-        }
-        if (!internalGetTags().getMap().isEmpty()) {
-          hash = (37 * hash) + TAGS_FIELD_NUMBER;
-          hash = (53 * hash) + internalGetTags().hashCode();
-        }
-        hash = (37 * hash) + UNKNOWN7_FIELD_NUMBER;
-        hash = (53 * hash) + getUnknown7();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem)
           com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor;
-        }
-
-        @SuppressWarnings({"rawtypes"})
-        protected com.google.protobuf.MapField internalGetMapField(
-            int number) {
-          switch (number) {
-            case 6:
-              return internalGetTags();
-            default:
-              throw new RuntimeException(
-                  "Invalid map field number: " + number);
-          }
-        }
-        @SuppressWarnings({"rawtypes"})
-        protected com.google.protobuf.MapField internalGetMutableMapField(
-            int number) {
-          switch (number) {
-            case 6:
-              return internalGetMutableTags();
-            default:
-              throw new RuntimeException(
-                  "Invalid map field number: " + number);
-          }
-        }
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          itemId_ = "";
 
-          isIap_ = false;
-
-          if (currencyToBuyBuilder_ == null) {
-            currencyToBuy_ = null;
-          } else {
-            currencyToBuy_ = null;
-            currencyToBuyBuilder_ = null;
-          }
-          if (yieldsCurrencyBuilder_ == null) {
-            yieldsCurrency_ = null;
-          } else {
-            yieldsCurrency_ = null;
-            yieldsCurrencyBuilder_ = null;
-          }
-          if (yieldsItemBuilder_ == null) {
-            yieldsItem_ = null;
-          } else {
-            yieldsItem_ = null;
-            yieldsItemBuilder_ = null;
-          }
-          internalGetMutableTags().clear();
-          unknown7_ = 0;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem build() {
-          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem result = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          result.itemId_ = itemId_;
-          result.isIap_ = isIap_;
-          if (currencyToBuyBuilder_ == null) {
-            result.currencyToBuy_ = currencyToBuy_;
-          } else {
-            result.currencyToBuy_ = currencyToBuyBuilder_.build();
-          }
-          if (yieldsCurrencyBuilder_ == null) {
-            result.yieldsCurrency_ = yieldsCurrency_;
-          } else {
-            result.yieldsCurrency_ = yieldsCurrencyBuilder_.build();
-          }
-          if (yieldsItemBuilder_ == null) {
-            result.yieldsItem_ = yieldsItem_;
-          } else {
-            result.yieldsItem_ = yieldsItemBuilder_.build();
-          }
-          result.tags_ = internalGetTags();
-          result.tags_.makeImmutable();
-          result.unknown7_ = unknown7_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.getDefaultInstance()) return this;
-          if (!other.getItemId().isEmpty()) {
-            itemId_ = other.itemId_;
-            onChanged();
-          }
-          if (other.getIsIap() != false) {
-            setIsIap(other.getIsIap());
-          }
-          if (other.hasCurrencyToBuy()) {
-            mergeCurrencyToBuy(other.getCurrencyToBuy());
-          }
-          if (other.hasYieldsCurrency()) {
-            mergeYieldsCurrency(other.getYieldsCurrency());
-          }
-          if (other.hasYieldsItem()) {
-            mergeYieldsItem(other.getYieldsItem());
-          }
-          internalGetMutableTags().mergeFrom(
-              other.internalGetTags());
-          if (other.getUnknown7() != 0) {
-            setUnknown7(other.getUnknown7());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private java.lang.Object itemId_ = "";
         /**
          * <pre>
          * Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
@@ -2427,16 +962,7 @@ public final class Responses {
          * <code>optional string item_id = 1;</code>
          */
         public java.lang.String getItemId() {
-          java.lang.Object ref = itemId_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            itemId_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getItemId();
         }
         /**
          * <pre>
@@ -2447,16 +973,7 @@ public final class Responses {
          */
         public com.google.protobuf.ByteString
             getItemIdBytes() {
-          java.lang.Object ref = itemId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            itemId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getItemIdBytes();
         }
         /**
          * <pre>
@@ -2467,12 +984,8 @@ public final class Responses {
          */
         public Builder setItemId(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          itemId_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setItemId(value);
           return this;
         }
         /**
@@ -2483,9 +996,8 @@ public final class Responses {
          * <code>optional string item_id = 1;</code>
          */
         public Builder clearItemId() {
-          
-          itemId_ = getDefaultInstance().getItemId();
-          onChanged();
+          copyOnWrite();
+          instance.clearItemId();
           return this;
         }
         /**
@@ -2497,17 +1009,11 @@ public final class Responses {
          */
         public Builder setItemIdBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          itemId_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setItemIdBytes(value);
           return this;
         }
 
-        private boolean isIap_ ;
         /**
          * <pre>
          * If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
@@ -2516,7 +1022,7 @@ public final class Responses {
          * <code>optional bool is_iap = 2;</code>
          */
         public boolean getIsIap() {
-          return isIap_;
+          return instance.getIsIap();
         }
         /**
          * <pre>
@@ -2526,9 +1032,8 @@ public final class Responses {
          * <code>optional bool is_iap = 2;</code>
          */
         public Builder setIsIap(boolean value) {
-          
-          isIap_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setIsIap(value);
           return this;
         }
         /**
@@ -2539,15 +1044,11 @@ public final class Responses {
          * <code>optional bool is_iap = 2;</code>
          */
         public Builder clearIsIap() {
-          
-          isIap_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearIsIap();
           return this;
         }
 
-        private com.github.aeonlucid.pogoprotos.data.Player.Currency currencyToBuy_ = null;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> currencyToBuyBuilder_;
         /**
          * <pre>
          * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
@@ -2556,7 +1057,7 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
          */
         public boolean hasCurrencyToBuy() {
-          return currencyToBuyBuilder_ != null || currencyToBuy_ != null;
+          return instance.hasCurrencyToBuy();
         }
         /**
          * <pre>
@@ -2566,11 +1067,7 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
          */
         public com.github.aeonlucid.pogoprotos.data.Player.Currency getCurrencyToBuy() {
-          if (currencyToBuyBuilder_ == null) {
-            return currencyToBuy_ == null ? com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : currencyToBuy_;
-          } else {
-            return currencyToBuyBuilder_.getMessage();
-          }
+          return instance.getCurrencyToBuy();
         }
         /**
          * <pre>
@@ -2580,18 +1077,10 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
          */
         public Builder setCurrencyToBuy(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (currencyToBuyBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            currencyToBuy_ = value;
-            onChanged();
-          } else {
-            currencyToBuyBuilder_.setMessage(value);
-          }
-
+          copyOnWrite();
+          instance.setCurrencyToBuy(value);
           return this;
-        }
+          }
         /**
          * <pre>
          * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
@@ -2601,13 +1090,8 @@ public final class Responses {
          */
         public Builder setCurrencyToBuy(
             com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-          if (currencyToBuyBuilder_ == null) {
-            currencyToBuy_ = builderForValue.build();
-            onChanged();
-          } else {
-            currencyToBuyBuilder_.setMessage(builderForValue.build());
-          }
-
+          copyOnWrite();
+          instance.setCurrencyToBuy(builderForValue);
           return this;
         }
         /**
@@ -2618,18 +1102,8 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
          */
         public Builder mergeCurrencyToBuy(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (currencyToBuyBuilder_ == null) {
-            if (currencyToBuy_ != null) {
-              currencyToBuy_ =
-                com.github.aeonlucid.pogoprotos.data.Player.Currency.newBuilder(currencyToBuy_).mergeFrom(value).buildPartial();
-            } else {
-              currencyToBuy_ = value;
-            }
-            onChanged();
-          } else {
-            currencyToBuyBuilder_.mergeFrom(value);
-          }
-
+          copyOnWrite();
+          instance.mergeCurrencyToBuy(value);
           return this;
         }
         /**
@@ -2639,68 +1113,11 @@ public final class Responses {
          *
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
          */
-        public Builder clearCurrencyToBuy() {
-          if (currencyToBuyBuilder_ == null) {
-            currencyToBuy_ = null;
-            onChanged();
-          } else {
-            currencyToBuy_ = null;
-            currencyToBuyBuilder_ = null;
-          }
-
+        public Builder clearCurrencyToBuy() {  copyOnWrite();
+          instance.clearCurrencyToBuy();
           return this;
         }
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getCurrencyToBuyBuilder() {
-          
-          onChanged();
-          return getCurrencyToBuyFieldBuilder().getBuilder();
-        }
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getCurrencyToBuyOrBuilder() {
-          if (currencyToBuyBuilder_ != null) {
-            return currencyToBuyBuilder_.getMessageOrBuilder();
-          } else {
-            return currencyToBuy_ == null ?
-                com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : currencyToBuy_;
-          }
-        }
-        /**
-         * <pre>
-         * This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency currency_to_buy = 3;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-            getCurrencyToBuyFieldBuilder() {
-          if (currencyToBuyBuilder_ == null) {
-            currencyToBuyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                    getCurrencyToBuy(),
-                    getParentForChildren(),
-                    isClean());
-            currencyToBuy_ = null;
-          }
-          return currencyToBuyBuilder_;
-        }
 
-        private com.github.aeonlucid.pogoprotos.data.Player.Currency yieldsCurrency_ = null;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> yieldsCurrencyBuilder_;
         /**
          * <pre>
          * When bought, this IAP will yield this much currency
@@ -2709,7 +1126,7 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
          */
         public boolean hasYieldsCurrency() {
-          return yieldsCurrencyBuilder_ != null || yieldsCurrency_ != null;
+          return instance.hasYieldsCurrency();
         }
         /**
          * <pre>
@@ -2719,11 +1136,7 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
          */
         public com.github.aeonlucid.pogoprotos.data.Player.Currency getYieldsCurrency() {
-          if (yieldsCurrencyBuilder_ == null) {
-            return yieldsCurrency_ == null ? com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : yieldsCurrency_;
-          } else {
-            return yieldsCurrencyBuilder_.getMessage();
-          }
+          return instance.getYieldsCurrency();
         }
         /**
          * <pre>
@@ -2733,18 +1146,10 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
          */
         public Builder setYieldsCurrency(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (yieldsCurrencyBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            yieldsCurrency_ = value;
-            onChanged();
-          } else {
-            yieldsCurrencyBuilder_.setMessage(value);
-          }
-
+          copyOnWrite();
+          instance.setYieldsCurrency(value);
           return this;
-        }
+          }
         /**
          * <pre>
          * When bought, this IAP will yield this much currency
@@ -2754,13 +1159,8 @@ public final class Responses {
          */
         public Builder setYieldsCurrency(
             com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-          if (yieldsCurrencyBuilder_ == null) {
-            yieldsCurrency_ = builderForValue.build();
-            onChanged();
-          } else {
-            yieldsCurrencyBuilder_.setMessage(builderForValue.build());
-          }
-
+          copyOnWrite();
+          instance.setYieldsCurrency(builderForValue);
           return this;
         }
         /**
@@ -2771,18 +1171,8 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
          */
         public Builder mergeYieldsCurrency(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-          if (yieldsCurrencyBuilder_ == null) {
-            if (yieldsCurrency_ != null) {
-              yieldsCurrency_ =
-                com.github.aeonlucid.pogoprotos.data.Player.Currency.newBuilder(yieldsCurrency_).mergeFrom(value).buildPartial();
-            } else {
-              yieldsCurrency_ = value;
-            }
-            onChanged();
-          } else {
-            yieldsCurrencyBuilder_.mergeFrom(value);
-          }
-
+          copyOnWrite();
+          instance.mergeYieldsCurrency(value);
           return this;
         }
         /**
@@ -2792,68 +1182,11 @@ public final class Responses {
          *
          * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
          */
-        public Builder clearYieldsCurrency() {
-          if (yieldsCurrencyBuilder_ == null) {
-            yieldsCurrency_ = null;
-            onChanged();
-          } else {
-            yieldsCurrency_ = null;
-            yieldsCurrencyBuilder_ = null;
-          }
-
+        public Builder clearYieldsCurrency() {  copyOnWrite();
+          instance.clearYieldsCurrency();
           return this;
         }
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getYieldsCurrencyBuilder() {
-          
-          onChanged();
-          return getYieldsCurrencyFieldBuilder().getBuilder();
-        }
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getYieldsCurrencyOrBuilder() {
-          if (yieldsCurrencyBuilder_ != null) {
-            return yieldsCurrencyBuilder_.getMessageOrBuilder();
-          } else {
-            return yieldsCurrency_ == null ?
-                com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance() : yieldsCurrency_;
-          }
-        }
-        /**
-         * <pre>
-         * When bought, this IAP will yield this much currency
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.data.player.Currency yields_currency = 4;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-            getYieldsCurrencyFieldBuilder() {
-          if (yieldsCurrencyBuilder_ == null) {
-            yieldsCurrencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                    getYieldsCurrency(),
-                    getParentForChildren(),
-                    isClean());
-            yieldsCurrency_ = null;
-          }
-          return yieldsCurrencyBuilder_;
-        }
 
-        private com.github.aeonlucid.pogoprotos.inventory.Item.ItemData yieldsItem_ = null;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.inventory.Item.ItemData, com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder, com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder> yieldsItemBuilder_;
         /**
          * <pre>
          * The item and count of such item that this IAP will yield
@@ -2862,7 +1195,7 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
          */
         public boolean hasYieldsItem() {
-          return yieldsItemBuilder_ != null || yieldsItem_ != null;
+          return instance.hasYieldsItem();
         }
         /**
          * <pre>
@@ -2872,11 +1205,7 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
          */
         public com.github.aeonlucid.pogoprotos.inventory.Item.ItemData getYieldsItem() {
-          if (yieldsItemBuilder_ == null) {
-            return yieldsItem_ == null ? com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.getDefaultInstance() : yieldsItem_;
-          } else {
-            return yieldsItemBuilder_.getMessage();
-          }
+          return instance.getYieldsItem();
         }
         /**
          * <pre>
@@ -2886,18 +1215,10 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
          */
         public Builder setYieldsItem(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData value) {
-          if (yieldsItemBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            yieldsItem_ = value;
-            onChanged();
-          } else {
-            yieldsItemBuilder_.setMessage(value);
-          }
-
+          copyOnWrite();
+          instance.setYieldsItem(value);
           return this;
-        }
+          }
         /**
          * <pre>
          * The item and count of such item that this IAP will yield
@@ -2907,13 +1228,8 @@ public final class Responses {
          */
         public Builder setYieldsItem(
             com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder builderForValue) {
-          if (yieldsItemBuilder_ == null) {
-            yieldsItem_ = builderForValue.build();
-            onChanged();
-          } else {
-            yieldsItemBuilder_.setMessage(builderForValue.build());
-          }
-
+          copyOnWrite();
+          instance.setYieldsItem(builderForValue);
           return this;
         }
         /**
@@ -2924,18 +1240,8 @@ public final class Responses {
          * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
          */
         public Builder mergeYieldsItem(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData value) {
-          if (yieldsItemBuilder_ == null) {
-            if (yieldsItem_ != null) {
-              yieldsItem_ =
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.newBuilder(yieldsItem_).mergeFrom(value).buildPartial();
-            } else {
-              yieldsItem_ = value;
-            }
-            onChanged();
-          } else {
-            yieldsItemBuilder_.mergeFrom(value);
-          }
-
+          copyOnWrite();
+          instance.mergeYieldsItem(value);
           return this;
         }
         /**
@@ -2945,90 +1251,14 @@ public final class Responses {
          *
          * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
          */
-        public Builder clearYieldsItem() {
-          if (yieldsItemBuilder_ == null) {
-            yieldsItem_ = null;
-            onChanged();
-          } else {
-            yieldsItem_ = null;
-            yieldsItemBuilder_ = null;
-          }
-
+        public Builder clearYieldsItem() {  copyOnWrite();
+          instance.clearYieldsItem();
           return this;
         }
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder getYieldsItemBuilder() {
-          
-          onChanged();
-          return getYieldsItemFieldBuilder().getBuilder();
-        }
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder getYieldsItemOrBuilder() {
-          if (yieldsItemBuilder_ != null) {
-            return yieldsItemBuilder_.getMessageOrBuilder();
-          } else {
-            return yieldsItem_ == null ?
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.getDefaultInstance() : yieldsItem_;
-          }
-        }
-        /**
-         * <pre>
-         * The item and count of such item that this IAP will yield
-         * </pre>
-         *
-         * <code>optional .com.github.aeonlucid.pogoprotos.inventory.item.ItemData yields_item = 5;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.inventory.Item.ItemData, com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder, com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder> 
-            getYieldsItemFieldBuilder() {
-          if (yieldsItemBuilder_ == null) {
-            yieldsItemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.github.aeonlucid.pogoprotos.inventory.Item.ItemData, com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder, com.github.aeonlucid.pogoprotos.inventory.Item.ItemDataOrBuilder>(
-                    getYieldsItem(),
-                    getParentForChildren(),
-                    isClean());
-            yieldsItem_ = null;
-          }
-          return yieldsItemBuilder_;
-        }
 
-        private com.google.protobuf.MapField<
-            java.lang.String, java.lang.String> tags_;
-        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetTags() {
-          if (tags_ == null) {
-            return com.google.protobuf.MapField.emptyMapField(
-                TagsDefaultEntryHolder.defaultEntry);
-          }
-          return tags_;
-        }
-        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableTags() {
-          onChanged();;
-          if (tags_ == null) {
-            tags_ = com.google.protobuf.MapField.newMapField(
-                TagsDefaultEntryHolder.defaultEntry);
-          }
-          if (!tags_.isMutable()) {
-            tags_ = tags_.copy();
-          }
-          return tags_;
-        }
 
         public int getTagsCount() {
-          return internalGetTags().getMap().size();
+          return instance.getTagsMap().size();
         }
         /**
          * <pre>
@@ -3041,7 +1271,28 @@ public final class Responses {
         public boolean containsTags(
             java.lang.String key) {
           if (key == null) { throw new java.lang.NullPointerException(); }
-          return internalGetTags().getMap().containsKey(key);
+          return instance.getTagsMap().containsKey(key);
+        }
+
+        public Builder clearTags() {
+          copyOnWrite();
+          instance.getMutableTagsMap().clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * Stuff like SORT:12, CATEGORY:ITEMS
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; tags = 6;</code>
+         */
+
+        public Builder removeTags(
+            java.lang.String key) {
+          if (key == null) { throw new java.lang.NullPointerException(); }
+          copyOnWrite();
+          instance.getMutableTagsMap().remove(key);
+          return this;
         }
         /**
          * Use {@link #getTagsMap()} instead.
@@ -3057,9 +1308,9 @@ public final class Responses {
          *
          * <code>map&lt;string, string&gt; tags = 6;</code>
          */
-
         public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
-          return internalGetTags().getMap();
+          return java.util.Collections.unmodifiableMap(
+              instance.getTagsMap());
         }
         /**
          * <pre>
@@ -3074,7 +1325,7 @@ public final class Responses {
             java.lang.String defaultValue) {
           if (key == null) { throw new java.lang.NullPointerException(); }
           java.util.Map<java.lang.String, java.lang.String> map =
-              internalGetTags().getMap();
+              instance.getTagsMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
         /**
@@ -3089,38 +1340,11 @@ public final class Responses {
             java.lang.String key) {
           if (key == null) { throw new java.lang.NullPointerException(); }
           java.util.Map<java.lang.String, java.lang.String> map =
-              internalGetTags().getMap();
+              instance.getTagsMap();
           if (!map.containsKey(key)) {
             throw new java.lang.IllegalArgumentException();
           }
           return map.get(key);
-        }
-
-        public Builder clearTags() {
-          getMutableTags().clear();
-          return this;
-        }
-        /**
-         * <pre>
-         * Stuff like SORT:12, CATEGORY:ITEMS
-         * </pre>
-         *
-         * <code>map&lt;string, string&gt; tags = 6;</code>
-         */
-
-        public Builder removeTags(
-            java.lang.String key) {
-          if (key == null) { throw new java.lang.NullPointerException(); }
-          getMutableTags().remove(key);
-          return this;
-        }
-        /**
-         * Use alternate mutation accessors instead.
-         */
-        @java.lang.Deprecated
-        public java.util.Map<java.lang.String, java.lang.String>
-        getMutableTags() {
-          return internalGetMutableTags().getMutableMap();
         }
         /**
          * <pre>
@@ -3134,7 +1358,8 @@ public final class Responses {
             java.lang.String value) {
           if (key == null) { throw new java.lang.NullPointerException(); }
           if (value == null) { throw new java.lang.NullPointerException(); }
-          getMutableTags().put(key, value);
+          copyOnWrite();
+          instance.getMutableTagsMap().put(key, value);
           return this;
         }
         /**
@@ -3144,14 +1369,13 @@ public final class Responses {
          *
          * <code>map&lt;string, string&gt; tags = 6;</code>
          */
-
         public Builder putAllTags(
             java.util.Map<java.lang.String, java.lang.String> values) {
-          getMutableTags().putAll(values);
+          copyOnWrite();
+          instance.getMutableTagsMap().putAll(values);
           return this;
         }
 
-        private int unknown7_ ;
         /**
          * <pre>
          * Possibly something to toggle visibility in the store/purchasibility?
@@ -3160,7 +1384,7 @@ public final class Responses {
          * <code>optional int32 unknown7 = 7;</code>
          */
         public int getUnknown7() {
-          return unknown7_;
+          return instance.getUnknown7();
         }
         /**
          * <pre>
@@ -3170,9 +1394,8 @@ public final class Responses {
          * <code>optional int32 unknown7 = 7;</code>
          */
         public Builder setUnknown7(int value) {
-          
-          unknown7_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setUnknown7(value);
           return this;
         }
         /**
@@ -3183,58 +1406,174 @@ public final class Responses {
          * <code>optional int32 unknown7 = 7;</code>
          */
         public Builder clearUnknown7() {
-          
-          unknown7_ = 0;
-          onChanged();
+          copyOnWrite();
+          instance.clearUnknown7();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            tags_.makeImmutable();
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem) arg1;
+            itemId_ = visitor.visitString(!itemId_.isEmpty(), itemId_,
+                !other.itemId_.isEmpty(), other.itemId_);
+            isIap_ = visitor.visitBoolean(isIap_ != false, isIap_,
+                other.isIap_ != false, other.isIap_);
+            currencyToBuy_ = visitor.visitMessage(currencyToBuy_, other.currencyToBuy_);
+            yieldsCurrency_ = visitor.visitMessage(yieldsCurrency_, other.yieldsCurrency_);
+            yieldsItem_ = visitor.visitMessage(yieldsItem_, other.yieldsItem_);
+            tags_ = visitor.visitMap(
+                tags_, other.internalGetTags());
+            unknown7_ = visitor.visitInt(unknown7_ != 0, unknown7_,
+                other.unknown7_ != 0, other.unknown7_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+              bitField0_ |= other.bitField0_;
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 10: {
+                    String s = input.readStringRequireUtf8();
+
+                    itemId_ = s;
+                    break;
+                  }
+                  case 16: {
+
+                    isIap_ = input.readBool();
+                    break;
+                  }
+                  case 26: {
+                    com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder subBuilder = null;
+                    if (currencyToBuy_ != null) {
+                      subBuilder = currencyToBuy_.toBuilder();
+                    }
+                    currencyToBuy_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(currencyToBuy_);
+                      currencyToBuy_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                  case 34: {
+                    com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder subBuilder = null;
+                    if (yieldsCurrency_ != null) {
+                      subBuilder = yieldsCurrency_.toBuilder();
+                    }
+                    yieldsCurrency_ = input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(yieldsCurrency_);
+                      yieldsCurrency_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                  case 42: {
+                    com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.Builder subBuilder = null;
+                    if (yieldsItem_ != null) {
+                      subBuilder = yieldsItem_.toBuilder();
+                    }
+                    yieldsItem_ = input.readMessage(com.github.aeonlucid.pogoprotos.inventory.Item.ItemData.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(yieldsItem_);
+                      yieldsItem_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                  case 50: {
+                    if (!tags_.isMutable()) {
+                      tags_ = tags_.mutableCopy();
+                    }
+                    TagsDefaultEntryHolder.defaultEntry.parseInto(tags_, input, extensionRegistry);  break;
+                  }
+                  case 56: {
+
+                    unknown7_ = input.readInt32();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem)
       private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem();
+        DEFAULT_INSTANCE = new StoreItem();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<StoreItem>
-          PARSER = new com.google.protobuf.AbstractParser<StoreItem>() {
-        public StoreItem parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new StoreItem(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<StoreItem> PARSER;
 
       public static com.google.protobuf.Parser<StoreItem> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<StoreItem> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     private int bitField0_;
@@ -3258,12 +1597,47 @@ public final class Responses {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
      */
     public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status getStatus() {
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status.valueOf(status_);
+      com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status.forNumber(status_);
       return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *unconfirmed
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
+     */
+    private void setStatusValue(int value) {
+        status_ = value;
+    }
+    /**
+     * <pre>
+     *unconfirmed
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
+     */
+    private void setStatus(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      status_ = value.getNumber();
+    }
+    /**
+     * <pre>
+     *unconfirmed
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
+     */
+    private void clearStatus() {
+      
+      status_ = 0;
     }
 
     public static final int ITEMS_FIELD_NUMBER = 2;
-    private java.util.List<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem> items_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem> items_;
     /**
      * <pre>
      * Items to show in the shop
@@ -3316,9 +1690,130 @@ public final class Responses {
         int index) {
       return items_.get(index);
     }
+    private void ensureItemsIsMutable() {
+      if (!items_.isModifiable()) {
+        items_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(items_);
+       }
+    }
+
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void setItems(
+        int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureItemsIsMutable();
+      items_.set(index, value);
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void setItems(
+        int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder builderForValue) {
+      ensureItemsIsMutable();
+      items_.set(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void addItems(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureItemsIsMutable();
+      items_.add(value);
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void addItems(
+        int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureItemsIsMutable();
+      items_.add(index, value);
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void addItems(
+        com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder builderForValue) {
+      ensureItemsIsMutable();
+      items_.add(builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void addItems(
+        int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder builderForValue) {
+      ensureItemsIsMutable();
+      items_.add(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void addAllItems(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem> values) {
+      ensureItemsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, items_);
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void clearItems() {
+      items_ = emptyProtobufList();
+    }
+    /**
+     * <pre>
+     * Items to show in the shop
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
+     */
+    private void removeItems(int index) {
+      ensureItemsIsMutable();
+      items_.remove(index);
+    }
 
     public static final int PLAYER_CURRENCIES_FIELD_NUMBER = 3;
-    private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> playerCurrencies_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.data.Player.Currency> playerCurrencies_;
     /**
      * <pre>
      * currencies that player has at the moment
@@ -3371,9 +1866,130 @@ public final class Responses {
         int index) {
       return playerCurrencies_.get(index);
     }
+    private void ensurePlayerCurrenciesIsMutable() {
+      if (!playerCurrencies_.isModifiable()) {
+        playerCurrencies_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(playerCurrencies_);
+       }
+    }
+
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void setPlayerCurrencies(
+        int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.set(index, value);
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void setPlayerCurrencies(
+        int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.set(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void addPlayerCurrencies(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.add(value);
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void addPlayerCurrencies(
+        int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.add(index, value);
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void addPlayerCurrencies(
+        com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.add(builderForValue.build());
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void addPlayerCurrencies(
+        int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.add(index, builderForValue.build());
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void addAllPlayerCurrencies(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Player.Currency> values) {
+      ensurePlayerCurrenciesIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, playerCurrencies_);
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void clearPlayerCurrencies() {
+      playerCurrencies_ = emptyProtobufList();
+    }
+    /**
+     * <pre>
+     * currencies that player has at the moment
+     * </pre>
+     *
+     * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
+     */
+    private void removePlayerCurrencies(int index) {
+      ensurePlayerCurrenciesIsMutable();
+      playerCurrencies_.remove(index);
+    }
 
     public static final int UNKNOWN4_FIELD_NUMBER = 4;
-    private volatile java.lang.Object unknown4_;
+    private java.lang.String unknown4_;
     /**
      * <pre>
      * Some base64 encoded stuff... (Developer payload?)
@@ -3382,16 +1998,7 @@ public final class Responses {
      * <code>optional string unknown4 = 4;</code>
      */
     public java.lang.String getUnknown4() {
-      java.lang.Object ref = unknown4_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        unknown4_ = s;
-        return s;
-      }
+      return unknown4_;
     }
     /**
      * <pre>
@@ -3402,26 +2009,49 @@ public final class Responses {
      */
     public com.google.protobuf.ByteString
         getUnknown4Bytes() {
-      java.lang.Object ref = unknown4_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        unknown4_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(unknown4_);
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <pre>
+     * Some base64 encoded stuff... (Developer payload?)
+     * </pre>
+     *
+     * <code>optional string unknown4 = 4;</code>
+     */
+    private void setUnknown4(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      unknown4_ = value;
+    }
+    /**
+     * <pre>
+     * Some base64 encoded stuff... (Developer payload?)
+     * </pre>
+     *
+     * <code>optional string unknown4 = 4;</code>
+     */
+    private void clearUnknown4() {
+      
+      unknown4_ = getDefaultInstance().getUnknown4();
+    }
+    /**
+     * <pre>
+     * Some base64 encoded stuff... (Developer payload?)
+     * </pre>
+     *
+     * <code>optional string unknown4 = 4;</code>
+     */
+    private void setUnknown4Bytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      unknown4_ = value.toStringUtf8();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -3435,13 +2065,13 @@ public final class Responses {
       for (int i = 0; i < playerCurrencies_.size(); i++) {
         output.writeMessage(3, playerCurrencies_.get(i));
       }
-      if (!getUnknown4Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, unknown4_);
+      if (!unknown4_.isEmpty()) {
+        output.writeString(4, getUnknown4());
       }
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -3457,363 +2087,96 @@ public final class Responses {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, playerCurrencies_.get(i));
       }
-      if (!getUnknown4Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, unknown4_);
+      if (!unknown4_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, getUnknown4());
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse) obj;
-
-      boolean result = true;
-      result = result && status_ == other.status_;
-      result = result && getItemsList()
-          .equals(other.getItemsList());
-      result = result && getPlayerCurrenciesList()
-          .equals(other.getPlayerCurrenciesList());
-      result = result && getUnknown4()
-          .equals(other.getUnknown4());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
-      if (getItemsCount() > 0) {
-        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
-        hash = (53 * hash) + getItemsList().hashCode();
-      }
-      if (getPlayerCurrenciesCount() > 0) {
-        hash = (37 * hash) + PLAYER_CURRENCIES_FIELD_NUMBER;
-        hash = (53 * hash) + getPlayerCurrenciesList().hashCode();
-      }
-      hash = (37 * hash) + UNKNOWN4_FIELD_NUMBER;
-      hash = (53 * hash) + getUnknown4().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse)
         com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemsFieldBuilder();
-          getPlayerCurrenciesFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        status_ = 0;
 
-        if (itemsBuilder_ == null) {
-          items_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          itemsBuilder_.clear();
-        }
-        if (playerCurrenciesBuilder_ == null) {
-          playerCurrencies_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          playerCurrenciesBuilder_.clear();
-        }
-        unknown4_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse build() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse result = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.status_ = status_;
-        if (itemsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            items_ = java.util.Collections.unmodifiableList(items_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.items_ = items_;
-        } else {
-          result.items_ = itemsBuilder_.build();
-        }
-        if (playerCurrenciesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            playerCurrencies_ = java.util.Collections.unmodifiableList(playerCurrencies_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.playerCurrencies_ = playerCurrencies_;
-        } else {
-          result.playerCurrencies_ = playerCurrenciesBuilder_.build();
-        }
-        result.unknown4_ = unknown4_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.getDefaultInstance()) return this;
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
-        }
-        if (itemsBuilder_ == null) {
-          if (!other.items_.isEmpty()) {
-            if (items_.isEmpty()) {
-              items_ = other.items_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureItemsIsMutable();
-              items_.addAll(other.items_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.items_.isEmpty()) {
-            if (itemsBuilder_.isEmpty()) {
-              itemsBuilder_.dispose();
-              itemsBuilder_ = null;
-              items_ = other.items_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              itemsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getItemsFieldBuilder() : null;
-            } else {
-              itemsBuilder_.addAllMessages(other.items_);
-            }
-          }
-        }
-        if (playerCurrenciesBuilder_ == null) {
-          if (!other.playerCurrencies_.isEmpty()) {
-            if (playerCurrencies_.isEmpty()) {
-              playerCurrencies_ = other.playerCurrencies_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensurePlayerCurrenciesIsMutable();
-              playerCurrencies_.addAll(other.playerCurrencies_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.playerCurrencies_.isEmpty()) {
-            if (playerCurrenciesBuilder_.isEmpty()) {
-              playerCurrenciesBuilder_.dispose();
-              playerCurrenciesBuilder_ = null;
-              playerCurrencies_ = other.playerCurrencies_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              playerCurrenciesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPlayerCurrenciesFieldBuilder() : null;
-            } else {
-              playerCurrenciesBuilder_.addAllMessages(other.playerCurrencies_);
-            }
-          }
-        }
-        if (!other.getUnknown4().isEmpty()) {
-          unknown4_ = other.unknown4_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int status_ = 0;
       /**
        * <pre>
        *unconfirmed
@@ -3822,7 +2185,7 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
        */
       public int getStatusValue() {
-        return status_;
+        return instance.getStatusValue();
       }
       /**
        * <pre>
@@ -3832,8 +2195,8 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
        */
       public Builder setStatusValue(int value) {
-        status_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setStatusValue(value);
         return this;
       }
       /**
@@ -3844,8 +2207,7 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status getStatus() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status.valueOf(status_);
-        return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status.UNRECOGNIZED : result;
+        return instance.getStatus();
       }
       /**
        * <pre>
@@ -3855,12 +2217,8 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
        */
       public Builder setStatus(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.Status value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        status_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setStatus(value);
         return this;
       }
       /**
@@ -3871,23 +2229,10 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.Status status = 1;</code>
        */
       public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearStatus();
         return this;
       }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem> items_ =
-        java.util.Collections.emptyList();
-      private void ensureItemsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          items_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem>(items_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder> itemsBuilder_;
 
       /**
        * <pre>
@@ -3897,11 +2242,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem> getItemsList() {
-        if (itemsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(items_);
-        } else {
-          return itemsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getItemsList());
       }
       /**
        * <pre>
@@ -3911,13 +2253,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
        */
       public int getItemsCount() {
-        if (itemsBuilder_ == null) {
-          return items_.size();
-        } else {
-          return itemsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getItemsCount();
+      }/**
        * <pre>
        * Items to show in the shop
        * </pre>
@@ -3925,11 +2262,7 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem getItems(int index) {
-        if (itemsBuilder_ == null) {
-          return items_.get(index);
-        } else {
-          return itemsBuilder_.getMessage(index);
-        }
+        return instance.getItems(index);
       }
       /**
        * <pre>
@@ -3940,16 +2273,8 @@ public final class Responses {
        */
       public Builder setItems(
           int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem value) {
-        if (itemsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureItemsIsMutable();
-          items_.set(index, value);
-          onChanged();
-        } else {
-          itemsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setItems(index, value);
         return this;
       }
       /**
@@ -3961,13 +2286,8 @@ public final class Responses {
        */
       public Builder setItems(
           int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder builderForValue) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          itemsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setItems(index, builderForValue);
         return this;
       }
       /**
@@ -3978,16 +2298,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
        */
       public Builder addItems(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem value) {
-        if (itemsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureItemsIsMutable();
-          items_.add(value);
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addItems(value);
         return this;
       }
       /**
@@ -3999,16 +2311,8 @@ public final class Responses {
        */
       public Builder addItems(
           int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem value) {
-        if (itemsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureItemsIsMutable();
-          items_.add(index, value);
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addItems(index, value);
         return this;
       }
       /**
@@ -4020,13 +2324,8 @@ public final class Responses {
        */
       public Builder addItems(
           com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder builderForValue) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.add(builderForValue.build());
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addItems(builderForValue);
         return this;
       }
       /**
@@ -4038,13 +2337,8 @@ public final class Responses {
        */
       public Builder addItems(
           int index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder builderForValue) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          itemsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addItems(index, builderForValue);
         return this;
       }
       /**
@@ -4056,14 +2350,8 @@ public final class Responses {
        */
       public Builder addAllItems(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem> values) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, items_);
-          onChanged();
-        } else {
-          itemsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllItems(values);
         return this;
       }
       /**
@@ -4074,13 +2362,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
        */
       public Builder clearItems() {
-        if (itemsBuilder_ == null) {
-          items_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          itemsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearItems();
         return this;
       }
       /**
@@ -4091,115 +2374,10 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
        */
       public Builder removeItems(int index) {
-        if (itemsBuilder_ == null) {
-          ensureItemsIsMutable();
-          items_.remove(index);
-          onChanged();
-        } else {
-          itemsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeItems(index);
         return this;
       }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder getItemsBuilder(
-          int index) {
-        return getItemsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder getItemsOrBuilder(
-          int index) {
-        if (itemsBuilder_ == null) {
-          return items_.get(index);  } else {
-          return itemsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder> 
-           getItemsOrBuilderList() {
-        if (itemsBuilder_ != null) {
-          return itemsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(items_);
-        }
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder addItemsBuilder() {
-        return getItemsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder addItemsBuilder(
-          int index) {
-        return getItemsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Items to show in the shop
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse.StoreItem items = 2;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder> 
-           getItemsBuilderList() {
-        return getItemsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder> 
-          getItemsFieldBuilder() {
-        if (itemsBuilder_ == null) {
-          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.Builder, com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItemOrBuilder>(
-                  items_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          items_ = null;
-        }
-        return itemsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> playerCurrencies_ =
-        java.util.Collections.emptyList();
-      private void ensurePlayerCurrenciesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          playerCurrencies_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.data.Player.Currency>(playerCurrencies_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> playerCurrenciesBuilder_;
 
       /**
        * <pre>
@@ -4209,11 +2387,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency> getPlayerCurrenciesList() {
-        if (playerCurrenciesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(playerCurrencies_);
-        } else {
-          return playerCurrenciesBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getPlayerCurrenciesList());
       }
       /**
        * <pre>
@@ -4223,13 +2398,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
        */
       public int getPlayerCurrenciesCount() {
-        if (playerCurrenciesBuilder_ == null) {
-          return playerCurrencies_.size();
-        } else {
-          return playerCurrenciesBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getPlayerCurrenciesCount();
+      }/**
        * <pre>
        * currencies that player has at the moment
        * </pre>
@@ -4237,11 +2407,7 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
        */
       public com.github.aeonlucid.pogoprotos.data.Player.Currency getPlayerCurrencies(int index) {
-        if (playerCurrenciesBuilder_ == null) {
-          return playerCurrencies_.get(index);
-        } else {
-          return playerCurrenciesBuilder_.getMessage(index);
-        }
+        return instance.getPlayerCurrencies(index);
       }
       /**
        * <pre>
@@ -4252,16 +2418,8 @@ public final class Responses {
        */
       public Builder setPlayerCurrencies(
           int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-        if (playerCurrenciesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.set(index, value);
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setPlayerCurrencies(index, value);
         return this;
       }
       /**
@@ -4273,13 +2431,8 @@ public final class Responses {
        */
       public Builder setPlayerCurrencies(
           int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-        if (playerCurrenciesBuilder_ == null) {
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setPlayerCurrencies(index, builderForValue);
         return this;
       }
       /**
@@ -4290,16 +2443,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
        */
       public Builder addPlayerCurrencies(com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-        if (playerCurrenciesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.add(value);
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addPlayerCurrencies(value);
         return this;
       }
       /**
@@ -4311,16 +2456,8 @@ public final class Responses {
        */
       public Builder addPlayerCurrencies(
           int index, com.github.aeonlucid.pogoprotos.data.Player.Currency value) {
-        if (playerCurrenciesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.add(index, value);
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addPlayerCurrencies(index, value);
         return this;
       }
       /**
@@ -4332,13 +2469,8 @@ public final class Responses {
        */
       public Builder addPlayerCurrencies(
           com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-        if (playerCurrenciesBuilder_ == null) {
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.add(builderForValue.build());
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addPlayerCurrencies(builderForValue);
         return this;
       }
       /**
@@ -4350,13 +2482,8 @@ public final class Responses {
        */
       public Builder addPlayerCurrencies(
           int index, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder builderForValue) {
-        if (playerCurrenciesBuilder_ == null) {
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addPlayerCurrencies(index, builderForValue);
         return this;
       }
       /**
@@ -4368,14 +2495,8 @@ public final class Responses {
        */
       public Builder addAllPlayerCurrencies(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.data.Player.Currency> values) {
-        if (playerCurrenciesBuilder_ == null) {
-          ensurePlayerCurrenciesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, playerCurrencies_);
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllPlayerCurrencies(values);
         return this;
       }
       /**
@@ -4386,13 +2507,8 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
        */
       public Builder clearPlayerCurrencies() {
-        if (playerCurrenciesBuilder_ == null) {
-          playerCurrencies_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearPlayerCurrencies();
         return this;
       }
       /**
@@ -4403,105 +2519,11 @@ public final class Responses {
        * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
        */
       public Builder removePlayerCurrencies(int index) {
-        if (playerCurrenciesBuilder_ == null) {
-          ensurePlayerCurrenciesIsMutable();
-          playerCurrencies_.remove(index);
-          onChanged();
-        } else {
-          playerCurrenciesBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removePlayerCurrencies(index);
         return this;
       }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder getPlayerCurrenciesBuilder(
-          int index) {
-        return getPlayerCurrenciesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder getPlayerCurrenciesOrBuilder(
-          int index) {
-        if (playerCurrenciesBuilder_ == null) {
-          return playerCurrencies_.get(index);  } else {
-          return playerCurrenciesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-           getPlayerCurrenciesOrBuilderList() {
-        if (playerCurrenciesBuilder_ != null) {
-          return playerCurrenciesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(playerCurrencies_);
-        }
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addPlayerCurrenciesBuilder() {
-        return getPlayerCurrenciesFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder addPlayerCurrenciesBuilder(
-          int index) {
-        return getPlayerCurrenciesFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.data.Player.Currency.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * currencies that player has at the moment
-       * </pre>
-       *
-       * <code>repeated .com.github.aeonlucid.pogoprotos.data.player.Currency player_currencies = 3;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder> 
-           getPlayerCurrenciesBuilderList() {
-        return getPlayerCurrenciesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder> 
-          getPlayerCurrenciesFieldBuilder() {
-        if (playerCurrenciesBuilder_ == null) {
-          playerCurrenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.data.Player.Currency, com.github.aeonlucid.pogoprotos.data.Player.Currency.Builder, com.github.aeonlucid.pogoprotos.data.Player.CurrencyOrBuilder>(
-                  playerCurrencies_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
-          playerCurrencies_ = null;
-        }
-        return playerCurrenciesBuilder_;
-      }
 
-      private java.lang.Object unknown4_ = "";
       /**
        * <pre>
        * Some base64 encoded stuff... (Developer payload?)
@@ -4510,16 +2532,7 @@ public final class Responses {
        * <code>optional string unknown4 = 4;</code>
        */
       public java.lang.String getUnknown4() {
-        java.lang.Object ref = unknown4_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          unknown4_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getUnknown4();
       }
       /**
        * <pre>
@@ -4530,16 +2543,7 @@ public final class Responses {
        */
       public com.google.protobuf.ByteString
           getUnknown4Bytes() {
-        java.lang.Object ref = unknown4_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unknown4_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getUnknown4Bytes();
       }
       /**
        * <pre>
@@ -4550,12 +2554,8 @@ public final class Responses {
        */
       public Builder setUnknown4(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        unknown4_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setUnknown4(value);
         return this;
       }
       /**
@@ -4566,9 +2566,8 @@ public final class Responses {
        * <code>optional string unknown4 = 4;</code>
        */
       public Builder clearUnknown4() {
-        
-        unknown4_ = getDefaultInstance().getUnknown4();
-        onChanged();
+        copyOnWrite();
+        instance.clearUnknown4();
         return this;
       }
       /**
@@ -4580,67 +2579,436 @@ public final class Responses {
        */
       public Builder setUnknown4Bytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        unknown4_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setUnknown4Bytes(value);
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          items_.makeImmutable();
+          playerCurrencies_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse) arg1;
+          status_ = visitor.visitInt(status_ != 0, status_,    other.status_ != 0, other.status_);
+          items_= visitor.visitList(items_, other.items_);
+          playerCurrencies_= visitor.visitList(playerCurrencies_, other.playerCurrencies_);
+          unknown4_ = visitor.visitString(!unknown4_.isEmpty(), unknown4_,
+              !other.unknown4_.isEmpty(), other.unknown4_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  status_ = rawValue;
+                  break;
+                }
+                case 18: {
+                  if (!items_.isModifiable()) {
+                    items_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(items_);
+                  }
+                  items_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.StoreItem.parser(), extensionRegistry));
+                  break;
+                }
+                case 26: {
+                  if (!playerCurrencies_.isModifiable()) {
+                    playerCurrencies_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(playerCurrencies_);
+                  }
+                  playerCurrencies_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.data.Player.Currency.parser(), extensionRegistry));
+                  break;
+                }
+                case 34: {
+                  String s = input.readStringRequireUtf8();
+
+                  unknown4_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.GetStoreItemsResponse)
     private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse();
+      DEFAULT_INSTANCE = new GetStoreItemsResponse();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GetStoreItemsResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetStoreItemsResponse>() {
-      public GetStoreItemsResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetStoreItemsResponse(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<GetStoreItemsResponse> PARSER;
 
     public static com.google.protobuf.Parser<GetStoreItemsResponse> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface SendEncryptedSignatureResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <pre>
+     * speculated, could be an enum
+     * </pre>
+     *
+     * <code>optional bool received = 1;</code>
+     */
+    boolean getReceived();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse}
+   */
+  public  static final class SendEncryptedSignatureResponse extends
+      com.google.protobuf.GeneratedMessageLite<
+          SendEncryptedSignatureResponse, SendEncryptedSignatureResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
+      SendEncryptedSignatureResponseOrBuilder {
+    private SendEncryptedSignatureResponse() {
+    }
+    public static final int RECEIVED_FIELD_NUMBER = 1;
+    private boolean received_;
+    /**
+     * <pre>
+     * speculated, could be an enum
+     * </pre>
+     *
+     * <code>optional bool received = 1;</code>
+     */
+    public boolean getReceived() {
+      return received_;
+    }
+    /**
+     * <pre>
+     * speculated, could be an enum
+     * </pre>
+     *
+     * <code>optional bool received = 1;</code>
+     */
+    private void setReceived(boolean value) {
+      
+      received_ = value;
+    }
+    /**
+     * <pre>
+     * speculated, could be an enum
+     * </pre>
+     *
+     * <code>optional bool received = 1;</code>
+     */
+    private void clearReceived() {
+      
+      received_ = false;
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Parser<GetStoreItemsResponse> getParserForType() {
-      return PARSER;
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (received_ != false) {
+        output.writeBool(1, received_);
+      }
     }
 
-    public com.github.aeonlucid.pogoprotos.networking.platform.Responses.GetStoreItemsResponse getDefaultInstanceForType() {
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (received_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, received_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
+        com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponseOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <pre>
+       * speculated, could be an enum
+       * </pre>
+       *
+       * <code>optional bool received = 1;</code>
+       */
+      public boolean getReceived() {
+        return instance.getReceived();
+      }
+      /**
+       * <pre>
+       * speculated, could be an enum
+       * </pre>
+       *
+       * <code>optional bool received = 1;</code>
+       */
+      public Builder setReceived(boolean value) {
+        copyOnWrite();
+        instance.setReceived(value);
+        return this;
+      }
+      /**
+       * <pre>
+       * speculated, could be an enum
+       * </pre>
+       *
+       * <code>optional bool received = 1;</code>
+       */
+      public Builder clearReceived() {
+        copyOnWrite();
+        instance.clearReceived();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse) arg1;
+          received_ = visitor.visitBoolean(received_ != false, received_,
+              other.received_ != false, other.received_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  received_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.SendEncryptedSignatureResponse)
+    private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SendEncryptedSignatureResponse();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.SendEncryptedSignatureResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
+    private static volatile com.google.protobuf.Parser<SendEncryptedSignatureResponse> PARSER;
+
+    public static com.google.protobuf.Parser<SendEncryptedSignatureResponse> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
   }
 
   public interface BuyItemAndroidResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <pre>
@@ -4673,78 +3041,13 @@ public final class Responses {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse}
    */
   public  static final class BuyItemAndroidResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          BuyItemAndroidResponse, BuyItemAndroidResponse.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse)
       BuyItemAndroidResponseOrBuilder {
-    // Use BuyItemAndroidResponse.newBuilder() to construct.
-    private BuyItemAndroidResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private BuyItemAndroidResponse() {
-      result_ = 0;
       purchaseToken_ = "";
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private BuyItemAndroidResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              result_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              purchaseToken_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Builder.class);
-    }
-
     /**
      * <pre>
      * THESE ARE SOMEWHAT SPECULATED, failed may be 2
@@ -4753,7 +3056,7 @@ public final class Responses {
      * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status}
      */
     public enum Status
-        implements com.google.protobuf.ProtocolMessageEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       /**
        * <code>UNKNOWN = 0;</code>
        */
@@ -4776,10 +3079,6 @@ public final class Responses {
 
 
       public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
         return value;
       }
 
@@ -4811,33 +3110,6 @@ public final class Responses {
               }
             };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Status[] VALUES = values();
-
-      public static Status valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
       private final int value;
 
       private Status(int value) {
@@ -4867,52 +3139,89 @@ public final class Responses {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
      */
     public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status getResult() {
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status.valueOf(result_);
+      com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status.forNumber(result_);
       return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
+     */
+    private void setResultValue(int value) {
+        result_ = value;
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
+     */
+    private void setResult(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      result_ = value.getNumber();
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
+     */
+    private void clearResult() {
+      
+      result_ = 0;
     }
 
     public static final int PURCHASE_TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object purchaseToken_;
+    private java.lang.String purchaseToken_;
     /**
      * <code>optional string purchase_token = 2;</code>
      */
     public java.lang.String getPurchaseToken() {
-      java.lang.Object ref = purchaseToken_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        purchaseToken_ = s;
-        return s;
-      }
+      return purchaseToken_;
     }
     /**
      * <code>optional string purchase_token = 2;</code>
      */
     public com.google.protobuf.ByteString
         getPurchaseTokenBytes() {
-      java.lang.Object ref = purchaseToken_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        purchaseToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+      return com.google.protobuf.ByteString.copyFromUtf8(purchaseToken_);
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional string purchase_token = 2;</code>
+     */
+    private void setPurchaseToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      purchaseToken_ = value;
+    }
+    /**
+     * <code>optional string purchase_token = 2;</code>
+     */
+    private void clearPurchaseToken() {
+      
+      purchaseToken_ = getDefaultInstance().getPurchaseToken();
+    }
+    /**
+     * <code>optional string purchase_token = 2;</code>
+     */
+    private void setPurchaseTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      purchaseToken_ = value.toStringUtf8();
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -4920,13 +3229,13 @@ public final class Responses {
       if (result_ != com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status.UNKNOWN.getNumber()) {
         output.writeEnum(1, result_);
       }
-      if (!getPurchaseTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, purchaseToken_);
+      if (!purchaseToken_.isEmpty()) {
+        output.writeString(2, getPurchaseToken());
       }
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -4934,263 +3243,96 @@ public final class Responses {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, result_);
       }
-      if (!getPurchaseTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, purchaseToken_);
+      if (!purchaseToken_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getPurchaseToken());
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse) obj;
-
-      boolean result = true;
-      result = result && result_ == other.result_;
-      result = result && getPurchaseToken()
-          .equals(other.getPurchaseToken());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + result_;
-      hash = (37 * hash) + PURCHASE_TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getPurchaseToken().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse)
         com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.class, com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        result_ = 0;
 
-        purchaseToken_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse build() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse result = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse(this);
-        result.result_ = result_;
-        result.purchaseToken_ = purchaseToken_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.getDefaultInstance()) return this;
-        if (other.result_ != 0) {
-          setResultValue(other.getResultValue());
-        }
-        if (!other.getPurchaseToken().isEmpty()) {
-          purchaseToken_ = other.purchaseToken_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int result_ = 0;
       /**
        * <pre>
        * result
@@ -5199,7 +3341,7 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
        */
       public int getResultValue() {
-        return result_;
+        return instance.getResultValue();
       }
       /**
        * <pre>
@@ -5209,8 +3351,8 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
        */
       public Builder setResultValue(int value) {
-        result_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setResultValue(value);
         return this;
       }
       /**
@@ -5221,8 +3363,7 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status getResult() {
-        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status.valueOf(result_);
-        return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status.UNRECOGNIZED : result;
+        return instance.getResult();
       }
       /**
        * <pre>
@@ -5232,12 +3373,8 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
        */
       public Builder setResult(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.Status value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        result_ = value.getNumber();
-        onChanged();
+        copyOnWrite();
+        instance.setResult(value);
         return this;
       }
       /**
@@ -5248,64 +3385,39 @@ public final class Responses {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse.Status result = 1;</code>
        */
       public Builder clearResult() {
-        
-        result_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearResult();
         return this;
       }
 
-      private java.lang.Object purchaseToken_ = "";
       /**
        * <code>optional string purchase_token = 2;</code>
        */
       public java.lang.String getPurchaseToken() {
-        java.lang.Object ref = purchaseToken_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          purchaseToken_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+        return instance.getPurchaseToken();
       }
       /**
        * <code>optional string purchase_token = 2;</code>
        */
       public com.google.protobuf.ByteString
           getPurchaseTokenBytes() {
-        java.lang.Object ref = purchaseToken_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          purchaseToken_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return instance.getPurchaseTokenBytes();
       }
       /**
        * <code>optional string purchase_token = 2;</code>
        */
       public Builder setPurchaseToken(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        purchaseToken_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPurchaseToken(value);
         return this;
       }
       /**
        * <code>optional string purchase_token = 2;</code>
        */
       public Builder clearPurchaseToken() {
-        
-        purchaseToken_ = getDefaultInstance().getPurchaseToken();
-        onChanged();
+        copyOnWrite();
+        instance.clearPurchaseToken();
         return this;
       }
       /**
@@ -5313,197 +3425,546 @@ public final class Responses {
        */
       public Builder setPurchaseTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        purchaseToken_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setPurchaseTokenBytes(value);
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse) arg1;
+          result_ = visitor.visitInt(result_ != 0, result_,    other.result_ != 0, other.result_);
+          purchaseToken_ = visitor.visitString(!purchaseToken_.isEmpty(), purchaseToken_,
+              !other.purchaseToken_.isEmpty(), other.purchaseToken_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  result_ = rawValue;
+                  break;
+                }
+                case 18: {
+                  String s = input.readStringRequireUtf8();
+
+                  purchaseToken_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemAndroidResponse)
     private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse();
+      DEFAULT_INSTANCE = new BuyItemAndroidResponse();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BuyItemAndroidResponse>
-        PARSER = new com.google.protobuf.AbstractParser<BuyItemAndroidResponse>() {
-      public BuyItemAndroidResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BuyItemAndroidResponse(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<BuyItemAndroidResponse> PARSER;
 
     public static com.google.protobuf.Parser<BuyItemAndroidResponse> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface BuyItemPokeCoinsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    int getResultValue();
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status getResult();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse}
+   */
+  public  static final class BuyItemPokeCoinsResponse extends
+      com.google.protobuf.GeneratedMessageLite<
+          BuyItemPokeCoinsResponse, BuyItemPokeCoinsResponse.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
+      BuyItemPokeCoinsResponseOrBuilder {
+    private BuyItemPokeCoinsResponse() {
+    }
+    /**
+     * <pre>
+     * THESE ARE SOMEWHAT SPECULATED, should be a NOT ENOUGH ROOM status too for bag being full somewhere.
+     * </pre>
+     *
+     * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>UNKNOWN = 0;</code>
+       */
+      UNKNOWN(0),
+      /**
+       * <code>SUCCESS = 1;</code>
+       */
+      SUCCESS(1),
+      /**
+       * <code>NOT_ENOUGH_POKECOINS = 3;</code>
+       */
+      NOT_ENOUGH_POKECOINS(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>UNKNOWN = 0;</code>
+       */
+      public static final int UNKNOWN_VALUE = 0;
+      /**
+       * <code>SUCCESS = 1;</code>
+       */
+      public static final int SUCCESS_VALUE = 1;
+      /**
+       * <code>NOT_ENOUGH_POKECOINS = 3;</code>
+       */
+      public static final int NOT_ENOUGH_POKECOINS_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return UNKNOWN;
+          case 1: return SUCCESS;
+          case 3: return NOT_ENOUGH_POKECOINS;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status)
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Parser<BuyItemAndroidResponse> getParserForType() {
-      return PARSER;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private int result_;
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    public int getResultValue() {
+      return result_;
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status getResult() {
+      com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status result = com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.forNumber(result_);
+      return result == null ? com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    private void setResultValue(int value) {
+        result_ = value;
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    private void setResult(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      result_ = value.getNumber();
+    }
+    /**
+     * <pre>
+     * result
+     * </pre>
+     *
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+     */
+    private void clearResult() {
+      
+      result_ = 0;
     }
 
-    public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemAndroidResponse getDefaultInstanceForType() {
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (result_ != com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNKNOWN.getNumber()) {
+        output.writeEnum(1, result_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (result_ != com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, result_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
+        com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponseOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <pre>
+       * result
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+       */
+      public int getResultValue() {
+        return instance.getResultValue();
+      }
+      /**
+       * <pre>
+       * result
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+       */
+      public Builder setResultValue(int value) {
+        copyOnWrite();
+        instance.setResultValue(value);
+        return this;
+      }
+      /**
+       * <pre>
+       * result
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status getResult() {
+        return instance.getResult();
+      }
+      /**
+       * <pre>
+       * result
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+       */
+      public Builder setResult(com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.Status value) {
+        copyOnWrite();
+        instance.setResult(value);
+        return this;
+      }
+      /**
+       * <pre>
+       * result
+       * </pre>
+       *
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse.Status result = 1;</code>
+       */
+      public Builder clearResult() {
+        copyOnWrite();
+        instance.clearResult();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse other = (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse) arg1;
+          result_ = visitor.visitInt(result_ != 0, result_,    other.result_ != 0, other.result_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  result_ = rawValue;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.platform.responses.BuyItemPokeCoinsResponse)
+    private static final com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new BuyItemPokeCoinsResponse();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.platform.Responses.BuyItemPokeCoinsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
+    private static volatile com.google.protobuf.Parser<BuyItemPokeCoinsResponse> PARSER;
+
+    public static com.google.protobuf.Parser<BuyItemPokeCoinsResponse> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_TagsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_TagsEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\nCcom/github/aeonlucid/pogoprotos/networ" +
-      "king/platform/Responses.proto\022=com.githu" +
-      "b.aeonlucid.pogoprotos.networking.platfo" +
-      "rm.responses\0321com/github/aeonlucid/pogop" +
-      "rotos/data/Player.proto\0324com/github/aeon" +
-      "lucid/pogoprotos/inventory/Item.proto\"2\n" +
-      "\036SendEncryptedSignatureResponse\022\020\n\010recei" +
-      "ved\030\001 \001(\010\"\310\001\n\030BuyItemPokeCoinsResponse\022n" +
-      "\n\006result\030\001 \001(\0162^.com.github.aeonlucid.po" +
-      "goprotos.networking.platform.responses.B",
-      "uyItemPokeCoinsResponse.Status\"<\n\006Status" +
-      "\022\013\n\007UNKNOWN\020\000\022\013\n\007SUCCESS\020\001\022\030\n\024NOT_ENOUGH" +
-      "_POKECOINS\020\003\"\317\006\n\025GetStoreItemsResponse\022k" +
-      "\n\006status\030\001 \001(\0162[.com.github.aeonlucid.po" +
-      "goprotos.networking.platform.responses.G" +
-      "etStoreItemsResponse.Status\022m\n\005items\030\002 \003" +
-      "(\0132^.com.github.aeonlucid.pogoprotos.net" +
-      "working.platform.responses.GetStoreItems" +
-      "Response.StoreItem\022P\n\021player_currencies\030" +
-      "\003 \003(\01325.com.github.aeonlucid.pogoprotos.",
-      "data.player.Currency\022\020\n\010unknown4\030\004 \001(\t\032\322" +
-      "\003\n\tStoreItem\022\017\n\007item_id\030\001 \001(\t\022\016\n\006is_iap\030" +
-      "\002 \001(\010\022N\n\017currency_to_buy\030\003 \001(\01325.com.git" +
-      "hub.aeonlucid.pogoprotos.data.player.Cur" +
-      "rency\022N\n\017yields_currency\030\004 \001(\01325.com.git" +
-      "hub.aeonlucid.pogoprotos.data.player.Cur" +
-      "rency\022M\n\013yields_item\030\005 \001(\01328.com.github." +
-      "aeonlucid.pogoprotos.inventory.item.Item" +
-      "Data\022v\n\004tags\030\006 \003(\0132h.com.github.aeonluci" +
-      "d.pogoprotos.networking.platform.respons",
-      "es.GetStoreItemsResponse.StoreItem.TagsE" +
-      "ntry\022\020\n\010unknown7\030\007 \001(\005\032+\n\tTagsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"!\n\006Status\022\r\n" +
-      "\tUNDEFINED\020\000\022\010\n\004OKAY\020\001\"\302\001\n\026BuyItemAndroi" +
-      "dResponse\022l\n\006result\030\001 \001(\0162\\.com.github.a" +
-      "eonlucid.pogoprotos.networking.platform." +
-      "responses.BuyItemAndroidResponse.Status\022" +
-      "\026\n\016purchase_token\030\002 \001(\t\"\"\n\006Status\022\013\n\007UNK" +
-      "NOWN\020\000\022\013\n\007SUCCESS\020\001B@\n3com.github.aeonlu" +
-      "cid.pogoprotos.networking.platformB\tResp",
-      "onsesb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.data.Player.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_SendEncryptedSignatureResponse_descriptor,
-        new java.lang.String[] { "Received", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemPokeCoinsResponse_descriptor,
-        new java.lang.String[] { "Result", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor,
-        new java.lang.String[] { "Status", "Items", "PlayerCurrencies", "Unknown4", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor,
-        new java.lang.String[] { "ItemId", "IsIap", "CurrencyToBuy", "YieldsCurrency", "YieldsItem", "Tags", "Unknown7", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_TagsEntry_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_TagsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_GetStoreItemsResponse_StoreItem_TagsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_platform_responses_BuyItemAndroidResponse_descriptor,
-        new java.lang.String[] { "Result", "PurchaseToken", });
-    com.github.aeonlucid.pogoprotos.data.Player.getDescriptor();
-    com.github.aeonlucid.pogoprotos.inventory.Item.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -8,2280 +8,9 @@ public final class Envelopes {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface ResponseEnvelopeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-     */
-    int getStatusCodeValue();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode();
-
-    /**
-     * <code>optional uint64 request_id = 2;</code>
-     */
-    long getRequestId();
-
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    java.lang.String getApiUrl();
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getApiUrlBytes();
-
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> 
-        getPlatformReturnsList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index);
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    int getPlatformReturnsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
-        getPlatformReturnsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
-        int index);
-
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    boolean hasAuthTicket();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder();
-
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    java.util.List<com.google.protobuf.ByteString> getReturnsList();
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    int getReturnsCount();
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    com.google.protobuf.ByteString getReturns(int index);
-
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    java.lang.String getError();
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    com.google.protobuf.ByteString
-        getErrorBytes();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
-   */
-  public  static final class ResponseEnvelope extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-      ResponseEnvelopeOrBuilder {
-    // Use ResponseEnvelope.newBuilder() to construct.
-    private ResponseEnvelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ResponseEnvelope() {
-      statusCode_ = 0;
-      requestId_ = 0L;
-      apiUrl_ = "";
-      platformReturns_ = java.util.Collections.emptyList();
-      returns_ = java.util.Collections.emptyList();
-      error_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ResponseEnvelope(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              statusCode_ = rawValue;
-              break;
-            }
-            case 16: {
-
-              requestId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              apiUrl_ = s;
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                platformReturns_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              platformReturns_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.parser(), extensionRegistry));
-              break;
-            }
-            case 58: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder subBuilder = null;
-              if (authTicket_ != null) {
-                subBuilder = authTicket_.toBuilder();
-              }
-              authTicket_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authTicket_);
-                authTicket_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 802: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                returns_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              returns_.add(input.readBytes());
-              break;
-            }
-            case 810: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              error_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          platformReturns_ = java.util.Collections.unmodifiableList(platformReturns_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          returns_ = java.util.Collections.unmodifiableList(returns_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode}
-     */
-    public enum StatusCode
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>UNKNOWN = 0;</code>
-       */
-      UNKNOWN(0),
-      /**
-       * <pre>
-       * valid response with no api url
-       * </pre>
-       *
-       * <code>OK = 1;</code>
-       */
-      OK(1),
-      /**
-       * <pre>
-       * the response envelope has api_url set and this response is valid
-       * </pre>
-       *
-       * <code>OK_RPC_URL_IN_RESPONSE = 2;</code>
-       */
-      OK_RPC_URL_IN_RESPONSE(2),
-      /**
-       * <pre>
-       * bad request
-       * </pre>
-       *
-       * <code>BAD_REQUEST = 3;</code>
-       */
-      BAD_REQUEST(3),
-      /**
-       * <pre>
-       * using unimplemented request or corrupt request
-       * </pre>
-       *
-       * <code>INVALID_REQUEST = 51;</code>
-       */
-      INVALID_REQUEST(51),
-      /**
-       * <pre>
-       * invalid platform request or corrupt platform request
-       * </pre>
-       *
-       * <code>INVALID_PLATFORM_REQUEST = 52;</code>
-       */
-      INVALID_PLATFORM_REQUEST(52),
-      /**
-       * <pre>
-       * a new rpc endpoint is available and you should redirect to there
-       * </pre>
-       *
-       * <code>REDIRECT = 53;</code>
-       */
-      REDIRECT(53),
-      /**
-       * <pre>
-       * occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
-       * </pre>
-       *
-       * <code>SESSION_INVALIDATED = 100;</code>
-       */
-      SESSION_INVALIDATED(100),
-      /**
-       * <pre>
-       * occurs when the login token is invalid
-       * </pre>
-       *
-       * <code>INVALID_AUTH_TOKEN = 102;</code>
-       */
-      INVALID_AUTH_TOKEN(102),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>UNKNOWN = 0;</code>
-       */
-      public static final int UNKNOWN_VALUE = 0;
-      /**
-       * <pre>
-       * valid response with no api url
-       * </pre>
-       *
-       * <code>OK = 1;</code>
-       */
-      public static final int OK_VALUE = 1;
-      /**
-       * <pre>
-       * the response envelope has api_url set and this response is valid
-       * </pre>
-       *
-       * <code>OK_RPC_URL_IN_RESPONSE = 2;</code>
-       */
-      public static final int OK_RPC_URL_IN_RESPONSE_VALUE = 2;
-      /**
-       * <pre>
-       * bad request
-       * </pre>
-       *
-       * <code>BAD_REQUEST = 3;</code>
-       */
-      public static final int BAD_REQUEST_VALUE = 3;
-      /**
-       * <pre>
-       * using unimplemented request or corrupt request
-       * </pre>
-       *
-       * <code>INVALID_REQUEST = 51;</code>
-       */
-      public static final int INVALID_REQUEST_VALUE = 51;
-      /**
-       * <pre>
-       * invalid platform request or corrupt platform request
-       * </pre>
-       *
-       * <code>INVALID_PLATFORM_REQUEST = 52;</code>
-       */
-      public static final int INVALID_PLATFORM_REQUEST_VALUE = 52;
-      /**
-       * <pre>
-       * a new rpc endpoint is available and you should redirect to there
-       * </pre>
-       *
-       * <code>REDIRECT = 53;</code>
-       */
-      public static final int REDIRECT_VALUE = 53;
-      /**
-       * <pre>
-       * occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
-       * </pre>
-       *
-       * <code>SESSION_INVALIDATED = 100;</code>
-       */
-      public static final int SESSION_INVALIDATED_VALUE = 100;
-      /**
-       * <pre>
-       * occurs when the login token is invalid
-       * </pre>
-       *
-       * <code>INVALID_AUTH_TOKEN = 102;</code>
-       */
-      public static final int INVALID_AUTH_TOKEN_VALUE = 102;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static StatusCode valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static StatusCode forNumber(int value) {
-        switch (value) {
-          case 0: return UNKNOWN;
-          case 1: return OK;
-          case 2: return OK_RPC_URL_IN_RESPONSE;
-          case 3: return BAD_REQUEST;
-          case 51: return INVALID_REQUEST;
-          case 52: return INVALID_PLATFORM_REQUEST;
-          case 53: return REDIRECT;
-          case 100: return SESSION_INVALIDATED;
-          case 102: return INVALID_AUTH_TOKEN;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<StatusCode>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          StatusCode> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<StatusCode>() {
-              public StatusCode findValueByNumber(int number) {
-                return StatusCode.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final StatusCode[] VALUES = values();
-
-      public static StatusCode valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private StatusCode(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode)
-    }
-
-    public interface PlatformResponseOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-       */
-      int getTypeValue();
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-       */
-      com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType();
-
-      /**
-       * <code>optional bytes response = 2;</code>
-       */
-      com.google.protobuf.ByteString getResponse();
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse}
-     */
-    public  static final class PlatformResponse extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
-        PlatformResponseOrBuilder {
-      // Use PlatformResponse.newBuilder() to construct.
-      private PlatformResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private PlatformResponse() {
-        type_ = 0;
-        response_ = com.google.protobuf.ByteString.EMPTY;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private PlatformResponse(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-              case 18: {
-
-                response_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder.class);
-      }
-
-      public static final int TYPE_FIELD_NUMBER = 1;
-      private int type_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-       */
-      public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
-        com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
-        return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
-      }
-
-      public static final int RESPONSE_FIELD_NUMBER = 2;
-      private com.google.protobuf.ByteString response_;
-      /**
-       * <code>optional bytes response = 2;</code>
-       */
-      public com.google.protobuf.ByteString getResponse() {
-        return response_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
-          output.writeEnum(1, type_);
-        }
-        if (!response_.isEmpty()) {
-          output.writeBytes(2, response_);
-        }
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, type_);
-        }
-        if (!response_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(2, response_);
-        }
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) obj;
-
-        boolean result = true;
-        result = result && type_ == other.type_;
-        result = result && getResponse()
-            .equals(other.getResponse());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + type_;
-        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-        hash = (53 * hash) + getResponse().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder.class);
-        }
-
-        // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          type_ = 0;
-
-          response_ = com.google.protobuf.ByteString.EMPTY;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse(this);
-          result.type_ = type_;
-          result.response_ = response_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance()) return this;
-          if (other.type_ != 0) {
-            setTypeValue(other.getTypeValue());
-          }
-          if (other.getResponse() != com.google.protobuf.ByteString.EMPTY) {
-            setResponse(other.getResponse());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private int type_ = 0;
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-         */
-        public int getTypeValue() {
-          return type_;
-        }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-         */
-        public Builder setTypeValue(int value) {
-          type_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
-          com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
-          return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
-        }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-         */
-        public Builder setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          
-          type_ = value.getNumber();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
-         */
-        public Builder clearType() {
-          
-          type_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private com.google.protobuf.ByteString response_ = com.google.protobuf.ByteString.EMPTY;
-        /**
-         * <code>optional bytes response = 2;</code>
-         */
-        public com.google.protobuf.ByteString getResponse() {
-          return response_;
-        }
-        /**
-         * <code>optional bytes response = 2;</code>
-         */
-        public Builder setResponse(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          response_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional bytes response = 2;</code>
-         */
-        public Builder clearResponse() {
-          
-          response_ = getDefaultInstance().getResponse();
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
-      }
-
-      // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
-      private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse();
-      }
-
-      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<PlatformResponse>
-          PARSER = new com.google.protobuf.AbstractParser<PlatformResponse>() {
-        public PlatformResponse parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PlatformResponse(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<PlatformResponse> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<PlatformResponse> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    private int bitField0_;
-    public static final int STATUS_CODE_FIELD_NUMBER = 1;
-    private int statusCode_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-     */
-    public int getStatusCodeValue() {
-      return statusCode_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode() {
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode result = com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.valueOf(statusCode_);
-      return result == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNRECOGNIZED : result;
-    }
-
-    public static final int REQUEST_ID_FIELD_NUMBER = 2;
-    private long requestId_;
-    /**
-     * <code>optional uint64 request_id = 2;</code>
-     */
-    public long getRequestId() {
-      return requestId_;
-    }
-
-    public static final int API_URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object apiUrl_;
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    public java.lang.String getApiUrl() {
-      java.lang.Object ref = apiUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apiUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string api_url = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getApiUrlBytes() {
-      java.lang.Object ref = apiUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apiUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PLATFORM_RETURNS_FIELD_NUMBER = 6;
-    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> platformReturns_;
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> getPlatformReturnsList() {
-      return platformReturns_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
-        getPlatformReturnsOrBuilderList() {
-      return platformReturns_;
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    public int getPlatformReturnsCount() {
-      return platformReturns_.size();
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index) {
-      return platformReturns_.get(index);
-    }
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
-        int index) {
-      return platformReturns_.get(index);
-    }
-
-    public static final int AUTH_TICKET_FIELD_NUMBER = 7;
-    private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_;
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    public boolean hasAuthTicket() {
-      return authTicket_ != null;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
-      return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-    }
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-     */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
-      return getAuthTicket();
-    }
-
-    public static final int RETURNS_FIELD_NUMBER = 100;
-    private java.util.List<com.google.protobuf.ByteString> returns_;
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    public java.util.List<com.google.protobuf.ByteString>
-        getReturnsList() {
-      return returns_;
-    }
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    public int getReturnsCount() {
-      return returns_.size();
-    }
-    /**
-     * <code>repeated bytes returns = 100;</code>
-     */
-    public com.google.protobuf.ByteString getReturns(int index) {
-      return returns_.get(index);
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 101;
-    private volatile java.lang.Object error_;
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string error = 101;</code>
-     */
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (statusCode_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNKNOWN.getNumber()) {
-        output.writeEnum(1, statusCode_);
-      }
-      if (requestId_ != 0L) {
-        output.writeUInt64(2, requestId_);
-      }
-      if (!getApiUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, apiUrl_);
-      }
-      for (int i = 0; i < platformReturns_.size(); i++) {
-        output.writeMessage(6, platformReturns_.get(i));
-      }
-      if (authTicket_ != null) {
-        output.writeMessage(7, getAuthTicket());
-      }
-      for (int i = 0; i < returns_.size(); i++) {
-        output.writeBytes(100, returns_.get(i));
-      }
-      if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 101, error_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (statusCode_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNKNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, statusCode_);
-      }
-      if (requestId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, requestId_);
-      }
-      if (!getApiUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, apiUrl_);
-      }
-      for (int i = 0; i < platformReturns_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, platformReturns_.get(i));
-      }
-      if (authTicket_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAuthTicket());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < returns_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(returns_.get(i));
-        }
-        size += dataSize;
-        size += 2 * getReturnsList().size();
-      }
-      if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, error_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) obj;
-
-      boolean result = true;
-      result = result && statusCode_ == other.statusCode_;
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && getApiUrl()
-          .equals(other.getApiUrl());
-      result = result && getPlatformReturnsList()
-          .equals(other.getPlatformReturnsList());
-      result = result && (hasAuthTicket() == other.hasAuthTicket());
-      if (hasAuthTicket()) {
-        result = result && getAuthTicket()
-            .equals(other.getAuthTicket());
-      }
-      result = result && getReturnsList()
-          .equals(other.getReturnsList());
-      result = result && getError()
-          .equals(other.getError());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + statusCode_;
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRequestId());
-      hash = (37 * hash) + API_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getApiUrl().hashCode();
-      if (getPlatformReturnsCount() > 0) {
-        hash = (37 * hash) + PLATFORM_RETURNS_FIELD_NUMBER;
-        hash = (53 * hash) + getPlatformReturnsList().hashCode();
-      }
-      if (hasAuthTicket()) {
-        hash = (37 * hash) + AUTH_TICKET_FIELD_NUMBER;
-        hash = (53 * hash) + getAuthTicket().hashCode();
-      }
-      if (getReturnsCount() > 0) {
-        hash = (37 * hash) + RETURNS_FIELD_NUMBER;
-        hash = (53 * hash) + getReturnsList().hashCode();
-      }
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelopeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPlatformReturnsFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        statusCode_ = 0;
-
-        requestId_ = 0L;
-
-        apiUrl_ = "";
-
-        if (platformReturnsBuilder_ == null) {
-          platformReturns_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          platformReturnsBuilder_.clear();
-        }
-        if (authTicketBuilder_ == null) {
-          authTicket_ = null;
-        } else {
-          authTicket_ = null;
-          authTicketBuilder_ = null;
-        }
-        returns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        error_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.statusCode_ = statusCode_;
-        result.requestId_ = requestId_;
-        result.apiUrl_ = apiUrl_;
-        if (platformReturnsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            platformReturns_ = java.util.Collections.unmodifiableList(platformReturns_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.platformReturns_ = platformReturns_;
-        } else {
-          result.platformReturns_ = platformReturnsBuilder_.build();
-        }
-        if (authTicketBuilder_ == null) {
-          result.authTicket_ = authTicket_;
-        } else {
-          result.authTicket_ = authTicketBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          returns_ = java.util.Collections.unmodifiableList(returns_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.returns_ = returns_;
-        result.error_ = error_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.getDefaultInstance()) return this;
-        if (other.statusCode_ != 0) {
-          setStatusCodeValue(other.getStatusCodeValue());
-        }
-        if (other.getRequestId() != 0L) {
-          setRequestId(other.getRequestId());
-        }
-        if (!other.getApiUrl().isEmpty()) {
-          apiUrl_ = other.apiUrl_;
-          onChanged();
-        }
-        if (platformReturnsBuilder_ == null) {
-          if (!other.platformReturns_.isEmpty()) {
-            if (platformReturns_.isEmpty()) {
-              platformReturns_ = other.platformReturns_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensurePlatformReturnsIsMutable();
-              platformReturns_.addAll(other.platformReturns_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.platformReturns_.isEmpty()) {
-            if (platformReturnsBuilder_.isEmpty()) {
-              platformReturnsBuilder_.dispose();
-              platformReturnsBuilder_ = null;
-              platformReturns_ = other.platformReturns_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              platformReturnsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPlatformReturnsFieldBuilder() : null;
-            } else {
-              platformReturnsBuilder_.addAllMessages(other.platformReturns_);
-            }
-          }
-        }
-        if (other.hasAuthTicket()) {
-          mergeAuthTicket(other.getAuthTicket());
-        }
-        if (!other.returns_.isEmpty()) {
-          if (returns_.isEmpty()) {
-            returns_ = other.returns_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureReturnsIsMutable();
-            returns_.addAll(other.returns_);
-          }
-          onChanged();
-        }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int statusCode_ = 0;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-       */
-      public int getStatusCodeValue() {
-        return statusCode_;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-       */
-      public Builder setStatusCodeValue(int value) {
-        statusCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode result = com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.valueOf(statusCode_);
-        return result == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-       */
-      public Builder setStatusCode(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        statusCode_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
-       */
-      public Builder clearStatusCode() {
-        
-        statusCode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long requestId_ ;
-      /**
-       * <code>optional uint64 request_id = 2;</code>
-       */
-      public long getRequestId() {
-        return requestId_;
-      }
-      /**
-       * <code>optional uint64 request_id = 2;</code>
-       */
-      public Builder setRequestId(long value) {
-        
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 request_id = 2;</code>
-       */
-      public Builder clearRequestId() {
-        
-        requestId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object apiUrl_ = "";
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public java.lang.String getApiUrl() {
-        java.lang.Object ref = apiUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apiUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getApiUrlBytes() {
-        java.lang.Object ref = apiUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apiUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public Builder setApiUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        apiUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public Builder clearApiUrl() {
-        
-        apiUrl_ = getDefaultInstance().getApiUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string api_url = 3;</code>
-       */
-      public Builder setApiUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        apiUrl_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> platformReturns_ =
-        java.util.Collections.emptyList();
-      private void ensurePlatformReturnsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          platformReturns_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse>(platformReturns_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> platformReturnsBuilder_;
-
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> getPlatformReturnsList() {
-        if (platformReturnsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(platformReturns_);
-        } else {
-          return platformReturnsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public int getPlatformReturnsCount() {
-        if (platformReturnsBuilder_ == null) {
-          return platformReturns_.size();
-        } else {
-          return platformReturnsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index) {
-        if (platformReturnsBuilder_ == null) {
-          return platformReturns_.get(index);
-        } else {
-          return platformReturnsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder setPlatformReturns(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
-        if (platformReturnsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.set(index, value);
-          onChanged();
-        } else {
-          platformReturnsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder setPlatformReturns(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
-        if (platformReturnsBuilder_ == null) {
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          platformReturnsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder addPlatformReturns(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
-        if (platformReturnsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.add(value);
-          onChanged();
-        } else {
-          platformReturnsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder addPlatformReturns(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
-        if (platformReturnsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.add(index, value);
-          onChanged();
-        } else {
-          platformReturnsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder addPlatformReturns(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
-        if (platformReturnsBuilder_ == null) {
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.add(builderForValue.build());
-          onChanged();
-        } else {
-          platformReturnsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder addPlatformReturns(
-          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
-        if (platformReturnsBuilder_ == null) {
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          platformReturnsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder addAllPlatformReturns(
-          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> values) {
-        if (platformReturnsBuilder_ == null) {
-          ensurePlatformReturnsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, platformReturns_);
-          onChanged();
-        } else {
-          platformReturnsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder clearPlatformReturns() {
-        if (platformReturnsBuilder_ == null) {
-          platformReturns_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          platformReturnsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public Builder removePlatformReturns(int index) {
-        if (platformReturnsBuilder_ == null) {
-          ensurePlatformReturnsIsMutable();
-          platformReturns_.remove(index);
-          onChanged();
-        } else {
-          platformReturnsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder getPlatformReturnsBuilder(
-          int index) {
-        return getPlatformReturnsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
-          int index) {
-        if (platformReturnsBuilder_ == null) {
-          return platformReturns_.get(index);  } else {
-          return platformReturnsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
-           getPlatformReturnsOrBuilderList() {
-        if (platformReturnsBuilder_ != null) {
-          return platformReturnsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(platformReturns_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder addPlatformReturnsBuilder() {
-        return getPlatformReturnsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder addPlatformReturnsBuilder(
-          int index) {
-        return getPlatformReturnsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder> 
-           getPlatformReturnsBuilderList() {
-        return getPlatformReturnsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
-          getPlatformReturnsFieldBuilder() {
-        if (platformReturnsBuilder_ == null) {
-          platformReturnsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder>(
-                  platformReturns_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
-          platformReturns_ = null;
-        }
-        return platformReturnsBuilder_;
-      }
-
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> authTicketBuilder_;
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public boolean hasAuthTicket() {
-        return authTicketBuilder_ != null || authTicket_ != null;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
-        if (authTicketBuilder_ == null) {
-          return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-        } else {
-          return authTicketBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
-        if (authTicketBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          authTicket_ = value;
-          onChanged();
-        } else {
-          authTicketBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder setAuthTicket(
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
-        if (authTicketBuilder_ == null) {
-          authTicket_ = builderForValue.build();
-          onChanged();
-        } else {
-          authTicketBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
-        if (authTicketBuilder_ == null) {
-          if (authTicket_ != null) {
-            authTicket_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder(authTicket_).mergeFrom(value).buildPartial();
-          } else {
-            authTicket_ = value;
-          }
-          onChanged();
-        } else {
-          authTicketBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public Builder clearAuthTicket() {
-        if (authTicketBuilder_ == null) {
-          authTicket_ = null;
-          onChanged();
-        } else {
-          authTicket_ = null;
-          authTicketBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder getAuthTicketBuilder() {
-        
-        onChanged();
-        return getAuthTicketFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
-        if (authTicketBuilder_ != null) {
-          return authTicketBuilder_.getMessageOrBuilder();
-        } else {
-          return authTicket_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> 
-          getAuthTicketFieldBuilder() {
-        if (authTicketBuilder_ == null) {
-          authTicketBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder>(
-                  getAuthTicket(),
-                  getParentForChildren(),
-                  isClean());
-          authTicket_ = null;
-        }
-        return authTicketBuilder_;
-      }
-
-      private java.util.List<com.google.protobuf.ByteString> returns_ = java.util.Collections.emptyList();
-      private void ensureReturnsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          returns_ = new java.util.ArrayList<com.google.protobuf.ByteString>(returns_);
-          bitField0_ |= 0x00000020;
-         }
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public java.util.List<com.google.protobuf.ByteString>
-          getReturnsList() {
-        return java.util.Collections.unmodifiableList(returns_);
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public int getReturnsCount() {
-        return returns_.size();
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public com.google.protobuf.ByteString getReturns(int index) {
-        return returns_.get(index);
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder setReturns(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureReturnsIsMutable();
-        returns_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder addReturns(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureReturnsIsMutable();
-        returns_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder addAllReturns(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureReturnsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, returns_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes returns = 100;</code>
-       */
-      public Builder clearReturns() {
-        returns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object error_ = "";
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public Builder clearError() {
-        
-        error_ = getDefaultInstance().getError();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string error = 101;</code>
-       */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        error_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
-    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ResponseEnvelope>
-        PARSER = new com.google.protobuf.AbstractParser<ResponseEnvelope>() {
-      public ResponseEnvelope parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseEnvelope(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ResponseEnvelope> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ResponseEnvelope> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface SignatureOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <pre>
@@ -2305,16 +34,6 @@ public final class Envelopes {
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
      */
     int getLocationFixCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder> 
-        getLocationFixOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder getLocationFixOrBuilder(
-        int index);
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
@@ -2324,10 +43,6 @@ public final class Envelopes {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
      */
     com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo getGpsInfo();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder getGpsInfoOrBuilder();
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
@@ -2337,10 +52,6 @@ public final class Envelopes {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
      */
     com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo getSensorInfo();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder getSensorInfoOrBuilder();
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
@@ -2350,10 +61,6 @@ public final class Envelopes {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
      */
     com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo getDeviceInfo();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder getDeviceInfoOrBuilder();
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
@@ -2363,10 +70,6 @@ public final class Envelopes {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
      */
     com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus getActivityStatus();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder getActivityStatusOrBuilder();
 
     /**
      * <pre>
@@ -2442,193 +145,18 @@ public final class Envelopes {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature}
    */
   public  static final class Signature extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          Signature, Signature.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature)
       SignatureOrBuilder {
-    // Use Signature.newBuilder() to construct.
-    private Signature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private Signature() {
-      timestampSinceStart_ = 0L;
-      locationFix_ = java.util.Collections.emptyList();
-      locationHash1_ = 0;
-      locationHash2_ = 0;
+      locationFix_ = emptyProtobufList();
       sessionHash_ = com.google.protobuf.ByteString.EMPTY;
-      timestamp_ = 0L;
-      requestHash_ = java.util.Collections.emptyList();
-      unknown25_ = 0L;
+      requestHash_ = emptyLongList();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private Signature(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 16: {
-
-              timestampSinceStart_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                locationFix_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              locationFix_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder subBuilder = null;
-              if (gpsInfo_ != null) {
-                subBuilder = gpsInfo_.toBuilder();
-              }
-              gpsInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gpsInfo_);
-                gpsInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder subBuilder = null;
-              if (sensorInfo_ != null) {
-                subBuilder = sensorInfo_.toBuilder();
-              }
-              sensorInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sensorInfo_);
-                sensorInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder subBuilder = null;
-              if (deviceInfo_ != null) {
-                subBuilder = deviceInfo_.toBuilder();
-              }
-              deviceInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deviceInfo_);
-                deviceInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder subBuilder = null;
-              if (activityStatus_ != null) {
-                subBuilder = activityStatus_.toBuilder();
-              }
-              activityStatus_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(activityStatus_);
-                activityStatus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 80: {
-
-              locationHash1_ = input.readUInt32();
-              break;
-            }
-            case 160: {
-
-              locationHash2_ = input.readUInt32();
-              break;
-            }
-            case 178: {
-
-              sessionHash_ = input.readBytes();
-              break;
-            }
-            case 184: {
-
-              timestamp_ = input.readUInt64();
-              break;
-            }
-            case 192: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                requestHash_ = new java.util.ArrayList<java.lang.Long>();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              requestHash_.add(input.readUInt64());
-              break;
-            }
-            case 194: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400) && input.getBytesUntilLimit() > 0) {
-                requestHash_ = new java.util.ArrayList<java.lang.Long>();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                requestHash_.add(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 200: {
-
-              unknown25_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          locationFix_ = java.util.Collections.unmodifiableList(locationFix_);
-        }
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-          requestHash_ = java.util.Collections.unmodifiableList(requestHash_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.Builder.class);
-    }
-
     public interface LocationFixOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <pre>
@@ -2743,139 +271,15 @@ public final class Envelopes {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix}
      */
     public  static final class LocationFix extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            LocationFix, LocationFix.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix)
         LocationFixOrBuilder {
-      // Use LocationFix.newBuilder() to construct.
-      private LocationFix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private LocationFix() {
         provider_ = "";
-        timestampSnapshot_ = 0L;
-        altitude_ = 0F;
-        latitude_ = 0F;
-        longitude_ = 0F;
-        speed_ = 0F;
-        course_ = 0F;
-        horizontalAccuracy_ = 0F;
-        verticalAccuracy_ = 0F;
-        providerStatus_ = 0L;
-        floor_ = 0;
-        locationType_ = 0L;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private LocationFix(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                provider_ = s;
-                break;
-              }
-              case 16: {
-
-                timestampSnapshot_ = input.readUInt64();
-                break;
-              }
-              case 37: {
-
-                altitude_ = input.readFloat();
-                break;
-              }
-              case 109: {
-
-                latitude_ = input.readFloat();
-                break;
-              }
-              case 117: {
-
-                longitude_ = input.readFloat();
-                break;
-              }
-              case 149: {
-
-                speed_ = input.readFloat();
-                break;
-              }
-              case 165: {
-
-                course_ = input.readFloat();
-                break;
-              }
-              case 173: {
-
-                horizontalAccuracy_ = input.readFloat();
-                break;
-              }
-              case 181: {
-
-                verticalAccuracy_ = input.readFloat();
-                break;
-              }
-              case 208: {
-
-                providerStatus_ = input.readUInt64();
-                break;
-              }
-              case 216: {
-
-                floor_ = input.readUInt32();
-                break;
-              }
-              case 224: {
-
-                locationType_ = input.readUInt64();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder.class);
-      }
-
       public static final int PROVIDER_FIELD_NUMBER = 1;
-      private volatile java.lang.Object provider_;
+      private java.lang.String provider_;
       /**
        * <pre>
        * "network", "gps", "fused", possibly others
@@ -2884,16 +288,7 @@ public final class Envelopes {
        * <code>optional string provider = 1;</code>
        */
       public java.lang.String getProvider() {
-        java.lang.Object ref = provider_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          provider_ = s;
-          return s;
-        }
+        return provider_;
       }
       /**
        * <pre>
@@ -2904,16 +299,49 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getProviderBytes() {
-        java.lang.Object ref = provider_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          provider_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(provider_);
+      }
+      /**
+       * <pre>
+       * "network", "gps", "fused", possibly others
+       * </pre>
+       *
+       * <code>optional string provider = 1;</code>
+       */
+      private void setProvider(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        provider_ = value;
+      }
+      /**
+       * <pre>
+       * "network", "gps", "fused", possibly others
+       * </pre>
+       *
+       * <code>optional string provider = 1;</code>
+       */
+      private void clearProvider() {
+        
+        provider_ = getDefaultInstance().getProvider();
+      }
+      /**
+       * <pre>
+       * "network", "gps", "fused", possibly others
+       * </pre>
+       *
+       * <code>optional string provider = 1;</code>
+       */
+      private void setProviderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        provider_ = value.toStringUtf8();
       }
 
       public static final int TIMESTAMP_SNAPSHOT_FIELD_NUMBER = 2;
@@ -2928,6 +356,28 @@ public final class Envelopes {
       public long getTimestampSnapshot() {
         return timestampSnapshot_;
       }
+      /**
+       * <pre>
+       * in ms since start
+       * </pre>
+       *
+       * <code>optional uint64 timestamp_snapshot = 2;</code>
+       */
+      private void setTimestampSnapshot(long value) {
+        
+        timestampSnapshot_ = value;
+      }
+      /**
+       * <pre>
+       * in ms since start
+       * </pre>
+       *
+       * <code>optional uint64 timestamp_snapshot = 2;</code>
+       */
+      private void clearTimestampSnapshot() {
+        
+        timestampSnapshot_ = 0L;
+      }
 
       public static final int ALTITUDE_FIELD_NUMBER = 4;
       private float altitude_;
@@ -2941,6 +391,28 @@ public final class Envelopes {
       public float getAltitude() {
         return altitude_;
       }
+      /**
+       * <pre>
+       * Confirmed on android/ios
+       * </pre>
+       *
+       * <code>optional float altitude = 4;</code>
+       */
+      private void setAltitude(float value) {
+        
+        altitude_ = value;
+      }
+      /**
+       * <pre>
+       * Confirmed on android/ios
+       * </pre>
+       *
+       * <code>optional float altitude = 4;</code>
+       */
+      private void clearAltitude() {
+        
+        altitude_ = 0F;
+      }
 
       public static final int LATITUDE_FIELD_NUMBER = 13;
       private float latitude_;
@@ -2950,6 +422,20 @@ public final class Envelopes {
       public float getLatitude() {
         return latitude_;
       }
+      /**
+       * <code>optional float latitude = 13;</code>
+       */
+      private void setLatitude(float value) {
+        
+        latitude_ = value;
+      }
+      /**
+       * <code>optional float latitude = 13;</code>
+       */
+      private void clearLatitude() {
+        
+        latitude_ = 0F;
+      }
 
       public static final int LONGITUDE_FIELD_NUMBER = 14;
       private float longitude_;
@@ -2958,6 +444,20 @@ public final class Envelopes {
        */
       public float getLongitude() {
         return longitude_;
+      }
+      /**
+       * <code>optional float longitude = 14;</code>
+       */
+      private void setLongitude(float value) {
+        
+        longitude_ = value;
+      }
+      /**
+       * <code>optional float longitude = 14;</code>
+       */
+      private void clearLongitude() {
+        
+        longitude_ = 0F;
       }
 
       public static final int SPEED_FIELD_NUMBER = 18;
@@ -2972,6 +472,28 @@ public final class Envelopes {
       public float getSpeed() {
         return speed_;
       }
+      /**
+       * <pre>
+       * iOS only (-1 for no reading available, speed in m/s)
+       * </pre>
+       *
+       * <code>optional float speed = 18;</code>
+       */
+      private void setSpeed(float value) {
+        
+        speed_ = value;
+      }
+      /**
+       * <pre>
+       * iOS only (-1 for no reading available, speed in m/s)
+       * </pre>
+       *
+       * <code>optional float speed = 18;</code>
+       */
+      private void clearSpeed() {
+        
+        speed_ = 0F;
+      }
 
       public static final int COURSE_FIELD_NUMBER = 20;
       private float course_;
@@ -2984,6 +506,28 @@ public final class Envelopes {
        */
       public float getCourse() {
         return course_;
+      }
+      /**
+       * <pre>
+       * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+       * </pre>
+       *
+       * <code>optional float course = 20;</code>
+       */
+      private void setCourse(float value) {
+        
+        course_ = value;
+      }
+      /**
+       * <pre>
+       * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
+       * </pre>
+       *
+       * <code>optional float course = 20;</code>
+       */
+      private void clearCourse() {
+        
+        course_ = 0F;
       }
 
       public static final int HORIZONTAL_ACCURACY_FIELD_NUMBER = 21;
@@ -2998,6 +542,28 @@ public final class Envelopes {
       public float getHorizontalAccuracy() {
         return horizontalAccuracy_;
       }
+      /**
+       * <pre>
+       * in meters, both on Android and iOS
+       * </pre>
+       *
+       * <code>optional float horizontal_accuracy = 21;</code>
+       */
+      private void setHorizontalAccuracy(float value) {
+        
+        horizontalAccuracy_ = value;
+      }
+      /**
+       * <pre>
+       * in meters, both on Android and iOS
+       * </pre>
+       *
+       * <code>optional float horizontal_accuracy = 21;</code>
+       */
+      private void clearHorizontalAccuracy() {
+        
+        horizontalAccuracy_ = 0F;
+      }
 
       public static final int VERTICAL_ACCURACY_FIELD_NUMBER = 22;
       private float verticalAccuracy_;
@@ -3010,6 +576,28 @@ public final class Envelopes {
        */
       public float getVerticalAccuracy() {
         return verticalAccuracy_;
+      }
+      /**
+       * <pre>
+       * iOS only
+       * </pre>
+       *
+       * <code>optional float vertical_accuracy = 22;</code>
+       */
+      private void setVerticalAccuracy(float value) {
+        
+        verticalAccuracy_ = value;
+      }
+      /**
+       * <pre>
+       * iOS only
+       * </pre>
+       *
+       * <code>optional float vertical_accuracy = 22;</code>
+       */
+      private void clearVerticalAccuracy() {
+        
+        verticalAccuracy_ = 0F;
       }
 
       public static final int PROVIDER_STATUS_FIELD_NUMBER = 26;
@@ -3024,6 +612,28 @@ public final class Envelopes {
       public long getProviderStatus() {
         return providerStatus_;
       }
+      /**
+       * <pre>
+       * Usually 3 (possibly GPS status: 1 = no fix, 2 = acquiring/inaccurate, 3 = fix acquired)
+       * </pre>
+       *
+       * <code>optional uint64 provider_status = 26;</code>
+       */
+      private void setProviderStatus(long value) {
+        
+        providerStatus_ = value;
+      }
+      /**
+       * <pre>
+       * Usually 3 (possibly GPS status: 1 = no fix, 2 = acquiring/inaccurate, 3 = fix acquired)
+       * </pre>
+       *
+       * <code>optional uint64 provider_status = 26;</code>
+       */
+      private void clearProviderStatus() {
+        
+        providerStatus_ = 0L;
+      }
 
       public static final int FLOOR_FIELD_NUMBER = 27;
       private int floor_;
@@ -3036,6 +646,28 @@ public final class Envelopes {
        */
       public int getFloor() {
         return floor_;
+      }
+      /**
+       * <pre>
+       * On iOS there are some LocationFixes with unk26=1 and everything else empty
+       * </pre>
+       *
+       * <code>optional uint32 floor = 27;</code>
+       */
+      private void setFloor(int value) {
+        
+        floor_ = value;
+      }
+      /**
+       * <pre>
+       * On iOS there are some LocationFixes with unk26=1 and everything else empty
+       * </pre>
+       *
+       * <code>optional uint32 floor = 27;</code>
+       */
+      private void clearFloor() {
+        
+        floor_ = 0;
       }
 
       public static final int LOCATION_TYPE_FIELD_NUMBER = 28;
@@ -3050,21 +682,33 @@ public final class Envelopes {
       public long getLocationType() {
         return locationType_;
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <pre>
+       * Always 1 (if there is data at all)
+       * </pre>
+       *
+       * <code>optional uint64 location_type = 28;</code>
+       */
+      private void setLocationType(long value) {
+        
+        locationType_ = value;
+      }
+      /**
+       * <pre>
+       * Always 1 (if there is data at all)
+       * </pre>
+       *
+       * <code>optional uint64 location_type = 28;</code>
+       */
+      private void clearLocationType() {
+        
+        locationType_ = 0L;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getProviderBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, provider_);
+        if (!provider_.isEmpty()) {
+          output.writeString(1, getProvider());
         }
         if (timestampSnapshot_ != 0L) {
           output.writeUInt64(2, timestampSnapshot_);
@@ -3102,12 +746,13 @@ public final class Envelopes {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (!getProviderBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, provider_);
+        if (!provider_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(1, getProvider());
         }
         if (timestampSnapshot_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
@@ -3153,385 +798,92 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(28, locationType_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix) obj;
-
-        boolean result = true;
-        result = result && getProvider()
-            .equals(other.getProvider());
-        result = result && (getTimestampSnapshot()
-            == other.getTimestampSnapshot());
-        result = result && (
-            java.lang.Float.floatToIntBits(getAltitude())
-            == java.lang.Float.floatToIntBits(
-                other.getAltitude()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getLatitude())
-            == java.lang.Float.floatToIntBits(
-                other.getLatitude()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getLongitude())
-            == java.lang.Float.floatToIntBits(
-                other.getLongitude()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getSpeed())
-            == java.lang.Float.floatToIntBits(
-                other.getSpeed()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getCourse())
-            == java.lang.Float.floatToIntBits(
-                other.getCourse()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getHorizontalAccuracy())
-            == java.lang.Float.floatToIntBits(
-                other.getHorizontalAccuracy()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getVerticalAccuracy())
-            == java.lang.Float.floatToIntBits(
-                other.getVerticalAccuracy()));
-        result = result && (getProviderStatus()
-            == other.getProviderStatus());
-        result = result && (getFloor()
-            == other.getFloor());
-        result = result && (getLocationType()
-            == other.getLocationType());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
-        hash = (53 * hash) + getProvider().hashCode();
-        hash = (37 * hash) + TIMESTAMP_SNAPSHOT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTimestampSnapshot());
-        hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getAltitude());
-        hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getLatitude());
-        hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getLongitude());
-        hash = (37 * hash) + SPEED_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getSpeed());
-        hash = (37 * hash) + COURSE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getCourse());
-        hash = (37 * hash) + HORIZONTAL_ACCURACY_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getHorizontalAccuracy());
-        hash = (37 * hash) + VERTICAL_ACCURACY_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getVerticalAccuracy());
-        hash = (37 * hash) + PROVIDER_STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getProviderStatus());
-        hash = (37 * hash) + FLOOR_FIELD_NUMBER;
-        hash = (53 * hash) + getFloor();
-        hash = (37 * hash) + LOCATION_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getLocationType());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          provider_ = "";
 
-          timestampSnapshot_ = 0L;
-
-          altitude_ = 0F;
-
-          latitude_ = 0F;
-
-          longitude_ = 0F;
-
-          speed_ = 0F;
-
-          course_ = 0F;
-
-          horizontalAccuracy_ = 0F;
-
-          verticalAccuracy_ = 0F;
-
-          providerStatus_ = 0L;
-
-          floor_ = 0;
-
-          locationType_ = 0L;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix(this);
-          result.provider_ = provider_;
-          result.timestampSnapshot_ = timestampSnapshot_;
-          result.altitude_ = altitude_;
-          result.latitude_ = latitude_;
-          result.longitude_ = longitude_;
-          result.speed_ = speed_;
-          result.course_ = course_;
-          result.horizontalAccuracy_ = horizontalAccuracy_;
-          result.verticalAccuracy_ = verticalAccuracy_;
-          result.providerStatus_ = providerStatus_;
-          result.floor_ = floor_;
-          result.locationType_ = locationType_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.getDefaultInstance()) return this;
-          if (!other.getProvider().isEmpty()) {
-            provider_ = other.provider_;
-            onChanged();
-          }
-          if (other.getTimestampSnapshot() != 0L) {
-            setTimestampSnapshot(other.getTimestampSnapshot());
-          }
-          if (other.getAltitude() != 0F) {
-            setAltitude(other.getAltitude());
-          }
-          if (other.getLatitude() != 0F) {
-            setLatitude(other.getLatitude());
-          }
-          if (other.getLongitude() != 0F) {
-            setLongitude(other.getLongitude());
-          }
-          if (other.getSpeed() != 0F) {
-            setSpeed(other.getSpeed());
-          }
-          if (other.getCourse() != 0F) {
-            setCourse(other.getCourse());
-          }
-          if (other.getHorizontalAccuracy() != 0F) {
-            setHorizontalAccuracy(other.getHorizontalAccuracy());
-          }
-          if (other.getVerticalAccuracy() != 0F) {
-            setVerticalAccuracy(other.getVerticalAccuracy());
-          }
-          if (other.getProviderStatus() != 0L) {
-            setProviderStatus(other.getProviderStatus());
-          }
-          if (other.getFloor() != 0) {
-            setFloor(other.getFloor());
-          }
-          if (other.getLocationType() != 0L) {
-            setLocationType(other.getLocationType());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object provider_ = "";
         /**
          * <pre>
          * "network", "gps", "fused", possibly others
@@ -3540,16 +892,7 @@ public final class Envelopes {
          * <code>optional string provider = 1;</code>
          */
         public java.lang.String getProvider() {
-          java.lang.Object ref = provider_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            provider_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getProvider();
         }
         /**
          * <pre>
@@ -3560,16 +903,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getProviderBytes() {
-          java.lang.Object ref = provider_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            provider_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getProviderBytes();
         }
         /**
          * <pre>
@@ -3580,12 +914,8 @@ public final class Envelopes {
          */
         public Builder setProvider(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          provider_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setProvider(value);
           return this;
         }
         /**
@@ -3596,9 +926,8 @@ public final class Envelopes {
          * <code>optional string provider = 1;</code>
          */
         public Builder clearProvider() {
-          
-          provider_ = getDefaultInstance().getProvider();
-          onChanged();
+          copyOnWrite();
+          instance.clearProvider();
           return this;
         }
         /**
@@ -3610,17 +939,11 @@ public final class Envelopes {
          */
         public Builder setProviderBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          provider_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setProviderBytes(value);
           return this;
         }
 
-        private long timestampSnapshot_ ;
         /**
          * <pre>
          * in ms since start
@@ -3629,7 +952,7 @@ public final class Envelopes {
          * <code>optional uint64 timestamp_snapshot = 2;</code>
          */
         public long getTimestampSnapshot() {
-          return timestampSnapshot_;
+          return instance.getTimestampSnapshot();
         }
         /**
          * <pre>
@@ -3639,9 +962,8 @@ public final class Envelopes {
          * <code>optional uint64 timestamp_snapshot = 2;</code>
          */
         public Builder setTimestampSnapshot(long value) {
-          
-          timestampSnapshot_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTimestampSnapshot(value);
           return this;
         }
         /**
@@ -3652,13 +974,11 @@ public final class Envelopes {
          * <code>optional uint64 timestamp_snapshot = 2;</code>
          */
         public Builder clearTimestampSnapshot() {
-          
-          timestampSnapshot_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearTimestampSnapshot();
           return this;
         }
 
-        private float altitude_ ;
         /**
          * <pre>
          * Confirmed on android/ios
@@ -3667,7 +987,7 @@ public final class Envelopes {
          * <code>optional float altitude = 4;</code>
          */
         public float getAltitude() {
-          return altitude_;
+          return instance.getAltitude();
         }
         /**
          * <pre>
@@ -3677,9 +997,8 @@ public final class Envelopes {
          * <code>optional float altitude = 4;</code>
          */
         public Builder setAltitude(float value) {
-          
-          altitude_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAltitude(value);
           return this;
         }
         /**
@@ -3690,65 +1009,57 @@ public final class Envelopes {
          * <code>optional float altitude = 4;</code>
          */
         public Builder clearAltitude() {
-          
-          altitude_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearAltitude();
           return this;
         }
 
-        private float latitude_ ;
         /**
          * <code>optional float latitude = 13;</code>
          */
         public float getLatitude() {
-          return latitude_;
+          return instance.getLatitude();
         }
         /**
          * <code>optional float latitude = 13;</code>
          */
         public Builder setLatitude(float value) {
-          
-          latitude_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setLatitude(value);
           return this;
         }
         /**
          * <code>optional float latitude = 13;</code>
          */
         public Builder clearLatitude() {
-          
-          latitude_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearLatitude();
           return this;
         }
 
-        private float longitude_ ;
         /**
          * <code>optional float longitude = 14;</code>
          */
         public float getLongitude() {
-          return longitude_;
+          return instance.getLongitude();
         }
         /**
          * <code>optional float longitude = 14;</code>
          */
         public Builder setLongitude(float value) {
-          
-          longitude_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setLongitude(value);
           return this;
         }
         /**
          * <code>optional float longitude = 14;</code>
          */
         public Builder clearLongitude() {
-          
-          longitude_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearLongitude();
           return this;
         }
 
-        private float speed_ ;
         /**
          * <pre>
          * iOS only (-1 for no reading available, speed in m/s)
@@ -3757,7 +1068,7 @@ public final class Envelopes {
          * <code>optional float speed = 18;</code>
          */
         public float getSpeed() {
-          return speed_;
+          return instance.getSpeed();
         }
         /**
          * <pre>
@@ -3767,9 +1078,8 @@ public final class Envelopes {
          * <code>optional float speed = 18;</code>
          */
         public Builder setSpeed(float value) {
-          
-          speed_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setSpeed(value);
           return this;
         }
         /**
@@ -3780,13 +1090,11 @@ public final class Envelopes {
          * <code>optional float speed = 18;</code>
          */
         public Builder clearSpeed() {
-          
-          speed_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearSpeed();
           return this;
         }
 
-        private float course_ ;
         /**
          * <pre>
          * iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by &#64;marcel
@@ -3795,7 +1103,7 @@ public final class Envelopes {
          * <code>optional float course = 20;</code>
          */
         public float getCourse() {
-          return course_;
+          return instance.getCourse();
         }
         /**
          * <pre>
@@ -3805,9 +1113,8 @@ public final class Envelopes {
          * <code>optional float course = 20;</code>
          */
         public Builder setCourse(float value) {
-          
-          course_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setCourse(value);
           return this;
         }
         /**
@@ -3818,13 +1125,11 @@ public final class Envelopes {
          * <code>optional float course = 20;</code>
          */
         public Builder clearCourse() {
-          
-          course_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearCourse();
           return this;
         }
 
-        private float horizontalAccuracy_ ;
         /**
          * <pre>
          * in meters, both on Android and iOS
@@ -3833,7 +1138,7 @@ public final class Envelopes {
          * <code>optional float horizontal_accuracy = 21;</code>
          */
         public float getHorizontalAccuracy() {
-          return horizontalAccuracy_;
+          return instance.getHorizontalAccuracy();
         }
         /**
          * <pre>
@@ -3843,9 +1148,8 @@ public final class Envelopes {
          * <code>optional float horizontal_accuracy = 21;</code>
          */
         public Builder setHorizontalAccuracy(float value) {
-          
-          horizontalAccuracy_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setHorizontalAccuracy(value);
           return this;
         }
         /**
@@ -3856,13 +1160,11 @@ public final class Envelopes {
          * <code>optional float horizontal_accuracy = 21;</code>
          */
         public Builder clearHorizontalAccuracy() {
-          
-          horizontalAccuracy_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearHorizontalAccuracy();
           return this;
         }
 
-        private float verticalAccuracy_ ;
         /**
          * <pre>
          * iOS only
@@ -3871,7 +1173,7 @@ public final class Envelopes {
          * <code>optional float vertical_accuracy = 22;</code>
          */
         public float getVerticalAccuracy() {
-          return verticalAccuracy_;
+          return instance.getVerticalAccuracy();
         }
         /**
          * <pre>
@@ -3881,9 +1183,8 @@ public final class Envelopes {
          * <code>optional float vertical_accuracy = 22;</code>
          */
         public Builder setVerticalAccuracy(float value) {
-          
-          verticalAccuracy_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setVerticalAccuracy(value);
           return this;
         }
         /**
@@ -3894,13 +1195,11 @@ public final class Envelopes {
          * <code>optional float vertical_accuracy = 22;</code>
          */
         public Builder clearVerticalAccuracy() {
-          
-          verticalAccuracy_ = 0F;
-          onChanged();
+          copyOnWrite();
+          instance.clearVerticalAccuracy();
           return this;
         }
 
-        private long providerStatus_ ;
         /**
          * <pre>
          * Usually 3 (possibly GPS status: 1 = no fix, 2 = acquiring/inaccurate, 3 = fix acquired)
@@ -3909,7 +1208,7 @@ public final class Envelopes {
          * <code>optional uint64 provider_status = 26;</code>
          */
         public long getProviderStatus() {
-          return providerStatus_;
+          return instance.getProviderStatus();
         }
         /**
          * <pre>
@@ -3919,9 +1218,8 @@ public final class Envelopes {
          * <code>optional uint64 provider_status = 26;</code>
          */
         public Builder setProviderStatus(long value) {
-          
-          providerStatus_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setProviderStatus(value);
           return this;
         }
         /**
@@ -3932,13 +1230,11 @@ public final class Envelopes {
          * <code>optional uint64 provider_status = 26;</code>
          */
         public Builder clearProviderStatus() {
-          
-          providerStatus_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearProviderStatus();
           return this;
         }
 
-        private int floor_ ;
         /**
          * <pre>
          * On iOS there are some LocationFixes with unk26=1 and everything else empty
@@ -3947,7 +1243,7 @@ public final class Envelopes {
          * <code>optional uint32 floor = 27;</code>
          */
         public int getFloor() {
-          return floor_;
+          return instance.getFloor();
         }
         /**
          * <pre>
@@ -3957,9 +1253,8 @@ public final class Envelopes {
          * <code>optional uint32 floor = 27;</code>
          */
         public Builder setFloor(int value) {
-          
-          floor_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFloor(value);
           return this;
         }
         /**
@@ -3970,13 +1265,11 @@ public final class Envelopes {
          * <code>optional uint32 floor = 27;</code>
          */
         public Builder clearFloor() {
-          
-          floor_ = 0;
-          onChanged();
+          copyOnWrite();
+          instance.clearFloor();
           return this;
         }
 
-        private long locationType_ ;
         /**
          * <pre>
          * Always 1 (if there is data at all)
@@ -3985,7 +1278,7 @@ public final class Envelopes {
          * <code>optional uint64 location_type = 28;</code>
          */
         public long getLocationType() {
-          return locationType_;
+          return instance.getLocationType();
         }
         /**
          * <pre>
@@ -3995,9 +1288,8 @@ public final class Envelopes {
          * <code>optional uint64 location_type = 28;</code>
          */
         public Builder setLocationType(long value) {
-          
-          locationType_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setLocationType(value);
           return this;
         }
         /**
@@ -4008,63 +1300,190 @@ public final class Envelopes {
          * <code>optional uint64 location_type = 28;</code>
          */
         public Builder clearLocationType() {
-          
-          locationType_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearLocationType();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix) arg1;
+            provider_ = visitor.visitString(!provider_.isEmpty(), provider_,
+                !other.provider_.isEmpty(), other.provider_);
+            timestampSnapshot_ = visitor.visitLong(timestampSnapshot_ != 0L, timestampSnapshot_,
+                other.timestampSnapshot_ != 0L, other.timestampSnapshot_);
+            altitude_ = visitor.visitFloat(altitude_ != 0F, altitude_,
+                other.altitude_ != 0F, other.altitude_);
+            latitude_ = visitor.visitFloat(latitude_ != 0F, latitude_,
+                other.latitude_ != 0F, other.latitude_);
+            longitude_ = visitor.visitFloat(longitude_ != 0F, longitude_,
+                other.longitude_ != 0F, other.longitude_);
+            speed_ = visitor.visitFloat(speed_ != 0F, speed_,
+                other.speed_ != 0F, other.speed_);
+            course_ = visitor.visitFloat(course_ != 0F, course_,
+                other.course_ != 0F, other.course_);
+            horizontalAccuracy_ = visitor.visitFloat(horizontalAccuracy_ != 0F, horizontalAccuracy_,
+                other.horizontalAccuracy_ != 0F, other.horizontalAccuracy_);
+            verticalAccuracy_ = visitor.visitFloat(verticalAccuracy_ != 0F, verticalAccuracy_,
+                other.verticalAccuracy_ != 0F, other.verticalAccuracy_);
+            providerStatus_ = visitor.visitLong(providerStatus_ != 0L, providerStatus_,
+                other.providerStatus_ != 0L, other.providerStatus_);
+            floor_ = visitor.visitInt(floor_ != 0, floor_,
+                other.floor_ != 0, other.floor_);
+            locationType_ = visitor.visitLong(locationType_ != 0L, locationType_,
+                other.locationType_ != 0L, other.locationType_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 10: {
+                    String s = input.readStringRequireUtf8();
+
+                    provider_ = s;
+                    break;
+                  }
+                  case 16: {
+
+                    timestampSnapshot_ = input.readUInt64();
+                    break;
+                  }
+                  case 37: {
+
+                    altitude_ = input.readFloat();
+                    break;
+                  }
+                  case 109: {
+
+                    latitude_ = input.readFloat();
+                    break;
+                  }
+                  case 117: {
+
+                    longitude_ = input.readFloat();
+                    break;
+                  }
+                  case 149: {
+
+                    speed_ = input.readFloat();
+                    break;
+                  }
+                  case 165: {
+
+                    course_ = input.readFloat();
+                    break;
+                  }
+                  case 173: {
+
+                    horizontalAccuracy_ = input.readFloat();
+                    break;
+                  }
+                  case 181: {
+
+                    verticalAccuracy_ = input.readFloat();
+                    break;
+                  }
+                  case 208: {
+
+                    providerStatus_ = input.readUInt64();
+                    break;
+                  }
+                  case 216: {
+
+                    floor_ = input.readUInt32();
+                    break;
+                  }
+                  case 224: {
+
+                    locationType_ = input.readUInt64();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix();
+        DEFAULT_INSTANCE = new LocationFix();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<LocationFix>
-          PARSER = new com.google.protobuf.AbstractParser<LocationFix>() {
-        public LocationFix parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new LocationFix(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<LocationFix> PARSER;
 
       public static com.google.protobuf.Parser<LocationFix> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<LocationFix> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface AndroidGpsInfoOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <code>optional uint64 time_to_fix = 1;</code>
@@ -4170,245 +1589,19 @@ public final class Envelopes {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo}
      */
     public  static final class AndroidGpsInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            AndroidGpsInfo, AndroidGpsInfo.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo)
         AndroidGpsInfoOrBuilder {
-      // Use AndroidGpsInfo.newBuilder() to construct.
-      private AndroidGpsInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private AndroidGpsInfo() {
-        timeToFix_ = 0L;
-        satellitesPrn_ = java.util.Collections.emptyList();
-        azimuth_ = java.util.Collections.emptyList();
-        elevation_ = java.util.Collections.emptyList();
-        snr_ = java.util.Collections.emptyList();
-        hasAlmanac_ = java.util.Collections.emptyList();
-        hasEphemeris_ = java.util.Collections.emptyList();
-        usedInFix_ = java.util.Collections.emptyList();
+        satellitesPrn_ = emptyIntList();
+        azimuth_ = emptyFloatList();
+        elevation_ = emptyFloatList();
+        snr_ = emptyFloatList();
+        hasAlmanac_ = emptyBooleanList();
+        hasEphemeris_ = emptyBooleanList();
+        usedInFix_ = emptyBooleanList();
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private AndroidGpsInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-
-                timeToFix_ = input.readUInt64();
-                break;
-              }
-              case 16: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  satellitesPrn_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                satellitesPrn_.add(input.readInt32());
-                break;
-              }
-              case 18: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-                  satellitesPrn_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  satellitesPrn_.add(input.readInt32());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 29: {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                  azimuth_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                azimuth_.add(input.readFloat());
-                break;
-              }
-              case 26: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                  azimuth_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  azimuth_.add(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 37: {
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                  elevation_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                elevation_.add(input.readFloat());
-                break;
-              }
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                  elevation_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  elevation_.add(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 45: {
-                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                  snr_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000010;
-                }
-                snr_.add(input.readFloat());
-                break;
-              }
-              case 42: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                  snr_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000010;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  snr_.add(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 48: {
-                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                  hasAlmanac_ = new java.util.ArrayList<java.lang.Boolean>();
-                  mutable_bitField0_ |= 0x00000020;
-                }
-                hasAlmanac_.add(input.readBool());
-                break;
-              }
-              case 50: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-                  hasAlmanac_ = new java.util.ArrayList<java.lang.Boolean>();
-                  mutable_bitField0_ |= 0x00000020;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  hasAlmanac_.add(input.readBool());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 56: {
-                if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                  hasEphemeris_ = new java.util.ArrayList<java.lang.Boolean>();
-                  mutable_bitField0_ |= 0x00000040;
-                }
-                hasEphemeris_.add(input.readBool());
-                break;
-              }
-              case 58: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000040) == 0x00000040) && input.getBytesUntilLimit() > 0) {
-                  hasEphemeris_ = new java.util.ArrayList<java.lang.Boolean>();
-                  mutable_bitField0_ |= 0x00000040;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  hasEphemeris_.add(input.readBool());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 64: {
-                if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                  usedInFix_ = new java.util.ArrayList<java.lang.Boolean>();
-                  mutable_bitField0_ |= 0x00000080;
-                }
-                usedInFix_.add(input.readBool());
-                break;
-              }
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000080) == 0x00000080) && input.getBytesUntilLimit() > 0) {
-                  usedInFix_ = new java.util.ArrayList<java.lang.Boolean>();
-                  mutable_bitField0_ |= 0x00000080;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  usedInFix_.add(input.readBool());
-                }
-                input.popLimit(limit);
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-            satellitesPrn_ = java.util.Collections.unmodifiableList(satellitesPrn_);
-          }
-          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-            azimuth_ = java.util.Collections.unmodifiableList(azimuth_);
-          }
-          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-            elevation_ = java.util.Collections.unmodifiableList(elevation_);
-          }
-          if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-            snr_ = java.util.Collections.unmodifiableList(snr_);
-          }
-          if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-            hasAlmanac_ = java.util.Collections.unmodifiableList(hasAlmanac_);
-          }
-          if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-            hasEphemeris_ = java.util.Collections.unmodifiableList(hasEphemeris_);
-          }
-          if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-            usedInFix_ = java.util.Collections.unmodifiableList(usedInFix_);
-          }
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder.class);
-      }
-
       private int bitField0_;
       public static final int TIME_TO_FIX_FIELD_NUMBER = 1;
       private long timeToFix_;
@@ -4418,9 +1611,23 @@ public final class Envelopes {
       public long getTimeToFix() {
         return timeToFix_;
       }
+      /**
+       * <code>optional uint64 time_to_fix = 1;</code>
+       */
+      private void setTimeToFix(long value) {
+        
+        timeToFix_ = value;
+      }
+      /**
+       * <code>optional uint64 time_to_fix = 1;</code>
+       */
+      private void clearTimeToFix() {
+        
+        timeToFix_ = 0L;
+      }
 
       public static final int SATELLITES_PRN_FIELD_NUMBER = 2;
-      private java.util.List<java.lang.Integer> satellitesPrn_;
+      private com.google.protobuf.Internal.IntList satellitesPrn_;
       /**
        * <code>repeated int32 satellites_prn = 2;</code>
        */
@@ -4438,12 +1645,47 @@ public final class Envelopes {
        * <code>repeated int32 satellites_prn = 2;</code>
        */
       public int getSatellitesPrn(int index) {
-        return satellitesPrn_.get(index);
+        return satellitesPrn_.getInt(index);
       }
-      private int satellitesPrnMemoizedSerializedSize = -1;
+      private void ensureSatellitesPrnIsMutable() {
+        if (!satellitesPrn_.isModifiable()) {
+          satellitesPrn_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(satellitesPrn_);
+         }
+      }
+      /**
+       * <code>repeated int32 satellites_prn = 2;</code>
+       */
+      private void setSatellitesPrn(
+          int index, int value) {
+        ensureSatellitesPrnIsMutable();
+        satellitesPrn_.setInt(index, value);
+      }
+      /**
+       * <code>repeated int32 satellites_prn = 2;</code>
+       */
+      private void addSatellitesPrn(int value) {
+        ensureSatellitesPrnIsMutable();
+        satellitesPrn_.addInt(value);
+      }
+      /**
+       * <code>repeated int32 satellites_prn = 2;</code>
+       */
+      private void addAllSatellitesPrn(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureSatellitesPrnIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, satellitesPrn_);
+      }
+      /**
+       * <code>repeated int32 satellites_prn = 2;</code>
+       */
+      private void clearSatellitesPrn() {
+        satellitesPrn_ = emptyIntList();
+      }
 
       public static final int AZIMUTH_FIELD_NUMBER = 3;
-      private java.util.List<java.lang.Float> azimuth_;
+      private com.google.protobuf.Internal.FloatList azimuth_;
       /**
        * <code>repeated float azimuth = 3;</code>
        */
@@ -4461,12 +1703,47 @@ public final class Envelopes {
        * <code>repeated float azimuth = 3;</code>
        */
       public float getAzimuth(int index) {
-        return azimuth_.get(index);
+        return azimuth_.getFloat(index);
       }
-      private int azimuthMemoizedSerializedSize = -1;
+      private void ensureAzimuthIsMutable() {
+        if (!azimuth_.isModifiable()) {
+          azimuth_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(azimuth_);
+         }
+      }
+      /**
+       * <code>repeated float azimuth = 3;</code>
+       */
+      private void setAzimuth(
+          int index, float value) {
+        ensureAzimuthIsMutable();
+        azimuth_.setFloat(index, value);
+      }
+      /**
+       * <code>repeated float azimuth = 3;</code>
+       */
+      private void addAzimuth(float value) {
+        ensureAzimuthIsMutable();
+        azimuth_.addFloat(value);
+      }
+      /**
+       * <code>repeated float azimuth = 3;</code>
+       */
+      private void addAllAzimuth(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureAzimuthIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, azimuth_);
+      }
+      /**
+       * <code>repeated float azimuth = 3;</code>
+       */
+      private void clearAzimuth() {
+        azimuth_ = emptyFloatList();
+      }
 
       public static final int ELEVATION_FIELD_NUMBER = 4;
-      private java.util.List<java.lang.Float> elevation_;
+      private com.google.protobuf.Internal.FloatList elevation_;
       /**
        * <code>repeated float elevation = 4;</code>
        */
@@ -4484,12 +1761,47 @@ public final class Envelopes {
        * <code>repeated float elevation = 4;</code>
        */
       public float getElevation(int index) {
-        return elevation_.get(index);
+        return elevation_.getFloat(index);
       }
-      private int elevationMemoizedSerializedSize = -1;
+      private void ensureElevationIsMutable() {
+        if (!elevation_.isModifiable()) {
+          elevation_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(elevation_);
+         }
+      }
+      /**
+       * <code>repeated float elevation = 4;</code>
+       */
+      private void setElevation(
+          int index, float value) {
+        ensureElevationIsMutable();
+        elevation_.setFloat(index, value);
+      }
+      /**
+       * <code>repeated float elevation = 4;</code>
+       */
+      private void addElevation(float value) {
+        ensureElevationIsMutable();
+        elevation_.addFloat(value);
+      }
+      /**
+       * <code>repeated float elevation = 4;</code>
+       */
+      private void addAllElevation(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureElevationIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, elevation_);
+      }
+      /**
+       * <code>repeated float elevation = 4;</code>
+       */
+      private void clearElevation() {
+        elevation_ = emptyFloatList();
+      }
 
       public static final int SNR_FIELD_NUMBER = 5;
-      private java.util.List<java.lang.Float> snr_;
+      private com.google.protobuf.Internal.FloatList snr_;
       /**
        * <code>repeated float snr = 5;</code>
        */
@@ -4507,12 +1819,47 @@ public final class Envelopes {
        * <code>repeated float snr = 5;</code>
        */
       public float getSnr(int index) {
-        return snr_.get(index);
+        return snr_.getFloat(index);
       }
-      private int snrMemoizedSerializedSize = -1;
+      private void ensureSnrIsMutable() {
+        if (!snr_.isModifiable()) {
+          snr_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(snr_);
+         }
+      }
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      private void setSnr(
+          int index, float value) {
+        ensureSnrIsMutable();
+        snr_.setFloat(index, value);
+      }
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      private void addSnr(float value) {
+        ensureSnrIsMutable();
+        snr_.addFloat(value);
+      }
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      private void addAllSnr(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureSnrIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, snr_);
+      }
+      /**
+       * <code>repeated float snr = 5;</code>
+       */
+      private void clearSnr() {
+        snr_ = emptyFloatList();
+      }
 
       public static final int HAS_ALMANAC_FIELD_NUMBER = 6;
-      private java.util.List<java.lang.Boolean> hasAlmanac_;
+      private com.google.protobuf.Internal.BooleanList hasAlmanac_;
       /**
        * <code>repeated bool has_almanac = 6;</code>
        */
@@ -4530,12 +1877,47 @@ public final class Envelopes {
        * <code>repeated bool has_almanac = 6;</code>
        */
       public boolean getHasAlmanac(int index) {
-        return hasAlmanac_.get(index);
+        return hasAlmanac_.getBoolean(index);
       }
-      private int hasAlmanacMemoizedSerializedSize = -1;
+      private void ensureHasAlmanacIsMutable() {
+        if (!hasAlmanac_.isModifiable()) {
+          hasAlmanac_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(hasAlmanac_);
+         }
+      }
+      /**
+       * <code>repeated bool has_almanac = 6;</code>
+       */
+      private void setHasAlmanac(
+          int index, boolean value) {
+        ensureHasAlmanacIsMutable();
+        hasAlmanac_.setBoolean(index, value);
+      }
+      /**
+       * <code>repeated bool has_almanac = 6;</code>
+       */
+      private void addHasAlmanac(boolean value) {
+        ensureHasAlmanacIsMutable();
+        hasAlmanac_.addBoolean(value);
+      }
+      /**
+       * <code>repeated bool has_almanac = 6;</code>
+       */
+      private void addAllHasAlmanac(
+          java.lang.Iterable<? extends java.lang.Boolean> values) {
+        ensureHasAlmanacIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, hasAlmanac_);
+      }
+      /**
+       * <code>repeated bool has_almanac = 6;</code>
+       */
+      private void clearHasAlmanac() {
+        hasAlmanac_ = emptyBooleanList();
+      }
 
       public static final int HAS_EPHEMERIS_FIELD_NUMBER = 7;
-      private java.util.List<java.lang.Boolean> hasEphemeris_;
+      private com.google.protobuf.Internal.BooleanList hasEphemeris_;
       /**
        * <code>repeated bool has_ephemeris = 7;</code>
        */
@@ -4553,12 +1935,47 @@ public final class Envelopes {
        * <code>repeated bool has_ephemeris = 7;</code>
        */
       public boolean getHasEphemeris(int index) {
-        return hasEphemeris_.get(index);
+        return hasEphemeris_.getBoolean(index);
       }
-      private int hasEphemerisMemoizedSerializedSize = -1;
+      private void ensureHasEphemerisIsMutable() {
+        if (!hasEphemeris_.isModifiable()) {
+          hasEphemeris_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(hasEphemeris_);
+         }
+      }
+      /**
+       * <code>repeated bool has_ephemeris = 7;</code>
+       */
+      private void setHasEphemeris(
+          int index, boolean value) {
+        ensureHasEphemerisIsMutable();
+        hasEphemeris_.setBoolean(index, value);
+      }
+      /**
+       * <code>repeated bool has_ephemeris = 7;</code>
+       */
+      private void addHasEphemeris(boolean value) {
+        ensureHasEphemerisIsMutable();
+        hasEphemeris_.addBoolean(value);
+      }
+      /**
+       * <code>repeated bool has_ephemeris = 7;</code>
+       */
+      private void addAllHasEphemeris(
+          java.lang.Iterable<? extends java.lang.Boolean> values) {
+        ensureHasEphemerisIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, hasEphemeris_);
+      }
+      /**
+       * <code>repeated bool has_ephemeris = 7;</code>
+       */
+      private void clearHasEphemeris() {
+        hasEphemeris_ = emptyBooleanList();
+      }
 
       public static final int USED_IN_FIX_FIELD_NUMBER = 8;
-      private java.util.List<java.lang.Boolean> usedInFix_;
+      private com.google.protobuf.Internal.BooleanList usedInFix_;
       /**
        * <code>repeated bool used_in_fix = 8;</code>
        */
@@ -4576,18 +1993,43 @@ public final class Envelopes {
        * <code>repeated bool used_in_fix = 8;</code>
        */
       public boolean getUsedInFix(int index) {
-        return usedInFix_.get(index);
+        return usedInFix_.getBoolean(index);
       }
-      private int usedInFixMemoizedSerializedSize = -1;
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      private void ensureUsedInFixIsMutable() {
+        if (!usedInFix_.isModifiable()) {
+          usedInFix_ =
+              com.google.protobuf.GeneratedMessageLite.mutableCopy(usedInFix_);
+         }
+      }
+      /**
+       * <code>repeated bool used_in_fix = 8;</code>
+       */
+      private void setUsedInFix(
+          int index, boolean value) {
+        ensureUsedInFixIsMutable();
+        usedInFix_.setBoolean(index, value);
+      }
+      /**
+       * <code>repeated bool used_in_fix = 8;</code>
+       */
+      private void addUsedInFix(boolean value) {
+        ensureUsedInFixIsMutable();
+        usedInFix_.addBoolean(value);
+      }
+      /**
+       * <code>repeated bool used_in_fix = 8;</code>
+       */
+      private void addAllUsedInFix(
+          java.lang.Iterable<? extends java.lang.Boolean> values) {
+        ensureUsedInFixIsMutable();
+        com.google.protobuf.AbstractMessageLite.addAll(
+            values, usedInFix_);
+      }
+      /**
+       * <code>repeated bool used_in_fix = 8;</code>
+       */
+      private void clearUsedInFix() {
+        usedInFix_ = emptyBooleanList();
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -4596,59 +2038,31 @@ public final class Envelopes {
         if (timeToFix_ != 0L) {
           output.writeUInt64(1, timeToFix_);
         }
-        if (getSatellitesPrnList().size() > 0) {
-          output.writeUInt32NoTag(18);
-          output.writeUInt32NoTag(satellitesPrnMemoizedSerializedSize);
-        }
         for (int i = 0; i < satellitesPrn_.size(); i++) {
-          output.writeInt32NoTag(satellitesPrn_.get(i));
-        }
-        if (getAzimuthList().size() > 0) {
-          output.writeUInt32NoTag(26);
-          output.writeUInt32NoTag(azimuthMemoizedSerializedSize);
+          output.writeInt32(2, satellitesPrn_.getInt(i));
         }
         for (int i = 0; i < azimuth_.size(); i++) {
-          output.writeFloatNoTag(azimuth_.get(i));
-        }
-        if (getElevationList().size() > 0) {
-          output.writeUInt32NoTag(34);
-          output.writeUInt32NoTag(elevationMemoizedSerializedSize);
+          output.writeFloat(3, azimuth_.getFloat(i));
         }
         for (int i = 0; i < elevation_.size(); i++) {
-          output.writeFloatNoTag(elevation_.get(i));
-        }
-        if (getSnrList().size() > 0) {
-          output.writeUInt32NoTag(42);
-          output.writeUInt32NoTag(snrMemoizedSerializedSize);
+          output.writeFloat(4, elevation_.getFloat(i));
         }
         for (int i = 0; i < snr_.size(); i++) {
-          output.writeFloatNoTag(snr_.get(i));
-        }
-        if (getHasAlmanacList().size() > 0) {
-          output.writeUInt32NoTag(50);
-          output.writeUInt32NoTag(hasAlmanacMemoizedSerializedSize);
+          output.writeFloat(5, snr_.getFloat(i));
         }
         for (int i = 0; i < hasAlmanac_.size(); i++) {
-          output.writeBoolNoTag(hasAlmanac_.get(i));
-        }
-        if (getHasEphemerisList().size() > 0) {
-          output.writeUInt32NoTag(58);
-          output.writeUInt32NoTag(hasEphemerisMemoizedSerializedSize);
+          output.writeBool(6, hasAlmanac_.getBoolean(i));
         }
         for (int i = 0; i < hasEphemeris_.size(); i++) {
-          output.writeBoolNoTag(hasEphemeris_.get(i));
-        }
-        if (getUsedInFixList().size() > 0) {
-          output.writeUInt32NoTag(66);
-          output.writeUInt32NoTag(usedInFixMemoizedSerializedSize);
+          output.writeBool(7, hasEphemeris_.getBoolean(i));
         }
         for (int i = 0; i < usedInFix_.size(); i++) {
-          output.writeBoolNoTag(usedInFix_.get(i));
+          output.writeBool(8, usedInFix_.getBoolean(i));
         }
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -4660,237 +2074,119 @@ public final class Envelopes {
           int dataSize = 0;
           for (int i = 0; i < satellitesPrn_.size(); i++) {
             dataSize += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(satellitesPrn_.get(i));
+              .computeInt32SizeNoTag(satellitesPrn_.getInt(i));
           }
           size += dataSize;
-          if (!getSatellitesPrnList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          satellitesPrnMemoizedSerializedSize = dataSize;
+          size += 1 * getSatellitesPrnList().size();
         }
         {
           int dataSize = 0;
           dataSize = 4 * getAzimuthList().size();
           size += dataSize;
-          if (!getAzimuthList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          azimuthMemoizedSerializedSize = dataSize;
+          size += 1 * getAzimuthList().size();
         }
         {
           int dataSize = 0;
           dataSize = 4 * getElevationList().size();
           size += dataSize;
-          if (!getElevationList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          elevationMemoizedSerializedSize = dataSize;
+          size += 1 * getElevationList().size();
         }
         {
           int dataSize = 0;
           dataSize = 4 * getSnrList().size();
           size += dataSize;
-          if (!getSnrList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          snrMemoizedSerializedSize = dataSize;
+          size += 1 * getSnrList().size();
         }
         {
           int dataSize = 0;
           dataSize = 1 * getHasAlmanacList().size();
           size += dataSize;
-          if (!getHasAlmanacList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          hasAlmanacMemoizedSerializedSize = dataSize;
+          size += 1 * getHasAlmanacList().size();
         }
         {
           int dataSize = 0;
           dataSize = 1 * getHasEphemerisList().size();
           size += dataSize;
-          if (!getHasEphemerisList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          hasEphemerisMemoizedSerializedSize = dataSize;
+          size += 1 * getHasEphemerisList().size();
         }
         {
           int dataSize = 0;
           dataSize = 1 * getUsedInFixList().size();
           size += dataSize;
-          if (!getUsedInFixList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          usedInFixMemoizedSerializedSize = dataSize;
+          size += 1 * getUsedInFixList().size();
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo) obj;
-
-        boolean result = true;
-        result = result && (getTimeToFix()
-            == other.getTimeToFix());
-        result = result && getSatellitesPrnList()
-            .equals(other.getSatellitesPrnList());
-        result = result && getAzimuthList()
-            .equals(other.getAzimuthList());
-        result = result && getElevationList()
-            .equals(other.getElevationList());
-        result = result && getSnrList()
-            .equals(other.getSnrList());
-        result = result && getHasAlmanacList()
-            .equals(other.getHasAlmanacList());
-        result = result && getHasEphemerisList()
-            .equals(other.getHasEphemerisList());
-        result = result && getUsedInFixList()
-            .equals(other.getUsedInFixList());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + TIME_TO_FIX_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTimeToFix());
-        if (getSatellitesPrnCount() > 0) {
-          hash = (37 * hash) + SATELLITES_PRN_FIELD_NUMBER;
-          hash = (53 * hash) + getSatellitesPrnList().hashCode();
-        }
-        if (getAzimuthCount() > 0) {
-          hash = (37 * hash) + AZIMUTH_FIELD_NUMBER;
-          hash = (53 * hash) + getAzimuthList().hashCode();
-        }
-        if (getElevationCount() > 0) {
-          hash = (37 * hash) + ELEVATION_FIELD_NUMBER;
-          hash = (53 * hash) + getElevationList().hashCode();
-        }
-        if (getSnrCount() > 0) {
-          hash = (37 * hash) + SNR_FIELD_NUMBER;
-          hash = (53 * hash) + getSnrList().hashCode();
-        }
-        if (getHasAlmanacCount() > 0) {
-          hash = (37 * hash) + HAS_ALMANAC_FIELD_NUMBER;
-          hash = (53 * hash) + getHasAlmanacList().hashCode();
-        }
-        if (getHasEphemerisCount() > 0) {
-          hash = (37 * hash) + HAS_EPHEMERIS_FIELD_NUMBER;
-          hash = (53 * hash) + getHasEphemerisList().hashCode();
-        }
-        if (getUsedInFixCount() > 0) {
-          hash = (37 * hash) + USED_IN_FIX_FIELD_NUMBER;
-          hash = (53 * hash) + getUsedInFixList().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * <pre>
        * don't really care about this since we're not using it
@@ -4899,325 +2195,74 @@ public final class Envelopes {
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          timeToFix_ = 0L;
 
-          satellitesPrn_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          azimuth_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          elevation_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          snr_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          hasAlmanac_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-          hasEphemeris_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
-          usedInFix_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          result.timeToFix_ = timeToFix_;
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            satellitesPrn_ = java.util.Collections.unmodifiableList(satellitesPrn_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.satellitesPrn_ = satellitesPrn_;
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            azimuth_ = java.util.Collections.unmodifiableList(azimuth_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.azimuth_ = azimuth_;
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            elevation_ = java.util.Collections.unmodifiableList(elevation_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.elevation_ = elevation_;
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            snr_ = java.util.Collections.unmodifiableList(snr_);
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.snr_ = snr_;
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
-            hasAlmanac_ = java.util.Collections.unmodifiableList(hasAlmanac_);
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.hasAlmanac_ = hasAlmanac_;
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
-            hasEphemeris_ = java.util.Collections.unmodifiableList(hasEphemeris_);
-            bitField0_ = (bitField0_ & ~0x00000040);
-          }
-          result.hasEphemeris_ = hasEphemeris_;
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
-            usedInFix_ = java.util.Collections.unmodifiableList(usedInFix_);
-            bitField0_ = (bitField0_ & ~0x00000080);
-          }
-          result.usedInFix_ = usedInFix_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.getDefaultInstance()) return this;
-          if (other.getTimeToFix() != 0L) {
-            setTimeToFix(other.getTimeToFix());
-          }
-          if (!other.satellitesPrn_.isEmpty()) {
-            if (satellitesPrn_.isEmpty()) {
-              satellitesPrn_ = other.satellitesPrn_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureSatellitesPrnIsMutable();
-              satellitesPrn_.addAll(other.satellitesPrn_);
-            }
-            onChanged();
-          }
-          if (!other.azimuth_.isEmpty()) {
-            if (azimuth_.isEmpty()) {
-              azimuth_ = other.azimuth_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureAzimuthIsMutable();
-              azimuth_.addAll(other.azimuth_);
-            }
-            onChanged();
-          }
-          if (!other.elevation_.isEmpty()) {
-            if (elevation_.isEmpty()) {
-              elevation_ = other.elevation_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureElevationIsMutable();
-              elevation_.addAll(other.elevation_);
-            }
-            onChanged();
-          }
-          if (!other.snr_.isEmpty()) {
-            if (snr_.isEmpty()) {
-              snr_ = other.snr_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-            } else {
-              ensureSnrIsMutable();
-              snr_.addAll(other.snr_);
-            }
-            onChanged();
-          }
-          if (!other.hasAlmanac_.isEmpty()) {
-            if (hasAlmanac_.isEmpty()) {
-              hasAlmanac_ = other.hasAlmanac_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-            } else {
-              ensureHasAlmanacIsMutable();
-              hasAlmanac_.addAll(other.hasAlmanac_);
-            }
-            onChanged();
-          }
-          if (!other.hasEphemeris_.isEmpty()) {
-            if (hasEphemeris_.isEmpty()) {
-              hasEphemeris_ = other.hasEphemeris_;
-              bitField0_ = (bitField0_ & ~0x00000040);
-            } else {
-              ensureHasEphemerisIsMutable();
-              hasEphemeris_.addAll(other.hasEphemeris_);
-            }
-            onChanged();
-          }
-          if (!other.usedInFix_.isEmpty()) {
-            if (usedInFix_.isEmpty()) {
-              usedInFix_ = other.usedInFix_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-            } else {
-              ensureUsedInFixIsMutable();
-              usedInFix_.addAll(other.usedInFix_);
-            }
-            onChanged();
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private long timeToFix_ ;
         /**
          * <code>optional uint64 time_to_fix = 1;</code>
          */
         public long getTimeToFix() {
-          return timeToFix_;
+          return instance.getTimeToFix();
         }
         /**
          * <code>optional uint64 time_to_fix = 1;</code>
          */
         public Builder setTimeToFix(long value) {
-          
-          timeToFix_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTimeToFix(value);
           return this;
         }
         /**
          * <code>optional uint64 time_to_fix = 1;</code>
          */
         public Builder clearTimeToFix() {
-          
-          timeToFix_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearTimeToFix();
           return this;
         }
 
-        private java.util.List<java.lang.Integer> satellitesPrn_ = java.util.Collections.emptyList();
-        private void ensureSatellitesPrnIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            satellitesPrn_ = new java.util.ArrayList<java.lang.Integer>(satellitesPrn_);
-            bitField0_ |= 0x00000002;
-           }
-        }
         /**
          * <code>repeated int32 satellites_prn = 2;</code>
          */
         public java.util.List<java.lang.Integer>
             getSatellitesPrnList() {
-          return java.util.Collections.unmodifiableList(satellitesPrn_);
+          return java.util.Collections.unmodifiableList(
+              instance.getSatellitesPrnList());
         }
         /**
          * <code>repeated int32 satellites_prn = 2;</code>
          */
         public int getSatellitesPrnCount() {
-          return satellitesPrn_.size();
+          return instance.getSatellitesPrnCount();
         }
         /**
          * <code>repeated int32 satellites_prn = 2;</code>
          */
         public int getSatellitesPrn(int index) {
-          return satellitesPrn_.get(index);
+          return instance.getSatellitesPrn(index);
         }
         /**
          * <code>repeated int32 satellites_prn = 2;</code>
          */
         public Builder setSatellitesPrn(
             int index, int value) {
-          ensureSatellitesPrnIsMutable();
-          satellitesPrn_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setSatellitesPrn(index, value);
           return this;
         }
         /**
          * <code>repeated int32 satellites_prn = 2;</code>
          */
         public Builder addSatellitesPrn(int value) {
-          ensureSatellitesPrnIsMutable();
-          satellitesPrn_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addSatellitesPrn(value);
           return this;
         }
         /**
@@ -5225,65 +2270,54 @@ public final class Envelopes {
          */
         public Builder addAllSatellitesPrn(
             java.lang.Iterable<? extends java.lang.Integer> values) {
-          ensureSatellitesPrnIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, satellitesPrn_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllSatellitesPrn(values);
           return this;
         }
         /**
          * <code>repeated int32 satellites_prn = 2;</code>
          */
         public Builder clearSatellitesPrn() {
-          satellitesPrn_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
+          copyOnWrite();
+          instance.clearSatellitesPrn();
           return this;
         }
 
-        private java.util.List<java.lang.Float> azimuth_ = java.util.Collections.emptyList();
-        private void ensureAzimuthIsMutable() {
-          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-            azimuth_ = new java.util.ArrayList<java.lang.Float>(azimuth_);
-            bitField0_ |= 0x00000004;
-           }
-        }
         /**
          * <code>repeated float azimuth = 3;</code>
          */
         public java.util.List<java.lang.Float>
             getAzimuthList() {
-          return java.util.Collections.unmodifiableList(azimuth_);
+          return java.util.Collections.unmodifiableList(
+              instance.getAzimuthList());
         }
         /**
          * <code>repeated float azimuth = 3;</code>
          */
         public int getAzimuthCount() {
-          return azimuth_.size();
+          return instance.getAzimuthCount();
         }
         /**
          * <code>repeated float azimuth = 3;</code>
          */
         public float getAzimuth(int index) {
-          return azimuth_.get(index);
+          return instance.getAzimuth(index);
         }
         /**
          * <code>repeated float azimuth = 3;</code>
          */
         public Builder setAzimuth(
             int index, float value) {
-          ensureAzimuthIsMutable();
-          azimuth_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setAzimuth(index, value);
           return this;
         }
         /**
          * <code>repeated float azimuth = 3;</code>
          */
         public Builder addAzimuth(float value) {
-          ensureAzimuthIsMutable();
-          azimuth_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addAzimuth(value);
           return this;
         }
         /**
@@ -5291,65 +2325,54 @@ public final class Envelopes {
          */
         public Builder addAllAzimuth(
             java.lang.Iterable<? extends java.lang.Float> values) {
-          ensureAzimuthIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, azimuth_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllAzimuth(values);
           return this;
         }
         /**
          * <code>repeated float azimuth = 3;</code>
          */
         public Builder clearAzimuth() {
-          azimuth_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
+          copyOnWrite();
+          instance.clearAzimuth();
           return this;
         }
 
-        private java.util.List<java.lang.Float> elevation_ = java.util.Collections.emptyList();
-        private void ensureElevationIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-            elevation_ = new java.util.ArrayList<java.lang.Float>(elevation_);
-            bitField0_ |= 0x00000008;
-           }
-        }
         /**
          * <code>repeated float elevation = 4;</code>
          */
         public java.util.List<java.lang.Float>
             getElevationList() {
-          return java.util.Collections.unmodifiableList(elevation_);
+          return java.util.Collections.unmodifiableList(
+              instance.getElevationList());
         }
         /**
          * <code>repeated float elevation = 4;</code>
          */
         public int getElevationCount() {
-          return elevation_.size();
+          return instance.getElevationCount();
         }
         /**
          * <code>repeated float elevation = 4;</code>
          */
         public float getElevation(int index) {
-          return elevation_.get(index);
+          return instance.getElevation(index);
         }
         /**
          * <code>repeated float elevation = 4;</code>
          */
         public Builder setElevation(
             int index, float value) {
-          ensureElevationIsMutable();
-          elevation_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setElevation(index, value);
           return this;
         }
         /**
          * <code>repeated float elevation = 4;</code>
          */
         public Builder addElevation(float value) {
-          ensureElevationIsMutable();
-          elevation_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addElevation(value);
           return this;
         }
         /**
@@ -5357,65 +2380,54 @@ public final class Envelopes {
          */
         public Builder addAllElevation(
             java.lang.Iterable<? extends java.lang.Float> values) {
-          ensureElevationIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, elevation_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllElevation(values);
           return this;
         }
         /**
          * <code>repeated float elevation = 4;</code>
          */
         public Builder clearElevation() {
-          elevation_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
+          copyOnWrite();
+          instance.clearElevation();
           return this;
         }
 
-        private java.util.List<java.lang.Float> snr_ = java.util.Collections.emptyList();
-        private void ensureSnrIsMutable() {
-          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-            snr_ = new java.util.ArrayList<java.lang.Float>(snr_);
-            bitField0_ |= 0x00000010;
-           }
-        }
         /**
          * <code>repeated float snr = 5;</code>
          */
         public java.util.List<java.lang.Float>
             getSnrList() {
-          return java.util.Collections.unmodifiableList(snr_);
+          return java.util.Collections.unmodifiableList(
+              instance.getSnrList());
         }
         /**
          * <code>repeated float snr = 5;</code>
          */
         public int getSnrCount() {
-          return snr_.size();
+          return instance.getSnrCount();
         }
         /**
          * <code>repeated float snr = 5;</code>
          */
         public float getSnr(int index) {
-          return snr_.get(index);
+          return instance.getSnr(index);
         }
         /**
          * <code>repeated float snr = 5;</code>
          */
         public Builder setSnr(
             int index, float value) {
-          ensureSnrIsMutable();
-          snr_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setSnr(index, value);
           return this;
         }
         /**
          * <code>repeated float snr = 5;</code>
          */
         public Builder addSnr(float value) {
-          ensureSnrIsMutable();
-          snr_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addSnr(value);
           return this;
         }
         /**
@@ -5423,65 +2435,54 @@ public final class Envelopes {
          */
         public Builder addAllSnr(
             java.lang.Iterable<? extends java.lang.Float> values) {
-          ensureSnrIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, snr_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllSnr(values);
           return this;
         }
         /**
          * <code>repeated float snr = 5;</code>
          */
         public Builder clearSnr() {
-          snr_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
+          copyOnWrite();
+          instance.clearSnr();
           return this;
         }
 
-        private java.util.List<java.lang.Boolean> hasAlmanac_ = java.util.Collections.emptyList();
-        private void ensureHasAlmanacIsMutable() {
-          if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-            hasAlmanac_ = new java.util.ArrayList<java.lang.Boolean>(hasAlmanac_);
-            bitField0_ |= 0x00000020;
-           }
-        }
         /**
          * <code>repeated bool has_almanac = 6;</code>
          */
         public java.util.List<java.lang.Boolean>
             getHasAlmanacList() {
-          return java.util.Collections.unmodifiableList(hasAlmanac_);
+          return java.util.Collections.unmodifiableList(
+              instance.getHasAlmanacList());
         }
         /**
          * <code>repeated bool has_almanac = 6;</code>
          */
         public int getHasAlmanacCount() {
-          return hasAlmanac_.size();
+          return instance.getHasAlmanacCount();
         }
         /**
          * <code>repeated bool has_almanac = 6;</code>
          */
         public boolean getHasAlmanac(int index) {
-          return hasAlmanac_.get(index);
+          return instance.getHasAlmanac(index);
         }
         /**
          * <code>repeated bool has_almanac = 6;</code>
          */
         public Builder setHasAlmanac(
             int index, boolean value) {
-          ensureHasAlmanacIsMutable();
-          hasAlmanac_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setHasAlmanac(index, value);
           return this;
         }
         /**
          * <code>repeated bool has_almanac = 6;</code>
          */
         public Builder addHasAlmanac(boolean value) {
-          ensureHasAlmanacIsMutable();
-          hasAlmanac_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addHasAlmanac(value);
           return this;
         }
         /**
@@ -5489,65 +2490,54 @@ public final class Envelopes {
          */
         public Builder addAllHasAlmanac(
             java.lang.Iterable<? extends java.lang.Boolean> values) {
-          ensureHasAlmanacIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, hasAlmanac_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllHasAlmanac(values);
           return this;
         }
         /**
          * <code>repeated bool has_almanac = 6;</code>
          */
         public Builder clearHasAlmanac() {
-          hasAlmanac_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-          onChanged();
+          copyOnWrite();
+          instance.clearHasAlmanac();
           return this;
         }
 
-        private java.util.List<java.lang.Boolean> hasEphemeris_ = java.util.Collections.emptyList();
-        private void ensureHasEphemerisIsMutable() {
-          if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-            hasEphemeris_ = new java.util.ArrayList<java.lang.Boolean>(hasEphemeris_);
-            bitField0_ |= 0x00000040;
-           }
-        }
         /**
          * <code>repeated bool has_ephemeris = 7;</code>
          */
         public java.util.List<java.lang.Boolean>
             getHasEphemerisList() {
-          return java.util.Collections.unmodifiableList(hasEphemeris_);
+          return java.util.Collections.unmodifiableList(
+              instance.getHasEphemerisList());
         }
         /**
          * <code>repeated bool has_ephemeris = 7;</code>
          */
         public int getHasEphemerisCount() {
-          return hasEphemeris_.size();
+          return instance.getHasEphemerisCount();
         }
         /**
          * <code>repeated bool has_ephemeris = 7;</code>
          */
         public boolean getHasEphemeris(int index) {
-          return hasEphemeris_.get(index);
+          return instance.getHasEphemeris(index);
         }
         /**
          * <code>repeated bool has_ephemeris = 7;</code>
          */
         public Builder setHasEphemeris(
             int index, boolean value) {
-          ensureHasEphemerisIsMutable();
-          hasEphemeris_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setHasEphemeris(index, value);
           return this;
         }
         /**
          * <code>repeated bool has_ephemeris = 7;</code>
          */
         public Builder addHasEphemeris(boolean value) {
-          ensureHasEphemerisIsMutable();
-          hasEphemeris_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addHasEphemeris(value);
           return this;
         }
         /**
@@ -5555,65 +2545,54 @@ public final class Envelopes {
          */
         public Builder addAllHasEphemeris(
             java.lang.Iterable<? extends java.lang.Boolean> values) {
-          ensureHasEphemerisIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, hasEphemeris_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllHasEphemeris(values);
           return this;
         }
         /**
          * <code>repeated bool has_ephemeris = 7;</code>
          */
         public Builder clearHasEphemeris() {
-          hasEphemeris_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
-          onChanged();
+          copyOnWrite();
+          instance.clearHasEphemeris();
           return this;
         }
 
-        private java.util.List<java.lang.Boolean> usedInFix_ = java.util.Collections.emptyList();
-        private void ensureUsedInFixIsMutable() {
-          if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-            usedInFix_ = new java.util.ArrayList<java.lang.Boolean>(usedInFix_);
-            bitField0_ |= 0x00000080;
-           }
-        }
         /**
          * <code>repeated bool used_in_fix = 8;</code>
          */
         public java.util.List<java.lang.Boolean>
             getUsedInFixList() {
-          return java.util.Collections.unmodifiableList(usedInFix_);
+          return java.util.Collections.unmodifiableList(
+              instance.getUsedInFixList());
         }
         /**
          * <code>repeated bool used_in_fix = 8;</code>
          */
         public int getUsedInFixCount() {
-          return usedInFix_.size();
+          return instance.getUsedInFixCount();
         }
         /**
          * <code>repeated bool used_in_fix = 8;</code>
          */
         public boolean getUsedInFix(int index) {
-          return usedInFix_.get(index);
+          return instance.getUsedInFix(index);
         }
         /**
          * <code>repeated bool used_in_fix = 8;</code>
          */
         public Builder setUsedInFix(
             int index, boolean value) {
-          ensureUsedInFixIsMutable();
-          usedInFix_.set(index, value);
-          onChanged();
+          copyOnWrite();
+          instance.setUsedInFix(index, value);
           return this;
         }
         /**
          * <code>repeated bool used_in_fix = 8;</code>
          */
         public Builder addUsedInFix(boolean value) {
-          ensureUsedInFixIsMutable();
-          usedInFix_.add(value);
-          onChanged();
+          copyOnWrite();
+          instance.addUsedInFix(value);
           return this;
         }
         /**
@@ -5621,73 +2600,288 @@ public final class Envelopes {
          */
         public Builder addAllUsedInFix(
             java.lang.Iterable<? extends java.lang.Boolean> values) {
-          ensureUsedInFixIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, usedInFix_);
-          onChanged();
+          copyOnWrite();
+          instance.addAllUsedInFix(values);
           return this;
         }
         /**
          * <code>repeated bool used_in_fix = 8;</code>
          */
         public Builder clearUsedInFix() {
-          usedInFix_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-          onChanged();
+          copyOnWrite();
+          instance.clearUsedInFix();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            satellitesPrn_.makeImmutable();
+            azimuth_.makeImmutable();
+            elevation_.makeImmutable();
+            snr_.makeImmutable();
+            hasAlmanac_.makeImmutable();
+            hasEphemeris_.makeImmutable();
+            usedInFix_.makeImmutable();
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo) arg1;
+            timeToFix_ = visitor.visitLong(timeToFix_ != 0L, timeToFix_,
+                other.timeToFix_ != 0L, other.timeToFix_);
+            satellitesPrn_= visitor.visitIntList(satellitesPrn_, other.satellitesPrn_);
+            azimuth_= visitor.visitFloatList(azimuth_, other.azimuth_);
+            elevation_= visitor.visitFloatList(elevation_, other.elevation_);
+            snr_= visitor.visitFloatList(snr_, other.snr_);
+            hasAlmanac_= visitor.visitBooleanList(hasAlmanac_, other.hasAlmanac_);
+            hasEphemeris_= visitor.visitBooleanList(hasEphemeris_, other.hasEphemeris_);
+            usedInFix_= visitor.visitBooleanList(usedInFix_, other.usedInFix_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+              bitField0_ |= other.bitField0_;
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+
+                    timeToFix_ = input.readUInt64();
+                    break;
+                  }
+                  case 16: {
+                    if (!satellitesPrn_.isModifiable()) {
+                      satellitesPrn_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(satellitesPrn_);
+                    }
+                    satellitesPrn_.addInt(input.readInt32());
+                    break;
+                  }
+                  case 18: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!satellitesPrn_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      satellitesPrn_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(satellitesPrn_);
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      satellitesPrn_.addInt(input.readInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                  case 29: {
+                    if (!azimuth_.isModifiable()) {
+                      azimuth_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(azimuth_);
+                    }
+                    azimuth_.addFloat(input.readFloat());
+                    break;
+                  }
+                  case 26: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!azimuth_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      final int currentSize = azimuth_.size();
+                      azimuth_ = azimuth_.mutableCopyWithCapacity(
+                          currentSize + (length/4));
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      azimuth_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                  case 37: {
+                    if (!elevation_.isModifiable()) {
+                      elevation_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(elevation_);
+                    }
+                    elevation_.addFloat(input.readFloat());
+                    break;
+                  }
+                  case 34: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!elevation_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      final int currentSize = elevation_.size();
+                      elevation_ = elevation_.mutableCopyWithCapacity(
+                          currentSize + (length/4));
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      elevation_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                  case 45: {
+                    if (!snr_.isModifiable()) {
+                      snr_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(snr_);
+                    }
+                    snr_.addFloat(input.readFloat());
+                    break;
+                  }
+                  case 42: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!snr_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      final int currentSize = snr_.size();
+                      snr_ = snr_.mutableCopyWithCapacity(
+                          currentSize + (length/4));
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      snr_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                  case 48: {
+                    if (!hasAlmanac_.isModifiable()) {
+                      hasAlmanac_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(hasAlmanac_);
+                    }
+                    hasAlmanac_.addBoolean(input.readBool());
+                    break;
+                  }
+                  case 50: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!hasAlmanac_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      final int currentSize = hasAlmanac_.size();
+                      hasAlmanac_ = hasAlmanac_.mutableCopyWithCapacity(
+                          currentSize + (length/1));
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      hasAlmanac_.addBoolean(input.readBool());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                  case 56: {
+                    if (!hasEphemeris_.isModifiable()) {
+                      hasEphemeris_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(hasEphemeris_);
+                    }
+                    hasEphemeris_.addBoolean(input.readBool());
+                    break;
+                  }
+                  case 58: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!hasEphemeris_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      final int currentSize = hasEphemeris_.size();
+                      hasEphemeris_ = hasEphemeris_.mutableCopyWithCapacity(
+                          currentSize + (length/1));
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      hasEphemeris_.addBoolean(input.readBool());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                  case 64: {
+                    if (!usedInFix_.isModifiable()) {
+                      usedInFix_ =
+                          com.google.protobuf.GeneratedMessageLite.mutableCopy(usedInFix_);
+                    }
+                    usedInFix_.addBoolean(input.readBool());
+                    break;
+                  }
+                  case 66: {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!usedInFix_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                      final int currentSize = usedInFix_.size();
+                      usedInFix_ = usedInFix_.mutableCopyWithCapacity(
+                          currentSize + (length/1));
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      usedInFix_.addBoolean(input.readBool());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo();
+        DEFAULT_INSTANCE = new AndroidGpsInfo();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<AndroidGpsInfo>
-          PARSER = new com.google.protobuf.AbstractParser<AndroidGpsInfo>() {
-        public AndroidGpsInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AndroidGpsInfo(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<AndroidGpsInfo> PARSER;
 
       public static com.google.protobuf.Parser<AndroidGpsInfo> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<AndroidGpsInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface SensorInfoOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <pre>
@@ -5786,166 +2980,12 @@ public final class Envelopes {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo}
      */
     public  static final class SensorInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            SensorInfo, SensorInfo.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo)
         SensorInfoOrBuilder {
-      // Use SensorInfo.newBuilder() to construct.
-      private SensorInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private SensorInfo() {
-        timestampSnapshot_ = 0L;
-        linearAccelerationX_ = 0D;
-        linearAccelerationY_ = 0D;
-        linearAccelerationZ_ = 0D;
-        magneticFieldX_ = 0D;
-        magneticFieldY_ = 0D;
-        magneticFieldZ_ = 0D;
-        rotationVectorX_ = 0D;
-        rotationVectorY_ = 0D;
-        rotationVectorZ_ = 0D;
-        gyroscopeRawX_ = 0D;
-        gyroscopeRawY_ = 0D;
-        gyroscopeRawZ_ = 0D;
-        gravityX_ = 0D;
-        gravityY_ = 0D;
-        gravityZ_ = 0D;
-        accelerometerAxes_ = 0L;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private SensorInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-
-                timestampSnapshot_ = input.readUInt64();
-                break;
-              }
-              case 25: {
-
-                linearAccelerationX_ = input.readDouble();
-                break;
-              }
-              case 33: {
-
-                linearAccelerationY_ = input.readDouble();
-                break;
-              }
-              case 41: {
-
-                linearAccelerationZ_ = input.readDouble();
-                break;
-              }
-              case 49: {
-
-                magneticFieldX_ = input.readDouble();
-                break;
-              }
-              case 57: {
-
-                magneticFieldY_ = input.readDouble();
-                break;
-              }
-              case 65: {
-
-                magneticFieldZ_ = input.readDouble();
-                break;
-              }
-              case 81: {
-
-                rotationVectorX_ = input.readDouble();
-                break;
-              }
-              case 89: {
-
-                rotationVectorY_ = input.readDouble();
-                break;
-              }
-              case 97: {
-
-                rotationVectorZ_ = input.readDouble();
-                break;
-              }
-              case 105: {
-
-                gyroscopeRawX_ = input.readDouble();
-                break;
-              }
-              case 113: {
-
-                gyroscopeRawY_ = input.readDouble();
-                break;
-              }
-              case 121: {
-
-                gyroscopeRawZ_ = input.readDouble();
-                break;
-              }
-              case 129: {
-
-                gravityX_ = input.readDouble();
-                break;
-              }
-              case 137: {
-
-                gravityY_ = input.readDouble();
-                break;
-              }
-              case 145: {
-
-                gravityZ_ = input.readDouble();
-                break;
-              }
-              case 152: {
-
-                accelerometerAxes_ = input.readUInt64();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder.class);
-      }
-
       public static final int TIMESTAMP_SNAPSHOT_FIELD_NUMBER = 1;
       private long timestampSnapshot_;
       /**
@@ -5958,6 +2998,28 @@ public final class Envelopes {
       public long getTimestampSnapshot() {
         return timestampSnapshot_;
       }
+      /**
+       * <pre>
+       * in ms since start
+       * </pre>
+       *
+       * <code>optional uint64 timestamp_snapshot = 1;</code>
+       */
+      private void setTimestampSnapshot(long value) {
+        
+        timestampSnapshot_ = value;
+      }
+      /**
+       * <pre>
+       * in ms since start
+       * </pre>
+       *
+       * <code>optional uint64 timestamp_snapshot = 1;</code>
+       */
+      private void clearTimestampSnapshot() {
+        
+        timestampSnapshot_ = 0L;
+      }
 
       public static final int LINEAR_ACCELERATION_X_FIELD_NUMBER = 3;
       private double linearAccelerationX_;
@@ -5966,6 +3028,20 @@ public final class Envelopes {
        */
       public double getLinearAccelerationX() {
         return linearAccelerationX_;
+      }
+      /**
+       * <code>optional double linear_acceleration_x = 3;</code>
+       */
+      private void setLinearAccelerationX(double value) {
+        
+        linearAccelerationX_ = value;
+      }
+      /**
+       * <code>optional double linear_acceleration_x = 3;</code>
+       */
+      private void clearLinearAccelerationX() {
+        
+        linearAccelerationX_ = 0D;
       }
 
       public static final int LINEAR_ACCELERATION_Y_FIELD_NUMBER = 4;
@@ -5976,6 +3052,20 @@ public final class Envelopes {
       public double getLinearAccelerationY() {
         return linearAccelerationY_;
       }
+      /**
+       * <code>optional double linear_acceleration_y = 4;</code>
+       */
+      private void setLinearAccelerationY(double value) {
+        
+        linearAccelerationY_ = value;
+      }
+      /**
+       * <code>optional double linear_acceleration_y = 4;</code>
+       */
+      private void clearLinearAccelerationY() {
+        
+        linearAccelerationY_ = 0D;
+      }
 
       public static final int LINEAR_ACCELERATION_Z_FIELD_NUMBER = 5;
       private double linearAccelerationZ_;
@@ -5984,6 +3074,20 @@ public final class Envelopes {
        */
       public double getLinearAccelerationZ() {
         return linearAccelerationZ_;
+      }
+      /**
+       * <code>optional double linear_acceleration_z = 5;</code>
+       */
+      private void setLinearAccelerationZ(double value) {
+        
+        linearAccelerationZ_ = value;
+      }
+      /**
+       * <code>optional double linear_acceleration_z = 5;</code>
+       */
+      private void clearLinearAccelerationZ() {
+        
+        linearAccelerationZ_ = 0D;
       }
 
       public static final int MAGNETIC_FIELD_X_FIELD_NUMBER = 6;
@@ -5994,6 +3098,20 @@ public final class Envelopes {
       public double getMagneticFieldX() {
         return magneticFieldX_;
       }
+      /**
+       * <code>optional double magnetic_field_x = 6;</code>
+       */
+      private void setMagneticFieldX(double value) {
+        
+        magneticFieldX_ = value;
+      }
+      /**
+       * <code>optional double magnetic_field_x = 6;</code>
+       */
+      private void clearMagneticFieldX() {
+        
+        magneticFieldX_ = 0D;
+      }
 
       public static final int MAGNETIC_FIELD_Y_FIELD_NUMBER = 7;
       private double magneticFieldY_;
@@ -6002,6 +3120,20 @@ public final class Envelopes {
        */
       public double getMagneticFieldY() {
         return magneticFieldY_;
+      }
+      /**
+       * <code>optional double magnetic_field_y = 7;</code>
+       */
+      private void setMagneticFieldY(double value) {
+        
+        magneticFieldY_ = value;
+      }
+      /**
+       * <code>optional double magnetic_field_y = 7;</code>
+       */
+      private void clearMagneticFieldY() {
+        
+        magneticFieldY_ = 0D;
       }
 
       public static final int MAGNETIC_FIELD_Z_FIELD_NUMBER = 8;
@@ -6012,6 +3144,20 @@ public final class Envelopes {
       public double getMagneticFieldZ() {
         return magneticFieldZ_;
       }
+      /**
+       * <code>optional double magnetic_field_z = 8;</code>
+       */
+      private void setMagneticFieldZ(double value) {
+        
+        magneticFieldZ_ = value;
+      }
+      /**
+       * <code>optional double magnetic_field_z = 8;</code>
+       */
+      private void clearMagneticFieldZ() {
+        
+        magneticFieldZ_ = 0D;
+      }
 
       public static final int ROTATION_VECTOR_X_FIELD_NUMBER = 10;
       private double rotationVectorX_;
@@ -6020,6 +3166,20 @@ public final class Envelopes {
        */
       public double getRotationVectorX() {
         return rotationVectorX_;
+      }
+      /**
+       * <code>optional double rotation_vector_x = 10;</code>
+       */
+      private void setRotationVectorX(double value) {
+        
+        rotationVectorX_ = value;
+      }
+      /**
+       * <code>optional double rotation_vector_x = 10;</code>
+       */
+      private void clearRotationVectorX() {
+        
+        rotationVectorX_ = 0D;
       }
 
       public static final int ROTATION_VECTOR_Y_FIELD_NUMBER = 11;
@@ -6030,6 +3190,20 @@ public final class Envelopes {
       public double getRotationVectorY() {
         return rotationVectorY_;
       }
+      /**
+       * <code>optional double rotation_vector_y = 11;</code>
+       */
+      private void setRotationVectorY(double value) {
+        
+        rotationVectorY_ = value;
+      }
+      /**
+       * <code>optional double rotation_vector_y = 11;</code>
+       */
+      private void clearRotationVectorY() {
+        
+        rotationVectorY_ = 0D;
+      }
 
       public static final int ROTATION_VECTOR_Z_FIELD_NUMBER = 12;
       private double rotationVectorZ_;
@@ -6038,6 +3212,20 @@ public final class Envelopes {
        */
       public double getRotationVectorZ() {
         return rotationVectorZ_;
+      }
+      /**
+       * <code>optional double rotation_vector_z = 12;</code>
+       */
+      private void setRotationVectorZ(double value) {
+        
+        rotationVectorZ_ = value;
+      }
+      /**
+       * <code>optional double rotation_vector_z = 12;</code>
+       */
+      private void clearRotationVectorZ() {
+        
+        rotationVectorZ_ = 0D;
       }
 
       public static final int GYROSCOPE_RAW_X_FIELD_NUMBER = 13;
@@ -6048,6 +3236,20 @@ public final class Envelopes {
       public double getGyroscopeRawX() {
         return gyroscopeRawX_;
       }
+      /**
+       * <code>optional double gyroscope_raw_x = 13;</code>
+       */
+      private void setGyroscopeRawX(double value) {
+        
+        gyroscopeRawX_ = value;
+      }
+      /**
+       * <code>optional double gyroscope_raw_x = 13;</code>
+       */
+      private void clearGyroscopeRawX() {
+        
+        gyroscopeRawX_ = 0D;
+      }
 
       public static final int GYROSCOPE_RAW_Y_FIELD_NUMBER = 14;
       private double gyroscopeRawY_;
@@ -6056,6 +3258,20 @@ public final class Envelopes {
        */
       public double getGyroscopeRawY() {
         return gyroscopeRawY_;
+      }
+      /**
+       * <code>optional double gyroscope_raw_y = 14;</code>
+       */
+      private void setGyroscopeRawY(double value) {
+        
+        gyroscopeRawY_ = value;
+      }
+      /**
+       * <code>optional double gyroscope_raw_y = 14;</code>
+       */
+      private void clearGyroscopeRawY() {
+        
+        gyroscopeRawY_ = 0D;
       }
 
       public static final int GYROSCOPE_RAW_Z_FIELD_NUMBER = 15;
@@ -6066,6 +3282,20 @@ public final class Envelopes {
       public double getGyroscopeRawZ() {
         return gyroscopeRawZ_;
       }
+      /**
+       * <code>optional double gyroscope_raw_z = 15;</code>
+       */
+      private void setGyroscopeRawZ(double value) {
+        
+        gyroscopeRawZ_ = value;
+      }
+      /**
+       * <code>optional double gyroscope_raw_z = 15;</code>
+       */
+      private void clearGyroscopeRawZ() {
+        
+        gyroscopeRawZ_ = 0D;
+      }
 
       public static final int GRAVITY_X_FIELD_NUMBER = 16;
       private double gravityX_;
@@ -6074,6 +3304,20 @@ public final class Envelopes {
        */
       public double getGravityX() {
         return gravityX_;
+      }
+      /**
+       * <code>optional double gravity_x = 16;</code>
+       */
+      private void setGravityX(double value) {
+        
+        gravityX_ = value;
+      }
+      /**
+       * <code>optional double gravity_x = 16;</code>
+       */
+      private void clearGravityX() {
+        
+        gravityX_ = 0D;
       }
 
       public static final int GRAVITY_Y_FIELD_NUMBER = 17;
@@ -6084,6 +3328,20 @@ public final class Envelopes {
       public double getGravityY() {
         return gravityY_;
       }
+      /**
+       * <code>optional double gravity_y = 17;</code>
+       */
+      private void setGravityY(double value) {
+        
+        gravityY_ = value;
+      }
+      /**
+       * <code>optional double gravity_y = 17;</code>
+       */
+      private void clearGravityY() {
+        
+        gravityY_ = 0D;
+      }
 
       public static final int GRAVITY_Z_FIELD_NUMBER = 18;
       private double gravityZ_;
@@ -6092,6 +3350,20 @@ public final class Envelopes {
        */
       public double getGravityZ() {
         return gravityZ_;
+      }
+      /**
+       * <code>optional double gravity_z = 18;</code>
+       */
+      private void setGravityZ(double value) {
+        
+        gravityZ_ = value;
+      }
+      /**
+       * <code>optional double gravity_z = 18;</code>
+       */
+      private void clearGravityZ() {
+        
+        gravityZ_ = 0D;
       }
 
       public static final int ACCELEROMETER_AXES_FIELD_NUMBER = 19;
@@ -6106,15 +3378,27 @@ public final class Envelopes {
       public long getAccelerometerAxes() {
         return accelerometerAxes_;
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <pre>
+       * Always 3
+       * </pre>
+       *
+       * <code>optional uint64 accelerometer_axes = 19;</code>
+       */
+      private void setAccelerometerAxes(long value) {
+        
+        accelerometerAxes_ = value;
+      }
+      /**
+       * <pre>
+       * Always 3
+       * </pre>
+       *
+       * <code>optional uint64 accelerometer_axes = 19;</code>
+       */
+      private void clearAccelerometerAxes() {
+        
+        accelerometerAxes_ = 0L;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -6173,7 +3457,7 @@ public final class Envelopes {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -6245,457 +3529,92 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(19, accelerometerAxes_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo) obj;
-
-        boolean result = true;
-        result = result && (getTimestampSnapshot()
-            == other.getTimestampSnapshot());
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLinearAccelerationX())
-            == java.lang.Double.doubleToLongBits(
-                other.getLinearAccelerationX()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLinearAccelerationY())
-            == java.lang.Double.doubleToLongBits(
-                other.getLinearAccelerationY()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLinearAccelerationZ())
-            == java.lang.Double.doubleToLongBits(
-                other.getLinearAccelerationZ()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getMagneticFieldX())
-            == java.lang.Double.doubleToLongBits(
-                other.getMagneticFieldX()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getMagneticFieldY())
-            == java.lang.Double.doubleToLongBits(
-                other.getMagneticFieldY()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getMagneticFieldZ())
-            == java.lang.Double.doubleToLongBits(
-                other.getMagneticFieldZ()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getRotationVectorX())
-            == java.lang.Double.doubleToLongBits(
-                other.getRotationVectorX()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getRotationVectorY())
-            == java.lang.Double.doubleToLongBits(
-                other.getRotationVectorY()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getRotationVectorZ())
-            == java.lang.Double.doubleToLongBits(
-                other.getRotationVectorZ()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGyroscopeRawX())
-            == java.lang.Double.doubleToLongBits(
-                other.getGyroscopeRawX()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGyroscopeRawY())
-            == java.lang.Double.doubleToLongBits(
-                other.getGyroscopeRawY()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGyroscopeRawZ())
-            == java.lang.Double.doubleToLongBits(
-                other.getGyroscopeRawZ()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGravityX())
-            == java.lang.Double.doubleToLongBits(
-                other.getGravityX()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGravityY())
-            == java.lang.Double.doubleToLongBits(
-                other.getGravityY()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGravityZ())
-            == java.lang.Double.doubleToLongBits(
-                other.getGravityZ()));
-        result = result && (getAccelerometerAxes()
-            == other.getAccelerometerAxes());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + TIMESTAMP_SNAPSHOT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTimestampSnapshot());
-        hash = (37 * hash) + LINEAR_ACCELERATION_X_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLinearAccelerationX()));
-        hash = (37 * hash) + LINEAR_ACCELERATION_Y_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLinearAccelerationY()));
-        hash = (37 * hash) + LINEAR_ACCELERATION_Z_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLinearAccelerationZ()));
-        hash = (37 * hash) + MAGNETIC_FIELD_X_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getMagneticFieldX()));
-        hash = (37 * hash) + MAGNETIC_FIELD_Y_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getMagneticFieldY()));
-        hash = (37 * hash) + MAGNETIC_FIELD_Z_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getMagneticFieldZ()));
-        hash = (37 * hash) + ROTATION_VECTOR_X_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getRotationVectorX()));
-        hash = (37 * hash) + ROTATION_VECTOR_Y_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getRotationVectorY()));
-        hash = (37 * hash) + ROTATION_VECTOR_Z_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getRotationVectorZ()));
-        hash = (37 * hash) + GYROSCOPE_RAW_X_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getGyroscopeRawX()));
-        hash = (37 * hash) + GYROSCOPE_RAW_Y_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getGyroscopeRawY()));
-        hash = (37 * hash) + GYROSCOPE_RAW_Z_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getGyroscopeRawZ()));
-        hash = (37 * hash) + GRAVITY_X_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getGravityX()));
-        hash = (37 * hash) + GRAVITY_Y_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getGravityY()));
-        hash = (37 * hash) + GRAVITY_Z_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getGravityZ()));
-        hash = (37 * hash) + ACCELEROMETER_AXES_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getAccelerometerAxes());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          timestampSnapshot_ = 0L;
 
-          linearAccelerationX_ = 0D;
-
-          linearAccelerationY_ = 0D;
-
-          linearAccelerationZ_ = 0D;
-
-          magneticFieldX_ = 0D;
-
-          magneticFieldY_ = 0D;
-
-          magneticFieldZ_ = 0D;
-
-          rotationVectorX_ = 0D;
-
-          rotationVectorY_ = 0D;
-
-          rotationVectorZ_ = 0D;
-
-          gyroscopeRawX_ = 0D;
-
-          gyroscopeRawY_ = 0D;
-
-          gyroscopeRawZ_ = 0D;
-
-          gravityX_ = 0D;
-
-          gravityY_ = 0D;
-
-          gravityZ_ = 0D;
-
-          accelerometerAxes_ = 0L;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo(this);
-          result.timestampSnapshot_ = timestampSnapshot_;
-          result.linearAccelerationX_ = linearAccelerationX_;
-          result.linearAccelerationY_ = linearAccelerationY_;
-          result.linearAccelerationZ_ = linearAccelerationZ_;
-          result.magneticFieldX_ = magneticFieldX_;
-          result.magneticFieldY_ = magneticFieldY_;
-          result.magneticFieldZ_ = magneticFieldZ_;
-          result.rotationVectorX_ = rotationVectorX_;
-          result.rotationVectorY_ = rotationVectorY_;
-          result.rotationVectorZ_ = rotationVectorZ_;
-          result.gyroscopeRawX_ = gyroscopeRawX_;
-          result.gyroscopeRawY_ = gyroscopeRawY_;
-          result.gyroscopeRawZ_ = gyroscopeRawZ_;
-          result.gravityX_ = gravityX_;
-          result.gravityY_ = gravityY_;
-          result.gravityZ_ = gravityZ_;
-          result.accelerometerAxes_ = accelerometerAxes_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.getDefaultInstance()) return this;
-          if (other.getTimestampSnapshot() != 0L) {
-            setTimestampSnapshot(other.getTimestampSnapshot());
-          }
-          if (other.getLinearAccelerationX() != 0D) {
-            setLinearAccelerationX(other.getLinearAccelerationX());
-          }
-          if (other.getLinearAccelerationY() != 0D) {
-            setLinearAccelerationY(other.getLinearAccelerationY());
-          }
-          if (other.getLinearAccelerationZ() != 0D) {
-            setLinearAccelerationZ(other.getLinearAccelerationZ());
-          }
-          if (other.getMagneticFieldX() != 0D) {
-            setMagneticFieldX(other.getMagneticFieldX());
-          }
-          if (other.getMagneticFieldY() != 0D) {
-            setMagneticFieldY(other.getMagneticFieldY());
-          }
-          if (other.getMagneticFieldZ() != 0D) {
-            setMagneticFieldZ(other.getMagneticFieldZ());
-          }
-          if (other.getRotationVectorX() != 0D) {
-            setRotationVectorX(other.getRotationVectorX());
-          }
-          if (other.getRotationVectorY() != 0D) {
-            setRotationVectorY(other.getRotationVectorY());
-          }
-          if (other.getRotationVectorZ() != 0D) {
-            setRotationVectorZ(other.getRotationVectorZ());
-          }
-          if (other.getGyroscopeRawX() != 0D) {
-            setGyroscopeRawX(other.getGyroscopeRawX());
-          }
-          if (other.getGyroscopeRawY() != 0D) {
-            setGyroscopeRawY(other.getGyroscopeRawY());
-          }
-          if (other.getGyroscopeRawZ() != 0D) {
-            setGyroscopeRawZ(other.getGyroscopeRawZ());
-          }
-          if (other.getGravityX() != 0D) {
-            setGravityX(other.getGravityX());
-          }
-          if (other.getGravityY() != 0D) {
-            setGravityY(other.getGravityY());
-          }
-          if (other.getGravityZ() != 0D) {
-            setGravityZ(other.getGravityZ());
-          }
-          if (other.getAccelerometerAxes() != 0L) {
-            setAccelerometerAxes(other.getAccelerometerAxes());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private long timestampSnapshot_ ;
         /**
          * <pre>
          * in ms since start
@@ -6704,7 +3623,7 @@ public final class Envelopes {
          * <code>optional uint64 timestamp_snapshot = 1;</code>
          */
         public long getTimestampSnapshot() {
-          return timestampSnapshot_;
+          return instance.getTimestampSnapshot();
         }
         /**
          * <pre>
@@ -6714,9 +3633,8 @@ public final class Envelopes {
          * <code>optional uint64 timestamp_snapshot = 1;</code>
          */
         public Builder setTimestampSnapshot(long value) {
-          
-          timestampSnapshot_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTimestampSnapshot(value);
           return this;
         }
         /**
@@ -6727,403 +3645,356 @@ public final class Envelopes {
          * <code>optional uint64 timestamp_snapshot = 1;</code>
          */
         public Builder clearTimestampSnapshot() {
-          
-          timestampSnapshot_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearTimestampSnapshot();
           return this;
         }
 
-        private double linearAccelerationX_ ;
         /**
          * <code>optional double linear_acceleration_x = 3;</code>
          */
         public double getLinearAccelerationX() {
-          return linearAccelerationX_;
+          return instance.getLinearAccelerationX();
         }
         /**
          * <code>optional double linear_acceleration_x = 3;</code>
          */
         public Builder setLinearAccelerationX(double value) {
-          
-          linearAccelerationX_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setLinearAccelerationX(value);
           return this;
         }
         /**
          * <code>optional double linear_acceleration_x = 3;</code>
          */
         public Builder clearLinearAccelerationX() {
-          
-          linearAccelerationX_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearLinearAccelerationX();
           return this;
         }
 
-        private double linearAccelerationY_ ;
         /**
          * <code>optional double linear_acceleration_y = 4;</code>
          */
         public double getLinearAccelerationY() {
-          return linearAccelerationY_;
+          return instance.getLinearAccelerationY();
         }
         /**
          * <code>optional double linear_acceleration_y = 4;</code>
          */
         public Builder setLinearAccelerationY(double value) {
-          
-          linearAccelerationY_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setLinearAccelerationY(value);
           return this;
         }
         /**
          * <code>optional double linear_acceleration_y = 4;</code>
          */
         public Builder clearLinearAccelerationY() {
-          
-          linearAccelerationY_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearLinearAccelerationY();
           return this;
         }
 
-        private double linearAccelerationZ_ ;
         /**
          * <code>optional double linear_acceleration_z = 5;</code>
          */
         public double getLinearAccelerationZ() {
-          return linearAccelerationZ_;
+          return instance.getLinearAccelerationZ();
         }
         /**
          * <code>optional double linear_acceleration_z = 5;</code>
          */
         public Builder setLinearAccelerationZ(double value) {
-          
-          linearAccelerationZ_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setLinearAccelerationZ(value);
           return this;
         }
         /**
          * <code>optional double linear_acceleration_z = 5;</code>
          */
         public Builder clearLinearAccelerationZ() {
-          
-          linearAccelerationZ_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearLinearAccelerationZ();
           return this;
         }
 
-        private double magneticFieldX_ ;
         /**
          * <code>optional double magnetic_field_x = 6;</code>
          */
         public double getMagneticFieldX() {
-          return magneticFieldX_;
+          return instance.getMagneticFieldX();
         }
         /**
          * <code>optional double magnetic_field_x = 6;</code>
          */
         public Builder setMagneticFieldX(double value) {
-          
-          magneticFieldX_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setMagneticFieldX(value);
           return this;
         }
         /**
          * <code>optional double magnetic_field_x = 6;</code>
          */
         public Builder clearMagneticFieldX() {
-          
-          magneticFieldX_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearMagneticFieldX();
           return this;
         }
 
-        private double magneticFieldY_ ;
         /**
          * <code>optional double magnetic_field_y = 7;</code>
          */
         public double getMagneticFieldY() {
-          return magneticFieldY_;
+          return instance.getMagneticFieldY();
         }
         /**
          * <code>optional double magnetic_field_y = 7;</code>
          */
         public Builder setMagneticFieldY(double value) {
-          
-          magneticFieldY_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setMagneticFieldY(value);
           return this;
         }
         /**
          * <code>optional double magnetic_field_y = 7;</code>
          */
         public Builder clearMagneticFieldY() {
-          
-          magneticFieldY_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearMagneticFieldY();
           return this;
         }
 
-        private double magneticFieldZ_ ;
         /**
          * <code>optional double magnetic_field_z = 8;</code>
          */
         public double getMagneticFieldZ() {
-          return magneticFieldZ_;
+          return instance.getMagneticFieldZ();
         }
         /**
          * <code>optional double magnetic_field_z = 8;</code>
          */
         public Builder setMagneticFieldZ(double value) {
-          
-          magneticFieldZ_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setMagneticFieldZ(value);
           return this;
         }
         /**
          * <code>optional double magnetic_field_z = 8;</code>
          */
         public Builder clearMagneticFieldZ() {
-          
-          magneticFieldZ_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearMagneticFieldZ();
           return this;
         }
 
-        private double rotationVectorX_ ;
         /**
          * <code>optional double rotation_vector_x = 10;</code>
          */
         public double getRotationVectorX() {
-          return rotationVectorX_;
+          return instance.getRotationVectorX();
         }
         /**
          * <code>optional double rotation_vector_x = 10;</code>
          */
         public Builder setRotationVectorX(double value) {
-          
-          rotationVectorX_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setRotationVectorX(value);
           return this;
         }
         /**
          * <code>optional double rotation_vector_x = 10;</code>
          */
         public Builder clearRotationVectorX() {
-          
-          rotationVectorX_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearRotationVectorX();
           return this;
         }
 
-        private double rotationVectorY_ ;
         /**
          * <code>optional double rotation_vector_y = 11;</code>
          */
         public double getRotationVectorY() {
-          return rotationVectorY_;
+          return instance.getRotationVectorY();
         }
         /**
          * <code>optional double rotation_vector_y = 11;</code>
          */
         public Builder setRotationVectorY(double value) {
-          
-          rotationVectorY_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setRotationVectorY(value);
           return this;
         }
         /**
          * <code>optional double rotation_vector_y = 11;</code>
          */
         public Builder clearRotationVectorY() {
-          
-          rotationVectorY_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearRotationVectorY();
           return this;
         }
 
-        private double rotationVectorZ_ ;
         /**
          * <code>optional double rotation_vector_z = 12;</code>
          */
         public double getRotationVectorZ() {
-          return rotationVectorZ_;
+          return instance.getRotationVectorZ();
         }
         /**
          * <code>optional double rotation_vector_z = 12;</code>
          */
         public Builder setRotationVectorZ(double value) {
-          
-          rotationVectorZ_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setRotationVectorZ(value);
           return this;
         }
         /**
          * <code>optional double rotation_vector_z = 12;</code>
          */
         public Builder clearRotationVectorZ() {
-          
-          rotationVectorZ_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearRotationVectorZ();
           return this;
         }
 
-        private double gyroscopeRawX_ ;
         /**
          * <code>optional double gyroscope_raw_x = 13;</code>
          */
         public double getGyroscopeRawX() {
-          return gyroscopeRawX_;
+          return instance.getGyroscopeRawX();
         }
         /**
          * <code>optional double gyroscope_raw_x = 13;</code>
          */
         public Builder setGyroscopeRawX(double value) {
-          
-          gyroscopeRawX_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setGyroscopeRawX(value);
           return this;
         }
         /**
          * <code>optional double gyroscope_raw_x = 13;</code>
          */
         public Builder clearGyroscopeRawX() {
-          
-          gyroscopeRawX_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearGyroscopeRawX();
           return this;
         }
 
-        private double gyroscopeRawY_ ;
         /**
          * <code>optional double gyroscope_raw_y = 14;</code>
          */
         public double getGyroscopeRawY() {
-          return gyroscopeRawY_;
+          return instance.getGyroscopeRawY();
         }
         /**
          * <code>optional double gyroscope_raw_y = 14;</code>
          */
         public Builder setGyroscopeRawY(double value) {
-          
-          gyroscopeRawY_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setGyroscopeRawY(value);
           return this;
         }
         /**
          * <code>optional double gyroscope_raw_y = 14;</code>
          */
         public Builder clearGyroscopeRawY() {
-          
-          gyroscopeRawY_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearGyroscopeRawY();
           return this;
         }
 
-        private double gyroscopeRawZ_ ;
         /**
          * <code>optional double gyroscope_raw_z = 15;</code>
          */
         public double getGyroscopeRawZ() {
-          return gyroscopeRawZ_;
+          return instance.getGyroscopeRawZ();
         }
         /**
          * <code>optional double gyroscope_raw_z = 15;</code>
          */
         public Builder setGyroscopeRawZ(double value) {
-          
-          gyroscopeRawZ_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setGyroscopeRawZ(value);
           return this;
         }
         /**
          * <code>optional double gyroscope_raw_z = 15;</code>
          */
         public Builder clearGyroscopeRawZ() {
-          
-          gyroscopeRawZ_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearGyroscopeRawZ();
           return this;
         }
 
-        private double gravityX_ ;
         /**
          * <code>optional double gravity_x = 16;</code>
          */
         public double getGravityX() {
-          return gravityX_;
+          return instance.getGravityX();
         }
         /**
          * <code>optional double gravity_x = 16;</code>
          */
         public Builder setGravityX(double value) {
-          
-          gravityX_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setGravityX(value);
           return this;
         }
         /**
          * <code>optional double gravity_x = 16;</code>
          */
         public Builder clearGravityX() {
-          
-          gravityX_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearGravityX();
           return this;
         }
 
-        private double gravityY_ ;
         /**
          * <code>optional double gravity_y = 17;</code>
          */
         public double getGravityY() {
-          return gravityY_;
+          return instance.getGravityY();
         }
         /**
          * <code>optional double gravity_y = 17;</code>
          */
         public Builder setGravityY(double value) {
-          
-          gravityY_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setGravityY(value);
           return this;
         }
         /**
          * <code>optional double gravity_y = 17;</code>
          */
         public Builder clearGravityY() {
-          
-          gravityY_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearGravityY();
           return this;
         }
 
-        private double gravityZ_ ;
         /**
          * <code>optional double gravity_z = 18;</code>
          */
         public double getGravityZ() {
-          return gravityZ_;
+          return instance.getGravityZ();
         }
         /**
          * <code>optional double gravity_z = 18;</code>
          */
         public Builder setGravityZ(double value) {
-          
-          gravityZ_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setGravityZ(value);
           return this;
         }
         /**
          * <code>optional double gravity_z = 18;</code>
          */
         public Builder clearGravityZ() {
-          
-          gravityZ_ = 0D;
-          onChanged();
+          copyOnWrite();
+          instance.clearGravityZ();
           return this;
         }
 
-        private long accelerometerAxes_ ;
         /**
          * <pre>
          * Always 3
@@ -7132,7 +4003,7 @@ public final class Envelopes {
          * <code>optional uint64 accelerometer_axes = 19;</code>
          */
         public long getAccelerometerAxes() {
-          return accelerometerAxes_;
+          return instance.getAccelerometerAxes();
         }
         /**
          * <pre>
@@ -7142,9 +4013,8 @@ public final class Envelopes {
          * <code>optional uint64 accelerometer_axes = 19;</code>
          */
         public Builder setAccelerometerAxes(long value) {
-          
-          accelerometerAxes_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAccelerometerAxes(value);
           return this;
         }
         /**
@@ -7155,63 +4025,224 @@ public final class Envelopes {
          * <code>optional uint64 accelerometer_axes = 19;</code>
          */
         public Builder clearAccelerometerAxes() {
-          
-          accelerometerAxes_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearAccelerometerAxes();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo) arg1;
+            timestampSnapshot_ = visitor.visitLong(timestampSnapshot_ != 0L, timestampSnapshot_,
+                other.timestampSnapshot_ != 0L, other.timestampSnapshot_);
+            linearAccelerationX_ = visitor.visitDouble(linearAccelerationX_ != 0D, linearAccelerationX_,
+                other.linearAccelerationX_ != 0D, other.linearAccelerationX_);
+            linearAccelerationY_ = visitor.visitDouble(linearAccelerationY_ != 0D, linearAccelerationY_,
+                other.linearAccelerationY_ != 0D, other.linearAccelerationY_);
+            linearAccelerationZ_ = visitor.visitDouble(linearAccelerationZ_ != 0D, linearAccelerationZ_,
+                other.linearAccelerationZ_ != 0D, other.linearAccelerationZ_);
+            magneticFieldX_ = visitor.visitDouble(magneticFieldX_ != 0D, magneticFieldX_,
+                other.magneticFieldX_ != 0D, other.magneticFieldX_);
+            magneticFieldY_ = visitor.visitDouble(magneticFieldY_ != 0D, magneticFieldY_,
+                other.magneticFieldY_ != 0D, other.magneticFieldY_);
+            magneticFieldZ_ = visitor.visitDouble(magneticFieldZ_ != 0D, magneticFieldZ_,
+                other.magneticFieldZ_ != 0D, other.magneticFieldZ_);
+            rotationVectorX_ = visitor.visitDouble(rotationVectorX_ != 0D, rotationVectorX_,
+                other.rotationVectorX_ != 0D, other.rotationVectorX_);
+            rotationVectorY_ = visitor.visitDouble(rotationVectorY_ != 0D, rotationVectorY_,
+                other.rotationVectorY_ != 0D, other.rotationVectorY_);
+            rotationVectorZ_ = visitor.visitDouble(rotationVectorZ_ != 0D, rotationVectorZ_,
+                other.rotationVectorZ_ != 0D, other.rotationVectorZ_);
+            gyroscopeRawX_ = visitor.visitDouble(gyroscopeRawX_ != 0D, gyroscopeRawX_,
+                other.gyroscopeRawX_ != 0D, other.gyroscopeRawX_);
+            gyroscopeRawY_ = visitor.visitDouble(gyroscopeRawY_ != 0D, gyroscopeRawY_,
+                other.gyroscopeRawY_ != 0D, other.gyroscopeRawY_);
+            gyroscopeRawZ_ = visitor.visitDouble(gyroscopeRawZ_ != 0D, gyroscopeRawZ_,
+                other.gyroscopeRawZ_ != 0D, other.gyroscopeRawZ_);
+            gravityX_ = visitor.visitDouble(gravityX_ != 0D, gravityX_,
+                other.gravityX_ != 0D, other.gravityX_);
+            gravityY_ = visitor.visitDouble(gravityY_ != 0D, gravityY_,
+                other.gravityY_ != 0D, other.gravityY_);
+            gravityZ_ = visitor.visitDouble(gravityZ_ != 0D, gravityZ_,
+                other.gravityZ_ != 0D, other.gravityZ_);
+            accelerometerAxes_ = visitor.visitLong(accelerometerAxes_ != 0L, accelerometerAxes_,
+                other.accelerometerAxes_ != 0L, other.accelerometerAxes_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+
+                    timestampSnapshot_ = input.readUInt64();
+                    break;
+                  }
+                  case 25: {
+
+                    linearAccelerationX_ = input.readDouble();
+                    break;
+                  }
+                  case 33: {
+
+                    linearAccelerationY_ = input.readDouble();
+                    break;
+                  }
+                  case 41: {
+
+                    linearAccelerationZ_ = input.readDouble();
+                    break;
+                  }
+                  case 49: {
+
+                    magneticFieldX_ = input.readDouble();
+                    break;
+                  }
+                  case 57: {
+
+                    magneticFieldY_ = input.readDouble();
+                    break;
+                  }
+                  case 65: {
+
+                    magneticFieldZ_ = input.readDouble();
+                    break;
+                  }
+                  case 81: {
+
+                    rotationVectorX_ = input.readDouble();
+                    break;
+                  }
+                  case 89: {
+
+                    rotationVectorY_ = input.readDouble();
+                    break;
+                  }
+                  case 97: {
+
+                    rotationVectorZ_ = input.readDouble();
+                    break;
+                  }
+                  case 105: {
+
+                    gyroscopeRawX_ = input.readDouble();
+                    break;
+                  }
+                  case 113: {
+
+                    gyroscopeRawY_ = input.readDouble();
+                    break;
+                  }
+                  case 121: {
+
+                    gyroscopeRawZ_ = input.readDouble();
+                    break;
+                  }
+                  case 129: {
+
+                    gravityX_ = input.readDouble();
+                    break;
+                  }
+                  case 137: {
+
+                    gravityY_ = input.readDouble();
+                    break;
+                  }
+                  case 145: {
+
+                    gravityZ_ = input.readDouble();
+                    break;
+                  }
+                  case 152: {
+
+                    accelerometerAxes_ = input.readUInt64();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo();
+        DEFAULT_INSTANCE = new SensorInfo();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<SensorInfo>
-          PARSER = new com.google.protobuf.AbstractParser<SensorInfo>() {
-        public SensorInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SensorInfo(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<SensorInfo> PARSER;
 
       public static com.google.protobuf.Parser<SensorInfo> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<SensorInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface DeviceInfoOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <pre>
@@ -7435,13 +4466,10 @@ public final class Envelopes {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo}
      */
     public  static final class DeviceInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            DeviceInfo, DeviceInfo.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo)
         DeviceInfoOrBuilder {
-      // Use DeviceInfo.newBuilder() to construct.
-      private DeviceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private DeviceInfo() {
         deviceId_ = "";
         androidBoardName_ = "";
@@ -7457,135 +4485,8 @@ public final class Envelopes {
         firmwareType_ = "";
         firmwareFingerprint_ = "";
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private DeviceInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                deviceId_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                androidBoardName_ = s;
-                break;
-              }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                androidBootloader_ = s;
-                break;
-              }
-              case 34: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                deviceBrand_ = s;
-                break;
-              }
-              case 42: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                deviceModel_ = s;
-                break;
-              }
-              case 50: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                deviceModelIdentifier_ = s;
-                break;
-              }
-              case 58: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                deviceModelBoot_ = s;
-                break;
-              }
-              case 66: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                hardwareManufacturer_ = s;
-                break;
-              }
-              case 74: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                hardwareModel_ = s;
-                break;
-              }
-              case 82: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                firmwareBrand_ = s;
-                break;
-              }
-              case 98: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                firmwareTags_ = s;
-                break;
-              }
-              case 106: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                firmwareType_ = s;
-                break;
-              }
-              case 114: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                firmwareFingerprint_ = s;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder.class);
-      }
-
       public static final int DEVICE_ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object deviceId_;
+      private java.lang.String deviceId_;
       /**
        * <pre>
        * Hex string
@@ -7594,16 +4495,7 @@ public final class Envelopes {
        * <code>optional string device_id = 1;</code>
        */
       public java.lang.String getDeviceId() {
-        java.lang.Object ref = deviceId_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceId_ = s;
-          return s;
-        }
+        return deviceId_;
       }
       /**
        * <pre>
@@ -7614,88 +4506,145 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getDeviceIdBytes() {
-        java.lang.Object ref = deviceId_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(deviceId_);
+      }
+      /**
+       * <pre>
+       * Hex string
+       * </pre>
+       *
+       * <code>optional string device_id = 1;</code>
+       */
+      private void setDeviceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceId_ = value;
+      }
+      /**
+       * <pre>
+       * Hex string
+       * </pre>
+       *
+       * <code>optional string device_id = 1;</code>
+       */
+      private void clearDeviceId() {
+        
+        deviceId_ = getDefaultInstance().getDeviceId();
+      }
+      /**
+       * <pre>
+       * Hex string
+       * </pre>
+       *
+       * <code>optional string device_id = 1;</code>
+       */
+      private void setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceId_ = value.toStringUtf8();
       }
 
       public static final int ANDROID_BOARD_NAME_FIELD_NUMBER = 2;
-      private volatile java.lang.Object androidBoardName_;
+      private java.lang.String androidBoardName_;
       /**
        * <code>optional string android_board_name = 2;</code>
        */
       public java.lang.String getAndroidBoardName() {
-        java.lang.Object ref = androidBoardName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          androidBoardName_ = s;
-          return s;
-        }
+        return androidBoardName_;
       }
       /**
        * <code>optional string android_board_name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAndroidBoardNameBytes() {
-        java.lang.Object ref = androidBoardName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          androidBoardName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(androidBoardName_);
+      }
+      /**
+       * <code>optional string android_board_name = 2;</code>
+       */
+      private void setAndroidBoardName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        androidBoardName_ = value;
+      }
+      /**
+       * <code>optional string android_board_name = 2;</code>
+       */
+      private void clearAndroidBoardName() {
+        
+        androidBoardName_ = getDefaultInstance().getAndroidBoardName();
+      }
+      /**
+       * <code>optional string android_board_name = 2;</code>
+       */
+      private void setAndroidBoardNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        androidBoardName_ = value.toStringUtf8();
       }
 
       public static final int ANDROID_BOOTLOADER_FIELD_NUMBER = 3;
-      private volatile java.lang.Object androidBootloader_;
+      private java.lang.String androidBootloader_;
       /**
        * <code>optional string android_bootloader = 3;</code>
        */
       public java.lang.String getAndroidBootloader() {
-        java.lang.Object ref = androidBootloader_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          androidBootloader_ = s;
-          return s;
-        }
+        return androidBootloader_;
       }
       /**
        * <code>optional string android_bootloader = 3;</code>
        */
       public com.google.protobuf.ByteString
           getAndroidBootloaderBytes() {
-        java.lang.Object ref = androidBootloader_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          androidBootloader_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(androidBootloader_);
+      }
+      /**
+       * <code>optional string android_bootloader = 3;</code>
+       */
+      private void setAndroidBootloader(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        androidBootloader_ = value;
+      }
+      /**
+       * <code>optional string android_bootloader = 3;</code>
+       */
+      private void clearAndroidBootloader() {
+        
+        androidBootloader_ = getDefaultInstance().getAndroidBootloader();
+      }
+      /**
+       * <code>optional string android_bootloader = 3;</code>
+       */
+      private void setAndroidBootloaderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        androidBootloader_ = value.toStringUtf8();
       }
 
       public static final int DEVICE_BRAND_FIELD_NUMBER = 4;
-      private volatile java.lang.Object deviceBrand_;
+      private java.lang.String deviceBrand_;
       /**
        * <pre>
        * On Android: product.brand
@@ -7704,16 +4653,7 @@ public final class Envelopes {
        * <code>optional string device_brand = 4;</code>
        */
       public java.lang.String getDeviceBrand() {
-        java.lang.Object ref = deviceBrand_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceBrand_ = s;
-          return s;
-        }
+        return deviceBrand_;
       }
       /**
        * <pre>
@@ -7724,20 +4664,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getDeviceBrandBytes() {
-        java.lang.Object ref = deviceBrand_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceBrand_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(deviceBrand_);
+      }
+      /**
+       * <pre>
+       * On Android: product.brand
+       * </pre>
+       *
+       * <code>optional string device_brand = 4;</code>
+       */
+      private void setDeviceBrand(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceBrand_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: product.brand
+       * </pre>
+       *
+       * <code>optional string device_brand = 4;</code>
+       */
+      private void clearDeviceBrand() {
+        
+        deviceBrand_ = getDefaultInstance().getDeviceBrand();
+      }
+      /**
+       * <pre>
+       * On Android: product.brand
+       * </pre>
+       *
+       * <code>optional string device_brand = 4;</code>
+       */
+      private void setDeviceBrandBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceBrand_ = value.toStringUtf8();
       }
 
       public static final int DEVICE_MODEL_FIELD_NUMBER = 5;
-      private volatile java.lang.Object deviceModel_;
+      private java.lang.String deviceModel_;
       /**
        * <pre>
        * On Android: product.device
@@ -7746,16 +4719,7 @@ public final class Envelopes {
        * <code>optional string device_model = 5;</code>
        */
       public java.lang.String getDeviceModel() {
-        java.lang.Object ref = deviceModel_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceModel_ = s;
-          return s;
-        }
+        return deviceModel_;
       }
       /**
        * <pre>
@@ -7766,20 +4730,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getDeviceModelBytes() {
-        java.lang.Object ref = deviceModel_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceModel_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(deviceModel_);
+      }
+      /**
+       * <pre>
+       * On Android: product.device
+       * </pre>
+       *
+       * <code>optional string device_model = 5;</code>
+       */
+      private void setDeviceModel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceModel_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: product.device
+       * </pre>
+       *
+       * <code>optional string device_model = 5;</code>
+       */
+      private void clearDeviceModel() {
+        
+        deviceModel_ = getDefaultInstance().getDeviceModel();
+      }
+      /**
+       * <pre>
+       * On Android: product.device
+       * </pre>
+       *
+       * <code>optional string device_model = 5;</code>
+       */
+      private void setDeviceModelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceModel_ = value.toStringUtf8();
       }
 
       public static final int DEVICE_MODEL_IDENTIFIER_FIELD_NUMBER = 6;
-      private volatile java.lang.Object deviceModelIdentifier_;
+      private java.lang.String deviceModelIdentifier_;
       /**
        * <pre>
        * Android only, build.display.id
@@ -7788,16 +4785,7 @@ public final class Envelopes {
        * <code>optional string device_model_identifier = 6;</code>
        */
       public java.lang.String getDeviceModelIdentifier() {
-        java.lang.Object ref = deviceModelIdentifier_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceModelIdentifier_ = s;
-          return s;
-        }
+        return deviceModelIdentifier_;
       }
       /**
        * <pre>
@@ -7808,20 +4796,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getDeviceModelIdentifierBytes() {
-        java.lang.Object ref = deviceModelIdentifier_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceModelIdentifier_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(deviceModelIdentifier_);
+      }
+      /**
+       * <pre>
+       * Android only, build.display.id
+       * </pre>
+       *
+       * <code>optional string device_model_identifier = 6;</code>
+       */
+      private void setDeviceModelIdentifier(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceModelIdentifier_ = value;
+      }
+      /**
+       * <pre>
+       * Android only, build.display.id
+       * </pre>
+       *
+       * <code>optional string device_model_identifier = 6;</code>
+       */
+      private void clearDeviceModelIdentifier() {
+        
+        deviceModelIdentifier_ = getDefaultInstance().getDeviceModelIdentifier();
+      }
+      /**
+       * <pre>
+       * Android only, build.display.id
+       * </pre>
+       *
+       * <code>optional string device_model_identifier = 6;</code>
+       */
+      private void setDeviceModelIdentifierBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceModelIdentifier_ = value.toStringUtf8();
       }
 
       public static final int DEVICE_MODEL_BOOT_FIELD_NUMBER = 7;
-      private volatile java.lang.Object deviceModelBoot_;
+      private java.lang.String deviceModelBoot_;
       /**
        * <pre>
        * On Android: boot.hardware
@@ -7830,16 +4851,7 @@ public final class Envelopes {
        * <code>optional string device_model_boot = 7;</code>
        */
       public java.lang.String getDeviceModelBoot() {
-        java.lang.Object ref = deviceModelBoot_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceModelBoot_ = s;
-          return s;
-        }
+        return deviceModelBoot_;
       }
       /**
        * <pre>
@@ -7850,20 +4862,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getDeviceModelBootBytes() {
-        java.lang.Object ref = deviceModelBoot_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceModelBoot_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(deviceModelBoot_);
+      }
+      /**
+       * <pre>
+       * On Android: boot.hardware
+       * </pre>
+       *
+       * <code>optional string device_model_boot = 7;</code>
+       */
+      private void setDeviceModelBoot(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceModelBoot_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: boot.hardware
+       * </pre>
+       *
+       * <code>optional string device_model_boot = 7;</code>
+       */
+      private void clearDeviceModelBoot() {
+        
+        deviceModelBoot_ = getDefaultInstance().getDeviceModelBoot();
+      }
+      /**
+       * <pre>
+       * On Android: boot.hardware
+       * </pre>
+       *
+       * <code>optional string device_model_boot = 7;</code>
+       */
+      private void setDeviceModelBootBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceModelBoot_ = value.toStringUtf8();
       }
 
       public static final int HARDWARE_MANUFACTURER_FIELD_NUMBER = 8;
-      private volatile java.lang.Object hardwareManufacturer_;
+      private java.lang.String hardwareManufacturer_;
       /**
        * <pre>
        * On Android: product.manufacturer
@@ -7872,16 +4917,7 @@ public final class Envelopes {
        * <code>optional string hardware_manufacturer = 8;</code>
        */
       public java.lang.String getHardwareManufacturer() {
-        java.lang.Object ref = hardwareManufacturer_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          hardwareManufacturer_ = s;
-          return s;
-        }
+        return hardwareManufacturer_;
       }
       /**
        * <pre>
@@ -7892,20 +4928,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getHardwareManufacturerBytes() {
-        java.lang.Object ref = hardwareManufacturer_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          hardwareManufacturer_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(hardwareManufacturer_);
+      }
+      /**
+       * <pre>
+       * On Android: product.manufacturer
+       * </pre>
+       *
+       * <code>optional string hardware_manufacturer = 8;</code>
+       */
+      private void setHardwareManufacturer(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hardwareManufacturer_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: product.manufacturer
+       * </pre>
+       *
+       * <code>optional string hardware_manufacturer = 8;</code>
+       */
+      private void clearHardwareManufacturer() {
+        
+        hardwareManufacturer_ = getDefaultInstance().getHardwareManufacturer();
+      }
+      /**
+       * <pre>
+       * On Android: product.manufacturer
+       * </pre>
+       *
+       * <code>optional string hardware_manufacturer = 8;</code>
+       */
+      private void setHardwareManufacturerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hardwareManufacturer_ = value.toStringUtf8();
       }
 
       public static final int HARDWARE_MODEL_FIELD_NUMBER = 9;
-      private volatile java.lang.Object hardwareModel_;
+      private java.lang.String hardwareModel_;
       /**
        * <pre>
        * On Android: product.model
@@ -7914,16 +4983,7 @@ public final class Envelopes {
        * <code>optional string hardware_model = 9;</code>
        */
       public java.lang.String getHardwareModel() {
-        java.lang.Object ref = hardwareModel_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          hardwareModel_ = s;
-          return s;
-        }
+        return hardwareModel_;
       }
       /**
        * <pre>
@@ -7934,20 +4994,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getHardwareModelBytes() {
-        java.lang.Object ref = hardwareModel_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          hardwareModel_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(hardwareModel_);
+      }
+      /**
+       * <pre>
+       * On Android: product.model
+       * </pre>
+       *
+       * <code>optional string hardware_model = 9;</code>
+       */
+      private void setHardwareModel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hardwareModel_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: product.model
+       * </pre>
+       *
+       * <code>optional string hardware_model = 9;</code>
+       */
+      private void clearHardwareModel() {
+        
+        hardwareModel_ = getDefaultInstance().getHardwareModel();
+      }
+      /**
+       * <pre>
+       * On Android: product.model
+       * </pre>
+       *
+       * <code>optional string hardware_model = 9;</code>
+       */
+      private void setHardwareModelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hardwareModel_ = value.toStringUtf8();
       }
 
       public static final int FIRMWARE_BRAND_FIELD_NUMBER = 10;
-      private volatile java.lang.Object firmwareBrand_;
+      private java.lang.String firmwareBrand_;
       /**
        * <pre>
        * On Android: product.name, on iOS: "iPhone OS"
@@ -7956,16 +5049,7 @@ public final class Envelopes {
        * <code>optional string firmware_brand = 10;</code>
        */
       public java.lang.String getFirmwareBrand() {
-        java.lang.Object ref = firmwareBrand_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firmwareBrand_ = s;
-          return s;
-        }
+        return firmwareBrand_;
       }
       /**
        * <pre>
@@ -7976,20 +5060,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getFirmwareBrandBytes() {
-        java.lang.Object ref = firmwareBrand_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firmwareBrand_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(firmwareBrand_);
+      }
+      /**
+       * <pre>
+       * On Android: product.name, on iOS: "iPhone OS"
+       * </pre>
+       *
+       * <code>optional string firmware_brand = 10;</code>
+       */
+      private void setFirmwareBrand(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firmwareBrand_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: product.name, on iOS: "iPhone OS"
+       * </pre>
+       *
+       * <code>optional string firmware_brand = 10;</code>
+       */
+      private void clearFirmwareBrand() {
+        
+        firmwareBrand_ = getDefaultInstance().getFirmwareBrand();
+      }
+      /**
+       * <pre>
+       * On Android: product.name, on iOS: "iPhone OS"
+       * </pre>
+       *
+       * <code>optional string firmware_brand = 10;</code>
+       */
+      private void setFirmwareBrandBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        firmwareBrand_ = value.toStringUtf8();
       }
 
       public static final int FIRMWARE_TAGS_FIELD_NUMBER = 12;
-      private volatile java.lang.Object firmwareTags_;
+      private java.lang.String firmwareTags_;
       /**
        * <pre>
        * Android only, build.tags
@@ -7998,16 +5115,7 @@ public final class Envelopes {
        * <code>optional string firmware_tags = 12;</code>
        */
       public java.lang.String getFirmwareTags() {
-        java.lang.Object ref = firmwareTags_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firmwareTags_ = s;
-          return s;
-        }
+        return firmwareTags_;
       }
       /**
        * <pre>
@@ -8018,20 +5126,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getFirmwareTagsBytes() {
-        java.lang.Object ref = firmwareTags_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firmwareTags_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(firmwareTags_);
+      }
+      /**
+       * <pre>
+       * Android only, build.tags
+       * </pre>
+       *
+       * <code>optional string firmware_tags = 12;</code>
+       */
+      private void setFirmwareTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firmwareTags_ = value;
+      }
+      /**
+       * <pre>
+       * Android only, build.tags
+       * </pre>
+       *
+       * <code>optional string firmware_tags = 12;</code>
+       */
+      private void clearFirmwareTags() {
+        
+        firmwareTags_ = getDefaultInstance().getFirmwareTags();
+      }
+      /**
+       * <pre>
+       * Android only, build.tags
+       * </pre>
+       *
+       * <code>optional string firmware_tags = 12;</code>
+       */
+      private void setFirmwareTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        firmwareTags_ = value.toStringUtf8();
       }
 
       public static final int FIRMWARE_TYPE_FIELD_NUMBER = 13;
-      private volatile java.lang.Object firmwareType_;
+      private java.lang.String firmwareType_;
       /**
        * <pre>
        * On Android: build.type, on iOS instead: iOS version
@@ -8040,16 +5181,7 @@ public final class Envelopes {
        * <code>optional string firmware_type = 13;</code>
        */
       public java.lang.String getFirmwareType() {
-        java.lang.Object ref = firmwareType_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firmwareType_ = s;
-          return s;
-        }
+        return firmwareType_;
       }
       /**
        * <pre>
@@ -8060,20 +5192,53 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getFirmwareTypeBytes() {
-        java.lang.Object ref = firmwareType_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firmwareType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(firmwareType_);
+      }
+      /**
+       * <pre>
+       * On Android: build.type, on iOS instead: iOS version
+       * </pre>
+       *
+       * <code>optional string firmware_type = 13;</code>
+       */
+      private void setFirmwareType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firmwareType_ = value;
+      }
+      /**
+       * <pre>
+       * On Android: build.type, on iOS instead: iOS version
+       * </pre>
+       *
+       * <code>optional string firmware_type = 13;</code>
+       */
+      private void clearFirmwareType() {
+        
+        firmwareType_ = getDefaultInstance().getFirmwareType();
+      }
+      /**
+       * <pre>
+       * On Android: build.type, on iOS instead: iOS version
+       * </pre>
+       *
+       * <code>optional string firmware_type = 13;</code>
+       */
+      private void setFirmwareTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        firmwareType_ = value.toStringUtf8();
       }
 
       public static final int FIRMWARE_FINGERPRINT_FIELD_NUMBER = 14;
-      private volatile java.lang.Object firmwareFingerprint_;
+      private java.lang.String firmwareFingerprint_;
       /**
        * <pre>
        * Android only, build.fingerprint
@@ -8082,16 +5247,7 @@ public final class Envelopes {
        * <code>optional string firmware_fingerprint = 14;</code>
        */
       public java.lang.String getFirmwareFingerprint() {
-        java.lang.Object ref = firmwareFingerprint_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          firmwareFingerprint_ = s;
-          return s;
-        }
+        return firmwareFingerprint_;
       }
       /**
        * <pre>
@@ -8102,492 +5258,237 @@ public final class Envelopes {
        */
       public com.google.protobuf.ByteString
           getFirmwareFingerprintBytes() {
-        java.lang.Object ref = firmwareFingerprint_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          firmwareFingerprint_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(firmwareFingerprint_);
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <pre>
+       * Android only, build.fingerprint
+       * </pre>
+       *
+       * <code>optional string firmware_fingerprint = 14;</code>
+       */
+      private void setFirmwareFingerprint(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firmwareFingerprint_ = value;
+      }
+      /**
+       * <pre>
+       * Android only, build.fingerprint
+       * </pre>
+       *
+       * <code>optional string firmware_fingerprint = 14;</code>
+       */
+      private void clearFirmwareFingerprint() {
+        
+        firmwareFingerprint_ = getDefaultInstance().getFirmwareFingerprint();
+      }
+      /**
+       * <pre>
+       * Android only, build.fingerprint
+       * </pre>
+       *
+       * <code>optional string firmware_fingerprint = 14;</code>
+       */
+      private void setFirmwareFingerprintBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        firmwareFingerprint_ = value.toStringUtf8();
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getDeviceIdBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deviceId_);
+        if (!deviceId_.isEmpty()) {
+          output.writeString(1, getDeviceId());
         }
-        if (!getAndroidBoardNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, androidBoardName_);
+        if (!androidBoardName_.isEmpty()) {
+          output.writeString(2, getAndroidBoardName());
         }
-        if (!getAndroidBootloaderBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, androidBootloader_);
+        if (!androidBootloader_.isEmpty()) {
+          output.writeString(3, getAndroidBootloader());
         }
-        if (!getDeviceBrandBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceBrand_);
+        if (!deviceBrand_.isEmpty()) {
+          output.writeString(4, getDeviceBrand());
         }
-        if (!getDeviceModelBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deviceModel_);
+        if (!deviceModel_.isEmpty()) {
+          output.writeString(5, getDeviceModel());
         }
-        if (!getDeviceModelIdentifierBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deviceModelIdentifier_);
+        if (!deviceModelIdentifier_.isEmpty()) {
+          output.writeString(6, getDeviceModelIdentifier());
         }
-        if (!getDeviceModelBootBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 7, deviceModelBoot_);
+        if (!deviceModelBoot_.isEmpty()) {
+          output.writeString(7, getDeviceModelBoot());
         }
-        if (!getHardwareManufacturerBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 8, hardwareManufacturer_);
+        if (!hardwareManufacturer_.isEmpty()) {
+          output.writeString(8, getHardwareManufacturer());
         }
-        if (!getHardwareModelBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 9, hardwareModel_);
+        if (!hardwareModel_.isEmpty()) {
+          output.writeString(9, getHardwareModel());
         }
-        if (!getFirmwareBrandBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 10, firmwareBrand_);
+        if (!firmwareBrand_.isEmpty()) {
+          output.writeString(10, getFirmwareBrand());
         }
-        if (!getFirmwareTagsBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 12, firmwareTags_);
+        if (!firmwareTags_.isEmpty()) {
+          output.writeString(12, getFirmwareTags());
         }
-        if (!getFirmwareTypeBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 13, firmwareType_);
+        if (!firmwareType_.isEmpty()) {
+          output.writeString(13, getFirmwareType());
         }
-        if (!getFirmwareFingerprintBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 14, firmwareFingerprint_);
+        if (!firmwareFingerprint_.isEmpty()) {
+          output.writeString(14, getFirmwareFingerprint());
         }
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (!getDeviceIdBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, deviceId_);
+        if (!deviceId_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(1, getDeviceId());
         }
-        if (!getAndroidBoardNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, androidBoardName_);
+        if (!androidBoardName_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(2, getAndroidBoardName());
         }
-        if (!getAndroidBootloaderBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, androidBootloader_);
+        if (!androidBootloader_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(3, getAndroidBootloader());
         }
-        if (!getDeviceBrandBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceBrand_);
+        if (!deviceBrand_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(4, getDeviceBrand());
         }
-        if (!getDeviceModelBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deviceModel_);
+        if (!deviceModel_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(5, getDeviceModel());
         }
-        if (!getDeviceModelIdentifierBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deviceModelIdentifier_);
+        if (!deviceModelIdentifier_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(6, getDeviceModelIdentifier());
         }
-        if (!getDeviceModelBootBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, deviceModelBoot_);
+        if (!deviceModelBoot_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(7, getDeviceModelBoot());
         }
-        if (!getHardwareManufacturerBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hardwareManufacturer_);
+        if (!hardwareManufacturer_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(8, getHardwareManufacturer());
         }
-        if (!getHardwareModelBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, hardwareModel_);
+        if (!hardwareModel_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(9, getHardwareModel());
         }
-        if (!getFirmwareBrandBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, firmwareBrand_);
+        if (!firmwareBrand_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(10, getFirmwareBrand());
         }
-        if (!getFirmwareTagsBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, firmwareTags_);
+        if (!firmwareTags_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(12, getFirmwareTags());
         }
-        if (!getFirmwareTypeBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, firmwareType_);
+        if (!firmwareType_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(13, getFirmwareType());
         }
-        if (!getFirmwareFingerprintBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, firmwareFingerprint_);
+        if (!firmwareFingerprint_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(14, getFirmwareFingerprint());
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo) obj;
-
-        boolean result = true;
-        result = result && getDeviceId()
-            .equals(other.getDeviceId());
-        result = result && getAndroidBoardName()
-            .equals(other.getAndroidBoardName());
-        result = result && getAndroidBootloader()
-            .equals(other.getAndroidBootloader());
-        result = result && getDeviceBrand()
-            .equals(other.getDeviceBrand());
-        result = result && getDeviceModel()
-            .equals(other.getDeviceModel());
-        result = result && getDeviceModelIdentifier()
-            .equals(other.getDeviceModelIdentifier());
-        result = result && getDeviceModelBoot()
-            .equals(other.getDeviceModelBoot());
-        result = result && getHardwareManufacturer()
-            .equals(other.getHardwareManufacturer());
-        result = result && getHardwareModel()
-            .equals(other.getHardwareModel());
-        result = result && getFirmwareBrand()
-            .equals(other.getFirmwareBrand());
-        result = result && getFirmwareTags()
-            .equals(other.getFirmwareTags());
-        result = result && getFirmwareType()
-            .equals(other.getFirmwareType());
-        result = result && getFirmwareFingerprint()
-            .equals(other.getFirmwareFingerprint());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceId().hashCode();
-        hash = (37 * hash) + ANDROID_BOARD_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getAndroidBoardName().hashCode();
-        hash = (37 * hash) + ANDROID_BOOTLOADER_FIELD_NUMBER;
-        hash = (53 * hash) + getAndroidBootloader().hashCode();
-        hash = (37 * hash) + DEVICE_BRAND_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceBrand().hashCode();
-        hash = (37 * hash) + DEVICE_MODEL_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceModel().hashCode();
-        hash = (37 * hash) + DEVICE_MODEL_IDENTIFIER_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceModelIdentifier().hashCode();
-        hash = (37 * hash) + DEVICE_MODEL_BOOT_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceModelBoot().hashCode();
-        hash = (37 * hash) + HARDWARE_MANUFACTURER_FIELD_NUMBER;
-        hash = (53 * hash) + getHardwareManufacturer().hashCode();
-        hash = (37 * hash) + HARDWARE_MODEL_FIELD_NUMBER;
-        hash = (53 * hash) + getHardwareModel().hashCode();
-        hash = (37 * hash) + FIRMWARE_BRAND_FIELD_NUMBER;
-        hash = (53 * hash) + getFirmwareBrand().hashCode();
-        hash = (37 * hash) + FIRMWARE_TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getFirmwareTags().hashCode();
-        hash = (37 * hash) + FIRMWARE_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getFirmwareType().hashCode();
-        hash = (37 * hash) + FIRMWARE_FINGERPRINT_FIELD_NUMBER;
-        hash = (53 * hash) + getFirmwareFingerprint().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          deviceId_ = "";
 
-          androidBoardName_ = "";
-
-          androidBootloader_ = "";
-
-          deviceBrand_ = "";
-
-          deviceModel_ = "";
-
-          deviceModelIdentifier_ = "";
-
-          deviceModelBoot_ = "";
-
-          hardwareManufacturer_ = "";
-
-          hardwareModel_ = "";
-
-          firmwareBrand_ = "";
-
-          firmwareTags_ = "";
-
-          firmwareType_ = "";
-
-          firmwareFingerprint_ = "";
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo(this);
-          result.deviceId_ = deviceId_;
-          result.androidBoardName_ = androidBoardName_;
-          result.androidBootloader_ = androidBootloader_;
-          result.deviceBrand_ = deviceBrand_;
-          result.deviceModel_ = deviceModel_;
-          result.deviceModelIdentifier_ = deviceModelIdentifier_;
-          result.deviceModelBoot_ = deviceModelBoot_;
-          result.hardwareManufacturer_ = hardwareManufacturer_;
-          result.hardwareModel_ = hardwareModel_;
-          result.firmwareBrand_ = firmwareBrand_;
-          result.firmwareTags_ = firmwareTags_;
-          result.firmwareType_ = firmwareType_;
-          result.firmwareFingerprint_ = firmwareFingerprint_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.getDefaultInstance()) return this;
-          if (!other.getDeviceId().isEmpty()) {
-            deviceId_ = other.deviceId_;
-            onChanged();
-          }
-          if (!other.getAndroidBoardName().isEmpty()) {
-            androidBoardName_ = other.androidBoardName_;
-            onChanged();
-          }
-          if (!other.getAndroidBootloader().isEmpty()) {
-            androidBootloader_ = other.androidBootloader_;
-            onChanged();
-          }
-          if (!other.getDeviceBrand().isEmpty()) {
-            deviceBrand_ = other.deviceBrand_;
-            onChanged();
-          }
-          if (!other.getDeviceModel().isEmpty()) {
-            deviceModel_ = other.deviceModel_;
-            onChanged();
-          }
-          if (!other.getDeviceModelIdentifier().isEmpty()) {
-            deviceModelIdentifier_ = other.deviceModelIdentifier_;
-            onChanged();
-          }
-          if (!other.getDeviceModelBoot().isEmpty()) {
-            deviceModelBoot_ = other.deviceModelBoot_;
-            onChanged();
-          }
-          if (!other.getHardwareManufacturer().isEmpty()) {
-            hardwareManufacturer_ = other.hardwareManufacturer_;
-            onChanged();
-          }
-          if (!other.getHardwareModel().isEmpty()) {
-            hardwareModel_ = other.hardwareModel_;
-            onChanged();
-          }
-          if (!other.getFirmwareBrand().isEmpty()) {
-            firmwareBrand_ = other.firmwareBrand_;
-            onChanged();
-          }
-          if (!other.getFirmwareTags().isEmpty()) {
-            firmwareTags_ = other.firmwareTags_;
-            onChanged();
-          }
-          if (!other.getFirmwareType().isEmpty()) {
-            firmwareType_ = other.firmwareType_;
-            onChanged();
-          }
-          if (!other.getFirmwareFingerprint().isEmpty()) {
-            firmwareFingerprint_ = other.firmwareFingerprint_;
-            onChanged();
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object deviceId_ = "";
         /**
          * <pre>
          * Hex string
@@ -8596,16 +5497,7 @@ public final class Envelopes {
          * <code>optional string device_id = 1;</code>
          */
         public java.lang.String getDeviceId() {
-          java.lang.Object ref = deviceId_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            deviceId_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDeviceId();
         }
         /**
          * <pre>
@@ -8616,16 +5508,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getDeviceIdBytes() {
-          java.lang.Object ref = deviceId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            deviceId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getDeviceIdBytes();
         }
         /**
          * <pre>
@@ -8636,12 +5519,8 @@ public final class Envelopes {
          */
         public Builder setDeviceId(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          deviceId_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceId(value);
           return this;
         }
         /**
@@ -8652,9 +5531,8 @@ public final class Envelopes {
          * <code>optional string device_id = 1;</code>
          */
         public Builder clearDeviceId() {
-          
-          deviceId_ = getDefaultInstance().getDeviceId();
-          onChanged();
+          copyOnWrite();
+          instance.clearDeviceId();
           return this;
         }
         /**
@@ -8666,68 +5544,39 @@ public final class Envelopes {
          */
         public Builder setDeviceIdBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          deviceId_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceIdBytes(value);
           return this;
         }
 
-        private java.lang.Object androidBoardName_ = "";
         /**
          * <code>optional string android_board_name = 2;</code>
          */
         public java.lang.String getAndroidBoardName() {
-          java.lang.Object ref = androidBoardName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            androidBoardName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getAndroidBoardName();
         }
         /**
          * <code>optional string android_board_name = 2;</code>
          */
         public com.google.protobuf.ByteString
             getAndroidBoardNameBytes() {
-          java.lang.Object ref = androidBoardName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            androidBoardName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getAndroidBoardNameBytes();
         }
         /**
          * <code>optional string android_board_name = 2;</code>
          */
         public Builder setAndroidBoardName(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          androidBoardName_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAndroidBoardName(value);
           return this;
         }
         /**
          * <code>optional string android_board_name = 2;</code>
          */
         public Builder clearAndroidBoardName() {
-          
-          androidBoardName_ = getDefaultInstance().getAndroidBoardName();
-          onChanged();
+          copyOnWrite();
+          instance.clearAndroidBoardName();
           return this;
         }
         /**
@@ -8735,68 +5584,39 @@ public final class Envelopes {
          */
         public Builder setAndroidBoardNameBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          androidBoardName_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAndroidBoardNameBytes(value);
           return this;
         }
 
-        private java.lang.Object androidBootloader_ = "";
         /**
          * <code>optional string android_bootloader = 3;</code>
          */
         public java.lang.String getAndroidBootloader() {
-          java.lang.Object ref = androidBootloader_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            androidBootloader_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getAndroidBootloader();
         }
         /**
          * <code>optional string android_bootloader = 3;</code>
          */
         public com.google.protobuf.ByteString
             getAndroidBootloaderBytes() {
-          java.lang.Object ref = androidBootloader_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            androidBootloader_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getAndroidBootloaderBytes();
         }
         /**
          * <code>optional string android_bootloader = 3;</code>
          */
         public Builder setAndroidBootloader(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          androidBootloader_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAndroidBootloader(value);
           return this;
         }
         /**
          * <code>optional string android_bootloader = 3;</code>
          */
         public Builder clearAndroidBootloader() {
-          
-          androidBootloader_ = getDefaultInstance().getAndroidBootloader();
-          onChanged();
+          copyOnWrite();
+          instance.clearAndroidBootloader();
           return this;
         }
         /**
@@ -8804,17 +5624,11 @@ public final class Envelopes {
          */
         public Builder setAndroidBootloaderBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          androidBootloader_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAndroidBootloaderBytes(value);
           return this;
         }
 
-        private java.lang.Object deviceBrand_ = "";
         /**
          * <pre>
          * On Android: product.brand
@@ -8823,16 +5637,7 @@ public final class Envelopes {
          * <code>optional string device_brand = 4;</code>
          */
         public java.lang.String getDeviceBrand() {
-          java.lang.Object ref = deviceBrand_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            deviceBrand_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDeviceBrand();
         }
         /**
          * <pre>
@@ -8843,16 +5648,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getDeviceBrandBytes() {
-          java.lang.Object ref = deviceBrand_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            deviceBrand_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getDeviceBrandBytes();
         }
         /**
          * <pre>
@@ -8863,12 +5659,8 @@ public final class Envelopes {
          */
         public Builder setDeviceBrand(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          deviceBrand_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceBrand(value);
           return this;
         }
         /**
@@ -8879,9 +5671,8 @@ public final class Envelopes {
          * <code>optional string device_brand = 4;</code>
          */
         public Builder clearDeviceBrand() {
-          
-          deviceBrand_ = getDefaultInstance().getDeviceBrand();
-          onChanged();
+          copyOnWrite();
+          instance.clearDeviceBrand();
           return this;
         }
         /**
@@ -8893,17 +5684,11 @@ public final class Envelopes {
          */
         public Builder setDeviceBrandBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          deviceBrand_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceBrandBytes(value);
           return this;
         }
 
-        private java.lang.Object deviceModel_ = "";
         /**
          * <pre>
          * On Android: product.device
@@ -8912,16 +5697,7 @@ public final class Envelopes {
          * <code>optional string device_model = 5;</code>
          */
         public java.lang.String getDeviceModel() {
-          java.lang.Object ref = deviceModel_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            deviceModel_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDeviceModel();
         }
         /**
          * <pre>
@@ -8932,16 +5708,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getDeviceModelBytes() {
-          java.lang.Object ref = deviceModel_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            deviceModel_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getDeviceModelBytes();
         }
         /**
          * <pre>
@@ -8952,12 +5719,8 @@ public final class Envelopes {
          */
         public Builder setDeviceModel(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          deviceModel_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceModel(value);
           return this;
         }
         /**
@@ -8968,9 +5731,8 @@ public final class Envelopes {
          * <code>optional string device_model = 5;</code>
          */
         public Builder clearDeviceModel() {
-          
-          deviceModel_ = getDefaultInstance().getDeviceModel();
-          onChanged();
+          copyOnWrite();
+          instance.clearDeviceModel();
           return this;
         }
         /**
@@ -8982,17 +5744,11 @@ public final class Envelopes {
          */
         public Builder setDeviceModelBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          deviceModel_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceModelBytes(value);
           return this;
         }
 
-        private java.lang.Object deviceModelIdentifier_ = "";
         /**
          * <pre>
          * Android only, build.display.id
@@ -9001,16 +5757,7 @@ public final class Envelopes {
          * <code>optional string device_model_identifier = 6;</code>
          */
         public java.lang.String getDeviceModelIdentifier() {
-          java.lang.Object ref = deviceModelIdentifier_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            deviceModelIdentifier_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDeviceModelIdentifier();
         }
         /**
          * <pre>
@@ -9021,16 +5768,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getDeviceModelIdentifierBytes() {
-          java.lang.Object ref = deviceModelIdentifier_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            deviceModelIdentifier_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getDeviceModelIdentifierBytes();
         }
         /**
          * <pre>
@@ -9041,12 +5779,8 @@ public final class Envelopes {
          */
         public Builder setDeviceModelIdentifier(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          deviceModelIdentifier_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceModelIdentifier(value);
           return this;
         }
         /**
@@ -9057,9 +5791,8 @@ public final class Envelopes {
          * <code>optional string device_model_identifier = 6;</code>
          */
         public Builder clearDeviceModelIdentifier() {
-          
-          deviceModelIdentifier_ = getDefaultInstance().getDeviceModelIdentifier();
-          onChanged();
+          copyOnWrite();
+          instance.clearDeviceModelIdentifier();
           return this;
         }
         /**
@@ -9071,17 +5804,11 @@ public final class Envelopes {
          */
         public Builder setDeviceModelIdentifierBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          deviceModelIdentifier_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceModelIdentifierBytes(value);
           return this;
         }
 
-        private java.lang.Object deviceModelBoot_ = "";
         /**
          * <pre>
          * On Android: boot.hardware
@@ -9090,16 +5817,7 @@ public final class Envelopes {
          * <code>optional string device_model_boot = 7;</code>
          */
         public java.lang.String getDeviceModelBoot() {
-          java.lang.Object ref = deviceModelBoot_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            deviceModelBoot_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDeviceModelBoot();
         }
         /**
          * <pre>
@@ -9110,16 +5828,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getDeviceModelBootBytes() {
-          java.lang.Object ref = deviceModelBoot_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            deviceModelBoot_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getDeviceModelBootBytes();
         }
         /**
          * <pre>
@@ -9130,12 +5839,8 @@ public final class Envelopes {
          */
         public Builder setDeviceModelBoot(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          deviceModelBoot_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceModelBoot(value);
           return this;
         }
         /**
@@ -9146,9 +5851,8 @@ public final class Envelopes {
          * <code>optional string device_model_boot = 7;</code>
          */
         public Builder clearDeviceModelBoot() {
-          
-          deviceModelBoot_ = getDefaultInstance().getDeviceModelBoot();
-          onChanged();
+          copyOnWrite();
+          instance.clearDeviceModelBoot();
           return this;
         }
         /**
@@ -9160,17 +5864,11 @@ public final class Envelopes {
          */
         public Builder setDeviceModelBootBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          deviceModelBoot_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setDeviceModelBootBytes(value);
           return this;
         }
 
-        private java.lang.Object hardwareManufacturer_ = "";
         /**
          * <pre>
          * On Android: product.manufacturer
@@ -9179,16 +5877,7 @@ public final class Envelopes {
          * <code>optional string hardware_manufacturer = 8;</code>
          */
         public java.lang.String getHardwareManufacturer() {
-          java.lang.Object ref = hardwareManufacturer_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            hardwareManufacturer_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getHardwareManufacturer();
         }
         /**
          * <pre>
@@ -9199,16 +5888,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getHardwareManufacturerBytes() {
-          java.lang.Object ref = hardwareManufacturer_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            hardwareManufacturer_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getHardwareManufacturerBytes();
         }
         /**
          * <pre>
@@ -9219,12 +5899,8 @@ public final class Envelopes {
          */
         public Builder setHardwareManufacturer(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          hardwareManufacturer_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setHardwareManufacturer(value);
           return this;
         }
         /**
@@ -9235,9 +5911,8 @@ public final class Envelopes {
          * <code>optional string hardware_manufacturer = 8;</code>
          */
         public Builder clearHardwareManufacturer() {
-          
-          hardwareManufacturer_ = getDefaultInstance().getHardwareManufacturer();
-          onChanged();
+          copyOnWrite();
+          instance.clearHardwareManufacturer();
           return this;
         }
         /**
@@ -9249,17 +5924,11 @@ public final class Envelopes {
          */
         public Builder setHardwareManufacturerBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          hardwareManufacturer_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setHardwareManufacturerBytes(value);
           return this;
         }
 
-        private java.lang.Object hardwareModel_ = "";
         /**
          * <pre>
          * On Android: product.model
@@ -9268,16 +5937,7 @@ public final class Envelopes {
          * <code>optional string hardware_model = 9;</code>
          */
         public java.lang.String getHardwareModel() {
-          java.lang.Object ref = hardwareModel_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            hardwareModel_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getHardwareModel();
         }
         /**
          * <pre>
@@ -9288,16 +5948,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getHardwareModelBytes() {
-          java.lang.Object ref = hardwareModel_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            hardwareModel_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getHardwareModelBytes();
         }
         /**
          * <pre>
@@ -9308,12 +5959,8 @@ public final class Envelopes {
          */
         public Builder setHardwareModel(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          hardwareModel_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setHardwareModel(value);
           return this;
         }
         /**
@@ -9324,9 +5971,8 @@ public final class Envelopes {
          * <code>optional string hardware_model = 9;</code>
          */
         public Builder clearHardwareModel() {
-          
-          hardwareModel_ = getDefaultInstance().getHardwareModel();
-          onChanged();
+          copyOnWrite();
+          instance.clearHardwareModel();
           return this;
         }
         /**
@@ -9338,17 +5984,11 @@ public final class Envelopes {
          */
         public Builder setHardwareModelBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          hardwareModel_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setHardwareModelBytes(value);
           return this;
         }
 
-        private java.lang.Object firmwareBrand_ = "";
         /**
          * <pre>
          * On Android: product.name, on iOS: "iPhone OS"
@@ -9357,16 +5997,7 @@ public final class Envelopes {
          * <code>optional string firmware_brand = 10;</code>
          */
         public java.lang.String getFirmwareBrand() {
-          java.lang.Object ref = firmwareBrand_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            firmwareBrand_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getFirmwareBrand();
         }
         /**
          * <pre>
@@ -9377,16 +6008,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getFirmwareBrandBytes() {
-          java.lang.Object ref = firmwareBrand_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            firmwareBrand_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getFirmwareBrandBytes();
         }
         /**
          * <pre>
@@ -9397,12 +6019,8 @@ public final class Envelopes {
          */
         public Builder setFirmwareBrand(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          firmwareBrand_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareBrand(value);
           return this;
         }
         /**
@@ -9413,9 +6031,8 @@ public final class Envelopes {
          * <code>optional string firmware_brand = 10;</code>
          */
         public Builder clearFirmwareBrand() {
-          
-          firmwareBrand_ = getDefaultInstance().getFirmwareBrand();
-          onChanged();
+          copyOnWrite();
+          instance.clearFirmwareBrand();
           return this;
         }
         /**
@@ -9427,17 +6044,11 @@ public final class Envelopes {
          */
         public Builder setFirmwareBrandBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          firmwareBrand_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareBrandBytes(value);
           return this;
         }
 
-        private java.lang.Object firmwareTags_ = "";
         /**
          * <pre>
          * Android only, build.tags
@@ -9446,16 +6057,7 @@ public final class Envelopes {
          * <code>optional string firmware_tags = 12;</code>
          */
         public java.lang.String getFirmwareTags() {
-          java.lang.Object ref = firmwareTags_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            firmwareTags_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getFirmwareTags();
         }
         /**
          * <pre>
@@ -9466,16 +6068,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getFirmwareTagsBytes() {
-          java.lang.Object ref = firmwareTags_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            firmwareTags_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getFirmwareTagsBytes();
         }
         /**
          * <pre>
@@ -9486,12 +6079,8 @@ public final class Envelopes {
          */
         public Builder setFirmwareTags(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          firmwareTags_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareTags(value);
           return this;
         }
         /**
@@ -9502,9 +6091,8 @@ public final class Envelopes {
          * <code>optional string firmware_tags = 12;</code>
          */
         public Builder clearFirmwareTags() {
-          
-          firmwareTags_ = getDefaultInstance().getFirmwareTags();
-          onChanged();
+          copyOnWrite();
+          instance.clearFirmwareTags();
           return this;
         }
         /**
@@ -9516,17 +6104,11 @@ public final class Envelopes {
          */
         public Builder setFirmwareTagsBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          firmwareTags_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareTagsBytes(value);
           return this;
         }
 
-        private java.lang.Object firmwareType_ = "";
         /**
          * <pre>
          * On Android: build.type, on iOS instead: iOS version
@@ -9535,16 +6117,7 @@ public final class Envelopes {
          * <code>optional string firmware_type = 13;</code>
          */
         public java.lang.String getFirmwareType() {
-          java.lang.Object ref = firmwareType_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            firmwareType_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getFirmwareType();
         }
         /**
          * <pre>
@@ -9555,16 +6128,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getFirmwareTypeBytes() {
-          java.lang.Object ref = firmwareType_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            firmwareType_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getFirmwareTypeBytes();
         }
         /**
          * <pre>
@@ -9575,12 +6139,8 @@ public final class Envelopes {
          */
         public Builder setFirmwareType(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          firmwareType_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareType(value);
           return this;
         }
         /**
@@ -9591,9 +6151,8 @@ public final class Envelopes {
          * <code>optional string firmware_type = 13;</code>
          */
         public Builder clearFirmwareType() {
-          
-          firmwareType_ = getDefaultInstance().getFirmwareType();
-          onChanged();
+          copyOnWrite();
+          instance.clearFirmwareType();
           return this;
         }
         /**
@@ -9605,17 +6164,11 @@ public final class Envelopes {
          */
         public Builder setFirmwareTypeBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          firmwareType_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareTypeBytes(value);
           return this;
         }
 
-        private java.lang.Object firmwareFingerprint_ = "";
         /**
          * <pre>
          * Android only, build.fingerprint
@@ -9624,16 +6177,7 @@ public final class Envelopes {
          * <code>optional string firmware_fingerprint = 14;</code>
          */
         public java.lang.String getFirmwareFingerprint() {
-          java.lang.Object ref = firmwareFingerprint_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            firmwareFingerprint_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getFirmwareFingerprint();
         }
         /**
          * <pre>
@@ -9644,16 +6188,7 @@ public final class Envelopes {
          */
         public com.google.protobuf.ByteString
             getFirmwareFingerprintBytes() {
-          java.lang.Object ref = firmwareFingerprint_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            firmwareFingerprint_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getFirmwareFingerprintBytes();
         }
         /**
          * <pre>
@@ -9664,12 +6199,8 @@ public final class Envelopes {
          */
         public Builder setFirmwareFingerprint(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          firmwareFingerprint_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareFingerprint(value);
           return this;
         }
         /**
@@ -9680,9 +6211,8 @@ public final class Envelopes {
          * <code>optional string firmware_fingerprint = 14;</code>
          */
         public Builder clearFirmwareFingerprint() {
-          
-          firmwareFingerprint_ = getDefaultInstance().getFirmwareFingerprint();
-          onChanged();
+          copyOnWrite();
+          instance.clearFirmwareFingerprint();
           return this;
         }
         /**
@@ -9694,67 +6224,209 @@ public final class Envelopes {
          */
         public Builder setFirmwareFingerprintBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          firmwareFingerprint_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setFirmwareFingerprintBytes(value);
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo) arg1;
+            deviceId_ = visitor.visitString(!deviceId_.isEmpty(), deviceId_,
+                !other.deviceId_.isEmpty(), other.deviceId_);
+            androidBoardName_ = visitor.visitString(!androidBoardName_.isEmpty(), androidBoardName_,
+                !other.androidBoardName_.isEmpty(), other.androidBoardName_);
+            androidBootloader_ = visitor.visitString(!androidBootloader_.isEmpty(), androidBootloader_,
+                !other.androidBootloader_.isEmpty(), other.androidBootloader_);
+            deviceBrand_ = visitor.visitString(!deviceBrand_.isEmpty(), deviceBrand_,
+                !other.deviceBrand_.isEmpty(), other.deviceBrand_);
+            deviceModel_ = visitor.visitString(!deviceModel_.isEmpty(), deviceModel_,
+                !other.deviceModel_.isEmpty(), other.deviceModel_);
+            deviceModelIdentifier_ = visitor.visitString(!deviceModelIdentifier_.isEmpty(), deviceModelIdentifier_,
+                !other.deviceModelIdentifier_.isEmpty(), other.deviceModelIdentifier_);
+            deviceModelBoot_ = visitor.visitString(!deviceModelBoot_.isEmpty(), deviceModelBoot_,
+                !other.deviceModelBoot_.isEmpty(), other.deviceModelBoot_);
+            hardwareManufacturer_ = visitor.visitString(!hardwareManufacturer_.isEmpty(), hardwareManufacturer_,
+                !other.hardwareManufacturer_.isEmpty(), other.hardwareManufacturer_);
+            hardwareModel_ = visitor.visitString(!hardwareModel_.isEmpty(), hardwareModel_,
+                !other.hardwareModel_.isEmpty(), other.hardwareModel_);
+            firmwareBrand_ = visitor.visitString(!firmwareBrand_.isEmpty(), firmwareBrand_,
+                !other.firmwareBrand_.isEmpty(), other.firmwareBrand_);
+            firmwareTags_ = visitor.visitString(!firmwareTags_.isEmpty(), firmwareTags_,
+                !other.firmwareTags_.isEmpty(), other.firmwareTags_);
+            firmwareType_ = visitor.visitString(!firmwareType_.isEmpty(), firmwareType_,
+                !other.firmwareType_.isEmpty(), other.firmwareType_);
+            firmwareFingerprint_ = visitor.visitString(!firmwareFingerprint_.isEmpty(), firmwareFingerprint_,
+                !other.firmwareFingerprint_.isEmpty(), other.firmwareFingerprint_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 10: {
+                    String s = input.readStringRequireUtf8();
+
+                    deviceId_ = s;
+                    break;
+                  }
+                  case 18: {
+                    String s = input.readStringRequireUtf8();
+
+                    androidBoardName_ = s;
+                    break;
+                  }
+                  case 26: {
+                    String s = input.readStringRequireUtf8();
+
+                    androidBootloader_ = s;
+                    break;
+                  }
+                  case 34: {
+                    String s = input.readStringRequireUtf8();
+
+                    deviceBrand_ = s;
+                    break;
+                  }
+                  case 42: {
+                    String s = input.readStringRequireUtf8();
+
+                    deviceModel_ = s;
+                    break;
+                  }
+                  case 50: {
+                    String s = input.readStringRequireUtf8();
+
+                    deviceModelIdentifier_ = s;
+                    break;
+                  }
+                  case 58: {
+                    String s = input.readStringRequireUtf8();
+
+                    deviceModelBoot_ = s;
+                    break;
+                  }
+                  case 66: {
+                    String s = input.readStringRequireUtf8();
+
+                    hardwareManufacturer_ = s;
+                    break;
+                  }
+                  case 74: {
+                    String s = input.readStringRequireUtf8();
+
+                    hardwareModel_ = s;
+                    break;
+                  }
+                  case 82: {
+                    String s = input.readStringRequireUtf8();
+
+                    firmwareBrand_ = s;
+                    break;
+                  }
+                  case 98: {
+                    String s = input.readStringRequireUtf8();
+
+                    firmwareTags_ = s;
+                    break;
+                  }
+                  case 106: {
+                    String s = input.readStringRequireUtf8();
+
+                    firmwareType_ = s;
+                    break;
+                  }
+                  case 114: {
+                    String s = input.readStringRequireUtf8();
+
+                    firmwareFingerprint_ = s;
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo();
+        DEFAULT_INSTANCE = new DeviceInfo();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<DeviceInfo>
-          PARSER = new com.google.protobuf.AbstractParser<DeviceInfo>() {
-        public DeviceInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DeviceInfo(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<DeviceInfo> PARSER;
 
       public static com.google.protobuf.Parser<DeviceInfo> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<DeviceInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface ActivityStatusOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <pre>
@@ -9813,118 +6485,13 @@ public final class Envelopes {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus}
      */
     public  static final class ActivityStatus extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            ActivityStatus, ActivityStatus.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus)
         ActivityStatusOrBuilder {
-      // Use ActivityStatus.newBuilder() to construct.
-      private ActivityStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private ActivityStatus() {
-        startTimeMs_ = 0L;
-        unknownStatus_ = false;
-        walking_ = false;
-        running_ = false;
-        stationary_ = false;
-        automotive_ = false;
-        tilting_ = false;
-        cycling_ = false;
         status_ = com.google.protobuf.ByteString.EMPTY;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private ActivityStatus(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-
-                startTimeMs_ = input.readUInt64();
-                break;
-              }
-              case 16: {
-
-                unknownStatus_ = input.readBool();
-                break;
-              }
-              case 24: {
-
-                walking_ = input.readBool();
-                break;
-              }
-              case 32: {
-
-                running_ = input.readBool();
-                break;
-              }
-              case 40: {
-
-                stationary_ = input.readBool();
-                break;
-              }
-              case 48: {
-
-                automotive_ = input.readBool();
-                break;
-              }
-              case 56: {
-
-                tilting_ = input.readBool();
-                break;
-              }
-              case 64: {
-
-                cycling_ = input.readBool();
-                break;
-              }
-              case 74: {
-
-                status_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder.class);
-      }
-
       public static final int START_TIME_MS_FIELD_NUMBER = 1;
       private long startTimeMs_;
       /**
@@ -9937,6 +6504,28 @@ public final class Envelopes {
       public long getStartTimeMs() {
         return startTimeMs_;
       }
+      /**
+       * <pre>
+       * all of these had 1 as their value
+       * </pre>
+       *
+       * <code>optional uint64 start_time_ms = 1;</code>
+       */
+      private void setStartTimeMs(long value) {
+        
+        startTimeMs_ = value;
+      }
+      /**
+       * <pre>
+       * all of these had 1 as their value
+       * </pre>
+       *
+       * <code>optional uint64 start_time_ms = 1;</code>
+       */
+      private void clearStartTimeMs() {
+        
+        startTimeMs_ = 0L;
+      }
 
       public static final int UNKNOWN_STATUS_FIELD_NUMBER = 2;
       private boolean unknownStatus_;
@@ -9945,6 +6534,20 @@ public final class Envelopes {
        */
       public boolean getUnknownStatus() {
         return unknownStatus_;
+      }
+      /**
+       * <code>optional bool unknown_status = 2;</code>
+       */
+      private void setUnknownStatus(boolean value) {
+        
+        unknownStatus_ = value;
+      }
+      /**
+       * <code>optional bool unknown_status = 2;</code>
+       */
+      private void clearUnknownStatus() {
+        
+        unknownStatus_ = false;
       }
 
       public static final int WALKING_FIELD_NUMBER = 3;
@@ -9955,6 +6558,20 @@ public final class Envelopes {
       public boolean getWalking() {
         return walking_;
       }
+      /**
+       * <code>optional bool walking = 3;</code>
+       */
+      private void setWalking(boolean value) {
+        
+        walking_ = value;
+      }
+      /**
+       * <code>optional bool walking = 3;</code>
+       */
+      private void clearWalking() {
+        
+        walking_ = false;
+      }
 
       public static final int RUNNING_FIELD_NUMBER = 4;
       private boolean running_;
@@ -9963,6 +6580,20 @@ public final class Envelopes {
        */
       public boolean getRunning() {
         return running_;
+      }
+      /**
+       * <code>optional bool running = 4;</code>
+       */
+      private void setRunning(boolean value) {
+        
+        running_ = value;
+      }
+      /**
+       * <code>optional bool running = 4;</code>
+       */
+      private void clearRunning() {
+        
+        running_ = false;
       }
 
       public static final int STATIONARY_FIELD_NUMBER = 5;
@@ -9973,6 +6604,20 @@ public final class Envelopes {
       public boolean getStationary() {
         return stationary_;
       }
+      /**
+       * <code>optional bool stationary = 5;</code>
+       */
+      private void setStationary(boolean value) {
+        
+        stationary_ = value;
+      }
+      /**
+       * <code>optional bool stationary = 5;</code>
+       */
+      private void clearStationary() {
+        
+        stationary_ = false;
+      }
 
       public static final int AUTOMOTIVE_FIELD_NUMBER = 6;
       private boolean automotive_;
@@ -9981,6 +6626,20 @@ public final class Envelopes {
        */
       public boolean getAutomotive() {
         return automotive_;
+      }
+      /**
+       * <code>optional bool automotive = 6;</code>
+       */
+      private void setAutomotive(boolean value) {
+        
+        automotive_ = value;
+      }
+      /**
+       * <code>optional bool automotive = 6;</code>
+       */
+      private void clearAutomotive() {
+        
+        automotive_ = false;
       }
 
       public static final int TILTING_FIELD_NUMBER = 7;
@@ -9991,6 +6650,20 @@ public final class Envelopes {
       public boolean getTilting() {
         return tilting_;
       }
+      /**
+       * <code>optional bool tilting = 7;</code>
+       */
+      private void setTilting(boolean value) {
+        
+        tilting_ = value;
+      }
+      /**
+       * <code>optional bool tilting = 7;</code>
+       */
+      private void clearTilting() {
+        
+        tilting_ = false;
+      }
 
       public static final int CYCLING_FIELD_NUMBER = 8;
       private boolean cycling_;
@@ -9999,6 +6672,20 @@ public final class Envelopes {
        */
       public boolean getCycling() {
         return cycling_;
+      }
+      /**
+       * <code>optional bool cycling = 8;</code>
+       */
+      private void setCycling(boolean value) {
+        
+        cycling_ = value;
+      }
+      /**
+       * <code>optional bool cycling = 8;</code>
+       */
+      private void clearCycling() {
+        
+        cycling_ = false;
       }
 
       public static final int STATUS_FIELD_NUMBER = 9;
@@ -10009,15 +6696,22 @@ public final class Envelopes {
       public com.google.protobuf.ByteString getStatus() {
         return status_;
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <code>optional bytes status = 9;</code>
+       */
+      private void setStatus(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+      }
+      /**
+       * <code>optional bytes status = 9;</code>
+       */
+      private void clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -10052,7 +6746,7 @@ public final class Envelopes {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -10092,158 +6786,78 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeBytesSize(9, status_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus) obj;
-
-        boolean result = true;
-        result = result && (getStartTimeMs()
-            == other.getStartTimeMs());
-        result = result && (getUnknownStatus()
-            == other.getUnknownStatus());
-        result = result && (getWalking()
-            == other.getWalking());
-        result = result && (getRunning()
-            == other.getRunning());
-        result = result && (getStationary()
-            == other.getStationary());
-        result = result && (getAutomotive()
-            == other.getAutomotive());
-        result = result && (getTilting()
-            == other.getTilting());
-        result = result && (getCycling()
-            == other.getCycling());
-        result = result && getStatus()
-            .equals(other.getStatus());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + START_TIME_MS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getStartTimeMs());
-        hash = (37 * hash) + UNKNOWN_STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getUnknownStatus());
-        hash = (37 * hash) + WALKING_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getWalking());
-        hash = (37 * hash) + RUNNING_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getRunning());
-        hash = (37 * hash) + STATIONARY_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getStationary());
-        hash = (37 * hash) + AUTOMOTIVE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getAutomotive());
-        hash = (37 * hash) + TILTING_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getTilting());
-        hash = (37 * hash) + CYCLING_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getCycling());
-        hash = (37 * hash) + STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getStatus().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * <pre>
        * Only used in iOS - Android just sends an empty version
@@ -10252,182 +6866,16 @@ public final class Envelopes {
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          startTimeMs_ = 0L;
 
-          unknownStatus_ = false;
-
-          walking_ = false;
-
-          running_ = false;
-
-          stationary_ = false;
-
-          automotive_ = false;
-
-          tilting_ = false;
-
-          cycling_ = false;
-
-          status_ = com.google.protobuf.ByteString.EMPTY;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus(this);
-          result.startTimeMs_ = startTimeMs_;
-          result.unknownStatus_ = unknownStatus_;
-          result.walking_ = walking_;
-          result.running_ = running_;
-          result.stationary_ = stationary_;
-          result.automotive_ = automotive_;
-          result.tilting_ = tilting_;
-          result.cycling_ = cycling_;
-          result.status_ = status_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.getDefaultInstance()) return this;
-          if (other.getStartTimeMs() != 0L) {
-            setStartTimeMs(other.getStartTimeMs());
-          }
-          if (other.getUnknownStatus() != false) {
-            setUnknownStatus(other.getUnknownStatus());
-          }
-          if (other.getWalking() != false) {
-            setWalking(other.getWalking());
-          }
-          if (other.getRunning() != false) {
-            setRunning(other.getRunning());
-          }
-          if (other.getStationary() != false) {
-            setStationary(other.getStationary());
-          }
-          if (other.getAutomotive() != false) {
-            setAutomotive(other.getAutomotive());
-          }
-          if (other.getTilting() != false) {
-            setTilting(other.getTilting());
-          }
-          if (other.getCycling() != false) {
-            setCycling(other.getCycling());
-          }
-          if (other.getStatus() != com.google.protobuf.ByteString.EMPTY) {
-            setStatus(other.getStatus());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private long startTimeMs_ ;
         /**
          * <pre>
          * all of these had 1 as their value
@@ -10436,7 +6884,7 @@ public final class Envelopes {
          * <code>optional uint64 start_time_ms = 1;</code>
          */
         public long getStartTimeMs() {
-          return startTimeMs_;
+          return instance.getStartTimeMs();
         }
         /**
          * <pre>
@@ -10446,9 +6894,8 @@ public final class Envelopes {
          * <code>optional uint64 start_time_ms = 1;</code>
          */
         public Builder setStartTimeMs(long value) {
-          
-          startTimeMs_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setStartTimeMs(value);
           return this;
         }
         /**
@@ -10459,269 +6906,347 @@ public final class Envelopes {
          * <code>optional uint64 start_time_ms = 1;</code>
          */
         public Builder clearStartTimeMs() {
-          
-          startTimeMs_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearStartTimeMs();
           return this;
         }
 
-        private boolean unknownStatus_ ;
         /**
          * <code>optional bool unknown_status = 2;</code>
          */
         public boolean getUnknownStatus() {
-          return unknownStatus_;
+          return instance.getUnknownStatus();
         }
         /**
          * <code>optional bool unknown_status = 2;</code>
          */
         public Builder setUnknownStatus(boolean value) {
-          
-          unknownStatus_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setUnknownStatus(value);
           return this;
         }
         /**
          * <code>optional bool unknown_status = 2;</code>
          */
         public Builder clearUnknownStatus() {
-          
-          unknownStatus_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearUnknownStatus();
           return this;
         }
 
-        private boolean walking_ ;
         /**
          * <code>optional bool walking = 3;</code>
          */
         public boolean getWalking() {
-          return walking_;
+          return instance.getWalking();
         }
         /**
          * <code>optional bool walking = 3;</code>
          */
         public Builder setWalking(boolean value) {
-          
-          walking_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setWalking(value);
           return this;
         }
         /**
          * <code>optional bool walking = 3;</code>
          */
         public Builder clearWalking() {
-          
-          walking_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearWalking();
           return this;
         }
 
-        private boolean running_ ;
         /**
          * <code>optional bool running = 4;</code>
          */
         public boolean getRunning() {
-          return running_;
+          return instance.getRunning();
         }
         /**
          * <code>optional bool running = 4;</code>
          */
         public Builder setRunning(boolean value) {
-          
-          running_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setRunning(value);
           return this;
         }
         /**
          * <code>optional bool running = 4;</code>
          */
         public Builder clearRunning() {
-          
-          running_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearRunning();
           return this;
         }
 
-        private boolean stationary_ ;
         /**
          * <code>optional bool stationary = 5;</code>
          */
         public boolean getStationary() {
-          return stationary_;
+          return instance.getStationary();
         }
         /**
          * <code>optional bool stationary = 5;</code>
          */
         public Builder setStationary(boolean value) {
-          
-          stationary_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setStationary(value);
           return this;
         }
         /**
          * <code>optional bool stationary = 5;</code>
          */
         public Builder clearStationary() {
-          
-          stationary_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearStationary();
           return this;
         }
 
-        private boolean automotive_ ;
         /**
          * <code>optional bool automotive = 6;</code>
          */
         public boolean getAutomotive() {
-          return automotive_;
+          return instance.getAutomotive();
         }
         /**
          * <code>optional bool automotive = 6;</code>
          */
         public Builder setAutomotive(boolean value) {
-          
-          automotive_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setAutomotive(value);
           return this;
         }
         /**
          * <code>optional bool automotive = 6;</code>
          */
         public Builder clearAutomotive() {
-          
-          automotive_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearAutomotive();
           return this;
         }
 
-        private boolean tilting_ ;
         /**
          * <code>optional bool tilting = 7;</code>
          */
         public boolean getTilting() {
-          return tilting_;
+          return instance.getTilting();
         }
         /**
          * <code>optional bool tilting = 7;</code>
          */
         public Builder setTilting(boolean value) {
-          
-          tilting_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTilting(value);
           return this;
         }
         /**
          * <code>optional bool tilting = 7;</code>
          */
         public Builder clearTilting() {
-          
-          tilting_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearTilting();
           return this;
         }
 
-        private boolean cycling_ ;
         /**
          * <code>optional bool cycling = 8;</code>
          */
         public boolean getCycling() {
-          return cycling_;
+          return instance.getCycling();
         }
         /**
          * <code>optional bool cycling = 8;</code>
          */
         public Builder setCycling(boolean value) {
-          
-          cycling_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setCycling(value);
           return this;
         }
         /**
          * <code>optional bool cycling = 8;</code>
          */
         public Builder clearCycling() {
-          
-          cycling_ = false;
-          onChanged();
+          copyOnWrite();
+          instance.clearCycling();
           return this;
         }
 
-        private com.google.protobuf.ByteString status_ = com.google.protobuf.ByteString.EMPTY;
         /**
          * <code>optional bytes status = 9;</code>
          */
         public com.google.protobuf.ByteString getStatus() {
-          return status_;
+          return instance.getStatus();
         }
         /**
          * <code>optional bytes status = 9;</code>
          */
         public Builder setStatus(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          status_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setStatus(value);
           return this;
         }
         /**
          * <code>optional bytes status = 9;</code>
          */
         public Builder clearStatus() {
-          
-          status_ = getDefaultInstance().getStatus();
-          onChanged();
+          copyOnWrite();
+          instance.clearStatus();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus) arg1;
+            startTimeMs_ = visitor.visitLong(startTimeMs_ != 0L, startTimeMs_,
+                other.startTimeMs_ != 0L, other.startTimeMs_);
+            unknownStatus_ = visitor.visitBoolean(unknownStatus_ != false, unknownStatus_,
+                other.unknownStatus_ != false, other.unknownStatus_);
+            walking_ = visitor.visitBoolean(walking_ != false, walking_,
+                other.walking_ != false, other.walking_);
+            running_ = visitor.visitBoolean(running_ != false, running_,
+                other.running_ != false, other.running_);
+            stationary_ = visitor.visitBoolean(stationary_ != false, stationary_,
+                other.stationary_ != false, other.stationary_);
+            automotive_ = visitor.visitBoolean(automotive_ != false, automotive_,
+                other.automotive_ != false, other.automotive_);
+            tilting_ = visitor.visitBoolean(tilting_ != false, tilting_,
+                other.tilting_ != false, other.tilting_);
+            cycling_ = visitor.visitBoolean(cycling_ != false, cycling_,
+                other.cycling_ != false, other.cycling_);
+            status_ = visitor.visitByteString(status_ != com.google.protobuf.ByteString.EMPTY, status_,
+                other.status_ != com.google.protobuf.ByteString.EMPTY, other.status_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+
+                    startTimeMs_ = input.readUInt64();
+                    break;
+                  }
+                  case 16: {
+
+                    unknownStatus_ = input.readBool();
+                    break;
+                  }
+                  case 24: {
+
+                    walking_ = input.readBool();
+                    break;
+                  }
+                  case 32: {
+
+                    running_ = input.readBool();
+                    break;
+                  }
+                  case 40: {
+
+                    stationary_ = input.readBool();
+                    break;
+                  }
+                  case 48: {
+
+                    automotive_ = input.readBool();
+                    break;
+                  }
+                  case 56: {
+
+                    tilting_ = input.readBool();
+                    break;
+                  }
+                  case 64: {
+
+                    cycling_ = input.readBool();
+                    break;
+                  }
+                  case 74: {
+
+                    status_ = input.readBytes();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus();
+        DEFAULT_INSTANCE = new ActivityStatus();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<ActivityStatus>
-          PARSER = new com.google.protobuf.AbstractParser<ActivityStatus>() {
-        public ActivityStatus parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ActivityStatus(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<ActivityStatus> PARSER;
 
       public static com.google.protobuf.Parser<ActivityStatus> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<ActivityStatus> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     private int bitField0_;
@@ -10737,9 +7262,31 @@ public final class Envelopes {
     public long getTimestampSinceStart() {
       return timestampSinceStart_;
     }
+    /**
+     * <pre>
+     * in ms
+     * </pre>
+     *
+     * <code>optional uint64 timestamp_since_start = 2;</code>
+     */
+    private void setTimestampSinceStart(long value) {
+      
+      timestampSinceStart_ = value;
+    }
+    /**
+     * <pre>
+     * in ms
+     * </pre>
+     *
+     * <code>optional uint64 timestamp_since_start = 2;</code>
+     */
+    private void clearTimestampSinceStart() {
+      
+      timestampSinceStart_ = 0L;
+    }
 
     public static final int LOCATION_FIX_FIELD_NUMBER = 4;
-    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix> locationFix_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix> locationFix_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
      */
@@ -10772,6 +7319,91 @@ public final class Envelopes {
         int index) {
       return locationFix_.get(index);
     }
+    private void ensureLocationFixIsMutable() {
+      if (!locationFix_.isModifiable()) {
+        locationFix_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(locationFix_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void setLocationFix(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationFixIsMutable();
+      locationFix_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void setLocationFix(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder builderForValue) {
+      ensureLocationFixIsMutable();
+      locationFix_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void addLocationFix(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationFixIsMutable();
+      locationFix_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void addLocationFix(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationFixIsMutable();
+      locationFix_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void addLocationFix(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder builderForValue) {
+      ensureLocationFixIsMutable();
+      locationFix_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void addLocationFix(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder builderForValue) {
+      ensureLocationFixIsMutable();
+      locationFix_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void addAllLocationFix(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix> values) {
+      ensureLocationFixIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, locationFix_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void clearLocationFix() {
+      locationFix_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
+     */
+    private void removeLocationFix(int index) {
+      ensureLocationFixIsMutable();
+      locationFix_.remove(index);
+    }
 
     public static final int GPS_INFO_FIELD_NUMBER = 5;
     private com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo gpsInfo_;
@@ -10790,8 +7422,39 @@ public final class Envelopes {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder getGpsInfoOrBuilder() {
-      return getGpsInfo();
+    private void setGpsInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gpsInfo_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
+     */
+    private void setGpsInfo(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder builderForValue) {
+      gpsInfo_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
+     */
+    private void mergeGpsInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo value) {
+      if (gpsInfo_ != null &&
+          gpsInfo_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.getDefaultInstance()) {
+        gpsInfo_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.newBuilder(gpsInfo_).mergeFrom(value).buildPartial();
+      } else {
+        gpsInfo_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
+     */
+    private void clearGpsInfo() {  gpsInfo_ = null;
+      
     }
 
     public static final int SENSOR_INFO_FIELD_NUMBER = 7;
@@ -10811,8 +7474,39 @@ public final class Envelopes {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder getSensorInfoOrBuilder() {
-      return getSensorInfo();
+    private void setSensorInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sensorInfo_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
+     */
+    private void setSensorInfo(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder builderForValue) {
+      sensorInfo_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
+     */
+    private void mergeSensorInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo value) {
+      if (sensorInfo_ != null &&
+          sensorInfo_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.getDefaultInstance()) {
+        sensorInfo_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.newBuilder(sensorInfo_).mergeFrom(value).buildPartial();
+      } else {
+        sensorInfo_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
+     */
+    private void clearSensorInfo() {  sensorInfo_ = null;
+      
     }
 
     public static final int DEVICE_INFO_FIELD_NUMBER = 8;
@@ -10832,8 +7526,39 @@ public final class Envelopes {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
-      return getDeviceInfo();
+    private void setDeviceInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      deviceInfo_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
+     */
+    private void setDeviceInfo(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder builderForValue) {
+      deviceInfo_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
+     */
+    private void mergeDeviceInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo value) {
+      if (deviceInfo_ != null &&
+          deviceInfo_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.getDefaultInstance()) {
+        deviceInfo_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.newBuilder(deviceInfo_).mergeFrom(value).buildPartial();
+      } else {
+        deviceInfo_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
+     */
+    private void clearDeviceInfo() {  deviceInfo_ = null;
+      
     }
 
     public static final int ACTIVITY_STATUS_FIELD_NUMBER = 9;
@@ -10853,8 +7578,39 @@ public final class Envelopes {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder getActivityStatusOrBuilder() {
-      return getActivityStatus();
+    private void setActivityStatus(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      activityStatus_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
+     */
+    private void setActivityStatus(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder builderForValue) {
+      activityStatus_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
+     */
+    private void mergeActivityStatus(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus value) {
+      if (activityStatus_ != null &&
+          activityStatus_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.getDefaultInstance()) {
+        activityStatus_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.newBuilder(activityStatus_).mergeFrom(value).buildPartial();
+      } else {
+        activityStatus_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
+     */
+    private void clearActivityStatus() {  activityStatus_ = null;
+      
     }
 
     public static final int LOCATION_HASH1_FIELD_NUMBER = 10;
@@ -10869,6 +7625,28 @@ public final class Envelopes {
     public int getLocationHash1() {
       return locationHash1_;
     }
+    /**
+     * <pre>
+     * Location1 hashed signed based on the auth_token or auth_info - xxHash32
+     * </pre>
+     *
+     * <code>optional uint32 location_hash1 = 10;</code>
+     */
+    private void setLocationHash1(int value) {
+      
+      locationHash1_ = value;
+    }
+    /**
+     * <pre>
+     * Location1 hashed signed based on the auth_token or auth_info - xxHash32
+     * </pre>
+     *
+     * <code>optional uint32 location_hash1 = 10;</code>
+     */
+    private void clearLocationHash1() {
+      
+      locationHash1_ = 0;
+    }
 
     public static final int LOCATION_HASH2_FIELD_NUMBER = 20;
     private int locationHash2_;
@@ -10881,6 +7659,28 @@ public final class Envelopes {
      */
     public int getLocationHash2() {
       return locationHash2_;
+    }
+    /**
+     * <pre>
+     * Location2 hashed (unsigned) - xxHash32
+     * </pre>
+     *
+     * <code>optional uint32 location_hash2 = 20;</code>
+     */
+    private void setLocationHash2(int value) {
+      
+      locationHash2_ = value;
+    }
+    /**
+     * <pre>
+     * Location2 hashed (unsigned) - xxHash32
+     * </pre>
+     *
+     * <code>optional uint32 location_hash2 = 20;</code>
+     */
+    private void clearLocationHash2() {
+      
+      locationHash2_ = 0;
     }
 
     public static final int SESSION_HASH_FIELD_NUMBER = 22;
@@ -10895,6 +7695,31 @@ public final class Envelopes {
     public com.google.protobuf.ByteString getSessionHash() {
       return sessionHash_;
     }
+    /**
+     * <pre>
+     * 16 bytes, unique per session
+     * </pre>
+     *
+     * <code>optional bytes session_hash = 22;</code>
+     */
+    private void setSessionHash(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sessionHash_ = value;
+    }
+    /**
+     * <pre>
+     * 16 bytes, unique per session
+     * </pre>
+     *
+     * <code>optional bytes session_hash = 22;</code>
+     */
+    private void clearSessionHash() {
+      
+      sessionHash_ = getDefaultInstance().getSessionHash();
+    }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 23;
     private long timestamp_;
@@ -10908,9 +7733,31 @@ public final class Envelopes {
     public long getTimestamp() {
       return timestamp_;
     }
+    /**
+     * <pre>
+     * epoch timestamp in ms
+     * </pre>
+     *
+     * <code>optional uint64 timestamp = 23;</code>
+     */
+    private void setTimestamp(long value) {
+      
+      timestamp_ = value;
+    }
+    /**
+     * <pre>
+     * epoch timestamp in ms
+     * </pre>
+     *
+     * <code>optional uint64 timestamp = 23;</code>
+     */
+    private void clearTimestamp() {
+      
+      timestamp_ = 0L;
+    }
 
     public static final int REQUEST_HASH_FIELD_NUMBER = 24;
-    private java.util.List<java.lang.Long> requestHash_;
+    private com.google.protobuf.Internal.LongList requestHash_;
     /**
      * <pre>
      * hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
@@ -10940,9 +7787,60 @@ public final class Envelopes {
      * <code>repeated uint64 request_hash = 24;</code>
      */
     public long getRequestHash(int index) {
-      return requestHash_.get(index);
+      return requestHash_.getLong(index);
     }
-    private int requestHashMemoizedSerializedSize = -1;
+    private void ensureRequestHashIsMutable() {
+      if (!requestHash_.isModifiable()) {
+        requestHash_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(requestHash_);
+       }
+    }
+    /**
+     * <pre>
+     * hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
+     * </pre>
+     *
+     * <code>repeated uint64 request_hash = 24;</code>
+     */
+    private void setRequestHash(
+        int index, long value) {
+      ensureRequestHashIsMutable();
+      requestHash_.setLong(index, value);
+    }
+    /**
+     * <pre>
+     * hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
+     * </pre>
+     *
+     * <code>repeated uint64 request_hash = 24;</code>
+     */
+    private void addRequestHash(long value) {
+      ensureRequestHashIsMutable();
+      requestHash_.addLong(value);
+    }
+    /**
+     * <pre>
+     * hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
+     * </pre>
+     *
+     * <code>repeated uint64 request_hash = 24;</code>
+     */
+    private void addAllRequestHash(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureRequestHashIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, requestHash_);
+    }
+    /**
+     * <pre>
+     * hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
+     * </pre>
+     *
+     * <code>repeated uint64 request_hash = 24;</code>
+     */
+    private void clearRequestHash() {
+      requestHash_ = emptyLongList();
+    }
 
     public static final int UNKNOWN25_FIELD_NUMBER = 25;
     private long unknown25_;
@@ -10956,15 +7854,27 @@ public final class Envelopes {
     public long getUnknown25() {
       return unknown25_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <pre>
+     * for 0.33 its static -8537042734809897855 or 0x898654dd2753a481, generated via xxHash64("&#92;"b8fa9757195897aae92c53dbcf8a60fb3d86d745&#92;"".ToByteArray(), 0x88533787)
+     * </pre>
+     *
+     * <code>optional int64 unknown25 = 25;</code>
+     */
+    private void setUnknown25(long value) {
+      
+      unknown25_ = value;
+    }
+    /**
+     * <pre>
+     * for 0.33 its static -8537042734809897855 or 0x898654dd2753a481, generated via xxHash64("&#92;"b8fa9757195897aae92c53dbcf8a60fb3d86d745&#92;"".ToByteArray(), 0x88533787)
+     * </pre>
+     *
+     * <code>optional int64 unknown25 = 25;</code>
+     */
+    private void clearUnknown25() {
+      
+      unknown25_ = 0L;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -11000,12 +7910,8 @@ public final class Envelopes {
       if (timestamp_ != 0L) {
         output.writeUInt64(23, timestamp_);
       }
-      if (getRequestHashList().size() > 0) {
-        output.writeUInt32NoTag(194);
-        output.writeUInt32NoTag(requestHashMemoizedSerializedSize);
-      }
       for (int i = 0; i < requestHash_.size(); i++) {
-        output.writeUInt64NoTag(requestHash_.get(i));
+        output.writeUInt64(24, requestHash_.getLong(i));
       }
       if (unknown25_ != 0L) {
         output.writeInt64(25, unknown25_);
@@ -11013,7 +7919,7 @@ public final class Envelopes {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -11061,484 +7967,101 @@ public final class Envelopes {
         int dataSize = 0;
         for (int i = 0; i < requestHash_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(requestHash_.get(i));
+            .computeUInt64SizeNoTag(requestHash_.getLong(i));
         }
         size += dataSize;
-        if (!getRequestHashList().isEmpty()) {
-          size += 2;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        requestHashMemoizedSerializedSize = dataSize;
+        size += 2 * getRequestHashList().size();
       }
       if (unknown25_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(25, unknown25_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature) obj;
-
-      boolean result = true;
-      result = result && (getTimestampSinceStart()
-          == other.getTimestampSinceStart());
-      result = result && getLocationFixList()
-          .equals(other.getLocationFixList());
-      result = result && (hasGpsInfo() == other.hasGpsInfo());
-      if (hasGpsInfo()) {
-        result = result && getGpsInfo()
-            .equals(other.getGpsInfo());
-      }
-      result = result && (hasSensorInfo() == other.hasSensorInfo());
-      if (hasSensorInfo()) {
-        result = result && getSensorInfo()
-            .equals(other.getSensorInfo());
-      }
-      result = result && (hasDeviceInfo() == other.hasDeviceInfo());
-      if (hasDeviceInfo()) {
-        result = result && getDeviceInfo()
-            .equals(other.getDeviceInfo());
-      }
-      result = result && (hasActivityStatus() == other.hasActivityStatus());
-      if (hasActivityStatus()) {
-        result = result && getActivityStatus()
-            .equals(other.getActivityStatus());
-      }
-      result = result && (getLocationHash1()
-          == other.getLocationHash1());
-      result = result && (getLocationHash2()
-          == other.getLocationHash2());
-      result = result && getSessionHash()
-          .equals(other.getSessionHash());
-      result = result && (getTimestamp()
-          == other.getTimestamp());
-      result = result && getRequestHashList()
-          .equals(other.getRequestHashList());
-      result = result && (getUnknown25()
-          == other.getUnknown25());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + TIMESTAMP_SINCE_START_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimestampSinceStart());
-      if (getLocationFixCount() > 0) {
-        hash = (37 * hash) + LOCATION_FIX_FIELD_NUMBER;
-        hash = (53 * hash) + getLocationFixList().hashCode();
-      }
-      if (hasGpsInfo()) {
-        hash = (37 * hash) + GPS_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getGpsInfo().hashCode();
-      }
-      if (hasSensorInfo()) {
-        hash = (37 * hash) + SENSOR_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getSensorInfo().hashCode();
-      }
-      if (hasDeviceInfo()) {
-        hash = (37 * hash) + DEVICE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getDeviceInfo().hashCode();
-      }
-      if (hasActivityStatus()) {
-        hash = (37 * hash) + ACTIVITY_STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getActivityStatus().hashCode();
-      }
-      hash = (37 * hash) + LOCATION_HASH1_FIELD_NUMBER;
-      hash = (53 * hash) + getLocationHash1();
-      hash = (37 * hash) + LOCATION_HASH2_FIELD_NUMBER;
-      hash = (53 * hash) + getLocationHash2();
-      hash = (37 * hash) + SESSION_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getSessionHash().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimestamp());
-      if (getRequestHashCount() > 0) {
-        hash = (37 * hash) + REQUEST_HASH_FIELD_NUMBER;
-        hash = (53 * hash) + getRequestHashList().hashCode();
-      }
-      hash = (37 * hash) + UNKNOWN25_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUnknown25());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.Signature}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature)
         com.github.aeonlucid.pogoprotos.networking.Envelopes.SignatureOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getLocationFixFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        timestampSinceStart_ = 0L;
 
-        if (locationFixBuilder_ == null) {
-          locationFix_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          locationFixBuilder_.clear();
-        }
-        if (gpsInfoBuilder_ == null) {
-          gpsInfo_ = null;
-        } else {
-          gpsInfo_ = null;
-          gpsInfoBuilder_ = null;
-        }
-        if (sensorInfoBuilder_ == null) {
-          sensorInfo_ = null;
-        } else {
-          sensorInfo_ = null;
-          sensorInfoBuilder_ = null;
-        }
-        if (deviceInfoBuilder_ == null) {
-          deviceInfo_ = null;
-        } else {
-          deviceInfo_ = null;
-          deviceInfoBuilder_ = null;
-        }
-        if (activityStatusBuilder_ == null) {
-          activityStatus_ = null;
-        } else {
-          activityStatus_ = null;
-          activityStatusBuilder_ = null;
-        }
-        locationHash1_ = 0;
-
-        locationHash2_ = 0;
-
-        sessionHash_ = com.google.protobuf.ByteString.EMPTY;
-
-        timestamp_ = 0L;
-
-        requestHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
-        unknown25_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.timestampSinceStart_ = timestampSinceStart_;
-        if (locationFixBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            locationFix_ = java.util.Collections.unmodifiableList(locationFix_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.locationFix_ = locationFix_;
-        } else {
-          result.locationFix_ = locationFixBuilder_.build();
-        }
-        if (gpsInfoBuilder_ == null) {
-          result.gpsInfo_ = gpsInfo_;
-        } else {
-          result.gpsInfo_ = gpsInfoBuilder_.build();
-        }
-        if (sensorInfoBuilder_ == null) {
-          result.sensorInfo_ = sensorInfo_;
-        } else {
-          result.sensorInfo_ = sensorInfoBuilder_.build();
-        }
-        if (deviceInfoBuilder_ == null) {
-          result.deviceInfo_ = deviceInfo_;
-        } else {
-          result.deviceInfo_ = deviceInfoBuilder_.build();
-        }
-        if (activityStatusBuilder_ == null) {
-          result.activityStatus_ = activityStatus_;
-        } else {
-          result.activityStatus_ = activityStatusBuilder_.build();
-        }
-        result.locationHash1_ = locationHash1_;
-        result.locationHash2_ = locationHash2_;
-        result.sessionHash_ = sessionHash_;
-        result.timestamp_ = timestamp_;
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
-          requestHash_ = java.util.Collections.unmodifiableList(requestHash_);
-          bitField0_ = (bitField0_ & ~0x00000400);
-        }
-        result.requestHash_ = requestHash_;
-        result.unknown25_ = unknown25_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.getDefaultInstance()) return this;
-        if (other.getTimestampSinceStart() != 0L) {
-          setTimestampSinceStart(other.getTimestampSinceStart());
-        }
-        if (locationFixBuilder_ == null) {
-          if (!other.locationFix_.isEmpty()) {
-            if (locationFix_.isEmpty()) {
-              locationFix_ = other.locationFix_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureLocationFixIsMutable();
-              locationFix_.addAll(other.locationFix_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.locationFix_.isEmpty()) {
-            if (locationFixBuilder_.isEmpty()) {
-              locationFixBuilder_.dispose();
-              locationFixBuilder_ = null;
-              locationFix_ = other.locationFix_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              locationFixBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getLocationFixFieldBuilder() : null;
-            } else {
-              locationFixBuilder_.addAllMessages(other.locationFix_);
-            }
-          }
-        }
-        if (other.hasGpsInfo()) {
-          mergeGpsInfo(other.getGpsInfo());
-        }
-        if (other.hasSensorInfo()) {
-          mergeSensorInfo(other.getSensorInfo());
-        }
-        if (other.hasDeviceInfo()) {
-          mergeDeviceInfo(other.getDeviceInfo());
-        }
-        if (other.hasActivityStatus()) {
-          mergeActivityStatus(other.getActivityStatus());
-        }
-        if (other.getLocationHash1() != 0) {
-          setLocationHash1(other.getLocationHash1());
-        }
-        if (other.getLocationHash2() != 0) {
-          setLocationHash2(other.getLocationHash2());
-        }
-        if (other.getSessionHash() != com.google.protobuf.ByteString.EMPTY) {
-          setSessionHash(other.getSessionHash());
-        }
-        if (other.getTimestamp() != 0L) {
-          setTimestamp(other.getTimestamp());
-        }
-        if (!other.requestHash_.isEmpty()) {
-          if (requestHash_.isEmpty()) {
-            requestHash_ = other.requestHash_;
-            bitField0_ = (bitField0_ & ~0x00000400);
-          } else {
-            ensureRequestHashIsMutable();
-            requestHash_.addAll(other.requestHash_);
-          }
-          onChanged();
-        }
-        if (other.getUnknown25() != 0L) {
-          setUnknown25(other.getUnknown25());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long timestampSinceStart_ ;
       /**
        * <pre>
        * in ms
@@ -11547,7 +8070,7 @@ public final class Envelopes {
        * <code>optional uint64 timestamp_since_start = 2;</code>
        */
       public long getTimestampSinceStart() {
-        return timestampSinceStart_;
+        return instance.getTimestampSinceStart();
       }
       /**
        * <pre>
@@ -11557,9 +8080,8 @@ public final class Envelopes {
        * <code>optional uint64 timestamp_since_start = 2;</code>
        */
       public Builder setTimestampSinceStart(long value) {
-        
-        timestampSinceStart_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setTimestampSinceStart(value);
         return this;
       }
       /**
@@ -11570,69 +8092,36 @@ public final class Envelopes {
        * <code>optional uint64 timestamp_since_start = 2;</code>
        */
       public Builder clearTimestampSinceStart() {
-        
-        timestampSinceStart_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearTimestampSinceStart();
         return this;
       }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix> locationFix_ =
-        java.util.Collections.emptyList();
-      private void ensureLocationFixIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          locationFix_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix>(locationFix_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder> locationFixBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix> getLocationFixList() {
-        if (locationFixBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(locationFix_);
-        } else {
-          return locationFixBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getLocationFixList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public int getLocationFixCount() {
-        if (locationFixBuilder_ == null) {
-          return locationFix_.size();
-        } else {
-          return locationFixBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getLocationFixCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix getLocationFix(int index) {
-        if (locationFixBuilder_ == null) {
-          return locationFix_.get(index);
-        } else {
-          return locationFixBuilder_.getMessage(index);
-        }
+        return instance.getLocationFix(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public Builder setLocationFix(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix value) {
-        if (locationFixBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLocationFixIsMutable();
-          locationFix_.set(index, value);
-          onChanged();
-        } else {
-          locationFixBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setLocationFix(index, value);
         return this;
       }
       /**
@@ -11640,29 +8129,16 @@ public final class Envelopes {
        */
       public Builder setLocationFix(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder builderForValue) {
-        if (locationFixBuilder_ == null) {
-          ensureLocationFixIsMutable();
-          locationFix_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          locationFixBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setLocationFix(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public Builder addLocationFix(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix value) {
-        if (locationFixBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLocationFixIsMutable();
-          locationFix_.add(value);
-          onChanged();
-        } else {
-          locationFixBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addLocationFix(value);
         return this;
       }
       /**
@@ -11670,16 +8146,8 @@ public final class Envelopes {
        */
       public Builder addLocationFix(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix value) {
-        if (locationFixBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLocationFixIsMutable();
-          locationFix_.add(index, value);
-          onChanged();
-        } else {
-          locationFixBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addLocationFix(index, value);
         return this;
       }
       /**
@@ -11687,13 +8155,8 @@ public final class Envelopes {
        */
       public Builder addLocationFix(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder builderForValue) {
-        if (locationFixBuilder_ == null) {
-          ensureLocationFixIsMutable();
-          locationFix_.add(builderForValue.build());
-          onChanged();
-        } else {
-          locationFixBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addLocationFix(builderForValue);
         return this;
       }
       /**
@@ -11701,13 +8164,8 @@ public final class Envelopes {
        */
       public Builder addLocationFix(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder builderForValue) {
-        if (locationFixBuilder_ == null) {
-          ensureLocationFixIsMutable();
-          locationFix_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          locationFixBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addLocationFix(index, builderForValue);
         return this;
       }
       /**
@@ -11715,576 +8173,207 @@ public final class Envelopes {
        */
       public Builder addAllLocationFix(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix> values) {
-        if (locationFixBuilder_ == null) {
-          ensureLocationFixIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, locationFix_);
-          onChanged();
-        } else {
-          locationFixBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllLocationFix(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public Builder clearLocationFix() {
-        if (locationFixBuilder_ == null) {
-          locationFix_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          locationFixBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearLocationFix();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
        */
       public Builder removeLocationFix(int index) {
-        if (locationFixBuilder_ == null) {
-          ensureLocationFixIsMutable();
-          locationFix_.remove(index);
-          onChanged();
-        } else {
-          locationFixBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeLocationFix(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder getLocationFixBuilder(
-          int index) {
-        return getLocationFixFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder getLocationFixOrBuilder(
-          int index) {
-        if (locationFixBuilder_ == null) {
-          return locationFix_.get(index);  } else {
-          return locationFixBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder> 
-           getLocationFixOrBuilderList() {
-        if (locationFixBuilder_ != null) {
-          return locationFixBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(locationFix_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder addLocationFixBuilder() {
-        return getLocationFixFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder addLocationFixBuilder(
-          int index) {
-        return getLocationFixFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.LocationFix location_fix = 4;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder> 
-           getLocationFixBuilderList() {
-        return getLocationFixFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder> 
-          getLocationFixFieldBuilder() {
-        if (locationFixBuilder_ == null) {
-          locationFixBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFixOrBuilder>(
-                  locationFix_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          locationFix_ = null;
-        }
-        return locationFixBuilder_;
-      }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo gpsInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder> gpsInfoBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
        */
       public boolean hasGpsInfo() {
-        return gpsInfoBuilder_ != null || gpsInfo_ != null;
+        return instance.hasGpsInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo getGpsInfo() {
-        if (gpsInfoBuilder_ == null) {
-          return gpsInfo_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.getDefaultInstance() : gpsInfo_;
-        } else {
-          return gpsInfoBuilder_.getMessage();
-        }
+        return instance.getGpsInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
        */
       public Builder setGpsInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo value) {
-        if (gpsInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          gpsInfo_ = value;
-          onChanged();
-        } else {
-          gpsInfoBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setGpsInfo(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
        */
       public Builder setGpsInfo(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder builderForValue) {
-        if (gpsInfoBuilder_ == null) {
-          gpsInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          gpsInfoBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setGpsInfo(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
        */
       public Builder mergeGpsInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo value) {
-        if (gpsInfoBuilder_ == null) {
-          if (gpsInfo_ != null) {
-            gpsInfo_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.newBuilder(gpsInfo_).mergeFrom(value).buildPartial();
-          } else {
-            gpsInfo_ = value;
-          }
-          onChanged();
-        } else {
-          gpsInfoBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeGpsInfo(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
        */
-      public Builder clearGpsInfo() {
-        if (gpsInfoBuilder_ == null) {
-          gpsInfo_ = null;
-          onChanged();
-        } else {
-          gpsInfo_ = null;
-          gpsInfoBuilder_ = null;
-        }
-
+      public Builder clearGpsInfo() {  copyOnWrite();
+        instance.clearGpsInfo();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder getGpsInfoBuilder() {
-        
-        onChanged();
-        return getGpsInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder getGpsInfoOrBuilder() {
-        if (gpsInfoBuilder_ != null) {
-          return gpsInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return gpsInfo_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.getDefaultInstance() : gpsInfo_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.AndroidGpsInfo gps_info = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder> 
-          getGpsInfoFieldBuilder() {
-        if (gpsInfoBuilder_ == null) {
-          gpsInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfoOrBuilder>(
-                  getGpsInfo(),
-                  getParentForChildren(),
-                  isClean());
-          gpsInfo_ = null;
-        }
-        return gpsInfoBuilder_;
-      }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo sensorInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder> sensorInfoBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
        */
       public boolean hasSensorInfo() {
-        return sensorInfoBuilder_ != null || sensorInfo_ != null;
+        return instance.hasSensorInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo getSensorInfo() {
-        if (sensorInfoBuilder_ == null) {
-          return sensorInfo_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.getDefaultInstance() : sensorInfo_;
-        } else {
-          return sensorInfoBuilder_.getMessage();
-        }
+        return instance.getSensorInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
        */
       public Builder setSensorInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo value) {
-        if (sensorInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          sensorInfo_ = value;
-          onChanged();
-        } else {
-          sensorInfoBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setSensorInfo(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
        */
       public Builder setSensorInfo(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder builderForValue) {
-        if (sensorInfoBuilder_ == null) {
-          sensorInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          sensorInfoBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setSensorInfo(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
        */
       public Builder mergeSensorInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo value) {
-        if (sensorInfoBuilder_ == null) {
-          if (sensorInfo_ != null) {
-            sensorInfo_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.newBuilder(sensorInfo_).mergeFrom(value).buildPartial();
-          } else {
-            sensorInfo_ = value;
-          }
-          onChanged();
-        } else {
-          sensorInfoBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeSensorInfo(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
        */
-      public Builder clearSensorInfo() {
-        if (sensorInfoBuilder_ == null) {
-          sensorInfo_ = null;
-          onChanged();
-        } else {
-          sensorInfo_ = null;
-          sensorInfoBuilder_ = null;
-        }
-
+      public Builder clearSensorInfo() {  copyOnWrite();
+        instance.clearSensorInfo();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder getSensorInfoBuilder() {
-        
-        onChanged();
-        return getSensorInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder getSensorInfoOrBuilder() {
-        if (sensorInfoBuilder_ != null) {
-          return sensorInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return sensorInfo_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.getDefaultInstance() : sensorInfo_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.SensorInfo sensor_info = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder> 
-          getSensorInfoFieldBuilder() {
-        if (sensorInfoBuilder_ == null) {
-          sensorInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfoOrBuilder>(
-                  getSensorInfo(),
-                  getParentForChildren(),
-                  isClean());
-          sensorInfo_ = null;
-        }
-        return sensorInfoBuilder_;
-      }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo deviceInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder> deviceInfoBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
        */
       public boolean hasDeviceInfo() {
-        return deviceInfoBuilder_ != null || deviceInfo_ != null;
+        return instance.hasDeviceInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo getDeviceInfo() {
-        if (deviceInfoBuilder_ == null) {
-          return deviceInfo_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.getDefaultInstance() : deviceInfo_;
-        } else {
-          return deviceInfoBuilder_.getMessage();
-        }
+        return instance.getDeviceInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
        */
       public Builder setDeviceInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo value) {
-        if (deviceInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          deviceInfo_ = value;
-          onChanged();
-        } else {
-          deviceInfoBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setDeviceInfo(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
        */
       public Builder setDeviceInfo(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder builderForValue) {
-        if (deviceInfoBuilder_ == null) {
-          deviceInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          deviceInfoBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setDeviceInfo(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
        */
       public Builder mergeDeviceInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo value) {
-        if (deviceInfoBuilder_ == null) {
-          if (deviceInfo_ != null) {
-            deviceInfo_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.newBuilder(deviceInfo_).mergeFrom(value).buildPartial();
-          } else {
-            deviceInfo_ = value;
-          }
-          onChanged();
-        } else {
-          deviceInfoBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeDeviceInfo(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
        */
-      public Builder clearDeviceInfo() {
-        if (deviceInfoBuilder_ == null) {
-          deviceInfo_ = null;
-          onChanged();
-        } else {
-          deviceInfo_ = null;
-          deviceInfoBuilder_ = null;
-        }
-
+      public Builder clearDeviceInfo() {  copyOnWrite();
+        instance.clearDeviceInfo();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder getDeviceInfoBuilder() {
-        
-        onChanged();
-        return getDeviceInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
-        if (deviceInfoBuilder_ != null) {
-          return deviceInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return deviceInfo_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.getDefaultInstance() : deviceInfo_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.DeviceInfo device_info = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder> 
-          getDeviceInfoFieldBuilder() {
-        if (deviceInfoBuilder_ == null) {
-          deviceInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfoOrBuilder>(
-                  getDeviceInfo(),
-                  getParentForChildren(),
-                  isClean());
-          deviceInfo_ = null;
-        }
-        return deviceInfoBuilder_;
-      }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus activityStatus_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder> activityStatusBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
        */
       public boolean hasActivityStatus() {
-        return activityStatusBuilder_ != null || activityStatus_ != null;
+        return instance.hasActivityStatus();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus getActivityStatus() {
-        if (activityStatusBuilder_ == null) {
-          return activityStatus_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.getDefaultInstance() : activityStatus_;
-        } else {
-          return activityStatusBuilder_.getMessage();
-        }
+        return instance.getActivityStatus();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
        */
       public Builder setActivityStatus(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus value) {
-        if (activityStatusBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          activityStatus_ = value;
-          onChanged();
-        } else {
-          activityStatusBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setActivityStatus(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
        */
       public Builder setActivityStatus(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder builderForValue) {
-        if (activityStatusBuilder_ == null) {
-          activityStatus_ = builderForValue.build();
-          onChanged();
-        } else {
-          activityStatusBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setActivityStatus(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
        */
       public Builder mergeActivityStatus(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus value) {
-        if (activityStatusBuilder_ == null) {
-          if (activityStatus_ != null) {
-            activityStatus_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.newBuilder(activityStatus_).mergeFrom(value).buildPartial();
-          } else {
-            activityStatus_ = value;
-          }
-          onChanged();
-        } else {
-          activityStatusBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeActivityStatus(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
        */
-      public Builder clearActivityStatus() {
-        if (activityStatusBuilder_ == null) {
-          activityStatus_ = null;
-          onChanged();
-        } else {
-          activityStatus_ = null;
-          activityStatusBuilder_ = null;
-        }
-
+      public Builder clearActivityStatus() {  copyOnWrite();
+        instance.clearActivityStatus();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder getActivityStatusBuilder() {
-        
-        onChanged();
-        return getActivityStatusFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder getActivityStatusOrBuilder() {
-        if (activityStatusBuilder_ != null) {
-          return activityStatusBuilder_.getMessageOrBuilder();
-        } else {
-          return activityStatus_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.getDefaultInstance() : activityStatus_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.Signature.ActivityStatus activity_status = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder> 
-          getActivityStatusFieldBuilder() {
-        if (activityStatusBuilder_ == null) {
-          activityStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatusOrBuilder>(
-                  getActivityStatus(),
-                  getParentForChildren(),
-                  isClean());
-          activityStatus_ = null;
-        }
-        return activityStatusBuilder_;
-      }
 
-      private int locationHash1_ ;
       /**
        * <pre>
        * Location1 hashed signed based on the auth_token or auth_info - xxHash32
@@ -12293,7 +8382,7 @@ public final class Envelopes {
        * <code>optional uint32 location_hash1 = 10;</code>
        */
       public int getLocationHash1() {
-        return locationHash1_;
+        return instance.getLocationHash1();
       }
       /**
        * <pre>
@@ -12303,9 +8392,8 @@ public final class Envelopes {
        * <code>optional uint32 location_hash1 = 10;</code>
        */
       public Builder setLocationHash1(int value) {
-        
-        locationHash1_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLocationHash1(value);
         return this;
       }
       /**
@@ -12316,13 +8404,11 @@ public final class Envelopes {
        * <code>optional uint32 location_hash1 = 10;</code>
        */
       public Builder clearLocationHash1() {
-        
-        locationHash1_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearLocationHash1();
         return this;
       }
 
-      private int locationHash2_ ;
       /**
        * <pre>
        * Location2 hashed (unsigned) - xxHash32
@@ -12331,7 +8417,7 @@ public final class Envelopes {
        * <code>optional uint32 location_hash2 = 20;</code>
        */
       public int getLocationHash2() {
-        return locationHash2_;
+        return instance.getLocationHash2();
       }
       /**
        * <pre>
@@ -12341,9 +8427,8 @@ public final class Envelopes {
        * <code>optional uint32 location_hash2 = 20;</code>
        */
       public Builder setLocationHash2(int value) {
-        
-        locationHash2_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLocationHash2(value);
         return this;
       }
       /**
@@ -12354,13 +8439,11 @@ public final class Envelopes {
        * <code>optional uint32 location_hash2 = 20;</code>
        */
       public Builder clearLocationHash2() {
-        
-        locationHash2_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearLocationHash2();
         return this;
       }
 
-      private com.google.protobuf.ByteString sessionHash_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * 16 bytes, unique per session
@@ -12369,7 +8452,7 @@ public final class Envelopes {
        * <code>optional bytes session_hash = 22;</code>
        */
       public com.google.protobuf.ByteString getSessionHash() {
-        return sessionHash_;
+        return instance.getSessionHash();
       }
       /**
        * <pre>
@@ -12379,12 +8462,8 @@ public final class Envelopes {
        * <code>optional bytes session_hash = 22;</code>
        */
       public Builder setSessionHash(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sessionHash_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setSessionHash(value);
         return this;
       }
       /**
@@ -12395,13 +8474,11 @@ public final class Envelopes {
        * <code>optional bytes session_hash = 22;</code>
        */
       public Builder clearSessionHash() {
-        
-        sessionHash_ = getDefaultInstance().getSessionHash();
-        onChanged();
+        copyOnWrite();
+        instance.clearSessionHash();
         return this;
       }
 
-      private long timestamp_ ;
       /**
        * <pre>
        * epoch timestamp in ms
@@ -12410,7 +8487,7 @@ public final class Envelopes {
        * <code>optional uint64 timestamp = 23;</code>
        */
       public long getTimestamp() {
-        return timestamp_;
+        return instance.getTimestamp();
       }
       /**
        * <pre>
@@ -12420,9 +8497,8 @@ public final class Envelopes {
        * <code>optional uint64 timestamp = 23;</code>
        */
       public Builder setTimestamp(long value) {
-        
-        timestamp_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setTimestamp(value);
         return this;
       }
       /**
@@ -12433,19 +8509,11 @@ public final class Envelopes {
        * <code>optional uint64 timestamp = 23;</code>
        */
       public Builder clearTimestamp() {
-        
-        timestamp_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearTimestamp();
         return this;
       }
 
-      private java.util.List<java.lang.Long> requestHash_ = java.util.Collections.emptyList();
-      private void ensureRequestHashIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-          requestHash_ = new java.util.ArrayList<java.lang.Long>(requestHash_);
-          bitField0_ |= 0x00000400;
-         }
-      }
       /**
        * <pre>
        * hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
@@ -12455,7 +8523,8 @@ public final class Envelopes {
        */
       public java.util.List<java.lang.Long>
           getRequestHashList() {
-        return java.util.Collections.unmodifiableList(requestHash_);
+        return java.util.Collections.unmodifiableList(
+            instance.getRequestHashList());
       }
       /**
        * <pre>
@@ -12465,7 +8534,7 @@ public final class Envelopes {
        * <code>repeated uint64 request_hash = 24;</code>
        */
       public int getRequestHashCount() {
-        return requestHash_.size();
+        return instance.getRequestHashCount();
       }
       /**
        * <pre>
@@ -12475,7 +8544,7 @@ public final class Envelopes {
        * <code>repeated uint64 request_hash = 24;</code>
        */
       public long getRequestHash(int index) {
-        return requestHash_.get(index);
+        return instance.getRequestHash(index);
       }
       /**
        * <pre>
@@ -12486,9 +8555,8 @@ public final class Envelopes {
        */
       public Builder setRequestHash(
           int index, long value) {
-        ensureRequestHashIsMutable();
-        requestHash_.set(index, value);
-        onChanged();
+        copyOnWrite();
+        instance.setRequestHash(index, value);
         return this;
       }
       /**
@@ -12499,9 +8567,8 @@ public final class Envelopes {
        * <code>repeated uint64 request_hash = 24;</code>
        */
       public Builder addRequestHash(long value) {
-        ensureRequestHashIsMutable();
-        requestHash_.add(value);
-        onChanged();
+        copyOnWrite();
+        instance.addRequestHash(value);
         return this;
       }
       /**
@@ -12513,10 +8580,8 @@ public final class Envelopes {
        */
       public Builder addAllRequestHash(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureRequestHashIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, requestHash_);
-        onChanged();
+        copyOnWrite();
+        instance.addAllRequestHash(values);
         return this;
       }
       /**
@@ -12527,13 +8592,11 @@ public final class Envelopes {
        * <code>repeated uint64 request_hash = 24;</code>
        */
       public Builder clearRequestHash() {
-        requestHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
-        onChanged();
+        copyOnWrite();
+        instance.clearRequestHash();
         return this;
       }
 
-      private long unknown25_ ;
       /**
        * <pre>
        * for 0.33 its static -8537042734809897855 or 0x898654dd2753a481, generated via xxHash64("&#92;"b8fa9757195897aae92c53dbcf8a60fb3d86d745&#92;"".ToByteArray(), 0x88533787)
@@ -12542,7 +8605,7 @@ public final class Envelopes {
        * <code>optional int64 unknown25 = 25;</code>
        */
       public long getUnknown25() {
-        return unknown25_;
+        return instance.getUnknown25();
       }
       /**
        * <pre>
@@ -12552,9 +8615,8 @@ public final class Envelopes {
        * <code>optional int64 unknown25 = 25;</code>
        */
       public Builder setUnknown25(long value) {
-        
-        unknown25_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setUnknown25(value);
         return this;
       }
       /**
@@ -12565,63 +8627,2325 @@ public final class Envelopes {
        * <code>optional int64 unknown25 = 25;</code>
        */
       public Builder clearUnknown25() {
-        
-        unknown25_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearUnknown25();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          locationFix_.makeImmutable();
+          requestHash_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature) arg1;
+          timestampSinceStart_ = visitor.visitLong(timestampSinceStart_ != 0L, timestampSinceStart_,
+              other.timestampSinceStart_ != 0L, other.timestampSinceStart_);
+          locationFix_= visitor.visitList(locationFix_, other.locationFix_);
+          gpsInfo_ = visitor.visitMessage(gpsInfo_, other.gpsInfo_);
+          sensorInfo_ = visitor.visitMessage(sensorInfo_, other.sensorInfo_);
+          deviceInfo_ = visitor.visitMessage(deviceInfo_, other.deviceInfo_);
+          activityStatus_ = visitor.visitMessage(activityStatus_, other.activityStatus_);
+          locationHash1_ = visitor.visitInt(locationHash1_ != 0, locationHash1_,
+              other.locationHash1_ != 0, other.locationHash1_);
+          locationHash2_ = visitor.visitInt(locationHash2_ != 0, locationHash2_,
+              other.locationHash2_ != 0, other.locationHash2_);
+          sessionHash_ = visitor.visitByteString(sessionHash_ != com.google.protobuf.ByteString.EMPTY, sessionHash_,
+              other.sessionHash_ != com.google.protobuf.ByteString.EMPTY, other.sessionHash_);
+          timestamp_ = visitor.visitLong(timestamp_ != 0L, timestamp_,
+              other.timestamp_ != 0L, other.timestamp_);
+          requestHash_= visitor.visitLongList(requestHash_, other.requestHash_);
+          unknown25_ = visitor.visitLong(unknown25_ != 0L, unknown25_,
+              other.unknown25_ != 0L, other.unknown25_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 16: {
+
+                  timestampSinceStart_ = input.readUInt64();
+                  break;
+                }
+                case 34: {
+                  if (!locationFix_.isModifiable()) {
+                    locationFix_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(locationFix_);
+                  }
+                  locationFix_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.LocationFix.parser(), extensionRegistry));
+                  break;
+                }
+                case 42: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.Builder subBuilder = null;
+                  if (gpsInfo_ != null) {
+                    subBuilder = gpsInfo_.toBuilder();
+                  }
+                  gpsInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.AndroidGpsInfo.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(gpsInfo_);
+                    gpsInfo_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 58: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.Builder subBuilder = null;
+                  if (sensorInfo_ != null) {
+                    subBuilder = sensorInfo_.toBuilder();
+                  }
+                  sensorInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.SensorInfo.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(sensorInfo_);
+                    sensorInfo_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 66: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.Builder subBuilder = null;
+                  if (deviceInfo_ != null) {
+                    subBuilder = deviceInfo_.toBuilder();
+                  }
+                  deviceInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.DeviceInfo.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(deviceInfo_);
+                    deviceInfo_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 74: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.Builder subBuilder = null;
+                  if (activityStatus_ != null) {
+                    subBuilder = activityStatus_.toBuilder();
+                  }
+                  activityStatus_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.ActivityStatus.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(activityStatus_);
+                    activityStatus_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 80: {
+
+                  locationHash1_ = input.readUInt32();
+                  break;
+                }
+                case 160: {
+
+                  locationHash2_ = input.readUInt32();
+                  break;
+                }
+                case 178: {
+
+                  sessionHash_ = input.readBytes();
+                  break;
+                }
+                case 184: {
+
+                  timestamp_ = input.readUInt64();
+                  break;
+                }
+                case 192: {
+                  if (!requestHash_.isModifiable()) {
+                    requestHash_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(requestHash_);
+                  }
+                  requestHash_.addLong(input.readUInt64());
+                  break;
+                }
+                case 194: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  if (!requestHash_.isModifiable() && input.getBytesUntilLimit() > 0) {
+                    requestHash_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(requestHash_);
+                  }
+                  while (input.getBytesUntilLimit() > 0) {
+                    requestHash_.addLong(input.readUInt64());
+                  }
+                  input.popLimit(limit);
+                  break;
+                }
+                case 200: {
+
+                  unknown25_ = input.readInt64();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.Signature)
     private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature();
+      DEFAULT_INSTANCE = new Signature();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Signature>
-        PARSER = new com.google.protobuf.AbstractParser<Signature>() {
-      public Signature parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Signature(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<Signature> PARSER;
 
     public static com.google.protobuf.Parser<Signature> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface ResponseEnvelopeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    int getStatusCodeValue();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode();
+
+    /**
+     * <code>optional uint64 request_id = 2;</code>
+     */
+    long getRequestId();
+
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    java.lang.String getApiUrl();
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getApiUrlBytes();
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> 
+        getPlatformReturnsList();
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index);
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    int getPlatformReturnsCount();
+
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    boolean hasAuthTicket();
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket();
+
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getReturnsList();
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    int getReturnsCount();
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    com.google.protobuf.ByteString getReturns(int index);
+
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    java.lang.String getError();
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
+   */
+  public  static final class ResponseEnvelope extends
+      com.google.protobuf.GeneratedMessageLite<
+          ResponseEnvelope, ResponseEnvelope.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+      ResponseEnvelopeOrBuilder {
+    private ResponseEnvelope() {
+      apiUrl_ = "";
+      platformReturns_ = emptyProtobufList();
+      returns_ = emptyProtobufList();
+      error_ = "";
+    }
+    /**
+     * Protobuf enum {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode}
+     */
+    public enum StatusCode
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>UNKNOWN = 0;</code>
+       */
+      UNKNOWN(0),
+      /**
+       * <pre>
+       * valid response with no api url
+       * </pre>
+       *
+       * <code>OK = 1;</code>
+       */
+      OK(1),
+      /**
+       * <pre>
+       * the response envelope has api_url set and this response is valid
+       * </pre>
+       *
+       * <code>OK_RPC_URL_IN_RESPONSE = 2;</code>
+       */
+      OK_RPC_URL_IN_RESPONSE(2),
+      /**
+       * <pre>
+       * bad request
+       * </pre>
+       *
+       * <code>BAD_REQUEST = 3;</code>
+       */
+      BAD_REQUEST(3),
+      /**
+       * <pre>
+       * using unimplemented request or corrupt request
+       * </pre>
+       *
+       * <code>INVALID_REQUEST = 51;</code>
+       */
+      INVALID_REQUEST(51),
+      /**
+       * <pre>
+       * invalid platform request or corrupt platform request
+       * </pre>
+       *
+       * <code>INVALID_PLATFORM_REQUEST = 52;</code>
+       */
+      INVALID_PLATFORM_REQUEST(52),
+      /**
+       * <pre>
+       * a new rpc endpoint is available and you should redirect to there
+       * </pre>
+       *
+       * <code>REDIRECT = 53;</code>
+       */
+      REDIRECT(53),
+      /**
+       * <pre>
+       * occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
+       * </pre>
+       *
+       * <code>SESSION_INVALIDATED = 100;</code>
+       */
+      SESSION_INVALIDATED(100),
+      /**
+       * <pre>
+       * occurs when the login token is invalid
+       * </pre>
+       *
+       * <code>INVALID_AUTH_TOKEN = 102;</code>
+       */
+      INVALID_AUTH_TOKEN(102),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>UNKNOWN = 0;</code>
+       */
+      public static final int UNKNOWN_VALUE = 0;
+      /**
+       * <pre>
+       * valid response with no api url
+       * </pre>
+       *
+       * <code>OK = 1;</code>
+       */
+      public static final int OK_VALUE = 1;
+      /**
+       * <pre>
+       * the response envelope has api_url set and this response is valid
+       * </pre>
+       *
+       * <code>OK_RPC_URL_IN_RESPONSE = 2;</code>
+       */
+      public static final int OK_RPC_URL_IN_RESPONSE_VALUE = 2;
+      /**
+       * <pre>
+       * bad request
+       * </pre>
+       *
+       * <code>BAD_REQUEST = 3;</code>
+       */
+      public static final int BAD_REQUEST_VALUE = 3;
+      /**
+       * <pre>
+       * using unimplemented request or corrupt request
+       * </pre>
+       *
+       * <code>INVALID_REQUEST = 51;</code>
+       */
+      public static final int INVALID_REQUEST_VALUE = 51;
+      /**
+       * <pre>
+       * invalid platform request or corrupt platform request
+       * </pre>
+       *
+       * <code>INVALID_PLATFORM_REQUEST = 52;</code>
+       */
+      public static final int INVALID_PLATFORM_REQUEST_VALUE = 52;
+      /**
+       * <pre>
+       * a new rpc endpoint is available and you should redirect to there
+       * </pre>
+       *
+       * <code>REDIRECT = 53;</code>
+       */
+      public static final int REDIRECT_VALUE = 53;
+      /**
+       * <pre>
+       * occurs when you send blank authinfo, or sending nonsense timings (ie LocationFix.timestampSnapshot == Signature.timestampSinceStart)
+       * </pre>
+       *
+       * <code>SESSION_INVALIDATED = 100;</code>
+       */
+      public static final int SESSION_INVALIDATED_VALUE = 100;
+      /**
+       * <pre>
+       * occurs when the login token is invalid
+       * </pre>
+       *
+       * <code>INVALID_AUTH_TOKEN = 102;</code>
+       */
+      public static final int INVALID_AUTH_TOKEN_VALUE = 102;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StatusCode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static StatusCode forNumber(int value) {
+        switch (value) {
+          case 0: return UNKNOWN;
+          case 1: return OK;
+          case 2: return OK_RPC_URL_IN_RESPONSE;
+          case 3: return BAD_REQUEST;
+          case 51: return INVALID_REQUEST;
+          case 52: return INVALID_PLATFORM_REQUEST;
+          case 53: return REDIRECT;
+          case 100: return SESSION_INVALIDATED;
+          case 102: return INVALID_AUTH_TOKEN;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<StatusCode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          StatusCode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<StatusCode>() {
+              public StatusCode findValueByNumber(int number) {
+                return StatusCode.forNumber(number);
+              }
+            };
+
+      private final int value;
+
+      private StatusCode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode)
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Parser<Signature> getParserForType() {
-      return PARSER;
+    public interface PlatformResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+        com.google.protobuf.MessageLiteOrBuilder {
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      int getTypeValue();
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType();
+
+      /**
+       * <code>optional bytes response = 2;</code>
+       */
+      com.google.protobuf.ByteString getResponse();
+    }
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse}
+     */
+    public  static final class PlatformResponse extends
+        com.google.protobuf.GeneratedMessageLite<
+            PlatformResponse, PlatformResponse.Builder> implements
+        // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+        PlatformResponseOrBuilder {
+      private PlatformResponse() {
+        response_ = com.google.protobuf.ByteString.EMPTY;
+      }
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
+        com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.forNumber(type_);
+        return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      private void setTypeValue(int value) {
+          type_ = value;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      private void setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      private void clearType() {
+        
+        type_ = 0;
+      }
+
+      public static final int RESPONSE_FIELD_NUMBER = 2;
+      private com.google.protobuf.ByteString response_;
+      /**
+       * <code>optional bytes response = 2;</code>
+       */
+      public com.google.protobuf.ByteString getResponse() {
+        return response_;
+      }
+      /**
+       * <code>optional bytes response = 2;</code>
+       */
+      private void setResponse(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        response_ = value;
+      }
+      /**
+       * <code>optional bytes response = 2;</code>
+       */
+      private void clearResponse() {
+        
+        response_ = getDefaultInstance().getResponse();
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
+          output.writeEnum(1, type_);
+        }
+        if (!response_.isEmpty()) {
+          output.writeBytes(2, response_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (type_ != com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.METHOD_UNSET.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, type_);
+        }
+        if (!response_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(2, response_);
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      /**
+       * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse, Builder> implements
+          // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder {
+        // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.newBuilder()
+        private Builder() {
+          super(DEFAULT_INSTANCE);
+        }
+
+
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public int getTypeValue() {
+          return instance.getTypeValue();
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder setTypeValue(int value) {
+          copyOnWrite();
+          instance.setTypeValue(value);
+          return this;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
+          return instance.getType();
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
+          copyOnWrite();
+          instance.setType(value);
+          return this;
+        }
+        /**
+         * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+         */
+        public Builder clearType() {
+          copyOnWrite();
+          instance.clearType();
+          return this;
+        }
+
+        /**
+         * <code>optional bytes response = 2;</code>
+         */
+        public com.google.protobuf.ByteString getResponse() {
+          return instance.getResponse();
+        }
+        /**
+         * <code>optional bytes response = 2;</code>
+         */
+        public Builder setResponse(com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setResponse(value);
+          return this;
+        }
+        /**
+         * <code>optional bytes response = 2;</code>
+         */
+        public Builder clearResponse() {
+          copyOnWrite();
+          instance.clearResponse();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+      }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse) arg1;
+            type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
+            response_ = visitor.visitByteString(response_ != com.google.protobuf.ByteString.EMPTY, response_,
+                other.response_ != com.google.protobuf.ByteString.EMPTY, other.response_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+                    int rawValue = input.readEnum();
+
+                    type_ = rawValue;
+                    break;
+                  }
+                  case 18: {
+
+                    response_ = input.readBytes();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
+
+      // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse)
+      private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new PlatformResponse();
+        DEFAULT_INSTANCE.makeImmutable();
+      }
+
+      public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static volatile com.google.protobuf.Parser<PlatformResponse> PARSER;
+
+      public static com.google.protobuf.Parser<PlatformResponse> parser() {
+        return DEFAULT_INSTANCE.getParserForType();
+      }
     }
 
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.Signature getDefaultInstanceForType() {
+    private int bitField0_;
+    public static final int STATUS_CODE_FIELD_NUMBER = 1;
+    private int statusCode_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    public int getStatusCodeValue() {
+      return statusCode_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode() {
+      com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode result = com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.forNumber(statusCode_);
+      return result == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    private void setStatusCodeValue(int value) {
+        statusCode_ = value;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    private void setStatusCode(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      statusCode_ = value.getNumber();
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+     */
+    private void clearStatusCode() {
+      
+      statusCode_ = 0;
+    }
+
+    public static final int REQUEST_ID_FIELD_NUMBER = 2;
+    private long requestId_;
+    /**
+     * <code>optional uint64 request_id = 2;</code>
+     */
+    public long getRequestId() {
+      return requestId_;
+    }
+    /**
+     * <code>optional uint64 request_id = 2;</code>
+     */
+    private void setRequestId(long value) {
+      
+      requestId_ = value;
+    }
+    /**
+     * <code>optional uint64 request_id = 2;</code>
+     */
+    private void clearRequestId() {
+      
+      requestId_ = 0L;
+    }
+
+    public static final int API_URL_FIELD_NUMBER = 3;
+    private java.lang.String apiUrl_;
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    public java.lang.String getApiUrl() {
+      return apiUrl_;
+    }
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getApiUrlBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(apiUrl_);
+    }
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    private void setApiUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      apiUrl_ = value;
+    }
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    private void clearApiUrl() {
+      
+      apiUrl_ = getDefaultInstance().getApiUrl();
+    }
+    /**
+     * <code>optional string api_url = 3;</code>
+     */
+    private void setApiUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      apiUrl_ = value.toStringUtf8();
+    }
+
+    public static final int PLATFORM_RETURNS_FIELD_NUMBER = 6;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> platformReturns_;
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> getPlatformReturnsList() {
+      return platformReturns_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder> 
+        getPlatformReturnsOrBuilderList() {
+      return platformReturns_;
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public int getPlatformReturnsCount() {
+      return platformReturns_.size();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index) {
+      return platformReturns_.get(index);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponseOrBuilder getPlatformReturnsOrBuilder(
+        int index) {
+      return platformReturns_.get(index);
+    }
+    private void ensurePlatformReturnsIsMutable() {
+      if (!platformReturns_.isModifiable()) {
+        platformReturns_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(platformReturns_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void setPlatformReturns(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void setPlatformReturns(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void addPlatformReturns(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void addPlatformReturns(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void addPlatformReturns(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void addPlatformReturns(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void addAllPlatformReturns(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> values) {
+      ensurePlatformReturnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, platformReturns_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void clearPlatformReturns() {
+      platformReturns_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+     */
+    private void removePlatformReturns(int index) {
+      ensurePlatformReturnsIsMutable();
+      platformReturns_.remove(index);
+    }
+
+    public static final int AUTH_TICKET_FIELD_NUMBER = 7;
+    private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_;
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    public boolean hasAuthTicket() {
+      return authTicket_ != null;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
+      return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    private void setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      authTicket_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    private void setAuthTicket(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
+      authTicket_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    private void mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+      if (authTicket_ != null &&
+          authTicket_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance()) {
+        authTicket_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder(authTicket_).mergeFrom(value).buildPartial();
+      } else {
+        authTicket_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+     */
+    private void clearAuthTicket() {  authTicket_ = null;
+      
+    }
+
+    public static final int RETURNS_FIELD_NUMBER = 100;
+    private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> returns_;
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getReturnsList() {
+      return returns_;
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    public int getReturnsCount() {
+      return returns_.size();
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    public com.google.protobuf.ByteString getReturns(int index) {
+      return returns_.get(index);
+    }
+    private void ensureReturnsIsMutable() {
+      if (!returns_.isModifiable()) {
+        returns_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(returns_);
+       }
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    private void setReturns(
+        int index, com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReturnsIsMutable();
+      returns_.set(index, value);
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    private void addReturns(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReturnsIsMutable();
+      returns_.add(value);
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    private void addAllReturns(
+        java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+      ensureReturnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, returns_);
+    }
+    /**
+     * <code>repeated bytes returns = 100;</code>
+     */
+    private void clearReturns() {
+      returns_ = emptyProtobufList();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 101;
+    private java.lang.String error_;
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    public java.lang.String getError() {
+      return error_;
+    }
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(error_);
+    }
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    private void setError(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      error_ = value;
+    }
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    private void clearError() {
+      
+      error_ = getDefaultInstance().getError();
+    }
+    /**
+     * <code>optional string error = 101;</code>
+     */
+    private void setErrorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      error_ = value.toStringUtf8();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (statusCode_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNKNOWN.getNumber()) {
+        output.writeEnum(1, statusCode_);
+      }
+      if (requestId_ != 0L) {
+        output.writeUInt64(2, requestId_);
+      }
+      if (!apiUrl_.isEmpty()) {
+        output.writeString(3, getApiUrl());
+      }
+      for (int i = 0; i < platformReturns_.size(); i++) {
+        output.writeMessage(6, platformReturns_.get(i));
+      }
+      if (authTicket_ != null) {
+        output.writeMessage(7, getAuthTicket());
+      }
+      for (int i = 0; i < returns_.size(); i++) {
+        output.writeBytes(100, returns_.get(i));
+      }
+      if (!error_.isEmpty()) {
+        output.writeString(101, getError());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (statusCode_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, statusCode_);
+      }
+      if (requestId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, requestId_);
+      }
+      if (!apiUrl_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getApiUrl());
+      }
+      for (int i = 0; i < platformReturns_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, platformReturns_.get(i));
+      }
+      if (authTicket_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getAuthTicket());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < returns_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(returns_.get(i));
+        }
+        size += dataSize;
+        size += 2 * getReturnsList().size();
+      }
+      if (!error_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(101, getError());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelopeOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public int getStatusCodeValue() {
+        return instance.getStatusCodeValue();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public Builder setStatusCodeValue(int value) {
+        copyOnWrite();
+        instance.setStatusCodeValue(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode getStatusCode() {
+        return instance.getStatusCode();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public Builder setStatusCode(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.StatusCode value) {
+        copyOnWrite();
+        instance.setStatusCode(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.StatusCode status_code = 1;</code>
+       */
+      public Builder clearStatusCode() {
+        copyOnWrite();
+        instance.clearStatusCode();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 request_id = 2;</code>
+       */
+      public long getRequestId() {
+        return instance.getRequestId();
+      }
+      /**
+       * <code>optional uint64 request_id = 2;</code>
+       */
+      public Builder setRequestId(long value) {
+        copyOnWrite();
+        instance.setRequestId(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 request_id = 2;</code>
+       */
+      public Builder clearRequestId() {
+        copyOnWrite();
+        instance.clearRequestId();
+        return this;
+      }
+
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public java.lang.String getApiUrl() {
+        return instance.getApiUrl();
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getApiUrlBytes() {
+        return instance.getApiUrlBytes();
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public Builder setApiUrl(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setApiUrl(value);
+        return this;
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public Builder clearApiUrl() {
+        copyOnWrite();
+        instance.clearApiUrl();
+        return this;
+      }
+      /**
+       * <code>optional string api_url = 3;</code>
+       */
+      public Builder setApiUrlBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setApiUrlBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> getPlatformReturnsList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getPlatformReturnsList());
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public int getPlatformReturnsCount() {
+        return instance.getPlatformReturnsCount();
+      }/**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse getPlatformReturns(int index) {
+        return instance.getPlatformReturns(index);
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder setPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+        copyOnWrite();
+        instance.setPlatformReturns(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder setPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+        copyOnWrite();
+        instance.setPlatformReturns(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+        copyOnWrite();
+        instance.addPlatformReturns(value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse value) {
+        copyOnWrite();
+        instance.addPlatformReturns(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+        copyOnWrite();
+        instance.addPlatformReturns(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addPlatformReturns(
+          int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.Builder builderForValue) {
+        copyOnWrite();
+        instance.addPlatformReturns(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder addAllPlatformReturns(
+          java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse> values) {
+        copyOnWrite();
+        instance.addAllPlatformReturns(values);
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder clearPlatformReturns() {
+        copyOnWrite();
+        instance.clearPlatformReturns();
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope.PlatformResponse platform_returns = 6;</code>
+       */
+      public Builder removePlatformReturns(int index) {
+        copyOnWrite();
+        instance.removePlatformReturns(index);
+        return this;
+      }
+
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public boolean hasAuthTicket() {
+        return instance.hasAuthTicket();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
+        return instance.getAuthTicket();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+        copyOnWrite();
+        instance.setAuthTicket(value);
+        return this;
+        }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder setAuthTicket(
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
+        copyOnWrite();
+        instance.setAuthTicket(builderForValue);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+        copyOnWrite();
+        instance.mergeAuthTicket(value);
+        return this;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 7;</code>
+       */
+      public Builder clearAuthTicket() {  copyOnWrite();
+        instance.clearAuthTicket();
+        return this;
+      }
+
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getReturnsList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getReturnsList());
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public int getReturnsCount() {
+        return instance.getReturnsCount();
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public com.google.protobuf.ByteString getReturns(int index) {
+        return instance.getReturns(index);
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder setReturns(
+          int index, com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setReturns(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder addReturns(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.addReturns(value);
+        return this;
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder addAllReturns(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        copyOnWrite();
+        instance.addAllReturns(values);
+        return this;
+      }
+      /**
+       * <code>repeated bytes returns = 100;</code>
+       */
+      public Builder clearReturns() {
+        copyOnWrite();
+        instance.clearReturns();
+        return this;
+      }
+
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public java.lang.String getError() {
+        return instance.getError();
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        return instance.getErrorBytes();
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public Builder setError(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setError(value);
+        return this;
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public Builder clearError() {
+        copyOnWrite();
+        instance.clearError();
+        return this;
+      }
+      /**
+       * <code>optional string error = 101;</code>
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setErrorBytes(value);
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          platformReturns_.makeImmutable();
+          returns_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope) arg1;
+          statusCode_ = visitor.visitInt(statusCode_ != 0, statusCode_,    other.statusCode_ != 0, other.statusCode_);
+          requestId_ = visitor.visitLong(requestId_ != 0L, requestId_,
+              other.requestId_ != 0L, other.requestId_);
+          apiUrl_ = visitor.visitString(!apiUrl_.isEmpty(), apiUrl_,
+              !other.apiUrl_.isEmpty(), other.apiUrl_);
+          platformReturns_= visitor.visitList(platformReturns_, other.platformReturns_);
+          authTicket_ = visitor.visitMessage(authTicket_, other.authTicket_);
+          returns_= visitor.visitList(returns_, other.returns_);
+          error_ = visitor.visitString(!error_.isEmpty(), error_,
+              !other.error_.isEmpty(), other.error_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+                  int rawValue = input.readEnum();
+
+                  statusCode_ = rawValue;
+                  break;
+                }
+                case 16: {
+
+                  requestId_ = input.readUInt64();
+                  break;
+                }
+                case 26: {
+                  String s = input.readStringRequireUtf8();
+
+                  apiUrl_ = s;
+                  break;
+                }
+                case 50: {
+                  if (!platformReturns_.isModifiable()) {
+                    platformReturns_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(platformReturns_);
+                  }
+                  platformReturns_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.PlatformResponse.parser(), extensionRegistry));
+                  break;
+                }
+                case 58: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder subBuilder = null;
+                  if (authTicket_ != null) {
+                    subBuilder = authTicket_.toBuilder();
+                  }
+                  authTicket_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(authTicket_);
+                    authTicket_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 802: {
+                  if (!returns_.isModifiable()) {
+                    returns_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(returns_);
+                  }
+                  returns_.add(input.readBytes());
+                  break;
+                }
+                case 810: {
+                  String s = input.readStringRequireUtf8();
+
+                  error_ = s;
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.ResponseEnvelope)
+    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ResponseEnvelope();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.ResponseEnvelope getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
+    private static volatile com.google.protobuf.Parser<ResponseEnvelope> PARSER;
+
+    public static com.google.protobuf.Parser<ResponseEnvelope> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface AuthTicketOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional bytes start = 1;</code>
+     */
+    com.google.protobuf.ByteString getStart();
+
+    /**
+     * <code>optional uint64 expire_timestamp_ms = 2;</code>
+     */
+    long getExpireTimestampMs();
+
+    /**
+     * <code>optional bytes end = 3;</code>
+     */
+    com.google.protobuf.ByteString getEnd();
+  }
+  /**
+   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
+   */
+  public  static final class AuthTicket extends
+      com.google.protobuf.GeneratedMessageLite<
+          AuthTicket, AuthTicket.Builder> implements
+      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+      AuthTicketOrBuilder {
+    private AuthTicket() {
+      start_ = com.google.protobuf.ByteString.EMPTY;
+      end_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    public static final int START_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString start_;
+    /**
+     * <code>optional bytes start = 1;</code>
+     */
+    public com.google.protobuf.ByteString getStart() {
+      return start_;
+    }
+    /**
+     * <code>optional bytes start = 1;</code>
+     */
+    private void setStart(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      start_ = value;
+    }
+    /**
+     * <code>optional bytes start = 1;</code>
+     */
+    private void clearStart() {
+      
+      start_ = getDefaultInstance().getStart();
+    }
+
+    public static final int EXPIRE_TIMESTAMP_MS_FIELD_NUMBER = 2;
+    private long expireTimestampMs_;
+    /**
+     * <code>optional uint64 expire_timestamp_ms = 2;</code>
+     */
+    public long getExpireTimestampMs() {
+      return expireTimestampMs_;
+    }
+    /**
+     * <code>optional uint64 expire_timestamp_ms = 2;</code>
+     */
+    private void setExpireTimestampMs(long value) {
+      
+      expireTimestampMs_ = value;
+    }
+    /**
+     * <code>optional uint64 expire_timestamp_ms = 2;</code>
+     */
+    private void clearExpireTimestampMs() {
+      
+      expireTimestampMs_ = 0L;
+    }
+
+    public static final int END_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString end_;
+    /**
+     * <code>optional bytes end = 3;</code>
+     */
+    public com.google.protobuf.ByteString getEnd() {
+      return end_;
+    }
+    /**
+     * <code>optional bytes end = 3;</code>
+     */
+    private void setEnd(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      end_ = value;
+    }
+    /**
+     * <code>optional bytes end = 3;</code>
+     */
+    private void clearEnd() {
+      
+      end_ = getDefaultInstance().getEnd();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!start_.isEmpty()) {
+        output.writeBytes(1, start_);
+      }
+      if (expireTimestampMs_ != 0L) {
+        output.writeUInt64(2, expireTimestampMs_);
+      }
+      if (!end_.isEmpty()) {
+        output.writeBytes(3, end_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!start_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, start_);
+      }
+      if (expireTimestampMs_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, expireTimestampMs_);
+      }
+      if (!end_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, end_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder {
+      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional bytes start = 1;</code>
+       */
+      public com.google.protobuf.ByteString getStart() {
+        return instance.getStart();
+      }
+      /**
+       * <code>optional bytes start = 1;</code>
+       */
+      public Builder setStart(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setStart(value);
+        return this;
+      }
+      /**
+       * <code>optional bytes start = 1;</code>
+       */
+      public Builder clearStart() {
+        copyOnWrite();
+        instance.clearStart();
+        return this;
+      }
+
+      /**
+       * <code>optional uint64 expire_timestamp_ms = 2;</code>
+       */
+      public long getExpireTimestampMs() {
+        return instance.getExpireTimestampMs();
+      }
+      /**
+       * <code>optional uint64 expire_timestamp_ms = 2;</code>
+       */
+      public Builder setExpireTimestampMs(long value) {
+        copyOnWrite();
+        instance.setExpireTimestampMs(value);
+        return this;
+      }
+      /**
+       * <code>optional uint64 expire_timestamp_ms = 2;</code>
+       */
+      public Builder clearExpireTimestampMs() {
+        copyOnWrite();
+        instance.clearExpireTimestampMs();
+        return this;
+      }
+
+      /**
+       * <code>optional bytes end = 3;</code>
+       */
+      public com.google.protobuf.ByteString getEnd() {
+        return instance.getEnd();
+      }
+      /**
+       * <code>optional bytes end = 3;</code>
+       */
+      public Builder setEnd(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setEnd(value);
+        return this;
+      }
+      /**
+       * <code>optional bytes end = 3;</code>
+       */
+      public Builder clearEnd() {
+        copyOnWrite();
+        instance.clearEnd();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) arg1;
+          start_ = visitor.visitByteString(start_ != com.google.protobuf.ByteString.EMPTY, start_,
+              other.start_ != com.google.protobuf.ByteString.EMPTY, other.start_);
+          expireTimestampMs_ = visitor.visitLong(expireTimestampMs_ != 0L, expireTimestampMs_,
+              other.expireTimestampMs_ != 0L, other.expireTimestampMs_);
+          end_ = visitor.visitByteString(end_ != com.google.protobuf.ByteString.EMPTY, end_,
+              other.end_ != com.google.protobuf.ByteString.EMPTY, other.end_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+
+                  start_ = input.readBytes();
+                  break;
+                }
+                case 16: {
+
+                  expireTimestampMs_ = input.readUInt64();
+                  break;
+                }
+                case 26: {
+
+                  end_ = input.readBytes();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
+    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new AuthTicket();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<AuthTicket> PARSER;
+
+    public static com.google.protobuf.Parser<AuthTicket> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
   }
 
   public interface RequestEnvelopeOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional int32 status_code = 1;</code>
@@ -12646,16 +10970,6 @@ public final class Envelopes {
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
      */
     int getRequestsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder> 
-        getRequestsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder getRequestsOrBuilder(
-        int index);
 
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
@@ -12670,16 +10984,6 @@ public final class Envelopes {
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
     int getPlatformRequestsCount();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-     */
-    java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
-        getPlatformRequestsOrBuilderList();
-    /**
-     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder getPlatformRequestsOrBuilder(
-        int index);
 
     /**
      * <code>optional double latitude = 7;</code>
@@ -12704,10 +11008,6 @@ public final class Envelopes {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
      */
     com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo getAuthInfo();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder getAuthInfoOrBuilder();
 
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
@@ -12717,10 +11017,6 @@ public final class Envelopes {
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
      */
     com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket();
-    /**
-     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
-     */
-    com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder();
 
     /**
      * <code>optional int64 ms_since_last_locationfix = 12;</code>
@@ -12731,155 +11027,17 @@ public final class Envelopes {
    * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope}
    */
   public  static final class RequestEnvelope extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageLite<
+          RequestEnvelope, RequestEnvelope.Builder> implements
       // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope)
       RequestEnvelopeOrBuilder {
-    // Use RequestEnvelope.newBuilder() to construct.
-    private RequestEnvelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
     private RequestEnvelope() {
-      statusCode_ = 0;
-      requestId_ = 0L;
-      requests_ = java.util.Collections.emptyList();
-      platformRequests_ = java.util.Collections.emptyList();
-      latitude_ = 0D;
-      longitude_ = 0D;
-      accuracy_ = 0D;
-      msSinceLastLocationfix_ = 0L;
+      requests_ = emptyProtobufList();
+      platformRequests_ = emptyProtobufList();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private RequestEnvelope(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              statusCode_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              requestId_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                requests_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Requests.Request>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              requests_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Requests.Request.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                platformRequests_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              platformRequests_.add(
-                  input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.parser(), extensionRegistry));
-              break;
-            }
-            case 57: {
-
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 65: {
-
-              longitude_ = input.readDouble();
-              break;
-            }
-            case 73: {
-
-              accuracy_ = input.readDouble();
-              break;
-            }
-            case 82: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder subBuilder = null;
-              if (authInfo_ != null) {
-                subBuilder = authInfo_.toBuilder();
-              }
-              authInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authInfo_);
-                authInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder subBuilder = null;
-              if (authTicket_ != null) {
-                subBuilder = authTicket_.toBuilder();
-              }
-              authTicket_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authTicket_);
-                authTicket_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              msSinceLastLocationfix_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          requests_ = java.util.Collections.unmodifiableList(requests_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          platformRequests_ = java.util.Collections.unmodifiableList(platformRequests_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.Builder.class);
-    }
-
     public interface AuthInfoOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <code>optional string provider = 1;</code>
@@ -12899,96 +11057,21 @@ public final class Envelopes {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
        */
       com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT getToken();
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
-       */
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder getTokenOrBuilder();
     }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo}
      */
     public  static final class AuthInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            AuthInfo, AuthInfo.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo)
         AuthInfoOrBuilder {
-      // Use AuthInfo.newBuilder() to construct.
-      private AuthInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private AuthInfo() {
         provider_ = "";
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private AuthInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                provider_ = s;
-                break;
-              }
-              case 18: {
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder subBuilder = null;
-                if (token_ != null) {
-                  subBuilder = token_.toBuilder();
-                }
-                token_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(token_);
-                  token_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder.class);
-      }
-
       public interface JWTOrBuilder extends
           // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT)
-          com.google.protobuf.MessageOrBuilder {
+          com.google.protobuf.MessageLiteOrBuilder {
 
         /**
          * <code>optional string contents = 1;</code>
@@ -13009,109 +11092,57 @@ public final class Envelopes {
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT}
        */
       public  static final class JWT extends
-          com.google.protobuf.GeneratedMessageV3 implements
+          com.google.protobuf.GeneratedMessageLite<
+              JWT, JWT.Builder> implements
           // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT)
           JWTOrBuilder {
-        // Use JWT.newBuilder() to construct.
-        private JWT(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
         private JWT() {
           contents_ = "";
-          unknown2_ = 0;
         }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-          return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-        private JWT(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          int mutable_bitField0_ = 0;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  contents_ = s;
-                  break;
-                }
-                case 16: {
-
-                  unknown2_ = input.readInt32();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
-          } finally {
-            makeExtensionsImmutable();
-          }
-        }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder.class);
-        }
-
         public static final int CONTENTS_FIELD_NUMBER = 1;
-        private volatile java.lang.Object contents_;
+        private java.lang.String contents_;
         /**
          * <code>optional string contents = 1;</code>
          */
         public java.lang.String getContents() {
-          java.lang.Object ref = contents_;
-          if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-          } else {
-            com.google.protobuf.ByteString bs = 
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            contents_ = s;
-            return s;
-          }
+          return contents_;
         }
         /**
          * <code>optional string contents = 1;</code>
          */
         public com.google.protobuf.ByteString
             getContentsBytes() {
-          java.lang.Object ref = contents_;
-          if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            contents_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return com.google.protobuf.ByteString.copyFromUtf8(contents_);
+        }
+        /**
+         * <code>optional string contents = 1;</code>
+         */
+        private void setContents(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          contents_ = value;
+        }
+        /**
+         * <code>optional string contents = 1;</code>
+         */
+        private void clearContents() {
+          
+          contents_ = getDefaultInstance().getContents();
+        }
+        /**
+         * <code>optional string contents = 1;</code>
+         */
+        private void setContentsBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          contents_ = value.toStringUtf8();
         }
 
         public static final int UNKNOWN2_FIELD_NUMBER = 2;
@@ -13122,21 +11153,25 @@ public final class Envelopes {
         public int getUnknown2() {
           return unknown2_;
         }
-
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
-
-          memoizedIsInitialized = 1;
-          return true;
+        /**
+         * <code>optional int32 unknown2 = 2;</code>
+         */
+        private void setUnknown2(int value) {
+          
+          unknown2_ = value;
+        }
+        /**
+         * <code>optional int32 unknown2 = 2;</code>
+         */
+        private void clearUnknown2() {
+          
+          unknown2_ = 0;
         }
 
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
-          if (!getContentsBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contents_);
+          if (!contents_.isEmpty()) {
+            output.writeString(1, getContents());
           }
           if (unknown2_ != 0) {
             output.writeInt32(2, unknown2_);
@@ -13144,323 +11179,132 @@ public final class Envelopes {
         }
 
         public int getSerializedSize() {
-          int size = memoizedSize;
+          int size = memoizedSerializedSize;
           if (size != -1) return size;
 
           size = 0;
-          if (!getContentsBytes().isEmpty()) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contents_);
+          if (!contents_.isEmpty()) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeStringSize(1, getContents());
           }
           if (unknown2_ != 0) {
             size += com.google.protobuf.CodedOutputStream
               .computeInt32Size(2, unknown2_);
           }
-          memoizedSize = size;
+          memoizedSerializedSize = size;
           return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-          if (obj == this) {
-           return true;
-          }
-          if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT)) {
-            return super.equals(obj);
-          }
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT) obj;
-
-          boolean result = true;
-          result = result && getContents()
-              .equals(other.getContents());
-          result = result && (getUnknown2()
-              == other.getUnknown2());
-          return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-          if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptorForType().hashCode();
-          hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
-          hash = (53 * hash) + getContents().hashCode();
-          hash = (37 * hash) + UNKNOWN2_FIELD_NUMBER;
-          hash = (53 * hash) + getUnknown2();
-          hash = (29 * hash) + unknownFields.hashCode();
-          memoizedHashCode = hash;
-          return hash;
         }
 
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data, extensionRegistry);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data, extensionRegistry);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input, extensionRegistry);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input);
+          return parseDelimitedFrom(DEFAULT_INSTANCE, input);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input);
         }
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input, extensionRegistry);
         }
 
-        public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
         public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
-        }
 
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
         /**
          * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT}
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            com.google.protobuf.GeneratedMessageLite.Builder<
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT, Builder> implements
             // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT)
             com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor;
-          }
-
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder.class);
-          }
-
           // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.newBuilder()
           private Builder() {
-            maybeForceBuilderInitialization();
+            super(DEFAULT_INSTANCE);
           }
 
-          private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
-          }
-          public Builder clear() {
-            super.clear();
-            contents_ = "";
 
-            unknown2_ = 0;
-
-            return this;
-          }
-
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor;
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT getDefaultInstanceForType() {
-            return com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.getDefaultInstance();
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT build() {
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT buildPartial() {
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT(this);
-            result.contents_ = contents_;
-            result.unknown2_ = unknown2_;
-            onBuilt();
-            return result;
-          }
-
-          public Builder clone() {
-            return (Builder) super.clone();
-          }
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              Object value) {
-            return (Builder) super.setField(field, value);
-          }
-          public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
-          }
-          public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
-          }
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
-          }
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              Object value) {
-            return (Builder) super.addRepeatedField(field, value);
-          }
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT) {
-              return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT other) {
-            if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.getDefaultInstance()) return this;
-            if (!other.getContents().isEmpty()) {
-              contents_ = other.contents_;
-              onChanged();
-            }
-            if (other.getUnknown2() != 0) {
-              setUnknown2(other.getUnknown2());
-            }
-            onChanged();
-            return this;
-          }
-
-          public final boolean isInitialized() {
-            return true;
-          }
-
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT parsedMessage = null;
-            try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT) e.getUnfinishedMessage();
-              throw e.unwrapIOException();
-            } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
-            return this;
-          }
-
-          private java.lang.Object contents_ = "";
           /**
            * <code>optional string contents = 1;</code>
            */
           public java.lang.String getContents() {
-            java.lang.Object ref = contents_;
-            if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              contents_ = s;
-              return s;
-            } else {
-              return (java.lang.String) ref;
-            }
+            return instance.getContents();
           }
           /**
            * <code>optional string contents = 1;</code>
            */
           public com.google.protobuf.ByteString
               getContentsBytes() {
-            java.lang.Object ref = contents_;
-            if (ref instanceof String) {
-              com.google.protobuf.ByteString b = 
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-              contents_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
+            return instance.getContentsBytes();
           }
           /**
            * <code>optional string contents = 1;</code>
            */
           public Builder setContents(
               java.lang.String value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  
-            contents_ = value;
-            onChanged();
+            copyOnWrite();
+            instance.setContents(value);
             return this;
           }
           /**
            * <code>optional string contents = 1;</code>
            */
           public Builder clearContents() {
-            
-            contents_ = getDefaultInstance().getContents();
-            onChanged();
+            copyOnWrite();
+            instance.clearContents();
             return this;
           }
           /**
@@ -13468,122 +11312,184 @@ public final class Envelopes {
            */
           public Builder setContentsBytes(
               com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-            
-            contents_ = value;
-            onChanged();
+            copyOnWrite();
+            instance.setContentsBytes(value);
             return this;
           }
 
-          private int unknown2_ ;
           /**
            * <code>optional int32 unknown2 = 2;</code>
            */
           public int getUnknown2() {
-            return unknown2_;
+            return instance.getUnknown2();
           }
           /**
            * <code>optional int32 unknown2 = 2;</code>
            */
           public Builder setUnknown2(int value) {
-            
-            unknown2_ = value;
-            onChanged();
+            copyOnWrite();
+            instance.setUnknown2(value);
             return this;
           }
           /**
            * <code>optional int32 unknown2 = 2;</code>
            */
           public Builder clearUnknown2() {
-            
-            unknown2_ = 0;
-            onChanged();
+            copyOnWrite();
+            instance.clearUnknown2();
             return this;
           }
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return this;
-          }
-
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return this;
-          }
-
 
           // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT)
         }
+        protected final Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            Object arg0, Object arg1) {
+          switch (method) {
+            case NEW_MUTABLE_INSTANCE: {
+              return new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT();
+            }
+            case IS_INITIALIZED: {
+              return DEFAULT_INSTANCE;
+            }
+            case MAKE_IMMUTABLE: {
+              return null;
+            }
+            case NEW_BUILDER: {
+              return new Builder();
+            }
+            case VISIT: {
+              Visitor visitor = (Visitor) arg0;
+              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT) arg1;
+              contents_ = visitor.visitString(!contents_.isEmpty(), contents_,
+                  !other.contents_.isEmpty(), other.contents_);
+              unknown2_ = visitor.visitInt(unknown2_ != 0, unknown2_,
+                  other.unknown2_ != 0, other.unknown2_);
+              if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                  .INSTANCE) {
+              }
+              return this;
+            }
+            case MERGE_FROM_STREAM: {
+              com.google.protobuf.CodedInputStream input =
+                  (com.google.protobuf.CodedInputStream) arg0;
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                  (com.google.protobuf.ExtensionRegistryLite) arg1;
+              try {
+                boolean done = false;
+                while (!done) {
+                  int tag = input.readTag();
+                  switch (tag) {
+                    case 0:
+                      done = true;
+                      break;
+                    default: {
+                      if (!input.skipField(tag)) {
+                        done = true;
+                      }
+                      break;
+                    }
+                    case 10: {
+                      String s = input.readStringRequireUtf8();
+
+                      contents_ = s;
+                      break;
+                    }
+                    case 16: {
+
+                      unknown2_ = input.readInt32();
+                      break;
+                    }
+                  }
+                }
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw new RuntimeException(e.setUnfinishedMessage(this));
+              } catch (java.io.IOException e) {
+                throw new RuntimeException(
+                    new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this));
+              } finally {
+              }
+            }
+            case GET_DEFAULT_INSTANCE: {
+              return DEFAULT_INSTANCE;
+            }
+            case GET_PARSER: {
+              if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.class) {
+                  if (PARSER == null) {
+                    PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                  }
+                }
+              }
+              return PARSER;
+            }
+          }
+          throw new UnsupportedOperationException();
+        }
+
 
         // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT)
         private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT DEFAULT_INSTANCE;
         static {
-          DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT();
+          DEFAULT_INSTANCE = new JWT();
+          DEFAULT_INSTANCE.makeImmutable();
         }
 
         public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static final com.google.protobuf.Parser<JWT>
-            PARSER = new com.google.protobuf.AbstractParser<JWT>() {
-          public JWT parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-              return new JWT(input, extensionRegistry);
-          }
-        };
+        private static volatile com.google.protobuf.Parser<JWT> PARSER;
 
         public static com.google.protobuf.Parser<JWT> parser() {
-          return PARSER;
+          return DEFAULT_INSTANCE.getParserForType();
         }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<JWT> getParserForType() {
-          return PARSER;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-
       }
 
       public static final int PROVIDER_FIELD_NUMBER = 1;
-      private volatile java.lang.Object provider_;
+      private java.lang.String provider_;
       /**
        * <code>optional string provider = 1;</code>
        */
       public java.lang.String getProvider() {
-        java.lang.Object ref = provider_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          provider_ = s;
-          return s;
-        }
+        return provider_;
       }
       /**
        * <code>optional string provider = 1;</code>
        */
       public com.google.protobuf.ByteString
           getProviderBytes() {
-        java.lang.Object ref = provider_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          provider_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+        return com.google.protobuf.ByteString.copyFromUtf8(provider_);
+      }
+      /**
+       * <code>optional string provider = 1;</code>
+       */
+      private void setProvider(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        provider_ = value;
+      }
+      /**
+       * <code>optional string provider = 1;</code>
+       */
+      private void clearProvider() {
+        
+        provider_ = getDefaultInstance().getProvider();
+      }
+      /**
+       * <code>optional string provider = 1;</code>
+       */
+      private void setProviderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        provider_ = value.toStringUtf8();
       }
 
       public static final int TOKEN_FIELD_NUMBER = 2;
@@ -13603,24 +11509,45 @@ public final class Envelopes {
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
        */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder getTokenOrBuilder() {
-        return getToken();
+      private void setToken(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        token_ = value;
+        
+        }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
+       */
+      private void setToken(
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder builderForValue) {
+        token_ = builderForValue.build();
+        
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
+       */
+      private void mergeToken(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT value) {
+        if (token_ != null &&
+            token_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.getDefaultInstance()) {
+          token_ =
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.newBuilder(token_).mergeFrom(value).buildPartial();
+        } else {
+          token_ = value;
+        }
+        
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
+       */
+      private void clearToken() {  token_ = null;
+        
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getProviderBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, provider_);
+        if (!provider_.isEmpty()) {
+          output.writeString(1, getProvider());
         }
         if (token_ != null) {
           output.writeMessage(2, getToken());
@@ -13628,336 +11555,132 @@ public final class Envelopes {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (!getProviderBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, provider_);
+        if (!provider_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(1, getProvider());
         }
         if (token_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, getToken());
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo) obj;
-
-        boolean result = true;
-        result = result && getProvider()
-            .equals(other.getProvider());
-        result = result && (hasToken() == other.hasToken());
-        if (hasToken()) {
-          result = result && getToken()
-              .equals(other.getToken());
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
-        hash = (53 * hash) + getProvider().hashCode();
-        if (hasToken()) {
-          hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-          hash = (53 * hash) + getToken().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          provider_ = "";
 
-          if (tokenBuilder_ == null) {
-            token_ = null;
-          } else {
-            token_ = null;
-            tokenBuilder_ = null;
-          }
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo(this);
-          result.provider_ = provider_;
-          if (tokenBuilder_ == null) {
-            result.token_ = token_;
-          } else {
-            result.token_ = tokenBuilder_.build();
-          }
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.getDefaultInstance()) return this;
-          if (!other.getProvider().isEmpty()) {
-            provider_ = other.provider_;
-            onChanged();
-          }
-          if (other.hasToken()) {
-            mergeToken(other.getToken());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object provider_ = "";
         /**
          * <code>optional string provider = 1;</code>
          */
         public java.lang.String getProvider() {
-          java.lang.Object ref = provider_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            provider_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getProvider();
         }
         /**
          * <code>optional string provider = 1;</code>
          */
         public com.google.protobuf.ByteString
             getProviderBytes() {
-          java.lang.Object ref = provider_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            provider_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+          return instance.getProviderBytes();
         }
         /**
          * <code>optional string provider = 1;</code>
          */
         public Builder setProvider(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          provider_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setProvider(value);
           return this;
         }
         /**
          * <code>optional string provider = 1;</code>
          */
         public Builder clearProvider() {
-          
-          provider_ = getDefaultInstance().getProvider();
-          onChanged();
+          copyOnWrite();
+          instance.clearProvider();
           return this;
         }
         /**
@@ -13965,184 +11688,172 @@ public final class Envelopes {
          */
         public Builder setProviderBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          provider_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setProviderBytes(value);
           return this;
         }
 
-        private com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT token_ = null;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder> tokenBuilder_;
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
          */
         public boolean hasToken() {
-          return tokenBuilder_ != null || token_ != null;
+          return instance.hasToken();
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
          */
         public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT getToken() {
-          if (tokenBuilder_ == null) {
-            return token_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.getDefaultInstance() : token_;
-          } else {
-            return tokenBuilder_.getMessage();
-          }
+          return instance.getToken();
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
          */
         public Builder setToken(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT value) {
-          if (tokenBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            token_ = value;
-            onChanged();
-          } else {
-            tokenBuilder_.setMessage(value);
-          }
-
+          copyOnWrite();
+          instance.setToken(value);
           return this;
-        }
+          }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
          */
         public Builder setToken(
             com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder builderForValue) {
-          if (tokenBuilder_ == null) {
-            token_ = builderForValue.build();
-            onChanged();
-          } else {
-            tokenBuilder_.setMessage(builderForValue.build());
-          }
-
+          copyOnWrite();
+          instance.setToken(builderForValue);
           return this;
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
          */
         public Builder mergeToken(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT value) {
-          if (tokenBuilder_ == null) {
-            if (token_ != null) {
-              token_ =
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.newBuilder(token_).mergeFrom(value).buildPartial();
-            } else {
-              token_ = value;
-            }
-            onChanged();
-          } else {
-            tokenBuilder_.mergeFrom(value);
-          }
-
+          copyOnWrite();
+          instance.mergeToken(value);
           return this;
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
          */
-        public Builder clearToken() {
-          if (tokenBuilder_ == null) {
-            token_ = null;
-            onChanged();
-          } else {
-            token_ = null;
-            tokenBuilder_ = null;
-          }
-
+        public Builder clearToken() {  copyOnWrite();
+          instance.clearToken();
           return this;
         }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder getTokenBuilder() {
-          
-          onChanged();
-          return getTokenFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
-         */
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder getTokenOrBuilder() {
-          if (tokenBuilder_ != null) {
-            return tokenBuilder_.getMessageOrBuilder();
-          } else {
-            return token_ == null ?
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.getDefaultInstance() : token_;
-          }
-        }
-        /**
-         * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo.JWT token = 2;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder> 
-            getTokenFieldBuilder() {
-          if (tokenBuilder_ == null) {
-            tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWTOrBuilder>(
-                    getToken(),
-                    getParentForChildren(),
-                    isClean());
-            token_ = null;
-          }
-          return tokenBuilder_;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo) arg1;
+            provider_ = visitor.visitString(!provider_.isEmpty(), provider_,
+                !other.provider_.isEmpty(), other.provider_);
+            token_ = visitor.visitMessage(token_, other.token_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 10: {
+                    String s = input.readStringRequireUtf8();
+
+                    provider_ = s;
+                    break;
+                  }
+                  case 18: {
+                    com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.Builder subBuilder = null;
+                    if (token_ != null) {
+                      subBuilder = token_.toBuilder();
+                    }
+                    token_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.JWT.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(token_);
+                      token_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo();
+        DEFAULT_INSTANCE = new AuthInfo();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<AuthInfo>
-          PARSER = new com.google.protobuf.AbstractParser<AuthInfo>() {
-        public AuthInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AuthInfo(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<AuthInfo> PARSER;
 
       public static com.google.protobuf.Parser<AuthInfo> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<AuthInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface PlatformRequestOrBuilder extends
         // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
-        com.google.protobuf.MessageOrBuilder {
+        com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
@@ -14162,77 +11873,13 @@ public final class Envelopes {
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest}
      */
     public  static final class PlatformRequest extends
-        com.google.protobuf.GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageLite<
+            PlatformRequest, PlatformRequest.Builder> implements
         // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
         PlatformRequestOrBuilder {
-      // Use PlatformRequest.newBuilder() to construct.
-      private PlatformRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
       private PlatformRequest() {
-        type_ = 0;
         requestMessage_ = com.google.protobuf.ByteString.EMPTY;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private PlatformRequest(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-              case 18: {
-
-                requestMessage_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder.class);
-      }
-
       public static final int TYPE_FIELD_NUMBER = 1;
       private int type_;
       /**
@@ -14245,8 +11892,31 @@ public final class Envelopes {
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
-        com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
+        com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.forNumber(type_);
         return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      private void setTypeValue(int value) {
+          type_ = value;
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      private void setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+      }
+      /**
+       * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
+       */
+      private void clearType() {
+        
+        type_ = 0;
       }
 
       public static final int REQUEST_MESSAGE_FIELD_NUMBER = 2;
@@ -14257,15 +11927,22 @@ public final class Envelopes {
       public com.google.protobuf.ByteString getRequestMessage() {
         return requestMessage_;
       }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
+      /**
+       * <code>optional bytes request_message = 2;</code>
+       */
+      private void setRequestMessage(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestMessage_ = value;
+      }
+      /**
+       * <code>optional bytes request_message = 2;</code>
+       */
+      private void clearRequestMessage() {
+        
+        requestMessage_ = getDefaultInstance().getRequestMessage();
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -14279,7 +11956,7 @@ public final class Envelopes {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -14291,377 +11968,255 @@ public final class Envelopes {
           size += com.google.protobuf.CodedOutputStream
             .computeBytesSize(2, requestMessage_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest)) {
-          return super.equals(obj);
-        }
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) obj;
-
-        boolean result = true;
-        result = result && type_ == other.type_;
-        result = result && getRequestMessage()
-            .equals(other.getRequestMessage());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + type_;
-        hash = (37 * hash) + REQUEST_MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getRequestMessage().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
       }
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, Builder> implements
           // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
           com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder.class);
-        }
-
         // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          type_ = 0;
 
-          requestMessage_ = com.google.protobuf.ByteString.EMPTY;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getDefaultInstanceForType() {
-          return com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance();
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest build() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest buildPartial() {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest(this);
-          result.type_ = type_;
-          result.requestMessage_ = requestMessage_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) {
-            return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest other) {
-          if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance()) return this;
-          if (other.type_ != 0) {
-            setTypeValue(other.getTypeValue());
-          }
-          if (other.getRequestMessage() != com.google.protobuf.ByteString.EMPTY) {
-            setRequestMessage(other.getRequestMessage());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private int type_ = 0;
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
          */
         public int getTypeValue() {
-          return type_;
+          return instance.getTypeValue();
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
          */
         public Builder setTypeValue(int value) {
-          type_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTypeValue(value);
           return this;
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
          */
         public com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType getType() {
-          com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType result = com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.valueOf(type_);
-          return result == null ? com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType.UNRECOGNIZED : result;
+          return instance.getType();
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
          */
         public Builder setType(com.github.aeonlucid.pogoprotos.networking.Platform.PlatformRequestType value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          
-          type_ = value.getNumber();
-          onChanged();
+          copyOnWrite();
+          instance.setType(value);
           return this;
         }
         /**
          * <code>optional .com.github.aeonlucid.pogoprotos.networking.platform.PlatformRequestType type = 1;</code>
          */
         public Builder clearType() {
-          
-          type_ = 0;
-          onChanged();
+          copyOnWrite();
+          instance.clearType();
           return this;
         }
 
-        private com.google.protobuf.ByteString requestMessage_ = com.google.protobuf.ByteString.EMPTY;
         /**
          * <code>optional bytes request_message = 2;</code>
          */
         public com.google.protobuf.ByteString getRequestMessage() {
-          return requestMessage_;
+          return instance.getRequestMessage();
         }
         /**
          * <code>optional bytes request_message = 2;</code>
          */
         public Builder setRequestMessage(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          requestMessage_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setRequestMessage(value);
           return this;
         }
         /**
          * <code>optional bytes request_message = 2;</code>
          */
         public Builder clearRequestMessage() {
-          
-          requestMessage_ = getDefaultInstance().getRequestMessage();
-          onChanged();
+          copyOnWrite();
+          instance.clearRequestMessage();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
       }
+      protected final Object dynamicMethod(
+          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest) arg1;
+            type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
+            requestMessage_ = visitor.visitByteString(requestMessage_ != com.google.protobuf.ByteString.EMPTY, requestMessage_,
+                other.requestMessage_ != com.google.protobuf.ByteString.EMPTY, other.requestMessage_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+                    int rawValue = input.readEnum();
+
+                    type_ = rawValue;
+                    break;
+                  }
+                  case 18: {
+
+                    requestMessage_ = input.readBytes();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest)
       private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest();
+        DEFAULT_INSTANCE = new PlatformRequest();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<PlatformRequest>
-          PARSER = new com.google.protobuf.AbstractParser<PlatformRequest>() {
-        public PlatformRequest parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PlatformRequest(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<PlatformRequest> PARSER;
 
       public static com.google.protobuf.Parser<PlatformRequest> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<PlatformRequest> getParserForType() {
-        return PARSER;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     private int bitField0_;
@@ -14673,6 +12228,20 @@ public final class Envelopes {
     public int getStatusCode() {
       return statusCode_;
     }
+    /**
+     * <code>optional int32 status_code = 1;</code>
+     */
+    private void setStatusCode(int value) {
+      
+      statusCode_ = value;
+    }
+    /**
+     * <code>optional int32 status_code = 1;</code>
+     */
+    private void clearStatusCode() {
+      
+      statusCode_ = 0;
+    }
 
     public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
@@ -14682,9 +12251,23 @@ public final class Envelopes {
     public long getRequestId() {
       return requestId_;
     }
+    /**
+     * <code>optional uint64 request_id = 3;</code>
+     */
+    private void setRequestId(long value) {
+      
+      requestId_ = value;
+    }
+    /**
+     * <code>optional uint64 request_id = 3;</code>
+     */
+    private void clearRequestId() {
+      
+      requestId_ = 0L;
+    }
 
     public static final int REQUESTS_FIELD_NUMBER = 4;
-    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Requests.Request> requests_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.networking.Requests.Request> requests_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
      */
@@ -14717,9 +12300,94 @@ public final class Envelopes {
         int index) {
       return requests_.get(index);
     }
+    private void ensureRequestsIsMutable() {
+      if (!requests_.isModifiable()) {
+        requests_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(requests_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void setRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequestsIsMutable();
+      requests_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void setRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder builderForValue) {
+      ensureRequestsIsMutable();
+      requests_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void addRequests(com.github.aeonlucid.pogoprotos.networking.Requests.Request value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequestsIsMutable();
+      requests_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void addRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequestsIsMutable();
+      requests_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void addRequests(
+        com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder builderForValue) {
+      ensureRequestsIsMutable();
+      requests_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void addRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder builderForValue) {
+      ensureRequestsIsMutable();
+      requests_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void addAllRequests(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Requests.Request> values) {
+      ensureRequestsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, requests_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void clearRequests() {
+      requests_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
+     */
+    private void removeRequests(int index) {
+      ensureRequestsIsMutable();
+      requests_.remove(index);
+    }
 
     public static final int PLATFORM_REQUESTS_FIELD_NUMBER = 6;
-    private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> platformRequests_;
+    private com.google.protobuf.Internal.ProtobufList<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> platformRequests_;
     /**
      * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
      */
@@ -14752,6 +12420,91 @@ public final class Envelopes {
         int index) {
       return platformRequests_.get(index);
     }
+    private void ensurePlatformRequestsIsMutable() {
+      if (!platformRequests_.isModifiable()) {
+        platformRequests_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(platformRequests_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void setPlatformRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.set(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void setPlatformRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void addPlatformRequests(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.add(value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void addPlatformRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void addPlatformRequests(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void addPlatformRequests(
+        int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void addAllPlatformRequests(
+        java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> values) {
+      ensurePlatformRequestsIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, platformRequests_);
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void clearPlatformRequests() {
+      platformRequests_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
+     */
+    private void removePlatformRequests(int index) {
+      ensurePlatformRequestsIsMutable();
+      platformRequests_.remove(index);
+    }
 
     public static final int LATITUDE_FIELD_NUMBER = 7;
     private double latitude_;
@@ -14760,6 +12513,20 @@ public final class Envelopes {
      */
     public double getLatitude() {
       return latitude_;
+    }
+    /**
+     * <code>optional double latitude = 7;</code>
+     */
+    private void setLatitude(double value) {
+      
+      latitude_ = value;
+    }
+    /**
+     * <code>optional double latitude = 7;</code>
+     */
+    private void clearLatitude() {
+      
+      latitude_ = 0D;
     }
 
     public static final int LONGITUDE_FIELD_NUMBER = 8;
@@ -14770,6 +12537,20 @@ public final class Envelopes {
     public double getLongitude() {
       return longitude_;
     }
+    /**
+     * <code>optional double longitude = 8;</code>
+     */
+    private void setLongitude(double value) {
+      
+      longitude_ = value;
+    }
+    /**
+     * <code>optional double longitude = 8;</code>
+     */
+    private void clearLongitude() {
+      
+      longitude_ = 0D;
+    }
 
     public static final int ACCURACY_FIELD_NUMBER = 9;
     private double accuracy_;
@@ -14778,6 +12559,20 @@ public final class Envelopes {
      */
     public double getAccuracy() {
       return accuracy_;
+    }
+    /**
+     * <code>optional double accuracy = 9;</code>
+     */
+    private void setAccuracy(double value) {
+      
+      accuracy_ = value;
+    }
+    /**
+     * <code>optional double accuracy = 9;</code>
+     */
+    private void clearAccuracy() {
+      
+      accuracy_ = 0D;
     }
 
     public static final int AUTH_INFO_FIELD_NUMBER = 10;
@@ -14797,8 +12592,39 @@ public final class Envelopes {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder getAuthInfoOrBuilder() {
-      return getAuthInfo();
+    private void setAuthInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      authInfo_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
+     */
+    private void setAuthInfo(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder builderForValue) {
+      authInfo_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
+     */
+    private void mergeAuthInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo value) {
+      if (authInfo_ != null &&
+          authInfo_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.getDefaultInstance()) {
+        authInfo_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.newBuilder(authInfo_).mergeFrom(value).buildPartial();
+      } else {
+        authInfo_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
+     */
+    private void clearAuthInfo() {  authInfo_ = null;
+      
     }
 
     public static final int AUTH_TICKET_FIELD_NUMBER = 11;
@@ -14818,8 +12644,39 @@ public final class Envelopes {
     /**
      * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
      */
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
-      return getAuthTicket();
+    private void setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      authTicket_ = value;
+      
+      }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
+     */
+    private void setAuthTicket(
+        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
+      authTicket_ = builderForValue.build();
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
+     */
+    private void mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
+      if (authTicket_ != null &&
+          authTicket_ != com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance()) {
+        authTicket_ =
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder(authTicket_).mergeFrom(value).buildPartial();
+      } else {
+        authTicket_ = value;
+      }
+      
+    }
+    /**
+     * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
+     */
+    private void clearAuthTicket() {  authTicket_ = null;
+      
     }
 
     public static final int MS_SINCE_LAST_LOCATIONFIX_FIELD_NUMBER = 12;
@@ -14830,15 +12687,19 @@ public final class Envelopes {
     public long getMsSinceLastLocationfix() {
       return msSinceLastLocationfix_;
     }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
+    /**
+     * <code>optional int64 ms_since_last_locationfix = 12;</code>
+     */
+    private void setMsSinceLastLocationfix(long value) {
+      
+      msSinceLastLocationfix_ = value;
+    }
+    /**
+     * <code>optional int64 ms_since_last_locationfix = 12;</code>
+     */
+    private void clearMsSinceLastLocationfix() {
+      
+      msSinceLastLocationfix_ = 0L;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -14876,7 +12737,7 @@ public final class Envelopes {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -14920,565 +12781,163 @@ public final class Envelopes {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, msSinceLastLocationfix_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope) obj;
-
-      boolean result = true;
-      result = result && (getStatusCode()
-          == other.getStatusCode());
-      result = result && (getRequestId()
-          == other.getRequestId());
-      result = result && getRequestsList()
-          .equals(other.getRequestsList());
-      result = result && getPlatformRequestsList()
-          .equals(other.getPlatformRequestsList());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getAccuracy())
-          == java.lang.Double.doubleToLongBits(
-              other.getAccuracy()));
-      result = result && (hasAuthInfo() == other.hasAuthInfo());
-      if (hasAuthInfo()) {
-        result = result && getAuthInfo()
-            .equals(other.getAuthInfo());
-      }
-      result = result && (hasAuthTicket() == other.hasAuthTicket());
-      if (hasAuthTicket()) {
-        result = result && getAuthTicket()
-            .equals(other.getAuthTicket());
-      }
-      result = result && (getMsSinceLastLocationfix()
-          == other.getMsSinceLastLocationfix());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getStatusCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRequestId());
-      if (getRequestsCount() > 0) {
-        hash = (37 * hash) + REQUESTS_FIELD_NUMBER;
-        hash = (53 * hash) + getRequestsList().hashCode();
-      }
-      if (getPlatformRequestsCount() > 0) {
-        hash = (37 * hash) + PLATFORM_REQUESTS_FIELD_NUMBER;
-        hash = (53 * hash) + getPlatformRequestsList().hashCode();
-      }
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-      hash = (37 * hash) + ACCURACY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getAccuracy()));
-      if (hasAuthInfo()) {
-        hash = (37 * hash) + AUTH_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getAuthInfo().hashCode();
-      }
-      if (hasAuthTicket()) {
-        hash = (37 * hash) + AUTH_TICKET_FIELD_NUMBER;
-        hash = (53 * hash) + getAuthTicket().hashCode();
-      }
-      hash = (37 * hash) + MS_SINCE_LAST_LOCATIONFIX_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMsSinceLastLocationfix());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
     }
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope, Builder> implements
         // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope)
         com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelopeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.Builder.class);
-      }
-
       // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRequestsFieldBuilder();
-          getPlatformRequestsFieldBuilder();
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        statusCode_ = 0;
 
-        requestId_ = 0L;
-
-        if (requestsBuilder_ == null) {
-          requests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          requestsBuilder_.clear();
-        }
-        if (platformRequestsBuilder_ == null) {
-          platformRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          platformRequestsBuilder_.clear();
-        }
-        latitude_ = 0D;
-
-        longitude_ = 0D;
-
-        accuracy_ = 0D;
-
-        if (authInfoBuilder_ == null) {
-          authInfo_ = null;
-        } else {
-          authInfo_ = null;
-          authInfoBuilder_ = null;
-        }
-        if (authTicketBuilder_ == null) {
-          authTicket_ = null;
-        } else {
-          authTicket_ = null;
-          authTicketBuilder_ = null;
-        }
-        msSinceLastLocationfix_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.statusCode_ = statusCode_;
-        result.requestId_ = requestId_;
-        if (requestsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            requests_ = java.util.Collections.unmodifiableList(requests_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.requests_ = requests_;
-        } else {
-          result.requests_ = requestsBuilder_.build();
-        }
-        if (platformRequestsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            platformRequests_ = java.util.Collections.unmodifiableList(platformRequests_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.platformRequests_ = platformRequests_;
-        } else {
-          result.platformRequests_ = platformRequestsBuilder_.build();
-        }
-        result.latitude_ = latitude_;
-        result.longitude_ = longitude_;
-        result.accuracy_ = accuracy_;
-        if (authInfoBuilder_ == null) {
-          result.authInfo_ = authInfo_;
-        } else {
-          result.authInfo_ = authInfoBuilder_.build();
-        }
-        if (authTicketBuilder_ == null) {
-          result.authTicket_ = authTicket_;
-        } else {
-          result.authTicket_ = authTicketBuilder_.build();
-        }
-        result.msSinceLastLocationfix_ = msSinceLastLocationfix_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.getDefaultInstance()) return this;
-        if (other.getStatusCode() != 0) {
-          setStatusCode(other.getStatusCode());
-        }
-        if (other.getRequestId() != 0L) {
-          setRequestId(other.getRequestId());
-        }
-        if (requestsBuilder_ == null) {
-          if (!other.requests_.isEmpty()) {
-            if (requests_.isEmpty()) {
-              requests_ = other.requests_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureRequestsIsMutable();
-              requests_.addAll(other.requests_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.requests_.isEmpty()) {
-            if (requestsBuilder_.isEmpty()) {
-              requestsBuilder_.dispose();
-              requestsBuilder_ = null;
-              requests_ = other.requests_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              requestsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRequestsFieldBuilder() : null;
-            } else {
-              requestsBuilder_.addAllMessages(other.requests_);
-            }
-          }
-        }
-        if (platformRequestsBuilder_ == null) {
-          if (!other.platformRequests_.isEmpty()) {
-            if (platformRequests_.isEmpty()) {
-              platformRequests_ = other.platformRequests_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensurePlatformRequestsIsMutable();
-              platformRequests_.addAll(other.platformRequests_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.platformRequests_.isEmpty()) {
-            if (platformRequestsBuilder_.isEmpty()) {
-              platformRequestsBuilder_.dispose();
-              platformRequestsBuilder_ = null;
-              platformRequests_ = other.platformRequests_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              platformRequestsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPlatformRequestsFieldBuilder() : null;
-            } else {
-              platformRequestsBuilder_.addAllMessages(other.platformRequests_);
-            }
-          }
-        }
-        if (other.getLatitude() != 0D) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.getLongitude() != 0D) {
-          setLongitude(other.getLongitude());
-        }
-        if (other.getAccuracy() != 0D) {
-          setAccuracy(other.getAccuracy());
-        }
-        if (other.hasAuthInfo()) {
-          mergeAuthInfo(other.getAuthInfo());
-        }
-        if (other.hasAuthTicket()) {
-          mergeAuthTicket(other.getAuthTicket());
-        }
-        if (other.getMsSinceLastLocationfix() != 0L) {
-          setMsSinceLastLocationfix(other.getMsSinceLastLocationfix());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int statusCode_ ;
       /**
        * <code>optional int32 status_code = 1;</code>
        */
       public int getStatusCode() {
-        return statusCode_;
+        return instance.getStatusCode();
       }
       /**
        * <code>optional int32 status_code = 1;</code>
        */
       public Builder setStatusCode(int value) {
-        
-        statusCode_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setStatusCode(value);
         return this;
       }
       /**
        * <code>optional int32 status_code = 1;</code>
        */
       public Builder clearStatusCode() {
-        
-        statusCode_ = 0;
-        onChanged();
+        copyOnWrite();
+        instance.clearStatusCode();
         return this;
       }
 
-      private long requestId_ ;
       /**
        * <code>optional uint64 request_id = 3;</code>
        */
       public long getRequestId() {
-        return requestId_;
+        return instance.getRequestId();
       }
       /**
        * <code>optional uint64 request_id = 3;</code>
        */
       public Builder setRequestId(long value) {
-        
-        requestId_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setRequestId(value);
         return this;
       }
       /**
        * <code>optional uint64 request_id = 3;</code>
        */
       public Builder clearRequestId() {
-        
-        requestId_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearRequestId();
         return this;
       }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Requests.Request> requests_ =
-        java.util.Collections.emptyList();
-      private void ensureRequestsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          requests_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Requests.Request>(requests_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Requests.Request, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder, com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder> requestsBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.networking.Requests.Request> getRequestsList() {
-        if (requestsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(requests_);
-        } else {
-          return requestsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getRequestsList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public int getRequestsCount() {
-        if (requestsBuilder_ == null) {
-          return requests_.size();
-        } else {
-          return requestsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getRequestsCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Requests.Request getRequests(int index) {
-        if (requestsBuilder_ == null) {
-          return requests_.get(index);
-        } else {
-          return requestsBuilder_.getMessage(index);
-        }
+        return instance.getRequests(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public Builder setRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request value) {
-        if (requestsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestsIsMutable();
-          requests_.set(index, value);
-          onChanged();
-        } else {
-          requestsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setRequests(index, value);
         return this;
       }
       /**
@@ -15486,29 +12945,16 @@ public final class Envelopes {
        */
       public Builder setRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder builderForValue) {
-        if (requestsBuilder_ == null) {
-          ensureRequestsIsMutable();
-          requests_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          requestsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setRequests(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public Builder addRequests(com.github.aeonlucid.pogoprotos.networking.Requests.Request value) {
-        if (requestsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestsIsMutable();
-          requests_.add(value);
-          onChanged();
-        } else {
-          requestsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addRequests(value);
         return this;
       }
       /**
@@ -15516,16 +12962,8 @@ public final class Envelopes {
        */
       public Builder addRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request value) {
-        if (requestsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestsIsMutable();
-          requests_.add(index, value);
-          onChanged();
-        } else {
-          requestsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addRequests(index, value);
         return this;
       }
       /**
@@ -15533,13 +12971,8 @@ public final class Envelopes {
        */
       public Builder addRequests(
           com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder builderForValue) {
-        if (requestsBuilder_ == null) {
-          ensureRequestsIsMutable();
-          requests_.add(builderForValue.build());
-          onChanged();
-        } else {
-          requestsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addRequests(builderForValue);
         return this;
       }
       /**
@@ -15547,13 +12980,8 @@ public final class Envelopes {
        */
       public Builder addRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder builderForValue) {
-        if (requestsBuilder_ == null) {
-          ensureRequestsIsMutable();
-          requests_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          requestsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addRequests(index, builderForValue);
         return this;
       }
       /**
@@ -15561,164 +12989,52 @@ public final class Envelopes {
        */
       public Builder addAllRequests(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Requests.Request> values) {
-        if (requestsBuilder_ == null) {
-          ensureRequestsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, requests_);
-          onChanged();
-        } else {
-          requestsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllRequests(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public Builder clearRequests() {
-        if (requestsBuilder_ == null) {
-          requests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          requestsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearRequests();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
        */
       public Builder removeRequests(int index) {
-        if (requestsBuilder_ == null) {
-          ensureRequestsIsMutable();
-          requests_.remove(index);
-          onChanged();
-        } else {
-          requestsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removeRequests(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder getRequestsBuilder(
-          int index) {
-        return getRequestsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder getRequestsOrBuilder(
-          int index) {
-        if (requestsBuilder_ == null) {
-          return requests_.get(index);  } else {
-          return requestsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder> 
-           getRequestsOrBuilderList() {
-        if (requestsBuilder_ != null) {
-          return requestsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(requests_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder addRequestsBuilder() {
-        return getRequestsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.networking.Requests.Request.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder addRequestsBuilder(
-          int index) {
-        return getRequestsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.networking.Requests.Request.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.requests.Request requests = 4;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder> 
-           getRequestsBuilderList() {
-        return getRequestsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Requests.Request, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder, com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder> 
-          getRequestsFieldBuilder() {
-        if (requestsBuilder_ == null) {
-          requestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Requests.Request, com.github.aeonlucid.pogoprotos.networking.Requests.Request.Builder, com.github.aeonlucid.pogoprotos.networking.Requests.RequestOrBuilder>(
-                  requests_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
-          requests_ = null;
-        }
-        return requestsBuilder_;
-      }
-
-      private java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> platformRequests_ =
-        java.util.Collections.emptyList();
-      private void ensurePlatformRequestsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          platformRequests_ = new java.util.ArrayList<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest>(platformRequests_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> platformRequestsBuilder_;
 
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> getPlatformRequestsList() {
-        if (platformRequestsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(platformRequests_);
-        } else {
-          return platformRequestsBuilder_.getMessageList();
-        }
+        return java.util.Collections.unmodifiableList(
+            instance.getPlatformRequestsList());
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public int getPlatformRequestsCount() {
-        if (platformRequestsBuilder_ == null) {
-          return platformRequests_.size();
-        } else {
-          return platformRequestsBuilder_.getCount();
-        }
-      }
-      /**
+        return instance.getPlatformRequestsCount();
+      }/**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest getPlatformRequests(int index) {
-        if (platformRequestsBuilder_ == null) {
-          return platformRequests_.get(index);
-        } else {
-          return platformRequestsBuilder_.getMessage(index);
-        }
+        return instance.getPlatformRequests(index);
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public Builder setPlatformRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
-        if (platformRequestsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.set(index, value);
-          onChanged();
-        } else {
-          platformRequestsBuilder_.setMessage(index, value);
-        }
+        copyOnWrite();
+        instance.setPlatformRequests(index, value);
         return this;
       }
       /**
@@ -15726,29 +13042,16 @@ public final class Envelopes {
        */
       public Builder setPlatformRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
-        if (platformRequestsBuilder_ == null) {
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          platformRequestsBuilder_.setMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.setPlatformRequests(index, builderForValue);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public Builder addPlatformRequests(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
-        if (platformRequestsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.add(value);
-          onChanged();
-        } else {
-          platformRequestsBuilder_.addMessage(value);
-        }
+        copyOnWrite();
+        instance.addPlatformRequests(value);
         return this;
       }
       /**
@@ -15756,16 +13059,8 @@ public final class Envelopes {
        */
       public Builder addPlatformRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest value) {
-        if (platformRequestsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.add(index, value);
-          onChanged();
-        } else {
-          platformRequestsBuilder_.addMessage(index, value);
-        }
+        copyOnWrite();
+        instance.addPlatformRequests(index, value);
         return this;
       }
       /**
@@ -15773,13 +13068,8 @@ public final class Envelopes {
        */
       public Builder addPlatformRequests(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
-        if (platformRequestsBuilder_ == null) {
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.add(builderForValue.build());
-          onChanged();
-        } else {
-          platformRequestsBuilder_.addMessage(builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addPlatformRequests(builderForValue);
         return this;
       }
       /**
@@ -15787,13 +13077,8 @@ public final class Envelopes {
        */
       public Builder addPlatformRequests(
           int index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder builderForValue) {
-        if (platformRequestsBuilder_ == null) {
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          platformRequestsBuilder_.addMessage(index, builderForValue.build());
-        }
+        copyOnWrite();
+        instance.addPlatformRequests(index, builderForValue);
         return this;
       }
       /**
@@ -15801,1325 +13086,395 @@ public final class Envelopes {
        */
       public Builder addAllPlatformRequests(
           java.lang.Iterable<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest> values) {
-        if (platformRequestsBuilder_ == null) {
-          ensurePlatformRequestsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, platformRequests_);
-          onChanged();
-        } else {
-          platformRequestsBuilder_.addAllMessages(values);
-        }
+        copyOnWrite();
+        instance.addAllPlatformRequests(values);
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public Builder clearPlatformRequests() {
-        if (platformRequestsBuilder_ == null) {
-          platformRequests_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          platformRequestsBuilder_.clear();
-        }
+        copyOnWrite();
+        instance.clearPlatformRequests();
         return this;
       }
       /**
        * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
        */
       public Builder removePlatformRequests(int index) {
-        if (platformRequestsBuilder_ == null) {
-          ensurePlatformRequestsIsMutable();
-          platformRequests_.remove(index);
-          onChanged();
-        } else {
-          platformRequestsBuilder_.remove(index);
-        }
+        copyOnWrite();
+        instance.removePlatformRequests(index);
         return this;
       }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder getPlatformRequestsBuilder(
-          int index) {
-        return getPlatformRequestsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder getPlatformRequestsOrBuilder(
-          int index) {
-        if (platformRequestsBuilder_ == null) {
-          return platformRequests_.get(index);  } else {
-          return platformRequestsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-       */
-      public java.util.List<? extends com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
-           getPlatformRequestsOrBuilderList() {
-        if (platformRequestsBuilder_ != null) {
-          return platformRequestsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(platformRequests_);
-        }
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder addPlatformRequestsBuilder() {
-        return getPlatformRequestsFieldBuilder().addBuilder(
-            com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder addPlatformRequestsBuilder(
-          int index) {
-        return getPlatformRequestsFieldBuilder().addBuilder(
-            index, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.PlatformRequest platform_requests = 6;</code>
-       */
-      public java.util.List<com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder> 
-           getPlatformRequestsBuilderList() {
-        return getPlatformRequestsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder> 
-          getPlatformRequestsFieldBuilder() {
-        if (platformRequestsBuilder_ == null) {
-          platformRequestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequestOrBuilder>(
-                  platformRequests_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
-          platformRequests_ = null;
-        }
-        return platformRequestsBuilder_;
-      }
 
-      private double latitude_ ;
       /**
        * <code>optional double latitude = 7;</code>
        */
       public double getLatitude() {
-        return latitude_;
+        return instance.getLatitude();
       }
       /**
        * <code>optional double latitude = 7;</code>
        */
       public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLatitude(value);
         return this;
       }
       /**
        * <code>optional double latitude = 7;</code>
        */
       public Builder clearLatitude() {
-        
-        latitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLatitude();
         return this;
       }
 
-      private double longitude_ ;
       /**
        * <code>optional double longitude = 8;</code>
        */
       public double getLongitude() {
-        return longitude_;
+        return instance.getLongitude();
       }
       /**
        * <code>optional double longitude = 8;</code>
        */
       public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setLongitude(value);
         return this;
       }
       /**
        * <code>optional double longitude = 8;</code>
        */
       public Builder clearLongitude() {
-        
-        longitude_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearLongitude();
         return this;
       }
 
-      private double accuracy_ ;
       /**
        * <code>optional double accuracy = 9;</code>
        */
       public double getAccuracy() {
-        return accuracy_;
+        return instance.getAccuracy();
       }
       /**
        * <code>optional double accuracy = 9;</code>
        */
       public Builder setAccuracy(double value) {
-        
-        accuracy_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setAccuracy(value);
         return this;
       }
       /**
        * <code>optional double accuracy = 9;</code>
        */
       public Builder clearAccuracy() {
-        
-        accuracy_ = 0D;
-        onChanged();
+        copyOnWrite();
+        instance.clearAccuracy();
         return this;
       }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo authInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder> authInfoBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
        */
       public boolean hasAuthInfo() {
-        return authInfoBuilder_ != null || authInfo_ != null;
+        return instance.hasAuthInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo getAuthInfo() {
-        if (authInfoBuilder_ == null) {
-          return authInfo_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.getDefaultInstance() : authInfo_;
-        } else {
-          return authInfoBuilder_.getMessage();
-        }
+        return instance.getAuthInfo();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
        */
       public Builder setAuthInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo value) {
-        if (authInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          authInfo_ = value;
-          onChanged();
-        } else {
-          authInfoBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setAuthInfo(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
        */
       public Builder setAuthInfo(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder builderForValue) {
-        if (authInfoBuilder_ == null) {
-          authInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          authInfoBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setAuthInfo(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
        */
       public Builder mergeAuthInfo(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo value) {
-        if (authInfoBuilder_ == null) {
-          if (authInfo_ != null) {
-            authInfo_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.newBuilder(authInfo_).mergeFrom(value).buildPartial();
-          } else {
-            authInfo_ = value;
-          }
-          onChanged();
-        } else {
-          authInfoBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeAuthInfo(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
        */
-      public Builder clearAuthInfo() {
-        if (authInfoBuilder_ == null) {
-          authInfo_ = null;
-          onChanged();
-        } else {
-          authInfo_ = null;
-          authInfoBuilder_ = null;
-        }
-
+      public Builder clearAuthInfo() {  copyOnWrite();
+        instance.clearAuthInfo();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder getAuthInfoBuilder() {
-        
-        onChanged();
-        return getAuthInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder getAuthInfoOrBuilder() {
-        if (authInfoBuilder_ != null) {
-          return authInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return authInfo_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.getDefaultInstance() : authInfo_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope.AuthInfo auth_info = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder> 
-          getAuthInfoFieldBuilder() {
-        if (authInfoBuilder_ == null) {
-          authInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfoOrBuilder>(
-                  getAuthInfo(),
-                  getParentForChildren(),
-                  isClean());
-          authInfo_ = null;
-        }
-        return authInfoBuilder_;
-      }
 
-      private com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket authTicket_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> authTicketBuilder_;
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
        */
       public boolean hasAuthTicket() {
-        return authTicketBuilder_ != null || authTicket_ != null;
+        return instance.hasAuthTicket();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
        */
       public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getAuthTicket() {
-        if (authTicketBuilder_ == null) {
-          return authTicket_ == null ? com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-        } else {
-          return authTicketBuilder_.getMessage();
-        }
+        return instance.getAuthTicket();
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
        */
       public Builder setAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
-        if (authTicketBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          authTicket_ = value;
-          onChanged();
-        } else {
-          authTicketBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setAuthTicket(value);
         return this;
-      }
+        }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
        */
       public Builder setAuthTicket(
           com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder builderForValue) {
-        if (authTicketBuilder_ == null) {
-          authTicket_ = builderForValue.build();
-          onChanged();
-        } else {
-          authTicketBuilder_.setMessage(builderForValue.build());
-        }
-
+        copyOnWrite();
+        instance.setAuthTicket(builderForValue);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
        */
       public Builder mergeAuthTicket(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket value) {
-        if (authTicketBuilder_ == null) {
-          if (authTicket_ != null) {
-            authTicket_ =
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder(authTicket_).mergeFrom(value).buildPartial();
-          } else {
-            authTicket_ = value;
-          }
-          onChanged();
-        } else {
-          authTicketBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeAuthTicket(value);
         return this;
       }
       /**
        * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
        */
-      public Builder clearAuthTicket() {
-        if (authTicketBuilder_ == null) {
-          authTicket_ = null;
-          onChanged();
-        } else {
-          authTicket_ = null;
-          authTicketBuilder_ = null;
-        }
-
+      public Builder clearAuthTicket() {  copyOnWrite();
+        instance.clearAuthTicket();
         return this;
       }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder getAuthTicketBuilder() {
-        
-        onChanged();
-        return getAuthTicketFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
-       */
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder getAuthTicketOrBuilder() {
-        if (authTicketBuilder_ != null) {
-          return authTicketBuilder_.getMessageOrBuilder();
-        } else {
-          return authTicket_ == null ?
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance() : authTicket_;
-        }
-      }
-      /**
-       * <code>optional .com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket auth_ticket = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder> 
-          getAuthTicketFieldBuilder() {
-        if (authTicketBuilder_ == null) {
-          authTicketBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder>(
-                  getAuthTicket(),
-                  getParentForChildren(),
-                  isClean());
-          authTicket_ = null;
-        }
-        return authTicketBuilder_;
-      }
 
-      private long msSinceLastLocationfix_ ;
       /**
        * <code>optional int64 ms_since_last_locationfix = 12;</code>
        */
       public long getMsSinceLastLocationfix() {
-        return msSinceLastLocationfix_;
+        return instance.getMsSinceLastLocationfix();
       }
       /**
        * <code>optional int64 ms_since_last_locationfix = 12;</code>
        */
       public Builder setMsSinceLastLocationfix(long value) {
-        
-        msSinceLastLocationfix_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setMsSinceLastLocationfix(value);
         return this;
       }
       /**
        * <code>optional int64 ms_since_last_locationfix = 12;</code>
        */
       public Builder clearMsSinceLastLocationfix() {
-        
-        msSinceLastLocationfix_ = 0L;
-        onChanged();
+        copyOnWrite();
+        instance.clearMsSinceLastLocationfix();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope)
     }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          requests_.makeImmutable();
+          platformRequests_.makeImmutable();
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope) arg1;
+          statusCode_ = visitor.visitInt(statusCode_ != 0, statusCode_,
+              other.statusCode_ != 0, other.statusCode_);
+          requestId_ = visitor.visitLong(requestId_ != 0L, requestId_,
+              other.requestId_ != 0L, other.requestId_);
+          requests_= visitor.visitList(requests_, other.requests_);
+          platformRequests_= visitor.visitList(platformRequests_, other.platformRequests_);
+          latitude_ = visitor.visitDouble(latitude_ != 0D, latitude_,
+              other.latitude_ != 0D, other.latitude_);
+          longitude_ = visitor.visitDouble(longitude_ != 0D, longitude_,
+              other.longitude_ != 0D, other.longitude_);
+          accuracy_ = visitor.visitDouble(accuracy_ != 0D, accuracy_,
+              other.accuracy_ != 0D, other.accuracy_);
+          authInfo_ = visitor.visitMessage(authInfo_, other.authInfo_);
+          authTicket_ = visitor.visitMessage(authTicket_, other.authTicket_);
+          msSinceLastLocationfix_ = visitor.visitLong(msSinceLastLocationfix_ != 0L, msSinceLastLocationfix_,
+              other.msSinceLastLocationfix_ != 0L, other.msSinceLastLocationfix_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+            bitField0_ |= other.bitField0_;
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  statusCode_ = input.readInt32();
+                  break;
+                }
+                case 24: {
+
+                  requestId_ = input.readUInt64();
+                  break;
+                }
+                case 34: {
+                  if (!requests_.isModifiable()) {
+                    requests_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(requests_);
+                  }
+                  requests_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.networking.Requests.Request.parser(), extensionRegistry));
+                  break;
+                }
+                case 50: {
+                  if (!platformRequests_.isModifiable()) {
+                    platformRequests_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(platformRequests_);
+                  }
+                  platformRequests_.add(
+                      input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.PlatformRequest.parser(), extensionRegistry));
+                  break;
+                }
+                case 57: {
+
+                  latitude_ = input.readDouble();
+                  break;
+                }
+                case 65: {
+
+                  longitude_ = input.readDouble();
+                  break;
+                }
+                case 73: {
+
+                  accuracy_ = input.readDouble();
+                  break;
+                }
+                case 82: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.Builder subBuilder = null;
+                  if (authInfo_ != null) {
+                    subBuilder = authInfo_.toBuilder();
+                  }
+                  authInfo_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.AuthInfo.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(authInfo_);
+                    authInfo_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 90: {
+                  com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder subBuilder = null;
+                  if (authTicket_ != null) {
+                    subBuilder = authTicket_.toBuilder();
+                  }
+                  authTicket_ = input.readMessage(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(authTicket_);
+                    authTicket_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 96: {
+
+                  msSinceLastLocationfix_ = input.readInt64();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.RequestEnvelope)
     private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope();
+      DEFAULT_INSTANCE = new RequestEnvelope();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<RequestEnvelope>
-        PARSER = new com.google.protobuf.AbstractParser<RequestEnvelope>() {
-      public RequestEnvelope parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestEnvelope(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<RequestEnvelope> PARSER;
 
     public static com.google.protobuf.Parser<RequestEnvelope> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<RequestEnvelope> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.RequestEnvelope getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  public interface AuthTicketOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-      com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>optional bytes start = 1;</code>
-     */
-    com.google.protobuf.ByteString getStart();
-
-    /**
-     * <code>optional uint64 expire_timestamp_ms = 2;</code>
-     */
-    long getExpireTimestampMs();
-
-    /**
-     * <code>optional bytes end = 3;</code>
-     */
-    com.google.protobuf.ByteString getEnd();
-  }
-  /**
-   * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
-   */
-  public  static final class AuthTicket extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-      AuthTicketOrBuilder {
-    // Use AuthTicket.newBuilder() to construct.
-    private AuthTicket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AuthTicket() {
-      start_ = com.google.protobuf.ByteString.EMPTY;
-      expireTimestampMs_ = 0L;
-      end_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private AuthTicket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-
-              start_ = input.readBytes();
-              break;
-            }
-            case 16: {
-
-              expireTimestampMs_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-
-              end_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder.class);
-    }
-
-    public static final int START_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString start_;
-    /**
-     * <code>optional bytes start = 1;</code>
-     */
-    public com.google.protobuf.ByteString getStart() {
-      return start_;
-    }
-
-    public static final int EXPIRE_TIMESTAMP_MS_FIELD_NUMBER = 2;
-    private long expireTimestampMs_;
-    /**
-     * <code>optional uint64 expire_timestamp_ms = 2;</code>
-     */
-    public long getExpireTimestampMs() {
-      return expireTimestampMs_;
-    }
-
-    public static final int END_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString end_;
-    /**
-     * <code>optional bytes end = 3;</code>
-     */
-    public com.google.protobuf.ByteString getEnd() {
-      return end_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!start_.isEmpty()) {
-        output.writeBytes(1, start_);
-      }
-      if (expireTimestampMs_ != 0L) {
-        output.writeUInt64(2, expireTimestampMs_);
-      }
-      if (!end_.isEmpty()) {
-        output.writeBytes(3, end_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!start_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, start_);
-      }
-      if (expireTimestampMs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, expireTimestampMs_);
-      }
-      if (!end_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, end_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket)) {
-        return super.equals(obj);
-      }
-      com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) obj;
-
-      boolean result = true;
-      result = result && getStart()
-          .equals(other.getStart());
-      result = result && (getExpireTimestampMs()
-          == other.getExpireTimestampMs());
-      result = result && getEnd()
-          .equals(other.getEnd());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + START_FIELD_NUMBER;
-      hash = (53 * hash) + getStart().hashCode();
-      hash = (37 * hash) + EXPIRE_TIMESTAMP_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpireTimestampMs());
-      hash = (37 * hash) + END_FIELD_NUMBER;
-      hash = (53 * hash) + getEnd().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicketOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.class, com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.Builder.class);
-      }
-
-      // Construct using com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        start_ = com.google.protobuf.ByteString.EMPTY;
-
-        expireTimestampMs_ = 0L;
-
-        end_ = com.google.protobuf.ByteString.EMPTY;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstanceForType() {
-        return com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance();
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket build() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket buildPartial() {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket result = new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket(this);
-        result.start_ = start_;
-        result.expireTimestampMs_ = expireTimestampMs_;
-        result.end_ = end_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) {
-          return mergeFrom((com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket other) {
-        if (other == com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket.getDefaultInstance()) return this;
-        if (other.getStart() != com.google.protobuf.ByteString.EMPTY) {
-          setStart(other.getStart());
-        }
-        if (other.getExpireTimestampMs() != 0L) {
-          setExpireTimestampMs(other.getExpireTimestampMs());
-        }
-        if (other.getEnd() != com.google.protobuf.ByteString.EMPTY) {
-          setEnd(other.getEnd());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.ByteString start_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes start = 1;</code>
-       */
-      public com.google.protobuf.ByteString getStart() {
-        return start_;
-      }
-      /**
-       * <code>optional bytes start = 1;</code>
-       */
-      public Builder setStart(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        start_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes start = 1;</code>
-       */
-      public Builder clearStart() {
-        
-        start_ = getDefaultInstance().getStart();
-        onChanged();
-        return this;
-      }
-
-      private long expireTimestampMs_ ;
-      /**
-       * <code>optional uint64 expire_timestamp_ms = 2;</code>
-       */
-      public long getExpireTimestampMs() {
-        return expireTimestampMs_;
-      }
-      /**
-       * <code>optional uint64 expire_timestamp_ms = 2;</code>
-       */
-      public Builder setExpireTimestampMs(long value) {
-        
-        expireTimestampMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint64 expire_timestamp_ms = 2;</code>
-       */
-      public Builder clearExpireTimestampMs() {
-        
-        expireTimestampMs_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString end_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes end = 3;</code>
-       */
-      public com.google.protobuf.ByteString getEnd() {
-        return end_;
-      }
-      /**
-       * <code>optional bytes end = 3;</code>
-       */
-      public Builder setEnd(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        end_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes end = 3;</code>
-       */
-      public Builder clearEnd() {
-        
-        end_ = getDefaultInstance().getEnd();
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.github.aeonlucid.pogoprotos.networking.envelopes.AuthTicket)
-    private static final com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket();
-    }
-
-    public static com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AuthTicket>
-        PARSER = new com.google.protobuf.AbstractParser<AuthTicket>() {
-      public AuthTicket parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AuthTicket(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AuthTicket> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AuthTicket> getParserForType() {
-      return PARSER;
-    }
-
-    public com.github.aeonlucid.pogoprotos.networking.Envelopes.AuthTicket getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n:com/github/aeonlucid/pogoprotos/networ" +
-      "king/Envelopes.proto\0224com.github.aeonluc" +
-      "id.pogoprotos.networking.envelopes\0329com/" +
-      "github/aeonlucid/pogoprotos/networking/P" +
-      "latform.proto\0329com/github/aeonlucid/pogo" +
-      "protos/networking/Requests.proto\"\312\005\n\020Res" +
-      "ponseEnvelope\022f\n\013status_code\030\001 \001(\0162Q.com" +
-      ".github.aeonlucid.pogoprotos.networking." +
-      "envelopes.ResponseEnvelope.StatusCode\022\022\n" +
-      "\nrequest_id\030\002 \001(\004\022\017\n\007api_url\030\003 \001(\t\022q\n\020pl",
-      "atform_returns\030\006 \003(\0132W.com.github.aeonlu" +
-      "cid.pogoprotos.networking.envelopes.Resp" +
-      "onseEnvelope.PlatformResponse\022U\n\013auth_ti" +
-      "cket\030\007 \001(\0132@.com.github.aeonlucid.pogopr" +
-      "otos.networking.envelopes.AuthTicket\022\017\n\007" +
-      "returns\030d \003(\014\022\r\n\005error\030e \001(\t\032|\n\020Platform" +
-      "Response\022V\n\004type\030\001 \001(\0162H.com.github.aeon" +
-      "lucid.pogoprotos.networking.platform.Pla" +
-      "tformRequestType\022\020\n\010response\030\002 \001(\014\"\300\001\n\nS" +
-      "tatusCode\022\013\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\032\n\026OK_RPC",
-      "_URL_IN_RESPONSE\020\002\022\017\n\013BAD_REQUEST\020\003\022\023\n\017I" +
-      "NVALID_REQUEST\0203\022\034\n\030INVALID_PLATFORM_REQ" +
-      "UEST\0204\022\014\n\010REDIRECT\0205\022\027\n\023SESSION_INVALIDA" +
-      "TED\020d\022\026\n\022INVALID_AUTH_TOKEN\020f\"\273\020\n\tSignat" +
-      "ure\022\035\n\025timestamp_since_start\030\002 \001(\004\022a\n\014lo" +
-      "cation_fix\030\004 \003(\0132K.com.github.aeonlucid." +
-      "pogoprotos.networking.envelopes.Signatur" +
-      "e.LocationFix\022`\n\010gps_info\030\005 \001(\0132N.com.gi" +
-      "thub.aeonlucid.pogoprotos.networking.env" +
-      "elopes.Signature.AndroidGpsInfo\022_\n\013senso",
-      "r_info\030\007 \001(\0132J.com.github.aeonlucid.pogo" +
-      "protos.networking.envelopes.Signature.Se" +
-      "nsorInfo\022_\n\013device_info\030\010 \001(\0132J.com.gith" +
-      "ub.aeonlucid.pogoprotos.networking.envel" +
-      "opes.Signature.DeviceInfo\022g\n\017activity_st" +
-      "atus\030\t \001(\0132N.com.github.aeonlucid.pogopr" +
-      "otos.networking.envelopes.Signature.Acti" +
-      "vityStatus\022\026\n\016location_hash1\030\n \001(\r\022\026\n\016lo" +
-      "cation_hash2\030\024 \001(\r\022\024\n\014session_hash\030\026 \001(\014" +
-      "\022\021\n\ttimestamp\030\027 \001(\004\022\024\n\014request_hash\030\030 \003(",
-      "\004\022\021\n\tunknown25\030\031 \001(\003\032\210\002\n\013LocationFix\022\020\n\010" +
-      "provider\030\001 \001(\t\022\032\n\022timestamp_snapshot\030\002 \001" +
-      "(\004\022\020\n\010altitude\030\004 \001(\002\022\020\n\010latitude\030\r \001(\002\022\021" +
-      "\n\tlongitude\030\016 \001(\002\022\r\n\005speed\030\022 \001(\002\022\016\n\006cour" +
-      "se\030\024 \001(\002\022\033\n\023horizontal_accuracy\030\025 \001(\002\022\031\n" +
-      "\021vertical_accuracy\030\026 \001(\002\022\027\n\017provider_sta" +
-      "tus\030\032 \001(\004\022\r\n\005floor\030\033 \001(\r\022\025\n\rlocation_typ" +
-      "e\030\034 \001(\004\032\257\001\n\016AndroidGpsInfo\022\023\n\013time_to_fi" +
-      "x\030\001 \001(\004\022\026\n\016satellites_prn\030\002 \003(\005\022\017\n\007azimu" +
-      "th\030\003 \003(\002\022\021\n\televation\030\004 \003(\002\022\013\n\003snr\030\005 \003(\002",
-      "\022\023\n\013has_almanac\030\006 \003(\010\022\025\n\rhas_ephemeris\030\007" +
-      " \003(\010\022\023\n\013used_in_fix\030\010 \003(\010\032\304\003\n\nSensorInfo" +
-      "\022\032\n\022timestamp_snapshot\030\001 \001(\004\022\035\n\025linear_a" +
-      "cceleration_x\030\003 \001(\001\022\035\n\025linear_accelerati" +
-      "on_y\030\004 \001(\001\022\035\n\025linear_acceleration_z\030\005 \001(" +
-      "\001\022\030\n\020magnetic_field_x\030\006 \001(\001\022\030\n\020magnetic_" +
-      "field_y\030\007 \001(\001\022\030\n\020magnetic_field_z\030\010 \001(\001\022" +
-      "\031\n\021rotation_vector_x\030\n \001(\001\022\031\n\021rotation_v" +
-      "ector_y\030\013 \001(\001\022\031\n\021rotation_vector_z\030\014 \001(\001" +
-      "\022\027\n\017gyroscope_raw_x\030\r \001(\001\022\027\n\017gyroscope_r",
-      "aw_y\030\016 \001(\001\022\027\n\017gyroscope_raw_z\030\017 \001(\001\022\021\n\tg" +
-      "ravity_x\030\020 \001(\001\022\021\n\tgravity_y\030\021 \001(\001\022\021\n\tgra" +
-      "vity_z\030\022 \001(\001\022\032\n\022accelerometer_axes\030\023 \001(\004" +
-      "\032\332\002\n\nDeviceInfo\022\021\n\tdevice_id\030\001 \001(\t\022\032\n\022an" +
-      "droid_board_name\030\002 \001(\t\022\032\n\022android_bootlo" +
-      "ader\030\003 \001(\t\022\024\n\014device_brand\030\004 \001(\t\022\024\n\014devi" +
-      "ce_model\030\005 \001(\t\022\037\n\027device_model_identifie" +
-      "r\030\006 \001(\t\022\031\n\021device_model_boot\030\007 \001(\t\022\035\n\025ha" +
-      "rdware_manufacturer\030\010 \001(\t\022\026\n\016hardware_mo" +
-      "del\030\t \001(\t\022\026\n\016firmware_brand\030\n \001(\t\022\025\n\rfir",
-      "mware_tags\030\014 \001(\t\022\025\n\rfirmware_type\030\r \001(\t\022" +
-      "\034\n\024firmware_fingerprint\030\016 \001(\t\032\273\001\n\016Activi" +
-      "tyStatus\022\025\n\rstart_time_ms\030\001 \001(\004\022\026\n\016unkno" +
-      "wn_status\030\002 \001(\010\022\017\n\007walking\030\003 \001(\010\022\017\n\007runn" +
-      "ing\030\004 \001(\010\022\022\n\nstationary\030\005 \001(\010\022\022\n\nautomot" +
-      "ive\030\006 \001(\010\022\017\n\007tilting\030\007 \001(\010\022\017\n\007cycling\030\010 " +
-      "\001(\010\022\016\n\006status\030\t \001(\014\"\302\006\n\017RequestEnvelope\022" +
-      "\023\n\013status_code\030\001 \001(\005\022\022\n\nrequest_id\030\003 \001(\004" +
-      "\022N\n\010requests\030\004 \003(\0132<.com.github.aeonluci" +
-      "d.pogoprotos.networking.requests.Request",
-      "\022p\n\021platform_requests\030\006 \003(\0132U.com.github" +
-      ".aeonlucid.pogoprotos.networking.envelop" +
-      "es.RequestEnvelope.PlatformRequest\022\020\n\010la" +
-      "titude\030\007 \001(\001\022\021\n\tlongitude\030\010 \001(\001\022\020\n\010accur" +
-      "acy\030\t \001(\001\022a\n\tauth_info\030\n \001(\0132N.com.githu" +
-      "b.aeonlucid.pogoprotos.networking.envelo" +
-      "pes.RequestEnvelope.AuthInfo\022U\n\013auth_tic" +
-      "ket\030\013 \001(\0132@.com.github.aeonlucid.pogopro" +
-      "tos.networking.envelopes.AuthTicket\022!\n\031m" +
-      "s_since_last_locationfix\030\014 \001(\003\032\252\001\n\010AuthI",
-      "nfo\022\020\n\010provider\030\001 \001(\t\022a\n\005token\030\002 \001(\0132R.c" +
-      "om.github.aeonlucid.pogoprotos.networkin" +
-      "g.envelopes.RequestEnvelope.AuthInfo.JWT" +
-      "\032)\n\003JWT\022\020\n\010contents\030\001 \001(\t\022\020\n\010unknown2\030\002 " +
-      "\001(\005\032\202\001\n\017PlatformRequest\022V\n\004type\030\001 \001(\0162H." +
-      "com.github.aeonlucid.pogoprotos.networki" +
-      "ng.platform.PlatformRequestType\022\027\n\017reque" +
-      "st_message\030\002 \001(\014\"E\n\nAuthTicket\022\r\n\005start\030" +
-      "\001 \001(\014\022\033\n\023expire_timestamp_ms\030\002 \001(\004\022\013\n\003en" +
-      "d\030\003 \001(\014B7\n*com.github.aeonlucid.pogoprot",
-      "os.networkingB\tEnvelopesb\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.github.aeonlucid.pogoprotos.networking.Platform.getDescriptor(),
-          com.github.aeonlucid.pogoprotos.networking.Requests.getDescriptor(),
-        }, assigner);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor,
-        new java.lang.String[] { "StatusCode", "RequestId", "ApiUrl", "PlatformReturns", "AuthTicket", "Returns", "Error", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_ResponseEnvelope_PlatformResponse_descriptor,
-        new java.lang.String[] { "Type", "Response", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor,
-        new java.lang.String[] { "TimestampSinceStart", "LocationFix", "GpsInfo", "SensorInfo", "DeviceInfo", "ActivityStatus", "LocationHash1", "LocationHash2", "SessionHash", "Timestamp", "RequestHash", "Unknown25", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_LocationFix_descriptor,
-        new java.lang.String[] { "Provider", "TimestampSnapshot", "Altitude", "Latitude", "Longitude", "Speed", "Course", "HorizontalAccuracy", "VerticalAccuracy", "ProviderStatus", "Floor", "LocationType", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_AndroidGpsInfo_descriptor,
-        new java.lang.String[] { "TimeToFix", "SatellitesPrn", "Azimuth", "Elevation", "Snr", "HasAlmanac", "HasEphemeris", "UsedInFix", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_SensorInfo_descriptor,
-        new java.lang.String[] { "TimestampSnapshot", "LinearAccelerationX", "LinearAccelerationY", "LinearAccelerationZ", "MagneticFieldX", "MagneticFieldY", "MagneticFieldZ", "RotationVectorX", "RotationVectorY", "RotationVectorZ", "GyroscopeRawX", "GyroscopeRawY", "GyroscopeRawZ", "GravityX", "GravityY", "GravityZ", "AccelerometerAxes", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(3);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_DeviceInfo_descriptor,
-        new java.lang.String[] { "DeviceId", "AndroidBoardName", "AndroidBootloader", "DeviceBrand", "DeviceModel", "DeviceModelIdentifier", "DeviceModelBoot", "HardwareManufacturer", "HardwareModel", "FirmwareBrand", "FirmwareTags", "FirmwareType", "FirmwareFingerprint", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_descriptor.getNestedTypes().get(4);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_Signature_ActivityStatus_descriptor,
-        new java.lang.String[] { "StartTimeMs", "UnknownStatus", "Walking", "Running", "Stationary", "Automotive", "Tilting", "Cycling", "Status", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor,
-        new java.lang.String[] { "StatusCode", "RequestId", "Requests", "PlatformRequests", "Latitude", "Longitude", "Accuracy", "AuthInfo", "AuthTicket", "MsSinceLastLocationfix", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor,
-        new java.lang.String[] { "Provider", "Token", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_descriptor.getNestedTypes().get(0);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_AuthInfo_JWT_descriptor,
-        new java.lang.String[] { "Contents", "Unknown2", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor =
-      internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_descriptor.getNestedTypes().get(1);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_RequestEnvelope_PlatformRequest_descriptor,
-        new java.lang.String[] { "Type", "RequestMessage", });
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_github_aeonlucid_pogoprotos_networking_envelopes_AuthTicket_descriptor,
-        new java.lang.String[] { "Start", "ExpireTimestampMs", "End", });
-    com.github.aeonlucid.pogoprotos.networking.Platform.getDescriptor();
-    com.github.aeonlucid.pogoprotos.networking.Requests.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

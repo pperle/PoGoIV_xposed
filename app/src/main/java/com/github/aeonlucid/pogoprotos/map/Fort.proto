@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.map.fort;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.map.fort;
 
 option java_package = "com.github.aeonlucid.pogoprotos.map";
 option java_outer_classname = "Fort";
@@ -12,6 +13,24 @@ enum FortSponsor {
 	UNSET_SPONSOR = 0;
 	MCDONALDS = 1;
 	POKEMON_STORE = 2;
+}
+
+message FortLureInfo {
+	string fort_id = 1;
+	fixed64 encounter_id = 2;
+	com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;
+	int64 lure_expires_timestamp_ms = 4;
+}
+
+message FortModifier {
+	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
+	int64 expiration_timestamp_ms = 2;
+	string deployer_player_codename = 3;
+}
+
+enum FortType {
+	GYM = 0;
+	CHECKPOINT = 1;
 }
 
 enum FortRenderingType {
@@ -50,23 +69,5 @@ message FortData {
 	int64 cooldown_complete_timestamp_ms = 14;
 	com.github.aeonlucid.pogoprotos.map.fort.FortSponsor sponsor = 15;
 	com.github.aeonlucid.pogoprotos.map.fort.FortRenderingType rendering_type = 16;
-}
-
-message FortLureInfo {
-	string fort_id = 1;
-	fixed64 encounter_id = 2;
-	com.github.aeonlucid.pogoprotos.enums.PokemonId active_pokemon_id = 3;
-	int64 lure_expires_timestamp_ms = 4;
-}
-
-message FortModifier {
-	com.github.aeonlucid.pogoprotos.inventory.item.ItemId item_id = 1;
-	int64 expiration_timestamp_ms = 2;
-	string deployer_player_codename = 3;
-}
-
-enum FortType {
-	GYM = 0;
-	CHECKPOINT = 1;
 }
 

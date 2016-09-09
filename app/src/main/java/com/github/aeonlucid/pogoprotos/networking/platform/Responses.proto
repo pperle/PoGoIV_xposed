@@ -1,26 +1,13 @@
 syntax = "proto3";
 
-package com.github.aeonlucid.pogoprotos.networking.platform.responses;
+
+option optimize_for = LITE_RUNTIME;package com.github.aeonlucid.pogoprotos.networking.platform.responses;
 
 option java_package = "com.github.aeonlucid.pogoprotos.networking.platform";
 option java_outer_classname = "Responses";
 
 import "com/github/aeonlucid/pogoprotos/data/Player.proto";
 import "com/github/aeonlucid/pogoprotos/inventory/Item.proto";
-
-message SendEncryptedSignatureResponse {
-	bool received = 1; // speculated, could be an enum
-}
-
-message BuyItemPokeCoinsResponse {
-    Status result = 1; // result
-    // THESE ARE SOMEWHAT SPECULATED, should be a NOT ENOUGH ROOM status too for bag being full somewhere.
-    enum Status {
-        UNKNOWN = 0;
-        SUCCESS = 1;
-        NOT_ENOUGH_POKECOINS = 3;
-    }
-}
 
 message GetStoreItemsResponse {
 	Status status = 1; //unconfirmed
@@ -42,6 +29,10 @@ message GetStoreItemsResponse {
 	}
 }
 
+message SendEncryptedSignatureResponse {
+	bool received = 1; // speculated, could be an enum
+}
+
 message BuyItemAndroidResponse {
     Status result = 1; // result
     string purchase_token = 2;
@@ -49,6 +40,16 @@ message BuyItemAndroidResponse {
     enum Status {
         UNKNOWN = 0;
         SUCCESS = 1;
+    }
+}
+
+message BuyItemPokeCoinsResponse {
+    Status result = 1; // result
+    // THESE ARE SOMEWHAT SPECULATED, should be a NOT ENOUGH ROOM status too for bag being full somewhere.
+    enum Status {
+        UNKNOWN = 0;
+        SUCCESS = 1;
+        NOT_ENOUGH_POKECOINS = 3;
     }
 }
 

@@ -11,8 +11,6 @@ android {
         versionCode 8
         versionName "1.4"
 
-        // Enabling multidex support.
-        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -27,9 +25,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:support-v4:24.2.0'
     compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:multidex:1.0.1'
 
-    compile 'com.google.protobuf:protobuf-java:3.0.0'
+    compile 'com.google.protobuf:protobuf-lite:3.0.0'
 
     provided 'de.robv.android.xposed:api:53'
     provided 'de.robv.android.xposed:api:53:sources'
