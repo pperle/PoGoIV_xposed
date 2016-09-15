@@ -71,9 +71,9 @@ public class Helper {
 
                 Intent intent = new Intent();
                 intent.setAction(NotificationReceiver.SHOW_NOTIFICATION);
-                intent.putExtra("title",title);
-                intent.putExtra("text",text);
-                intent.putExtra("longText",longText);
+                intent.putExtra("title", title);
+                intent.putExtra("text", text);
+                intent.putExtra("longText", longText);
                 getPokeContext().sendBroadcast(intent);
 
             }

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -51,12 +52,11 @@ public class NotificationReceiver extends BroadcastReceiver {
     }
 
     private String scrolledLongText() {
-        String returnString = "";
-        for (int i = scrollPosition; i < scrollPosition + numOfLinesNotification || i < notificationLongTextList.size(); scrollPosition++) {
-            returnString += notificationLongTextList.get(i);
-        }
+        List<String> subList = notificationLongTextList.subList(scrollPosition, Math.min(scrollPosition + numOfLinesNotification, notificationLongTextList.size()));
         scrollPosition += numOfLinesNotification;
-        return returnString;
+        if (scrollPosition >= notificationLongTextList.size())
+            scrollPosition = 0;
+        return TextUtils.join("\n", subList);
     }
 
     private void showNotification(String title, String text, String longText, boolean showScrollButton) {
@@ -75,7 +75,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             Intent scrollDownIntent = new Intent();
             scrollDownIntent.setAction(SCROLL_DOWN);
             PendingIntent pendingIntentScrollDown = PendingIntent.getBroadcast(context, 111, scrollDownIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-            mBuilder.addAction(android.R.drawable.arrow_down_float, "ScrollDown", pendingIntentScrollDown);
+            mBuilder.addAction(android.R.drawable.arrow_down_float, "Scroll Down", pendingIntentScrollDown);
         }
 
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
