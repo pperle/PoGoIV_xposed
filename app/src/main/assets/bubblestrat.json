@@ -2,87 +2,108 @@
   "defenders": [
     {
       "id": 116,
-      "max_level": 2
+      "max_level": 2,
+      "move": 237
     },
     {
       "id": 98,
-      "max_level": 2
+      "max_level": 2,
+      "move": 237
     },
     {
       "id": 60,
-      "max_level": 1.5
+      "max_level": 1.5,
+      "move": 237
     },
     {
       "id": 72,
-      "max_level": 1
+      "max_level": 1,
+      "move": 237
     },
     {
       "id": 7,
-      "max_level": 1
+      "max_level": 1,
+      "move": 237
     },
     {
       "id": 61,
-      "max_level": 1
+      "max_level": 1,
+      "move": 237
     },
     {
       "id": 65,
-      "max_level": 1
+      "max_level": 1,
+      "move": 235
     },
     {
       "id": 64,
-      "max_level": 1
+      "max_level": 1,
+      "move": 235
     },
     {
       "id": 90,
-      "max_level": 1.5
+      "max_level": 1.5,
+      "move": 110
     },
     {
       "id": 91,
-      "max_level": 1
+      "max_level": 1,
+      "move": 110
     },
     {
       "id": 74,
-      "max_level": 1.5
+      "max_level": 1.5,
+      "move": 227
     },
     {
       "id": 75,
-      "max_level": 1
+      "max_level": 1,
+      "move": 227
     },
     {
       "id": 43,
-      "max_level": 1
+      "max_level": 1,
+      "move": 7
     },
     {
       "id": 70,
-      "max_level": 1
+      "max_level": 1,
+      "move": 7
     },
     {
       "id": 50,
-      "max_level": 1
+      "max_level": 1,
+      "move": 233
     },
     {
       "id": 51,
-      "max_level": 1
+      "max_level": 1,
+      "move": 233
     },
     {
       "id": 129,
-      "max_level": 1
+      "max_level": 1,
+      "move": 231
     },
     {
       "id": 25,
-      "max_level": 1.5
+      "max_level": 1.5,
+      "move": 2
     },
     {
       "id": 19,
-      "max_level": 1
+      "max_level": 1,
+      "move": 2
     },
     {
       "id": 21,
-      "max_level": 1
+      "max_level": 1,
+      "move": 2
     },
     {
       "id": 41,
-      "max_level": 1
+      "max_level": 1,
+      "move": 2
     }
   ]
 }
