@@ -8,8 +8,8 @@ android {
         applicationId "de.chuparch0pper.android.xposed.pogoiv"
         minSdkVersion 19
         targetSdkVersion 24
-        versionCode 8
-        versionName "1.4"
+        versionCode 9
+        versionName "1.5"
 
     }
     buildTypes {
