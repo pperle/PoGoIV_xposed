@@ -32,6 +32,7 @@
             <intent-filter>
                 <action android:name="SHOW_NOTIFICATION" />
                 <action android:name="SCROLL_DOWN" />
+                <action android:name="SCROLL_UP" />
             </intent-filter>
         </receiver>
 
