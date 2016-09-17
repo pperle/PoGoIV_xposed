@@ -84,6 +84,7 @@ public class Helper {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
+                /*
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getPokeContext());
                 mBuilder.setSmallIcon(android.R.drawable.ic_dialog_info);
                 mBuilder.setContentTitle(title);
@@ -100,6 +101,15 @@ public class Helper {
 
                 NotificationManager mNotificationManager = (NotificationManager) getPokeContext().getSystemService(Context.NOTIFICATION_SERVICE);
                 mNotificationManager.notify(699511, mBuilder.build());
+                 */
+
+                Intent intent = new Intent();
+                intent.setAction(NotificationReceiver.SHOW_NOTIFICATION);
+                intent.putExtra("title", title);
+                intent.putExtra("text", text);
+                intent.putExtra("longText", longText);
+                getPokeContext().sendBroadcast(intent);
+
             }
         });
     }
