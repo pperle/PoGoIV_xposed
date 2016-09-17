@@ -29,10 +29,12 @@ import de.robv.android.xposed.XposedBridge;
 class BubblestratPokemon {
     private int pokeNr;
     private double maxLevel;
+    private int moveNr;
 
-    public BubblestratPokemon(int pokeNr, double maxLevel) {
+    public BubblestratPokemon(int pokeNr, double maxLevel, int moveNr) {
         this.pokeNr = pokeNr;
         this.maxLevel = maxLevel;
+        this.moveNr = moveNr;
     }
 
     public int getPokeNr() {
@@ -42,6 +44,8 @@ class BubblestratPokemon {
     public double getMaxLevel() {
         return maxLevel;
     }
+
+    public int getMoveNr() { return  moveNr; }
 }
 
 public class Helper {
@@ -191,7 +195,7 @@ public class Helper {
     }
 
 
-    private static String loadJSONFromAsset() {
+    private static String loadJSONFromAssetBS() {
         try {
             InputStream inputStream = getContext().getAssets().open("bubblestrat.json");
             byte[] buffer = new byte[inputStream.available()];
@@ -203,16 +207,45 @@ public class Helper {
             return null;
         }
     }
+//    private static String loadJSONFromAssetML() {
+//        try {
+//            InputStream inputStream = getContext().getAssets().open("movelist.json");
+//            byte[] buffer = new byte[inputStream.available()];
+//            inputStream.read(buffer);
+//            inputStream.close();
+//            return new String(buffer, "UTF-8");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+//
+//    private static void loadPokemonMoves() {
+//        try {
+//            JSONObject jsonObject = new JSONObject(loadJSONFromAssetBS());
+//            JSONArray jsonArray = jsonObject.getJSONArray("defenders");
+//
+//            bubblestratPokemons = new BubblestratPokemon[jsonArray.length()];
+//            for (int i = 0; i < jsonArray.length(); i++) {
+//                JSONObject jsonObjectInArray = jsonArray.getJSONObject(i);
+//                bubblestratPokemons[i] = new BubblestratPokemon(jsonObjectInArray.getInt("id"), jsonObjectInArray.getDouble("max_level"), jsonObjectInArray.getInt("move"));
+//            }
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
     private static void loadBubblestratPokemon() {
         try {
-            JSONObject jsonObject = new JSONObject(loadJSONFromAsset());
+            JSONObject jsonObject = new JSONObject(loadJSONFromAssetBS());
             JSONArray jsonArray = jsonObject.getJSONArray("defenders");
 
             bubblestratPokemons = new BubblestratPokemon[jsonArray.length()];
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObjectInArray = jsonArray.getJSONObject(i);
-                bubblestratPokemons[i] = new BubblestratPokemon(jsonObjectInArray.getInt("id"), jsonObjectInArray.getDouble("max_level"));
+                bubblestratPokemons[i] = new BubblestratPokemon(jsonObjectInArray.getInt("id"), jsonObjectInArray.getDouble("max_level"), jsonObjectInArray.getInt("move"));
             }
 
         } catch (JSONException e) {
@@ -221,7 +254,7 @@ public class Helper {
 
     }
 
-    public static boolean isBubblestratPokemon(int pokemonId, double level) {
+    public static boolean isBubblestratPokemon(int pokemonId, double level, int moveID) {
         double epsilon = 0.0001;
 
         if (bubblestratPokemons == null) {
@@ -233,7 +266,7 @@ public class Helper {
         }
 
         for (BubblestratPokemon bubblestratPokemon : bubblestratPokemons) {
-            if (bubblestratPokemon.getPokeNr() == pokemonId && Math.abs(bubblestratPokemon.getMaxLevel() - level) < epsilon) {
+            if (bubblestratPokemon.getPokeNr() == pokemonId && Math.abs(bubblestratPokemon.getMaxLevel() - level) < epsilon  && (bubblestratPokemon.getMoveNr() == moveID)) {
                 return true;
             }
         }
