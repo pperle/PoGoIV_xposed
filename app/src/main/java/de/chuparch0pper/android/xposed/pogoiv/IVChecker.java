@@ -17,8 +17,11 @@ import com.github.aeonlucid.pogoprotos.networking.Responses;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.net.HttpURLConnection;
+import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -168,60 +171,77 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         loadSharedPreferences();
         checkIfModuleIsEnabled();
 
-        final Class NiaNetClass = loadPackageParam.classLoader.loadClass("com.nianticlabs.nia.network.NiaNet");
+        //final Class NiaNetClass = loadPackageParam.classLoader.loadClass("com.nianticlabs.nia.network.NiaNet");
 
-        findAndHookMethod(NiaNetClass, "doSyncRequest", long.class, int.class, String.class, int.class, String.class, ByteBuffer.class, int.class, int.class, new XC_MethodHook() {
-            @Override
-            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                ByteBuffer requestBody = (ByteBuffer) param.args[5];
-                int bodyOffset = (int) param.args[6];
-                int bodySize = (int) param.args[7];
+        findAndHookMethod(Helper.getHttpURLConnectionImplName(), loadPackageParam.classLoader,
+                "getOutputStream",
+                new XC_MethodHook() {
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {;
+                        //HttpURLConnection connection = (HttpURLConnection) param.thisObject;
+                        OutputStream outputStream = (OutputStream) param.getResult();
+                        WrappedOutputStream wrappedOutputStream =
+                                new WrappedOutputStream(outputStream, new IMitmOutputStreamHandler() {
+                                    @Override
+                                    public void processBytes(byte[] bytes) {
+                                        try {
 
-                if (requestBody == null || bodySize <= 0) {
-                    Helper.Log("Error while getting data, requestBody =" + bodySize + " or bodySize = " + bodySize + " is not valid");
-                    return;
+                                            Envelopes.RequestEnvelope requestEnvelop = Envelopes.RequestEnvelope.parseFrom(bytes);
+                                            long requestId = requestEnvelop.getRequestId();
+                                            Helper.Log("Outgoing request ID - " + requestId);
+
+                                            int matchedRequests = 0;
+                                            List<Requests.RequestType> requestList = new ArrayList<>();
+                                            for (int i = 0; i < requestEnvelop.getRequestsCount(); i++) {
+                                                Requests.Request request = requestEnvelop.getRequests(i);
+                                                Helper.Log("getOutputStream - " + request.getRequestType().toString());
+                                                requestList.add(request.getRequestType());
+                                                if(request.getRequestType() != Requests.RequestType.METHOD_UNSET) {
+                                                    matchedRequests++;
+                                                }
+                                            }
+
+                                            if(matchedRequests > 0) {
+                                                requestMap.put(requestId, requestList);
+                                            }
+                                        } catch (Exception e) {
+                                            Helper.Log("Unable to parse OutputStream");
+                                        }
+                                    }
+                                });
+
+                        param.setResult(wrappedOutputStream);
+                    }
                 }
+        );
+        findAndHookMethod(Helper.getHttpURLConnectionImplName(), loadPackageParam.classLoader,
+                "getInputStream",
+                new XC_MethodHook() {
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                        if (Helper.isNiaNetConnection((URLConnection) param.thisObject)) {
+                            InputStream inputStream = (InputStream) param.getResult();
 
-                ByteBuffer dRequestBody = requestBody.duplicate();
-                byte[] bytes = new byte[bodySize];
-                dRequestBody.get(bytes, bodyOffset, bodySize);
+                            WrappedInputStream wrappedInputStream =
+                                    new WrappedInputStream(inputStream, new IMitmInputStreamHandler() {
+                                        @Override
+                                        public void processBytes(byte[] bytes) {
+                                            HandleResponse(bytes);
+                                        }
+                                    });
+                            param.setResult(wrappedInputStream);
+                        }
+                    }
 
-                Envelopes.RequestEnvelope requestEnvelop = Envelopes.RequestEnvelope.parseFrom(bytes);
-                long requestId = requestEnvelop.getRequestId();
-
-                List<Requests.RequestType> requestList = new ArrayList<Requests.RequestType>();
-                for (int i = 0; i < requestEnvelop.getRequestsCount(); i++) {
-                    Helper.Log("doSyncRequest - " + requestEnvelop.getRequests(i).getRequestType().toString());
-                    requestList.add(requestEnvelop.getRequests(i).getRequestType());
-                }
-
-                requestMap.put(requestId, requestList);
-            }
-        });
-
-        findAndHookMethod(NiaNetClass, "readDataSteam", HttpURLConnection.class, new XC_MethodHook() {
-            @Override
-            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                int bodySize = (int) param.getResult();
-                byte[] bytes = new byte[bodySize];
-
-                Field bufferField = NiaNetClass.getDeclaredField("readBuffer");
-                bufferField.setAccessible(true);
-
-                ThreadLocal<ByteBuffer> localBody = (ThreadLocal<ByteBuffer>) bufferField.get(null);
-
-                if (localBody == null) {
-                    Helper.Log("Couldn't read readBuffer-stream from PoGo.");
-                    return;
-                }
-
-                ByteBuffer responseBody = localBody.get();
-                ByteBuffer dResponseBody = responseBody.duplicate();
-                dResponseBody.get(bytes, 0, bodySize);
-                HandleResponse(bytes);
-            }
-        });
-
+                        /*
+                        @Override
+                        protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                            if (Helper.isNiaNetConnection((URLConnection) param.thisObject)) {
+                                requestMap.put(++requestId, (InputStream) param.getResult());
+                            }
+                        }
+                        */
+                });
     }
 
     /**
