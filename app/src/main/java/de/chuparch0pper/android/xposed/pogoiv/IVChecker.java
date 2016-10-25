@@ -267,7 +267,7 @@ public class IVChecker implements IXposedHookLoadPackage, IXposedHookZygoteInit 
         Helper.Log("Response " + requestId);
         List<Requests.RequestType> requestList = requestMap.get(requestId);
 
-        for (int i = 0; i < requestList.size(); i++) {
+        for (int i = 0; i < requestList.size() && i < responseEnvelop.getReturnsCount(); i++) {
             Requests.RequestType requestType = requestList.get(i);
             ByteString payload = responseEnvelop.getReturns(i);
             Helper.Log("HandleResponse " + requestType.toString());
