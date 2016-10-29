@@ -23,7 +23,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     private Context context;
 
-    private static int numOfLinesNotification = 9;
+    private static int numOfLinesNotification = 8;
     private static String notificationTitle = "";
     private static String notificationText = "";
 
