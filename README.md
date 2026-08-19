@@ -2,7 +2,7 @@
 Xposed module that displays pokémon IV's before capturing them.
 
 <p align="center">
-  <img src="https://thumbs.gfycat.com/AdoredHopefulArkshell-size_restricted.gif" alt="Screenshot"/>
+  <img src="assets/pogoiv-xposed-demo.gif" alt="PoGoIV Xposed in-game demo" width="404"/>
 </p>
 
 
